@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/*Para spans google icons*/
+.span-fill {
+  @apply [font-variation-settings:'FILL'_1];
+}
+.zoom-in-span {
+  @apply scale-110;
+}
+
+@layer base {
+  h1 {
+    @apply font-h text-gray-900 font-semibold text-[1.400em] sm:text-[1.415em] 
+        md:text-[1.422em] lg:text-[1.436em] xl:text-[1.450em] 2xl:text-[1.464em];
+  }
+  h2 {
+    @apply w-full mb-6 sm:text-center font-h font-normal text-neutral-500 text-[1.040em] sm:text-[1.046em] md:text-[1.049em] lg:text-[1.054em] xl:text-[1.06em] 2xl:text-[1.066em] cursor-default;
+  }
+  p,
+  button,
+  label {
+    @apply text-gray-800 text-[1.125em] sm:text-[1.132em] md:text-[1.136em] lg:text-[1.143em] xl:text-[1.150em] 2xl:text-[1.157em] cursor-default;
+  }
+  input,
+  textarea {
+    @apply text-neutral-800 text-[1.150em] sm:text-[1.154em] md:text-[1.157em] lg:text-[1.161em] xl:text-[1.165em] 2xl:text-[1.169em];
+  }
+  div {
+    @apply rounded-sm;
+  }
+  button {
+    @apply font-h rounded-sm;
+  }
+}
+
+/*Estilos de Componentes*/
+.h1-sizes {
+  @apply text-[1.400em] sm:text-[1.415em] md:text-[1.422em] lg:text-[1.436em] xl:text-[1.450em] 2xl:text-[1.464em];
+}
+.h4-sizes {
+  @apply text-[1.010em] sm:text-[1.022em] md:text-[1.027em] lg:text-[1.039em] xl:text-[1.050em] 2xl:text-[1.061em];
+}
+.small-p {
+  @apply text-[1.058em] sm:text-[1.062em] md:text-[1.063em] lg:text-[1.067em] xl:text-[1.070em] 2xl:text-[1.073em];
+}
+.base-button-light {
+  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+}
+.base-button-dark {
+  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+}
+.normal-button-sizes {
+  @apply leading-5 text-gray-800 text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em];
+}
+.small-p-button {
+  @apply font-h font-normal text-[1.05em] xl:text-[1.1em] leading-none;
+}
+
+/* Encurtadores */
+.centralize {
+  @apply flex justify-center items-center;
+}
+.abso {
+  @apply absolute top-0 left-0;
+}
+
+.crop {
+  @apply overflow-hidden;
+}
+
+.trans {
+  @apply transition-all duration-300;
+}
+
+.fast-trans {
+  @apply transition-all duration-200;
+}
+
+.bs {
+  @apply border border-black;
+}
+.br-sm {
+  @apply rounded-sm;
+}
+.br-lg {
+  @apply rounded-lg;
+}
+.br-50 {
+  @apply rounded-[50%];
+}
+.light-border {
+  @apply border border-gray-200;
+}
+.normal-border {
+  @apply border border-gray-300;
+}
+.normal-border-color {
+  @apply border-gray-300;
+}
+.light-border-color {
+  @apply border-gray-200;
+}
+
+.bg-bt {
+  @apply bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
+}
+.bg-bt2 {
+  @apply bg-gray-200 hover:bg-gray-300 transition-colors duration-200;
+}
+
+.j-center {
+  @apply justify-center;
+}
+.j-start {
+  @apply justify-start;
+}
+.j-between {
+  @apply justify-between;
+}

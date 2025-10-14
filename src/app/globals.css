@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
+/* 
+sm	 (640px)
+md	 (768px)	
+lg	 (1024px)	
+xl   (1280px)	
+2xl  (1536px) 
+*/
+
+@theme {
+  --font-h: "Poppins", "sans-serif";
+  --font-p: "DM Sans", "sans-serif";
+  --font-logo: "Cookie", "cursive";
+}
+
+html,
+body {
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --main-color: #a02741;
+  --main-color2: black;
+  --back-color: oklch(96.7% 0.003 264.542);
+  --h-font: "Poppins", Arial, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--back-color);
+  width: 100%;
+  max-width: 1390px;
+  min-height: 100vh;
+  margin: auto;
+  position: relative;
 }
