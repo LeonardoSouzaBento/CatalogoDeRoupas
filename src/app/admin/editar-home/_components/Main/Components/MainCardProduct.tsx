@@ -1,8 +1,9 @@
 import { Heart } from "lucide-react";
 import { useState } from "react";
-import type { SpecialSelectionItem } from "@src/types/types";
+import type { SpecialSelectionItem } from "@/types/types";
 import ImageInput from "../../InputsForEdit/EspecialSelections/ImageInput";
 import ProductInfoInput from "../../InputsForEdit/EspecialSelections/ProductInfoInput";
+import Image from "next/image";
 
 const css = {
   wrapperProduct:
@@ -67,20 +68,22 @@ const MainCardProduct = ({
               mainImage={false}
             />
           )}
-          <img
+          <Image
             src={item.img1}
             alt={`Img do produto: ${item.alt}`}
             className={`${css.imgs}`}
+            fill={true}
           />
         </div>
         <div className={`${css.wrapperImg2}`}>
           {seeMainImageInput && (
             <ImageInput setSeeInput={setSeeMainImageInput} />
           )}
-          <img
+          <Image
             src={item.img2}
             alt={`Img do produto: ${item.alt}`}
             className={`${css.imgs}`}
+            fill={true}
           />
         </div>
       </div>

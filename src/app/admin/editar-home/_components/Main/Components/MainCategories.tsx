@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
-import WrapperForm from "@src/Components/WrapperForm";
+import WrapperForm from "./WrapperForm";
 import MainCatsInput from "../../InputsForEdit/MainCatsInput/MainCatsInput";
-import { HomeDataContext } from "@src/contexts/HomeDataContext";
+import { HomeDataContext } from "@contexts/HomeDataContext";
+import Image from "next/image";
 
 const css = {
   sectionEditMode: "pb-0 mb-0 m-auto max-w-210",
@@ -44,7 +45,7 @@ const MainCategories = (): React.ReactElement | undefined | null => {
         <div className={`${css.container}`}>
           {selectedMainCategories.map((item, index) => (
             <div key={index} className={`${css.wrapperImg}`}>
-              <img src={item.urlImg} alt={item.alt} className={`${css.img}`} />
+              <Image src={item.urlImg} alt={item.alt} className={`${css.img}`} fill={true}/>
               <div className={`${css.wrapperP}`}>
                 <p className={`${css.p}`}>{item.name}</p>
               </div>

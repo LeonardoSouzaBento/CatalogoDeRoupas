@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import type { MainCategory } from "@src/types/types";
+import type { MainCategory } from "@/types/types";
 import { Pen, Check, Upload } from "lucide-react";
-import { iconSmStyles, iconMdStyles, inputClasses } from "@src/data/styles";
+import { iconSmStyles, iconMdStyles, inputClasses } from "@data/styles";
 
 const css = {
   wrapperCardCat: `sm:w-[49%] sm:max-w-[49%] sm:min-h-100 flex flex-col justify-center gap-2 normal-border 

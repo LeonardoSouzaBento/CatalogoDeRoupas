@@ -1,4 +1,4 @@
-import type { ShopInfo } from "@src/types/types";
+import type { ShopInfo } from "@localtypes/types";
 import React, { useState, useEffect } from "react";
 
 const css = {
@@ -78,15 +78,15 @@ const MapInput = ({
             no endereço.
           </li>
           <li className={`${css.li}`}>
-            Procure o botão <span className="underline">"Compartilhar"</span> e
+            Procure o botão <span className="underline">&quot;Compartilhar&quot;</span> e
             clique nele.
           </li>
           <li className={`${css.li}`}>
             Clique no botão{" "}
-            <span className="underline">"Incorporar um mapa"</span>.
+            <span className="underline">&quot;Incorporar um mapa&quot;</span>.
           </li>
           <li className={`${css.li}`}>
-            Clique no botão <span className="underline">"Copiar HTML"</span>.
+            Clique no botão <span className="underline">&quot;Copiar HTML&quot;</span>.
           </li>
           <li className={`${css.li}`}>Cole no espaço cinza acima o texto copiado. Pronto.</li>
         </ul>

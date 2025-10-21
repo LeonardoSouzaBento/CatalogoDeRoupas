@@ -1,6 +1,6 @@
 import React from "react";
 import type { LucideIcon } from "lucide-react";
-import { gray800 } from "@src/data/styles";
+import { gray800 } from "@data/styles";
 
 export interface IconButtonType {
   icon: LucideIcon;

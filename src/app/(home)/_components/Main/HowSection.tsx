@@ -56,7 +56,7 @@ const css = {
   section: "",
   wrapper: "block flex flex-col justify-center md:flex-row gap-3",
   wrapperInfo: "w-auto flex flex-col gap-6 md:w-1/2 max-w-100",
-  wrapperImg: "w-full md:w-1/2 flex flex-col gap-3 border border-gray-300",
+  wrapperImg: "w-full md:w-1/2 flex flex-col gap-3",
 };
 
 const HowSection = (): React.ReactElement => {

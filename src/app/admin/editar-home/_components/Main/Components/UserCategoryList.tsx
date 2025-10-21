@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { HomeDataContext } from "@src/contexts/HomeDataContext";
-import type { GenderKey } from "@src/types/types";
+import { HomeDataContext } from "@contexts/HomeDataContext";
+import type { GenderKey } from "@/types/types";
+import Image from "next/image";
 
 const css = {
   section: "title pt-6 pb-10",
@@ -49,6 +50,9 @@ const UserCategoryList = (): React.ReactElement => {
     setSelectedGender(gender);
   }
 
+  console.log(userCategories[0].img);
+  
+
   useEffect(() => {
     if (selectedGender === "feminino") {
       setSelectedIndex(0);
@@ -82,13 +86,14 @@ const UserCategoryList = (): React.ReactElement => {
               } ${orderClass}`}
             >
               <div className={`${css.wrapperImg}`}>
-                <img
+                <Image
                   id={`${index}`}
                   src={`${item.img}`}
                   alt={`Categoria ${index + 1}`}
                   className={`${css.img} ${
                     selectedGender === item.name && css.selectedImg
                   }`}
+                  fill={true}
                 />
               </div>
 

@@ -4,8 +4,8 @@ import { Copy, CopyCheck, Check, CheckCheck } from "lucide-react";
 import ContactInput from "../../InputsForEdit/FindUs/ContactInput";
 import AddressInput from "../../InputsForEdit/FindUs/AddressInput";
 import MapInput from "../../InputsForEdit/FindUs/MapInput";
-import type { AddressSchema } from "@src/types/types";
-import WrapperForm from "@src/Components/WrapperForm";
+import type { AddressSchema } from "@/types/types";
+import WrapperForm from "./WrapperForm";
 
 const css = {
   wrapper: "w-full m-auto max-w-210 flex flex-col gap-3",

@@ -20,6 +20,7 @@ export interface UserCategory {
 
 /* Item de seleções especiais */
 export interface SpecialSelectionSchema {
+  id: number;
   name: string;
   price: number;
   img1: string;

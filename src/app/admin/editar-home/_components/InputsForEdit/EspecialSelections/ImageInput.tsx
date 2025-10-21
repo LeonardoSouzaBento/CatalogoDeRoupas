@@ -5,7 +5,7 @@ import {
   iconSmStyles,
   imageUploadNameButton,
   buttonClose,
-} from "@src/data/styles";
+} from "@data/styles";
 
 const css = {
   wrapper: `size-full centralize gap-2 abso p-4 bg-white/86 z-2`,

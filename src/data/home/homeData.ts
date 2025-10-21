@@ -2,7 +2,7 @@ import type {
   SpecialSelectionSchema,
   MainCategoriesData,
   UserCategory,
-} from "@src/types/types";
+} from "@/types/types";
 
 /* Categorias de usuário */
 //4 categorias
@@ -10,52 +10,56 @@ export const defaultUserCategoriesData: UserCategory[] = [
   {
     name: "feminino",
     variable: "feminino",
-    img: "./photos/female/female-category.jpg",
+    img: "/shop/photos/female/female-category.jpg",
     active: true,
   },
   {
     name: "masculino",
     variable: "masculino",
-    img: "./photos/male/male-category.png",
+    img: "/shop/photos/male/male-category.png",
     active: true,
   },
   {
     name: "infantil",
     variable: "menino",
-    img: "./photos/maleChild/male-child.png",
+    img: "/shop/photos/maleChild/male-child.png",
     active: true,
-  }
+  },
 ];
 
 /* Roupas Masculinas Selecionadas */
 
 export const defaultMensSpecialSelections: SpecialSelectionSchema[] = [
   {
+    id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/male/specialSelections/manequin.png",
-    img2: "./photos/male/specialSelections/busto.png",
+    img1: "/shop/photos/male/specialSelections/manequin.png",
+    img2: "/shop/photos/male/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 2,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/male/specialSelections/manequin.png",
-    img2: "./photos/male/specialSelections/busto.png",
+    img1: "/shop/photos/male/specialSelections/manequin.png",
+    img2: "/shop/photos/male/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 3,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/male/specialSelections/manequin.png",
-    img2: "./photos/male/specialSelections/busto.png",
+    img1: "/shop/photos/male/specialSelections/manequin.png",
+    img2: "/shop/photos/male/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 4,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/male/specialSelections/manequin.png",
-    img2: "./photos/male/specialSelections/busto.png",
+    img1: "/shop/photos/male/specialSelections/manequin.png",
+    img2: "/shop/photos/male/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
 ];
@@ -64,101 +68,113 @@ export const defaultMensSpecialSelections: SpecialSelectionSchema[] = [
 
 export const defaultFemaleSpecialSelections: SpecialSelectionSchema[] = [
   {
+    id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/female/specialSelections/manequin.png",
-    img2: "./photos/female/specialSelections/busto.png",
+    img1: "/shop/photos/female/specialSelections/manequin.png",
+    img2: "/shop/photos/female/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 2,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/female/specialSelections/manequin.png",
-    img2: "./photos/female/specialSelections/busto.png",
+    img1: "/shop/photos/female/specialSelections/manequin.png",
+    img2: "/shop/photos/female/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 3,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/female/specialSelections/manequin.png",
-    img2: "./photos/female/specialSelections/busto.png",
+    img1: "/shop/photos/female/specialSelections/manequin.png",
+    img2: "/shop/photos/female/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 4,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/female/specialSelections/manequin.png",
-    img2: "./photos/female/specialSelections/busto.png",
+    img1: "/shop/photos/female/specialSelections/manequin.png",
+    img2: "/shop/photos/female/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
 ];
 
 export const defaultFChildSpecialSelections: SpecialSelectionSchema[] = [
   {
+    id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/femaleChild/specialSelections/manequin.png",
-    img2: "./photos/femaleChild/specialSelections/busto.png",
+    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 2,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/femaleChild/specialSelections/manequin.png",
-    img2: "./photos/femaleChild/specialSelections/busto.png",
+    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 3,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/femaleChild/specialSelections/manequin.png",
-    img2: "./photos/femaleChild/specialSelections/busto.png",
+    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 4,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/femaleChild/specialSelections/manequin.png",
-    img2: "./photos/femaleChild/specialSelections/busto.png",
+    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
 ];
 
 export const defaultMChildSpecialSelections: SpecialSelectionSchema[] = [
   {
+    id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/maleChild/specialSelections/manequin.png",
-    img2: "./photos/maleChild/specialSelections/busto.png",
+    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/maleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 2,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/maleChild/specialSelections/manequin.png",
-    img2: "./photos/maleChild/specialSelections/busto.png",
+    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/maleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 3,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/maleChild/specialSelections/manequin.png",
-    img2: "./photos/maleChild/specialSelections/busto.png",
+    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/maleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
   {
+    id: 4,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
     price: 0,
-    img1: "./photos/maleChild/specialSelections/manequin.png",
-    img2: "./photos/maleChild/specialSelections/busto.png",
+    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
+    img2: "/shop/photos/maleChild/specialSelections/busto.png",
     alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
   },
 ];
 
 /* Categorias especiais */
 
-const pathMale = "/photos/male/mainCategories/";
-const pathFemale = "/photos/female/mainCategories/";
+const pathMale = "/shop/photos/male/mainCategories/";
+const pathFemale = "/shop/photos/female/mainCategories/";
 
 export const defaultMainCategoriesData: MainCategoriesData = {
   male: [

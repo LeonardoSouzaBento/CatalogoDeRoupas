@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { HomeDataContext } from "@src/contexts/HomeDataContext";
-import type { GenderKey } from "@src/types/types";
+import { HomeDataContext } from "@contexts/HomeDataContext";
+import type { GenderKey } from "@/types/types";
+import Image from "next/image";
 
 const css = {
   section: "title pt-6 pb-10",
@@ -82,10 +83,11 @@ const UserCategoryList = (): React.ReactElement => {
               } ${orderClass}`}
             >
               <div className={`${css.wrapperImg}`}>
-                <img
+                <Image
                   id={`${index}`}
                   src={`${item.img}`}
                   alt={`Categoria ${index + 1}`}
+                  fill={true}
                   className={`${css.img} ${
                     selectedGender === item.name && css.selectedImg
                   }`}

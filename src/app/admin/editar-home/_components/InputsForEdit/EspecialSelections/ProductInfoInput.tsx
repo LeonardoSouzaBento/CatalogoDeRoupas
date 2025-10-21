@@ -1,4 +1,4 @@
-import { iconMdStyles, inputClasses } from "@src/data/styles";
+import { iconMdStyles, inputClasses } from "@data/styles";
 import { Check, X } from "lucide-react";
 import React from "react";
 

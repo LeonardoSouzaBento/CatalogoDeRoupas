@@ -48,7 +48,7 @@ const css = {
   section: "",
   wrapper: "block md:flex md:gap-7",
   wrapperInfo: "w-full md:w-1/2",
-  wrapperImg: "w-full md:w-1/2 flex flex-col gap-3 border border-gray-300",
+  wrapperImg: "w-full md:w-1/2 flex flex-col gap-3",
 };
 
 const WhySection = (): React.ReactElement => {

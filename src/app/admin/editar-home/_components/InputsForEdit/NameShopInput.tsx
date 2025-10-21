@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Check, X } from "lucide-react";
 import { h3Sizes } from "@data/styles";
-import { PublicDataContext } from "@src/contexts/PublicDataContext";
-import { inputClasses, iconMdStyles, iconSmStyles } from "@src/data/styles";
+import { PublicDataContext } from "@contexts/PublicDataContext";
+import { inputClasses, iconMdStyles, iconSmStyles } from "@data/styles";
 
 const css = {
   wrapper: "w-full abso pt-3 pb-3 bg-gray-100 z-1",

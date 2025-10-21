@@ -1,8 +1,8 @@
-import React from "react";
-import Header from "@/app/loja/(home)/_components/Header/Header";
-import Main from "@/app/loja/(home)/_components/Main/Main";
-import Footer from "@/app/loja/(home)/_components/Footer/Footer";
-import { HomeDataProvider } from "@/contexts/Providers/HomeDataProvider";
+"use client"
+import Header from "./_components/Header/Header";
+import Main from "./_components/Main/Main";
+import Footer from "./_components/Footer/Footer";
+import { HomeDataProvider } from "@contexts/Providers/HomeDataProvider";
 
 const page = () => {
   return (

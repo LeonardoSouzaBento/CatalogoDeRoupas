@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import type { ShopInfo } from "@src/types/types";
+import type { ShopInfo } from "@/types/types";
 import { X, Check, Trash } from "lucide-react";
 import { defaultShopInfo } from "@data/home/publicData";
-import { h3Sizes } from "@src/data/styles";
+import { h3Sizes } from "@data/styles";
 
 const css = {
   wrapper: "abso z-3 size-full bg-white p-5 br-lg",

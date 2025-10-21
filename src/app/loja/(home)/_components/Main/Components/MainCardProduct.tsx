@@ -1,8 +1,7 @@
 import { Heart } from "lucide-react";
 import { useState } from "react";
-import type { SpecialSelectionItem } from "@src/types/types";
-import ImageInput from "../../InputsForEdit/EspecialSelections/ImageInput";
-import ProductInfoInput from "../../InputsForEdit/EspecialSelections/ProductInfoInput";
+import Image from "next/image";
+import type { SpecialSelectionItem } from "@/types/types";
 
 const css = {
   wrapperProduct:
@@ -11,7 +10,6 @@ const css = {
     "w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex border-b-1 border-gray-200 relative bg-white rounded-none",
   wrapperImg1: "p-2 min-w-[40%] border-r-1 border-gray-200 relative",
   wrapperImg2: "p-2 min-w-[60%] relative",
-  imgs: "size-full object-cover",
   wrapperInfo: "w-full h-max p-4 flex flex-col items-start gap-2 bg-white",
   nameP:
     "capitalize text-[1.125em] sm:text-[1.132em] md:text-[1.136em] lg:text-[1.143em] xl:text-[1.150em] 2xl:text-[1.157em]",
@@ -35,13 +33,6 @@ const MainCardProduct = ({
     setTimeout(() => setFastReturn(false), 1800);
   }
 
-  /* inputs de edição */
-  const [seeMainImageInput, setSeeMainImageInput] = useState<boolean>(false);
-  const [seeSecondaryImageInput, setSeeSecondaryImageInput] =
-    useState<boolean>(false);
-  const [seeProductInfoInput, setSeeProductInfoInput] =
-    useState<boolean>(false);
-
   return (
     <div className={`${css.wrapperProduct}`}>
       <div className={`${css.wrapperImgs}`} id="wrapperImgs">
@@ -61,43 +52,25 @@ const MainCardProduct = ({
           </div>
         </button>
         <div className={`${css.wrapperImg1}`}>
-          {seeSecondaryImageInput && (
-            <ImageInput
-              setSeeInput={setSeeSecondaryImageInput}
-              mainImage={false}
-            />
-          )}
-          <img
+          <Image
             src={item.img1}
             alt={`Img do produto: ${item.alt}`}
-            className={`${css.imgs}`}
+            fill={true}
           />
         </div>
         <div className={`${css.wrapperImg2}`}>
-          {seeMainImageInput && (
-            <ImageInput setSeeInput={setSeeMainImageInput} />
-          )}
-          <img
+          <Image
             src={item.img2}
             alt={`Img do produto: ${item.alt}`}
-            className={`${css.imgs}`}
+            fill={true}
           />
         </div>
       </div>
       <div className={`${css.wrapperInfo}`}>
-        {seeProductInfoInput ? (
-          <ProductInfoInput
-            setSeeProductInfoInput={setSeeProductInfoInput}
-            id={item.id}
-          />
-        ) : (
-          <>
-            <p className={`${css.nameP}`}>
-              {item.name} Lorem ipsum, dolor sit amet consectetur adipisicing
-            </p>
-            <p className={`${css.priceP}`}>R${item.price}</p>
-          </>
-        )}
+        <p className={`${css.nameP}`}>
+          {item.name} Lorem ipsum, dolor sit amet consectetur adipisicing
+        </p>
+        <p className={`${css.priceP}`}>R${item.price}</p>
       </div>
     </div>
   );

@@ -45,6 +45,7 @@ body {
   --font-h: "Poppins", "sans-serif";
   --font-p: "DM Sans", "sans-serif";
   --font-logo: "Cookie", "cursive";
+  --font-bt: "Outfit", "sans-serif";
 }
 
 /* Estilos Gerais */
@@ -68,7 +69,7 @@ body {
   @apply text-[1.058em] sm:text-[1.062em] md:text-[1.063em] lg:text-[1.067em] xl:text-[1.070em] 2xl:text-[1.073em];
 }
 .button {
-  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium font-bt px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
 }
 .button2 {
   @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;

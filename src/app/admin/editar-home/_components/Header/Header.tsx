@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import IconButton from "./Components/IconButton";
+import IconButton from "./components/IconButton";
 import { User, Menu, Search, Heart } from "lucide-react";
-import type { IconButtonType } from "./Components/IconButton";
+import type { IconButtonType } from "./components/IconButton";
 import NameShopInput from "../InputsForEdit/NameShopInput";
 
 const buttonNameIcons: IconButtonType[] = [

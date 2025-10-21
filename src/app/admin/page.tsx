@@ -1,6 +1,8 @@
+import "./page.css";
 import React from "react";
 import { BookHeart, Pen, Plus } from "lucide-react";
 import { iconMdStyles, iconSmStyles, iconLgStyles } from "@data/styles";
+import "../globals.css"
 
 const optionButtons = [
   {
@@ -34,8 +36,8 @@ const css = {
   container:
     "h-auto w-[calc(100%-24px)] max-w-156 p-6 br-lg bg-white shadow-xl",
   wrapperButtons: "flex flex-col gap-4 mb-4",
-  h2: "text-left",
-  button: "button font-medium",
+  h2: "!text-left",
+  button: "h-10 button",
 };
 
 const AdminPannel = () => {
@@ -44,7 +46,7 @@ const AdminPannel = () => {
       <div className={`${css.container}`}>
         <h1 className="mb-2">Seja bem vindo Fulano</h1>
         <h2 className={`${css.h2}`}>
-          Esse é o seu painel de Administrador. O que você quer fazer?
+          Este é o seu painel de Administrador <br /> O que você quer fazer?
         </h2>
 
         <div className={`${css.wrapperButtons}`}>

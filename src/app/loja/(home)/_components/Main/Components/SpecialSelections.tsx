@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import MainCardProduct from "./MainCardProduct";
-import type { SpecialSelectionSchema, GenderKey } from "@src/types/types";
-import { HomeDataContext } from "@src/contexts/HomeDataContext";
+import type { SpecialSelectionSchema, GenderKey } from "@/types/types";
+import { HomeDataContext } from "@contexts/HomeDataContext";
 
 const css = {
   section: "pb-0",
