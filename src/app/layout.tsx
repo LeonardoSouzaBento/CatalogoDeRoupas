@@ -4,13 +4,13 @@ import { DM_Sans, Poppins, Cookie } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500"], // selecione os pesos que precisa
+  weight: ["300", "400", "500", "600",], // selecione os pesos que precisa
   variable: "--font-p",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["200","300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-h",
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="pt-br"
       className={`${dmSans.variable} ${poppins.variable} ${cookie.variable}`}
     >
-      <body >{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

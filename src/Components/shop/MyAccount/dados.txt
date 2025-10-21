@@ -1,0 +1,7 @@
+Tamanho,Largura (Peito/Tórax) (cm) - Faixa Média,Largura (Ombro a Ombro) (cm) - Faixa Média
+PP,44 - 48,38 - 40
+P,47 - 54,40 - 45
+M,51 - 57,42 - 47
+G,55 - 61,44 - 49
+GG,59 - 65,46 - 51
+GGG (ou XGG/EG),64 - 70,50 - 56

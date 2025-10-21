@@ -1,7 +1,9 @@
 import React from "react";
 
+//border-b border-gray-300
+
 const css = {
-  css: "text-violet-800 font-normal text-center mb-7 text-[1.440em] sm:text-[1.487em] md:text-[1.509em] lg:text-[1.555em] xl:text-[1.600em] 2xl:text-[1.645em] border-b border-gray-200 pb-2",
+  css: "text-gray-500 font-normal font-p text-center mb-7 pb-2 text-[1.230em] sm:text-[1.259em] md:text-[1.273em] lg:text-[1.302em] xl:text-[1.330em] 2xl:text-[1.358em]",
   plansSection: "!mb-6",
 };
 
