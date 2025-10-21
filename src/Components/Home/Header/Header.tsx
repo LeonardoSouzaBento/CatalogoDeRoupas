@@ -1,33 +1,23 @@
-import { Menu } from "lucide-react";
 import React from "react";
 
 const css = {
-  header: "bg-violet-800 p-6",
-  divLogo: "",
-  nav: "flex justify-between md:grid md:grid-cols-4 md:gap-4 md:align-start ",
-  p: "text-indigo-50",
-  a: "font-h text-indigo-50 w-max text-[1.180em] sm:text-[1.200em] md:text-[1.210em] lg:text-[1.230em] xl:text-[1.250em] 2xl:text-[1.270em]",
-  nameShop: "",
-  shopSubtitle: "",
-  wrapperIcon: "",
-  icon: { color: "white", strokeWidth: 2.3 },
+  header:
+    "size-auto",
+  divLogo:
+    "w-full h-24 bg-gradient-to-t from-black to-stone-800 centralize flex-col relative z-8 rounded-none",
+  pLogo:
+    "leading-none mb-1 font-logo text-white text-[1.780em] sm:text-[1.830em] md:text-[1.854em] lg:text-[1.902em] xl:text-[1.950em] 2xl:text-[1.998em]",
+  pSubtitle:
+    "leading-none text-white font-h font-light text-[1.050em] sm:text-[1.053em] md:text-[1.054em] lg:text-[1.057em] xl:text-[1.060em] 2xl:text-[1.063em]",
 };
 
 const Header = (): React.ReactElement => {
   return (
-    <header className={`${css.header}`}>
+    <header className={css.header}>
       <div className={`${css.divLogo}`}>
-        <p className={`${css.nameShop}`}></p>
-        <p className={`${css.shopSubtitle}`}></p>
+        <p className={`${css.pLogo}`}>Roupas Online</p>
+        <p className={`${css.pSubtitle}`}>Guardamos suas curtidas</p>
       </div>
-      <nav className={`${css.nav}`}>
-        <a className={`${css.a}`}>Como Funciona</a>
-        <a className={`${css.a}`}>Preços</a>
-        <a className={`${css.a}`}>Fale Conosco</a>
-        <span className={`${css.wrapperIcon}`}>
-          <Menu {...css.icon} />
-        </span>
-      </nav>
     </header>
   );
 };

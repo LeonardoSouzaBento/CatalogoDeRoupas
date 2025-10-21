@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const css = {
   wrapperButtonCall: "size-auto flex",
   buttonCall:
-    "h-13 flex items-center justify-center px-6 rounded-[26px] bg-yellow-500 shadow-xl text-violet-900 font-h font-semibold leading-5 text-[1.18em] xl:text-[1.33em] cursor-pointer hover:bg-amber-500 transition-color duration-300",
+    "h-13 w-full max-w-86 flex items-center justify-center px-6 rounded-xl bg-yellow-400 text-stone-800 font-h font-semibold leading-5 cursor-pointer hover:bg-yellow-500 transition-color duration-300 text-[1.180em] sm:text-[1.206em] md:text-[1.219em] lg:text-[1.245em] xl:text-[1.270em] 2xl:text-[1.295em]",
 };
 
 const ButtonCall = ({
@@ -15,13 +17,21 @@ const ButtonCall = ({
   specifStyles?: string;
   hideInMobile?: boolean | null;
 }): React.ReactElement => {
+  const router = useRouter();
+
+  function handleNavigate() {
+    if (text === "one") {
+      router.push("/loja");
+    }
+  }
+
   return (
     <div
       className={`${css.wrapperButtonCall} ${specifStyles} ${
         hideInMobile ? "hidden md:!flex" : "flex md:!hidden"
       }`}
     >
-      <button className={`${css.buttonCall}`}>
+      <button className={`${css.buttonCall}`} onClick={handleNavigate}>
         {text === "one" ? "Ver Um Catálogo Completo" : "Criar Meu Catálogo"}
       </button>
     </div>

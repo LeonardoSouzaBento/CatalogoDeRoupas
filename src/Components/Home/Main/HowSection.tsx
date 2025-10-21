@@ -4,7 +4,7 @@ import {
   TitleSection,
   SubtitleSection,
   MainImage,
-} from "@/Components/Home/Ui/index";
+} from "../Ui/index";
 
 const Messages = () => {
   const css = {
@@ -13,8 +13,8 @@ const Messages = () => {
     wrapperPNumber:
       "h-8 min-w-8 flex justify-center items-center rounded-[50%] bg-teal-500",
     pNumber:
-      "!text-violet-800 font-semibold font-p text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
-    p: "font-p !text-violet-900 font-normal -mt-[1px] text-left text-[1.320em] sm:text-[1.343em] md:text-[1.355em] lg:text-[1.377em] xl:text-[1.400em] 2xl:text-[1.423em]",
+      "!text-white font-semibold font-p text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
+    p: "font-p text-gray-800 font-normal -mt-[1px] text-left text-[1.320em] sm:text-[1.343em] md:text-[1.355em] lg:text-[1.377em] xl:text-[1.400em] 2xl:text-[1.423em]",
   };
 
   return (

@@ -10,7 +10,7 @@ import {
 export const TextContent = () => {
   const css = {
     wrapperP: "flex gap-3 items-start mb-9 sm:max-w-142 md:max-w-full m-auto",
-    p: "text-violet-900 -mt-[7px] leading-8 text-[1.3em] xl:text-[1.4em]",
+    p: "text-gray-800 -mt-[7px] leading-8 text-[1.3em] xl:text-[1.4em]",
     strong: "font-medium",
   };
 
