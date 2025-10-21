@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from "react";
-import type { ProviderType } from "@src/types/types";
-import type { UserData } from "@src/types/types";
+import type { ProviderType } from "@/types/types";
+import type { UserData } from "@/types/types";
 import { defaultUserData } from "../UserDataContext";
 import { UserDataContext } from "../UserDataContext";
 

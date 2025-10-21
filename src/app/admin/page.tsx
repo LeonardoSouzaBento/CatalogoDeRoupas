@@ -1,10 +1,32 @@
 import React from "react";
+import { BookHeart, Pen, Plus } from "lucide-react";
+import { iconMdStyles, iconSmStyles, iconLgStyles } from "@data/styles";
 
 const optionButtons = [
-  { name: "Editar Página Inicial", path: "adicionar-produto" },
-  { name: "Adicionar Produto", path: "adicionar-produto" },
-  { name: "Atualizar Produtos", path: "adicionar-produto" },
-  { name: "Ver Favoritos Do Usúario", path: "adicionar-produto" },
+  {
+    name: "Editar Página Inicial",
+    path: "adicionar-produto",
+    icon: Pen,
+    iconStyle: iconSmStyles,
+  },
+  {
+    name: "Adicionar Produto",
+    path: "adicionar-produto",
+    icon: Plus,
+    iconStyle: iconLgStyles,
+  },
+  {
+    name: "Atualizar Produtos",
+    path: "adicionar-produto",
+    icon: Pen,
+    iconStyle: iconSmStyles,
+  },
+  {
+    name: "Ver Favoritos Do Usúario",
+    path: "adicionar-produto",
+    icon: BookHeart,
+    iconStyle: iconMdStyles,
+  },
 ];
 
 const css = {
@@ -28,6 +50,7 @@ const AdminPannel = () => {
         <div className={`${css.wrapperButtons}`}>
           {optionButtons.map((button) => (
             <button key={button.name} className={`${css.button}`}>
+              <button.icon {...button.iconStyle}/>
               {button.name}
             </button>
           ))}

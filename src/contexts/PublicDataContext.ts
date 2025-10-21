@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import type { ShopInfo } from "@src/types/types";
-import { defaultShopInfo } from "@src/data/home/publicData";
+import type { ShopInfo } from "@localtypes/types";
+import { defaultShopInfo } from "@data/home/publicData";
 
 export interface PublicDataContextType {
   shopInfo: ShopInfo;

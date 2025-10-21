@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { UserData } from "@src/types/types";
+import type { UserData } from "@localtypes/types";
 
 /* Dados padrão */
 export const defaultUserData: UserData = {

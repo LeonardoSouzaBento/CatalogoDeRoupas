@@ -1,10 +1,12 @@
+import { UserDataProvider } from "@/contexts/Providers/UserDataProvider";
+import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
 import type { Metadata } from "next";
 import "./globals.css";
 import { DM_Sans, Poppins, Cookie } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600",], // selecione os pesos que precisa
+  weight: ["300", "400", "500", "600"], // selecione os pesos que precisa
   variable: "--font-p",
 });
 
@@ -35,7 +37,11 @@ export default function RootLayout({
       lang="pt-br"
       className={`${dmSans.variable} ${poppins.variable} ${cookie.variable}`}
     >
-      <body>{children}</body>
+      <PublicDataProvider>
+        <UserDataProvider>
+          <body>{children}</body>
+        </UserDataProvider>
+      </PublicDataProvider>
     </html>
   );
 }

@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from "react";
 import { PublicDataContext } from "@contexts/PublicDataContext";
-import { defaultShopInfo } from "@src/data/home/publicData";
+import { defaultShopInfo } from "@/data/home/publicData";
 import type { ProviderType } from "@localtypes/types";
 import type { ShopInfo } from "@localtypes/types";
 
