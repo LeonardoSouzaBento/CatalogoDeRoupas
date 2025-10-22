@@ -5,9 +5,9 @@ import React from "react";
 const css = {
   wrapper: `w-full flex flex-col items-start gap-2 mb-4`,
   wrapperInput: `w-full flex flex-col items-start gap-2`,
-  button: "base-button-light min-w-9 !h-9 !px-0 centralize mr-0",
+  button: "button min-w-9 !h-9 !px-0 centralize mr-0",
   wrapperButton: "w-full flex justify-end",
-  saveButton: "base-button-light w-full !justify-center",
+  saveButton: "button w-full !justify-center",
   label: "font-p font-medium",
 };
 

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "material-symbols/outlined.css";
 
 /* 
 sm	 (640px)
@@ -10,7 +11,7 @@ xl   (1280px)
 
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -41,6 +42,28 @@ body {
   position: relative;
 }
 
+textarea::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: oklch(87% 0 0); /* cor botão */
+  border-radius: 6px;
+}
+textarea{
+  scrollbar-width: thin; /* Opções: auto | thin | none */ 
+  scrollbar-color: oklch(87% 0 0) #ffffff00; /*botão | fundo */
+}
+
+div{
+  scrollbar-width: none;
+}
+div::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
 @theme {
   --font-h: "Poppins", "sans-serif";
   --font-p: "DM Sans", "sans-serif";
@@ -69,7 +92,10 @@ body {
   @apply text-[1.058em] sm:text-[1.062em] md:text-[1.063em] lg:text-[1.067em] xl:text-[1.070em] 2xl:text-[1.073em];
 }
 .button {
-  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium font-bt px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium font-h px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+}
+.p-button {
+  @apply cursor-pointer font-medium font-h leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
 }
 .button2 {
   @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
@@ -126,7 +152,7 @@ body {
 }
 
 /* background */
-.bg-bt {
+.bg-button {
   @apply bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
 }
 .bg-bt2 {

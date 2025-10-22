@@ -11,7 +11,7 @@ const css = {
   label:
     `${h3Sizes} leading-5 font-h font-medium !text-neutral-800 border-b border-neutral-300 pb-[14px]`,
   wrapperButtons: "flex items-start gap-3",
-  buttonSend: "base-button-light",
+  buttonSend: "button",
   buttonClose: "h-9 w-9 absolute top-2 right-2 br-xs centralize bg-bt",
 };
 

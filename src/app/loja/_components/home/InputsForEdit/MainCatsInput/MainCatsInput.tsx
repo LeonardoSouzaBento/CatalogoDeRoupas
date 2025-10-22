@@ -7,7 +7,7 @@ import { Eye, EyeClosed, Plus } from "lucide-react";
 const css = {
   wrapper: "py-2 pb-0",
   wrapperUserGenders: "flex flex-col pb-3 gap-3 sm:flex-row ",
-  buttonGender: "base-button-light w-full sm:max-w-80 max-[350px]:!leading-4 ",
+  buttonGender: "button w-full sm:max-w-80 max-[350px]:!leading-4 ",
   wrapperPInfo:
     "min-h-10 w-full p-3 mb-4 flex justify-start items-center gap-2 bg-gray-100 rounded-sm",
   infoP: "small-p",
@@ -18,7 +18,7 @@ const css = {
   img: "size-full object-cover",
   p: "",
   input: "",
-  button: "base-button-light ",
+  button: "button ",
   icon: iconMdStyles,
 };
 

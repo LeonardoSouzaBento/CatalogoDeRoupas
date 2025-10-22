@@ -13,7 +13,7 @@ const css = {
     "w-full p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative",
   containerEditMode: "sm:!flex-col !items-start p-5 pt-4 gap-4 rounded-md",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
-  button: "base-button-light min-w-max",
+  button: "button min-w-max",
   img: "",
   wrapperMap:
     "w-full h-[80vw] md:h-[55vw] lg:h-[44vw] xl:h-[33vw] m-auto p-4 bg-white shadow-md hover:shadow-lg fast-trans relative",

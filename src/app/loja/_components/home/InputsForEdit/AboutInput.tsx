@@ -21,7 +21,7 @@ const css = {
   wrapperButtons:
     "w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2",
   buttons:
-    "w-full sm:w-70 md:w-max base-button-light !justify-start text-[1.025em] xl:text-[1.035em]",
+    "w-full sm:w-70 md:w-max button !justify-start text-[1.025em] xl:text-[1.035em]",
   icon: { strokeWidth: 2.3, size: 19.5 },
 };
 
