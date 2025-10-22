@@ -50,18 +50,22 @@ textarea::-webkit-scrollbar-thumb {
   background: oklch(87% 0 0); /* cor botão */
   border-radius: 6px;
 }
-textarea{
-  scrollbar-width: thin; /* Opções: auto | thin | none */ 
+textarea {
+  scrollbar-width: thin; /* Opções: auto | thin | none */
   scrollbar-color: oklch(87% 0 0) #ffffff00; /*botão | fundo */
 }
 
-div{
+div {
   scrollbar-width: none;
 }
 div::-webkit-scrollbar {
   width: 0;
   height: 0;
   visibility: hidden;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 @theme {
@@ -73,13 +77,12 @@ div::-webkit-scrollbar {
 
 /* Estilos Gerais */
 /*Para spans google icons*/
-.span-fill {
-  @apply [font-variation-settings:'FILL'_1];
+.line-span {
+  @apply [font-variation-settings:'FILL'_0];
 }
 .zoom-in-span {
   @apply scale-110;
 }
-
 
 /*Estilos de Componentes*/
 .h1-sizes {
@@ -89,13 +92,16 @@ div::-webkit-scrollbar {
   @apply text-[1.010em] sm:text-[1.022em] md:text-[1.027em] lg:text-[1.039em] xl:text-[1.050em] 2xl:text-[1.061em];
 }
 .small-p {
-  @apply text-[1.058em] sm:text-[1.062em] md:text-[1.063em] lg:text-[1.067em] xl:text-[1.070em] 2xl:text-[1.073em];
+  @apply font-p text-[1.063em] sm:text-[1.067em] md:text-[1.068em] lg:text-[1.072em] xl:text-[1.075em] 2xl:text-[1.078em];
 }
 .button {
-  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium font-h px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium font-h px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide capitalize;
 }
 .p-button {
   @apply cursor-pointer font-medium font-h leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+}
+.square-button {
+  @apply h-10 w-10 flex justify-center items-center gap-3 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
 }
 .button2 {
   @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
@@ -128,6 +134,9 @@ div::-webkit-scrollbar {
 .bs {
   @apply border border-black;
 }
+.br-0 {
+  @apply rounded-none;
+}
 .br-sm {
   @apply rounded-sm;
 }
@@ -144,7 +153,7 @@ div::-webkit-scrollbar {
 .normal-border {
   @apply border border-gray-300;
 }
-.normal-border-color {
+.border-color {
   @apply border-gray-300;
 }
 .light-border-color {
