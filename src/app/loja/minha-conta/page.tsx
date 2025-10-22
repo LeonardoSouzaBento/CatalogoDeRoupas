@@ -3,7 +3,7 @@ import MeasuresCard from "./_components/MeasuresCard/MeasuresCard";
 import UserCard from "./_components/UserCard";
 import HeaderCard from "./_components//HeaderCard";
 import React from "react";
-import TitlePage from "@/components/TitlePage";
+import TitlePage from "@/ui/TitlePage";
 import "./page.css";
 
 const css = {
