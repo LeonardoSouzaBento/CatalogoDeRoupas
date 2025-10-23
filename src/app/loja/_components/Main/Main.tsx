@@ -1,16 +1,16 @@
 import React from "react";
 import {
-  UserCategoryList,
+  UserGenderList,
   SpecialSelections,
   MainCategories,
   FindUsSection,
-} from "./Components";
+} from "./components";
 import "./main.css"
 
 const Main = (): React.ReactElement => {
   return (
     <main className="w-[calc(100%-24px)] max-w-[1180px] m-auto">
-      <UserCategoryList />
+      <UserGenderList />
       <SpecialSelections />
       <MainCategories />
       <FindUsSection />

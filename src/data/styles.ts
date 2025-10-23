@@ -7,6 +7,7 @@ export const h3Sizes =
 export const iconSmStyles = { strokeWidth: 2.7, size: 17, color: gray800 };
 export const iconMdStyles = { strokeWidth: 2.3, size: 19.5, color: gray800 };
 export const iconLgStyles = { strokeWidth: 2.2, size: 21, color: gray800 };
+export const icon2LgStyles = { strokeWidth: 2, size: 24, color: gray800 };
 export const iconXlStyles = { strokeWidth: 1.8, size: 28, color: gray800 };
 
 export const pStyles = `font-p text-gray-800 text-[1.125em] sm:text-[1.132em] md:text-[1.136em] lg:text-[1.143em] xl:text-[1.150em] 2xl:text-[1.157em] cursor-default`;

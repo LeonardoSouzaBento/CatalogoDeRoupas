@@ -21,7 +21,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@localtypes/*": ["./src/types/*"],
-      "@components/*": ["src/ui/*"],
+      "@components/*": ["./src/ui/*"],
       "@contexts/*": ["./src/contexts/*"],
       "@providers/*": ["./src/contexts/Providers/*"],
       "@data/*": ["./src/data/*"],

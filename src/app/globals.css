@@ -94,6 +94,9 @@ div::-webkit-scrollbar {
 .small-p {
   @apply font-p text-[1.063em] sm:text-[1.067em] md:text-[1.068em] lg:text-[1.072em] xl:text-[1.075em] 2xl:text-[1.078em];
 }
+.p-title{
+  @apply font-p font-medium text-gray-800 text-left text-[1.1925em] sm:text-[1.19992em] md:text-[1.20416em] lg:text-[1.21158em] xl:text-[1.219em] 2xl:text-[1.22642em];
+}
 .button {
   @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-medium font-h px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide capitalize;
 }

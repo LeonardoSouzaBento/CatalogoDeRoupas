@@ -4,11 +4,11 @@ import type { ButtonType } from "./components/Button";
 import NameShopInput from "../InputsForEdit/NameShopInput";
 import { User, Menu, Search, Heart } from "lucide-react";
 
-const buttonNameIcons: ButtonType[] = [
-  { icon: User, name: "Minha Conta" },
-  { icon: Menu, name: "Mais Opções" },
-  { icon: Search, isSearchButton: true },
-  { icon: Heart, name: "Favoritos" },
+const buttons: ButtonType[] = [
+  { icon: User, name: "Minha Conta", link: "/loja/minha-conta"},
+  { icon: Menu, name: "Mais Opções",},
+  { icon: Search, isSearchButton: true, link: "/loja/pesquisar"},
+  { icon: Heart, name: "Favoritos", link: "/loja/favoritos"},
 ];
 
 const css = {
@@ -37,12 +37,13 @@ const Header = (): React.ReactElement => {
       <header className={css.header}>
         <div className={`${css.wrapper}`}>
           <nav className={`${css.nav}`}>
-            {buttonNameIcons.map((button, index) => (
+            {buttons.map((button, index) => (
               <Button
                 key={index}
                 icon={button.icon}
                 isSearchButton={button.isSearchButton}
                 name={button.name}
+                link={button.link}
               />
             ))}
           </nav>

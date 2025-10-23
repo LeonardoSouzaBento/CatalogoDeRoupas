@@ -25,7 +25,7 @@
   }
   input,
   textarea {
-    @apply text-neutral-800 text-[1.150em] sm:text-[1.154em] md:text-[1.157em] lg:text-[1.161em] xl:text-[1.165em] 2xl:text-[1.169em];
+    @apply text-neutral-800 font-normal text-[1.150em] sm:text-[1.154em] md:text-[1.157em] lg:text-[1.161em] xl:text-[1.165em] 2xl:text-[1.169em];
   }
   div {
     @apply rounded-sm;

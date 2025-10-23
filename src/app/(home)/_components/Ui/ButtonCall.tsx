@@ -21,7 +21,7 @@ const ButtonCall = ({
 
   function handleNavigate() {
     if (text === "one") {
-      router.push("/loja");
+      router.push("/loja/");
     }
   }
 

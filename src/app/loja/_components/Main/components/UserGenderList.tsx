@@ -39,7 +39,7 @@ function getOrderClass(index: number, selectedIndex: number): string {
   return `order-${index}`;
 }
 
-const UserCategoryList = (): React.ReactElement => {
+const UserGenderList = (): React.ReactElement => {
   const { userCategories, selectedChildGender, setSelectedChildGender } =
     useContext(HomeDataContext);
   const { selectedGender, setSelectedGender } = useContext(HomeDataContext);
@@ -67,8 +67,8 @@ const UserCategoryList = (): React.ReactElement => {
 
   return (
     <section className={css.section}>
-      <h1 className={css.h1}>Selecione Uma Categoria</h1>
-      <h2 className={`${css.h2}`}>E explore as principais coleções</h2>
+      <h1 className={css.h1}>Selecione Um Gênero</h1>
+      <h2 className={`${css.h2}`}>E explore as coleções relacionadas</h2>
       <div className={css.container}>
         {userCategories.map((item, index) => {
           const orderClass = getOrderClass(index, selectedIndex);
@@ -137,4 +137,4 @@ const UserCategoryList = (): React.ReactElement => {
   );
 };
 
-export default UserCategoryList;
+export default UserGenderList;
