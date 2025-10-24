@@ -3,26 +3,21 @@ import Button from "./components/Button";
 import type { ButtonType } from "./components/Button";
 import NameShopInput from "../InputsForEdit/NameShopInput";
 import { User, Menu, Search, Heart } from "lucide-react";
+import LogoHeader from "../../../(home)/_components/LogoHeader";
 
 const buttons: ButtonType[] = [
-  { icon: User, name: "Minha Conta", link: "/loja/minha-conta"},
-  { icon: Menu, name: "Mais Opções",},
-  { icon: Search, isSearchButton: true, link: "/loja/pesquisar"},
-  { icon: Heart, name: "Favoritos", link: "/loja/favoritos"},
+  { icon: User, name: "Minha Conta", link: "/loja/minha-conta" },
+  { icon: Menu, name: "Mais Opções" },
+  { icon: Search, isSearchButton: true, link: "/loja/pesquisar" },
+  { icon: Heart, name: "Favoritos", link: "/loja/favoritos" },
 ];
 
 const css = {
   header:
-    "size-auto sticky top-0 left-0 z-5 shadow-md bg-white/30 backdrop-blur-sm border-b border-white/25",
+    "size-auto py-2 sticky top-0 left-0 z-5 bg-white/36 backdrop-blur-sm shadow-sm/13",
   wrapper:
-    "w-[calc(100%-32px)] max-w-[1180px] m-auto py-4 flex justify-between items-center flex-wrap gap-4 sm:flex-nowrap md:justify-center lg:gap-8",
-  divLogo:
-    "w-full h-24 bg-gradient-to-b from-black to-stone-800 centralize flex-col relative z-8 rounded-none",
+    "w-[calc(100%-32px)] max-w-[1180px] m-auto flex justify-between items-center flex-wrap gap-4 sm:flex-nowrap md:justify-center lg:gap-8",
   nav: "h-16 w-full flex justify-between items-center sm:justify-center gap-3 sm:gap-4 md:gap-5 flex-auto",
-  pLogo:
-    "leading-none mb-1 font-logo text-white text-[1.780em] sm:text-[1.830em] md:text-[1.854em] lg:text-[1.902em] xl:text-[1.950em] 2xl:text-[1.998em]",
-  pSubtitle:
-    "leading-none text-white font-h font-light text-[1.050em] sm:text-[1.053em] md:text-[1.054em] lg:text-[1.057em] xl:text-[1.060em] 2xl:text-[1.063em]",
 };
 
 const Header = (): React.ReactElement => {
@@ -30,10 +25,7 @@ const Header = (): React.ReactElement => {
 
   return (
     <>
-      <div className={`${css.divLogo}`}>
-        <p className={`${css.pLogo}`}>Roupas Online</p>
-        <p className={`${css.pSubtitle}`}>Guardamos suas curtidas</p>
-      </div>
+      <LogoHeader />
       <header className={css.header}>
         <div className={`${css.wrapper}`}>
           <nav className={`${css.nav}`}>

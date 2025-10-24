@@ -1,4 +1,4 @@
-import Header from "./_components/Header/Header";
+import LogoHeader from "./_components/LogoHeader";
 import {
   WhySection,
   PlansSection,
@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <LogoHeader />
       <main className="pb-4 xl:pb-9">
         <MainSection />
         <div className={`${css.wrapper}`}>

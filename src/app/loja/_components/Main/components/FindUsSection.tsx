@@ -6,6 +6,8 @@ import AddressInput from "../../InputsForEdit/FindUs/AddressInput";
 import MapInput from "../../InputsForEdit/FindUs/MapInput";
 import type { AddressSchema } from "@/types/types";
 import WrapperForm from "./WrapperForm";
+import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
+import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
   wrapper: "w-full m-auto max-w-210 flex flex-col gap-3",
@@ -74,189 +76,197 @@ const FindUsSection = (): React.ReactElement => {
   }
 
   return (
-    <section className="border-none">
-      <h1>Nos Encontre</h1>
-      <h2>Visite nossa loja ou fale conosco</h2>
-      <div>
-        <div className={`${css.wrapper}`}>
-          <div
-            className={`${css.container} ${seePhoneInput && css.containerEditMode}`}
-          >
-            {!seePhoneInput && (
-              <div className={`${css.wrapperInfo}`}>
-                <span className="material-symbols-outlined span-fill">
-                  call
-                </span>
-
-                <div className={`${css.wrapperPs}`}>
-                  <p className={`${css.firstP}`}>
-                    <strong>Whatsapp:</strong>
-                  </p>
-                  <p>{shopInfo.contact}</p>
+    <section className={`${shopHomeSection}`}>
+      <div className={`${shopHomeWrapperSection} !border-none`}>
+        <HomeTitleSubtitle
+          title="Nos Encontre"
+          subtitle="Visite nossa loja ou fale conosco"
+        />
+        <div>
+          <div className={`${css.wrapper}`}>
+            <div
+              className={`${css.container} ${
+                seePhoneInput && css.containerEditMode
+              }`}
+            >
+              {!seePhoneInput && (
+                <div className={`${css.wrapperInfo}`}>
+                  <span className="material-symbols-outlined span-fill">
+                    call
+                  </span>
+                  <div className={`${css.wrapperPs}`}>
+                    <p className={`${css.firstP}`}>
+                      <strong>Whatsapp:</strong>
+                    </p>
+                    <p>{shopInfo.contact}</p>
+                  </div>
                 </div>
-              </div>
-            )}
-            {seePhoneInput && (
-              <WrapperForm
-                title="Adicione Seu Whatsapp"
-                seeButtonClose={true}
-                setState={setSeePhoneInput}
-              >
-                <ContactInput
-                  setPhoneSaved={setPhoneSaved}
-                  shopInfo={shopInfo}
-                  setShopInfo={setShopInfo}
-                  canSavePhone={canSavePhone}
-                />
-              </WrapperForm>
-            )}
-            {!seePhoneInput && (
-              <button
-                className={`${css.button}`}
-                onClick={() => {
-                  handleClickCopy(shopInfo.contact, "phone");
-                }}
-              >
-                {!phoneCopied ? (
-                  <Copy {...css.icon} />
-                ) : (
-                  <CopyCheck {...css.icon} />
-                )}
-                {!phoneCopied ? "Copiar Telefone" : "Copiado!"}
-              </button>
-            )}
-            {seePhoneInput && (
-              <button
-                className={`${css.button}`}
-                onClick={() => {
-                  setCanSavePhone(true);
-                  setTimeout(() => {
-                    setCanSavePhone(false);
-                  }, 200);
-                }}
-              >
-                {!phoneSaved ? "Salvar Whatsapp" : "Salvo!"}
-                {!phoneSaved ? (
-                  <Check {...css.iconCheck} />
-                ) : (
-                  <CheckCheck {...css.iconCheck} />
-                )}
-              </button>
-            )}
-          </div>
-
-          <div
-            className={`${css.container} ${seeAddressInput && css.containerEditMode}`}
-          >
-            {!seeAddressInput && (
-              <div className={`${css.wrapperInfo}`}>
-                <span className="material-symbols-outlined span-fill zoom-in-span">
-                  home_pin
-                </span>
-                <div className={`${css.wrapperPs}`}>
-                  <p className={`${css.firstP}`}>
-                    <strong>Onde estamos:</strong>
-                  </p>
-                  <p>{shopAddressFormatted}</p>
+              )}
+              {seePhoneInput && (
+                <WrapperForm
+                  title="Adicione Seu Whatsapp"
+                  seeButtonClose={true}
+                  setState={setSeePhoneInput}
+                >
+                  <ContactInput
+                    setPhoneSaved={setPhoneSaved}
+                    shopInfo={shopInfo}
+                    setShopInfo={setShopInfo}
+                    canSavePhone={canSavePhone}
+                  />
+                </WrapperForm>
+              )}
+              {!seePhoneInput && (
+                <button
+                  className={`${css.button}`}
+                  onClick={() => {
+                    handleClickCopy(shopInfo.contact, "phone");
+                  }}
+                >
+                  {!phoneCopied ? (
+                    <Copy {...css.icon} />
+                  ) : (
+                    <CopyCheck {...css.icon} />
+                  )}
+                  {!phoneCopied ? "Copiar Telefone" : "Copiado!"}
+                </button>
+              )}
+              {seePhoneInput && (
+                <button
+                  className={`${css.button}`}
+                  onClick={() => {
+                    setCanSavePhone(true);
+                    setTimeout(() => {
+                      setCanSavePhone(false);
+                    }, 200);
+                  }}
+                >
+                  {!phoneSaved ? "Salvar Whatsapp" : "Salvo!"}
+                  {!phoneSaved ? (
+                    <Check {...css.iconCheck} />
+                  ) : (
+                    <CheckCheck {...css.iconCheck} />
+                  )}
+                </button>
+              )}
+            </div>
+            <div
+              className={`${css.container} ${
+                seeAddressInput && css.containerEditMode
+              }`}
+            >
+              {!seeAddressInput && (
+                <div className={`${css.wrapperInfo}`}>
+                  <span className="material-symbols-outlined span-fill zoom-in-span">
+                    home_pin
+                  </span>
+                  <div className={`${css.wrapperPs}`}>
+                    <p className={`${css.firstP}`}>
+                      <strong>Onde estamos:</strong>
+                    </p>
+                    <p>{shopAddressFormatted}</p>
+                  </div>
                 </div>
-              </div>
-            )}
-            {seeAddressInput && (
-              <WrapperForm
-                title="Adicione Seu Endereço"
-                seeButtonClose={true}
-                setState={setSeeAddressInput}
-              >
-                <AddressInput
-                  canSaveAddress={canSaveAddress}
-                  setAddressSaved={setAddressSaved}
-                  shopInfo={shopInfo}
-                  setShopInfo={setShopInfo}
+              )}
+              {seeAddressInput && (
+                <WrapperForm
+                  title="Adicione Seu Endereço"
+                  seeButtonClose={true}
+                  setState={setSeeAddressInput}
+                >
+                  <AddressInput
+                    canSaveAddress={canSaveAddress}
+                    setAddressSaved={setAddressSaved}
+                    shopInfo={shopInfo}
+                    setShopInfo={setShopInfo}
+                  />
+                </WrapperForm>
+              )}
+              {!seeAddressInput && (
+                <button
+                  className={`${css.button}`}
+                  onClick={() => {
+                    handleClickCopy(shopAddressFormatted, "address");
+                  }}
+                >
+                  {!addressCopied ? (
+                    <Copy {...css.icon} />
+                  ) : (
+                    <CopyCheck {...css.icon} />
+                  )}
+                  {!addressCopied ? "Copiar Link Do Mapa" : "Copiado!"}
+                </button>
+              )}
+              {seeAddressInput && (
+                <button
+                  className={`${css.button}`}
+                  onClick={() => {
+                    setCanSaveAddress(true);
+                    setTimeout(() => {
+                      setCanSaveAddress(false);
+                    }, 200);
+                  }}
+                >
+                  {!addressSaved ? "Salvar Endereço" : "Salvo!"}
+                  {!addressSaved ? (
+                    <Check {...css.iconCheck} />
+                  ) : (
+                    <CheckCheck {...css.iconCheck} />
+                  )}
+                </button>
+              )}
+            </div>
+            <div
+              className={`${css.wrapperMap} ${
+                seeMapInput && css.wrapperMapEditMode
+              }`}
+            >
+              {!seeMapInput && (
+                <iframe
+                  className="rounded-sm"
+                  src={shopInfo.urlMap}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
-              </WrapperForm>
-            )}
-            {!seeAddressInput && (
-              <button
-                className={`${css.button}`}
-                onClick={() => {
-                  handleClickCopy(shopAddressFormatted, "address");
-                }}
-              >
-                {!addressCopied ? (
-                  <Copy {...css.icon} />
-                ) : (
-                  <CopyCheck {...css.icon} />
-                )}
-                {!addressCopied ? "Copiar Link Do Mapa" : "Copiado!"}
-              </button>
-            )}
-            {seeAddressInput && (
-              <button
-                className={`${css.button}`}
-                onClick={() => {
-                  setCanSaveAddress(true);
-                  setTimeout(() => {
-                    setCanSaveAddress(false);
-                  }, 200);
-                }}
-              >
-                {!addressSaved ? "Salvar Endereço" : "Salvo!"}
-                {!addressSaved ? (
-                  <Check {...css.iconCheck} />
-                ) : (
-                  <CheckCheck {...css.iconCheck} />
-                )}
-              </button>
-            )}
-          </div>
-          <div
-            className={`${css.wrapperMap} ${seeMapInput && css.wrapperMapEditMode}`}
-          >
-            {!seeMapInput && (
-              <iframe
-                className="rounded-sm"
-                src={shopInfo.urlMap}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            )}
-            {seeMapInput && (
-              <WrapperForm
-                title="Atualize Seu Mapa"
-                seeButtonClose={true}
-                setState={setSeeMapInput}
-              >
-                <MapInput
-                  canSaveMap={canSaveMap}
-                  setMapSaved={setMapSaved}
-                  setCanSaveMap={setCanSaveMap}
-                  shopInfo={shopInfo}
-                  setShopInfo={setShopInfo}
-                />
-              </WrapperForm>
-            )}
-            {seeMapInput && (
-              <button
-                className={`${css.button}`}
-                onClick={() => {
-                  setCanSaveAddress(true);
-                  setTimeout(() => {
-                    setCanSaveAddress(false);
-                  }, 200);
-                }}
-              >
-                {!mapSaved ? "Atualizar Mapa" : "Mapa Salvo!"}
-                {!mapSaved ? (
-                  <Check {...css.iconCheck} />
-                ) : (
-                  <CheckCheck {...css.iconCheck} />
-                )}
-              </button>
-            )}
+              )}
+              {seeMapInput && (
+                <WrapperForm
+                  title="Atualize Seu Mapa"
+                  seeButtonClose={true}
+                  setState={setSeeMapInput}
+                >
+                  <MapInput
+                    canSaveMap={canSaveMap}
+                    setMapSaved={setMapSaved}
+                    setCanSaveMap={setCanSaveMap}
+                    shopInfo={shopInfo}
+                    setShopInfo={setShopInfo}
+                  />
+                </WrapperForm>
+              )}
+              {seeMapInput && (
+                <button
+                  className={`${css.button}`}
+                  onClick={() => {
+                    setCanSaveAddress(true);
+                    setTimeout(() => {
+                      setCanSaveAddress(false);
+                    }, 200);
+                  }}
+                >
+                  {!mapSaved ? "Atualizar Mapa" : "Mapa Salvo!"}
+                  {!mapSaved ? (
+                    <Check {...css.iconCheck} />
+                  ) : (
+                    <CheckCheck {...css.iconCheck} />
+                  )}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const measuresData: Measure[] = [
 ];
 
 const css = {
-  wrapper: `w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 normal-border !border-r-0 mb-4`,
+  wrapper: `w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 bs !border-r-0 mb-4`,
 };
 
 const MeasuresCard = () => {

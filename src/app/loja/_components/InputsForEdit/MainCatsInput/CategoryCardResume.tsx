@@ -4,7 +4,7 @@ import { Pen, Check, Upload } from "lucide-react";
 import { iconSmStyles, iconMdStyles, inputClasses } from "@data/styles";
 
 const css = {
-  wrapperCardCat: `sm:w-[49%] sm:max-w-[49%] sm:min-h-100 flex flex-col justify-center gap-2 normal-border 
+  wrapperCardCat: `sm:w-[49%] sm:max-w-[49%] sm:min-h-100 flex flex-col justify-center gap-2 bs
      sm:!border-gray-200 p-4 rounded-none hover:shadow-lg fast-trans`,
   wrapperImg: "h-46 w-34 mb-2 rounded-none relative",
   wrapperImgNoEditMode: "border-b-2 border-neutral-700",

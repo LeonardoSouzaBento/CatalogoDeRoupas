@@ -2,13 +2,7 @@ import { UserDataProvider } from "@/contexts/Providers/UserDataProvider";
 import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
 import type { Metadata } from "next";
 import "./globals.css";
-import { DM_Sans, Poppins, Cookie, Outfit } from "next/font/google";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-bt",
-});
+import { DM_Sans, Geologica, Cookie } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -16,9 +10,9 @@ const dmSans = DM_Sans({
   variable: "--font-p",
 });
 
-const poppins = Poppins({
+const geologica = Geologica({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["100", "200","300", "400", "500", "600"],
   variable: "--font-h",
 });
 
@@ -41,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${dmSans.variable} ${poppins.variable} ${cookie.variable} ${outfit.variable}`}
+      className={`${dmSans.variable} ${geologica.variable} ${cookie.variable}`}
     >
       <PublicDataProvider>
         <UserDataProvider>

@@ -19,14 +19,13 @@ import {
 } from "@data/home/homeData";
 
 export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
-  //generos de usuario
-  const [selectedGender, setSelectedGender] = useState<GenderKey>(() => {
-    const stored = localStorage.getItem("selectedGender");
-    return stored ? JSON.parse(stored) : "masculino";
-  });
+  // gênero do usuário
+  const [selectedGender, setSelectedGender] = useState<GenderKey>("masculino");
+
   useEffect(() => {
-    localStorage.setItem("selectedGender", JSON.stringify(selectedGender));
-  }, [selectedGender]);
+    const stored = localStorage.getItem("selectedGender");
+    if (stored) setSelectedGender(JSON.parse(stored));
+  }, []);
 
   // Categorias do usuario para edição
   const [userCategories, setUserCategories] = useState<UserCategory[]>(

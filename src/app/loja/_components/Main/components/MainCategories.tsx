@@ -2,7 +2,9 @@ import React, { useState, useContext } from "react";
 import WrapperForm from "./WrapperForm";
 import MainCatsInput from "../../InputsForEdit/MainCatsInput/MainCatsInput";
 import { HomeDataContext } from "@contexts/HomeDataContext";
+import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
 import Image from "next/image";
+import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
   sectionEditMode: "pb-0 mb-0 m-auto max-w-210",
@@ -35,36 +37,45 @@ const MainCategories = (): React.ReactElement | undefined | null => {
   const selectedMainCategories = mainCategories[associations[selectedGender]];
 
   if (!selectedMainCategories) return null;
-  
+
   return (
-    <section className={`${seeEditSection && css.sectionEditMode}`}>
-      <h1>Categorias de Destaque</h1>
-      <h2>Os mais procurados</h2>
-
-      {!seeEditSection && (
-        <div className={`${css.container}`}>
-          {selectedMainCategories.map((item, index) => (
-            <div key={index} className={`${css.wrapperImg}`}>
-              <Image src={item.urlImg} alt={item.alt} className={`${css.img}`} fill={true}/>
-              <div className={`${css.wrapperP}`}>
-                <p className={`${css.p}`}>{item.name}</p>
+    <section className={`${shopHomeSection}`}>
+      <div
+        className={`${shopHomeWrapperSection} ${seeEditSection && css.sectionEditMode}`}
+      >
+        <HomeTitleSubtitle
+          title="Categorias de Destaque"
+          subtitle="Os mais procurados"
+        />
+        {!seeEditSection && (
+          <div className={`${css.container}`}>
+            {selectedMainCategories.map((item, index) => (
+              <div key={index} className={`${css.wrapperImg}`}>
+                <Image
+                  src={item.urlImg}
+                  alt={item.alt}
+                  className={`${css.img}`}
+                  fill={true}
+                />
+                <div className={`${css.wrapperP}`}>
+                  <p className={`${css.p}`}>{item.name}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {seeEditSection && (
-        <div className={`${css.wrapperEditMode}`}>
-          <WrapperForm
-            title="Defina as principais categorias de cada gênero"
-            seeButtonClose
-            setState={setSeeEditSection}
-          >
-            <MainCatsInput />
-          </WrapperForm>
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+        {seeEditSection && (
+          <div className={`${css.wrapperEditMode}`}>
+            <WrapperForm
+              title="Defina as principais categorias de cada gênero"
+              seeButtonClose
+              setState={setSeeEditSection}
+            >
+              <MainCatsInput />
+            </WrapperForm>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

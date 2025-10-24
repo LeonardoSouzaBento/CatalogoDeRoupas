@@ -7,7 +7,7 @@ const UserInfo = () => {
   const [seeMoreUserInfo, setSeeMoreUserInfo] = useState<boolean>(false);
 
   const css = {
-    mainWrapper: `mb-4 br-lg p-4 border light-border-color`,
+    mainWrapper: `mb-4 br-lg p-4 border bs-light-color`,
     title:
       "mb-2 p-title",
     buttonSeeMore: "button !h-9 !pl-4 !pr-[13px]",
@@ -25,7 +25,7 @@ const UserInfo = () => {
             Informações do usuário selecionado
           </caption>
           <tbody>
-            <tr className="border-b border-color">
+            <tr className="border-b bs-color">
               <th className="font-semibold p-2 align-top">Nome</th>
               <td className="p-2">fulano de tal</td>
             </tr>

@@ -5,7 +5,7 @@ const css = {
   wrapper: `br-md`,
   title: ``,
   wrapperSuggestions: `flex flex-wrap gap-3`,
-  wrapperItem: "min-h-9 centralize px-2 br-sm border border-color",
+  wrapperItem: "min-h-9 centralize px-2 br-sm border bs-color",
 };
 
 const Suggestions = () => {

@@ -2,11 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { HomeDataContext } from "@contexts/HomeDataContext";
 import type { GenderKey } from "@/types/types";
 import Image from "next/image";
+import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
+import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
-  section: "title pt-6 pb-10",
-  h1: "text-neutral-800",
-  h2: "subtitle",
+  section: "title !pt-6",
   container:
     "w-full h-82 sm:h-[180px] max-w-220 m-auto centralize items-end flex-col gap-3 sm:gap-2 sm:flex-row relative",
   wrapper:
@@ -17,12 +17,11 @@ const css = {
   selectedImg:
     "-translate-y-[14vw] sm:-translate-y-[6vw] md:-translate-y-[3vw] opacity-100 mix-blend-normal grayscale-0",
   buttonGender:
-    "h-full min-w-full w-full max-h-18 centralize relative bg-gradient-to-t from-black to-transparent",
+    "h-full min-w-full w-full max-h-18 centralize relative bg-gradient-to-t from-black to-transparent text-white uppercase !font-extralight leading-none text-[1.148em] sm:text-[1.160em] md:text-[1.166em] lg:text-[1.178em] xl:text-[1.189em] 2xl:text-[1.200em] cursor-pointer",
   noSelectedWrapper: "bg-stone-800 sm:bg-transparent",
-  p: "text-white font-h uppercase font-light leading-none text-[1.148em] sm:text-[1.160em] md:text-[1.166em] lg:text-[1.178em] xl:text-[1.189em] 2xl:text-[1.200em] cursor-pointer",
   divButtonsMF:
     "min-w-10 h-full px-3 box-content absolute bottom-0 right-0 flex flex-col justify-center gap-3",
-  buttonsMF: "h-10 min-w-full bg-stone-800 text-white rounded-sm",
+  buttonsMF: "h-10 min-w-full bg-stone-800 text-white rounded-sm font-extralight",
 };
 
 function getOrderClass(index: number, selectedIndex: number): string {
@@ -50,9 +49,6 @@ const UserGenderList = (): React.ReactElement => {
     setSelectedGender(gender);
   }
 
-  console.log(userCategories[0].img);
-  
-
   useEffect(() => {
     if (selectedGender === "feminino") {
       setSelectedIndex(0);
@@ -66,72 +62,70 @@ const UserGenderList = (): React.ReactElement => {
   }, [selectedGender]);
 
   return (
-    <section className={css.section}>
-      <h1 className={css.h1}>Selecione Um Gênero</h1>
-      <h2 className={`${css.h2}`}>E explore as coleções relacionadas</h2>
-      <div className={css.container}>
-        {userCategories.map((item, index) => {
-          const orderClass = getOrderClass(index, selectedIndex);
-          return (
-            <div
-              key={index}
-              id={`${index}`}
-              onClick={() => {
-                handleSelectGender(item.name);
-              }}
-              className={`${css.wrapper}  ${
-                selectedIndex === index
-                  ? css.selectedWrapper
-                  : css.noSelectedWrapper
-              } ${orderClass}`}
-            >
-              <div className={`${css.wrapperImg}`}>
-                <Image
-                  id={`${index}`}
-                  src={`${item.img}`}
-                  alt={`Categoria ${index + 1}`}
-                  className={`${css.img} ${
-                    selectedGender === item.name && css.selectedImg
-                  }`}
-                  fill={true}
-                />
-              </div>
-
-              <button className={`${css.buttonGender}`}>
-                <p className={`${css.p}`}>
-                  {Array.isArray(item.name) ? item.name[0] : item.name}
-                </p>
-              </button>
-
-              {index == 2 && selectedGender == "infantil" && (
-                <div className={`${css.divButtonsMF}`}>
-                  <button
-                    className={`${css.buttonsMF} ${
-                      childSex === "feminino" && "border !border-neutral-400"
-                    } `}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedChildGender("feminino");
-                    }}
-                  >
-                    M
-                  </button>
-                  <button
-                    className={`${css.buttonsMF}  ${
-                      childSex === "masculino" && "border !border-neutral-400"
+    <section className={`${shopHomeSection} bg-gradient-to-t from-neutral-100 to-white`}>
+      <div className={`${css.section} ${shopHomeWrapperSection}`}>
+        <HomeTitleSubtitle
+          title="Selecione Um Gênero"
+          subtitle="E explore as coleções relacionadas"
+        />
+        <div className={css.container}>
+          {userCategories.map((item, index) => {
+            const orderClass = getOrderClass(index, selectedIndex);
+            return (
+              <div
+                key={index}
+                id={`${index}`}
+                onClick={() => {
+                  handleSelectGender(item.name);
+                }}
+                className={`${css.wrapper}  ${
+                  selectedIndex === index
+                    ? css.selectedWrapper
+                    : css.noSelectedWrapper
+                } ${orderClass}`}
+              >
+                <div className={`${css.wrapperImg}`}>
+                  <Image
+                    id={`${index}`}
+                    src={`${item.img}`}
+                    alt={`Categoria ${index + 1}`}
+                    className={`${css.img} ${
+                      selectedGender === item.name && css.selectedImg
                     }`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedChildGender("masculino");
-                    }}
-                  >
-                    F
-                  </button>
+                    fill={true}
+                  />
                 </div>
-              )}
-            </div>
-          );
-        })}
+                <button className={`${css.buttonGender}`}>{item.name}</button>
+                {index == 2 && selectedGender == "infantil" && (
+                  <div className={`${css.divButtonsMF}`}>
+                    <button
+                      className={`${css.buttonsMF} ${
+                        childSex === "feminino" && "border !border-neutral-400"
+                      } `}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedChildGender("feminino");
+                      }}
+                    >
+                      M
+                    </button>
+                    <button
+                      className={`${css.buttonsMF}  ${
+                        childSex === "masculino" && "border !border-neutral-400"
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedChildGender("masculino");
+                      }}
+                    >
+                      F
+                    </button>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -26,7 +26,7 @@ export default UserGenders;
 
 const GenderButton = ({ gender }: { gender: string }) => {
   const css = {
-    wrapper: `h-9 w-1/3 centralize border border-color`,
+    wrapper: `h-9 w-1/3 centralize border bs-color`,
     selected: `bg-button`,
   };
 

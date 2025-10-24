@@ -1,14 +1,15 @@
 import { PublicDataContext } from "@contexts/PublicDataContext";
 import React, { useContext, useState } from "react";
 import AboutInput from "../InputsForEdit/AboutInput";
+import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
+import HomeTitleSubtitle from "../../_ui/HomeTitleSubtitle";
 
 const css = {
   footer: "bg-white",
-  section: "w-[calc(100%-32px)] max-w-[800px] m-auto border-none",
   h1: "font-semibold",
   p: "pb-4 relative",
   wrapperAbout: "relative px-2",
-  editMode: "bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg light-border",
+  editMode: "bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg bs-light",
   wrapperSmallP:
     "w-full h-16 px-6 centralize bg-gradient-to-t from-black to-stone-800 rounded-none",
   wrapperP: "size-full relative z-0 bg-white",
@@ -24,25 +25,25 @@ const Footer = (): React.ReactElement => {
 
   return (
     <footer className={`${css.footer}`}>
-      <section className={`${css.section}`}>
-        <h1 className={`${css.h1}`}>Sobre Nós</h1>
-        <h2>Conheça mais a nossa loja</h2>
-
-        <div className={`${css.wrapperAbout} ${seeAboutInput && css.editMode}`}>
-          {shopInfo.aboutText.map((paragraph, index: number) => (
-            <div className={`${css.wrapperP}`} key={index}>
-              <p key={index} className={`${css.p}`}>
-                {paragraph}
-              </p>
-            </div>
-          ))}
-          {seeAboutInput && (
-            <AboutInput
-              shopInfo={shopInfo}
-              setShopInfo={setShopInfo}
-              setSeeAboutInput={setSeeAboutInput}
-            />
-          )}
+      <section className={`${shopHomeSection}`}>
+        <div className={`${shopHomeWrapperSection} !w-[calc(100%-32px)] !max-w-[800px]`}>
+          <HomeTitleSubtitle title="Sobre Nós" subtitle="Conheça mais a nossa loja" />
+          <div className={`${css.wrapperAbout} ${seeAboutInput && css.editMode}`}>
+            {shopInfo.aboutText.map((paragraph, index: number) => (
+              <div className={`${css.wrapperP}`} key={index}>
+                <p key={index} className={`${css.p}`}>
+                  {paragraph}
+                </p>
+              </div>
+            ))}
+            {seeAboutInput && (
+              <AboutInput
+                shopInfo={shopInfo}
+                setShopInfo={setShopInfo}
+                setSeeAboutInput={setSeeAboutInput}
+              />
+            )}
+          </div>
         </div>
       </section>
 

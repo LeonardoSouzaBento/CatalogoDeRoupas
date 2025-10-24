@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const css = {
   wrapperProduct:
-    "h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-md hover:shadow-lg fast-trans light-border rounded-sm overflow-hidden",
+    "h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-md hover:shadow-lg fast-trans bs-light rounded-sm overflow-hidden",
   wrapperImgs:
     "w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex border-b-1 border-gray-200 relative bg-white rounded-none",
   wrapperImg1: "p-2 min-w-[40%] border-r-1 border-gray-200 relative",

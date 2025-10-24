@@ -1,9 +1,20 @@
+/* landing page */
+export const sectionHomeStyles = `w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 p-7 xl:m-0 bg-white rounded-3xl shadow-lg`;
+
+/* ShopHome */
+export const shopHomeSection = "w-full px-3";
+export const shopHomeWrapperSection = "w-full max-w-[1180px] m-auto pt-7 pb-10";
+
+/* cores */
 export const gray800 = "oklch(27.8% 0.033 256.848)";
 export const gray300 = "oklch(70.7% 0.022 261.325)";
+
 export const inputClasses =
   "block w-full h-10 pl-3 pb-[2px] border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none font-p";
 export const h3Sizes =
   "font-h font-medium text-[1.090em] sm:text-[1.099em] md:text-[1.103em] lg:text-[1.112em] xl:text-[1.120em] 2xl:text-[1.128em]";
+
+/* Icones Lucide  */
 export const iconSmStyles = { strokeWidth: 2.7, size: 17, color: gray800 };
 export const iconMdStyles = { strokeWidth: 2.3, size: 19.5, color: gray800 };
 export const iconLgStyles = { strokeWidth: 2.2, size: 21, color: gray800 };
@@ -16,4 +27,3 @@ export const buttonClose = "h-9 min-w-9 br-xs centralize bg-bt fast-trans";
 
 export const basicCardStyle = "bg-white br-lg shadow-lg p-5 mb-4";
 
-export const sectionHomeStyles = `w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 p-7 xl:m-0 bg-white rounded-3xl shadow-lg`;
