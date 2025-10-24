@@ -5,6 +5,7 @@ import {
   SubtitleSection,
   MainImage,
 } from "../Ui/index";
+import { sectionHomeStyles } from "@/data/styles";
 
 const Messages = () => {
   const css = {
@@ -61,7 +62,7 @@ const css = {
 
 const HowSection = (): React.ReactElement => {
   return (
-    <section className={`${css.section}`}>
+    <section className={sectionHomeStyles}>
       <TitleSection title="Como Funciona?" />
       <SubtitleSection title="É simples" />
 

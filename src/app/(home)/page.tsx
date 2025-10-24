@@ -1,5 +1,4 @@
 import Header from "./_components/Header/Header";
-import "./page.css";
 import {
   WhySection,
   PlansSection,

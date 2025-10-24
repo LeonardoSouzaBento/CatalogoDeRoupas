@@ -1,11 +1,11 @@
 import React from "react";
-import { mostSearched } from "@/data/productsInfo";
+import { mostSearched } from "@/data/UsersData";
 
 const css = {
-  wrapper: `br-md p-5 shadow-md`,
+  wrapper: `br-md`,
   title: ``,
   wrapperSuggestions: `flex flex-wrap gap-3`,
-  wrapperItem: "min-h-10 centralize px-4 br-sm bg-button ",
+  wrapperItem: "min-h-9 centralize px-2 br-sm border border-color",
 };
 
 const Suggestions = () => {

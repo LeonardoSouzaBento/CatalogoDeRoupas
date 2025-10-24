@@ -1,3 +1,5 @@
+export const userGenders = ["Masculino", "Feminino", "Infantil"];
+
 export const mostSearched = {
   masculino: [
     "Camisa Básica",

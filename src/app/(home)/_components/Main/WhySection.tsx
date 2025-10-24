@@ -6,6 +6,7 @@ import {
   ButtonCall,
   MainImage,
 } from "../Ui/index";
+import { sectionHomeStyles } from "@/data/styles";
 
 export const TextContent = () => {
   const css = {
@@ -53,7 +54,7 @@ const css = {
 
 const WhySection = (): React.ReactElement => {
   return (
-    <section className={`${css.section}`}>
+    <section className={sectionHomeStyles}>
       <TitleSection title="Porque ter um catálogo?" />
       <SubtitleSection title="Ajudamos você a vender mais" />
 

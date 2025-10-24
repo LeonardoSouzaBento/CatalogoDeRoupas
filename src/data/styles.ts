@@ -15,3 +15,5 @@ export const imageUploadNameButton = `flex flex-col items-center gap-2 p-4 box-b
 export const buttonClose = "h-9 min-w-9 br-xs centralize bg-bt fast-trans";
 
 export const basicCardStyle = "bg-white br-lg shadow-lg p-5 mb-4";
+
+export const sectionHomeStyles = `w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 p-7 xl:m-0 bg-white rounded-3xl shadow-lg`;

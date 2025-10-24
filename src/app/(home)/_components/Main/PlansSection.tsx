@@ -3,6 +3,7 @@ import TitleSection from "../Ui/TitleSection";
 import SubtitleSection from "../Ui/SubtitleSection";
 import IconCheck from "../Ui/IconCheck";
 import { ButtonCall } from "../Ui/";
+import { sectionHomeStyles } from "@/data/styles";
 
 const basicPlan = [
   "Cadastre até 200 peças",
@@ -45,6 +46,7 @@ const ItemLIst = ({ text }: { text: string }): React.ReactElement => {
 };
 
 const css = {
+  section: "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 rounded-3xl",
   containerPlans: "pb-2 flex flex-col gap-7 md:flex-row",
   wrapperPlan:
     "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-lg",
@@ -53,7 +55,9 @@ const css = {
 
 const PlansSection = (): React.ReactElement => {
   return (
-    <section className="!m-auto !bg-transparent !shadow-none !px-0">
+    <section
+      className={`${css.section}`}
+    >
       <TitleSection title="Quanto Custa?" />
       <SubtitleSection title="Temos preços acessíveis" section="plansSection" />
 

@@ -4,6 +4,7 @@ import Header from "./_components/Header";
 import SearchButton from "./_components/SearchButton";
 import Suggestions from "./_components/Suggestions";
 import "../page.css"
+import UserGenders from "./_components/UserGenders";
 
 const Pesquisar = (): React.ReactElement => {
   return (
@@ -12,6 +13,7 @@ const Pesquisar = (): React.ReactElement => {
         <Header />
         <SearchButton />
       </div>
+      <UserGenders />
       <Suggestions />
       <ButtonChat />
     </div>

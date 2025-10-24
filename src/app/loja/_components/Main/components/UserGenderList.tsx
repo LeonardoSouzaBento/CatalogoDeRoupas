@@ -12,8 +12,8 @@ const css = {
   wrapper:
     "min-h-13 h-13 w-full sm:h-[156px] sm:w-1/3 bg-gray-100 flex items-end flex-auto crop relative trans rounded-sm",
   selectedWrapper: "h-[200px] sm:h-[180px] sm:w-[50%]",
-  wrapperImg: "size-full overflow-visible ",
-  img: "size-auto absolute object-top object-cover scale-136 -translate-y-[8vw] sm:-translate-y-0 transition-transform duration-600 grayscale sepia-40 opacity-74 mix-blend-multiply",
+  wrapperImg: "size-full overflow-visible",
+  img: "size-auto abso object-top object-cover scale-136 -translate-y-[8vw] sm:-translate-y-0 transition-transform duration-600 grayscale sepia-40 opacity-74 mix-blend-multiply",
   selectedImg:
     "-translate-y-[14vw] sm:-translate-y-[6vw] md:-translate-y-[3vw] opacity-100 mix-blend-normal grayscale-0",
   buttonGender:

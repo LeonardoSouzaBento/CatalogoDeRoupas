@@ -3,14 +3,16 @@
 
 @layer base {
   h1 {
-    @apply text-gray-900 font-semibold text-center text-[1.400em] sm:text-[1.415em] 
+    @apply font-h text-gray-900 font-semibold text-center text-[1.400em] sm:text-[1.415em] 
         md:text-[1.422em] lg:text-[1.436em] xl:text-[1.450em] 2xl:text-[1.464em];
   }
   h2 {
     @apply w-full mb-6 font-h font-normal text-center text-neutral-500 text-[1.040em] sm:text-[1.046em] md:text-[1.049em] lg:text-[1.054em] xl:text-[1.06em] 2xl:text-[1.066em] cursor-default;
   }
   p,
-  label {
+  label,
+  input,
+  textarea {
     @apply text-gray-800 text-[1.125em] sm:text-[1.132em] md:text-[1.136em] lg:text-[1.143em] xl:text-[1.150em] 2xl:text-[1.157em] cursor-default;
   }
   p {
@@ -25,7 +27,7 @@
   }
   input,
   textarea {
-    @apply text-neutral-800 font-normal text-[1.150em] sm:text-[1.154em] md:text-[1.157em] lg:text-[1.161em] xl:text-[1.165em] 2xl:text-[1.169em];
+    @apply text-neutral-800 font-normal;
   }
   div {
     @apply rounded-sm;

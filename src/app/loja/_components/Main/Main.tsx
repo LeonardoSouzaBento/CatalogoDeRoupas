@@ -5,7 +5,6 @@ import {
   MainCategories,
   FindUsSection,
 } from "./components";
-import "./main.css"
 
 const Main = (): React.ReactElement => {
   return (

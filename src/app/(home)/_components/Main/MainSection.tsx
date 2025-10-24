@@ -59,7 +59,7 @@ export const MainImage = () => {
 
 const css = {
   mainSection:
-    "!h-auto !w-full !max-w-none !rounded-none !border-none !bg-linear-to-t from-[#b13975] to-[#A82366]",
+    "h-auto w-full p-6 rounded-none border-none bg-linear-to-t from-[#b13975] to-[#A82366]",
   wrapper: "m-auto max-w-[1200px] flex flex-col md:flex-row gap-8",
   wrapperMainMessage:
     "w-full max-w-[1024px] flex flex-col justify-center items-center gap-4 md:gap-5 md:w-1/2",
