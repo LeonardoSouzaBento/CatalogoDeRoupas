@@ -25,9 +25,9 @@
   div {
     @apply rounded-sm;
   }
-  button {
+  /* button {
     @apply font-h rounded-sm text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
-  }
+  } */
   img {
     @apply font-p;
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;

@@ -20,7 +20,7 @@ const css = {
   img: "absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30",
   wrapperP:
     "h-auto w-full py-5 sm:py-6 centralize relative bg-gradient-to-t from-black to-transparent",
-  p: "w-full px-8 text-white font-h font-normal h1-sizes sm:text-center leading-none",
+  p: "w-full px-8 !text-white font-h !font-light home-h1 sm:text-center leading-none",
 };
 
 const MainCategories = (): React.ReactElement | undefined | null => {

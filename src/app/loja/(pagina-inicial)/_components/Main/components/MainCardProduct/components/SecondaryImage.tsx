@@ -9,7 +9,7 @@ export interface SecondaryImageProps {
 }
 
 const css = {
-  wrapperImg: "p-2 min-w-[40%] border-r-1 border-gray-200 relative",
+  wrapperImg: "p-2 min-w-[40%] relative",
   img: "size-full object-cover",
 };
 

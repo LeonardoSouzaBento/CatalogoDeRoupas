@@ -7,7 +7,7 @@ import ProductInfo from "./components/ProductInfo";
 
 const css = {
   wrapperProduct:
-    "h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-md hover:shadow-lg fast-trans bs-light rounded-sm overflow-hidden",
+    "h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-md hover:shadow-lg fast-trans rounded-sm overflow-hidden",
   wrapperImgs:
     "w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex border-b-1 border-gray-200 relative bg-white rounded-none",
   buttonHeart: "size-max absolute bottom-1 right-1 z-2 flex",

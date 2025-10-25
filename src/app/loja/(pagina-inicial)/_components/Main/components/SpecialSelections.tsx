@@ -7,7 +7,7 @@ import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
   wrapper: "crop",
-  scrollableDiv: "flex gap-2 pb-10 overflow-x-scroll",
+  scrollableDiv: "flex gap-2 pt-1 pb-10 overflow-x-scroll",
 };
 
 type SpecialSelectionsType = Record<GenderKey, SpecialSelectionSchema[]>;

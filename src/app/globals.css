@@ -84,8 +84,8 @@ div::-webkit-scrollbar {
 }
 
 /*Estilos de Componentes*/
-.h1-sizes {
-  @apply text-[1.400em] sm:text-[1.415em] md:text-[1.422em] lg:text-[1.436em] xl:text-[1.450em] 2xl:text-[1.464em];
+.home-h1{
+  @apply font-h text-gray-900 font-semibold capitalize tracking-normal text-center text-[1.380em] sm:text-[1.409em] md:text-[1.423em] lg:text-[1.452em] xl:text-[1.480em] 2xl:text-[1.508em];
 }
 .h4-sizes {
   @apply text-[1.010em] sm:text-[1.022em] md:text-[1.027em] lg:text-[1.039em] xl:text-[1.050em] 2xl:text-[1.061em];
@@ -97,7 +97,7 @@ div::-webkit-scrollbar {
   @apply font-p text-gray-800 text-left text-[1.190em] sm:text-[1.199em] md:text-[1.203em] lg:text-[1.212em] xl:text-[1.220em] 2xl:text-[1.228em];
 }
 .button {
-  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-normal font-h px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide capitalize;
+  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer font-normal font-h px-6 leading-none text-[1.075em] sm:text-[1.087em] md:text-[1.093em] lg:text-[1.105em] xl:text-[1.117em] 2xl:text-[1.129em] tracking-wide capitalize;
 }
 .p-button {
   @apply cursor-pointer font-normal font-h leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
@@ -138,6 +138,9 @@ div::-webkit-scrollbar {
 }
 .br-0 {
   @apply rounded-none;
+}
+.br-xs {
+  @apply rounded-xs;
 }
 .br-sm {
   @apply rounded-sm;
