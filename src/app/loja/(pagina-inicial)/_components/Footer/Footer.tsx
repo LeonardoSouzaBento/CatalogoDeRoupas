@@ -1,8 +1,8 @@
 import { PublicDataContext } from "@contexts/PublicDataContext";
 import React, { useContext, useState } from "react";
-import AboutInput from "../InputsForEdit/AboutInput";
+import AboutInput from "./inputs/AboutInput";
 import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
-import HomeTitleSubtitle from "../../_ui/HomeTitleSubtitle";
+import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 
 const css = {
   footer: "bg-white",

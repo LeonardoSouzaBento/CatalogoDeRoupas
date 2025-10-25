@@ -1,6 +1,7 @@
-import ButtonChat from "@/ui/ButtonChat";
-import TitlePage from "@/ui/TitlePage";
+import ButtonChat from "@ui/ButtonChat";
+import TitlePage from "@ui/TitlePage";
 import React from "react";
+import "../../loja/(pagina-inicial)/page.css"
 
 const css = {
   mainWrapper: "px-3 pb-5",

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
 import { Pen, ShoppingBag } from "lucide-react";
 import { iconMdStyles } from "@/data/styles";
+import Link from "next/link";
 
 const css = {
   wrapperButtonCall: "size-auto flex",
@@ -19,13 +19,6 @@ const ButtonCall = ({
   specifStyles?: string;
   hideInMobile?: boolean | null;
 }): React.ReactElement => {
-  const router = useRouter();
-
-  function handleNavigate() {
-    if (text === "one") {
-      router.push("/loja/");
-    }
-  }
 
   return (
     <div
@@ -33,11 +26,11 @@ const ButtonCall = ({
         hideInMobile ? "hidden md:!flex" : "flex md:!hidden"
       }`}
     >
-      <button className={`${css.buttonCall}`} onClick={handleNavigate}>
+      <Link className={`${css.buttonCall}`} href={text === "one" ? "/loja" : "/loja"}>
         {text === "one" && <ShoppingBag {...iconMdStyles} />}
         {text === "one" ? "Ver Um Catálogo Completo" : "Criar Meu Catálogo"}
         {text === "two" && <Pen {...iconMdStyles} />}
-      </button>
+      </Link>
     </div>
   );
 };

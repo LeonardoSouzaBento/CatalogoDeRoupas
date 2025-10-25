@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "./components/Button";
 import type { ButtonType } from "./components/Button";
-import NameShopInput from "../InputsForEdit/NameShopInput";
+import NameShopInput from "./inputs/NameShopInput";
 import { User, Menu, Search, Heart } from "lucide-react";
-import LogoHeader from "../../../(home)/_components/LogoHeader";
+import LogoHeader from "@/app/(landing-page)/_components/LogoHeader";
 
 const buttons: ButtonType[] = [
   { icon: User, name: "Minha Conta", link: "/loja/minha-conta" },

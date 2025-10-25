@@ -1,7 +1,7 @@
 import React from "react";
-import { useRouter } from "next/navigation";
 import type { LucideIcon } from "lucide-react";
-import { iconMdStyles} from "@data/styles";
+import { iconMdStyles } from "@data/styles";
+import Link from "next/link";
 
 export interface ButtonType {
   icon: LucideIcon;
@@ -26,28 +26,32 @@ const Button = ({
   name,
   link,
 }: ButtonType): React.ReactElement => {
-  const router = useRouter();
-
-  function handleNavigate() {
-    if (link) {
-      router.push(link);
-    }
-  }
 
   return isSearchButton ? (
-    <button className={`${css.buttonSearch}`} onClick={handleNavigate}>
+    <Link className={`${css.buttonSearch}`} href={link || '/'}>
       Buscar
       <div className={css.wrapperIconSearch}>
         <Icon {...iconMdStyles} />
       </div>
-    </button>
+    </Link>
   ) : (
-    <button className={css.button} onClick={handleNavigate}>
-      <div className={css.wrapperIcon}>
-        <Icon {...iconMdStyles} />
-      </div>
-      <p className={css.p}>{name}</p>
-    </button>
+    <>
+      {!link ? (
+        <button className={css.button}>
+          <div className={css.wrapperIcon}>
+            <Icon {...iconMdStyles} />
+          </div>
+          <p className={css.p}>{name}</p>
+        </button>
+      ) : (
+        <Link className={css.button} href={link}>
+          <div className={css.wrapperIcon}>
+            <Icon {...iconMdStyles} />
+          </div>
+          <p className={css.p}>{name}</p>
+        </Link>
+      )}
+    </>
   );
 };
 

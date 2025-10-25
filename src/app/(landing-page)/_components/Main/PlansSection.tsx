@@ -2,7 +2,7 @@ import React from "react";
 import TitleSection from "../Ui/TitleSection";
 import SubtitleSection from "../Ui/SubtitleSection";
 import IconCheck from "../Ui/IconCheck";
-import { ButtonCall } from "../Ui/";
+import { ButtonCall } from "../Ui";
 import { sectionHomeStyles } from "@/data/styles";
 
 const basicPlan = [

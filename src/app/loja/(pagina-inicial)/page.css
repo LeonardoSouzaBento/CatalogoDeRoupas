@@ -3,7 +3,9 @@
 
 @layer base {
   p,
-  label {
+  label,
+  input,
+  textarea {
     @apply text-gray-800 text-[1.125em] sm:text-[1.132em] md:text-[1.136em] lg:text-[1.143em] xl:text-[1.150em] 2xl:text-[1.157em] cursor-default;
   }
   p {
@@ -18,9 +20,14 @@
   }
   input,
   textarea {
-    @apply text-neutral-800 text-[1.150em] sm:text-[1.154em] md:text-[1.157em] lg:text-[1.161em] xl:text-[1.165em] 2xl:text-[1.169em];
+    @apply text-neutral-800 font-normal;
   }
-
+  div {
+    @apply rounded-sm;
+  }
+  button {
+    @apply font-h rounded-sm text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
+  }
   img {
     @apply font-p;
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;

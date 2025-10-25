@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
+
+export type BoolSetter = Dispatch<SetStateAction<boolean>>;
 
 export interface ProviderType {
   children: React.ReactNode;

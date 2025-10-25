@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import MainCardProduct from "./MainCardProduct";
+import MainCardProduct from "./MainCardProduct/MainCardProduct";
 import type { SpecialSelectionSchema, GenderKey } from "@/types/types";
 import { HomeDataContext } from "@contexts/HomeDataContext";
-import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
+import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {

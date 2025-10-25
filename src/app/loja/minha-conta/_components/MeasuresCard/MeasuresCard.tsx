@@ -3,7 +3,7 @@ import MeasureItem from "./MeasureItem";
 import { iconMdStyles, iconSmStyles } from "@/data/styles";
 import type { Measure } from "./MeasureItem";
 import { Pen, CircleQuestionMark } from "lucide-react";
-import AlertInfo from "@/ui/AlertInfo";
+import AlertInfo from "@ui/AlertInfo";
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 

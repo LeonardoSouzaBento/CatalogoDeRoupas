@@ -18,7 +18,7 @@ interface WrapperFormProps {
   setState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const WrapperForm = ({
+const WrapperForEditMode = ({
   title,
   seeButtonClose = true,
   children,
@@ -44,4 +44,4 @@ const WrapperForm = ({
   );
 };
 
-export default WrapperForm;
+export default WrapperForEditMode;

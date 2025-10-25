@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { PublicDataContext } from "@contexts/PublicDataContext";
 import { Copy, CopyCheck, Check, CheckCheck } from "lucide-react";
-import ContactInput from "../../InputsForEdit/FindUs/ContactInput";
-import AddressInput from "../../InputsForEdit/FindUs/AddressInput";
-import MapInput from "../../InputsForEdit/FindUs/MapInput";
+import ContactInput from "./inputs/ContactInput";
+import AddressInput from "./inputs/AddressInput";
+import MapInput from "./inputs/MapInput";
 import type { AddressSchema } from "@/types/types";
-import WrapperForm from "./WrapperForm";
-import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
+import WrapperForEditMode from "@ui/WrapperForEditMode"
+import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
@@ -103,7 +103,7 @@ const FindUsSection = (): React.ReactElement => {
                 </div>
               )}
               {seePhoneInput && (
-                <WrapperForm
+                <WrapperForEditMode
                   title="Adicione Seu Whatsapp"
                   seeButtonClose={true}
                   setState={setSeePhoneInput}
@@ -114,7 +114,7 @@ const FindUsSection = (): React.ReactElement => {
                     setShopInfo={setShopInfo}
                     canSavePhone={canSavePhone}
                   />
-                </WrapperForm>
+                </WrapperForEditMode>
               )}
               {!seePhoneInput && (
                 <button
@@ -169,7 +169,7 @@ const FindUsSection = (): React.ReactElement => {
                 </div>
               )}
               {seeAddressInput && (
-                <WrapperForm
+                <WrapperForEditMode
                   title="Adicione Seu Endereço"
                   seeButtonClose={true}
                   setState={setSeeAddressInput}
@@ -180,7 +180,7 @@ const FindUsSection = (): React.ReactElement => {
                     shopInfo={shopInfo}
                     setShopInfo={setShopInfo}
                   />
-                </WrapperForm>
+                </WrapperForEditMode>
               )}
               {!seeAddressInput && (
                 <button
@@ -234,7 +234,7 @@ const FindUsSection = (): React.ReactElement => {
                 />
               )}
               {seeMapInput && (
-                <WrapperForm
+                <WrapperForEditMode
                   title="Atualize Seu Mapa"
                   seeButtonClose={true}
                   setState={setSeeMapInput}
@@ -246,7 +246,7 @@ const FindUsSection = (): React.ReactElement => {
                     shopInfo={shopInfo}
                     setShopInfo={setShopInfo}
                   />
-                </WrapperForm>
+                </WrapperForEditMode>
               )}
               {seeMapInput && (
                 <button

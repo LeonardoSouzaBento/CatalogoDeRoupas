@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { HomeDataContext } from "@contexts/HomeDataContext";
 import type { GenderKey } from "@/types/types";
 import Image from "next/image";
-import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
+import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {

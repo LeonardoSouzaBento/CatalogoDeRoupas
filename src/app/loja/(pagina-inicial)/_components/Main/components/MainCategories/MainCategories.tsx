@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
-import WrapperForm from "./WrapperForm";
-import MainCatsInput from "../../InputsForEdit/MainCatsInput/MainCatsInput";
+import WrapperForEditMode from "@ui/WrapperForEditMode";
+import MainCatsInput from "./Inputs/MainCatsInput";
 import { HomeDataContext } from "@contexts/HomeDataContext";
-import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
+import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import Image from "next/image";
 import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
   sectionEditMode: "pb-0 mb-0 m-auto max-w-210",
-  wrapperEditMode: "bg-white p-4 mb-10 rounded-md shadow-md hover:shadow-lg",
+  wrapperForEditMode: "bg-white p-4 mb-10 rounded-md shadow-md hover:shadow-lg",
   container: `
     size-auto max-w-[648px] sm:px6 m-auto flex j-start flex-wrap gap-2 lg:flex-nowrap lg:h-[360px] lg:max-w-none
     xl:h-[390px]
@@ -65,14 +65,14 @@ const MainCategories = (): React.ReactElement | undefined | null => {
           </div>
         )}
         {seeEditSection && (
-          <div className={`${css.wrapperEditMode}`}>
-            <WrapperForm
+          <div className={`${css.wrapperForEditMode}`}>
+            <WrapperForEditMode
               title="Defina as principais categorias de cada gênero"
               seeButtonClose
               setState={setSeeEditSection}
             >
               <MainCatsInput />
-            </WrapperForm>
+            </WrapperForEditMode>
           </div>
         )}
       </div>
