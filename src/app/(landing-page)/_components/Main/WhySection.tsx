@@ -1,7 +1,33 @@
 import React from "react";
-import { CalendarHeart, Eye, UserCheck, Check } from "lucide-react";
+import { CalendarHeart, Eye, UserCheck } from "lucide-react";
 import { ButtonCall, IconCheck, MainImage } from "./components/index";
 import { sectionHomeStyles, pStyles } from "@app/(landing-page)/styles";
+
+const css = {
+  wrapper: "block md:flex md:gap-7",
+  wrapperInfo: "w-full md:w-1/2",
+  wrapperImg: "w-full md:w-1/2 flex flex-col gap-3",
+};
+
+const WhySection = (): React.ReactElement => {
+  return (
+    <section className={sectionHomeStyles}>
+      <div className={`${css.wrapper}`}>
+        <div className={`${css.wrapperInfo}`}>
+          <TextContent />
+          <ButtonCall specifStyles="justify-center" hideInMobile={true} />
+        </div>
+
+        <div className={`${css.wrapperImg}`}>
+          <MainImage />
+          <ButtonCall specifStyles="justify-center" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhySection;
 
 const content = [
   { id: 1, text: "Um mês grátis para expor suas peças", icon: CalendarHeart },
@@ -41,29 +67,3 @@ export const TextContent = () => {
     </>
   );
 };
-
-const css = {
-  wrapper: "block md:flex md:gap-7",
-  wrapperInfo: "w-full md:w-1/2",
-  wrapperImg: "w-full md:w-1/2 flex flex-col gap-3",
-};
-
-const WhySection = (): React.ReactElement => {
-  return (
-    <section className={sectionHomeStyles}>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.wrapperInfo}`}>
-          <TextContent />
-          <ButtonCall specifStyles="justify-center" hideInMobile={true} />
-        </div>
-
-        <div className={`${css.wrapperImg}`}>
-          <MainImage />
-          <ButtonCall specifStyles="justify-center" />
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default WhySection;

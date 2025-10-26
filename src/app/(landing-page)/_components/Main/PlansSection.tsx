@@ -22,7 +22,7 @@ const fullPlan = [
 
 const css = {
   section:
-    "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 rounded-3xl",
+    "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 rounded-2xl",
   containerPlans: "pb-2 flex flex-col gap-6 md:flex-row",
   wrapperPlan:
     "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 soft-shadow hover:scale-102 trans",
@@ -37,7 +37,6 @@ const PlansSection = (): React.ReactElement => {
       <TitleSubtitleSection
         title="Quanto Custa?"
         subtitle="Temos preços acessíveis"
-        section="plansSection"
       />
 
       <div className={`${css.containerPlans}`}>

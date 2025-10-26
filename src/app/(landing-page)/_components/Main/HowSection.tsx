@@ -1,4 +1,5 @@
 import React from "react";
+import { Share2, Search, Heart } from "lucide-react";
 import { ButtonCall, MainImage } from "../Main/components/index";
 import { sectionHomeStyles, pStyles } from "@app/(landing-page)/styles";
 
@@ -30,6 +31,20 @@ const HowSection = (): React.ReactElement => {
 
 export default HowSection;
 
+const content = [
+  { id: 1, text: "Compartilhe o link nas redes sociais", icon: Share2 },
+  {
+    id: 2,
+    text: "Seu cliente busca e favorita os produtos com facilidade",
+    icon: Search,
+  },
+  {
+    id: 3,
+    text: "Veja os favoritos do usuário de modo organizado",
+    icon: Heart,
+  },
+];
+
 const Messages = () => {
   const css = {
     wrapper: "w-auto flex items-start gap-3 sm:flex-row ",
@@ -39,39 +54,26 @@ const Messages = () => {
     pNumber:
       "!text-white font-semibold font-p text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
     p: `-mt-[1px] ${pStyles}`,
-    strong: "font-medium",
+    wrapperIcon: "inline-flex items-start justify-center box-border mb-1",
   };
 
   return (
     <>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.wrapperPNumber}`}>
-          <p className={`${css.pNumber}`}>1</p>
+      {content.map((item) => (
+        <div className={`${css.wrapper}`} key={item.id}>
+          <div className={`${css.wrapperPNumber}`}>
+            <p className={`${css.pNumber}`}>{item.id}</p>
+          </div>
+          <div className={`${css.wrapperP}`}>
+            <p className={`${css.p}`}>
+              {item.text}. {" "}
+              <span className={`${css.wrapperIcon}`}>
+                <item.icon color="#DF2080" strokeWidth={2.2} size={22} />
+              </span>{" "}
+            </p>
+          </div>
         </div>
-        <div className={`${css.wrapperP}`}>
-          <p className={`${css.p}`}>Compartilhe o link nas redes sociais</p>
-        </div>
-      </div>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.wrapperPNumber}`}>
-          <p className={`${css.pNumber}`}>2</p>
-        </div>
-        <div className={`${css.wrapperP}`}>
-          <p className={`${css.p}`}>
-            Seu cliente busca e favorita os produtos com facilidade.
-          </p>
-        </div>
-      </div>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.wrapperPNumber}`}>
-          <p className={`${css.pNumber}`}>3</p>
-        </div>
-        <div className={`${css.wrapperP}`}>
-          <p className={`${css.p}`}>
-            Veja os favoritos do usuário de modo organizado.
-          </p>
-        </div>
-      </div>
+      ))}
     </>
   );
 };

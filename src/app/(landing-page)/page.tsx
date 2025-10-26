@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   const css = {
-    wrapperTwoSections: `xl:my-7 xl:w-auto xl:h-[654px] xl:m-auto xl:mb-7 xl:flex xl:gap-6 xl:max-w-[1280px] xl:items-start 
+    wrapperTwoSections: `xl:mb-7 xl:w-auto xl:h-[654px] xl:m-auto xl:mb-7 xl:flex xl:gap-6 xl:max-w-[1280px] xl:items-start 
     xl:justify-center`,
     wrapperSection: "xl:w-[calc(100%-14px)] xl:h-[546px]",
   };
@@ -24,6 +24,7 @@ export default function Home() {
             <TitleSubtitleSection
               title="Porque ter um catálogo?"
               subtitle="Ajudamos você a vender mais"
+              secondSection={true}
             />
             <WhySection />
           </div>

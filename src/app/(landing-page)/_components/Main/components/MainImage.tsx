@@ -4,7 +4,8 @@ import Image from "next/image";
 export const MainImage = () => {
   const css = {
     wrapperImg:
-      "block w-full h-120 md:h-108 max-w-120 md:max-w-126 m-auto flex items-start relative crop rounded-xl bg-gray-50",
+      `block w-full h-120 md:h-108 max-w-120 md:max-w-126 m-auto flex items-start 
+      relative crop rounded-xl bg-neutral-50`,
     img: "size-full object-contain mix-blend-multiply",
     imgTwo: "",
   };
