@@ -4,6 +4,7 @@ interface TitleSubtitleSectionProps {
   title: string;
   subtitle?: string;
   secondSection?: boolean;
+  thirdSection?: boolean;
 }
 
 const css = {
@@ -18,10 +19,13 @@ const TitleSubtitleSection = ({
   title,
   subtitle,
   secondSection,
+  thirdSection,
 }: TitleSubtitleSectionProps): React.ReactElement => {
   return (
     <div
-      className={`${css.div}`}
+      className={`${css.div} ${thirdSection && "xl:border-none"} ${
+        secondSection && "border-none"
+      }`}
     >
       <h2 className={`${css.title}`}>{title}</h2>
       {subtitle && <h3 className={`${css.subtitle}`}>{subtitle}</h3>}

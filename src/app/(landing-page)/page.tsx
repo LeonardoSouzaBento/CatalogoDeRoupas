@@ -30,7 +30,11 @@ export default function Home() {
           </div>
 
           <div className={css.wrapperSection}>
-            <TitleSubtitleSection title="Como Funciona?" subtitle="É simples" />
+            <TitleSubtitleSection
+              title="Como Funciona?"
+              subtitle="É simples"
+              thirdSection={true}
+            />
             <HowSection />
           </div>
         </div>
