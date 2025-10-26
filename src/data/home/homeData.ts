@@ -9,19 +9,16 @@ import type {
 export const defaultUserCategoriesData: UserCategory[] = [
   {
     name: "feminino",
-    variable: "feminino",
     img: "/shop/photos/female/female-category.jpg",
     active: true,
   },
   {
     name: "masculino",
-    variable: "masculino",
     img: "/shop/photos/male/male-category.png",
     active: true,
   },
   {
     name: "infantil",
-    variable: "menino",
     img: "/shop/photos/maleChild/male-child.png",
     active: true,
   },

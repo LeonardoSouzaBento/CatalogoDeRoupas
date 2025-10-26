@@ -1,12 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import type {
   ProviderType,
   SpecialSelectionSchema,
   UserCategory,
   MainCategoriesData,
-  GenderKey,
   ChildGenders,
+  GenderKey,
 } from "@localtypes/types";
 import { HomeDataContext } from "../HomeDataContext";
 import {
@@ -17,15 +17,14 @@ import {
   defaultUserCategoriesData,
   defaultMainCategoriesData,
 } from "@data/home/homeData";
+import { useLocalStorage } from "@/hooks/UseLocalStorage";
 
 export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
   // gênero do usuário
-  const [selectedGender, setSelectedGender] = useState<GenderKey>("masculino");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("selectedGender");
-    if (stored) setSelectedGender(JSON.parse(stored));
-  }, []);
+  const [selectedGender, setSelectedGender] = useLocalStorage(
+    "selectedGender",
+    "masculino" as GenderKey
+  );
 
   // Categorias do usuario para edição
   const [userCategories, setUserCategories] = useState<UserCategory[]>(
@@ -44,8 +43,10 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
     SpecialSelectionSchema[]
   >(defaultFemaleSpecialSelections);
 
-  const [selectedChildGender, setSelectedChildGender] =
-    useState<ChildGenders>("masculino");
+  const [selectedChildGender, setSelectedChildGender] = useLocalStorage(
+    "selectedChildGender",
+    "masculino" as ChildGenders
+  );
 
   const [maleChildSpecialSelections, setMaleChildSpecialSelections] = useState<
     SpecialSelectionSchema[]

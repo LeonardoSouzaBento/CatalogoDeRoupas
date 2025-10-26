@@ -10,15 +10,15 @@ import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
-  wrapper: "w-full m-auto max-w-210 flex flex-col gap-3",
+  wrapper: "w-full m-auto max-w-210 flex flex-col gap-5",
   container:
-    "w-full p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative",
+    "w-full p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 !br-md bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative",
   containerEditMode: "sm:!flex-col !items-start p-5 pt-4 gap-4 rounded-md",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
   button: "button min-w-max",
   img: "",
   wrapperMap:
-    "w-full h-[80vw] md:h-[55vw] lg:h-[44vw] xl:h-[33vw] m-auto p-4 bg-white shadow-md hover:shadow-lg fast-trans relative",
+    "w-full h-[80vw] md:h-[55vw] lg:h-[44vw] xl:h-[33vw] m-auto p-5 bg-white shadow-md hover:shadow-lg fast-trans relative",
   wrapperMapEditMode: "!h-auto !min-h-max p-5 pt-4 !rounded-md",
   firstP: "mb-1",
   wrapperPs: "relative",

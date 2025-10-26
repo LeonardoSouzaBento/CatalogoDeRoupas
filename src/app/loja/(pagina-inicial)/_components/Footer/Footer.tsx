@@ -8,7 +8,7 @@ const css = {
   footer: "bg-white",
   h1: "font-semibold",
   p: "pb-4 relative",
-  wrapperAbout: "relative px-2",
+  wrapperAbout: "relative px-4",
   editMode: "bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg bs-light",
   wrapperSmallP:
     "w-full h-16 px-6 centralize bg-gradient-to-t from-black to-stone-800 rounded-none",
@@ -26,7 +26,7 @@ const Footer = (): React.ReactElement => {
   return (
     <footer className={`${css.footer}`}>
       <section className={`${shopHomeSection}`}>
-        <div className={`${shopHomeWrapperSection} !w-[calc(100%-32px)] !max-w-[800px]`}>
+        <div className={`${shopHomeWrapperSection} !max-w-[800px]`}>
           <HomeTitleSubtitle title="Sobre Nós" subtitle="Conheça mais a nossa loja" />
           <div className={`${css.wrapperAbout} ${seeAboutInput && css.editMode}`}>
             {shopInfo.aboutText.map((paragraph, index: number) => (

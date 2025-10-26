@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useContext } from "react";
 import WrapperForEditMode from "@ui/WrapperForEditMode";
 import MainCatsInput from "./Inputs/MainCatsInput";
@@ -35,7 +36,8 @@ const MainCategories = (): React.ReactElement | undefined | null => {
 
   // pega o array correto com base no gênero
   const selectedMainCategories = mainCategories[associations[selectedGender]];
-
+  console.log(selectedMainCategories);
+  
   if (!selectedMainCategories) return null;
 
   return (
@@ -49,8 +51,8 @@ const MainCategories = (): React.ReactElement | undefined | null => {
         />
         {!seeEditSection && (
           <div className={`${css.container}`}>
-            {selectedMainCategories.map((item, index) => (
-              <div key={index} className={`${css.wrapperImg}`}>
+            {selectedMainCategories.map((item) => (
+              <div key={item.urlImg} className={`${css.wrapperImg}`}>
                 <Image
                   src={item.urlImg}
                   alt={item.alt}

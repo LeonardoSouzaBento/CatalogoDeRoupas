@@ -13,7 +13,6 @@ export type ChildGenders = "masculino" | "feminino" | "unisex";
 /* Categorias */
 export interface UserCategory {
   name: GenderKey;
-  variable: string;
   img: string;
   imgMale?: string;
   imgFemale?: string;

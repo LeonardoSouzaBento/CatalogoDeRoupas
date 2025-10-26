@@ -3,7 +3,7 @@ export const sectionHomeStyles = `w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:
 
 /* ShopHome */
 export const shopHomeSection = "w-full px-3";
-export const shopHomeWrapperSection = "w-full max-w-[1180px] m-auto pt-4 pb-6";
+export const shopHomeWrapperSection = "w-full max-w-[1180px] m-auto pt-3 pb-7";
 
 /* cores */
 export const gray800 = "oklch(27.8% 0.033 256.848)";
