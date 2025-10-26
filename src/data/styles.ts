@@ -1,6 +1,3 @@
-/* landing page */
-export const sectionHomeStyles = `w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-7 p-7 xl:m-0 bg-white rounded-2xl soft-shadow`;
-
 /* ShopHome */
 export const shopHomeSection = "w-full px-3";
 export const shopHomeWrapperSection = "w-full max-w-[1180px] m-auto pt-3 pb-7";

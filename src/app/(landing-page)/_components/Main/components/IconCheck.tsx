@@ -3,26 +3,21 @@ import { Check } from "lucide-react";
 
 const css = {
   wrapperIcon:
-    "min-w-7 h-7 rounded-lg inline-flex items-center justify-center bg-[#E8F9EE]",
+    "min-w-7 h-7 br-50 inline-flex items-center justify-center bg-[#E8F9EE]",
+  fullPlanStyle: "!min-w-6 !h-6 !bg-yellow-400",
 };
 
-
 const IconCheck = ({
-  variation = "normalSection",
+  section,
 }: {
-  variation?: string;
+  section?: string;
 }): React.ReactElement => {
-
   return (
-    <span
-      className={`${css.wrapperIcon} ${
-        variation == "mainSection" && "!bg-transparent"
-      } `}
-    >
+    <span className={`${css.wrapperIcon} ${section === "plansSection" && css.fullPlanStyle}`}>
       <Check
         size={18}
-        color="#22C35D"
-        strokeWidth={variation == "mainSection"? 2 : 2.3}
+        color={section === "plansSection" ? "#8F22C0" : "#22C35D"}
+        strokeWidth={2.3}
       />
     </span>
   );

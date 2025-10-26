@@ -4,7 +4,7 @@ import {
   IconCheck,
   TitleSubtitleSection,
 } from "./components/index";
-import { pStyles } from "./components/styles";
+import { pStyles } from "@app/(landing-page)/styles";
 
 const basicPlan = [
   "Cadastre até 200 peças",
@@ -14,18 +14,18 @@ const basicPlan = [
 ];
 
 const fullPlan = [
-  "Sem limite de cadastro de peças",
-  "Logo própria, adcione a imagem do logo da sua loja",
+  "Cadastro ilimitado de peças",
+  "Logo própria, insira a logo da sua loja",
   "Cores Personalizadas, mude as cores do site como desejar",
-  "+ Tudo do que tem no plano básico",
+  "+ Todos os recursos do plano básico",
 ];
 
 const css = {
   section:
     "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 rounded-3xl",
-  containerPlans: "pb-2 flex flex-col gap-7 md:flex-row",
+  containerPlans: "pb-2 flex flex-col gap-6 md:flex-row",
   wrapperPlan:
-    "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 soft-shadow",
+    "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 soft-shadow hover:scale-102 trans",
   ul: "mb-6 ",
   fullPlanStyles:
     "border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none",
@@ -85,7 +85,7 @@ const TitleAndSubtitle = ({
 }) => {
   const css = {
     h2: "text-gray-800 leading-10 font-p font-semibold text-[1.310em] sm:text-[1.330em] md:text-[1.340em] lg:text-[1.360em] xl:text-[1.380em] 2xl:text-[1.400em]",
-    h3: "text-gray-600 mb-3 font-p font-light text-[1.160em] sm:text-[1.183em] md:text-[1.195em] lg:text-[1.217em] xl:text-[1.240em] 2xl:text-[1.263em]",
+    h3: "text-gray-600 mb-5 font-p font-light text-[1.160em] sm:text-[1.183em] md:text-[1.195em] lg:text-[1.217em] xl:text-[1.240em] 2xl:text-[1.263em]",
   };
 
   return (
@@ -107,7 +107,7 @@ const ItemLIst = ({
     <li
       className={`flex gap-3 py-2 px-1 ${pStyles} ${fullPlan && "!text-white"}`}
     >
-      <IconCheck variation="plansSection" /> {text}
+      <IconCheck section={fullPlan ? "plansSection" : ""} /> {text}
     </li>
   );
 };

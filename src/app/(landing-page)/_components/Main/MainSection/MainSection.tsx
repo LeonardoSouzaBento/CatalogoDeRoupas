@@ -5,7 +5,7 @@ import TitleSubtitle from "./ui/TitleSubtitle";
 import P from "./ui/P";
 // linear-gradient(135deg, hsl(330 75% 45%) 0%, hsl(280 70% 40%) 100%)
 const css = {
-  mainSection: `h-auto w-full pt-26 sm:pt-25 md:pt-23 xl:pt-21 p-6 mb-7 xl:mb-0 rounded-none 
+  mainSection: `h-auto w-full pt-26 sm:pt-25 md:pt-23 xl:pt-21 p-6 mb-9 xl:mb-0 rounded-none 
   bg-[linear-gradient(135deg,hsl(330_75%_45%)_0%,hsl(280_70%_40%)_100%)]
 `,
   wrapper: "m-auto max-w-[1200px] flex flex-col md:flex-row gap-8",

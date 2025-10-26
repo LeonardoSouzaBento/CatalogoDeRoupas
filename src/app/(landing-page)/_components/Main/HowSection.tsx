@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  ButtonCall,
-  MainImage,
-} from "../Main/components/index";
-import { sectionHomeStyles } from "@/data/styles";
-import { pStyles } from "../Main/components/styles";
-import TitleSubtitleSection from "../Main/components/TitleSubtitleSection";
+import { ButtonCall, MainImage } from "../Main/components/index";
+import { sectionHomeStyles, pStyles } from "@app/(landing-page)/styles";
 
 const css = {
   section: "",
-  wrapper: "block flex flex-col justify-center md:flex-row gap-3",
+  wrapper:
+    "block flex flex-col justify-center md:flex-row gap-3 xl:items-center",
   wrapperInfo: "w-auto flex flex-col gap-6 md:w-1/2 max-w-100",
   wrapperImg: "w-full md:w-1/2 flex flex-col gap-3",
 };
@@ -17,17 +13,15 @@ const css = {
 const HowSection = (): React.ReactElement => {
   return (
     <section className={sectionHomeStyles}>
-      <TitleSubtitleSection title="Como Funciona?" subtitle="É simples"/>
-
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperInfo}`}>
           <Messages />
-          <ButtonCall hideInMobile={true} specifStyles="justify-center"/>
+          <ButtonCall hideInMobile={true} specifStyles="justify-center" />
         </div>
 
         <div className={`${css.wrapperImg}`}>
           <MainImage />
-          <ButtonCall specifStyles="justify-center"/>
+          <ButtonCall specifStyles="justify-center" />
         </div>
       </div>
     </section>
@@ -64,8 +58,7 @@ const Messages = () => {
         </div>
         <div className={`${css.wrapperP}`}>
           <p className={`${css.p}`}>
-            Seu cliente <strong className={`${css.strong}`}> busca e favorita</strong> os produtos com
-            facilidade.
+            Seu cliente busca e favorita os produtos com facilidade.
           </p>
         </div>
       </div>
@@ -75,7 +68,7 @@ const Messages = () => {
         </div>
         <div className={`${css.wrapperP}`}>
           <p className={`${css.p}`}>
-            <strong className={`${css.strong}`}>Veja os favoritos do usuário</strong> de modo organizado.
+            Veja os favoritos do usuário de modo organizado.
           </p>
         </div>
       </div>
