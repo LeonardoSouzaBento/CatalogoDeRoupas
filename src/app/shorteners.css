@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+.abso {
+  @apply absolute top-0 left-0;
+}
+.crop {
+  @apply overflow-hidden;
+}
+
+/* transição */
+
+.trans {
+  @apply transition-all duration-300;
+}
+.fast-trans {
+  @apply transition-all duration-200;
+}
+
+/* Display flex */
+
+.centralize {
+  @apply flex justify-center items-center;
+}
+.j-center {
+  @apply justify-center;
+}
+.j-start {
+  @apply justify-start;
+}
+.j-between {
+  @apply justify-between;
+}
+
+/* Border-radius */
+
+.br-0 {
+  @apply rounded-none;
+}
+.br-xs {
+  @apply rounded-xs;
+}
+.br-sm {
+  @apply rounded-sm;
+}
+.br-lg {
+  @apply rounded-lg;
+}
+.br-50 {
+  @apply rounded-[50%];
+}
+
+/* borda solida */
+
+.bss {
+  @apply border border-black;
+}
+.bs-b {
+  @apply border-b;
+}
+.bs {
+  @apply border border-gray-300;
+}
+.bs-light {
+  @apply border border-gray-200;
+}
+.bs-color {
+  @apply border-gray-300;
+}
+.bs-light-color {
+  @apply border-gray-200;
+}
+
+/* background */
+
+.bg-button {
+  @apply bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
+}
+.bg-bt2 {
+  @apply bg-gray-200 hover:bg-gray-300 transition-colors duration-200;
+}

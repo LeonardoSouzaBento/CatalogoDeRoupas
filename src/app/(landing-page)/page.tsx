@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <LogoHeader />
+      <LogoHeader page="landing-page"/>
       <main className="pb-4 xl:pb-9">
         <MainSection />
         <div className={`${css.wrapper}`}>

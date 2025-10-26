@@ -29,12 +29,8 @@ body::-webkit-scrollbar {
   visibility: hidden;
 }
 
-:root {
-  --back-color: oklch(97% 0 0);
-}
-
 body {
-  background-color: var(--back-color);
+  background-color: oklch(97% 0 0);
   width: 100%;
   max-width: 1390px;
   min-height: 100vh;
@@ -74,7 +70,10 @@ div::-webkit-scrollbar {
   --font-logo: "Cookie", "cursive";
 }
 
-/* Estilos Gerais */
+.soft-shadow {
+  box-shadow: 0 8px 30px -4px hsl(330 20% 40% / 0.15);
+}
+
 /*Para spans google icons*/
 .line-span {
   @apply [font-variation-settings:'FILL'_0];
@@ -83,8 +82,8 @@ div::-webkit-scrollbar {
   @apply scale-110;
 }
 
-/*Estilos de Componentes*/
-.home-h1{
+
+.home-h1 {
   @apply font-h text-gray-900 font-semibold capitalize tracking-normal text-center text-[1.380em] sm:text-[1.409em] md:text-[1.423em] lg:text-[1.452em] xl:text-[1.480em] 2xl:text-[1.508em];
 }
 .h4-sizes {
@@ -93,7 +92,7 @@ div::-webkit-scrollbar {
 .small-p {
   @apply font-p text-[1.063em] sm:text-[1.067em] md:text-[1.068em] lg:text-[1.072em] xl:text-[1.075em] 2xl:text-[1.078em];
 }
-.p-title{
+.p-title {
   @apply font-p text-gray-800 text-left text-[1.190em] sm:text-[1.199em] md:text-[1.203em] lg:text-[1.212em] xl:text-[1.220em] 2xl:text-[1.228em];
 }
 .button {
@@ -113,75 +112,4 @@ div::-webkit-scrollbar {
 }
 .small-p-button {
   @apply font-h font-normal text-[1.05em] xl:text-[1.1em] leading-none;
-}
-
-/* Encurtadores */
-.centralize {
-  @apply flex justify-center items-center;
-}
-.abso {
-  @apply absolute top-0 left-0;
-}
-
-.crop {
-  @apply overflow-hidden;
-}
-.trans {
-  @apply transition-all duration-300;
-}
-.fast-trans {
-  @apply transition-all duration-200;
-}
-
-.bss {
-  @apply border border-black;
-}
-.br-0 {
-  @apply rounded-none;
-}
-.br-xs {
-  @apply rounded-xs;
-}
-.br-sm {
-  @apply rounded-sm;
-}
-.br-lg {
-  @apply rounded-lg;
-}
-.br-50 {
-  @apply rounded-[50%];
-}
-
-.bs-b {
-  @apply border-b;
-}
-.bs {
-  @apply border border-gray-300;
-}
-.bs-light {
-  @apply border border-gray-200;
-}
-.bs-color {
-  @apply border-gray-300;
-}
-.bs-light-color {
-  @apply border-gray-200;
-}
-
-/* background */
-.bg-button {
-  @apply bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
-}
-.bg-bt2 {
-  @apply bg-gray-200 hover:bg-gray-300 transition-colors duration-200;
-}
-
-.j-center {
-  @apply justify-center;
-}
-.j-start {
-  @apply justify-start;
-}
-.j-between {
-  @apply justify-between;
 }

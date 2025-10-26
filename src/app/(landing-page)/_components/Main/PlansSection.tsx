@@ -1,5 +1,9 @@
 import React from "react";
-import { ButtonCall, IconCheck, TitleSubtitleSection } from "./components/index";
+import {
+  ButtonCall,
+  IconCheck,
+  TitleSubtitleSection,
+} from "./components/index";
 import { pStyles } from "./components/styles";
 
 const basicPlan = [
@@ -21,8 +25,10 @@ const css = {
     "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 rounded-3xl",
   containerPlans: "pb-2 flex flex-col gap-7 md:flex-row",
   wrapperPlan:
-    "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-lg",
+    "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 soft-shadow",
   ul: "mb-6 ",
+  fullPlanStyles:
+    "border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none",
 };
 
 const PlansSection = (): React.ReactElement => {
@@ -33,7 +39,7 @@ const PlansSection = (): React.ReactElement => {
         subtitle="Temos preços acessíveis"
         section="plansSection"
       />
- 
+
       <div className={`${css.containerPlans}`}>
         <div className={`${css.wrapperPlan}`}>
           <TitleAndSubtitle h2="Plano Básico" h3="Um mês de teste grátis!" />
@@ -48,12 +54,16 @@ const PlansSection = (): React.ReactElement => {
           <ButtonCall />
         </div>
 
-        <div className={`${css.wrapperPlan} border-[2.5px] border-pink-400/80`}>
-          <TitleAndSubtitle h2="Plano Completo" h3="Tudo o que você precisa!" />
+        <div className={`${css.wrapperPlan} ${css.fullPlanStyles}`}>
+          <TitleAndSubtitle
+            h2="Plano Completo"
+            h3="Tudo o que você precisa!"
+            fullPlan={true}
+          />
 
           <ul className={`${css.ul}`}>
             {fullPlan.map((item, index) => (
-              <ItemLIst text={item} key={index} />
+              <ItemLIst text={item} key={index} fullPlan={true} />
             ))}
           </ul>
         </div>
@@ -64,7 +74,15 @@ const PlansSection = (): React.ReactElement => {
 
 export default PlansSection;
 
-const TitleAndSubtitle = ({ h2, h3 }: { h2: string; h3: string }) => {
+const TitleAndSubtitle = ({
+  h2,
+  h3,
+  fullPlan,
+}: {
+  h2: string;
+  h3: string;
+  fullPlan?: boolean;
+}) => {
   const css = {
     h2: "text-gray-800 leading-10 font-p font-semibold text-[1.310em] sm:text-[1.330em] md:text-[1.340em] lg:text-[1.360em] xl:text-[1.380em] 2xl:text-[1.400em]",
     h3: "text-gray-600 mb-3 font-p font-light text-[1.160em] sm:text-[1.183em] md:text-[1.195em] lg:text-[1.217em] xl:text-[1.240em] 2xl:text-[1.263em]",
@@ -72,15 +90,23 @@ const TitleAndSubtitle = ({ h2, h3 }: { h2: string; h3: string }) => {
 
   return (
     <>
-      <h2 className={`${css.h2}`}>{h2}</h2>
-      <h3 className={`${css.h3}`}>{h3}</h3>
+      <h2 className={`${css.h2} ${fullPlan && "!text-white"}`}>{h2}</h2>
+      <h3 className={`${css.h3} ${fullPlan && "!text-white"}`}>{h3}</h3>
     </>
   );
 };
 
-const ItemLIst = ({ text }: { text: string }): React.ReactElement => {
+const ItemLIst = ({
+  text,
+  fullPlan,
+}: {
+  text: string;
+  fullPlan?: boolean;
+}): React.ReactElement => {
   return (
-    <li className={`flex gap-3 py-2 px-1 ${pStyles}`}>
+    <li
+      className={`flex gap-3 py-2 px-1 ${pStyles} ${fullPlan && "!text-white"}`}
+    >
       <IconCheck variation="plansSection" /> {text}
     </li>
   );
