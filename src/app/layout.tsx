@@ -6,7 +6,7 @@ import { DM_Sans, Geologica, Cookie } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"], // selecione os pesos que precisa
+  weight: ["300", "400", "500", "600", "800"],
   variable: "--font-p",
 });
 

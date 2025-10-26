@@ -1,44 +1,38 @@
 import React from "react";
 import {
   IconCheck,
-  TitleSection,
-  SubtitleSection,
   ButtonCall,
   MainImage,
-} from "../Ui/index";
+  TitleSubtitleSection,
+} from "./components/index";
 import { sectionHomeStyles } from "@/data/styles";
+import { pStyles } from "./components/styles";
 
 export const TextContent = () => {
   const css = {
     wrapperP: "flex gap-3 items-start mb-6 sm:max-w-142 md:max-w-full m-auto",
-    p: "text-gray-800 -mt-[7px] leading-8 text-[1.160em] sm:text-[1.183em] md:text-[1.195em] lg:text-[1.217em] xl:text-[1.240em] 2xl:text-[1.263em]",
-    strong: "font-medium",
+    p: `-mt-[7px] leading-8 ${pStyles}`,
+    strong: "font-semibold",
   };
 
   return (
     <>
       <div className={`${css.wrapperP}`}>
         <IconCheck />
+        <p className={`${css.p}`}>Um mês grátis para expor suas peças.</p>
+      </div>
+      <div className={`${css.wrapperP}`}>
+        <IconCheck />
         <p className={`${css.p}`}>
-          <strong className={`${css.strong}`}>Um mês grátis</strong> para expor
-          suas peças.
+          Veja facilmente as peças que o cliente quer. Seu cliente faz uma lista
+          de favoritos clicando no coração.
         </p>
       </div>
       <div className={`${css.wrapperP}`}>
         <IconCheck />
         <p className={`${css.p}`}>
-          <strong className={`${css.strong}`}>
-            Veja facilmente as peças que o cliente quer.
-          </strong>{" "}
-          Seu cliente faz uma lista de favoritos clicando no coração.
-        </p>
-      </div>
-      <div className={`${css.wrapperP}`}>
-        <IconCheck />
-        <p className={`${css.p}`}>
-          <strong className={`${css.strong}`}>Suporte humano</strong> para te
-          ajudar a cadastrar seus produtos de modo facil e rápido em caso de
-          dúvidas.
+          Suporte humano para te ajudar a cadastrar seus produtos de modo facil
+          e rápido em caso de dúvidas.
         </p>
       </div>
     </>
@@ -55,8 +49,10 @@ const css = {
 const WhySection = (): React.ReactElement => {
   return (
     <section className={sectionHomeStyles}>
-      <TitleSection title="Porque ter um catálogo?" />
-      <SubtitleSection title="Ajudamos você a vender mais" />
+      <TitleSubtitleSection
+        title="Porque ter um catálogo?"
+        subtitle="Ajudamos você a vender mais"
+      />
 
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperInfo}`}>
