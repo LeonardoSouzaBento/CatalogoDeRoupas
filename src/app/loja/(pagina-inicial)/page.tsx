@@ -11,6 +11,7 @@ const Home = () => {
       <Header />
       <Main />
       <Footer />
+      <Footer />
       <ButtonChat />
     </HomeDataProvider>
   );

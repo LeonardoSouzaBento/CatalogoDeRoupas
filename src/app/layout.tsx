@@ -1,10 +1,10 @@
 import { UserDataProvider } from "@/contexts/Providers/UserDataProvider";
 import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
 import type { Metadata } from "next";
+import { DM_Sans, Cookie } from "next/font/google";
 import "./globals.css";
 import "./shorteners.css";
 import "./styles.css";
-import { DM_Sans, Cookie } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],

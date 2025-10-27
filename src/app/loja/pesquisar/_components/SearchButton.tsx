@@ -1,4 +1,4 @@
-import { iconMdStyles, inputClasses } from "@/data/styles";
+import { iconMdStyles, inputClasses } from "@app/styles";
 import { Search } from "lucide-react";
 import React from "react";
 

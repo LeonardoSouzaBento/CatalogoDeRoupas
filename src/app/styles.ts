@@ -18,5 +18,3 @@ export const pStyles = ` text-gray-800 text-[1.125em] sm:text-[1.132em] md:text-
 export const imageUploadNameButton = `flex flex-col items-center gap-2 p-4 box-border bg-gray-100 normal-button-sizes font-medium rounded-none !leading-5 text-gray-800 capitalize rounded-sm hover:bg-gray-200 fast-trans`;
 export const buttonClose = "h-9 min-w-9 br-xs centralize bg-bt fast-trans";
 
-export const basicCardStyle = "bg-white br-lg shadow-lg p-5 mb-4";
-

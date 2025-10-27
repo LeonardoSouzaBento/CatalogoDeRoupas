@@ -6,6 +6,7 @@ import {
   FindUsSection,
 } from "./components";
 import WrapperSection from "./components/WrapperSection";
+import AboutSection from "./components/AboutSection/AboutSection";
 
 const Main = (): React.ReactElement => {
   return (
@@ -14,6 +15,7 @@ const Main = (): React.ReactElement => {
       <WrapperSection child={<SpecialSelections />} wrapperStyles="!pb-0" />
       <WrapperSection child={<MainCategories />} />
       <WrapperSection child={<FindUsSection />} />
+      <WrapperSection child={<AboutSection />} />
     </main>
   );
 };

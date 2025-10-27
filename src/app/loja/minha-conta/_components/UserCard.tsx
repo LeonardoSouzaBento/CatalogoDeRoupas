@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Pen } from "lucide-react";
-import { iconMdStyles } from "@/data/styles";
+import { iconMdStyles } from "@app/styles";
 
 const css = {
   wrapper: `w-full h-max flex flex-col gap-3 min-[500px]:flex-row min-[500px]:gap-4 relative br-lg bg-white`,

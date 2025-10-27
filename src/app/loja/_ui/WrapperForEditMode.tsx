@@ -1,6 +1,5 @@
 import React from "react";
 import { X } from "lucide-react";
-import { h3Sizes } from "@data/styles";
 
 const css = {
   wrapper: "w-full bg-white",
@@ -8,7 +7,8 @@ const css = {
     "min-h-10 min-w-full mb-4 flex justify-between items-center gap-2 border-b border-gray-300 rounded-none",
   button: "h-9 min-w-9 br-xs centralize bg-bt absolute top-[10.5px] right-[10.5px]",
   icon: { strokeWidth: 2.3, size: 20 },
-  h3: `${h3Sizes} leading-5`, 
+  h3: `font-medium text-[1.090em] sm:text-[1.099em] md:text-[1.103em] 
+  lg:text-[1.112em] xl:text-[1.120em] 2xl:text-[1.128em] leading-5`, 
 };
 
 interface WrapperFormProps {

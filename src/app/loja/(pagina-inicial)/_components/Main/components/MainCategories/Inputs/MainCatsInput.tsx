@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { HomeDataContext } from "@contexts/HomeDataContext";
 import CategoryCardResume from "./CategoryCardResume";
-import { iconMdStyles } from "@data/styles";
+import { iconMdStyles } from "@app/styles";
 import { Eye, EyeClosed, Plus } from "lucide-react";
 
 const css = {

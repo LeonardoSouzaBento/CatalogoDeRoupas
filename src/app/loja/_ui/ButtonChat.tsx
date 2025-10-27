@@ -1,5 +1,5 @@
 "use client";
-import { iconMdStyles } from "@/data/styles";
+import { iconMdStyles } from "@app/styles";
 import { MessageSquare } from "lucide-react";
 import React from "react";
 

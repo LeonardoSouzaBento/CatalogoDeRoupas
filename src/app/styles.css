@@ -1,8 +1,13 @@
 @import "tailwindcss";
 @import "material-symbols/outlined.css";
+@import "./shorteners.css";
 
 .p-landing-page {
   @apply text-gray-800 font-normal text-[1.07em];
+}
+
+.basic-card-style {
+  @apply bg-white shadow-lg p-5 mb-4;
 }
 
 .material-symbols-outlined {

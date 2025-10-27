@@ -7,7 +7,7 @@ const css = {
   wrapper: "w-full abso pt-3 pb-3 bg-gray-100 z-1",
   wrapperForm:
     "w-[calc(100%-16px)] h-max p-5 m-auto max-w-128 flex flex-col gap-4 bg-white br-lg relative shadow-md",
-  label: `${h3Sizes} leading-5 dm-sans font-medium !text-neutral-800 border-b border-neutral-300 pb-[14px]`,
+  label: `${h3Sizes} leading-5 font-medium !text-neutral-800 border-b border-neutral-300 pb-[14px]`,
   wrapperButtons: "flex items-start gap-3",
   buttonSend: "button",
   buttonClose: "h-9 w-9 absolute top-2 right-2 br-xs centralize bg-bt",

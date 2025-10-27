@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import type { MainCategory } from "@/types/types";
 import { Pen, Check, Upload } from "lucide-react";
-import { iconSmStyles, iconMdStyles, inputClasses } from "@data/styles";
+import { iconSmStyles, iconMdStyles, inputClasses } from "@app/styles";
+import Image from "next/image";
 
 const css = {
   wrapperCardCat: `sm:w-[49%] sm:max-w-[49%] sm:min-h-100 flex flex-col justify-center gap-2 bs
@@ -61,10 +62,11 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
           !seeCardEditMode && css.wrapperImgNoEditMode
         }`}
       >
-        <img
+        <Image
           src={category.urlImg}
           alt={category.alt}
           className={`${css.img} ${seeCardEditMode && css.imgEditMode}`}
+          fill={true}
         />
         {seeCardEditMode && (
           <button className={`${css.buttonImg}`}>
