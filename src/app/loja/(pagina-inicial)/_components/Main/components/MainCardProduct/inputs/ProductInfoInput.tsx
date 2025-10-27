@@ -8,7 +8,7 @@ const css = {
   button: "button min-w-9 !h-9 !px-0 centralize mr-0",
   wrapperButton: "w-full flex justify-end",
   saveButton: "button w-full !justify-center",
-  label: "font-p font-medium",
+  label: " font-medium",
 };
 
 const ProductInfoInput = ({

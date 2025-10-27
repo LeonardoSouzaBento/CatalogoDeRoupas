@@ -3,7 +3,7 @@ import ProductInfoInput from "../inputs/ProductInfoInput";
 import { BoolSetter, SpecialSelectionSchema } from "@/types/types";
 
 const css = {
-  wrapperInfo: "w-full h-max p-4 flex flex-col items-start gap-2 bg-white",
+  wrapperInfo: "w-full h-max p-4 flex flex-col items-start gap-2 bg-white br-0",
   priceP: "font-semibold",
 };
 

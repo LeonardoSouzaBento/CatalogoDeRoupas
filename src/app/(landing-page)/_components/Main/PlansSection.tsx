@@ -3,7 +3,6 @@ import {
   ButtonCall,
   IconCheck,
 } from "./components/index";
-import { pStyles } from "@app/(landing-page)/styles";
 
 const basicPlan = [
   "Cadastre até 200 peças",
@@ -77,8 +76,8 @@ const TitleAndSubtitle = ({
   fullPlan?: boolean;
 }) => {
   const css = {
-    h2: "text-gray-800 leading-10 font-p font-semibold text-[1.310em] sm:text-[1.330em] md:text-[1.340em] lg:text-[1.360em] xl:text-[1.380em] 2xl:text-[1.400em]",
-    h3: "text-gray-600 mb-5 font-p font-light text-[1.160em] sm:text-[1.183em] md:text-[1.195em] lg:text-[1.217em] xl:text-[1.240em] 2xl:text-[1.263em]",
+    h2: "text-gray-800 leading-10  font-semibold text-[1.230em] sm:text-[1.248em] md:text-[1.256em] lg:text-[1.273em] xl:text-[1.290em] 2xl:text-[1.307em]",
+    h3: "text-gray-600 mb-5  font-light text-[1.100em] sm:text-[1.115em] md:text-[1.122em] lg:text-[1.136em] xl:text-[1.150em] 2xl:text-[1.164em]",
   };
 
   return (
@@ -98,7 +97,7 @@ const ItemLIst = ({
 }): React.ReactElement => {
   return (
     <li
-      className={`flex gap-3 py-2 px-1 ${pStyles} ${fullPlan && "!text-white"}`}
+      className={`flex gap-3 py-2 px-1 p-landing-page ${fullPlan && "!text-white"}`}
     >
       <IconCheck section={fullPlan ? "plansSection" : ""} /> {text}
     </li>

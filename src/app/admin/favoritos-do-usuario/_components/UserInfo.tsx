@@ -1,5 +1,5 @@
 "use client";
-import { iconLgStyles } from "@/data/styles";
+import { iconLgStyles } from "@app/styles";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 

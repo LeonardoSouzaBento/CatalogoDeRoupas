@@ -2,7 +2,7 @@ import React from "react";
 
 const css = {
   wrapper: `h-14 box-border px-5 mb-4 bg-stone-800 flex items-center justify-start br-0`,
-  h1: `text-indigo-50 font-medium font-h leading-none text-[1.250em] sm:text-[1.265em] md:text-[1.272em] lg:text-[1.286em] xl:text-[1.300em] 2xl:text-[1.314em]`,
+  h1: `text-white font-semibold leading-none text-[1.250em] sm:text-[1.265em] md:text-[1.272em] lg:text-[1.286em] xl:text-[1.300em] 2xl:text-[1.314em]`,
 };
 
 const TitlePage = ({ title }: { title: string }): React.ReactElement => {

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import type { AddressSchema, ShopInfo } from "@/types/types";
-import { inputClasses } from "@data/styles";
+import { inputClasses } from "@app/styles";
 
 const css = {
   wrapper: "w-full block border-none",
   form: "w-full",
   button: "",
-  label: "font-p block size-max mb-1 font-medium text-gray-700 ",
+  label: " block size-max mb-1 font-medium text-gray-700 ",
   input: `${inputClasses} mb-[15px]`,
 };
 

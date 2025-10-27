@@ -10,7 +10,7 @@ const css = {
   wrapperImgNoEditMode: "border-b-2 border-neutral-700",
   img: "size-full object-cover",
   imgEditMode: "grayscale",
-  p: "font-p font-medium !text-neutral-800",
+  p: " font-medium !text-neutral-800",
   u: "font-normal",
   button: "button w-full !justify-center",
   buttonImg: `flex flex-col items-center size-full gap-2 p-3 abso box-border px-4 bg-neutral-100/70 normal-button-sizes 

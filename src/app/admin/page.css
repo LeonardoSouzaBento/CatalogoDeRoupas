@@ -7,7 +7,7 @@
         md:text-[1.422em] lg:text-[1.436em] xl:text-[1.450em] 2xl:text-[1.464em];
   }
   h2 {
-    @apply w-full mb-6 font-h font-normal text-center text-neutral-500 text-[1.040em] 
+    @apply w-full mb-6 dm-sans font-normal text-center text-neutral-500 text-[1.040em] 
     sm:text-[1.046em] md:text-[1.049em] lg:text-[1.054em] xl:text-[1.06em] 2xl:text-[1.066em] cursor-default;
   }
   p,
@@ -18,14 +18,14 @@
     lg:text-[1.143em] xl:text-[1.150em] 2xl:text-[1.157em] cursor-default;
   }
   p {
-    @apply font-p;
+    @apply ;
   }
   h1,
   h2,
   h3,
   h4,
   h5 {
-    @apply font-h;
+    @apply dm-sans;
   }
   input,
   textarea {
@@ -35,14 +35,14 @@
     @apply rounded-sm;
   }
   button {
-    @apply font-h rounded-sm text-[1.025em] sm:text-[1.028em]
+    @apply dm-sans rounded-sm text-[1.025em] sm:text-[1.028em]
     md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
   }
   section {
     @apply w-full border-b-2 border-gray-300 pt-7 pb-10;
   }
   img {
-    @apply font-p;
+    @apply ;
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;
   }
 }

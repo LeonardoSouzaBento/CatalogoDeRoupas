@@ -2,27 +2,22 @@ import React, { useState, useEffect } from "react";
 import type { ShopInfo } from "@/types/types";
 import { X, Check, Trash } from "lucide-react";
 import { defaultShopInfo } from "@data/home/publicData";
-import { h3Sizes } from "@data/styles";
+import { h3Sizes, iconMdStyles } from "@app/styles";
+import AlertInfo from "@/app/loja/_ui/AlertInfo";
 
 const css = {
   wrapper: "abso z-3 size-full bg-white p-5 br-lg",
   header:
     "h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none",
-  h3:"font-h font-medium text-gray-800" + h3Sizes,
+  h3:"dm-sans font-medium text-gray-800" + h3Sizes,
   buttonClose:
     "h-9 w-9 absolute top-3 right-3 br-xs centralize bg-bt",
-  wrapperPInfo:
-    "min-h-10 w-full p-3 mb-4 flex justify-start items-center gap-2 bg-gray-100 rounded-sm",
-  infoP: "small-p",
-  spanInfo: "text-gray-600 !font-[350]",
-  p: "",
   textarea:
     "w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none",
   wrapperButtons:
     "w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2",
   buttons:
     "w-full sm:w-70 md:w-max button !justify-start text-[1.025em] xl:text-[1.035em]",
-  icon: { strokeWidth: 2.3, size: 19.5 },
 };
 
 type AboutInputProps = {
@@ -77,14 +72,7 @@ const AboutInput = ({
           <X strokeWidth={2} size={20} />
         </button>
       </div>
-      <div className={`${css.wrapperPInfo}`}>
-        <span className={`${css.spanInfo} material-symbols-outlined`}>
-          info
-        </span>
-        <p className={`${css.infoP}`}>
-          Dê entrer para quebrar de linha e definir novos paragrafos
-        </p>
-      </div>
+      <AlertInfo text="Quebre de linha para definir novos paragrafos." />
       <textarea
         value={inputValue}
         className={`${css.textarea}`}
@@ -103,17 +91,17 @@ const AboutInput = ({
           }}
         >
           {" "}
-          <Trash {...css.icon} size={19} /> Deletar Todo o Texto
+          <Trash {...iconMdStyles} size={19} /> Deletar Todo o Texto
         </button>
         <button className={`${css.buttons} order-3 sm:order-3`}>
-          <Check {...css.icon} />
+          <Check {...iconMdStyles} />
           Salvar
         </button>
         <button
           className={`${css.buttons} order-2 sm:order-2`}
           onClick={handleDiscardChanges}
         >
-          <X {...css.icon} />
+          <X {...iconMdStyles} />
           Descartar Alterações
         </button>
       </div>

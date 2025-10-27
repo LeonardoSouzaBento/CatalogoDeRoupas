@@ -1,7 +1,7 @@
 import React from "react";
 import { CalendarHeart, Eye, UserCheck } from "lucide-react";
 import { ButtonCall, IconCheck, MainImage } from "./components/index";
-import { sectionHomeStyles, pStyles } from "@app/(landing-page)/styles";
+import { sectionHomeStyles } from "@app/(landing-page)/styles";
 
 const css = {
   wrapper: "block md:flex md:gap-7",
@@ -46,7 +46,7 @@ const content = [
 export const TextContent = () => {
   const css = {
     wrapperP: "flex gap-4 items-start mb-6 sm:max-w-142 md:max-w-full m-auto",
-    p: `-mt-[7px] leading-8 ${pStyles}`,
+    p: `-mt-[7px] leading-8 p-landing-page`,
     strong: "font-semibold",
     wrapperIcon:
       "inline-flex items-center justify-center bg-[#E8F9EE] p-1 br-sm",

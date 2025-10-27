@@ -2,18 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import { HomeDataContext } from "@contexts/HomeDataContext";
 import type { GenderKey } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
-import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 import ChildGenderButtons from "./components/ChildGenderButtons";
 import GenderImage from "./components/GenderImage";
 
 const css = {
   container:
-    "w-full h-auto sm:h-[180px] max-w-220 m-auto centralize items-end flex-col gap-2 sm:flex-row relative",
+    "w-full h-auto sm:h-[180px] max-w-220 m-auto centralize items-end flex-col gap-1 sm:flex-row relative",
   wrapper:
-    "min-h-10 h-10 w-full sm:h-[156px] sm:w-1/3 bg-gray-100 flex items-end flex-auto crop relative trans rounded-sm",
+    "min-h-10 h-10 w-full sm:h-[156px] sm:w-1/3 bg-gray-100 flex items-end flex-auto crop relative trans br-sm",
   selectedWrapper: "h-[200px] sm:h-[180px] sm:w-[50%]",
   buttonGender:
-    "h-full min-w-full w-full max-h-18 centralize relative bg-gradient-to-t from-black to-transparent text-white uppercase font-h !font-extralight leading-none text-[1.0676em] sm:text-[1.0788em] md:text-[1.0844em] lg:text-[1.0955em] xl:text-[1.1058em] 2xl:text-[1.116em] cursor-pointer",
+    "h-full min-w-full w-full max-h-18 centralize relative bg-gradient-to-t from-black to-transparent text-white uppercase !font-extralight leading-none text-[1.0676em] sm:text-[1.0788em] md:text-[1.0844em] lg:text-[1.0955em] xl:text-[1.1058em] 2xl:text-[1.116em] cursor-pointer",
   noSelectedWrapper: "bg-stone-800 sm:bg-transparent",
 };
 
@@ -53,53 +52,48 @@ const UserGenderList = (): React.ReactElement => {
   }, [selectedGender]);
 
   return (
-    <section
-      className={`${shopHomeSection} bg-gradient-to-t from-neutral-100 to-white`}
-    >
-      <div className={`${shopHomeWrapperSection} !pt-[30px]`}>
-        <HomeTitleSubtitle
-          title="Selecione Um Gênero"
-          subtitle="E veja as coleções relacionadas"
-          genderSection={true}
-        />
-        <div className={css.container}>
-          {userCategories.map((item, index) => {
-            const orderClass = getOrderClass(index, selectedIndex);
-            return (
-              <div
-                key={index}
-                id={`${index}`}
-                onClick={() => {
-                  handleSelectGender(item.name);
-                }}
-                className={`${css.wrapper}  ${
-                  selectedIndex === index
-                    ? css.selectedWrapper
-                    : css.noSelectedWrapper
-                } ${orderClass}`}
+    <>
+      <HomeTitleSubtitle
+        title="Selecione Um Gênero"
+        subtitle="E veja as coleções relacionadas"
+        genderSection={true}
+      />
+      <div className={css.container}>
+        {userCategories.map((item, index) => {
+          const orderClass = getOrderClass(index, selectedIndex);
+          return (
+            <div
+              key={index}
+              id={`${index}`}
+              onClick={() => {
+                handleSelectGender(item.name);
+              }}
+              className={`${css.wrapper}  ${
+                selectedIndex === index
+                  ? css.selectedWrapper
+                  : css.noSelectedWrapper
+              } ${orderClass}`}
+            >
+              <GenderImage
+                item={item}
+                index={index}
+                selectedGender={selectedGender}
+              />
+              <button
+                className={`${css.buttonGender} ${
+                  item.name === selectedGender && "scale-107"
+                }`}
               >
-                <GenderImage
-                  item={item}
-                  index={index}
-                  selectedGender={selectedGender}
-                />
-                <button
-                  className={`${css.buttonGender} ${
-                    item.name === selectedGender && "scale-107"
-                  }`}
-                >
-                  {item.name}
-                </button>
-
-                {index == 2 && selectedGender == "infantil" && (
-                  <ChildGenderButtons />
-                )}
-              </div>
-            );
-          })}
-        </div>
+                {item.name}
+              </button>
+              {index == 2 && selectedGender == "infantil" && (
+                <ChildGenderButtons />
+              )}
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </>
   );
 };
 

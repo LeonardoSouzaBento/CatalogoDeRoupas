@@ -3,7 +3,6 @@ import MainCardProduct from "./MainCardProduct/MainCardProduct";
 import type { SpecialSelectionSchema, GenderKey } from "@/types/types";
 import { HomeDataContext } from "@contexts/HomeDataContext";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
-import { shopHomeSection, shopHomeWrapperSection } from "@/data/styles";
 
 const css = {
   wrapper: "crop",
@@ -33,29 +32,27 @@ const SpecialSelections = (): React.ReactElement => {
     selectedChildGender == "feminino" && selectedGender == "infantil";
 
   return (
-    <section className={`${shopHomeSection}`}>
-      <div className={`${shopHomeWrapperSection} !pb-0`}>
-        <HomeTitleSubtitle
-          title="Seleções especiais"
-          subtitle="Nossas peças mais bonitas"
-        />
-        <div className={`${css.wrapper}`}>
-          {!femaleChildProductsSelected ? (
-            <div className={`${css.scrollableDiv}`}>
-              {products.map((item, index) => (
-                <MainCardProduct item={item} key={index} />
-              ))}
-            </div>
-          ) : (
-            <div className={`${css.scrollableDiv}`}>
-              {femaleChildSpecialSelections.map((item, index) => (
-                <MainCardProduct item={item} key={index} />
-              ))}
-            </div>
-          )}
-        </div>
+    <>
+      <HomeTitleSubtitle
+        title="Seleções especiais"
+        subtitle="Nossas peças mais bonitas"
+      />
+      <div className={`${css.wrapper}`}>
+        {!femaleChildProductsSelected ? (
+          <div className={`${css.scrollableDiv}`}>
+            {products.map((item, index) => (
+              <MainCardProduct item={item} key={index} />
+            ))}
+          </div>
+        ) : (
+          <div className={`${css.scrollableDiv}`}>
+            {femaleChildSpecialSelections.map((item, index) => (
+              <MainCardProduct item={item} key={index} />
+            ))}
+          </div>
+        )}
       </div>
-    </section>
+    </>
   );
 };
 

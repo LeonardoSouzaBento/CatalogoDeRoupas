@@ -4,7 +4,6 @@ import UserCard from "./_components/UserCard";
 import HeaderCard from "@ui/HeaderCard";
 import React from "react";
 import TitlePage from "@ui/TitlePage";
-import "../../loja/(pagina-inicial)/page.css"
 
 const css = {
   mainWrapper: `px-3 m-auto lg:px-6 lg:flex lg:flex-wrap lg:gap-6 lg:max-w-[1208px]`,

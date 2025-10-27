@@ -8,8 +8,8 @@ const css = {
   wrapperImg: `h-16 min-w-16 w-16 relative bg-gray-100 br-lg border-none`,
   img: "!border-none !outline-none",
   wrapperInfo: "min-h-16 w-full py-2 flex flex-col gap-2",
-  name: `block font-h font-semibold break-words text-gray-800 capitalize leading-none text-[1.2em] xl:text-[1.25em]`,
-  email: "block leading-none font-p break-all",
+  name: `block font-semibold break-words text-gray-800 capitalize leading-none text-[1.2em] xl:text-[1.25em]`,
+  email: "block leading-none  break-all",
   buttonEdit: "absolute right-0 top-0 square-button",
 };
 

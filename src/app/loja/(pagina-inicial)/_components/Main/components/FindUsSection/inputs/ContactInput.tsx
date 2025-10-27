@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import type { ShopInfo } from "@/types/types";
-import { inputClasses } from "@/data/styles";
+import { inputClasses } from "@app/styles";
 
 const css = {
   wrapperInput: "w-full",

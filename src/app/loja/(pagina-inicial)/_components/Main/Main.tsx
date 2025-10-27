@@ -5,14 +5,15 @@ import {
   MainCategories,
   FindUsSection,
 } from "./components";
+import WrapperSection from "./components/WrapperSection";
 
 const Main = (): React.ReactElement => {
   return (
     <main>
-      <UserGenderList />
-      <SpecialSelections />
-      <MainCategories />
-      <FindUsSection />
+      <WrapperSection child={<UserGenderList />} wrapperStyles="!pt-[30px]" />
+      <WrapperSection child={<SpecialSelections />} wrapperStyles="!pb-0" />
+      <WrapperSection child={<MainCategories />} />
+      <WrapperSection child={<FindUsSection />} />
     </main>
   );
 };

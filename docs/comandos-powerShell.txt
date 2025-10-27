@@ -1,0 +1,13 @@
+substituir ocorrencias em arquivos.ts
+
+Get-ChildItem -Path . -Filter *.tsx -Recurse |
+ForEach-Object {
+    (Get-Content $_.FullName) -replace 'font-p', '' |
+    Set-Content $_.FullName
+}
+
+Get-ChildItem -Path . -Filter *.ts -Recurse |
+ForEach-Object {
+    (Get-Content $_.FullName) -replace 'font-p', '' |
+    Set-Content $_.FullName
+}

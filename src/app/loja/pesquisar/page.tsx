@@ -4,7 +4,6 @@ import Header from "./_components/Header";
 import SearchButton from "./_components/SearchButton";
 import Suggestions from "./_components/Suggestions";
 import UserGenders from "./_components/UserGenders";
-import "../../loja/(pagina-inicial)/page.css"
 
 const Pesquisar = (): React.ReactElement => {
   return (

@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react";
 const css = {
   wrapper: "min-h-full",
   wrapperInfo: "mb-4 p-3 pb-0 border border-neutral-200",
-  h4: "mb-2 font-h text-neutral-700 font-medium h4-sizes",
+  h4: "mb-2 dm-sans text-neutral-700 font-medium h4-sizes",
   p: "mb-2 text-neutral-700",
-  li: "small-p font-p ",
+  li: "small-p  ",
   textarea:
-    "w-full centralize p-3 mb-4 border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none font-p",
+    "w-full centralize p-3 mb-4 border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none ",
   button: "",
 };
 

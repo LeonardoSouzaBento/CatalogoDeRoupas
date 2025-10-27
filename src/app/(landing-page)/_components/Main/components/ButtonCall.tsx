@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { Pen, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 
 const css = {
   wrapperButtonCall: "size-auto flex",
   buttonCall:
-    `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center rounded-2xl bg-yellow-400 text-stone-800 font-p font-semibold leading-5 cursor-pointer hover:bg-yellow-500 hover:scale-104 transition-color duration-300 
-    text-[1.180em] sm:text-[1.195em] md:text-[1.202em] lg:text-[1.216em] xl:text-[1.230em] 2xl:text-[1.244em]`,
+    `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center rounded-2xl bg-yellow-400 text-stone-800  font-semibold leading-5 cursor-pointer hover:bg-yellow-500 hover:scale-104 transition-color duration-300 
+    text-[1.050em] sm:text-[1.065em] md:text-[1.072em] lg:text-[1.086em] xl:text-[1.100em] 2xl:text-[1.114em]`,
 };
 
 const iconStyles = { size: 20, strokeWidth: 2.3, color: "#802954" };

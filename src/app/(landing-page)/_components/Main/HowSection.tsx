@@ -1,7 +1,7 @@
 import React from "react";
 import { Share2, Search, Heart } from "lucide-react";
 import { ButtonCall, MainImage } from "../Main/components/index";
-import { sectionHomeStyles, pStyles } from "@app/(landing-page)/styles";
+import { sectionHomeStyles } from "@app/(landing-page)/styles";
 
 const css = {
   section: "",
@@ -52,8 +52,8 @@ const Messages = () => {
     wrapperPNumber:
       "h-7 min-w-7 flex justify-center items-center rounded-[50%] bg-[#DF2080]",
     pNumber:
-      "!text-white font-semibold font-p text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
-    p: `-mt-[1px] ${pStyles}`,
+      "!text-white font-semibold  text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
+    p: `-mt-[1px] p-landing-page`,
     wrapperIcon: "inline-flex items-end justify-center box-border mt-1 mr-2",
   };
 

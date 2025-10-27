@@ -1,13 +1,9 @@
-/* ShopHome */
-export const shopHomeSection = "w-full px-3";
-export const shopHomeWrapperSection = "w-full max-w-[1180px] m-auto pt-3 pb-7";
-
 /* cores */
 export const gray800 = "oklch(27.8% 0.033 256.848)";
 export const gray300 = "oklch(70.7% 0.022 261.325)";
 
 export const inputClasses =
-  "block w-full h-10 pl-3 pb-[2px] border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none ";
+  "block w-full h-10 pl-3 pb-[2px] border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none";
 export const h3Sizes =
   "font-medium text-[1.090em] sm:text-[1.099em] md:text-[1.103em] lg:text-[1.112em] xl:text-[1.120em] 2xl:text-[1.128em]";
 

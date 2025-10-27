@@ -3,18 +3,13 @@ import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./shorteners.css";
-import { DM_Sans, Geologica, Cookie } from "next/font/google";
+import "./styles.css";
+import { DM_Sans, Cookie } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "800"],
-  variable: "--font-p",
-});
-
-const geologica = Geologica({
-  subsets: ["latin"],
-  weight: ["100", "200","300", "400", "500", "600"],
-  variable: "--font-h",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--dm-sans",
 });
 
 const cookie = Cookie({
@@ -28,19 +23,19 @@ export const metadata: Metadata = {
   description: "Crie seu catálogo de roupas online",
 };
 
+const fontStyles = `font-dm-sans text-gray-800 
+text-[1.090em] sm:text-[1.103em] md:text-[1.110em] lg:text-[1.122em] xl:text-[1.135em] 2xl:text-[1.148em]`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-br"
-      className={`${dmSans.variable} ${geologica.variable} ${cookie.variable}`}
-    >
+    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
       <PublicDataProvider>
         <UserDataProvider>
-          <body>{children}</body>
+          <body className={`${fontStyles} bg-gray-50`}>{children}</body>
         </UserDataProvider>
       </PublicDataProvider>
     </html>

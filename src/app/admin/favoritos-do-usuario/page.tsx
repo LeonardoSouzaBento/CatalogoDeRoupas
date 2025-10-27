@@ -1,5 +1,5 @@
 import HeaderCard from "@ui/HeaderCard";
-import { basicCardStyle } from "@/data/styles";
+import { basicCardStyle } from "@app/styles";
 import TitlePage from "@ui/TitlePage";
 import UserPhoto from "./_components/UserPhoto";
 import UserInfo from "./_components/UserInfo";
