@@ -7,17 +7,18 @@ import {
   HowSection,
 } from "./_components/Main/index";
 
+// segundo branco: #FFFFFF
+
 export default function Home() {
   const css = {
-    wrapperTwoSections: `xl:mb-7 xl:w-auto xl:h-[654px] xl:m-auto xl:mb-7 xl:flex xl:gap-6 xl:max-w-[1280px] xl:items-start 
-    xl:justify-center`,
+    wrapperTwoSections: `xl:mb-7 xl:w-auto xl:h-[712px] xl:m-auto pt-6 xl:flex xl:gap-6 xl:px-[calc((100%-1280px)/2)] xl:items-start xl:justify-center`,
     wrapperSection: "xl:w-[calc(100%-14px)] xl:h-[546px]",
   };
 
   return (
     <div className="bg-gray-50">
       <LogoHeader page="landing-page" />
-      <main className="pb-4 xl:pb-9">
+      <main>
         <MainSection />
         <div className={`${css.wrapperTwoSections}`}>
           <div className={css.wrapperSection}>
@@ -38,7 +39,13 @@ export default function Home() {
             <HowSection />
           </div>
         </div>
-        <PlansSection />
+        <div className="pb-9">
+          <TitleSubtitleSection
+            title="Quanto Custa?"
+            subtitle="Temos preços acessíveis"
+          />
+          <PlansSection />
+        </div>
       </main>
     </div>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import {
   ButtonCall,
   IconCheck,
-  TitleSubtitleSection,
 } from "./components/index";
 import { pStyles } from "@app/(landing-page)/styles";
 
@@ -22,7 +21,7 @@ const fullPlan = [
 
 const css = {
   section:
-    "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto mb-6 rounded-2xl",
+    "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto rounded-2xl",
   containerPlans: "pb-2 flex flex-col gap-6 md:flex-row",
   wrapperPlan:
     "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 soft-shadow hover:scale-102 trans",
@@ -34,11 +33,6 @@ const css = {
 const PlansSection = (): React.ReactElement => {
   return (
     <section className={`${css.section}`}>
-      <TitleSubtitleSection
-        title="Quanto Custa?"
-        subtitle="Temos preços acessíveis"
-      />
-
       <div className={`${css.containerPlans}`}>
         <div className={`${css.wrapperPlan}`}>
           <TitleAndSubtitle h2="Plano Básico" h3="Um mês de teste grátis!" />

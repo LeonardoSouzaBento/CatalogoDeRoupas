@@ -7,7 +7,7 @@ const css = {
   section: "",
   wrapper:
     "block flex flex-col justify-center md:flex-row gap-3 xl:items-center",
-  wrapperInfo: "w-auto flex flex-col gap-6 md:w-1/2 max-w-100",
+  wrapperInfo: "w-auto flex flex-col gap-6 md:w-1/2",
   wrapperImg: "w-full md:w-1/2 flex flex-col gap-3",
 };
 
@@ -47,14 +47,14 @@ const content = [
 
 const Messages = () => {
   const css = {
-    wrapper: "w-auto flex items-start gap-3 sm:flex-row ",
+    wrapper: "w-auto flex items-start gap-4 sm:flex-row",
     wrapperP: "flex items-center",
     wrapperPNumber:
       "h-7 min-w-7 flex justify-center items-center rounded-[50%] bg-[#DF2080]",
     pNumber:
       "!text-white font-semibold font-p text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
     p: `-mt-[1px] ${pStyles}`,
-    wrapperIcon: "inline-flex items-start justify-center box-border mb-1",
+    wrapperIcon: "inline-flex items-end justify-center box-border mt-1 mr-2",
   };
 
   return (
@@ -66,10 +66,10 @@ const Messages = () => {
           </div>
           <div className={`${css.wrapperP}`}>
             <p className={`${css.p}`}>
-              {item.text}. {" "}
               <span className={`${css.wrapperIcon}`}>
                 <item.icon color="#DF2080" strokeWidth={2.2} size={22} />
               </span>{" "}
+              {item.text}.
             </p>
           </div>
         </div>
