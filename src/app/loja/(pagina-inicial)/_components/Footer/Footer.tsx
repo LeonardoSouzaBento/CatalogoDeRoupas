@@ -6,7 +6,7 @@ const css = {
 
 const Footer = (): React.ReactElement => {
   return (
-    <footer>
+    <footer className={`${css.footer}`}>
       <p className={`${css.p}`}>
         © 2025 <strong>Roupas Online</strong>. Todos os direitos reservados.
       </p>

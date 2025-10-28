@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import type { ShopInfo } from "@/types/types";
 import { inputClasses } from "@app/styles";
+import WrapperForEditMode from "@/app/loja/_ui/WrapperForEditMode";
+import SaveZapButton from "../components/SaveZapButton";
 
 const css = {
   wrapperInput: "w-full",
@@ -39,20 +41,17 @@ function validateWhatsapp(number: string) {
 }
 
 type ContactInputProps = {
-  setPhoneSaved: React.Dispatch<React.SetStateAction<boolean>>;
   shopInfo: ShopInfo;
   setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
-  canSavePhone: boolean;
 };
 
 const ContactInput = ({
-  setPhoneSaved,
   shopInfo,
   setShopInfo,
-  canSavePhone,
 }: ContactInputProps): React.ReactElement => {
   const [inputValue, setInputValue] = useState<string>("");
   const [zapErrors, setZapErrors] = useState<string[]>([""]); //length, without9, ddd
+  // const [canSave, setCanSave] = useState<boolean>(false);
 
   function handleEnterZapNumber() {
     const result = validateWhatsapp(inputValue);
@@ -92,23 +91,30 @@ const ContactInput = ({
   }, []);
 
   return (
-    <div className={`${css.wrapper}`}>
-      <input
-        type="text"
-        placeholder="xx xxxxx-xxxx"
-        className={`${css.input}`}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-        }}
-      />
-      {zapErrors.length > 0 && (
-        <ul className="text-red-600 text-sm">
-          {zapErrors.map((err, i) => (
-            <li key={i}>{err}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <WrapperForEditMode
+      title="Adicione Seu Whatsapp"
+      seeButtonClose={true}
+      setState={setSeePhoneInput}
+    >
+      <div className={`${css.wrapper}`}>
+        <input
+          type="text"
+          placeholder="xx xxxxx-xxxx"
+          className={`${css.input}`}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
+        />
+        {zapErrors.length > 0 && (
+          <ul className="text-red-600 text-sm">
+            {zapErrors.map((err, i) => (
+              <li key={i}>{err}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <SaveZapButton />
+    </WrapperForEditMode>
   );
 };
 

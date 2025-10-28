@@ -15,6 +15,8 @@ import {
 } from "@data/home/homeData";
 
 interface HomeDataContextType {
+  editMode: boolean;
+  setEditMode: React.Dispatch<React.SetStateAction<boolean>>;
   selectedGender: GenderKey;
   setSelectedGender: React.Dispatch<React.SetStateAction<GenderKey>>;
   userCategories: UserCategory[];
@@ -46,6 +48,8 @@ interface HomeDataContextType {
 }
 
 export const HomeDataContext = createContext<HomeDataContextType>({
+  editMode: false,
+  setEditMode: () => {},
   selectedGender: "masculino",
   setSelectedGender: () => {},
   userCategories: defaultUserCategoriesData,

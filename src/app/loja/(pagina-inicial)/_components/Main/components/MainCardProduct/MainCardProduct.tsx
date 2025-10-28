@@ -7,9 +7,9 @@ import ProductInfo from "./components/ProductInfo";
 
 const css = {
   wrapperProduct:
-    "h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end soft-shadow hover:shadow-lg fast-trans rounded-sm overflow-hidden",
+    "h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end soft-shadow hover:shadow-lg fast-trans br-lg overflow-hidden",
   wrapperImgs:
-    "w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex border-b-1 border-gray-200 relative bg-white rounded-none",
+    "w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex relative bg-white rounded-none",
   buttonHeart: "size-max absolute bottom-1 right-1 z-2 flex bg-button br-sm",
   wrapperIcon: "h-10 min-w-10 w-max centralize gap-3 fast-trans",
   wrapperPReturn: "centralize h-10 px-5",

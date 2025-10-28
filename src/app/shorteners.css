@@ -42,8 +42,20 @@
 .br-sm {
   @apply rounded-sm;
 }
+.br-md {
+  @apply rounded-md;
+}
 .br-lg {
   @apply rounded-lg;
+}
+.br-xl {
+  @apply rounded-xl;
+}
+.br-2xl {
+  @apply rounded-2xl;
+}
+.br-3xl {
+  @apply rounded-3xl;
 }
 .br-50 {
   @apply rounded-[50%];

@@ -20,6 +20,8 @@ import {
 import { useLocalStorage } from "@/hooks/UseLocalStorage";
 
 export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
+  // modo de edição
+  const [editMode, setEditMode] = useState<boolean>(false);
   // gênero do usuário
   const [selectedGender, setSelectedGender] = useLocalStorage(
     "selectedGender",
@@ -66,6 +68,8 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
   return (
     <HomeDataContext.Provider
       value={{
+        editMode,
+        setEditMode,
         selectedGender,
         setSelectedGender,
         userCategories,

@@ -1,6 +1,6 @@
 const css = {
   divLogo: "w-full h-22 pb-1 centralize flex-col relative z-4 rounded-none",
-  normalBackground: "bg-gradient-to-t from-stone-800 to-stone-900",
+  normalBackground: "bg-stone-800 ",
   pLogo:
     "leading-none mb-1 font-logo text-white text-[1.550em] sm:text-[1.565em] md:text-[1.572em] lg:text-[1.586em] xl:text-[1.600em] 2xl:text-[1.614em]",
   pSubtitle:

@@ -1,4 +1,4 @@
-import { pStyles } from "@/data/styles";
+import { pStyles } from "@app/styles";
 
 export interface Measure {
   type: string;

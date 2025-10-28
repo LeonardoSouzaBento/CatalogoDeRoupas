@@ -1,6 +1,59 @@
 import React, { useState, useEffect } from "react";
 import type { AddressSchema, ShopInfo } from "@/types/types";
 import { inputClasses } from "@app/styles";
+import WrapperForEditMode from "@/app/loja/_ui/WrapperForEditMode";
+import SaveAddressButton from "../components/SaveAddressButton";
+
+const inputs = [
+  {
+    id: "rua",
+    label: "Rua",
+    placeholder: "Digite sua rua",
+    required: true,
+    maxLength: 60,
+    type: "text",
+  },
+  {
+    id: "numero",
+    label: "Número",
+    placeholder: "",
+    required: true,
+    maxLength: 8,
+    type: "text",
+  },
+  {
+    id: "complemento",
+    label: "Complemento",
+    placeholder: "(Opcional)",
+    required: false,
+    maxLength: 50,
+    type: "text",
+  },
+  {
+    id: "bairro",
+    label: "Bairro",
+    placeholder: "Digite seu bairro",
+    required: true,
+    maxLength: 50,
+    type: "text",
+  },
+  {
+    id: "cidade",
+    label: "Cidade",
+    placeholder: "Digite sua cidade",
+    required: true,
+    maxLength: 60,
+    type: "text",
+  },
+  {
+    id: "estado",
+    label: "Estado",
+    placeholder: "Digite seu Estado",
+    required: true,
+    maxLength: 2,
+    type: "text",
+  },
+];
 
 const css = {
   wrapper: "w-full block border-none",
@@ -11,8 +64,6 @@ const css = {
 };
 
 type AddressInputProps = {
-  canSaveAddress: boolean;
-  setAddressSaved: React.Dispatch<React.SetStateAction<boolean>>;
   shopInfo: ShopInfo;
   setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
 };
@@ -20,8 +71,6 @@ type AddressInputProps = {
 const AddressInput = ({
   shopInfo,
   setShopInfo,
-  setAddressSaved,
-  canSaveAddress,
 }: AddressInputProps): React.ReactElement => {
   const [formData, setFormData] = useState<AddressSchema>({
     rua: "",
@@ -40,22 +89,6 @@ const AddressInput = ({
     });
   };
 
-  function handleRegisterAddres() {
-    if (addressComplete) {
-      setShopInfo({
-        ...shopInfo,
-        address: formData,
-      });
-      setAddressSaved(true);
-    }
-  }
-
-  useEffect(() => {
-    if (canSaveAddress) {
-      handleRegisterAddres();
-    }
-  }, [canSaveAddress]);
-
   useEffect(() => {
     const isFormValid = (
       Object.keys(formData) as (keyof AddressSchema)[]
@@ -73,95 +106,37 @@ const AddressInput = ({
   }, [formData]);
 
   return (
-    <div className={`${css.wrapper}`}>
-      <form className={`${css.form}`}>
-        <label htmlFor="rua" className={`${css.label}`}>
-          Rua
-        </label>
-        <input
-          type="text"
-          id="rua"
-          name="rua"
-          placeholder="Digite sua rua"
-          value={formData.rua}
-          required
-          maxLength={60}
-          onChange={handleChange}
-          className={css.input}
-        />
-
-        <label htmlFor="numero" className={`${css.label}`}>
-          Número
-        </label>
-        <input
-          type="text"
-          id="numero"
-          name="numero"
-          value={formData.numero}
-          required
-          maxLength={8}
-          onChange={handleChange}
-          className={css.input}
-        />
-
-        <label htmlFor="complemento" className={`${css.label}`}>
-          Complemento
-        </label>
-        <input
-          type="text"
-          id="complemento"
-          name="complemento"
-          placeholder="(Opcional)"
-          value={formData.complemento}
-          maxLength={50}
-          onChange={handleChange}
-          className={css.input}
-        />
-
-        <label htmlFor="bairro" className={`${css.label}`}>
-          Bairro
-        </label>
-        <input
-          type="text"
-          id="bairro"
-          name="bairro"
-          placeholder="Digite seu bairro"
-          value={formData.bairro}
-          required
-          maxLength={50}
-          onChange={handleChange}
-          className={css.input}
-        />
-
-        <label htmlFor="cidade" className={`${css.label}`}>
-          Cidade
-        </label>
-        <input
-          type="text"
-          id="cidade"
-          name="cidade"
-          placeholder="Digite sua cidade"
-          value={formData.cidade}
-          required
-          onChange={handleChange}
-          className={css.input}
-        />
-
-        <label htmlFor="estado" className={`${css.label}`}>
-          Estado
-        </label>
-        <input
-          type="text"
-          id="estado"
-          name="estado"
-          placeholder="Digite seu Estado"
-          value={formData.estado}
-          required
-          onChange={handleChange}
-          className={`${css.input} !mb-0`}
-        />
-      </form>
-    </div>
+    <WrapperForEditMode
+      title="Adicione Seu Endereço"
+      seeButtonClose={true}
+      setState={setSeeAddressInput}
+    >
+      <div className={`${css.wrapper}`}>
+        <form className={`${css.form}`}>
+          {inputs.map((field, index) => (
+            <div key={field.id}>
+              <label htmlFor={field.id} className={css.label}>
+                {field.label}
+              </label>
+              <input
+                type={field.type}
+                id={field.id}
+                name={field.id}
+                placeholder={field.placeholder}
+                value={formData[field.id as keyof AddressSchema]}
+                required={field.required}
+                maxLength={field.maxLength}
+                onChange={handleChange}
+                className={`${css.input} ${
+                  index === inputs.length - 1 ? "!mb-0" : ""
+                }`}
+              />
+            </div>
+          ))}
+        </form>
+      </div>
+      <SaveAddressButton />
+    </WrapperForEditMode>
   );
 };
 
