@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import type { ShopInfo } from "@/types/types";
-import { X, Check, Trash } from "lucide-react";
-import { defaultShopInfo } from "@data/home/publicData";
-import { h3Sizes, iconMdStyles } from "@app/styles";
 import AlertInfo from "@/app/loja/_ui/AlertInfo";
+import { iconMdStyles } from "@/app/lucideIconStyles";
+import type { ShopInfo } from "@/types/types";
+import { defaultShopInfo } from "@data/home/publicData";
+import { Check, Trash, X } from "lucide-react";
+import React, { useEffect, useState } from "react";
 
 const css = {
   wrapper: "abso z-3 size-full bg-white p-5 br-lg",
   header:
     "h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none",
-  h3:"font-medium text-gray-800" + h3Sizes,
+  h3:"h3-sizes font-medium text-gray-800",
   buttonClose:
-    "h-9 w-9 absolute top-3 right-3 br-xs centralize bg-bt",
+    "close-button absolute top-3 right-3",
   textarea:
     "w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none",
   wrapperButtons:

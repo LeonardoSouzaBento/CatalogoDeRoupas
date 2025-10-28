@@ -1,11 +1,11 @@
 import React from "react";
 // import { BoolSetter } from "@/types/types";
 import { Check } from "lucide-react";
-import { iconMdStyles } from "@/app/styles";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 
-const SaveMapButton = () => {
+const SaveMapButton = ({ inputValue } : { inputValue: string }) => {
   function handleSave() {
-    console.log("");
+    console.log(inputValue);
   }
   return (
     <button className="button min-w-max" onClick={handleSave}>

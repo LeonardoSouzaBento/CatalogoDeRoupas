@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { UserData } from "@localtypes/types";
+import type { StateSetter, UserData } from "@localtypes/types";
 
 /* Dados padrão */
 export const defaultUserData: UserData = {
@@ -12,7 +12,7 @@ export const defaultUserData: UserData = {
 /* Contexto */
 export interface UserDataContextType {
   userData: UserData;
-  setUserData: React.Dispatch<React.SetStateAction<UserData>>;
+  setUserData: StateSetter<UserData>;
 }
 
 export const UserDataContext = createContext<UserDataContextType>({

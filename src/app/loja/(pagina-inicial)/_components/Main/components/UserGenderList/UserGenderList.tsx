@@ -7,13 +7,12 @@ import GenderImage from "./components/GenderImage";
 
 const css = {
   container:
-    "w-full h-auto sm:h-[180px] max-w-220 m-auto centralize items-end flex-col gap-1 sm:gap-3 sm:flex-row relative",
+    "w-full h-auto sm:h-[180px] max-w-220 m-auto centralize items-end flex-col gap-[6] sm:gap-3 sm:flex-row relative",
   wrapper:
     "min-h-10 h-10 w-full sm:h-[156px] sm:w-1/3 bg-gray-100 flex items-end flex-auto crop relative trans br-lg",
   selectedWrapper: "h-[200px] sm:h-[180px] sm:w-[50%]",
-  buttonGender:
-    `h-full min-w-full w-full max-h-18 centralize relative bg-gradient-to-t from-black to-transparent text-white leading-none 
-     font-extralight uppercase text-[1.240em] sm:text-[1.258em] md:text-[1.266em] lg:text-[1.283em] xl:text-[1.300em] 2xl:text-[1.317em] cursor-pointer`,
+  buttonGender: `h-full min-w-full w-full max-h-16 centralize relative bg-gradient-to-t from-stone-700 to-transparent text-white leading-none font-extralight uppercase text-[1.240em] sm:text-[1.258em] md:text-[1.266em] lg:text-[1.283em] xl:text-[1.300em] 2xl:text-[1.317em] cursor-pointer`,
+  noSelectedButton: "bg-gray-100 text-gray-800 ",
   noSelectedWrapper: "bg-stone-800 sm:bg-transparent",
 };
 

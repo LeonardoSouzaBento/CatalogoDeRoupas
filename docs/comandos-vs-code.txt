@@ -1,0 +1,3 @@
+Shift + Alt + O : “Organize Imports”
+Ctrl + D : selecionar o menor texto completo
+

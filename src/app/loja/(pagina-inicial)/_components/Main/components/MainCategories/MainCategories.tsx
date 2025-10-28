@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useContext } from "react";
-import WrapperForEditMode from "@ui/WrapperForEditMode";
-import MainCatsInput from "./Inputs/MainCatsInput";
 import { HomeDataContext } from "@contexts/HomeDataContext";
+import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
+import MainCatsInput from "./Inputs/MainCatsInput";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import Image from "next/image";
 import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
@@ -37,9 +37,6 @@ const MainCategories = (): React.ReactElement | undefined | null => {
 
   // pega o array correto com base no gênero
   const selectedMainCategories = mainCategories[associations[selectedGender]];
-  console.log(selectedMainCategories);
-
-  if (!selectedMainCategories) return null;
 
   return (
     <div className={`${seeEditSection && css.sectionEditMode}`}>
@@ -66,13 +63,12 @@ const MainCategories = (): React.ReactElement | undefined | null => {
         </div>
       ) : (
         <div className={`${css.wrapperForEditMode}`}>
-          <WrapperForEditMode
+          <WrapperHomeInput
             title="Defina as principais categorias de cada gênero"
-            seeButtonClose
             setState={setSeeEditSection}
           >
             <MainCatsInput />
-          </WrapperForEditMode>
+          </WrapperHomeInput>
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import MeasureItem from "./MeasureItem";
-import { iconMdStyles, iconSmStyles } from "@app/styles";
+import { iconMdStyles, iconSmStyles } from "@/app/lucideIconStyles";
 import type { Measure } from "./MeasureItem";
 import { Pen, CircleQuestionMark } from "lucide-react";
 import AlertInfo from "@ui/AlertInfo";

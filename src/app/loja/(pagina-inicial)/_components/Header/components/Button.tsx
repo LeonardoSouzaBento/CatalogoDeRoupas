@@ -1,6 +1,6 @@
 import React from "react";
 import type { LucideIcon } from "lucide-react";
-import { iconMdStyles } from "@app/styles";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 import Link from "next/link";
 
 export interface ButtonType {

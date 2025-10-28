@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { MainCategory } from "@/types/types";
 import { Pen, Check, Upload } from "lucide-react";
-import { iconSmStyles, iconMdStyles, inputClasses } from "@app/styles";
+import { iconSmStyles, iconMdStyles } from "@/app/lucideIconStyles";
 import Image from "next/image";
 
 const css = {
@@ -49,7 +49,7 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
           </label>
           <input
             type="text"
-            className={`${inputClasses} !mb-0`}
+            className={`input !mb-0`}
             id={category.name}
             name={category.name}
             placeholder="Digite aqui"
@@ -90,7 +90,7 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
             type="number"
             name={`${category.order}`}
             id={`${category.order}`}
-            className={`${inputClasses} !mb-2`}
+            className={`input !mb-2`}
             placeholder="Digite aqui"
           />
         </>

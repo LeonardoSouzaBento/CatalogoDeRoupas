@@ -1,6 +1,5 @@
-import { iconMdStyles, inputClasses } from "@app/styles";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Search } from "lucide-react";
-import React from "react";
 
 const css = {
   button: `h-12 w-full px-4 mb-4 flex items-center gap-2 br-sm hover:bs bg-neutral-100`,
@@ -13,7 +12,7 @@ const SearchButton = () => {
       <input
         type="text"
         placeholder="O que você procura?"
-        className={`${css.input} ${inputClasses}`}
+        className={`${css.input} input`}
       />
       <Search {...iconMdStyles} />
     </button>

@@ -69,7 +69,7 @@ div::-webkit-scrollbar {
     @apply rounded-md;
   }
   button {
-    @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
+    @apply leading-none font-medium capitalize transition-colors duration-200 cursor-pointer 
     text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];
   }
   img {

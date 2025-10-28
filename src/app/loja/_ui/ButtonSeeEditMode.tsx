@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/styles";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 import { BoolSetter } from "@/types/types";
 import { Pen } from "lucide-react";
 import React from "react";

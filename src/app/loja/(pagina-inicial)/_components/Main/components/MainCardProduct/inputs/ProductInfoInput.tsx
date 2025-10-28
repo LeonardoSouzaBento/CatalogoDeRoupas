@@ -1,4 +1,4 @@
-import { iconMdStyles, inputClasses } from "@app/styles";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Check, X } from "lucide-react";
 import React from "react";
 
@@ -38,7 +38,7 @@ const ProductInfoInput = ({
           <input
             type="text"
             id={`nome ${id}`}
-            className={`${inputClasses}`}
+            className={`input`}
             placeholder="Digite o nome"
           />
         </div>
@@ -49,7 +49,7 @@ const ProductInfoInput = ({
           <input
             type="text"
             id={`price ${id}`}
-            className={`${inputClasses}`}
+            className={`input`}
             placeholder="Ex.: 80"
           />
         </div>

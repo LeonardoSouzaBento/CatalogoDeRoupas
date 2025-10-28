@@ -1,73 +1,16 @@
-import React, { useState, useEffect } from "react";
-import type { ShopInfo } from "@/types/types";
-import { inputClasses } from "@app/styles";
-import WrapperForEditMode from "@/app/loja/_ui/WrapperForEditMode";
+import React, { useEffect, useState } from "react";
 import SaveZapButton from "../components/SaveZapButton";
 
 const css = {
   wrapperInput: "w-full",
   wrapper: "",
   button: "",
-  input: inputClasses,
 };
 
-function validateWhatsapp(number: string) {
-  const digits = number.replace(/\D/g, "");
-  const errors: string[] = [];
-
-  if (digits.length < 10 || digits.length > 11) {
-    errors.push("O número deve ter entre 10 e 11 dígitos.");
-  }
-
-  const ddd = digits.slice(0, 2);
-  if (Number(ddd) < 11 || Number(ddd) > 99) {
-    errors.push("O DDD deve estar entre 11 e 99.");
-  }
-
-  if (/^(\d)\1+$/.test(digits)) {
-    errors.push("O número não pode conter todos os dígitos iguais.");
-  }
-
-  const prefix = digits.length === 11 ? digits[2] : null;
-  if (prefix && prefix !== "9") {
-    errors.push("O número deve começar com 9 após o DDD.");
-  }
-
-  return {
-    valid: errors.length === 0,
-    errors,
-    formatted: digits, // pode ser usado se quiser formatar depois
-  };
-}
-
-type ContactInputProps = {
-  shopInfo: ShopInfo;
-  setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
-};
-
-const ContactInput = ({
-  shopInfo,
-  setShopInfo,
-}: ContactInputProps): React.ReactElement => {
+const ContactInput = (): React.ReactElement => {
   const [inputValue, setInputValue] = useState<string>("");
   const [zapErrors, setZapErrors] = useState<string[]>([""]); //length, without9, ddd
   // const [canSave, setCanSave] = useState<boolean>(false);
-
-  function handleEnterZapNumber() {
-    const result = validateWhatsapp(inputValue);
-    setZapErrors(result.errors);
-
-    if (result.valid) {
-      setShopInfo({ ...shopInfo, contact: inputValue });
-      setPhoneSaved(true);
-    }
-  }
-
-  useEffect(() => {
-    if (canSavePhone) {
-      handleEnterZapNumber();
-    }
-  }, [canSavePhone]);
 
   useEffect(() => {
     const digits = inputValue.replace(/\D/g, "");
@@ -88,19 +31,15 @@ const ContactInput = ({
       }
       setInputValue(formatted);
     }
-  }, []);
+  }, [inputValue]);
 
   return (
-    <WrapperForEditMode
-      title="Adicione Seu Whatsapp"
-      seeButtonClose={true}
-      setState={setSeePhoneInput}
-    >
+    <>
       <div className={`${css.wrapper}`}>
         <input
           type="text"
           placeholder="xx xxxxx-xxxx"
-          className={`${css.input}`}
+          className={`input`}
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
@@ -113,8 +52,8 @@ const ContactInput = ({
           </ul>
         )}
       </div>
-      <SaveZapButton />
-    </WrapperForEditMode>
+      <SaveZapButton setZapErrors={setZapErrors} inputValue={inputValue} />
+    </>
   );
 };
 

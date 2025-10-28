@@ -1,6 +1,6 @@
 import React from "react";
 import { BookHeart, Pen, Plus } from "lucide-react";
-import { iconMdStyles, iconSmStyles, iconLgStyles } from "@app/styles";
+import { iconMdStyles, iconSmStyles, iconLgStyles } from "@/app/lucideIconStyles";
 import "../globals.css"
 
 const optionButtons = [

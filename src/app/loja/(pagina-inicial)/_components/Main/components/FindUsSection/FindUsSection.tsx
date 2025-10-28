@@ -7,6 +7,7 @@ import type { AddressSchema } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import ButtonCopy from "./components/ButtonCopy";
 import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
+import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 
 const css = {
   wrapper: "w-full m-auto max-w-210 flex flex-col gap-5",
@@ -37,7 +38,7 @@ function formatAddress(address: AddressSchema): string {
 }
 
 const FindUsSection = (): React.ReactElement => {
-  const { shopInfo, setShopInfo } = useContext(PublicDataContext);
+  const { shopInfo } = useContext(PublicDataContext);
   const { editMode } = useContext(HomeDataContext);
   //foi copiado
   const [phoneCopied, setPhoneCopied] = useState<boolean>(false);
@@ -85,7 +86,12 @@ const FindUsSection = (): React.ReactElement => {
                 {editMode && <ButtonSeeEditMode setState={setSeePhoneInput} />}
               </>
             ) : (
-              <ContactInput shopInfo={shopInfo} setShopInfo={setShopInfo} />
+              <WrapperHomeInput
+                title="Adicione Seu Whatsapp"
+                setState={setSeePhoneInput}
+              >
+                <ContactInput />
+              </WrapperHomeInput>
             )}
           </div>
           {/* Endereço */}
@@ -118,7 +124,12 @@ const FindUsSection = (): React.ReactElement => {
                 )}
               </>
             ) : (
-              <AddressInput shopInfo={shopInfo} setShopInfo={setShopInfo} />
+              <WrapperHomeInput
+                title="Adicione Seu Endereço"
+                setState={setSeeAddressInput}
+              >
+                <AddressInput />
+              </WrapperHomeInput>
             )}
           </div>
           {/* Mapa */}
@@ -142,7 +153,12 @@ const FindUsSection = (): React.ReactElement => {
                 {editMode && <ButtonSeeEditMode setState={setSeeMapInput} />}
               </>
             ) : (
-              <MapInput shopInfo={shopInfo} setShopInfo={setShopInfo} />
+              <WrapperHomeInput
+                title="Atualize Seu Mapa"
+                setState={setSeeMapInput}
+              >
+                <MapInput/>
+              </WrapperHomeInput>
             )}
           </div>
         </div>

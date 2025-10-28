@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "material-symbols/outlined.css";
-@import "./shorteners.css";
 
 .p-landing-page {
   @apply text-gray-800 font-normal text-[1.07em];
@@ -14,8 +13,9 @@
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+/* box-shadow: 0 8px 30px -4px hsl(330 20% 40% / 0.15); */
 .soft-shadow {
-  box-shadow: 0 8px 30px -4px hsl(330 20% 40% / 0.15);
+  box-shadow: 0 8px 24px -6px hsla(330, 20%, 30%, 0.15);
 }
 
 /*Para spans google icons*/
@@ -26,8 +26,12 @@
   @apply scale-110;
 }
 
+/* hs */
 .home-h1 {
   @apply capitalize tracking-normal text-center text-[1.380em] sm:text-[1.409em] md:text-[1.423em] lg:text-[1.452em] xl:text-[1.480em] 2xl:text-[1.508em];
+}
+.h3-sizes {
+  @apply font-medium text-[1.090em] sm:text-[1.099em] md:text-[1.103em] lg:text-[1.112em] xl:text-[1.120em] 2xl:text-[1.128em];
 }
 .h4-sizes {
   @apply text-[1.010em] sm:text-[1.022em] md:text-[1.027em] lg:text-[1.039em] xl:text-[1.050em] 2xl:text-[1.061em];
@@ -40,8 +44,16 @@
   @apply text-gray-800 text-left text-[1.190em] sm:text-[1.199em] md:text-[1.203em] lg:text-[1.212em] xl:text-[1.220em] 2xl:text-[1.228em];
 }
 .button {
-  @apply flex justify-start items-center gap-3 h-10 rounded-sm bg-gray-100 hover:bg-gray-200 px-6;
+  @apply flex justify-start items-center gap-3 h-10 rounded-md bg-gray-100 hover:bg-gray-200 px-6;
 }
+.close-button {
+  @apply h-9 min-w-9 br-xs centralize bg-gray-100 hover:bg-gray-200 transition-colors duration-200;
+}
+
+.input {
+  @apply block w-full h-10 pl-3 pb-[2px] border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none;
+}
+
 .p-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
   text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];

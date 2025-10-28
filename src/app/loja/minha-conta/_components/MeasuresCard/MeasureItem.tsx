@@ -1,5 +1,3 @@
-import { pStyles } from "@app/styles";
-
 export interface Measure {
   type: string;
   value: string;
@@ -14,8 +12,8 @@ const MeasureItem: React.FC<Measure> = ({ type, value }) => {
 
   return (
     <div className={`${css.wrapperInfo}`}>
-      <p className={`${pStyles} ${css.firstP}`}>{type}</p>
-      <p className={`${pStyles} ${css.secondP}`}>{value}</p>
+      <p className={`${css.firstP}`}>{type}</p>
+      <p className={`${css.secondP}`}>{value}</p>
     </div>
   );
 };

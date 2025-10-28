@@ -1,16 +1,14 @@
 import React from "react";
-import { CloudUpload, X } from "lucide-react";
 import {
-  iconXlStyles,
   iconSmStyles,
-  imageUploadNameButton,
-  buttonClose,
-} from "@app/styles";
+  iconXlStyles
+} from "@/app/lucideIconStyles";
+import { CloudUpload, X } from "lucide-react";
 
 const css = {
   wrapper: `size-full centralize gap-2 abso p-4 bg-white/86 z-2`,
   wrapperButtons: "flex items-end flex-col justify-center gap-1",
-  button: `${imageUploadNameButton}`,
+  button: `flex flex-col items-center gap-2 p-4 box-border bg-gray-100 normal-button-sizes font-medium rounded-none !leading-5 text-gray-800 capitalize rounded-sm hover:bg-gray-200 fast-trans`,
 };
 
 const ImageInput = ({
@@ -32,7 +30,7 @@ const ImageInput = ({
     <div className={`${css.wrapper}`}>
       <div className={`${css.wrapperButtons}`}>
         <button
-          className={`${buttonClose}`}
+          className={`close-button`}
           onClick={() => {
             setSeeInput(false);
           }}

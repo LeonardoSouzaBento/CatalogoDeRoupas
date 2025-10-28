@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { useRouter } from "next/navigation";
-import { iconLgStyles } from "@app/styles";
+import { iconLgStyles } from "@/app/lucideIconStyles";
 import { X } from "lucide-react";
 
 const css = {

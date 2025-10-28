@@ -6,8 +6,12 @@ ForEach-Object {
     Set-Content $_.FullName
 }
 
-Get-ChildItem -Path . -Filter *.ts -Recurse |
-ForEach-Object {
-    (Get-Content $_.FullName) -replace 'font-p', '' |
-    Set-Content $_.FullName
-}
+# Cria a string de busca escapada: '\$\{\inputClasses\}'
+$SearchPattern = [regex]::Escape('${inputClasses}')
+
+Get-ChildItem -Path . -Filter *.tsx -Recurse |
+    ForEach-Object {
+        # Usa a variável escapada para garantir a busca literal.
+        (Get-Content $_.FullName) -replace $SearchPattern, 'input' |
+        Set-Content $_.FullName
+    }

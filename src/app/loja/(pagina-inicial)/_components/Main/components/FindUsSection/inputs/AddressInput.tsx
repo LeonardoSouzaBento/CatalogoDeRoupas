@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import type { AddressSchema, ShopInfo } from "@/types/types";
-import { inputClasses } from "@app/styles";
-import WrapperForEditMode from "@/app/loja/_ui/WrapperForEditMode";
+import type { AddressSchema } from "@/types/types";
+import React, { useEffect, useState } from "react";
 import SaveAddressButton from "../components/SaveAddressButton";
 
 const inputs = [
@@ -60,18 +58,10 @@ const css = {
   form: "w-full",
   button: "",
   label: " block size-max mb-1 font-medium text-gray-700 ",
-  input: `${inputClasses} mb-[15px]`,
+  input: `input mb-[15px]`,
 };
 
-type AddressInputProps = {
-  shopInfo: ShopInfo;
-  setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
-};
-
-const AddressInput = ({
-  shopInfo,
-  setShopInfo,
-}: AddressInputProps): React.ReactElement => {
+const AddressInput = (): React.ReactElement => {
   const [formData, setFormData] = useState<AddressSchema>({
     rua: "",
     numero: 0,
@@ -106,11 +96,7 @@ const AddressInput = ({
   }, [formData]);
 
   return (
-    <WrapperForEditMode
-      title="Adicione Seu Endereço"
-      seeButtonClose={true}
-      setState={setSeeAddressInput}
-    >
+    <>
       <div className={`${css.wrapper}`}>
         <form className={`${css.form}`}>
           {inputs.map((field, index) => (
@@ -135,8 +121,11 @@ const AddressInput = ({
           ))}
         </form>
       </div>
-      <SaveAddressButton />
-    </WrapperForEditMode>
+      <SaveAddressButton
+        inputValue={formData}
+        addressComplete={addressComplete}
+      />
+    </>
   );
 };
 

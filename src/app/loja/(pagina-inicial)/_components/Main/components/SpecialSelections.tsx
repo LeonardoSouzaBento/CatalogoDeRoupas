@@ -5,7 +5,7 @@ import { HomeDataContext } from "@contexts/HomeDataContext";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 
 const css = {
-  wrapper: "crop",
+  wrapper: "crop pl-4",
   scrollableDiv: "flex gap-3 pt-2 pb-10 overflow-x-scroll",
 };
 

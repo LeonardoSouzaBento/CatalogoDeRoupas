@@ -1,6 +1,6 @@
+import { iconSmStyles } from "@/app/lucideIconStyles";
 import { BoolSetter } from "@/types/types";
-import { iconMdStyles } from "@/app/styles";
-import { Check, CheckCheck } from "lucide-react";
+import { Copy, CopyCheck } from "lucide-react";
 
 interface ButtonCopyProps {
   state: boolean;
@@ -34,7 +34,7 @@ const ButtonCopy = ({
       onClick={handleClickCopy}
     >
       {!state ? firstText : "Copiado!"}
-      {!state ? <Check {...iconMdStyles} /> : <CheckCheck {...iconMdStyles} />}
+      {!state ? <Copy {...iconSmStyles} /> : <CopyCheck {...iconSmStyles} />}
     </button>
   );
 };

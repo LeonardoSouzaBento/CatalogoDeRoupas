@@ -5,6 +5,7 @@ import type {
   MainCategoriesData,
   GenderKey,
   ChildGenders,
+  StateSetter,
 } from "@localtypes/types";
 import {
   defaultMensSpecialSelections,
@@ -16,35 +17,37 @@ import {
 
 interface HomeDataContextType {
   editMode: boolean;
-  setEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+  setEditMode: StateSetter<boolean>;
+  // Gênero do usuário
   selectedGender: GenderKey;
-  setSelectedGender: React.Dispatch<React.SetStateAction<GenderKey>>;
+  setSelectedGender: StateSetter<GenderKey>;
+  // Categórias
   userCategories: UserCategory[];
-  setUserCategories: React.Dispatch<React.SetStateAction<UserCategory[]>>;
+  setUserCategories: StateSetter<UserCategory[]>;
+  // Gênero infantil
   selectedChildGender: ChildGenders;
-  setSelectedChildGender: React.Dispatch<React.SetStateAction<ChildGenders>>;
+  setSelectedChildGender: StateSetter<ChildGenders>;
+  // Limite de rolagem para seleções especiais
   scrollLimitSpecialSelections: number;
-  setScrollLimitSpecialSelections: React.Dispatch<React.SetStateAction<number>>;
+  setScrollLimitSpecialSelections: StateSetter<number>;
+  //
   mensSpecialSelections: SpecialSelectionSchema[];
-  setMensSpecialSelections: React.Dispatch<
-    React.SetStateAction<SpecialSelectionSchema[]>
-  >;
+  setMensSpecialSelections: StateSetter<SpecialSelectionSchema[]>;
+  //
   femaleSpecialSelections: SpecialSelectionSchema[];
-  setFemaleSpecialSelections: React.Dispatch<
-    React.SetStateAction<SpecialSelectionSchema[]>
-  >;
+  setFemaleSpecialSelections: StateSetter<SpecialSelectionSchema[]>;
+  //
   femaleChildSpecialSelections: SpecialSelectionSchema[];
-  setFemaleChildSpecialSelections: React.Dispatch<
-    React.SetStateAction<SpecialSelectionSchema[]>
-  >;
+  setFemaleChildSpecialSelections: StateSetter<SpecialSelectionSchema[]>;
+  //
   maleChildSpecialSelections: SpecialSelectionSchema[];
-  setMaleChildSpecialSelections: React.Dispatch<
-    React.SetStateAction<SpecialSelectionSchema[]>
-  >;
+  setMaleChildSpecialSelections: StateSetter<SpecialSelectionSchema[]>;
+  //
   mainCategories: MainCategoriesData;
-  setMainCategories: React.Dispatch<React.SetStateAction<MainCategoriesData>>;
+  setMainCategories: StateSetter<MainCategoriesData>;
+  //
   homeEditMode: boolean;
-  setHomeEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+  setHomeEditMode: StateSetter<boolean>;
 }
 
 export const HomeDataContext = createContext<HomeDataContextType>({

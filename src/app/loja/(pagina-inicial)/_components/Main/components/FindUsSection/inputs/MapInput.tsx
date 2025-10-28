@@ -1,6 +1,4 @@
-import WrapperForEditMode from "@/app/loja/_ui/WrapperForEditMode";
-import type { ShopInfo } from "@localtypes/types";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SaveMapButton from "../components/SaveMapButton";
 
 const css = {
@@ -14,15 +12,7 @@ const css = {
   button: "",
 };
 
-interface MapInputProps {
-  shopInfo: ShopInfo;
-  setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
-}
-
-const MapInput = ({
-  shopInfo,
-  setShopInfo,
-}: MapInputProps): React.ReactElement => {
+const MapInput = (): React.ReactElement => {
   const [inputValue, setInputValue] = useState<string>(
     "Cole aqui o novo link copiado do Google Maps"
   );
@@ -30,16 +20,12 @@ const MapInput = ({
 
   useEffect(() => {
     if (inputValue !== "") {
-      setShopInfo({ ...shopInfo, urlMap: inputValue });
+      console.log("");
     }
   }, [inputValue]);
 
   return (
-    <WrapperForEditMode
-      title="Atualize Seu Mapa"
-      seeButtonClose={true}
-      setState={setSeeMapInput}
-    >
+    <>
       <div className={`${css.wrapper}`}>
         <textarea
           value={inputValue}
@@ -79,8 +65,8 @@ const MapInput = ({
           </ul>
         </div>
       </div>
-      <SaveMapButton />
-    </WrapperForEditMode>
+      <SaveMapButton inputValue={inputValue} />
+    </>
   );
 };
 

@@ -1,10 +1,10 @@
 import { createContext } from "react";
-import type { ShopInfo } from "@localtypes/types";
+import type { ShopInfo, StateSetter } from "@localtypes/types";
 import { defaultShopInfo } from "@data/home/publicData";
 
 export interface PublicDataContextType {
   shopInfo: ShopInfo;
-  setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
+  setShopInfo: StateSetter<ShopInfo>;
 }
 
 export const PublicDataContext = createContext<PublicDataContextType>({
