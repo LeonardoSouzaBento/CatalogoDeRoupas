@@ -44,9 +44,9 @@ const FindUsSection = (): React.ReactElement => {
   const [phoneCopied, setPhoneCopied] = useState<boolean>(false);
   const [addressCopied, setAddressCopied] = useState<boolean>(false);
   //ver
-  const [seePhoneInput, setSeePhoneInput] = useState<boolean>(false);
-  const [seeAddressInput, setSeeAddressInput] = useState<boolean>(false);
-  const [seeMapInput, setSeeMapInput] = useState<boolean>(false);
+  const [seePhoneInput, setSeePhoneInput] = useState<boolean>(true);
+  const [seeAddressInput, setSeeAddressInput] = useState<boolean>(true);
+  const [seeMapInput, setSeeMapInput] = useState<boolean>(true);
 
   const shopAddressFormatted = formatAddress(shopInfo.address);
 

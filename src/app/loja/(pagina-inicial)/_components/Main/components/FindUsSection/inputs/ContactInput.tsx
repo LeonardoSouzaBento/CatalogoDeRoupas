@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SaveZapButton from "../components/SaveZapButton";
 
-const css = {
-  wrapperInput: "w-full",
-  wrapper: "",
-  button: "",
-};
-
 const ContactInput = (): React.ReactElement => {
   const [inputValue, setInputValue] = useState<string>("");
   const [zapErrors, setZapErrors] = useState<string[]>([""]); //length, without9, ddd
@@ -35,9 +29,10 @@ const ContactInput = (): React.ReactElement => {
 
   return (
     <>
-      <div className={`${css.wrapper}`}>
+      <div className={`mb-5`}>
         <input
           type="text"
+          aria-label="Número do WhatsApp"
           placeholder="xx xxxxx-xxxx"
           className={`input`}
           onChange={(e) => {

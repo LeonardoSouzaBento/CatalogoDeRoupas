@@ -54,10 +54,10 @@ const inputs = [
 ];
 
 const css = {
-  wrapper: "w-full block border-none",
+  wrapper: "w-full block border-none mb-5",
   form: "w-full",
   button: "",
-  label: " block size-max mb-1 font-medium text-gray-700 ",
+  label: " block size-max mb-1 font-normal text-gray-700 ",
   input: `input mb-[15px]`,
 };
 

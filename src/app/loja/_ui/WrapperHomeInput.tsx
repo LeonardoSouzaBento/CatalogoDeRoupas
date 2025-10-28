@@ -1,16 +1,15 @@
 import React from "react";
 import { X } from "lucide-react";
 import { BoolSetter } from "@/types/types";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 
 const css = {
   wrapper: "w-full bg-white",
   wrapperTitle:
-    "min-h-10 min-w-full mb-4 flex justify-between items-center gap-2 border-b border-gray-300 rounded-none",
+    "min-h-11 min-w-full mb-5 flex justify-between items-center gap-2 border-b border-gray-200 rounded-none",
   button:
-    "h-9 min-w-9 br-xs centralize bg-bt absolute top-[10.5px] right-[10.5px]",
-  icon: { strokeWidth: 2.3, size: 20 },
-  h3: `font-medium text-[1.090em] sm:text-[1.099em] md:text-[1.103em] 
-  lg:text-[1.112em] xl:text-[1.120em] 2xl:text-[1.128em] leading-5`,
+    "close-button absolute top-[10.5px] right-[10.5px]",
+  h3: `font-medium text-[1.066em] leading-5`,
 };
 
 interface WrapperFormProps {
@@ -35,7 +34,7 @@ const WrapperHomeInput = ({
             setState(false);
           }}
         >
-          <X {...css.icon} />
+          <X {...iconMdStyles} strokeWidth={1.9}/>
         </button>
       </div>
       {children}
