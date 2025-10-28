@@ -47,7 +47,7 @@
   @apply flex justify-start items-center gap-3 h-10 rounded-md bg-gray-100 hover:bg-gray-200 px-6;
 }
 .close-button {
-  @apply h-9 min-w-9 br-xs centralize bg-gray-100 hover:bg-gray-200 transition-colors duration-200;
+  @apply h-9 min-w-9 flex justify-center items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-200;
 }
 
 .input {
