@@ -10,25 +10,25 @@ import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 
 const css = {
-  wrapper: "w-full m-auto max-w-210 flex flex-col gap-5",
+  wrapper: "w-full m-auto max-w-210 flex flex-col gap-6",
   container:
-    "w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 br-lg bg-white border-gray-200 soft-shadow hover:shadow-lg fast-trans relative",
-  containerEditMode: "sm:!flex-col !items-start p-5 pt-4 gap-4 rounded-md",
+    "w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 br-lg bg-white border-gray-200 shadow-soft hover:shadow-lg fast-trans relative",
+  containerEditMode: "sm:!flex-col !items-start pt-4 gap-4 rounded-md",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
   img: "",
   wrapperMap:
-    "w-full h-[80vw] md:h-[55vw] lg:h-[44vw] xl:h-[33vw] m-auto p-5 br-lg bg-white soft-shadow hover:shadow-lg fast-trans relative",
-  wrapperMapEditMode: "!h-auto !min-h-max p-5 pt-4 !rounded-md",
+    "w-full h-[108vw] min-[470px]:h-[88vw] sm:h-[70vw] md:h-[55vw] lg:h-[44vw] xl:h-[33vw]",
+  wrapperMapEditMode: "!h-auto !min-h-max p-5 pt-4",
   firstP: "mb-1",
   wrapperPs: "relative",
 };
 
 function formatAddress(address: AddressSchema): string {
-  const { rua, numero, complemento, bairro, cidade, estado } = address;
+  const { rua, número, complemento, bairro, cidade, estado } = address;
 
   const parts = [
     rua,
-    `${numero}${complemento ? ` - ${complemento}` : ""}`,
+    `${número}${complemento ? ` - ${complemento}` : ""}`,
     bairro,
     cidade,
     estado,
@@ -44,9 +44,9 @@ const FindUsSection = (): React.ReactElement => {
   const [phoneCopied, setPhoneCopied] = useState<boolean>(false);
   const [addressCopied, setAddressCopied] = useState<boolean>(false);
   //ver
-  const [seePhoneInput, setSeePhoneInput] = useState<boolean>(true);
-  const [seeAddressInput, setSeeAddressInput] = useState<boolean>(true);
-  const [seeMapInput, setSeeMapInput] = useState<boolean>(true);
+  const [seePhoneInput, setSeePhoneInput] = useState<boolean>(false);
+  const [seeAddressInput, setSeeAddressInput] = useState<boolean>(false);
+  const [seeMapInput, setSeeMapInput] = useState<boolean>(false);
 
   const shopAddressFormatted = formatAddress(shopInfo.address);
 
@@ -134,7 +134,7 @@ const FindUsSection = (): React.ReactElement => {
           </div>
           {/* Mapa */}
           <div
-            className={`${css.wrapperMap} ${
+            className={`${css.container} ${css.wrapperMap} ${
               seeMapInput && css.wrapperMapEditMode
             }`}
           >

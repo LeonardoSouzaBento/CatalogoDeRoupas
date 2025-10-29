@@ -13,10 +13,11 @@
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
-/* box-shadow: 0 8px 30px -4px hsl(330 20% 40% / 0.15); */
-.soft-shadow {
-  box-shadow: 0 8px 24px -6px hsla(330, 20%, 30%, 0.15);
+/* sombras */
+.heart-button-shadow {
+  box-shadow: 0 8px 24px -6px hsla(329, 20%, 30%, 0.094);
 }
+
 
 /*Para spans google icons*/
 .line-span {
@@ -37,23 +38,21 @@
   @apply text-[1.010em] sm:text-[1.022em] md:text-[1.027em] lg:text-[1.039em] xl:text-[1.050em] 2xl:text-[1.061em];
 }
 
+/* estilos de Ps */
 .small-p {
   @apply text-[0.975em] sm:text-[0.982em] md:text-[0.986em] lg:text-[0.993em] xl:text-[1.000em] 2xl:text-[1.007em];
 }
 .p-title {
   @apply text-gray-800 text-left text-[1.190em] sm:text-[1.199em] md:text-[1.203em] lg:text-[1.212em] xl:text-[1.220em] 2xl:text-[1.228em];
 }
-.button {
-  @apply flex justify-start items-center gap-3 h-10 rounded-md bg-gray-100 hover:bg-gray-200 px-6;
-}
-.close-button {
-  @apply h-9 min-w-9 flex justify-center items-center rounded-md bg-gray-100 hover:bg-gray-200 transition-colors duration-200;
-}
 
 .input {
   @apply block w-full h-10 pl-[13px] pb-[2px] text-[1.033em] font-light text-neutral-900 bg-neutral-100 !border-none rounded-md box-border focus:outline-none;
 }
 
+.close-button {
+  @apply h-9 min-w-9 flex justify-center items-center rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200;
+}
 .p-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
   text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];

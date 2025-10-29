@@ -33,7 +33,7 @@ const ContactInput = (): React.ReactElement => {
         <input
           type="text"
           aria-label="Número do WhatsApp"
-          placeholder="xx xxxxx-xxxx"
+          placeholder="Apenas números"
           className={`input`}
           onChange={(e) => {
             setInputValue(e.target.value);

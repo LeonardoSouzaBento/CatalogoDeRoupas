@@ -66,7 +66,7 @@ export interface UserData {
 
 export interface AddressSchema  {
   rua: string;
-  numero: number;
+  número: number | "";
   complemento?: string;
   bairro: string;
   cidade: string;

@@ -1,55 +1,35 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext, useState } from "react";
 import { HomeDataContext } from "@contexts/HomeDataContext";
 import type { GenderKey } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
-import ChildGenderButtons from "./components/ChildGenderButtons";
-import GenderImage from "./components/GenderImage";
+
+const userGenders = [
+  { name: "masculino", icon: "man_2" },
+  { name: "feminino", icon: "woman_2" },
+  { name: "infantil", icon: "boy" },
+];
 
 const css = {
   container:
-    "w-full h-auto sm:h-[180px] max-w-220 m-auto centralize items-end flex-col gap-[6] sm:gap-3 sm:flex-row relative",
+    "w-full h-auto max-w-220 m-auto centralize items-end flex-col gap-[6] sm:gap-3 sm:flex-row relative",
   wrapper:
-    "min-h-10 h-10 w-full sm:h-[156px] sm:w-1/3 bg-gray-100 flex items-end flex-auto crop relative trans br-lg",
-  selectedWrapper: "h-[200px] sm:h-[180px] sm:w-[50%]",
-  buttonGender: `h-full min-w-full w-full max-h-16 centralize relative bg-gradient-to-t from-stone-700 to-transparent text-white leading-none font-extralight uppercase text-[1.240em] sm:text-[1.258em] md:text-[1.266em] lg:text-[1.283em] xl:text-[1.300em] 2xl:text-[1.317em] cursor-pointer`,
-  noSelectedButton: "bg-gray-100 text-gray-800 ",
-  noSelectedWrapper: "bg-stone-800 sm:bg-transparent",
+    "h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-3",
+  button: `w-full gap-2 !bg-gray-50 border border-white flex-auto justify-center! transition-transform duration-200 br-lg font-normal text-[1.06em]`,
+  selected: "bg-white! border-gray-300!",
 };
 
-function getOrderClass(index: number, selectedIndex: number): string {
-  if (index === selectedIndex) return "order-1";
-  if (selectedIndex === 0) {
-    return index === 1 ? "order-0" : "order-2";
-  }
-  if (selectedIndex === 1) {
-    return index === 0 ? "order-0" : "order-2";
-  }
-  if (selectedIndex === 2) {
-    return index === 0 ? "order-0" : "order-2";
-  }
-  return `order-${index}`;
-}
-
 const UserGenderList = (): React.ReactElement => {
-  const { userCategories } = useContext(HomeDataContext);
   const { selectedGender, setSelectedGender } = useContext(HomeDataContext);
-  const [selectedIndex, setSelectedIndex] = useState<number>(1);
+  const [fastReturn, setFastReturn] = useState<string | null>("");
 
   function handleSelectGender(gender: GenderKey) {
     setSelectedGender(gender);
-  }
+    setFastReturn(gender);
 
-  useEffect(() => {
-    if (selectedGender === "feminino") {
-      setSelectedIndex(0);
-    }
-    if (selectedGender == "masculino") {
-      setSelectedIndex(1);
-    }
-    if (selectedGender == "infantil") {
-      setSelectedIndex(2);
-    }
-  }, [selectedGender]);
+    setTimeout(() => {
+      setFastReturn(null);
+    }, 300);
+  }
 
   return (
     <>
@@ -59,39 +39,24 @@ const UserGenderList = (): React.ReactElement => {
         genderSection={true}
       />
       <div className={css.container}>
-        {userCategories.map((item, index) => {
-          const orderClass = getOrderClass(index, selectedIndex);
-          return (
-            <div
-              key={index}
-              id={`${index}`}
-              onClick={() => {
-                handleSelectGender(item.name);
-              }}
-              className={`${css.wrapper}  ${
-                selectedIndex === index
-                  ? css.selectedWrapper
-                  : css.noSelectedWrapper
-              } ${orderClass}`}
-            >
-              <GenderImage
-                item={item}
-                index={index}
-                selectedGender={selectedGender}
-              />
+        <div className={`${css.wrapper}`}>
+          {userGenders.map((item) => {
+            return (
               <button
-                className={`${css.buttonGender} ${
-                  item.name === selectedGender && "scale-107"
-                }`}
+                key={item.name}
+                onClick={() => {
+                  handleSelectGender(item.name as GenderKey);
+                }}
+                className={`${css.button} ${
+                  selectedGender === item.name && css.selected
+                } ${fastReturn === item.name && "scale-106"}`}
               >
+                <span className="material-symbols-outlined">{item.icon}</span>{" "}
                 {item.name}
               </button>
-              {index == 2 && selectedGender == "infantil" && (
-                <ChildGenderButtons />
-              )}
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   );

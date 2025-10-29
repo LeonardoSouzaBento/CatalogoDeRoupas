@@ -5,8 +5,8 @@ import { HomeDataContext } from "@contexts/HomeDataContext";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 
 const css = {
-  wrapper: "crop pl-4",
-  scrollableDiv: "flex gap-3 pt-2 pb-10 overflow-x-scroll",
+  wrapper: "crop",
+  scrollableDiv: "flex gap-3 pt-2 pl-3 sm:pl-4 sm:mr-4 pb-10 overflow-x-scroll",
 };
 
 type SpecialSelectionsType = Record<GenderKey, SpecialSelectionSchema[]>;

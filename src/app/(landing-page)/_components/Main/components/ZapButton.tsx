@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 
@@ -8,9 +9,19 @@ const css = {
   `,
 };
 
+function handleOpenChat() {
+  const phoneNumber = "5534984125832"; // coloque seu número aqui
+  const message = "Olá! Gostaria de mais informações."; // mensagem opcional
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+  window.open(url, "_blank"); // abre em nova aba
+}
+
 const ZapButton = ({ hideInMobile = false }: { hideInMobile?: boolean }) => {
   return (
     <button
+      onClick={handleOpenChat}
       className={`${css.button} ${
         hideInMobile ? "hidden sm:centralize" : "centralize sm:hidden"
       }`}

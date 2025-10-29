@@ -31,7 +31,11 @@ const Main = (): React.ReactElement => {
         />
       )}
       <WrapperSection child={<FindUsSection />} />
-      <WrapperSection child={<AboutSection />} sectionStyles="bg-white" />
+      <WrapperSection
+        child={<AboutSection />}
+        sectionStyles="bg-white pt-4 pb-6"
+        wrapperStyles="max-w-210! h-auto box-border bg-white shadow-soft p-6! br-lg"
+      />
     </main>
   );
 };

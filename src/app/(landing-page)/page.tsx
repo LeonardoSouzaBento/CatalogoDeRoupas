@@ -19,9 +19,11 @@ export default function Home() {
     <div className="bg-gray-50">
       <LogoHeader page="landing-page" />
       <main>
+        {/* Seção principal */}
         <MainSection />
         <div className={`${css.wrapperTwoSections}`}>
-          <div className={css.wrapperSection}>
+          {/* Seção "porque" */}
+          <div className={`${css.wrapperSection}`}>
             <TitleSubtitleSection
               title="Porque ter um catálogo?"
               subtitle="Ajudamos você a vender mais"
@@ -29,7 +31,7 @@ export default function Home() {
             />
             <WhySection />
           </div>
-
+          {/* Seção "como" */}
           <div className={css.wrapperSection}>
             <TitleSubtitleSection
               title="Como Funciona?"
@@ -39,6 +41,7 @@ export default function Home() {
             <HowSection />
           </div>
         </div>
+        {/* Seção dos planos */}
         <div className="pb-9">
           <TitleSubtitleSection
             title="Quanto Custa?"

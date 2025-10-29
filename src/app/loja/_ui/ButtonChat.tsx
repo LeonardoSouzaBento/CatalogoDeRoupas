@@ -5,8 +5,8 @@ import React from "react";
 
 const ButtonChat = () => {
   const css = {
-    wrapper: `h-11 w-11 bg-white centralize br-50 fixed bottom-4 right-4 
-    [box-shadow:0_0_15px_#0000003d,0_4_8px_#0000003d] hover:scale-110 fast-trans`,
+    wrapper: `h-12 w-12 bg-white centralize br-50 fixed bottom-4 right-4 
+    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-110 fast-trans`,
   };
 
   function handleOpenChat() {

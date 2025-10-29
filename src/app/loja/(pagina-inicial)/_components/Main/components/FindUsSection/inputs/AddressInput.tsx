@@ -4,52 +4,34 @@ import SaveAddressButton from "../components/SaveAddressButton";
 
 const inputs = [
   {
-    id: "rua",
-    label: "Rua",
+    label: "rua",
     placeholder: "Digite sua rua",
-    required: true,
     maxLength: 60,
-    type: "text",
   },
   {
-    id: "numero",
-    label: "Número",
-    placeholder: "",
-    required: true,
+    label: "número",
+    placeholder: "Digite o número",
     maxLength: 8,
-    type: "text",
   },
   {
-    id: "complemento",
-    label: "Complemento",
+    label: "complemento",
     placeholder: "(Opcional)",
-    required: false,
     maxLength: 50,
-    type: "text",
   },
   {
-    id: "bairro",
-    label: "Bairro",
+    label: "bairro",
     placeholder: "Digite seu bairro",
-    required: true,
     maxLength: 50,
-    type: "text",
   },
   {
-    id: "cidade",
-    label: "Cidade",
+    label: "cidade",
     placeholder: "Digite sua cidade",
-    required: true,
     maxLength: 60,
-    type: "text",
   },
   {
-    id: "estado",
-    label: "Estado",
+    label: "estado",
     placeholder: "Digite seu Estado",
-    required: true,
     maxLength: 2,
-    type: "text",
   },
 ];
 
@@ -57,14 +39,14 @@ const css = {
   wrapper: "w-full block border-none mb-5",
   form: "w-full",
   button: "",
-  label: " block size-max mb-1 font-normal text-gray-700 ",
-  input: `input mb-[15px]`,
+  label: "capitalize block size-max mb-1 font-normal text-gray-700 ",
+  input: `mb-4`,
 };
 
 const AddressInput = (): React.ReactElement => {
   const [formData, setFormData] = useState<AddressSchema>({
     rua: "",
-    numero: 0,
+    número: "",
     complemento: "",
     bairro: "",
     cidade: "",
@@ -75,7 +57,12 @@ const AddressInput = (): React.ReactElement => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]:
+        e.target.name === "número"
+          ? e.target.value === ""
+            ? ""
+            : Number(e.target.value)
+          : e.target.value,
     });
   };
 
@@ -100,18 +87,23 @@ const AddressInput = (): React.ReactElement => {
       <div className={`${css.wrapper}`}>
         <form className={`${css.form}`}>
           {inputs.map((field, index) => (
-            <div key={field.id}>
-              <label htmlFor={field.id} className={css.label}>
+            <div key={field.label}>
+              <label htmlFor={field.label} className={css.label}>
                 {field.label}
               </label>
               <input
-                type={field.type}
-                id={field.id}
-                name={field.id}
+                type={field.label === "número" ? "number" : "text"}
+                id={field.label}
+                name={field.label}
                 placeholder={field.placeholder}
-                value={formData[field.id as keyof AddressSchema]}
-                required={field.required}
+                value={formData[field.label as keyof AddressSchema]}
+                required={field.label == "complemento" ? false : true}
                 maxLength={field.maxLength}
+                onClick={(e) => {
+                  const ta = e.currentTarget as HTMLInputElement;
+                  if (ta.dataset.cleared === "true") return;
+                  ta.dataset.cleared = "true";
+                }}
                 onChange={handleChange}
                 className={`${css.input} ${
                   index === inputs.length - 1 ? "!mb-0" : ""

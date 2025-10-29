@@ -1,10 +1,23 @@
 substituir ocorrencias em arquivos.ts
 
+/* exemplo simples */
+
 Get-ChildItem -Path . -Filter *.tsx -Recurse |
 ForEach-Object {
-    (Get-Content $_.FullName) -replace 'font-p', '' |
+    (Get-Content $_.FullName) -replace 'soft-shadow', 'shadow-soft' |
     Set-Content $_.FullName
 }
+
+/* Arquivos de extensões diferentes */
+
+Get-ChildItem -Path . -Recurse |
+Where-Object { $_.Extension -match '^\.(ts|tsx)$' } |
+ForEach-Object {
+    (Get-Content $_.FullName) -replace 'soft-shadow', 'shadow-soft' |
+    Set-Content $_.FullName
+}
+
+/* trocando variaveis */
 
 # Cria a string de busca escapada: '\$\{\inputClasses\}'
 $SearchPattern = [regex]::Escape('${inputClasses}')

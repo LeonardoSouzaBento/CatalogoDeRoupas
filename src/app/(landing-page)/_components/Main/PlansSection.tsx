@@ -9,6 +9,7 @@ const basicPlan = [
   "Logo Simples (O nome da sua loja)",
   "Link direto para seu Whatsapp",
   "Painel de favoritos",
+  "Suporte humanizado",
 ];
 
 const fullPlan = [
@@ -23,7 +24,7 @@ const css = {
     "w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto rounded-2xl",
   containerPlans: "pb-2 flex flex-col gap-6 md:flex-row",
   wrapperPlan:
-    "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 soft-shadow hover:scale-102 trans",
+    "bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-soft hover:scale-102 trans",
   ul: "mb-6 ",
   fullPlanStyles:
     "border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none",

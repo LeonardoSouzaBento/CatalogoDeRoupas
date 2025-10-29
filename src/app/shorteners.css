@@ -88,5 +88,5 @@
   @apply bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
 }
 .bg-bt2 {
-  @apply bg-gray-200 hover:bg-gray-300 transition-colors duration-200;
+  @apply bg-gray-50 hover:bg-gray-100 transition-colors duration-200;
 }

@@ -8,7 +8,7 @@ import TitlePage from "@ui/TitlePage";
 const css = {
   mainWrapper: `px-3 m-auto lg:px-6 lg:flex lg:flex-wrap lg:gap-6 lg:max-w-[1208px]`,
   wrapper:
-    "mb-4 m-auto lg:m-0 lg:w-[calc(50%-12px)] p-5 max-w-[592px] sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px] br-lg bg-white soft-shadow",
+    "mb-4 m-auto lg:m-0 lg:w-[calc(50%-12px)] p-5 max-w-[592px] sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px] br-lg bg-white shadow-soft",
   p: ``,
   button: ``,
 };

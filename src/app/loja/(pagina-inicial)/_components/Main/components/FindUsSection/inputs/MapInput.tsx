@@ -3,12 +3,12 @@ import SaveMapButton from "../components/SaveMapButton";
 
 const css = {
   wrapper: "min-h-full",
-  wrapperInfo: "mb-4 p-3 pb-0 border border-neutral-200",
-  h4: "mb-2 text-neutral-700 font-medium h4-sizes",
-  p: "mb-2 text-neutral-700",
-  li: "small-p  ",
+  wrapperInfo: "mb-3 pt-[19] p-5 bs-light",
+  h4: "mb-3 text-neutral-800 font-medium h4-sizes",
+  ul: "list-decimal pl-4 space-y-2 flex flex-col gap-[10]",
+  li: "small-p text-neutral-800 mb-0",
   textarea:
-    "w-full centralize p-3 mb-4 border bg-neutral-100 !border-none rounded-sm box-border focus:outline-none ",
+    "w-full centralize p-4 mb-3 br-md box-border",
   button: "",
 };
 
@@ -29,8 +29,11 @@ const MapInput = (): React.ReactElement => {
       <div className={`${css.wrapper}`}>
         <textarea
           value={inputValue}
-          onClick={() => {
+          onClick={(e) => {
+            const ta = e.currentTarget as HTMLTextAreaElement;
+            if (ta.dataset.cleared === "true") return;
             setInputValue("");
+            ta.dataset.cleared = "true";
           }}
           onChange={(e) => {
             setInputValue(e.target.value);
@@ -41,7 +44,7 @@ const MapInput = (): React.ReactElement => {
         />
         <div className={`${css.wrapperInfo}`}>
           <h4 className={`${css.h4}`}>Veja como pegar o link do mapa</h4>
-          <ul className={`${css.p} list-decimal pl-4 space-y-2`}>
+          <ul className={`${css.ul}`}>
             <li className={`${css.li}`}>
               Pesquise no Google Maps pela sua loja ou pelo endereço dela.
               Clique no endereço.
