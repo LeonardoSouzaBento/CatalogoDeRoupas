@@ -3,7 +3,7 @@ import type { AddressSchema, ShopInfo } from "@localtypes/types";
 /* Dados da loja */
 const defaultShopAddress : AddressSchema = {
   rua: "Rua Antonio Filomeno",
-  numero: 123,
+  número: 123,
   complemento: "",
   bairro: "Nossa Senhora Do Carmo",
   cidade: "Caém",
