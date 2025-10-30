@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { HomeDataContext } from "@contexts/HomeDataContext";
+import { HomeContext } from "@/contexts/HomeContext";
 import CategoryCardResume from "./CategoryCardResume";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Eye, EyeClosed, Plus } from "lucide-react";
@@ -23,7 +23,7 @@ const css = {
 };
 
 const MainCatsInput = (): React.ReactElement => {
-  const { mainCategories } = useContext(HomeDataContext);
+  const { mainCategories } = useContext(HomeContext);
   const [selectedGender, setSelectedGender] = useState<string>("masculino");
   const selectedMainCategories =
     selectedGender === "masculino"

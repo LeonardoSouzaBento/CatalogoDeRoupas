@@ -1,32 +1,34 @@
-// import { useState } from "react";
+"use client"
+import React, { useContext } from "react";
 import MeasuresCard from "./_components/MeasuresCard/MeasuresCard";
 import UserCard from "./_components/UserCard";
-import HeaderCard from "@ui/HeaderCard";
-import React from "react";
 import TitlePage from "@ui/TitlePage";
+import { UserContext } from "@/contexts";
+import FavoritesCard from "./_components/FavoritesCard";
 
 const css = {
   mainWrapper: `px-3 m-auto lg:px-6 lg:flex lg:flex-wrap lg:gap-6 lg:max-w-[1208px]`,
   wrapper:
-    "mb-4 m-auto lg:m-0 lg:w-[calc(50%-12px)] p-5 max-w-[592px] sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px] br-lg bg-white shadow-soft",
+    "mb-5 m-auto lg:m-0 lg:w-[calc(50%-12px)] p-6 max-w-[592px] sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px] br-lg bg-white shadow-soft",
   p: ``,
   button: ``,
 };
 
 const MinhaConta = (): React.ReactElement => {
+  const { userData } = useContext(UserContext);
+
   return (
-    <div>
+    <div className="pb-10 lg:pb-0">
       <TitlePage title="Minha Conta" />
       <div className={`${css.mainWrapper}`}>
         <div className={`${css.wrapper}`}>
-          <UserCard />
+          <UserCard userData={userData} />
         </div>
         <div className={`${css.wrapper}`}>
-          <HeaderCard title="Meus Favoritos" icon="bookmark_heart" />
+          <FavoritesCard />
         </div>
-        <div className={`${css.wrapper}`}>
-          <HeaderCard title="Minhas Medidas" icon="square_foot" />
-          <MeasuresCard />
+        <div className={`${css.wrapper} mb-0!`}>
+          <MeasuresCard userData={userData} />
         </div>
       </div>
     </div>

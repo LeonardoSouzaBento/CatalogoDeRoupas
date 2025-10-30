@@ -1,16 +1,16 @@
+import { UserContext } from "@/contexts";
 import React, { useContext } from "react";
 import {
-  UserGenderList,
-  SpecialSelections,
-  MainCategories,
   FindUsSection,
+  MainCategories,
+  SpecialSelections,
+  UserGenderList,
 } from "./components";
-import WrapperSection from "./components/WrapperSection";
 import AboutSection from "./components/AboutSection/AboutSection";
-import { HomeDataContext } from "@/contexts";
+import WrapperSection from "./components/WrapperSection";
 
 const Main = (): React.ReactElement => {
-  const { selectedGender } = useContext(HomeDataContext);
+  const { selectedGender } = useContext(UserContext);
 
   return (
     <main>

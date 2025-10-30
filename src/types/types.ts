@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 
-export type BoolSetter = Dispatch<SetStateAction<boolean>>;
+export type BooleanSetter = Dispatch<SetStateAction<boolean>>;
 export type StateSetter<T> = Dispatch<SetStateAction<T>>;
 
 export interface ProviderType {
@@ -9,19 +9,16 @@ export interface ProviderType {
 
 export type GenderKey = "masculino" | "feminino" | "infantil";
 
-export type ChildGenders = "masculino" | "feminino" | "unisex";
-
-/* Categorias */
-export interface UserCategory {
+export interface UserGenres {
   name: GenderKey;
-  img: string;
-  imgMale?: string;
-  imgFemale?: string;
   active: boolean;
 }
 
+export type ChildrensGenre = "masculino" | "feminino" | "unisex";
+
+
 /* Item de seleções especiais */
-export interface SpecialSelectionSchema {
+export interface SpecialClothing {
   id: number;
   name: string;
   price: number;
@@ -30,7 +27,7 @@ export interface SpecialSelectionSchema {
   alt?: string;
 }
 export interface SpecialSelectionItem {
-  item: SpecialSelectionSchema;
+  item: SpecialClothing;
 }
 
 /* Protuto */
@@ -55,13 +52,17 @@ export interface ProductItem {
   item: ProductSchema;
 }
 
+
 /* Usuário */
 export interface UserData {
   name: string;
   email: string;
   sex: string;
-  favorites?: [""];
   position: string;
+  favorites?: [""];
+  camisa?: string;
+  calça?: string | number;
+  calçado?: number;
 }
 
 export interface AddressSchema  {

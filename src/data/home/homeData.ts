@@ -1,32 +1,29 @@
 import type {
-  SpecialSelectionSchema,
+  SpecialClothing,
   MainCategoriesData,
-  UserCategory,
+  UserGenres,
 } from "@/types/types";
 
 /* Categorias de usuário */
 //4 categorias
-export const defaultUserCategoriesData: UserCategory[] = [
+export const UserGenderData: UserGenres[] = [
   {
     name: "feminino",
-    img: "/shop/photos/female/female-category.jpg",
     active: true,
   },
   {
     name: "masculino",
-    img: "/shop/photos/male/male-category.png",
     active: true,
   },
   {
     name: "infantil",
-    img: "/shop/photos/maleChild/male-child.png",
     active: true,
   },
 ];
 
-/* Roupas Masculinas Selecionadas */
+/* Roupas Selecionadas */
 
-export const defaultMensSpecialSelections: SpecialSelectionSchema[] = [
+export const specialMensClothingData: SpecialClothing[] = [
   {
     id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
@@ -61,9 +58,7 @@ export const defaultMensSpecialSelections: SpecialSelectionSchema[] = [
   },
 ];
 
-/* Roupas Femininas Selecionadas */
-
-export const defaultFemaleSpecialSelections: SpecialSelectionSchema[] = [
+export const specialWomensClothingData: SpecialClothing[] = [
   {
     id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
@@ -98,7 +93,7 @@ export const defaultFemaleSpecialSelections: SpecialSelectionSchema[] = [
   },
 ];
 
-export const defaultFChildSpecialSelections: SpecialSelectionSchema[] = [
+export const specialGirlsClothingData: SpecialClothing[] = [
   {
     id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
@@ -133,7 +128,7 @@ export const defaultFChildSpecialSelections: SpecialSelectionSchema[] = [
   },
 ];
 
-export const defaultMChildSpecialSelections: SpecialSelectionSchema[] = [
+export const specialBoysClothingData: SpecialClothing[] = [
   {
     id: 1,
     name: "Lorem ipsum, dolor sit amet consectetur adipisicing",

@@ -2,9 +2,14 @@ substituir ocorrencias em arquivos.ts
 
 /* exemplo simples */
 
+(Get-Content 'Caminho/Para/Seu/Arquivo.tsx') -replace 'HomeDataContext', 'HomeContext' |
+Set-Content 'Caminho/Para/Seu/Arquivo.tsx'
+
+/*  */
+
 Get-ChildItem -Path . -Filter *.tsx -Recurse |
 ForEach-Object {
-    (Get-Content $_.FullName) -replace 'soft-shadow', 'shadow-soft' |
+    (Get-Content $_.FullName) -replace 'HomeDataContext', 'HomeContext' |
     Set-Content $_.FullName
 }
 

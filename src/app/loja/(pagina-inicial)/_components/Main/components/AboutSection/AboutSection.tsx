@@ -5,7 +5,7 @@ import AboutInput from "./inputs/AboutInput";
 
 const css = {
   wrapperAbout: "m-auto relative",
-  editMode: "bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg bs-light",
+  homeEditMode: "bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg bs-light",
   wrapperP: "size-full relative z-0 bg-white",
   p: "pb-3 relative",
 };
@@ -21,7 +21,7 @@ const AboutSection = () => {
         subtitle="Conheça mais a nossa loja"
       />
 
-      <div className={`${css.wrapperAbout} ${seeAboutInput && css.editMode}`}>
+      <div className={`${css.wrapperAbout} ${seeAboutInput && css.homeEditMode}`}>
         {shopInfo.aboutText.map((paragraph, index: number) => (
           <div className={`${css.wrapperP}`} key={index}>
             <p key={index} className={`${css.p}`}>

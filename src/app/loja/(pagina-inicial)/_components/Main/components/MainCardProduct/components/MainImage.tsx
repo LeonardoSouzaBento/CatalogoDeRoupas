@@ -1,11 +1,11 @@
 import Image from "next/image";
-import type { BoolSetter, SpecialSelectionSchema } from "@/types/types";
+import type { BooleanSetter, SpecialClothing } from "@/types/types";
 import ImageInput from "../inputs/ImageInput";
 
 export interface MainImageProps {
-  item: SpecialSelectionSchema;
+  item: SpecialClothing;
   seeMainImageInput: boolean;
-  setSeeMainImageInput: BoolSetter;
+  setSeeMainImageInput: BooleanSetter;
 }
 
 const css = {

@@ -70,13 +70,13 @@
   @apply border-b;
 }
 .bs {
-  @apply border border-gray-300;
+  @apply border border-gray-300/90;
 }
 .bs-light {
   @apply border border-gray-200;
 }
 .bs-color {
-  @apply border-gray-300;
+  @apply border-gray-300/90;
 }
 .bs-light-color {
   @apply border-gray-200;

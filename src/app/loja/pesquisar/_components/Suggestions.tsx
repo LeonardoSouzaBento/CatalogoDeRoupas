@@ -1,23 +1,25 @@
-import React from "react";
-import { mostSearched } from "@/data/UsersData";
+"use client";
+import React, { useState, useContext } from "react";
+import { mostSearched } from "@/data/UserData";
+import { UserContext } from "@/contexts";
 
 const css = {
-  wrapper: `br-md`,
-  title: ``,
-  wrapperSuggestions: `flex flex-wrap gap-3`,
-  wrapperItem: "min-h-9 centralize px-2 br-sm border bs-color",
+  wrapperSuggestions: `h-max grid grid-cols-2 grid-rows-4 sm:grid-cols-3 sm:grid-rows-3 gap-3`,
 };
 
 const Suggestions = () => {
-    
+  const { selectedGender } = useContext(UserContext);
+  const suggestions =
+    selectedGender === "masculino"
+      ? mostSearched.masculino
+      : mostSearched.feminino;
+
   return (
-    <div className={`${css.wrapper}`}>
-      <p className="mb-4">Buscas Frequentes:</p>
+    <div className="h-max px-2 py-5 border-t bs-light-color br-0">
+      <p className="mb-5 text-[1.033em]">Buscas Frequentes:</p>
       <div className={`${css.wrapperSuggestions}`}>
-        {mostSearched.masculino.map((item) => (
-          <div key={item} className={`${css.wrapperItem}`}>
-            <p className="small-p">{item}</p>
-          </div>
+        {suggestions.map((item: string) => (
+          <Button key={item} item={item} />
         ))}
       </div>
     </div>
@@ -25,3 +27,23 @@ const Suggestions = () => {
 };
 
 export default Suggestions;
+
+const Button = ({ item }: { item: string }) => {
+  const [selected, setSelected] = useState<boolean>(false);
+
+  const css = {
+    wrapperItem: "min-h-10 centralize px-[18px] br-md bg-gray-100",
+    selected: "",
+  };
+
+  return (
+    <div
+      className={`${css.wrapperItem} ${selected && css.selected}`}
+      onClick={() => {
+        setSelected(true);
+      }}
+    >
+      <p className="leading-5 text-left w-full">{item}</p>
+    </div>
+  );
+};

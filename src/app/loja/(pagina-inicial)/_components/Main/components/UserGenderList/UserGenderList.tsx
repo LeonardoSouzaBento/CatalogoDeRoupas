@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { HomeDataContext } from "@contexts/HomeDataContext";
+import { UserContext } from "@/contexts/UserContext";
 import type { GenderKey } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 
@@ -19,7 +19,7 @@ const css = {
 };
 
 const UserGenderList = (): React.ReactElement => {
-  const { selectedGender, setSelectedGender } = useContext(HomeDataContext);
+  const { selectedGender, setSelectedGender } = useContext(UserContext);
   const [fastReturn, setFastReturn] = useState<string | null>("");
 
   function handleSelectGender(gender: GenderKey) {

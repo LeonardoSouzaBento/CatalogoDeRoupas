@@ -1,4 +1,4 @@
-import { HomeDataContext } from "@/contexts/HomeDataContext";
+import { HomeContext } from "@/contexts/HomeContext";
 import React, {useContext} from "react";
 
 const css = {
@@ -10,7 +10,7 @@ const css = {
 
 const ChildGenderButtons = () => {
   const { selectedChildGender, setSelectedChildGender } =
-    useContext(HomeDataContext);
+    useContext(HomeContext);
 
   return (
     <div className={`${css.divButtonsMF}`}>

@@ -2,7 +2,7 @@
 import Header from "./_components/Header/Header";
 import Main from "./_components/Main/Main";
 import Footer from "./_components/Footer/Footer";
-import { HomeDataProvider } from "@contexts/Providers/HomeDataProvider";
+import { HomeDataProvider } from "@/contexts/Providers/HomeProvider";
 import ButtonChat from "@ui/ButtonChat";
 
 const Home = () => {

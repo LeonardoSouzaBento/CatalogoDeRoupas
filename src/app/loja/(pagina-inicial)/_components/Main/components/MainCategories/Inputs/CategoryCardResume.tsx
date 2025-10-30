@@ -8,9 +8,9 @@ const css = {
   wrapperCardCat: `sm:w-[49%] sm:max-w-[49%] sm:min-h-100 flex flex-col justify-center gap-2 bs
      sm:!border-gray-200 p-4 rounded-none hover:shadow-lg fast-trans`,
   wrapperImg: "h-46 w-34 mb-2 rounded-none relative",
-  wrapperImgNoEditMode: "border-b-2 border-neutral-700",
+  wrapperImgNohomeEditMode: "border-b-2 border-neutral-700",
   img: "size-full object-cover",
-  imgEditMode: "grayscale",
+  imghomeEditMode: "grayscale",
   p: " font-medium !text-neutral-800",
   u: "font-normal",
   button: "button w-full !justify-center",
@@ -23,7 +23,7 @@ interface CatCardResultProps {
 }
 
 const CategoryCardResume = ({ category }: CatCardResultProps) => {
-  const [seeCardEditMode, setSeeCardEditMode] = useState<boolean>(false);
+  const [seeCardhomeEditMode, setSeeCardhomeEditMode] = useState<boolean>(false);
   const [catUpdated, setCatUpdated] = useState<boolean>(false);
 
   function handleSaveCat() {
@@ -38,7 +38,7 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
 
   return (
     <div className={`${css.wrapperCardCat}`}>
-      {!seeCardEditMode ? (
+      {!seeCardhomeEditMode ? (
         <p className={`${css.p}`}>
           Nome da categoria: <u className={`${css.u}`}>{category.name}</u>
         </p>
@@ -59,16 +59,16 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
       <p className={`${css.p}`}>Imagem de capa:</p>
       <div
         className={`${css.wrapperImg} ${
-          !seeCardEditMode && css.wrapperImgNoEditMode
+          !seeCardhomeEditMode && css.wrapperImgNohomeEditMode
         }`}
       >
         <Image
           src={category.urlImg}
           alt={category.alt}
-          className={`${css.img} ${seeCardEditMode && css.imgEditMode}`}
+          className={`${css.img} ${seeCardhomeEditMode && css.imghomeEditMode}`}
           fill={true}
         />
-        {seeCardEditMode && (
+        {seeCardhomeEditMode && (
           <button className={`${css.buttonImg}`}>
             Carregar Nova Imagem
             <Upload {...iconMdStyles} />
@@ -76,7 +76,7 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
         )}
       </div>
 
-      {!seeCardEditMode ? (
+      {!seeCardhomeEditMode ? (
         <p className={`${css.p}`}>
           Ordem de posição na grade:{" "}
           <u className={`${css.u}`}>{category.order}</u>
@@ -96,11 +96,11 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
         </>
       )}
 
-      {!seeCardEditMode ? (
+      {!seeCardhomeEditMode ? (
         <button
           className={`${css.button}`}
           onClick={() => {
-            setSeeCardEditMode(true);
+            setSeeCardhomeEditMode(true);
           }}
         >
           Editar Categoria
@@ -115,7 +115,7 @@ const CategoryCardResume = ({ category }: CatCardResultProps) => {
           <button
             className={`${css.button}`}
             onClick={() => {
-              setSeeCardEditMode(false);
+              setSeeCardhomeEditMode(false);
             }}
           >
             Voltar

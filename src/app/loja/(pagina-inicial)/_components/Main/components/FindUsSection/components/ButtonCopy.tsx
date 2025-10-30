@@ -1,10 +1,10 @@
 import { iconSmStyles } from "@/app/lucideIconStyles";
-import { BoolSetter } from "@/types/types";
+import { BooleanSetter } from "@/types/types";
 import { Copy, CopyCheck } from "lucide-react";
 
 interface ButtonCopyProps {
   state: boolean;
-  setState: BoolSetter;
+  setState: BooleanSetter;
   firstText: string;
   textToCopy: string;
 }

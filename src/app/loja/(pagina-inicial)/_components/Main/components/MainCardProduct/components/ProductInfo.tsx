@@ -1,6 +1,6 @@
 import React from "react";
 import ProductInfoInput from "../inputs/ProductInfoInput";
-import { BoolSetter, SpecialSelectionSchema } from "@/types/types";
+import { BooleanSetter, SpecialClothing } from "@/types/types";
 
 const css = {
   wrapperInfo: "w-full h-max p-4 flex flex-col items-start gap-2 bg-white br-0",
@@ -12,9 +12,9 @@ const ProductInfo = ({
   seeProductInfoInput,
   setSeeProductInfoInput,
 }: {
-  item: SpecialSelectionSchema;
+  item: SpecialClothing;
   seeProductInfoInput: boolean;
-  setSeeProductInfoInput: BoolSetter;
+  setSeeProductInfoInput: BooleanSetter;
 }) => {
   return (
     <div className={`${css.wrapperInfo}`}>

@@ -1,15 +1,16 @@
 "use client";
 import React, { useState, useContext } from "react";
-import { HomeDataContext } from "@contexts/HomeDataContext";
+import { HomeContext } from "@/contexts/HomeContext";
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 import MainCatsInput from "./Inputs/MainCatsInput";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import Image from "next/image";
-import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
+import ButtonSeehomeEditMode from "@/app/loja/_ui/ButtonSeehomeEditMode";
+import { UserContext } from "@/contexts";
 
 const css = {
-  sectionEditMode: "pb-0 mb-0 m-auto max-w-210",
-  wrapperForEditMode: "bg-white p-4 mb-10 rounded-md shadow-md hover:shadow-lg",
+  sectionhomeEditMode: "pb-0 mb-0 m-auto max-w-210",
+  wrapperForhomeEditMode: "bg-white p-4 mb-10 rounded-md shadow-md hover:shadow-lg",
   container: `
     size-auto max-w-[648px] sm:px6 m-auto flex j-start flex-wrap gap-3 lg:flex-nowrap lg:h-[360px] lg:max-w-none
     xl:h-[390px]
@@ -25,9 +26,10 @@ const css = {
 };
 
 const MainCategories = (): React.ReactElement | undefined | null => {
-  const { editMode } = useContext(HomeDataContext);
+  const { homeEditMode } = useContext(HomeContext);
   const [seeEditSection, setSeeEditSection] = useState<boolean>(false);
-  const { mainCategories, selectedGender } = useContext(HomeDataContext);
+  const { mainCategories } = useContext(HomeContext);
+  const {selectedGender} = useContext(UserContext);
 
   // mapeia o gênero selecionado para a chave do objeto mainCategories
   const associations: Record<string, keyof typeof mainCategories> = {
@@ -39,7 +41,7 @@ const MainCategories = (): React.ReactElement | undefined | null => {
   const selectedMainCategories = mainCategories[associations[selectedGender]];
 
   return (
-    <div className={`${seeEditSection && css.sectionEditMode}`}>
+    <div className={`${seeEditSection && css.sectionhomeEditMode}`}>
       <HomeTitleSubtitle
         title="Categorias de Destaque"
         subtitle="Os mais procurados"
@@ -59,10 +61,10 @@ const MainCategories = (): React.ReactElement | undefined | null => {
               </div>
             </div>
           ))}
-          {editMode && <ButtonSeeEditMode setState={setSeeEditSection} />}
+          {homeEditMode && <ButtonSeehomeEditMode setState={setSeeEditSection} />}
         </div>
       ) : (
-        <div className={`${css.wrapperForEditMode}`}>
+        <div className={`${css.wrapperForhomeEditMode}`}>
           <WrapperHomeInput
             title="Defina as principais categorias de cada gênero"
             setState={setSeeEditSection}

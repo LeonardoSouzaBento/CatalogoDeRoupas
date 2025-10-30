@@ -1,5 +1,5 @@
 import { iconMdStyles } from "@/app/lucideIconStyles";
-import { BoolSetter } from "@/types/types";
+import { BooleanSetter } from "@/types/types";
 import { X } from "lucide-react";
 import React from "react";
 
@@ -8,7 +8,7 @@ const ButtonClose = ({
   positionStyles,
   styles,
 }: {
-  setState: BoolSetter;
+  setState: BooleanSetter;
   positionStyles?: string;
   styles?: string;
 }) => {

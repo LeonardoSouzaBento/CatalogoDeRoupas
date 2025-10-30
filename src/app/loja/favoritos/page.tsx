@@ -1,10 +1,12 @@
 import ButtonChat from "@ui/ButtonChat";
 import TitlePage from "@ui/TitlePage";
 import React from "react";
+import { HeaderCard } from "../_ui";
+import NoClothesAlert from "./_components/NoClothesAlert";
 
 const css = {
   mainWrapper: "px-3 pb-5",
-  wrapperProducts: `bg-white br-lg p-5 flex`,
+  wrapper: `bg-white br-lg p-5`,
 };
 
 const Favoritos = (): React.ReactElement => {
@@ -12,7 +14,14 @@ const Favoritos = (): React.ReactElement => {
     <>
       <TitlePage title="Meus Favoritos" />
       <div className={`${css.mainWrapper}`}>
-        <div className={`${css.wrapperProducts}`}></div>
+        <div className={`${css.wrapper} shadow-soft`}>
+          <HeaderCard
+            title="Sua lista de produtos curtidos"
+            icon="bookmark_heart"
+          />
+
+          <NoClothesAlert />
+        </div>
         <ButtonChat />
       </div>
     </>

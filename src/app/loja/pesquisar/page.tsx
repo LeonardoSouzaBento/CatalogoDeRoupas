@@ -7,14 +7,14 @@ import UserGenders from "./_components/UserGenders";
 
 const Pesquisar = (): React.ReactElement => {
   return (
-    <div className="min-h-[100vh] bg-white px-3">
-      <div>
-        <Header />
+    <div className="min-h-[100vh] bg-white br-0">
+      <Header />
+      <div className="px-3">
         <SearchButton />
+        <UserGenders />
+        <Suggestions />
+        <ButtonChat />
       </div>
-      <UserGenders />
-      <Suggestions />
-      <ButtonChat />
     </div>
   );
 };

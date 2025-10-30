@@ -1,6 +1,6 @@
 import React from "react";
 import { X } from "lucide-react";
-import { BoolSetter } from "@/types/types";
+import { BooleanSetter } from "@/types/types";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 
 const css = {
@@ -14,7 +14,7 @@ const css = {
 
 interface WrapperFormProps {
   title: string;
-  setState: BoolSetter;
+  setState: BooleanSetter;
   children: React.ReactElement;
 }
 

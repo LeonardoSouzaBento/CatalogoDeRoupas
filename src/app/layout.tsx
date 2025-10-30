@@ -1,4 +1,4 @@
-import { UserDataProvider } from "@/contexts/Providers/UserDataProvider";
+import { UserProvider } from "@/contexts/Providers/UserProvider";
 import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
 import type { Metadata } from "next";
 import { DM_Sans, Cookie } from "next/font/google";
@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
       <PublicDataProvider>
-        <UserDataProvider>
+        <UserProvider>
           <body className={`${fontStyles} bg-gray-50`}>{children}</body>
-        </UserDataProvider>
+        </UserProvider>
       </PublicDataProvider>
     </html>
   );

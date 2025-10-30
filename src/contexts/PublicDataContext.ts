@@ -1,3 +1,4 @@
+"use client"
 import { createContext } from "react";
 import type { ShopInfo, StateSetter } from "@localtypes/types";
 import { defaultShopInfo } from "@data/home/publicData";

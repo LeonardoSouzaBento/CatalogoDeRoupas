@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { UserContext, HomeContext } from "@/contexts";
+import { HomeContext, UserContext } from "@/contexts";
 import type { GenderKey, SpecialClothing } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
+import React, { useContext } from "react";
 import MainCardProduct from "./MainCardProduct/MainCardProduct";
 
 const css = {
@@ -23,6 +23,7 @@ const SpecialSelections = (): React.ReactElement => {
     selectedGender,
     selectedChildGender,
   } = useContext(UserContext);
+
   const specialSelections: SpecialSelectionsType = {
     masculino: specialMensClothing,
     feminino: specialWomensClothing,

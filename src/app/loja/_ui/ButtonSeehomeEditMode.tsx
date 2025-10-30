@@ -1,9 +1,9 @@
 import { iconMdStyles } from "@/app/lucideIconStyles";
-import { BoolSetter } from "@/types/types";
+import { BooleanSetter } from "@/types/types";
 import { Pen } from "lucide-react";
 import React from "react";
 
-const ButtonSeeEditMode = ({ setState }: { setState: BoolSetter }) => {
+const ButtonSeehomeEditMode = ({ setState }: { setState: BooleanSetter }) => {
   return (
     <button
       className="absolute bottom-2 right-2 square-button"
@@ -16,4 +16,4 @@ const ButtonSeeEditMode = ({ setState }: { setState: BoolSetter }) => {
   );
 };
 
-export default ButtonSeeEditMode;
+export default ButtonSeehomeEditMode;
