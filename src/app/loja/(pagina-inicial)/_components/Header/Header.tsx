@@ -14,7 +14,7 @@ const buttons: ButtonType[] = [
 
 const css = {
   header:
-    "size-auto sticky top-0 left-0 z-5 bg-white/36 backdrop-blur-sm shadow-soft-soft border-b border-[#ffffff42]",
+    "size-auto sticky top-0 left-0 z-5 bg-white/36 backdrop-blur-xs shadow-soft-soft border-b border-[#ffffff22]",
   wrapper:
     "w-[calc(100%-32px)] max-w-[1180px] m-auto flex justify-between items-center flex-wrap gap-4 sm:flex-nowrap md:justify-center lg:gap-8",
   nav: "h-18 w-full flex justify-between items-center sm:justify-center gap-3 sm:gap-4 md:gap-5 flex-auto",

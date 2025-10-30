@@ -6,7 +6,7 @@ import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 
 const css = {
   wrapper: "crop",
-  scrollableDiv: "flex gap-3 pt-2 pl-3 sm:pl-4 sm:mr-4 pb-10 overflow-x-scroll",
+  scrollableDiv: "flex gap-3 pt-3 px-3 md:px-4 box-border sm:mr-4 pb-9 overflow-x-scroll",
 };
 
 type SpecialSelectionsType = Record<GenderKey, SpecialSelectionSchema[]>;
@@ -36,6 +36,7 @@ const SpecialSelections = (): React.ReactElement => {
       <HomeTitleSubtitle
         title="Seleções especiais"
         subtitle="Nossas peças mais bonitas"
+        section="specialSelections"
       />
       <div className={`${css.wrapper}`}>
         {!femaleChildProductsSelected ? (

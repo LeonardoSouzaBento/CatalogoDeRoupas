@@ -4,10 +4,12 @@ const HomeTitleSubtitle = ({
   title,
   subtitle,
   genderSection,
+  section
 }: {
   title: string;
   subtitle: string;
   genderSection?: boolean;
+  section?: string;
 }) => {
   const css = {
     h1: `font-bold capitalize leading-10 tracking-normal text-center text-[1.240em] sm:text-[1.258em] md:text-[1.266em] lg:text-[1.283em] xl:text-[1.300em] 2xl:text-[1.317em]`,
@@ -20,7 +22,7 @@ const HomeTitleSubtitle = ({
       <h1 className={genderSection ? css.h1SelectGender : css.h1}>
         {title}
       </h1>
-      <h2 className={`${css.h2}`}>{subtitle}</h2>
+      <h2 className={`${css.h2} ${section == "specialSelections" && "mb-3!"}`}>{subtitle}</h2>
     </div>
   );
 };

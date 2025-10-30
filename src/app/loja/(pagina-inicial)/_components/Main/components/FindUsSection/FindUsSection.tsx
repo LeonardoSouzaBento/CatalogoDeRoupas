@@ -10,14 +10,14 @@ import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 
 const css = {
-  wrapper: "w-full m-auto max-w-210 flex flex-col gap-6",
+  wrapper: "w-full m-auto max-w-210 flex flex-col gap-[18px]",
   container:
     "w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 br-lg bg-white border-gray-200 shadow-soft hover:shadow-lg fast-trans relative",
   containerEditMode: "sm:!flex-col !items-start pt-4 gap-4 rounded-md",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
   img: "",
   wrapperMap:
-    "w-full h-[108vw] min-[470px]:h-[88vw] sm:h-[70vw] md:h-[55vw] lg:h-[44vw] xl:h-[33vw]",
+    "w-full h-[108vw] max-h-[480px]",
   wrapperMapEditMode: "!h-auto !min-h-max p-5 pt-4",
   firstP: "mb-1",
   wrapperPs: "relative",
@@ -141,7 +141,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seeMapInput ? (
               <>
                 <iframe
-                  className="rounded-sm"
+                  className="rounded-md"
                   src={shopInfo.urlMap}
                   width="100%"
                   height="100%"

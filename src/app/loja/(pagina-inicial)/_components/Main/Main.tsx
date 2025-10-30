@@ -17,24 +17,29 @@ const Main = (): React.ReactElement => {
       <WrapperSection
         child={<UserGenderList />}
         sectionStyles="bg-white"
-        wrapperStyles="!pt-[30px]"
+        wrapperStyles="!pt-[24px] pb-6 sm:pb-6"
       />
       <WrapperSection
         child={<SpecialSelections />}
         sectionStyles="!px-0"
         wrapperStyles="!pb-0"
       />
+       <WrapperSection
+        child={<SpecialSelections />}
+        sectionStyles="!px-0 bg-[linear-gradient(90deg,#F9FAFB,#fff)] shadow-special-selections"
+        wrapperStyles="!pb-0"
+      />
       {selectedGender !== "infantil" && (
         <WrapperSection
           child={<MainCategories />}
-          sectionStyles="bg-white pb-[6]"
+          sectionStyles="bg-white"
         />
       )}
       <WrapperSection child={<FindUsSection />} />
       <WrapperSection
         child={<AboutSection />}
-        sectionStyles="bg-white pt-4 pb-6"
-        wrapperStyles="max-w-210! h-auto box-border bg-white shadow-soft p-6! br-lg"
+        sectionStyles="bg-white pt-3 pb-3"
+        wrapperStyles="max-w-210! h-auto box-border bg-white shadow-soft p-6! br-lg "
       />
     </main>
   );

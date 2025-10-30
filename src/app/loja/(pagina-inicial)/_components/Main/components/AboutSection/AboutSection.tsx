@@ -4,7 +4,7 @@ import { PublicDataContext } from "@/contexts/PublicDataContext";
 import AboutInput from "./inputs/AboutInput";
 
 const css = {
-  wrapperAbout: "m-auto mb-2 relative",
+  wrapperAbout: "m-auto relative",
   editMode: "bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg bs-light",
   wrapperP: "size-full relative z-0 bg-white",
   p: "pb-3 relative",

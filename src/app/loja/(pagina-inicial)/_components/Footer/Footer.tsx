@@ -1,5 +1,5 @@
 const css = {
-  footer: "w-full h-16 px-6 centralize bg-stone-900 rounded-none",
+  footer: "w-full h-18 px-6 box-border centralize bg-stone-900 rounded-none",
   wrapperP: "size-full relative z-0 bg-white",
   p: "inline text-stone-300 font-extralight text-[0.9em]",
 };
