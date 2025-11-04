@@ -32,7 +32,7 @@ const Main = (): React.ReactElement => {
       />
       <WrapperSection
         child={<SpecialClothes />}
-        sectionStyles={clothesSectionStyles}
+        sectionStyles={`!px-0`}
         wrapperStyles="!pb-0"
       />
       <WrapperSection

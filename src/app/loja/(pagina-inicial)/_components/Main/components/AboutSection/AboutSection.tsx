@@ -1,9 +1,7 @@
-import React, { useContext, useState } from "react";
 import HomeTitleSubtitle from "@/app/loja/_ui/HomeTitleSubtitle";
 import { PublicDataContext } from "@/contexts/PublicDataContext";
+import { useContext, useState } from "react";
 import AboutInput from "./inputs/AboutInput";
-import { HomeContext } from "@/contexts";
-import { ButtonSeeEditMode } from "@/app/loja/_ui";
 
 const css = {
   wrapperAbout: "m-auto relative",
@@ -13,15 +11,17 @@ const css = {
 };
 
 const AboutSection = () => {
-  const { homeEditMode } = useContext(HomeContext);
   const [seeAboutInput, setSeeAboutInput] = useState<boolean>(false);
   const { shopInfo, setShopInfo } = useContext(PublicDataContext);
 
   return (
     <>
-      <HomeTitleSubtitle title="Sobre Nós" subtitle="Conheça mais a nossa loja">
-        {homeEditMode && <ButtonSeeEditMode setState={setSeeAboutInput} />}
-      </HomeTitleSubtitle>
+      <HomeTitleSubtitle
+        title="Sobre Nós"
+        subtitle="Conheça mais a nossa loja"
+        sectionEditMode={seeAboutInput}
+        setSectionEditMode={setSeeAboutInput}
+      />
       <div
         className={`${css.wrapperAbout} ${seeAboutInput && css.homeEditMode}`}
       >
