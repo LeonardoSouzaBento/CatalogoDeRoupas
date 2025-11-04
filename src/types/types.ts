@@ -9,16 +9,17 @@ export interface ProviderType {
 
 export type GenderKey = "masculino" | "feminino" | "infantil";
 
+export type ChildrensGenre = "masculino" | "feminino" | "unisex";
+
 export interface UserGenres {
   name: GenderKey;
   active: boolean;
 }
 
-export type ChildrensGenre = "masculino" | "feminino" | "unisex";
 
 
 /* Item de seleções especiais */
-export interface SpecialClothing {
+export interface HomeClothing {
   id: number;
   name: string;
   price: number;
@@ -26,8 +27,9 @@ export interface SpecialClothing {
   img2: string;
   alt?: string;
 }
+
 export interface SpecialSelectionItem {
-  item: SpecialClothing;
+  item: HomeClothing;
 }
 
 /* Protuto */
@@ -92,8 +94,8 @@ export interface MainCategory {
 }
 
 export interface MainCategoriesData {
-  male: MainCategory[];
-  female: MainCategory[];
-  maleChild: MainCategory[];
-  femaleChild: MainCategory[];
+  masculino: MainCategory[];
+  feminino: MainCategory[];
+  infantil?: MainCategory[];
+  menina?: MainCategory[];
 }

@@ -1,17 +1,11 @@
 import HeaderCard from "@ui/HeaderCard";
 import TitlePage from "@ui/TitlePage";
-import UserPhoto from "./_components/UserPhoto";
-import UserInfo from "./_components/UserInfo";
-
-const array = [
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
+import UserDetail from "./_components/UserDetail/UserDetail";
 
 const css = {
-  mainWrapper: `px-3 pb-5`,
+  mainWrapper: `px-3 pb-6`,
   wrapper: ``,
   p: ``,
-  wrapperUsers: `flex flex-wrap gap-4`,
   h2: "",
 };
 
@@ -20,17 +14,7 @@ const page = () => {
     <>
       <TitlePage title="Favoritos do usuário" />
       <div className={`${css.mainWrapper}`}>
-        <div className={`${css.wrapper} basic-card-style`}>
-          <HeaderCard title="Usuários" icon="person" />
-
-          <UserInfo />
-
-          <div className={`${css.wrapperUsers}`}>
-            {array.map((item) => (
-              <UserPhoto key={item} />
-            ))}
-          </div>
-        </div>
+        <UserDetail />
 
         <div className={`${css.wrapper} basic-card-style`}>
           <HeaderCard title="Favoritos Deste usuário" icon="bookmark_heart" />

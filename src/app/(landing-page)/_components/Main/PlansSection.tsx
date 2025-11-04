@@ -59,8 +59,8 @@ const PlansSection = (): React.ReactElement => {
               <ItemLIst text={item} key={index} fullPlan={true} />
             ))}
           </ul>
-          <ButtonCall hideInMobile={true} text="one"/>
-          <ButtonCall text="one"/>
+          <ButtonCall hideInMobile={true}/>
+          <ButtonCall/>
         </div>
       </div>
     </section>

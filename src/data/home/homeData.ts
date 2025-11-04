@@ -1,5 +1,5 @@
 import type {
-  SpecialClothing,
+  HomeClothing,
   MainCategoriesData,
   UserGenres,
 } from "@/types/types";
@@ -23,145 +23,58 @@ export const UserGenderData: UserGenres[] = [
 
 /* Roupas Selecionadas */
 
-export const specialMensClothingData: SpecialClothing[] = [
-  {
-    id: 1,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+function createClothingData(basePath: string, count = 4): HomeClothing[] {
+  return Array.from({ length: count }, (_, i) => ({
+    id: i + 1,
+    name: "Lorem ipsum sit amet consec",
     price: 0,
-    img1: "/shop/photos/male/specialSelections/manequin.png",
-    img2: "/shop/photos/male/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 2,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/male/specialSelections/manequin.png",
-    img2: "/shop/photos/male/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 3,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/male/specialSelections/manequin.png",
-    img2: "/shop/photos/male/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 4,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/male/specialSelections/manequin.png",
-    img2: "/shop/photos/male/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-];
+    img1: `${basePath}/manequin.png`,
+    img2: `${basePath}/busto.png`,
+    alt: "Lorem ipsum sit amet consec",
+  }));
+}
+/* Seleções especiais */
+export const specialMensClothingData = createClothingData(
+  "/shop/photos/male/specialSelections"
+);
 
-export const specialWomensClothingData: SpecialClothing[] = [
-  {
-    id: 1,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/female/specialSelections/manequin.png",
-    img2: "/shop/photos/female/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 2,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/female/specialSelections/manequin.png",
-    img2: "/shop/photos/female/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 3,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/female/specialSelections/manequin.png",
-    img2: "/shop/photos/female/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 4,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/female/specialSelections/manequin.png",
-    img2: "/shop/photos/female/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-];
+export const specialWomensClothingData = createClothingData(
+  "/shop/photos/female/specialSelections"
+);
 
-export const specialGirlsClothingData: SpecialClothing[] = [
-  {
-    id: 1,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 2,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 3,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 4,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/femaleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/femaleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-];
+export const specialGirlsClothingData = createClothingData(
+  "/shop/photos/femaleChild/specialSelections"
+);
 
-export const specialBoysClothingData: SpecialClothing[] = [
-  {
-    id: 1,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/maleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 2,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/maleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 3,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/maleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-  {
-    id: 4,
-    name: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-    price: 0,
-    img1: "/shop/photos/maleChild/specialSelections/manequin.png",
-    img2: "/shop/photos/maleChild/specialSelections/busto.png",
-    alt: "Lorem ipsum, dolor sit amet consectetur adipisicing",
-  },
-];
+export const specialBoysClothingData = createClothingData(
+  "/shop/photos/maleChild/specialSelections"
+);
+
+/* do dia a dia */
+export const everydayMensClothingData = createClothingData(
+  "/shop/photos/male/specialSelections"
+);
+
+export const everydayWomensClothingData = createClothingData(
+  "/shop/photos/female/specialSelections"
+);
+
+export const everydayGirlsClothingData = createClothingData(
+  "/shop/photos/femaleChild/specialSelections"
+);
+
+export const everydayBoysClothingData = createClothingData(
+  "/shop/photos/maleChild/specialSelections"
+);
+
+/* academia */
+export const gymMensClothingData = createClothingData(
+  "/shop/photos/male/specialSelections"
+);
+
+export const gymWomensClothingData = createClothingData(
+  "/shop/photos/female/specialSelections"
+);
 
 /* Categorias especiais */
 
@@ -169,7 +82,7 @@ const pathMale = "/shop/photos/male/mainCategories/";
 const pathFemale = "/shop/photos/female/mainCategories/";
 
 export const defaultMainCategoriesData: MainCategoriesData = {
-  male: [
+  masculino: [
     {
       name: "Polos",
       file: "polos.png",
@@ -187,7 +100,7 @@ export const defaultMainCategoriesData: MainCategoriesData = {
     },
     { name: "Social", file: "social.png", alt: "Roupas sociais masculinas" },
   ].map((c, index) => ({ ...c, urlImg: pathMale + c.file, order: index })),
-  female: [
+  feminino: [
     {
       name: "Vestidos & Saias",
       file: "vestidos.png",
@@ -209,40 +122,4 @@ export const defaultMainCategoriesData: MainCategoriesData = {
       alt: "Roupas sociais femininas",
     },
   ].map((c, index) => ({ ...c, urlImg: pathFemale + c.file, order: index })),
-  femaleChild: [
-    {
-      name: "Polos",
-      file: "polos.png",
-      alt: "Polos e camisetas masculinas",
-    },
-    {
-      name: "Jeans & Calças",
-      file: "jeans.png",
-      alt: "Calças jeans e sociais masculinas",
-    },
-    {
-      name: "Casual & Esporte",
-      file: "casual.png",
-      alt: "Roupas casuais masculinas",
-    },
-    { name: "Social", file: "social.png", alt: "Roupas sociais masculinas" },
-  ].map((c, index) => ({ ...c, urlImg: pathMale + c.file, order: index })),
-  maleChild: [
-    {
-      name: "Polos",
-      file: "polos.png",
-      alt: "Polos e camisetas masculinas",
-    },
-    {
-      name: "Jeans & Calças",
-      file: "jeans.png",
-      alt: "Calças jeans e sociais masculinas",
-    },
-    {
-      name: "Casual & Esporte",
-      file: "casual.png",
-      alt: "Roupas casuais masculinas",
-    },
-    { name: "Social", file: "social.png", alt: "Roupas sociais masculinas" },
-  ].map((c, index) => ({ ...c, urlImg: pathMale + c.file, order: index })),
 };

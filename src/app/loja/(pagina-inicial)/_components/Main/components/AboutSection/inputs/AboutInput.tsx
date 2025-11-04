@@ -6,11 +6,10 @@ import { Check, Trash, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const css = {
-  wrapper: "abso z-3 size-full bg-white p-5 br-lg",
+  wrapper: "abso z-2 size-full bg-white p-5 br-lg",
   header:
     "h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none",
   h3: "h3-sizes font-medium text-gray-800",
-  buttonClose: "close-button absolute top-3 right-3",
   textarea:
     "w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none",
   wrapperButtons:

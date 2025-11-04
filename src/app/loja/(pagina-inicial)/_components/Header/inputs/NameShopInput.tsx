@@ -1,6 +1,7 @@
-import { iconMdStyles, iconSmStyles } from "@/app/lucideIconStyles";
+import { ButtonClose } from "@/app/loja/_ui";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 import { PublicDataContext } from "@contexts/PublicDataContext";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import React, { useContext, useState } from "react";
 
 const css = {
@@ -10,7 +11,6 @@ const css = {
   label: `h3-sizes leading-5 font-medium !text-neutral-800 border-b border-neutral-300 pb-[14px]`,
   wrapperButtons: "flex items-start gap-3",
   buttonSend: "button",
-  buttonClose: "close-button absolute top-2 right-2",
 };
 
 type NameShopInputProps = {
@@ -32,14 +32,7 @@ const NameShopInput = ({
   return (
     <div className={`${css.wrapper}`}>
       <div className={`${css.wrapperForm}`}>
-        <button
-          className={`${css.buttonClose}`}
-          onClick={() => {
-            setSeeInputNameShop(false);
-          }}
-        >
-          <X {...iconSmStyles} />
-        </button>
+        <ButtonClose setState={setSeeInputNameShop} />
         <label htmlFor="name" className={`${css.label}`}>
           Digite o nome da sua loja
         </label>

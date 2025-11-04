@@ -14,7 +14,7 @@ const css = {
   p: " font-medium !text-neutral-800",
   u: "font-normal",
   button: "button w-full !justify-center",
-  buttonImg: `flex flex-col items-center size-full gap-2 p-3 abso box-border px-4 bg-neutral-100/70 normal-button-sizes 
+  buttonImg: `flex flex-col items-center size-full gap-2 p-3 abso box-border px-4 bg-neutral-100/70 
     font-medium rounded-none !leading-5 text-gray-800`,
 };
 

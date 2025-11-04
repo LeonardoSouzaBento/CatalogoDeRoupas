@@ -1,23 +1,21 @@
-import React, { useContext, useState } from "react";
-import { PublicDataContext, HomeContext } from "@contexts/index";
-import ContactInput from "./inputs/ContactInput";
-import AddressInput from "./inputs/AddressInput";
-import MapInput from "./inputs/MapInput";
-import type { AddressSchema } from "@/types/types";
-import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
-import ButtonCopy from "./components/ButtonCopy";
-import ButtonSeehomeEditMode from "@/app/loja/_ui/ButtonSeehomeEditMode";
+import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
+import type { AddressSchema } from "@/types/types";
+import { PublicDataContext } from "@contexts/index";
+import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
+import React, { useContext, useState } from "react";
+import ButtonCopy from "./components/ButtonCopy";
+import AddressInput from "./inputs/AddressInput";
+import ContactInput from "./inputs/ContactInput";
+import MapInput from "./inputs/MapInput";
 
 const css = {
   wrapper: "w-full m-auto max-w-210 flex flex-col gap-[18px]",
   container:
-    "w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 br-lg bg-white border-gray-200 shadow-soft hover:shadow-lg fast-trans relative",
+    "w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 br-lg bg-white border-gray-200 shadow-soft hover:shadow-soft-hover fast-trans relative",
   containerhomeEditMode: "sm:!flex-col !items-start pt-4 gap-4 rounded-md",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
-  img: "",
-  wrapperMap:
-    "w-full h-[108vw] max-h-[480px]",
+  wrapperMap: "w-full h-[108vw] max-h-[480px]",
   wrapperMaphomeEditMode: "!h-auto !min-h-max p-5 pt-4",
   firstP: "mb-1",
   wrapperPs: "relative",
@@ -39,7 +37,6 @@ function formatAddress(address: AddressSchema): string {
 
 const FindUsSection = (): React.ReactElement => {
   const { shopInfo } = useContext(PublicDataContext);
-  const { homeEditMode } = useContext(HomeContext);
   //foi copiado
   const [phoneCopied, setPhoneCopied] = useState<boolean>(false);
   const [addressCopied, setAddressCopied] = useState<boolean>(false);
@@ -49,13 +46,17 @@ const FindUsSection = (): React.ReactElement => {
   const [seeMapInput, setSeeMapInput] = useState<boolean>(false);
 
   const shopAddressFormatted = formatAddress(shopInfo.address);
+  const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
 
   return (
     <>
       <HomeTitleSubtitle
         title="Nos Encontre"
         subtitle="Visite nossa loja ou fale conosco"
+        sectionEditMode={sectionEditMode}
+        setSectionEditMode={setSectionEditMode}
       />
+
       <div>
         <div className={`${css.wrapper}`}>
           <div
@@ -83,7 +84,9 @@ const FindUsSection = (): React.ReactElement => {
                   firstText="Copiar Telefone"
                   textToCopy={shopInfo.contact}
                 />
-                {homeEditMode && <ButtonSeehomeEditMode setState={setSeePhoneInput} />}
+                {sectionEditMode && (
+                  <ButtonSeeEditMode setState={setSeePhoneInput} />
+                )}
               </>
             ) : (
               <WrapperHomeInput
@@ -119,8 +122,8 @@ const FindUsSection = (): React.ReactElement => {
                   firstText="Copiar Link Do Mapa"
                   textToCopy={shopAddressFormatted}
                 />
-                {homeEditMode && (
-                  <ButtonSeehomeEditMode setState={setSeeAddressInput} />
+                {sectionEditMode && (
+                  <ButtonSeeEditMode setState={setSeeAddressInput} />
                 )}
               </>
             ) : (
@@ -150,14 +153,19 @@ const FindUsSection = (): React.ReactElement => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
-                {homeEditMode && <ButtonSeehomeEditMode setState={setSeeMapInput} />}
+                {sectionEditMode && (
+                  <ButtonSeeEditMode
+                    setState={setSeeMapInput}
+                    styles="absolute top-3 right-0"
+                  />
+                )}
               </>
             ) : (
               <WrapperHomeInput
                 title="Atualize Seu Mapa"
                 setState={setSeeMapInput}
               >
-                <MapInput/>
+                <MapInput />
               </WrapperHomeInput>
             )}
           </div>

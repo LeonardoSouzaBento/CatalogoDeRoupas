@@ -1,11 +1,8 @@
+import type { HomeClothing } from "@/types/types";
 import Image from "next/image";
-import type { BooleanSetter, SpecialClothing } from "@/types/types";
-import ImageInput from "../inputs/ImageInput";
 
 export interface MainImageProps {
-  item: SpecialClothing;
-  seeMainImageInput: boolean;
-  setSeeMainImageInput: BooleanSetter;
+  item: HomeClothing;
 }
 
 const css = {
@@ -15,12 +12,9 @@ const css = {
 
 export const MainImage = ({
   item,
-  seeMainImageInput,
-  setSeeMainImageInput,
 }: MainImageProps) => {
   return (
     <div className={`${css.wrapperImg}`}>
-      {seeMainImageInput && <ImageInput setSeeInput={setSeeMainImageInput} />}
       <Image
         src={item.img2}
         alt={`Img do produto: ${item.alt}`}

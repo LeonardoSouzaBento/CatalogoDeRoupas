@@ -2,12 +2,14 @@ import React from "react";
 import type { LucideIcon } from "lucide-react";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import Link from "next/link";
+import { BooleanSetter } from "@/types/types";
 
 export interface ButtonType {
   icon: LucideIcon;
   isSearchButton?: boolean;
   name?: string;
   link?: string;
+  setSeeOptionsSection?: BooleanSetter;
 }
 
 const css = {
@@ -27,6 +29,7 @@ const Button = ({
   isSearchButton,
   name,
   link,
+  setSeeOptionsSection = () => {},
 }: ButtonType): React.ReactElement => {
   return isSearchButton ? (
     <Link className={`${css.buttonSearch} ${hoverStyle}`} href={link || "/"}>
@@ -38,7 +41,12 @@ const Button = ({
   ) : (
     <>
       {!link ? (
-        <button className={`${css.button} ${hoverStyle}`}>
+        <button
+          className={`${css.button} ${hoverStyle}`}
+          onClick={() => {
+            setSeeOptionsSection?.(true);
+          }}
+        >
           <div className={css.wrapperIcon}>
             <Icon {...iconMdStyles} />
           </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "@/contexts/UserContext";
 import type { GenderKey } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
+import ChildGenderButtons from "./components/ChildGenderButtons";
 
 const userGenders = [
   { name: "masculino", icon: "man_2" },
@@ -14,7 +15,7 @@ const css = {
     "w-full h-auto max-w-220 m-auto centralize items-end flex-col gap-[6] sm:gap-3 sm:flex-row relative",
   wrapper:
     "h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-3",
-  button: `w-full gap-2 !bg-gray-50 border border-white flex-auto justify-center! transition-transform duration-200 br-lg font-normal text-[1.06em]`,
+  button: `w-full gap-2 !bg-gray-50 border border-white flex-auto justify-center! transition-transform duration-200 br-lg font-normal text-[1.06em] relative`,
   selected: "bg-white! border-gray-300!",
 };
 
@@ -36,7 +37,7 @@ const UserGenderList = (): React.ReactElement => {
       <HomeTitleSubtitle
         title="Selecione Um Gênero"
         subtitle="E veja as coleções relacionadas"
-        genderSection={true}
+        section="genders"
       />
       <div className={css.container}>
         <div className={`${css.wrapper}`}>
@@ -56,6 +57,7 @@ const UserGenderList = (): React.ReactElement => {
               </button>
             );
           })}
+          {selectedGender === "infantil" && <ChildGenderButtons />}
         </div>
       </div>
     </>

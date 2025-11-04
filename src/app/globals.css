@@ -87,7 +87,7 @@ div::-webkit-scrollbar {
   textarea {
     @apply focus:outline-none font-light text-neutral-950 bg-neutral-100;
   }
-  button {
+  button, a {
     @apply leading-none font-medium capitalize transition-[background-color] duration-200 cursor-pointer rounded-md
     flex justify-start items-center gap-3 h-10 w-auto bg-gray-100 hover:bg-gray-200 px-6 
     text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];

@@ -30,6 +30,12 @@
 .j-between {
   @apply justify-between;
 }
+.i-center {
+  @apply items-center;
+}
+.i-start {
+  @apply items-start;
+}
 
 /* Border-radius */
 
@@ -70,13 +76,13 @@
   @apply border-b;
 }
 .bs {
-  @apply border border-gray-300/90;
+  @apply border border-gray-300;
 }
 .bs-light {
   @apply border border-gray-200;
 }
 .bs-color {
-  @apply border-gray-300/90;
+  @apply border-gray-300;
 }
 .bs-light-color {
   @apply border-gray-200;

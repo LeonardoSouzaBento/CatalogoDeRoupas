@@ -24,11 +24,13 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
     <>
       <HeaderCard title="Minhas Medidas" icon="square_foot" />
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
-      <div className={`${css.wrapper}`}>
-        {measuresData.map((measure, index) => (
-          <MeasureItem key={index} {...measure} />
-        ))}
-      </div>
+      <table>
+        <tbody className={`${css.wrapper}`}>
+          {measuresData.map((measure, index) => (
+            <MeasureItem key={index} {...measure} />
+          ))}
+        </tbody>
+      </table>
       <button className="button max-[375px]:text-left mb-5 w-full">
         <CircleQuestionMark {...iconMdStyles} /> Ver Guia De Medidas
       </button>

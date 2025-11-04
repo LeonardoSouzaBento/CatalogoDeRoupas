@@ -31,4 +31,14 @@ export const mostSearched = {
     "Regata",
     "Calça Legging",
   ],
+  infantil: [
+    "Conjunto Infantil (2 ou 3 peças)", // Item de alta praticidade e venda
+    "Pijama Infantil", // Essencial e com alta rotatividade
+    "Camiseta Estampada/Temática", // Peça básica com apelo visual
+    "Calça de Moletom", // Conforto e versatilidade
+    "Calça Básica",
+    "Meia",
+    "Short/Bermuda",
+    "Agasalho/Abrigo",
+  ],
 };

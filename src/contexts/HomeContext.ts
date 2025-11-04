@@ -3,48 +3,32 @@ import { createContext } from "react";
 import type {
   MainCategoriesData,
   StateSetter,
-  SpecialClothing,
 } from "@localtypes/types";
 import { defaultMainCategoriesData } from "@data/home/homeData";
-import {
-  specialMensClothingData,
-  specialWomensClothingData,
-  specialBoysClothingData,
-  specialGirlsClothingData,
-} from "@/data/home/homeData";
+
 
 interface HomeContextType {
+  hasClothes: boolean;
+  hasMainCategories: boolean;
   homeEditMode: boolean;
   scrollLimitSpecialSelections: number;
   mainCategories: MainCategoriesData;
+  setHasClothes: React.Dispatch<React.SetStateAction<boolean>>;
+  setHasMainCategories: React.Dispatch<React.SetStateAction<boolean>>;
   setHomeEditMode: StateSetter<boolean>;
   setScrollLimitSpecialSelections: StateSetter<number>;
   setMainCategories: StateSetter<MainCategoriesData>;
-  /* seleções especiais */
-  specialMensClothing: SpecialClothing[];
-  specialWomensClothing: SpecialClothing[];
-  specialBoysClothes: SpecialClothing[];
-  specialGirlsClothes: SpecialClothing[];
-  setSpecialMensClothing: StateSetter<SpecialClothing[]>;
-  setSpecialWomensClothing: StateSetter<SpecialClothing[]>;
-  setSpecialBoysClothes: StateSetter<SpecialClothing[]>;
-  setSpecialGirlsClothes: StateSetter<SpecialClothing[]>;
 }
 
 export const HomeContext = createContext<HomeContextType>({
   homeEditMode: false,
   mainCategories: defaultMainCategoriesData,
   scrollLimitSpecialSelections: 0,
+  hasClothes: true,
+  hasMainCategories: true,
   setMainCategories: () => {},
   setHomeEditMode: () => {},
   setScrollLimitSpecialSelections: () => {},
-  /* Seleções especiais */
-  specialMensClothing: specialMensClothingData,
-  specialWomensClothing: specialWomensClothingData,
-  specialBoysClothes: specialBoysClothingData,
-  specialGirlsClothes: specialGirlsClothingData,
-  setSpecialMensClothing: () => {},
-  setSpecialWomensClothing: () => {},
-  setSpecialBoysClothes: () => {},
-  setSpecialGirlsClothes: () => {},
+  setHasClothes: () => {},
+  setHasMainCategories: () => {},
 });

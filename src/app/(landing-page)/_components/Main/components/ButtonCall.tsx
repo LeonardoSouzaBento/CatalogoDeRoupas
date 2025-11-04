@@ -7,17 +7,19 @@ const css = {
   wrapperButtonCall: "size-auto flex",
   buttonCall:
     `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center rounded-2xl bg-yellow-400 text-stone-800  font-semibold leading-5 cursor-pointer hover:bg-yellow-500 hover:scale-104 transition-color duration-300 
-    text-[1.050em] sm:text-[1.065em] md:text-[1.072em] lg:text-[1.086em] xl:text-[1.100em] 2xl:text-[1.114em]`,
+    text-[1.09em] sm:text-[1.065em] md:text-[1.072em] lg:text-[1.086em] xl:text-[1.100em] 2xl:text-[1.114em]`,
 };
 
 const iconStyles = { size: 20, strokeWidth: 2.3, color: "#802954" };
 
 const ButtonCall = ({
-  text = "two",
+  text = "one",
+  section,
   specifStyles,
   hideInMobile = false,
 }: {
   text?: string;
+  section?: string;
   specifStyles?: string;
   hideInMobile?: boolean | null;
 }): React.ReactElement => {
@@ -31,7 +33,7 @@ const ButtonCall = ({
         className={`${css.buttonCall} ${text === "one" && "max-[374px]:gap-0"}`}
         href={text === "one" ? "/loja" : "/loja"}
       >
-        {text === "one" && <ShoppingBag {...iconStyles} />}
+        {section === "main" && <ShoppingBag {...iconStyles} />}
         {text === "one" ? "Ver Um Catálogo Completo" : "Criar Meu Catálogo"}
       </Link>
     </div>

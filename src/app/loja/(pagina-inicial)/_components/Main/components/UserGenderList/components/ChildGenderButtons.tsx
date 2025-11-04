@@ -1,22 +1,31 @@
-import { HomeContext } from "@/contexts/HomeContext";
-import React, {useContext} from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "@/contexts/UserContext";
 
 const css = {
-  divButtonsMF:
-    "min-w-10 h-full px-3 box-content absolute bottom-0 right-0 flex flex-col justify-center gap-3",
-  buttonsMF:
-    "h-10 min-w-full bg-stone-800 text-white rounded-sm font-extralight",
+  wrapper:
+    "w-max h-10 box-border flex items-center justify-between gap-3 z-2",
+  buttons: "h-10 w-10 px-0 centralize bg-gray-100 rounded-md",
+  selected: "font-extrabold bg-white bs",
 };
 
 const ChildGenderButtons = () => {
-  const { selectedChildGender, setSelectedChildGender } =
-    useContext(HomeContext);
+  const { selectedGender, selectedChildGender, setSelectedChildGender } =
+    useContext(UserContext);
+  const [visible, setVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (selectedGender === "infantil") {
+      setTimeout(() => {
+        setVisible(true);
+      }, 250);
+    }
+  }, [selectedGender]);
 
   return (
-    <div className={`${css.divButtonsMF}`}>
+    <div className={`${css.wrapper} ${!visible && "hidden!"}`}>
       <button
-        className={`${css.buttonsMF} ${
-          selectedChildGender === "feminino" && "border !border-neutral-400"
+        className={`${css.buttons} ${
+          selectedChildGender === "feminino" && css.selected
         } `}
         onClick={(e) => {
           e.stopPropagation();
@@ -26,8 +35,8 @@ const ChildGenderButtons = () => {
         M
       </button>
       <button
-        className={`${css.buttonsMF}  ${
-          selectedChildGender === "masculino" && "border !border-neutral-400"
+        className={`${css.buttons}  ${
+          selectedChildGender === "masculino" && css.selected
         }`}
         onClick={(e) => {
           e.stopPropagation();

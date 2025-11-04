@@ -1,12 +1,13 @@
 @import "tailwindcss";
 @import "material-symbols/outlined.css";
+@import "./globals.css";
 
 .p-landing-page {
   @apply text-gray-800 font-normal text-[1.07em];
 }
 
 .basic-card-style {
-  @apply bg-white shadow-lg p-5 mb-4;
+  @apply bg-white shadow-soft p-6 mb-5 rounded-lg;
 }
 
 .material-symbols-outlined {
@@ -49,10 +50,6 @@
 .input {
   @apply block w-full h-10 pl-[13px] pb-[2px] text-[1.033em] font-light text-neutral-900 bg-neutral-100 !border-none rounded-md box-border focus:outline-none;
 }
-
-.close-button {
-  @apply h-9 min-w-9 flex justify-center items-center rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200;
-}
 .p-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
   text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];
@@ -63,10 +60,4 @@
 }
 .square-button {
   @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
-}
-.button2 {
-  @apply flex justify-start items-center gap-3 h-10 rounded-sm text-gray-800 bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer font-medium px-6 leading-none text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em] tracking-wide;
-}
-.normal-button-sizes {
-  @apply leading-5 text-gray-800 text-[1.025em] sm:text-[1.028em] md:text-[1.029em] lg:text-[1.032em] xl:text-[1.035em] 2xl:text-[1.038em];
 }

@@ -1,18 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import type {
-  MainCategoriesData,
-  ProviderType,
-  SpecialClothing,
-} from "@localtypes/types";
+import type { MainCategoriesData, ProviderType } from "@localtypes/types";
 import { HomeContext } from "../HomeContext";
 import { defaultMainCategoriesData } from "@data/home/homeData";
-import {
-  specialMensClothingData,
-  specialWomensClothingData,
-  specialBoysClothingData,
-  specialGirlsClothingData,
-} from "@/data/home/homeData";
 
 export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
   // Home em modo de edição
@@ -24,19 +14,9 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
   /* Limite de scroll */
   const [scrollLimitSpecialSelections, setScrollLimitSpecialSelections] =
     useState<number>(0);
-  /* Seleções especiais */
-  const [specialMensClothing, setSpecialMensClothing] = useState<
-    SpecialClothing[]
-  >(specialMensClothingData);
-  const [specialWomensClothing, setSpecialWomensClothing] = useState<
-    SpecialClothing[]
-  >(specialWomensClothingData);
-  const [specialBoysClothes, setSpecialBoysClothes] = useState<
-    SpecialClothing[]
-  >(specialBoysClothingData);
-  const [specialGirlsClothes, setSpecialGirlsClothes] = useState<
-    SpecialClothing[]
-  >(specialGirlsClothingData);
+  /* Para conteudo que não precisa ser cadastrado */
+  const [hasClothes, setHasClothes] = useState<boolean>(true);
+  const [hasMainCategories, setHasMainCategories] = useState<boolean>(true); //no caso de crianças
 
   return (
     <HomeContext.Provider
@@ -44,19 +24,13 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
         homeEditMode,
         scrollLimitSpecialSelections,
         mainCategories,
+        hasClothes,
+        hasMainCategories, 
+        setHasMainCategories, 
+        setHasClothes,
         setHomeEditMode,
         setScrollLimitSpecialSelections,
         setMainCategories,
-        /*  */
-        specialMensClothing,
-        specialWomensClothing,
-        specialBoysClothes,
-        specialGirlsClothes,
-        setSpecialMensClothing,
-        setSpecialWomensClothing,
-        setSpecialBoysClothes,
-        setSpecialGirlsClothes,
-        /*  */
       }}
     >
       {children}

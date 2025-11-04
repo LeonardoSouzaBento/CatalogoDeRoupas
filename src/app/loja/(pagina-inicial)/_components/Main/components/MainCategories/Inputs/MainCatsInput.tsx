@@ -27,8 +27,8 @@ const MainCatsInput = (): React.ReactElement => {
   const [selectedGender, setSelectedGender] = useState<string>("masculino");
   const selectedMainCategories =
     selectedGender === "masculino"
-      ? mainCategories.male
-      : mainCategories.female;
+      ? mainCategories.masculino
+      : mainCategories.feminino;
   const maleNoSelected = selectedGender !== "masculino" ? "!bg-gray-50" : "";
   const femaleNoSelected = selectedGender !== "feminino" ? "!bg-gray-50" : "";
 

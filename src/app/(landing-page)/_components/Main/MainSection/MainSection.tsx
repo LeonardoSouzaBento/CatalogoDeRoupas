@@ -21,12 +21,12 @@ const MainSection = (): React.ReactElement => {
         <div className={`${css.wrapperMainMessage}`}>
           <TitleSubtitle />
           <P />
-          <ButtonCall text="one" hideInMobile={true} />
+          <ButtonCall section="main" hideInMobile={true} />
           <ZapButton />
         </div>
         <div className={`${css.wrapperImg}`}>
           <MainImage />
-          <ButtonCall text="one" specifStyles="justify-center" />
+          <ButtonCall section="main" specifStyles="justify-center" />
           <ZapButton hideInMobile={true} />
         </div>
       </div>
