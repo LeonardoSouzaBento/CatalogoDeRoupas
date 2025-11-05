@@ -11,7 +11,7 @@ const css = {
   label: " font-medium",
 };
 
-const InfoForm = ({ id }: { id: number }): React.ReactElement => {
+const InfoForm = ({ id }: { id: number | string}): React.ReactElement => {
   return (
     <div className="w-full">
       <form className={`${css.wrapper}`}>

@@ -4,13 +4,14 @@ import { BooleanSetter } from "@/types/types";
 import Choices from "./components/Choices";
 import Links from "./components/Links";
 import Subtitle from "./components/Subtitle";
+import AdministrationOptions from "./components/AdministrationOptions";
 
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,
-  wrapper: `w-9/10 max-w-120 box-border min-h-screen fixed top-0 right-0 z-6 
-  bg-white rounded-none [box-shadow:_-8px_0_20px_rgba(0,0,0,0.05)] overflow-y-scroll
+  wrapper: `h-[calc(100vh-52px)] w-8/10 max-w-120 pb-6 min-h-screen z-6 
+  bg-white rounded-none [box-shadow:_-8px_0_20px_rgba(0,0,0,0.05)] overflow-y-scroll trans absolute top-0 right-0
 `,
-  wrapperTitle: `h-13 w-full flex items-center j-start box-border pl-6 br-0 bg-stone-800 
+  wrapperTitle: `h-13 w-full flex items-center j-start sticky top-0 right-0 box-border pl-6 br-0 bg-stone-800 
   bg-gradient-to-r from-stone-900 to-stone-800`,
   title: `text-white font-semibold text-[1.18em] mt-[1px]`,
 };
@@ -21,11 +22,17 @@ const OptionsMenu = ({
   setSeeOptionsSection: BooleanSetter;
 }) => {
   const [canClick, setCanClick] = useState<boolean>(false);
+  const [translate, setTranslate] = useState<boolean>(false);
 
   useEffect(() => {
+    setTranslate(true);
     setTimeout(() => {
       setCanClick(true);
     }, 200);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, []);
 
   return (
@@ -37,17 +44,27 @@ const OptionsMenu = ({
         }
       }}
     >
-      <div className={`${css.wrapper}`}>
+      <div
+        className={`${css.wrapper} ${
+          translate ? "translate-x-0" : "translate-x-120"
+        }`}
+      >
         <div className={`${css.wrapperTitle}`}>
           <h2 className={`${css.title}`}>Main Opções</h2>
+
+          <ButtonClose
+            setState={setSeeOptionsSection}
+            positionStyles="absolute top-2 right-2"
+            styles="bg-stone-700/80 br-md hover:bg-stone-600/80"
+            delay={300}
+            setStateAnimation={setTranslate}
+            iconStyles={{ color: "white" }}
+          />
         </div>
-        <ButtonClose
-          setState={setSeeOptionsSection}
-          positionStyles="absolute top-2 right-2"
-          styles="bg-stone-700/80 br-md hover:bg-stone-600/80"
-          iconStyles={{ color: "white" }}
-        />
-        <div className={`br-0 bg-[rgb(252,252,252)] pb-4 z-2`}>
+
+        <AdministrationOptions />
+        
+        <div className={`br-0 bg-[rgb(252,252,252)] z-2`}>
           <Subtitle subtitle="Navegue" />
           <Links />
         </div>

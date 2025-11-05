@@ -5,8 +5,8 @@ import { iconSmStyles, iconMdStyles } from "@/app/lucideIconStyles";
 import Image from "next/image";
 
 const css = {
-  wrapperCardCat: `sm:w-[49%] sm:max-w-[49%] sm:min-h-100 flex flex-col justify-center gap-2 bs
-     sm:!border-gray-200 p-4 rounded-none hover:shadow-lg fast-trans`,
+  wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-2 bs
+     sm:!border-gray-200 p-4 rounded-none hover:shadow-soft fast-trans`,
   wrapperImg: "h-46 w-34 mb-2 rounded-none relative",
   wrapperImgNohomeEditMode: "border-b-2 border-neutral-700",
   img: "size-full object-cover",

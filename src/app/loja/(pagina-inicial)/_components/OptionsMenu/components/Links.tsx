@@ -10,8 +10,8 @@ const pageOptions = [
 
 const css = {
   wrapper: `w-full flex flex-col i-center j-start`,
-  wrapperLink: `h-12 w-full flex i-center pl-[22px] gap-3 br-0 bg-transparent hover:bg-gray-100 hover:pl-4 transition-all duration-200`,
-  link: `font-normal bg-transparent hover:bg-gray-100 px-0 text-[1.09em] hover:text-black transition-colors`,
+  wrapperLink: `h-11 w-full flex i-center pl-[22px] gap-3 br-0 bg-transparent hover:bg-gray-100 hover:pl-4 transition-all duration-200`,
+  link: `font-normal bg-transparent hover:bg-gray-100 px-0 text-[1.06em] hover:text-black transition-colors`,
 };
 
 const Links = () => {

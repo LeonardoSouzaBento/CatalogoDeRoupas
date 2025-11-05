@@ -1,7 +1,7 @@
 "use client"
 import React, { useContext } from "react";
 import { HomeContext } from "@/contexts";
-import { BookHeart, Pen, Plus } from "lucide-react";
+import { BookHeart, Eye, Pen, Plus } from "lucide-react";
 import {
   iconMdStyles,
   iconSmStyles,
@@ -12,9 +12,9 @@ import Link from "next/link";
 
 const optionButtons = [
   {
-    name: "Editar Página Inicial",
+    name: "Ver Minha loja",
     url: "/loja",
-    icon: Pen,
+    icon: Eye,
     iconStyle: iconSmStyles,
   },
   {
@@ -61,10 +61,10 @@ const AdminPannel = () => {
         </h2>
 
         <div className={`${css.wrapperButtons}`}>
-          {optionButtons.map((button) => (
+          {optionButtons.map((button, index) => (
             <Link
               key={button.name}
-              className={`${css.button}`}
+              className={`${css.button} ${index === 0 && "font-semibold"}`}
               href={button.url}
               onClick={() => {
                 if (button.url === "/loja") {
@@ -72,7 +72,7 @@ const AdminPannel = () => {
                 }
               }}
             >
-              <button.icon {...button.iconStyle} />
+              <button.icon {...button.iconStyle} {...(index === 0 ? { strokeWidth: 2.4 } : {})}/>
               {button.name}
             </Link>
           ))}

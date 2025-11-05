@@ -38,8 +38,6 @@ const inputs = [
 const css = {
   wrapper: "w-full block border-none mb-5",
   form: "w-full",
-  button: "",
-  label: "capitalize block size-max mb-1 font-normal text-gray-700 ",
   input: `mb-4`,
 };
 
@@ -88,7 +86,7 @@ const AddressInput = (): React.ReactElement => {
         <form className={`${css.form}`}>
           {inputs.map((field, index) => (
             <div key={field.label}>
-              <label htmlFor={field.label} className={css.label}>
+              <label htmlFor={field.label}>
                 {field.label}
               </label>
               <input

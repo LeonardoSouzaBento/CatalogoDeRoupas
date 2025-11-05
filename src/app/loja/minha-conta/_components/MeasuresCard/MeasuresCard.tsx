@@ -10,7 +10,7 @@ import { UserData } from "@/types/types";
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
 const css = {
-  wrapper: `w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 bs !border-r-0 mb-5 br-0`,
+  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 bs !border-r-0 mb-5 br-0`,
 };
 
 const MeasuresCard = ({ userData }: { userData: UserData }) => {
@@ -24,7 +24,7 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
     <>
       <HeaderCard title="Minhas Medidas" icon="square_foot" />
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
-      <table>
+      <table className="w-full">
         <tbody className={`${css.wrapper}`}>
           {measuresData.map((measure, index) => (
             <MeasureItem key={index} {...measure} />

@@ -1,37 +1,55 @@
 import React from "react";
 import { iconMdStyles } from "@/app/lucideIconStyles";
-import { BooleanSetter } from "@/types/types";
+import { BooleanSetter, StateSetter } from "@/types/types";
 import { X } from "lucide-react";
 
 const css = {
   button: `h-9 min-w-9 p-0 flex justify-center items-center rounded-md 
-  bg-gray-50 hover:bg-gray-100 transition-colors duration-200 shadow-soft-hover`,
+  transition-colors duration-200`,
+  lightStyle: "bg-gray-50 hover:bg-gray-100 shadow-soft-hover",
+  simpleStyle: `bg-gray-100 hover:bg-gray-200 trans`,
   defaultPosition: "absolute top-[10.5px] right-[10.5px]",
 };
+
+interface ButtonCloseProps {
+  setState: BooleanSetter;
+  positionStyles?: string;
+  simpleDesign?: boolean;
+  styles?: string;
+  iconStyles?: object;
+  /* para animações */
+  delay?: number;
+  setStateAnimation?: StateSetter<boolean>;
+}
 
 const ButtonClose = ({
   setState,
   positionStyles,
+  simpleDesign,
   styles,
-  iconStyles
-}: {
-  setState: BooleanSetter;
-  positionStyles?: string;
-  styles?: string;
-  iconStyles?: object;
-}) => {
+  iconStyles,
+  delay,
+  setStateAnimation = ()=>{},
+}: ButtonCloseProps) => {
   return (
     <button
       className={`
-       ${css.button} 
+       ${css.button} ${simpleDesign ? css.simpleStyle : css.lightStyle}
        ${positionStyles ? positionStyles : css.defaultPosition} 
        ${styles && styles}`}
       onClick={(e) => {
         e.stopPropagation();
-        setState(false);
+        if (delay) {
+          setStateAnimation(false);
+          setTimeout(() => {
+            setState(false);
+          }, delay);
+        } else {
+          setState(false);
+        }
       }}
     >
-      <X {...iconMdStyles} strokeWidth={1.9} {...iconStyles}/>
+      <X {...iconMdStyles} strokeWidth={1.9} {...iconStyles} />
     </button>
   );
 };

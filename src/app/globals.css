@@ -35,13 +35,14 @@ body::-webkit-scrollbar {
   /* Shadows */
   --shadow-soft: 0 8px 26px -6px hsla(330, 20%, 30%, 0.12);
   --shadow-soft-soft: 0 4px 12px -3px oklch(20.992% 0.03416 263.451 / 0.1);
+  --shadow-soft-hover: 0 4px 16px -7px hsla(340, 82%, 67%, 0.6);
+  --shadow-soft-hover2: 0 4px 16px -7px hsla(340, 82%, 57%, 0.6);
   --shadow-soft-small: 0 8px 26px -10px hsla(330, 20%, 30%, 0.15);
   /* remover mais tarde */
   --shadow-special-selections: inset 0 8px 24px -6px oklch(100% 0.00011 271.152),
     inset 0 -8px 24px -6px oklch(20.992% 0.03416 263.451 / 0.02);
 
   --shadow-gray-50: 0 8px 24px -6px hsla(330, 20%, 30%, 0.094);
-  --shadow-soft-hover: 0 4px 16px -7px hsla(340, 82%, 67%, 0.6);
   --shadow-card: 0 2px 8px hsla(0, 0%, 0%, 0.08);
   --shadow-hover: 0 8px 24px hsla(0, 0%, 0%, 0.12);
 
@@ -87,13 +88,17 @@ div::-webkit-scrollbar {
   textarea {
     @apply focus:outline-none font-light text-neutral-950 bg-neutral-100;
   }
-  button, a {
+  button,
+  a {
     @apply leading-none font-medium capitalize transition-[background-color] duration-200 cursor-pointer rounded-md
     flex justify-start items-center gap-3 h-10 w-auto bg-gray-100 hover:bg-gray-200 px-6 
     text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];
   }
+  label {
+    @apply capitalize block size-max mb-2 font-normal text-gray-800;
+  }
   input {
-    @apply block w-full h-10 pl-[13px] text-[1.033em] font-light text-neutral-900 bg-neutral-100 !border-none rounded-md box-border focus:outline-none;
+    @apply block w-full h-10 pl-[13px] text-[1.033em] text-neutral-900 bg-neutral-100 border-none rounded-md box-border focus:outline-none;
   }
   img {
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;

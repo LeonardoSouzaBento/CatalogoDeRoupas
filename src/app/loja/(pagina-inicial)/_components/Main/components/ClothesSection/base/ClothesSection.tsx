@@ -7,7 +7,7 @@ import MainCardProduct from "./MainCardProduct/MainCardProduct";
 const css = {
   wrapper: "crop",
   scrollableDiv:
-    "flex gap-3 pt-3 px-3 md:px-4 box-border sm:mr-4 pb-9 overflow-x-scroll",
+    "flex gap-3 pt-3 px-3 md:px-4 box-border lg:mr-4 pb-9 overflow-x-scroll relative",
 };
 
 interface ClothesSectionProps {
@@ -36,8 +36,8 @@ const ClothesSection = ({
   setWomensClothing,
   setBoysClothes,
   setGirlsClothes,
-  sectionEditMode, 
-  setSectionEditMode
+  sectionEditMode,
+  setSectionEditMode,
 }: ClothesSectionProps) => {
   const { selectedGender, selectedChildGender } = useContext(UserContext);
   const { setHasClothes } = useContext(HomeContext);
@@ -74,14 +74,20 @@ const ClothesSection = ({
           title={title}
           subtitle={subtitle}
           section="clothes"
-          sectionEditMode={sectionEditMode} 
+          sectionEditMode={sectionEditMode}
           setSectionEditMode={setSectionEditMode}
         />
         <div className={`${css.wrapper}`}>
           <div className={css.scrollableDiv}>
             {displayedItems.map((item, index) => (
-              <MainCardProduct sectionEditMode={sectionEditMode} item={item} key={index} />
+              <MainCardProduct
+                sectionEditMode={sectionEditMode}
+                item={item}
+                key={`${index} ${item.id}`}
+              />
             ))}
+            {/* <div className=`h-[98%] w-10 br-0 absolute right-0 top-[10px] 
+            bg-gradient-to-l from-white to-transparent` /> */}
           </div>
         </div>
       </>

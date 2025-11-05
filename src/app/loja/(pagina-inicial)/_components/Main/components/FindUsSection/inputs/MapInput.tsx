@@ -8,7 +8,7 @@ const css = {
   ul: "list-decimal pl-4 space-y-2 flex flex-col gap-[10]",
   li: "small-p text-neutral-800 mb-0",
   textarea:
-    "w-full centralize p-4 mb-3 br-md box-border",
+    "w-full min-h-[86px] centralize p-4 mb-3 br-md box-border",
   button: "",
 };
 
@@ -16,7 +16,6 @@ const MapInput = (): React.ReactElement => {
   const [inputValue, setInputValue] = useState<string>(
     "Cole aqui o novo link copiado do Google Maps"
   );
-  // const [canSave, setCanSave] = useState<boolean>(false);
 
   useEffect(() => {
     if (inputValue !== "") {

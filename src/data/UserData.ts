@@ -1,7 +1,7 @@
 import { GenderKey, UserData } from "@/types/types";
 
 export const defaultUserData: UserData = {
-  name: "Meu Nome",
+  name: "Meu Nome Sobrenome",
   email: "meuemail@email.com",
   sex: "M",
   position: "user",

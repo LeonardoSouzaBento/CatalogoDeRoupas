@@ -5,10 +5,10 @@ import { X } from "lucide-react";
 import Link from "next/link";
 
 const css = {
-  wrapper: `h-10 p-5 box-content flex items-center j-between br-0`,
+  wrapper: `h-19 px-5 box-content flex items-center j-between br-0`,
   pLogo:
     "leading-none font-logo text-stone-800 text-[1.780em] sm:text-[1.830em] md:text-[1.854em] lg:text-[1.902em] xl:text-[1.950em] 2xl:text-[1.998em]",
-  button: "h-10 w-10 centralize br-md bg-gray-50 hover:bg-gray-100",
+  button: "h-9 w-9 p-0 centralize br-md bg-gray-50 hover:bg-gray-100",
 };
 
 const Header = () => {

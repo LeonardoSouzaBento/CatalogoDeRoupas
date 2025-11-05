@@ -18,7 +18,7 @@ const ButtonSeeEditMode = ({
   const css = {
     squareButton: `square-button h-11! min-w-11! p-0
     bg-white/77! shadow-lg/8 bs`,
-    titleButton: `m-auto mb-5 br-lg bg-white shadow-soft hover:shadow-soft-hover`,
+    titleButton: `h-11 m-auto mb-5 br-2xl bg-white shadow-soft hover:shadow-soft-hover`,
     icon: "material-symbols-outlined line-span font-[550]! text-gray-800 ",
     defaultPosition: `absolute bottom-3 right-3`,
   };
@@ -27,14 +27,14 @@ const ButtonSeeEditMode = ({
     <button
       className={`${
         variantion === "title" ? css.titleButton : css.squareButton
-      } ${positionStyles ? positionStyles : css.defaultPosition} ${styles} ${section === "clothes" && "mb-2!"}`}
+      } ${positionStyles ? positionStyles : css.defaultPosition} ${styles} ${section === "clothes" && "mb-3!"}`}
       onClick={() => {
         setState(true);
       }}
     >
       {!variantion && <span className={css.icon}>stylus</span>}
       {variantion === "title" && "Editar seção"}
-      {variantion === "title" && <Pen {...iconMdStyles} strokeWidth={3} />}
+      {variantion === "title" && <Pen {...iconMdStyles} strokeWidth={2.3}/>}
     </button>
   );
 };

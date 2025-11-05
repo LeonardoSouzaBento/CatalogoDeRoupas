@@ -61,13 +61,13 @@ const HomeTitleSubtitle = ({
       )}
       {seeButtonCloseEdit && (
         <button
-          className={`${"min-w-52 centralize m-auto mb-5 br-lg bg-white shadow-soft hover:shadow-soft-hover"} ${section === "clothes" && "mb-2!"}`}
+          className={`${"h-11 min-w-52 centralize m-auto mb-5 br-2xl bg-white shadow-soft hover:shadow-soft-hover"} ${section === "clothes" && "mb-3!"}`}
           onClick={() => {
             setSectionEditMode(false);
           }}
         >
           Fechar edição
-          <PenOff {...iconMdStyles} strokeWidth={2.8}/>
+          <PenOff {...iconMdStyles} strokeWidth={2.3}/>
         </button>
       )}
     </div>

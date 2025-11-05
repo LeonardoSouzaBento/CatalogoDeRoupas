@@ -22,10 +22,11 @@ export const UserGenderData: UserGenres[] = [
 ];
 
 /* Roupas Selecionadas */
+let globalId = 1;
 
 function createClothingData(basePath: string, count = 4): HomeClothing[] {
-  return Array.from({ length: count }, (_, i) => ({
-    id: i + 1,
+  return Array.from({ length: count }, () => ({
+    id: globalId++,
     name: "Lorem ipsum sit amet consec",
     price: 0,
     img1: `${basePath}/manequin.png`,

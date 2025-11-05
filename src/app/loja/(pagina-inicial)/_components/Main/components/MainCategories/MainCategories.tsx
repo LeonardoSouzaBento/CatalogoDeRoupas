@@ -8,13 +8,13 @@ import { useContext, useEffect, useState } from "react";
 import MainCatsInput from "./Inputs/MainCatsInput";
 
 const css = {
-  sectionhomeEditMode: "pb-0 mb-0 m-auto max-w-210",
-  wrapperForhomeEditMode:
-    "bg-white p-4 mb-10 rounded-md shadow-md hover:shadow-lg",
   container: `
     size-auto max-w-[648px] sm:px6 m-auto flex j-start flex-wrap gap-3 lg:flex-nowrap lg:h-[360px] lg:max-w-none
     xl:h-[390px] relative
   `,
+  sectiooInEditMode: "pb-0 mb-0 m-auto max-w-210",
+  wrapperEditMode:
+    "p-6 pt-3 max-[489px]:pt-5 bg-white br-lg mb-10 shadow-soft-hover",
   wrapperImg: `
     w-[calc(50%-6px)] h-[66vw] max-w-[320px] max-h-[420px] bg-gray-100 flex items-end relative overflow-hidden
     br-lg lg:h-full
@@ -56,7 +56,7 @@ const MainCategories = () => {
 
   if (categories && categories.length > 0) {
     return (
-      <div className={`${sectionEditMode && css.sectionhomeEditMode}`}>
+      <div className={`${sectionEditMode && css.sectiooInEditMode}`}>
         <HomeTitleSubtitle
           title="Categorias de Destaque"
           subtitle="Os mais procurados"
@@ -82,7 +82,7 @@ const MainCategories = () => {
             ))}
           </div>
         ) : (
-          <div className={`${css.wrapperForhomeEditMode}`}>
+          <div className={`${css.wrapperEditMode}`}>
             <WrapperHomeInput
               title="Defina as principais categorias de cada gênero"
               setState={setSectionEditMode}

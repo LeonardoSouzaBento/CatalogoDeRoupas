@@ -6,7 +6,7 @@ import { GenderKey, StateSetter } from "@/types/types";
 
 const mainCss = {
   wrapper: `br-0 py-6`,
-  wrapperGenders: "flex gap-3 j-between",
+  wrapperGenders: "flex gap-3 max-[410px]:justify-between",
   selected: `border bs-light-color bg-white shadow-soft-small`,
 };
 
@@ -46,7 +46,7 @@ const GenderButton = ({
 }) => {
   const selected = selectedGender === gender.toLowerCase();
   const css = {
-    button: `h-10 w-1/3 centralize bg-gray-50 px-0 font-normal`,
+    button: `h-10 w-1/3 max-[410px]:px-0 min-[410px]:max-w-max centralize bg-gray-50 font-normal`,
   };
 
   return (
@@ -68,15 +68,13 @@ const ChildButtons = () => {
   const maleSelected = selectedChildGender === "masculino";
 
   const css = {
-    wrapper: `flex flex-col pb-6`,
-    wrapperButtons: `flex gap-3`,
-    button: `h-10 w-1/3 centralize bg-gray-50 px-0 font-normal`,
+    wrapper: `mb-6 flex i-center gap-3`,
+    button: `h-10 w-1/3 max-[410px]:px-0 min-[410px]:max-w-max centralize bg-gray-50 font-normal`,
   };
 
   return (
-    <div className={`${css.wrapper} `}>
-      <p className="mb-[18px]">Sexo:</p>
-      <div className={`${css.wrapperButtons}`}>
+      <div className={`${css.wrapper}`}>
+        <p className="mr-3">Sexo:</p>
         <button
           className={`${css.button} ${maleSelected && mainCss.selected}`}
           onClick={() => {
@@ -94,6 +92,5 @@ const ChildButtons = () => {
           feminino
         </button>
       </div>
-    </div>
   );
 };

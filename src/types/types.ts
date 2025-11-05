@@ -20,7 +20,7 @@ export interface UserGenres {
 
 /* Item de seleções especiais */
 export interface HomeClothing {
-  id: number;
+  id: number | string;
   name: string;
   price: number;
   img1: string;

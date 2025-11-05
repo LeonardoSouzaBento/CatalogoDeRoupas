@@ -5,20 +5,13 @@ import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Eye, EyeClosed, Plus } from "lucide-react";
 
 const css = {
-  wrapper: "py-2 pb-0",
-  wrapperUserGenders: "flex flex-col pb-3 gap-3 sm:flex-row ",
+  wrapper: "pb-0",
+  wrapperUserGenders: "flex flex-col mb-5 gap-3 sm:flex-row ",
   buttonGender: "button w-full sm:max-w-80 max-[350px]:!leading-4 ",
-  wrapperPInfo:
-    "min-h-10 w-full p-3 mb-4 flex justify-start items-center gap-2 bg-gray-100 rounded-sm",
-  infoP: "small-p",
-  spanInfo: "text-gray-600 !font-[350]",
   wrapperCardCats:
-    "flex flex-col flex-wrap gap-4 sm:flex-row sm:justify-center sm:gap-2 mb-4",
+    "flex flex-col flex-wrap gap-4 sm:flex-row sm:justify-center mb-5",
   wrapperImg: "h-40 w-30",
   img: "size-full object-cover",
-  p: "",
-  input: "",
-  button: "button ",
   icon: iconMdStyles,
 };
 
@@ -66,15 +59,6 @@ const MainCatsInput = (): React.ReactElement => {
           Ver Categorias Femininas
         </button>
       </div>
-      <div className={`${css.wrapperPInfo}`}>
-        <span className={`${css.spanInfo} material-symbols-outlined`}>
-          info
-        </span>
-        <p className={`${css.infoP}`}>
-          Se você desejar adicionar categorias de destaque ao genero infantil,
-          entre em contato conosco.
-        </p>
-      </div>
       <div className={`${css.wrapperCardCats}`}>
         {selectedMainCategories.map((category, index) => (
           <CategoryCardResume
@@ -83,7 +67,7 @@ const MainCatsInput = (): React.ReactElement => {
           />
         ))}
       </div>
-      <button className={`${css.button}`}>
+      <button >
         Adicionar Nova Categoria Principal
         <Plus {...iconMdStyles} />
       </button>
