@@ -31,9 +31,7 @@ const optionButtons = [
 ];
 
 const css = {
-  wrapper: ``,
-  p: ``,
-  button: `h-11 w-full br-0 bg-transparent font-normal`,
+  button: `h-11 w-full br-0 bg-transparent font-normal hover:bg-gray-100 trans`,
 };
 
 const AdministrationOptions = () => {

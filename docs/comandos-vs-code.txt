@@ -1,3 +1,17 @@
 Shift + Alt + O : “Organize Imports”
+
 Ctrl + D : selecionar o menor texto completo
+
+Esconder painel lateral: ctrl + B
+
+Comentario de linha
+
+Comentario de bloco: alt + shift + A
+
+Desfazer ultima seleção: ctrl + U
+
+Mostrar ou ocultar o terminal: ctrl + J
+
+Substituir: ctrl + H
+
 

@@ -5,10 +5,11 @@ import { X } from "lucide-react";
 import Link from "next/link";
 
 const css = {
-  wrapper: `h-19 px-5 box-content flex items-center j-between br-0`,
+  wrapper: `h-14 px-5 mb-5 box-content flex items-center j-between br-0 
+  bg-gradient-to-r from-stone-800 to-stone-700`,
   pLogo:
-    "leading-none font-logo text-stone-800 text-[1.780em] sm:text-[1.830em] md:text-[1.854em] lg:text-[1.902em] xl:text-[1.950em] 2xl:text-[1.998em]",
-  button: "h-9 w-9 p-0 centralize br-md bg-gray-50 hover:bg-gray-100",
+    "leading-none font-logo text-white text-stone-800 text-[1.780em]",
+  button: "h-9 w-9 p-0 centralize br-md bg-stone-600/38 hover:bg-stone-600/76 trans",
 };
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
       </div>
       
       <Link className={`${css.button} `} href={"/loja"}>
-        <X {...iconMdStyles} />
+        <X {...iconMdStyles} color="white"/>
       </Link>
     </div>
   );

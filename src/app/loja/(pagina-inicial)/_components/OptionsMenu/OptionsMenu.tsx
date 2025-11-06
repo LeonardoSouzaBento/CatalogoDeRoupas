@@ -55,7 +55,7 @@ const OptionsMenu = ({
           <ButtonClose
             setState={setSeeOptionsSection}
             positionStyles="absolute top-2 right-2"
-            styles="bg-stone-700/80 br-md hover:bg-stone-600/80"
+            styles="bg-stone-700/30 br-md hover:bg-stone-700/60 shadow-none! "
             delay={300}
             setStateAnimation={setTranslate}
             iconStyles={{ color: "white" }}

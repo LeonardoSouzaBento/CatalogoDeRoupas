@@ -8,14 +8,15 @@ import EditButton from "./EditButton";
 
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative br-lg bg-white`,
-  wrapperImg: `h-16 min-w-16 w-16 relative bg-gray-100 br-lg border-none`,
+  wrapperImg: `h-16 min-w-16 w-16 relative bg-gray-100 br-50 border-none`,
   img: "!border-none !outline-none",
   wrapperInfo:
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",
   name: `block font-bold break-words text-gray-800 capitalize leading-none text-[1.18em]`,
-  email: "max-[430px]:text-center block text-[1.06em] leading-none break-all",
+  email: "block text-[1.06em] leading-none break-all",
   buttonEdit: "square-button p-0 br-md shadow-soft-small",
 };
+
 
 const UserCard = ({ userData }: { userData: UserData }) => {
   const [seeEditMode, setSeeEditMode] = useState<boolean>(false);
@@ -30,7 +31,7 @@ const UserCard = ({ userData }: { userData: UserData }) => {
             </div>
             <div className={`${css.wrapperInfo}`}>
               <p className={`${css.name}`}>{userData.name}</p>
-              <p className={`${css.email}`}>email: {userData.email}</p>
+              <p className={`${css.email}`}>Email: {userData.email}</p>
             </div>
             {/* para mobile */}
             <div
@@ -42,7 +43,7 @@ const UserCard = ({ userData }: { userData: UserData }) => {
           </div>
           {/* para mobile */}
           <p className={`${css.email} min-[430px]:hidden`}>
-            email: {userData.email}
+            Email: {userData.email}
           </p>
         </div>
       ) : (

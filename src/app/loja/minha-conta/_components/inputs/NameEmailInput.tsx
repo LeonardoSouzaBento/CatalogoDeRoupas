@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Check, Upload } from "lucide-react";
 import { validateName } from "@/functions/validateName";
 import { validateEmail } from "@/functions/validateEmail";
 import Image from "next/image";
-import { ButtonClose } from "@/app/loja/_ui";
+import { ButtonClose, HeaderCard } from "@/app/loja/_ui";
 import { BooleanSetter } from "@/types/types";
+import { UserContext } from "@/contexts";
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
@@ -16,6 +17,7 @@ const NameEmailInput = ({
 }: {
   setSeeEditMode: BooleanSetter;
 }) => {
+  const {userData} = useContext(UserContext);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [nameErrors, setNameErrors] = useState<string>("");
@@ -33,30 +35,40 @@ const NameEmailInput = ({
   }
 
   return (
-    <div className={`flex flex-col gap-4 pt-2 relative`}>
+    <div className={`flex flex-col gap-4 relative`}>
+      <HeaderCard
+        title="Edite seus dados"
+        icon="edit"
+        wrapperStyles="mb-0! bs-light-color"
+        spanStyles="text-[1.3em]!"
+      />
       <ButtonClose
         setState={setSeeEditMode}
         simpleDesign={true}
-        positionStyles="absolute top-0 -right-2"
+        styles="light-button size-9!"
+        positionStyles="absolute -top-1 -right-3"
       />
-      <div className="size-auto flex items-end justify-start gap-5">
-        <div className="size-16 br-lg bg-gray-50 crop relative">
+      {/* <p>Foto de perfil</p> */}
+      <div className="size-auto flex items-center justify-start max-[430px]:gap-3 gap-5">
+        <div className="size-16 min-w-16 br-50 bg-gray-100 crop relative">
           <Image src={`/`} fill={true} alt="" />
         </div>
-        <button className="bg-gray-50 hover:bg-gray-100 trans">
-          <Upload {...iconMdStyles} />
+        <button className="w-full light-button trans">
           Subir nova imagem
+          <div className="h-full min-w-max centralize">
+            <Upload {...iconMdStyles} />
+          </div>
         </button>
       </div>
 
       {/* nome */}
       <div>
-        <label htmlFor="name">Nome</label>
+        <label htmlFor="name" className="mb-2">Nome</label>
         <input
           id="name"
           type="text"
           value={name}
-          placeholder="Seu Nome"
+          placeholder={userData.name}
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -65,11 +77,11 @@ const NameEmailInput = ({
       {nameErrors && <p className={`${css.pError}`}>{nameErrors}</p>}
       {/* email */}
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" className="mb-2">Email</label>
         <input
           type="text"
           id="email"
-          placeholder="meuemail@email.com"
+          placeholder={userData.email}
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
