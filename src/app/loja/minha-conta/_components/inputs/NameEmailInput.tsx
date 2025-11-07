@@ -39,7 +39,7 @@ const NameEmailInput = ({
       <HeaderCard
         title="Edite seus dados"
         icon="edit"
-        wrapperStyles="mb-0! bs-light-color"
+        wrapperStyles="bs-light-color"
         spanStyles="text-[1.3em]!"
       />
       <ButtonClose
@@ -79,7 +79,7 @@ const NameEmailInput = ({
       <div>
         <label htmlFor="email" className="mb-2">Email</label>
         <input
-          type="text"
+          type="email"
           id="email"
           placeholder={userData.email}
           value={email}

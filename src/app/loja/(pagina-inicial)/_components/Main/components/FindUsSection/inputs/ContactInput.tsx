@@ -40,7 +40,7 @@ const ContactInput = (): React.ReactElement => {
           }}
         />
         {zapErrors.length > 0 && (
-          <ul className="text-red-600 text-sm">
+          <ul className="text-red-600 text-[1em]">
             {zapErrors.map((err, i) => (
               <li key={i}>{err}</li>
             ))}

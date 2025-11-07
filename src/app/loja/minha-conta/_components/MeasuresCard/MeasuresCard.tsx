@@ -22,7 +22,7 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
 
   return (
     <>
-      <HeaderCard title="Minhas Medidas" icon="square_foot" />
+      <HeaderCard title="Minhas Medidas" icon="square_foot" spanStyles="mb-1"/>
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
       <table className="w-full">
         <tbody className={`${css.wrapper}`}>

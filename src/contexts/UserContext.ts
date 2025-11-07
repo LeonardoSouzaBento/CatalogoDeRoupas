@@ -11,6 +11,9 @@ import { createContext } from "react";
 export interface UserContextType {
   userData: UserData;
   setUserData: StateSetter<UserData>;
+  /*  */
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   /* Gêneros do usuário */
   selectedGender: GenderKey;
   selectedChildGender: ChildrensGenre;
@@ -21,6 +24,9 @@ export interface UserContextType {
 export const UserContext = createContext<UserContextType>({
   userData: defaultUserData,
   setUserData: () => {},
+  /*  */
+  searchTerm: "",
+  setSearchTerm: () => {},
   /* Genêros de usuario */
   selectedGender: "masculino",
   selectedChildGender: "masculino",

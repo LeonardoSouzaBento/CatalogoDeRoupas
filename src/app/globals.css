@@ -59,6 +59,10 @@ body {
 p {
   cursor: default;
 }
+button{
+  user-select: none;
+  
+}
 textarea::-webkit-scrollbar-track {
   background-color: #ffffff00;
 }

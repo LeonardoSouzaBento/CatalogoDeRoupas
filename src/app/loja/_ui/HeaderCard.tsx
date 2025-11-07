@@ -11,11 +11,11 @@ interface HeaderCardProps {
 }
 
 const css = {
-  wrapper: `w-full min-h-11 mb-1 flex flex-col i-start 
+  wrapper: `w-full min-h-10 flex flex-col i-start 
   mb-5 border-b bs-color br-0`,
-  wrapperTitle: `min-h-11 flex i-center gap-2`,
-  title: `font-medium !mb-0 !text-neutral-800 !text-left text-[1.09em] capitalize`,
-  wrapperIcon: "min-h-full w-6 mb-1 flex items-center justify-center",
+  wrapperTitle: `min-h-10 flex i-center gap-2 `,
+  title: `mt-[3px] font-medium text-neutral-800 text-left text-[1.09em] capitalize`,
+  wrapperIcon: "min-h-full w-6 flex items-center justify-center",
 };
 
 const HeaderCard: React.FC<HeaderCardProps> = ({
@@ -32,7 +32,7 @@ const HeaderCard: React.FC<HeaderCardProps> = ({
         {icon && (
           <div className={`${css.wrapperIcon}`}>
             <span
-              className={`material-symbols-outlined text-neutral-800 ${spanStyles}`}
+              className={`material-symbols-outlined text-gray-800/90 ${spanStyles}`}
             >
               {icon}
             </span>

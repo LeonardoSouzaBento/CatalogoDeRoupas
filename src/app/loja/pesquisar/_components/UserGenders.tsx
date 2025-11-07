@@ -7,7 +7,7 @@ import { GenderKey, StateSetter } from "@/types/types";
 const mainCss = {
   wrapper: `br-0 py-6`,
   wrapperGenders: "flex gap-3 max-[410px]:justify-between",
-  selected: `border bs-light-color bg-white shadow-soft-small`,
+  selected: `border bs-light-color bg-white hover:shadow-soft-soft hover:bg-white shadow-soft-small`,
 };
 
 const UserGenders = () => {
@@ -46,7 +46,8 @@ const GenderButton = ({
 }) => {
   const selected = selectedGender === gender.toLowerCase();
   const css = {
-    button: `h-10 w-1/3 max-[410px]:px-0 min-[410px]:max-w-max centralize bg-gray-50 font-normal`,
+    button: `h-10 w-1/3 max-[410px]:px-0 min-[410px]:max-w-max centralize 
+    bg-gray-50 hover:bg-gray-100 font-normal`,
   };
 
   return (

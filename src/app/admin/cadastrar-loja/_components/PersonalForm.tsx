@@ -1,0 +1,111 @@
+import { HeaderCard } from "@/app/loja/_ui";
+import SaveButton from "@/app/loja/_ui/SaveButton";
+import { Shopkeeper } from "@/types/types";
+import React, { useState } from "react";
+
+interface InputField {
+  label: string;
+  name: keyof Shopkeeper;
+  placeholder: string;
+  maxLength: number;
+}
+
+const inputs: InputField[] = [
+  {
+    label: "nome pessoal",
+    name: "personalName",
+    placeholder: "Digite seu nome",
+    maxLength: 60,
+  },
+  {
+    label: "nome da loja",
+    name: "storeName",
+    placeholder: "Digite o nome fantasia",
+    maxLength: 60,
+  },
+  {
+    label: "email principal",
+    name: "email",
+    placeholder: "seuemail@email.com",
+    maxLength: 50,
+  },
+  {
+    label: "whatsapp",
+    name: "whatsapp",
+    placeholder: "XX XXXXX XXXX",
+    maxLength: 20,
+  },
+  {
+    label: "telefone",
+    name: "phone",
+    placeholder: "(Opcional)",
+    maxLength: 20,
+  },
+  {
+    label: "nome da empresa",
+    name: "companyName",
+    placeholder: "Digite a razão social",
+    maxLength: 60,
+  },
+  { label: "CPF ou CNPJ", name: "cpf", placeholder: "Apenas números", maxLength: 14 },
+];
+
+const css = {
+  wrapper: "w-full block border-none mb-5",
+  input: `mb-4`,
+};
+
+const PersonalForm = () => {
+  const [shopkeeper, setShopkeeper] = useState<Shopkeeper>({
+    personalName: "",
+    storeName: "",
+    companyName: "",
+    email: "",
+    phone: "",
+    whatsapp: "",
+    cpf: "",
+    plan: "",
+    startDate: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setShopkeeper((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  async function handleSaveShopkeeper() {
+    console.log("sim");
+  }
+
+  return (
+    <div>
+      <HeaderCard title="Informações gerais" icon="assignment_ind" spanStyles="text-[1.18em]! font-medium!"/>
+      <form className={`mb-5`}>
+        {inputs.map((field, index) => (
+          <div key={field.name}>
+            <label htmlFor={field.name}>{field.label}</label>
+            <input
+              type="text"
+              id={field.name}
+              name={field.name}
+              placeholder={field.placeholder}
+              value={shopkeeper[field.name]}
+              required
+              maxLength={field.maxLength}
+              onChange={handleChange}
+              className={`${css.input} ${
+                index === inputs.length - 1 ? "!mb-0" : ""
+              }`}
+            />
+          </div>
+        ))}
+      </form>
+      <SaveButton asyncFunction={handleSaveShopkeeper}/>
+    </div>
+  );
+};
+
+export default PersonalForm;

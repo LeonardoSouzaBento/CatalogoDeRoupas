@@ -1,15 +1,16 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { HeaderCard } from "../../_ui";
 import ButtonLoginGoogle from "./ButtonLoginGoogle";
 import ButtonLoginEmail from "./ButtonLoginEmail";
+import EmailForm from "./EmailForm";
 
 const Core = () => {
   const [seeEmailForm, setSeeEmailForm] = useState<boolean>(false);
 
   return (
     <div className="w-full flex flex-col">
-      {!seeEmailForm && (
+      {!seeEmailForm ? (
         <>
           <HeaderCard
             title="Fazer Login"
@@ -18,12 +19,14 @@ const Core = () => {
             titleStyles="font-semibold text-[1.12em]!"
           />
           <ButtonLoginGoogle />
+          <ButtonLoginEmail
+            seeEmailForm={seeEmailForm}
+            setSeeEmailForm={setSeeEmailForm}
+          />
         </>
+      ) : (
+        <EmailForm setSeeEmailForm={setSeeEmailForm} />
       )}
-      <ButtonLoginEmail
-        seeEmailForm={seeEmailForm}
-        setSeeEmailForm={setSeeEmailForm}
-      />
     </div>
   );
 };

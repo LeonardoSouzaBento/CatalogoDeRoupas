@@ -16,8 +16,6 @@ export interface UserGenres {
   active: boolean;
 }
 
-
-
 /* Item de seleções especiais */
 export interface HomeClothing {
   id: number | string;
@@ -30,6 +28,24 @@ export interface HomeClothing {
 
 export interface SpecialSelectionItem {
   item: HomeClothing;
+}
+
+export interface Clothing {
+  id: number | string;
+  name: string;
+  price: number;
+  img1: string;
+  alt?: string;
+  img2?: string;
+  alt2?: string;
+  img3?: string;
+  alt3?: string;
+  img4?: string;
+  alt4?: string;
+  img5?: string;
+  alt5?: string;
+  img6?: string;
+  alt6?: string;
 }
 
 /* Protuto */
@@ -54,7 +70,6 @@ export interface ProductItem {
   item: ProductSchema;
 }
 
-
 /* Usuário */
 export interface UserData {
   name: string;
@@ -67,14 +82,28 @@ export interface UserData {
   calçado?: number;
 }
 
-export interface AddressSchema  {
+/* Lojista */
+
+export interface Shopkeeper {
+  personalName: string;
+  storeName: string;
+  companyName?: string;
+  email: string;
+  phone?: string;
+  whatsapp?: string;
+  cpf: string;
+  plan?: string; // nome do plano
+  startDate?: string;
+}
+
+export interface AddressSchema {
   rua: string;
   número: number | "";
   complemento?: string;
   bairro: string;
   cidade: string;
   estado: string;
-};
+}
 
 /* Loja */
 export interface ShopInfo {
