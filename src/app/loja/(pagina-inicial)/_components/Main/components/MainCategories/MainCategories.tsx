@@ -2,7 +2,6 @@
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 import { UserContext } from "@/contexts";
 import { HomeContext } from "@/contexts/HomeContext";
-import type { MainCategoriesType } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import Image from "next/image";
 import { useContext, useState } from "react";
@@ -25,7 +24,7 @@ const css = {
   p: "w-full px-8 text-white font-medium home-h1 sm:text-center leading-none",
 };
 
-const MainCategoriesType = () => {
+const MainCategories = () => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
   const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
@@ -81,4 +80,4 @@ const MainCategoriesType = () => {
   }
 };
 
-export default MainCategoriesType;
+export default MainCategories;
