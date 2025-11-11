@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/contexts/UserContext";
 import type { homeUserGender } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
@@ -30,10 +30,10 @@ const UserGenderList = (): React.ReactElement => {
 
   function handleSelectGender(gender: homeUserGender) {
     if (gender == "masculino" || gender === "feminino") {
-      setSelectedGender(gender);
       setChildCatSelected(false);
+      setSelectedGender(gender);
     }
-    if (gender === "infantil" && !childCatSelected) {
+    if (gender === "infantil") {
       setChildCatSelected(true);
     }
 
@@ -60,7 +60,9 @@ const UserGenderList = (): React.ReactElement => {
                   handleSelectGender(item.name as homeUserGender);
                 }}
                 className={`${css.button} ${
-                  selectedGender === item.name && !childCatSelected && css.selected
+                  selectedGender === item.name &&
+                  !childCatSelected &&
+                  css.selected
                 } ${fastReturn === item.name && "scale-106"}`}
               >
                 <span className="material-symbols-outlined">{item.icon}</span>{" "}

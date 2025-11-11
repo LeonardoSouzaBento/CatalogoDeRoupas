@@ -40,7 +40,7 @@ const ChildGenderButtons = () => {
         className={`${css.buttons} ${
           selectedGender === "masculino" && css.selected
         } `}
-        onClick={(e) => handleGenderClick(e, "masculino")}
+        onClick={(e) => handleGenderClick(e, "masculino" as Genders)}
       >
         M
       </button>
@@ -48,7 +48,7 @@ const ChildGenderButtons = () => {
         className={`${css.buttons}  ${
           selectedGender === "feminino" && css.selected
         }`}
-        onClick={(e) => handleGenderClick(e, "feminino")}
+        onClick={(e) => handleGenderClick(e, "feminino" as Genders)}
       >
         F
       </button>

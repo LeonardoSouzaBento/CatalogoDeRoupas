@@ -118,9 +118,7 @@ export interface MainCategory {
   order: number;
 }
 
-export interface MainCategoriesData {
+export interface MainCategories {
   masculino: MainCategory[];
   feminino: MainCategory[];
-  infantil?: MainCategory[];
-  menina?: MainCategory[];
 }

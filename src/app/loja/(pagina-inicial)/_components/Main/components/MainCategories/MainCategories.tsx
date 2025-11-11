@@ -1,11 +1,12 @@
 "use client";
+import { useContext, useEffect, useState } from "react";
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 import { UserContext } from "@/contexts";
 import { HomeContext } from "@/contexts/HomeContext";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
 import MainCatsInput from "./Inputs/MainCatsInput";
+import type { MainCategories, MainCategory } from "@/types/types";
 
 const css = {
   container: `
@@ -26,29 +27,16 @@ const css = {
 
 const MainCategories = () => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
-  const { mainCategories, setHasMainCategories } = useContext(HomeContext);
+  const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
-  // pega o array correto com base no gênero
 
-  const girlsCategories = selectedGender === "feminino" && childCatSelected;
-
-  const categories = girlsCategories
-    ? mainCategories.menina
-    : selectedGender === "infantil"
-    ? mainCategories.infantil
+  const categories = childCatSelected
+    ? []
     : selectedGender === "masculino"
     ? mainCategories.masculino
     : selectedGender === "feminino"
     ? mainCategories.feminino
     : [];
-
-  useEffect(() => {
-    if (!categories?.length) {
-      setHasMainCategories(false);
-    } else {
-      setHasMainCategories(true);
-    }
-  }, [categories]);
 
   if (categories && categories.length > 0) {
     return (
@@ -89,7 +77,7 @@ const MainCategories = () => {
       </div>
     );
   } else {
-    setHasMainCategories(true);
+    return null;
   }
 };
 

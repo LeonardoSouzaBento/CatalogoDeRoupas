@@ -1,6 +1,6 @@
 "use client";
-import { HomeContext } from "@/contexts";
-import React, { useContext } from "react";
+import { HomeContext, UserContext } from "@/contexts";
+import React, { useContext, useEffect } from "react";
 import {
   AboutSection,
   FindUsSection,
@@ -18,7 +18,16 @@ const clothesSectionStyles =
   "!px-0 bg-gradient-to-r from-gray-50 to-white shadow-special-selections";
 
 const Main = (): React.ReactElement => {
-  const { hasMainCategories, hasGymClothes } = useContext(HomeContext);
+  const { hasMainCategories, setHasMainCategories, hasGymClothes } = useContext(HomeContext);
+  const { childCatSelected } = useContext(UserContext);
+
+  useEffect(() => {
+    if (childCatSelected) {
+      setHasMainCategories(false);
+    } else{
+      setHasMainCategories(true);
+    }
+  }, [childCatSelected, setHasMainCategories]);
 
   return (
     <main>
