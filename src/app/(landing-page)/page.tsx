@@ -1,4 +1,4 @@
-import LogoHeader from "./_components/LogoHeader";
+import LogoSection from "./_components/LogoSection";
 import { TitleSubtitleSection } from "./_components/Main/components";
 import {
   WhySection,
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50">
-      <LogoHeader page="landing-page" />
+      <LogoSection page="landing-page" />
       <main>
         {/* Seção principal */}
         <MainSection />

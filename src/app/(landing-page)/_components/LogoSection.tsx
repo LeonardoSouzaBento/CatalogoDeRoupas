@@ -11,14 +11,14 @@ const css = {
   landingPageStyles: "abso bg-gradient-to-b from-stone-800/25 to-transparent",
 };
 
-const LogoHeader = ({
+const LogoSection = ({
   page,
-  setSeeInputNameShop,
-  homeEditMode,
+  setSeeInputNameShop = ()=>{},
+  homeEditMode = false,
 }: {
   page?: string;
-  setSeeInputNameShop: BooleanSetter;
-  homeEditMode: boolean;
+  setSeeInputNameShop?: BooleanSetter;
+  homeEditMode?: boolean;
 }): React.ReactElement => {
   return (
     <div className="w-full h-max relative">
@@ -34,11 +34,10 @@ const LogoHeader = ({
         <ButtonSeeEditMode
           setState={setSeeInputNameShop}
           positionStyles="absolute top-5 right-4 z-5"
-          
         />
       )}
     </div>
   );
 };
 
-export default LogoHeader;
+export default LogoSection;

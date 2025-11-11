@@ -1,23 +1,24 @@
 "use client"
 import React, { useContext, useState } from "react";
 import { HomeContext } from "@/contexts";
-import LogoHeader from "@/app/(landing-page)/_components/LogoHeader";
-import NameShopInput from "./Header/inputs/NameShopInput";
+import ShopNameInput from "./TopNavigationBar/inputs/ShopNameInput";
+import LogoSection from "@/app/(landing-page)/_components/LogoSection";
 
-const Logo = () => {
+const LogoArea = () => {
   const [seeInputNameShop, setSeeInputNameShop] = useState<boolean>(false);
   const { homeEditMode } = useContext(HomeContext);
+  
   return (
     <>
-      <LogoHeader
+      <LogoSection
         setSeeInputNameShop={setSeeInputNameShop}
         homeEditMode={homeEditMode}
       />
       {seeInputNameShop && (
-        <NameShopInput setSeeInputNameShop={setSeeInputNameShop} />
+        <ShopNameInput setSeeInputNameShop={setSeeInputNameShop} />
       )}
     </>
   );
 };
 
-export default Logo;
+export default LogoArea;

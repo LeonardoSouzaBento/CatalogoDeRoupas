@@ -16,7 +16,7 @@ type NameShopInputProps = {
   setSeeInputNameShop: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const NameShopInput = ({
+const ShopNameInput = ({
   setSeeInputNameShop,
 }: NameShopInputProps): React.ReactElement => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -50,4 +50,4 @@ const NameShopInput = ({
   );
 };
 
-export default NameShopInput;
+export default ShopNameInput;
