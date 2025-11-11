@@ -1,7 +1,6 @@
 import { ButtonClose } from "@/app/loja/_ui";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import SaveButton from "@/app/loja/_ui/SaveButton";
 import { PublicDataContext } from "@contexts/PublicDataContext";
-import { Check } from "lucide-react";
 import React, { useContext, useState } from "react";
 
 const css = {
@@ -23,7 +22,7 @@ const NameShopInput = ({
   const [inputValue, setInputValue] = useState<string>("");
   const { shopInfo, setShopInfo } = useContext(PublicDataContext);
 
-  function handleEdit() {
+  async function handleEdit() {
     if (inputValue.length >= 6) {
       setShopInfo({ ...shopInfo, name: inputValue });
     }
@@ -44,15 +43,8 @@ const NameShopInput = ({
           placeholder="Digite aqui"
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <div className={`${css.wrapperButtons}`}>
-          <button className={`${css.buttonSend}`} onClick={handleEdit}>
-            Voltar
-          </button>
-          <button className={`${css.buttonSend}`} onClick={handleEdit}>
-            Salvar
-            <Check {...iconMdStyles} />
-          </button>
-        </div>
+
+        <SaveButton asyncFunction={handleEdit} />
       </div>
     </div>
   );

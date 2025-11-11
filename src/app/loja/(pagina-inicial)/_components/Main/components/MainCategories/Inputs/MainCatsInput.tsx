@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { HomeContext } from "@/contexts/HomeContext";
-import CategoryCardResume from "./CategoryCardResume";
+import CategoryCard from "./CategoryCard";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Eye, EyeClosed, Plus } from "lucide-react";
 
@@ -36,11 +36,13 @@ const MainCatsInput = (): React.ReactElement => {
             }
           }}
         >
-          {maleNoSelected ? (
-            <EyeClosed {...iconMdStyles} />
-          ) : (
-            <Eye {...iconMdStyles} />
-          )}
+          <div className="wrapper-icon">
+            {maleNoSelected ? (
+              <EyeClosed {...iconMdStyles} />
+            ) : (
+              <Eye {...iconMdStyles} />
+            )}
+          </div>
           Ver Categorias Masculinas
         </button>
         <button
@@ -61,13 +63,10 @@ const MainCatsInput = (): React.ReactElement => {
       </div>
       <div className={`${css.wrapperCardCats}`}>
         {selectedMainCategories.map((category, index) => (
-          <CategoryCardResume
-            key={index}
-            category={category}
-          />
+          <CategoryCard key={index} category={category} />
         ))}
       </div>
-      <button >
+      <button>
         Adicionar Nova Categoria Principal
         <Plus {...iconMdStyles} />
       </button>

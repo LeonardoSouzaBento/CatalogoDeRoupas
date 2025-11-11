@@ -85,7 +85,10 @@ const AboutInput = ({
           }}
         >
           {" "}
-          <Trash {...iconMdStyles} size={19} /> Deletar Todo o Texto
+          <div className="wrapper-icon">
+            <Trash {...iconMdStyles} size={19} />
+          </div>
+          Deletar Todo o Texto
         </button>
         <button className={`${css.buttons} order-3 sm:order-3`}>
           <Check {...iconMdStyles} />

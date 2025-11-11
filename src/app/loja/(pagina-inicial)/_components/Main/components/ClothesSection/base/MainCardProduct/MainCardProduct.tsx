@@ -5,7 +5,7 @@ import type {
 import { MainImage } from "./components/MainImage";
 import ProductInfo from "./components/ProductInfo";
 import { SecondaryImage } from "./components/SecondaryImage";
-import ProductInput from "./inputs/ProductInput";
+import ProductInput from "../../inputs/ProductInput";
 
 const css = {
   wrapperProduct:

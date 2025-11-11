@@ -10,7 +10,7 @@ import { UserData } from "@/types/types";
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
 const css = {
-  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 bs !border-r-0 mb-5 br-0`,
+  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 bs !border-r-0 mb-5 br-md crop`,
 };
 
 const MeasuresCard = ({ userData }: { userData: UserData }) => {
@@ -22,7 +22,7 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
 
   return (
     <>
-      <HeaderCard title="Minhas Medidas" icon="square_foot" spanStyles="mb-1"/>
+      <HeaderCard title="Minhas medidas" icon="square_foot" spanStyles="text-[1.3em]!" />
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
       <table className="w-full">
         <tbody className={`${css.wrapper}`}>
@@ -32,7 +32,10 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
         </tbody>
       </table>
       <button className="button max-[375px]:text-left mb-5 w-full">
-        <CircleQuestionMark {...iconMdStyles} /> Ver Guia De Medidas
+        <div className="wrapper-icon">
+          <CircleQuestionMark {...iconMdStyles} />
+        </div>
+        Ver Guia De Medidas
       </button>
       <button className="button max-[375px]:text-left w-full">
         <Pen {...iconSmStyles} /> Atualizar Minhas Medidas

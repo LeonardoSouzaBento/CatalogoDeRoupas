@@ -12,42 +12,47 @@ interface InputField {
 
 const inputs: InputField[] = [
   {
-    label: "nome pessoal",
+    label: "Nome pessoal",
     name: "personalName",
     placeholder: "Digite seu nome",
     maxLength: 60,
   },
   {
-    label: "nome da loja",
+    label: "Nome da loja",
     name: "storeName",
     placeholder: "Digite o nome fantasia",
     maxLength: 60,
   },
   {
-    label: "email principal",
+    label: "Email principal",
     name: "email",
     placeholder: "seuemail@email.com",
     maxLength: 50,
   },
   {
-    label: "whatsapp",
+    label: "Whatsapp",
     name: "whatsapp",
     placeholder: "XX XXXXX XXXX",
     maxLength: 20,
   },
   {
-    label: "telefone",
+    label: "Telefone",
     name: "phone",
     placeholder: "(Opcional)",
     maxLength: 20,
   },
   {
-    label: "nome da empresa",
+    label: "Nome da empresa",
     name: "companyName",
     placeholder: "Digite a razão social",
     maxLength: 60,
   },
-  { label: "CPF ou CNPJ", name: "cpf", placeholder: "Apenas números", maxLength: 14 },
+  {
+    label: "CPF ou CNPJ",
+    name: "cpf",
+    placeholder: "Apenas números",
+    maxLength: 14,
+  },
 ];
 
 const css = {
@@ -82,11 +87,21 @@ const PersonalForm = () => {
 
   return (
     <div>
-      <HeaderCard title="Informações gerais" icon="assignment_ind" spanStyles="text-[1.18em]! font-medium!"/>
+      <HeaderCard
+        title="Informações gerais"
+        wrapperStyles="mb-4!"
+        icon="assignment_ind"
+        spanStyles="text-[1.18em]! font-medium!"
+      />
       <form className={`mb-5`}>
         {inputs.map((field, index) => (
           <div key={field.name}>
-            <label htmlFor={field.name}>{field.label}</label>
+            <label
+              htmlFor={field.name}
+              className={`normal-case!`}
+            >
+              {field.label}
+            </label>
             <input
               type="text"
               id={field.name}
@@ -103,7 +118,7 @@ const PersonalForm = () => {
           </div>
         ))}
       </form>
-      <SaveButton asyncFunction={handleSaveShopkeeper}/>
+      <SaveButton asyncFunction={handleSaveShopkeeper} />
     </div>
   );
 };

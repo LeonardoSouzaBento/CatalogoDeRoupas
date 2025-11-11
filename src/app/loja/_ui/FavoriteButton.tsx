@@ -6,7 +6,7 @@ const css = {
   wrapperPReturn: "centralize h-full w-33 box-border",
   pReturn: "font-light text-[1.06em] text-gray-950 pb-[1px]",
   wrapperIcon:
-    "h-full min-w-11 w-max centralize gap-3 bg-gray-100 br-50 fast-trans",
+    "h-full min-w-11 w-max centralize gap-3 light-button br-50 fast-trans",
   span: "material-symbols-outlined text-gray-800 font-[400]! pt-[2] text-[1.27em]!",
 };
 

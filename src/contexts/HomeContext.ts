@@ -8,12 +8,12 @@ import { defaultMainCategoriesData } from "@data/home/homeData";
 
 
 interface HomeContextType {
-  hasClothes: boolean;
+  hasGymClothes: boolean;
   hasMainCategories: boolean;
   homeEditMode: boolean;
   scrollLimitSpecialSelections: number;
   mainCategories: MainCategoriesData;
-  setHasClothes: React.Dispatch<React.SetStateAction<boolean>>;
+  setHasGymClothes: React.Dispatch<React.SetStateAction<boolean>>;
   setHasMainCategories: React.Dispatch<React.SetStateAction<boolean>>;
   setHomeEditMode: StateSetter<boolean>;
   setScrollLimitSpecialSelections: StateSetter<number>;
@@ -24,11 +24,11 @@ export const HomeContext = createContext<HomeContextType>({
   homeEditMode: false,
   mainCategories: defaultMainCategoriesData,
   scrollLimitSpecialSelections: 0,
-  hasClothes: true,
+  hasGymClothes: true,
   hasMainCategories: true,
   setMainCategories: () => {},
   setHomeEditMode: () => {},
   setScrollLimitSpecialSelections: () => {},
-  setHasClothes: () => {},
+  setHasGymClothes: () => {},
   setHasMainCategories: () => {},
 });

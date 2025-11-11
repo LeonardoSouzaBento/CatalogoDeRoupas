@@ -14,7 +14,7 @@ const css = {
   wrapper: `w-full min-h-10 flex flex-col i-start 
   mb-5 border-b bs-color br-0`,
   wrapperTitle: `min-h-10 flex i-center gap-2 `,
-  title: `mt-[3px] font-medium text-neutral-800 text-left text-[1.09em] capitalize`,
+  title: `mt-[2px] font-semibold text-neutral-800 text-left text-[1.16em] tracking-normal `,
   wrapperIcon: "min-h-full w-6 flex items-center justify-center",
 };
 
@@ -39,12 +39,12 @@ const HeaderCard: React.FC<HeaderCardProps> = ({
           </div>
         )}
 
-        <h2 className={`${css.title} ${titleStyles && titleStyles}`}>
+        <h2 className={`${css.title} ${titleStyles}`}>
           {title}
         </h2>
       </div>
       {subtitle && (
-        <h3 className="text-gray-500 text-[0.96em] mb-3">{subtitle}</h3>
+        <h3 className="text-gray-500 mb-3">{subtitle}</h3>
       )}
     </div>
   );

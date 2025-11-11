@@ -5,7 +5,7 @@ import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import MainCardProduct from "./MainCardProduct/MainCardProduct";
 
 const css = {
-  wrapper: "crop",
+  wrapper: "crop relative",
   scrollableDiv:
     "flex gap-3 pt-3 px-3 md:px-4 box-border lg:mr-4 pb-9 overflow-x-scroll relative",
 };
@@ -39,18 +39,21 @@ const ClothesSection = ({
   sectionEditMode,
   setSectionEditMode,
 }: ClothesSectionProps) => {
-  const { selectedGender, selectedChildGender } = useContext(UserContext);
-  const { setHasClothes } = useContext(HomeContext);
-  const isGirlsSection =
-    selectedGender === "infantil" && selectedChildGender === "feminino";
+  const { selectedGender, childCatSelected } = useContext(UserContext);
+  const { setHasGymClothes } = useContext(HomeContext);
+  const isGirlsSection = childCatSelected && selectedGender === "feminino";
+  const isBoysSection = childCatSelected && selectedGender === "masculino";
+  const isWomanSection = !childCatSelected && selectedGender === "feminino";
+  const isManSection = !childCatSelected && selectedGender === "masculino";
 
-  const displayedItems = isGirlsSection
-    ? girlsClothes ?? []
-    : selectedGender === "masculino"
-    ? mensClothing
-    : selectedGender === "feminino"
-    ? womensClothing
-    : boysClothes ?? [];
+  const displayedItems = (() => {
+    if (isGirlsSection) return girlsClothes ?? [];
+    if (isBoysSection) return boysClothes ?? [];
+    if (isWomanSection) return womensClothing ?? [];
+    if (isManSection) return mensClothing ?? [];
+
+    return [];
+  })();
 
   useEffect(() => {
     setMensClothing(mensClothing);
@@ -61,9 +64,9 @@ const ClothesSection = ({
 
   useEffect(() => {
     if (!displayedItems.length) {
-      setHasClothes(false);
+      setHasGymClothes(false);
     } else {
-      setHasClothes(true);
+      setHasGymClothes(true);
     }
   }, [displayedItems]);
 
@@ -86,8 +89,8 @@ const ClothesSection = ({
                 key={`${index} ${item.id}`}
               />
             ))}
-            {/* <div className=`h-[98%] w-10 br-0 absolute right-0 top-[10px] 
-            bg-gradient-to-l from-white to-transparent` /> */}
+            <div className={`h-[98%] w-10 br-0 absolute right-0 top-[10px] 
+            bg-gradient-to-l from-white to-transparent`} />
           </div>
         </div>
       </>

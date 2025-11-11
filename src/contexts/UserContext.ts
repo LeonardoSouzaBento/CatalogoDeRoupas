@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import { defaultUserData } from "@/data/UserData";
 import type {
-  ChildrensGenre,
-  GenderKey,
+  Genders,
   StateSetter,
   UserData
 } from "@localtypes/types";
@@ -15,10 +14,10 @@ export interface UserContextType {
   searchTerm: string;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   /* Gêneros do usuário */
-  selectedGender: GenderKey;
-  selectedChildGender: ChildrensGenre;
-  setSelectedGender: StateSetter<GenderKey>;
-  setSelectedChildGender: StateSetter<ChildrensGenre>;
+  childCatSelected: boolean;
+  setChildCatSelected: StateSetter<boolean>;
+  selectedGender: Genders;
+  setSelectedGender: StateSetter<Genders>;
 }
 
 export const UserContext = createContext<UserContextType>({
@@ -28,8 +27,8 @@ export const UserContext = createContext<UserContextType>({
   searchTerm: "",
   setSearchTerm: () => {},
   /* Genêros de usuario */
+  childCatSelected: false,
+  setChildCatSelected: () => {},
   selectedGender: "masculino",
-  selectedChildGender: "masculino",
   setSelectedGender: () => {},
-  setSelectedChildGender: () => {},
 });

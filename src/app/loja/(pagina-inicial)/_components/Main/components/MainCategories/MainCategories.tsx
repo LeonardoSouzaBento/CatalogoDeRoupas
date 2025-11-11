@@ -13,28 +13,24 @@ const css = {
     xl:h-[390px] relative
   `,
   sectiooInEditMode: "pb-0 mb-0 m-auto max-w-210",
-  wrapperEditMode:
-    "p-6 pt-3 max-[489px]:pt-5 bg-white br-lg mb-10 shadow-soft-hover",
+  wrapperEditMode: "p-6 pt-3 bg-white br-lg mb-10 shadow-soft-hover",
   wrapperImg: `
     w-[calc(50%-6px)] h-[66vw] max-w-[320px] max-h-[420px] bg-gray-100 flex items-end relative overflow-hidden
     br-lg lg:h-full
   `,
   img: "absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30",
-  wrapperP:
-    `h-20 w-full centralize relative bg-gradient-to-t from-stone-800/80 to-transparent 
+  wrapperP: `h-20 w-full centralize relative bg-gradient-to-t from-stone-800/80 to-transparent 
     [text-shadow:_0_0_8px_rgb(0,_4px,_8px,_0.8)]`,
   p: "w-full px-8 text-white font-medium home-h1 sm:text-center leading-none",
 };
 
 const MainCategories = () => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
-  const { mainCategories, setHasMainCategories } =
-    useContext(HomeContext);
-  const { selectedGender, selectedChildGender } = useContext(UserContext);
+  const { mainCategories, setHasMainCategories } = useContext(HomeContext);
+  const { selectedGender, childCatSelected } = useContext(UserContext);
   // pega o array correto com base no gênero
 
-  const girlsCategories =
-    selectedChildGender === "feminino" && selectedGender === "infantil";
+  const girlsCategories = selectedGender === "feminino" && childCatSelected;
 
   const categories = girlsCategories
     ? mainCategories.menina
@@ -62,8 +58,7 @@ const MainCategories = () => {
           subtitle="Os mais procurados"
           sectionEditMode={sectionEditMode}
           setSectionEditMode={setSectionEditMode}
-        >
-        </HomeTitleSubtitle>
+        ></HomeTitleSubtitle>
 
         {!sectionEditMode ? (
           <div className={`${css.container}`}>

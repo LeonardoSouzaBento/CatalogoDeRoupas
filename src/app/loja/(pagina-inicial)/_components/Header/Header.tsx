@@ -1,11 +1,9 @@
-"use client"
-import React, { useState } from "react";
-import Button from "./components/Button";
-import type { ButtonType } from "./components/Button";
-import NameShopInput from "./inputs/NameShopInput";
-import { User, Menu, Search, Heart } from "lucide-react";
-import LogoHeader from "@/app/(landing-page)/_components/LogoHeader";
+"use client";
 import { BooleanSetter } from "@/types/types";
+import { Heart, Menu, Search, User } from "lucide-react";
+import React from "react";
+import type { ButtonType } from "./components/Button";
+import Button from "./components/Button";
 
 const buttons: ButtonType[] = [
   { icon: User, name: "Minha Conta", link: "/loja/minha-conta" },
@@ -16,7 +14,7 @@ const buttons: ButtonType[] = [
 
 const css = {
   header:
-    "size-auto sticky top-0 left-0 z-2 bg-white/36 backdrop-blur-xs shadow-soft-soft border-b border-[#ffffff22]",
+    "w-full h-auto sticky top-0 left-0 z-2 bg-white/36 backdrop-blur-xs shadow-soft-soft border-b border-[#ffffff22]",
   wrapper:
     "w-[calc(100%-32px)] max-w-[1180px] m-auto flex justify-between items-center flex-wrap gap-4 sm:flex-nowrap md:justify-center lg:gap-8",
   nav: "h-18 w-full flex justify-between items-center sm:justify-center gap-3 sm:gap-4 md:gap-5 flex-auto",
@@ -27,11 +25,8 @@ const Header = ({
 }: {
   setSeeOptionsSection: BooleanSetter;
 }): React.ReactElement => {
-  const [seeInputNameShop, setSeeInputNameShop] = useState<boolean>(false);
-
   return (
     <>
-      <LogoHeader />
       <header className={css.header}>
         <div className={`${css.wrapper}`}>
           <nav className={`${css.nav}`}>
@@ -47,9 +42,6 @@ const Header = ({
             ))}
           </nav>
         </div>
-        {seeInputNameShop && (
-          <NameShopInput setSeeInputNameShop={setSeeInputNameShop} />
-        )}
       </header>
     </>
   );

@@ -1,5 +1,8 @@
+import { ButtonSeeEditMode } from "@/app/loja/_ui";
+import { BooleanSetter } from "@/types/types";
+
 const css = {
-  divLogo: "w-full h-21 pb-1 centralize flex-col relative z-4 rounded-none",
+  divLogo: "w-full min-h-21 pb-1 centralize flex-col relative z-4 rounded-none",
   normalBackground: "bg-stone-800 ",
   pLogo:
     "leading-none mb-1 font-logo text-white text-[1.550em] sm:text-[1.565em] md:text-[1.572em] lg:text-[1.586em] xl:text-[1.600em] 2xl:text-[1.614em]",
@@ -8,15 +11,32 @@ const css = {
   landingPageStyles: "abso bg-gradient-to-b from-stone-800/25 to-transparent",
 };
 
-const LogoHeader = ({ page }: { page?: string }): React.ReactElement => {
+const LogoHeader = ({
+  page,
+  setSeeInputNameShop,
+  homeEditMode,
+}: {
+  page?: string;
+  setSeeInputNameShop: BooleanSetter;
+  homeEditMode: boolean;
+}): React.ReactElement => {
   return (
-    <div
-      className={`${css.divLogo} ${
-        page === "landing-page" ? css.landingPageStyles : css.normalBackground
-      }`}
-    >
-      <p className={`${css.pLogo}`}>Roupas Online</p>
-      <p className={`${css.pSubtitle}`}>Guardamos suas curtidas</p>
+    <div className="w-full h-max relative">
+      <div
+        className={`${css.divLogo} ${
+          page === "landing-page" ? css.landingPageStyles : css.normalBackground
+        }`}
+      >
+        <p className={`${css.pLogo}`}>Roupas Online</p>
+        <p className={`${css.pSubtitle}`}>Guardamos suas curtidas</p>
+      </div>
+      {homeEditMode && (
+        <ButtonSeeEditMode
+          setState={setSeeInputNameShop}
+          positionStyles="absolute top-5 right-4 z-5"
+          
+        />
+      )}
     </div>
   );
 };

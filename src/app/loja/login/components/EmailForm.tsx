@@ -35,7 +35,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           placeholder="Geramos uma, se preferir."
         />
         <div
-          className={`h-10 w-8 centralize absolute bottom-0 right-1`}
+          className={`wrapper-icon absolute bottom-0 right-1`}
           onClick={() => {
             setSeePassword((prev) => !prev);
           }}
@@ -48,7 +48,10 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         </div>
       </div>
       <button className={`${css.button} mb-5`}>
-        <LogIn {...iconMdStyles} /> entrar
+        <div className="wrapper-icon">
+          <LogIn {...iconMdStyles} />
+        </div>
+        entrar
       </button>
       <button
         className={`${css.button} h-10! font-light bg-white bs-light text-neutral-600`}

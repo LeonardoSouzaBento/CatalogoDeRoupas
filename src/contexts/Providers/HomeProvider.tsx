@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import type { MainCategoriesData, ProviderType } from "@localtypes/types";
 import { HomeContext } from "../HomeContext";
 import { defaultMainCategoriesData } from "@data/home/homeData";
+import { useLocalStorage } from "@/hooks/UseLocalStorage";
 
 export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
-  // Home em modo de edição
-  const [homeEditMode, setHomeEditMode] = useState<boolean>(false);
+  /* Home em modo de edição */
+  const [homeEditMode, setHomeEditMode] = useLocalStorage(
+    "homeEditMode",
+    false
+  );
   /* Categorias principais */
   const [mainCategories, setMainCategories] = useState<MainCategoriesData>(
     defaultMainCategoriesData
@@ -15,7 +19,7 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
   const [scrollLimitSpecialSelections, setScrollLimitSpecialSelections] =
     useState<number>(0);
   /* Para conteudo que não precisa ser cadastrado */
-  const [hasClothes, setHasClothes] = useState<boolean>(true);
+  const [hasGymClothes, setHasGymClothes] = useState<boolean>(true);
   const [hasMainCategories, setHasMainCategories] = useState<boolean>(true); //no caso de crianças
 
   return (
@@ -24,10 +28,10 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
         homeEditMode,
         scrollLimitSpecialSelections,
         mainCategories,
-        hasClothes,
-        hasMainCategories, 
-        setHasMainCategories, 
-        setHasClothes,
+        hasGymClothes,
+        hasMainCategories,
+        setHasMainCategories,
+        setHasGymClothes,
         setHomeEditMode,
         setScrollLimitSpecialSelections,
         setMainCategories,

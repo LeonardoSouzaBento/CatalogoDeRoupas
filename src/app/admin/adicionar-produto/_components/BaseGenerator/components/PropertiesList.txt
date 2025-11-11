@@ -1,0 +1,63 @@
+"use client";
+import { ChevronDown } from "lucide-react";
+import { iconMdStyles } from "@/app/lucideIconStyles";
+
+const css = {
+  wrapperButtons: `flex flex-wrap gap-4 mb-5`,
+  button: `br-50 light-button relative`,
+};
+
+interface PropertiesListProps {
+  baseProperties: {
+    name: string;
+    options?: string[] | null;
+    type?: string | undefined;
+  }[];
+  propSelected: string | null;
+  setPropSelected: (value: string | null) => void;
+  booleanOptionsSelected: string[];
+  toggleBoolean: (name: string) => void;
+}
+
+const PropertiesList = ({
+  baseProperties,
+  propSelected,
+  setPropSelected,
+  booleanOptionsSelected,
+  toggleBoolean,
+}: PropertiesListProps) => {
+  return (
+    <div className={css.wrapperButtons}>
+      {baseProperties.map((item) => (
+        <div key={item.name} className="relative">
+          <button
+            className={css.button}
+            onClick={(e) => {
+              e.stopPropagation();
+              setPropSelected(item.name);
+              if (item.type === "boolean") toggleBoolean(item.name);
+            }}
+          >
+            {item.name}
+
+            {item.options && (
+              <div>
+                <ChevronDown {...iconMdStyles} />
+              </div>
+            )}
+
+            {item.type === "boolean" && (
+              <span className="material-symbols-outlined text-[1.12em]! font-[600]! text-gray-700 line-span">
+                {booleanOptionsSelected.includes(item.name)
+                  ? "select_check_box"
+                  : "check_box_outline_blank"}
+              </span>
+            )}
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default PropertiesList;

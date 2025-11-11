@@ -1,9 +1,7 @@
 import { HeaderCard } from "@/app/loja/_ui";
 import BackButton from "@/app/loja/_ui/BackButton";
 import SaveButton from "@/app/loja/_ui/SaveButton";
-import { iconMdStyles } from "@/app/lucideIconStyles";
 import type { AddressSchema, BooleanSetter } from "@/types/types";
-import { Check } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const inputs = [
@@ -96,6 +94,7 @@ const AddressForm = ({
         <HeaderCard
           title="Endereço"
           icon="location_home"
+          wrapperStyles="mb-4!"
           spanStyles="text-[1.25em]! font-medium!"
         />
         <form className={`mb-5`}>

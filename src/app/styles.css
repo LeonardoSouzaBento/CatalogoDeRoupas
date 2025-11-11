@@ -2,29 +2,28 @@
 @import "material-symbols/outlined.css";
 @import "./globals.css";
 
-.p-landing-page {
-  @apply text-gray-800 font-normal text-[1.07em];
-}
-
-.basic-card-style {
-  @apply bg-white shadow-soft p-6 mb-5 rounded-lg;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
-}
-
 /* sombras */
 .heart-button-shadow {
   box-shadow: 0 8px 24px -6px hsla(329, 20%, 30%, 0.094);
 }
 
-/*Para spans google icons*/
+/* icones  */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
+}
 .line-span {
   @apply [font-variation-settings:'FILL'_0];
 }
 .zoom-in-span {
   @apply scale-110;
+}
+.wrapper-icon {
+  @apply h-full min-w-max flex items-center justify-center;
+}
+
+/* divs */
+.basic-card-style {
+  @apply bg-white shadow-soft p-6 pt-[18px] mb-5 rounded-lg box-border;
 }
 
 /* hs */
@@ -39,6 +38,10 @@
 }
 
 /* estilos de Ps */
+
+.p-landing-page {
+  @apply text-gray-800 font-normal text-[1.07em];
+}
 .small-p {
   @apply text-[0.975em] sm:text-[0.982em] md:text-[0.986em] lg:text-[0.993em] xl:text-[1.000em] 2xl:text-[1.007em];
 }
@@ -52,14 +55,17 @@
 .light-button {
   @apply bg-gray-50 hover:bg-gray-200/60 transition-colors duration-200;
 }
+.white-button {
+  @apply bg-white hover:bg-gray-50 transition-colors duration-200;
+}
 
 .p-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
-  text-[1.012em] sm:text-[1.013em] md:text-[1.014em] lg:text-[1.015em] xl:text-[1.016em] 2xl:text-[1.017em];
+  text-[1.012em];
 }
 .p-small-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
-  text-[0.965em] sm:text-[0.972em] md:text-[0.976em] lg:text-[0.983em] xl:text-[0.990em] 2xl:text-[0.997em];
+  text-[0.965em];
 }
 .square-button {
   @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;

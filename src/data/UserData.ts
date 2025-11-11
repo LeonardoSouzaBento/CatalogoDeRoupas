@@ -1,4 +1,4 @@
-import { GenderKey, UserData } from "@/types/types";
+import { homeUserGender, UserData } from "@/types/types";
 
 export const defaultUserData: UserData = {
   name: "Meu Nome Sobrenome",
@@ -10,7 +10,9 @@ export const defaultUserData: UserData = {
   calçado: 40,
 };
 
-export const userGenders: GenderKey[] = ["masculino", "feminino", "infantil"];
+export const homeUserGenders: homeUserGender[] = ["masculino", "feminino", "infantil"];
+
+export const filterUserGenders = ["masculino", "feminino", "infantil - masculino", "infantil - feminino"];
 
 export const mostSearched = {
   masculino: [
@@ -42,3 +44,5 @@ export const mostSearched = {
     "Agasalho/Abrigo",
   ],
 };
+
+

@@ -20,7 +20,9 @@ const ExitHomeEditButton = () => {
         className={`${css.button} `}
       >
         Fechar edição
-        <PenOff {...iconMdStyles} strokeWidth={2.3}/>
+        <div className="wrapper-icon">
+          <PenOff {...iconMdStyles} strokeWidth={2.3} />
+        </div>
       </button>
     );
   }

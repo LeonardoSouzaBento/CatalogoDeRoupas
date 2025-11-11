@@ -15,24 +15,21 @@ import {
 import WrapperSection from "./components/WrapperSection";
 
 const clothesSectionStyles =
-  "!px-0 bg-[linear-gradient(90deg,#F9FAFB,#fff)] shadow-special-selections";
+  "!px-0 bg-gradient-to-r from-gray-50 to-white shadow-special-selections";
 
 const Main = (): React.ReactElement => {
-  const { hasMainCategories, hasClothes } = useContext(HomeContext);
+  const { hasMainCategories, hasGymClothes } = useContext(HomeContext);
 
   return (
     <main>
-      {/* <AlertFullScrren title="Orientações importantes" text="cuidado com os falss">
-        <Info {...iconLgStyles}/>
-      </AlertFullScrren> */}
       <WrapperSection
         child={<UserGenderList />}
-        sectionStyles="bg-white"
-        wrapperStyles="!pt-[24px] pb-6 sm:pb-6"
+        sectionStyles="bg-gray-50 bg-gradient-to-b from-[#F9FAFB] to-white shadow-none!"
+        wrapperStyles="pt-6 pb-9 sm:pb-6"
       />
       <WrapperSection
         child={<SpecialClothes />}
-        sectionStyles={`!px-0`}
+        sectionStyles={clothesSectionStyles}
         wrapperStyles="!pb-0"
       />
       <WrapperSection
@@ -40,7 +37,7 @@ const Main = (): React.ReactElement => {
         sectionStyles={clothesSectionStyles}
         wrapperStyles="!pb-0"
       />
-      {hasClothes && (
+      {hasGymClothes && (
         <WrapperSection
           child={<GymClothes />}
           sectionStyles={clothesSectionStyles}

@@ -64,7 +64,7 @@
   @apply rounded-3xl;
 }
 .br-50 {
-  @apply rounded-[50%];
+  @apply rounded-full;
 }
 
 /* borda solida */

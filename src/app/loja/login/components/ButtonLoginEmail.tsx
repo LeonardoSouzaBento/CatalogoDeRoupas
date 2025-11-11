@@ -17,7 +17,9 @@ const ButtonLoginEmail = ({
         setSeeEmailForm(true);
       }}
     >
-      <Mail {...iconMdStyles} />
+      <div className="wrapper-icon">
+        <Mail {...iconMdStyles} />
+      </div>
       Login com email
     </button>
   );

@@ -7,12 +7,12 @@ export interface ProviderType {
   children: React.ReactNode;
 }
 
-export type GenderKey = "masculino" | "feminino" | "infantil";
+export type Genders = "masculino" | "feminino" | "unisex";
 
-export type ChildrensGenre = "masculino" | "feminino" | "unisex";
+export type homeUserGender = "masculino" | "feminino" | "infantil";
 
 export interface UserGenres {
-  name: GenderKey;
+  name: homeUserGender;
   active: boolean;
 }
 
@@ -30,44 +30,40 @@ export interface SpecialSelectionItem {
   item: HomeClothing;
 }
 
-export interface Clothing {
-  id: number | string;
-  name: string;
-  price: number;
-  img1: string;
-  alt?: string;
-  img2?: string;
-  alt2?: string;
-  img3?: string;
-  alt3?: string;
-  img4?: string;
-  alt4?: string;
-  img5?: string;
-  alt5?: string;
-  img6?: string;
-  alt6?: string;
+/* subtipos */
+
+interface Composition {
+  material: string;
+  percentage: number;
 }
 
-/* Protuto */
-export interface ProductSchema {
+interface Image {
+  url: string;
+  alt: string;
+}
+
+/* Roupa */
+export interface Clothing {
   id: number;
+  //
+  category: string;
   name: string;
   price: number;
-  img1: string;
-  altImg1: string;
-  img2?: string;
-  altImg2: string;
-  img3?: string;
-  altImg3: string;
-  img4?: string;
-  altImg4: string;
-  img5?: string;
-  altImg5: string;
-  img6?: string;
-  altImg6: string;
+  brand: string;
+  mainColor: string;
+  age?: number;
+  difference?: string;
+  //
+  images: Image[];
+  size: string | number;
+  composition: Composition[];
+  availableSizes: (string | number)[];
+  description?: string;
+  colors?: string[]; // no caso de camisetas listradas ou xadrez
 }
-export interface ProductItem {
-  item: ProductSchema;
+
+export interface ClothingItem {
+  item: Clothing;
 }
 
 /* Usuário */

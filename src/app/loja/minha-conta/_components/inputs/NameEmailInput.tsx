@@ -17,7 +17,7 @@ const NameEmailInput = ({
 }: {
   setSeeEditMode: BooleanSetter;
 }) => {
-  const {userData} = useContext(UserContext);
+  const { userData } = useContext(UserContext);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [nameErrors, setNameErrors] = useState<string>("");
@@ -55,7 +55,7 @@ const NameEmailInput = ({
         </div>
         <button className="w-full light-button trans">
           Subir nova imagem
-          <div className="h-full min-w-max centralize">
+          <div className="wrapper-icon">
             <Upload {...iconMdStyles} />
           </div>
         </button>
@@ -63,7 +63,9 @@ const NameEmailInput = ({
 
       {/* nome */}
       <div>
-        <label htmlFor="name" className="mb-2">Nome</label>
+        <label htmlFor="name" className="mb-2">
+          Nome
+        </label>
         <input
           id="name"
           type="text"
@@ -77,7 +79,9 @@ const NameEmailInput = ({
       {nameErrors && <p className={`${css.pError}`}>{nameErrors}</p>}
       {/* email */}
       <div>
-        <label htmlFor="email" className="mb-2">Email</label>
+        <label htmlFor="email" className="mb-2">
+          Email
+        </label>
         <input
           type="email"
           id="email"
@@ -91,7 +95,9 @@ const NameEmailInput = ({
       {emailErrors && <p className={`${css.pError}`}>{emailErrors}</p>}
       {/*  */}
       <button className="mt-1" onClick={handleSaveNameEmail}>
-        <Check {...iconMdStyles} />
+        <div className="wrapper-icon">
+          <Check {...iconMdStyles} />
+        </div>
         Salvar Alterações
       </button>
     </div>

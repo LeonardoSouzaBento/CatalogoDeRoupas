@@ -1,11 +1,11 @@
 substituir ocorrencias em arquivos.ts
 
-/* exemplo simples */
+/* exemplo para um arquivo */
 
 (Get-Content 'src/data/home/homeData.ts') -replace 'Lorem ipsum, dolor sit amet consectetur adipisicing', 'Lorem ipsum sit amet consec' |
 Set-Content 'src/data/home/homeData.ts'
 
-/*  */
+/* para varios arquivos */
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse |
 ForEach-Object {

@@ -1,6 +1,6 @@
 "use client"
 import { iconMdStyles } from "@/app/lucideIconStyles";
-import { CheckLine, CircleCheckBig } from "lucide-react";
+import { CircleCheckBig } from "lucide-react";
 
 interface Props {
   text?: string;
@@ -18,9 +18,9 @@ const SaveButton = ({
   return (
     <button
       onClick={defaultFunction || asyncFunction}
-      className={`w-full gap-2 ${styles}`}
+      className={`w-full ${styles}`}
     >
-      <div className={`w-8 h-full relative centralize`}>
+      <div className={`wrapper-icon relative`}>
         <CircleCheckBig {...iconMdStyles} />
       </div>
       {text}
