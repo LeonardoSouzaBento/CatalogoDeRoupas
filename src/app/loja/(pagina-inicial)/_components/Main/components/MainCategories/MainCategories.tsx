@@ -1,12 +1,12 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
 import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
 import { UserContext } from "@/contexts";
 import { HomeContext } from "@/contexts/HomeContext";
+import type { MainCategoriesType } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
 import Image from "next/image";
+import { useContext, useState } from "react";
 import MainCatsInput from "./Inputs/MainCatsInput";
-import type { MainCategories, MainCategory } from "@/types/types";
 
 const css = {
   container: `
@@ -25,7 +25,7 @@ const css = {
   p: "w-full px-8 text-white font-medium home-h1 sm:text-center leading-none",
 };
 
-const MainCategories = () => {
+const MainCategoriesType = () => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
   const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
@@ -81,4 +81,4 @@ const MainCategories = () => {
   }
 };
 
-export default MainCategories;
+export default MainCategoriesType;

@@ -1,6 +1,6 @@
 import type {
   HomeClothing,
-  MainCategories,
+  MainCategoriesType,
   UserGenres,
 } from "@/types/types";
 
@@ -82,7 +82,7 @@ export const gymWomensClothingData = createClothingData(
 const pathMale = "/shop/photos/male/mainCategories/";
 const pathFemale = "/shop/photos/female/mainCategories/";
 
-export const defaultMainCategories: MainCategories = {
+export const defaultMainCategories: MainCategoriesType = {
   masculino: [
     {
       name: "Polos",

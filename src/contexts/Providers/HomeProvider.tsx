@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import type { MainCategories, ProviderType } from "@localtypes/types";
+import type { MainCategoriesType, ProviderType } from "@localtypes/types";
 import { HomeContext } from "../HomeContext";
 import { defaultMainCategories } from "@data/home/homeData";
 import { useLocalStorage } from "@/hooks/UseLocalStorage";
@@ -12,7 +12,7 @@ export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
     false
   );
   /* Categorias principais */
-  const [mainCategories, setMainCategories] = useState<MainCategories>(
+  const [mainCategories, setMainCategories] = useState<MainCategoriesType>(
     defaultMainCategories
   );
   /* Limite de scroll */

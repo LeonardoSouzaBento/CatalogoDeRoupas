@@ -1,7 +1,7 @@
 "use client";
 import { createContext } from "react";
 import type {
-  MainCategories,
+  MainCategoriesType,
   StateSetter,
 } from "@localtypes/types";
 import { defaultMainCategories } from "@data/home/homeData";
@@ -12,12 +12,12 @@ interface HomeContextType {
   hasMainCategories: boolean;
   homeEditMode: boolean;
   scrollLimitSpecialSelections: number;
-  mainCategories: MainCategories;
+  mainCategories: MainCategoriesType;
   setHasGymClothes: React.Dispatch<React.SetStateAction<boolean>>;
   setHasMainCategories: React.Dispatch<React.SetStateAction<boolean>>;
   setHomeEditMode: StateSetter<boolean>;
   setScrollLimitSpecialSelections: StateSetter<number>;
-  setMainCategories: StateSetter<MainCategories>;
+  setMainCategories: StateSetter<MainCategoriesType>;
 }
 
 export const HomeContext = createContext<HomeContextType>({
