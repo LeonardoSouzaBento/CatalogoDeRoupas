@@ -2,7 +2,7 @@ import React from "react";
 
 const NoClothesAlert = () => {
   const css = {
-    wrapper: `max-w-max p-4 px-6 flex items-center justify-center gap-2 br-xl bg-neutral-50`,
+    wrapper: `max-w-max p-4 px-6 flex items-center justify-center gap-2 br-md bg-neutral-50`,
     p: ``,
     button: ``,
   };

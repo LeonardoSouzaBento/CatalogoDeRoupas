@@ -1,6 +1,0 @@
-Elemento,O Que Incluir,Exemplo no Nome,Por que é Importante?
-1. Categoria/Tipo,"O que a peça é (Camiseta, Vestido, Calça, Blusa, Jaqueta).",Camiseta,Essencial para pesquisa e categorização.
-2. Estilo/Modelagem,"O corte, caimento ou estilo específico (Slim Fit, Flare, Cropped, Midi, Oversized).",Slim Fit,Define a silhueta e o caimento da roupa.
-3. Característica Chave (Opcional),"Um detalhe que a torna única (Com Capuz, Estampada, Gola V, Texturizada, Canelada).",Gola V,Ajuda a distinguir de modelos semelhantes.
-4. Material Principal (Opcional),"O tecido mais relevante (Algodão, Linho, Couro, Moletom).",Moletom,"Crucial para o toque, conforto e cuidado."
-5. Público/Gênero (Opcional),"Se não estiver claro pela categoria (Feminina, Masculina, Infantil).",Feminina,Ajuda na filtragem inicial.

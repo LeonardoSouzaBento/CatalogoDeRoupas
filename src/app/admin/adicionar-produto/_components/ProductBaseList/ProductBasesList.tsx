@@ -8,7 +8,7 @@ import Description from "./components/Description";
 import BaseClothingOptions from "./components/BaseClothingOptions";
 
 const css = {
-  wrapper: `basic-card-style max-w-192 m-auto br-lg`,
+  wrapper: `basic-card-style max-w-3xl lg:max-w-4xl mx-auto br-lg`,
 };
 
 const ProductBasesList = () => {
@@ -21,7 +21,7 @@ const ProductBasesList = () => {
   return (
     <div className={css.wrapper}>
       <HeaderCard
-        title="Definir uma roupa base (opcional)"
+        title="Roupa base (opcional)"
         subtitle="Adicione informações mais rapidamente"
         icon="apparel"
         spanStyles="text-[1.2em]!"

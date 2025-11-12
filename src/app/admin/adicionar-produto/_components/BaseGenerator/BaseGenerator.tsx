@@ -11,7 +11,7 @@ import PropertyOptions from "./components/PropertyOptions";
 
 const css = {
   wrapper: `
-    basic-card-style max-w-192 mx-auto transition-all duration-200
+    basic-card-style max-w-3xl lg:max-w-4xl mx-auto transition-all duration-200
   `,
   wrapperButtons: `
     flex flex-wrap gap-4 mb-6
@@ -93,7 +93,7 @@ const BaseGenerator = () => {
       onClick={() => setPropSelected(null)}
     >
       <HeaderCard
-        title="Registre as informações básicas"
+        title="Informações básicas"
         subtitle="Recomendamos selecionar uma roupa básica"
         icon="edit_note"
         spanStyles="line-span text-[1.7em]! font-medium! mr-2"

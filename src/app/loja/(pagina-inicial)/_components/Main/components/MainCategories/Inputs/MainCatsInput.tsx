@@ -3,6 +3,7 @@ import { HomeContext } from "@/contexts/HomeContext";
 import CategoryCard from "./CategoryCard";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Eye, EyeClosed, Plus } from "lucide-react";
+import { AlertInfo } from "@/app/loja/_ui";
 
 const css = {
   wrapper: "pb-0",
@@ -66,7 +67,9 @@ const MainCatsInput = (): React.ReactElement => {
           <CategoryCard key={index} category={category} />
         ))}
       </div>
-      <button>
+      <AlertInfo text={`Prefira definir um número par de categorias para evitar 
+        espaços vazios no site que é visto no tablet ou no computador, pois nesses dispositivos as categorias ficam dispostas numa grade de duas colunas.`} />
+      <button className="mb-5">
         Adicionar Nova Categoria Principal
         <Plus {...iconMdStyles} />
       </button>

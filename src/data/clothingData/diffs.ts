@@ -4,6 +4,7 @@ export const diffs = [
   "Proteção UV",
   "Secagem Rápida",
   "À Prova d'Água",
+  "Canelado",
   "Antiodor",
   "Respirável",
   "Elasticidade",

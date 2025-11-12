@@ -1,6 +1,6 @@
+import React from "react";
 import ButtonChat from "@ui/ButtonChat";
 import TitlePage from "@ui/TitlePage";
-import React from "react";
 import { HeaderCard } from "../_ui";
 import NoClothesAlert from "./_components/NoClothesAlert";
 

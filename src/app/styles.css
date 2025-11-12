@@ -17,13 +17,17 @@
 .zoom-in-span {
   @apply scale-110;
 }
+.zoom-out-span {
+ @apply scale-90;
+}
+
 .wrapper-icon {
   @apply h-full min-w-max flex items-center justify-center;
 }
 
 /* divs */
 .basic-card-style {
-  @apply bg-white shadow-soft p-6 pt-[18px] mb-5 rounded-lg box-border;
+  @apply bg-white shadow-soft px-6 pt-4 pb-7 mb-6 rounded-lg box-border;
 }
 
 /* hs */
@@ -43,7 +47,7 @@
   @apply text-gray-800 font-normal text-[1.07em];
 }
 .small-p {
-  @apply text-[0.975em] sm:text-[0.982em] md:text-[0.986em] lg:text-[0.993em] xl:text-[1.000em] 2xl:text-[1.007em];
+  @apply text-[0.96em];
 }
 .p-title {
   @apply text-gray-800 text-left text-[1.190em] sm:text-[1.199em] md:text-[1.203em] lg:text-[1.212em] xl:text-[1.220em] 2xl:text-[1.228em];
@@ -58,6 +62,11 @@
 .white-button {
   @apply bg-white hover:bg-gray-50 transition-colors duration-200;
 }
+
+.ring-style {
+ @apply outline-none ring-2 ring-blue-400;
+}
+
 
 .p-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 

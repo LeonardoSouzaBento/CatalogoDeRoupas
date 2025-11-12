@@ -1,7 +1,7 @@
 import React from "react";
 
 const css = {
-  wrapper: `h-13 box-border px-3 mb-4 bg-stone-800 flex items-center justify-center br-0`,
+  wrapper: `h-13 box-border px-3 pl-[13px] mb-4 bg-stone-800 flex items-center justify-center br-0`,
   h1: `w-full text-white font-bold leading-none capitalize text-[1.2em] mt-px`,
 };
 

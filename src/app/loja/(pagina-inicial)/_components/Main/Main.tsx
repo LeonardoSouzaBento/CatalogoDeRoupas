@@ -18,13 +18,21 @@ const clothesSectionStyles =
   "!px-0 bg-gradient-to-r from-gray-50 to-white shadow-special-selections";
 
 const Main = (): React.ReactElement => {
-  const { hasMainCategories, setHasMainCategories, hasGymClothes } = useContext(HomeContext);
+  const {
+    hasMainCategories,
+    setHasMainCategories,
+    hasGymClothes,
+    setHasGymClothes,
+  } = useContext(HomeContext);
   const { childCatSelected } = useContext(UserContext);
 
+  /* verificaçã simples por enquanto */
   useEffect(() => {
     if (childCatSelected) {
+      setHasGymClothes(false);
       setHasMainCategories(false);
-    } else{
+    } else {
+      setHasGymClothes(true);
       setHasMainCategories(true);
     }
   }, [childCatSelected, setHasMainCategories]);

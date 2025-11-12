@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
-import { HomeContext, UserContext } from "@/contexts";
+import { UserContext } from "@/contexts";
 import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
+import { useContext, useEffect } from "react";
 import MainCardProduct from "./MainCardProduct/MainCardProduct";
 
 const css = {
@@ -40,7 +40,6 @@ const ClothesSection = ({
   setSectionEditMode,
 }: ClothesSectionProps) => {
   const { selectedGender, childCatSelected } = useContext(UserContext);
-  const { setHasGymClothes } = useContext(HomeContext);
   const isGirlsSection = childCatSelected && selectedGender === "feminino";
   const isBoysSection = childCatSelected && selectedGender === "masculino";
   const isWomanSection = !childCatSelected && selectedGender === "feminino";
@@ -51,7 +50,6 @@ const ClothesSection = ({
     if (isBoysSection) return boysClothes ?? [];
     if (isWomanSection) return womensClothing ?? [];
     if (isManSection) return mensClothing ?? [];
-
     return [];
   })();
 
@@ -61,14 +59,6 @@ const ClothesSection = ({
     setBoysClothes?.(boysClothes ?? []);
     setGirlsClothes?.(girlsClothes ?? []);
   }, []);
-
-  useEffect(() => {
-    if (!displayedItems.length) {
-      setHasGymClothes(false);
-    } else {
-      setHasGymClothes(true);
-    }
-  }, [displayedItems]);
 
   if (displayedItems.length > 0) {
     return (
@@ -89,8 +79,6 @@ const ClothesSection = ({
                 key={`${index} ${item.id}`}
               />
             ))}
-            <div className={`h-[98%] w-10 br-0 absolute right-0 top-[10px] 
-            bg-gradient-to-l from-white to-transparent`} />
           </div>
         </div>
       </>
