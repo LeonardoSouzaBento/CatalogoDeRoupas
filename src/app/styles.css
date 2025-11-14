@@ -18,7 +18,7 @@
   @apply scale-110;
 }
 .zoom-out-span {
- @apply scale-90;
+  @apply scale-90;
 }
 
 .wrapper-icon {
@@ -27,18 +27,19 @@
 
 /* divs */
 .basic-card-style {
-  @apply bg-white shadow-soft px-6 pt-4 pb-7 mb-6 rounded-lg box-border;
+  @apply bg-white shadow-soft hover:shadow-soft-hover px-6 pt-4 pb-7 mb-6 
+  rounded-lg box-border transition-shadow duration-200;
 }
 
 /* hs */
 .home-h1 {
-  @apply capitalize tracking-normal text-center text-[1.380em] sm:text-[1.409em] md:text-[1.423em] lg:text-[1.452em] xl:text-[1.480em] 2xl:text-[1.508em];
+  @apply capitalize tracking-normal text-center text-[1.380em];
 }
 .h3-sizes {
-  @apply font-medium text-[1.090em] sm:text-[1.099em] md:text-[1.103em] lg:text-[1.112em] xl:text-[1.120em] 2xl:text-[1.128em];
+  @apply font-medium text-[1.090em];
 }
 .h4-sizes {
-  @apply text-[1.010em] sm:text-[1.022em] md:text-[1.027em] lg:text-[1.039em] xl:text-[1.050em] 2xl:text-[1.061em];
+  @apply text-[1.010em];
 }
 
 /* estilos de Ps */
@@ -50,11 +51,12 @@
   @apply text-[0.96em];
 }
 .p-title {
-  @apply text-gray-800 text-left text-[1.190em] sm:text-[1.199em] md:text-[1.203em] lg:text-[1.212em] xl:text-[1.220em] 2xl:text-[1.228em];
+  @apply text-gray-800 text-left text-[1.190em];
 }
 
 .input {
-  @apply block w-full h-10 pl-[13px] pb-[2px] text-[1.033em] font-light text-neutral-900 bg-neutral-100 !border-none rounded-md box-border focus:outline-none;
+  @apply block w-full h-10 pl-[13px] pb-[2px] text-[1.033em] font-light 
+  text-neutral-900 bg-neutral-100 !border-none rounded-md box-border focus:outline-none;
 }
 .light-button {
   @apply bg-gray-50 hover:bg-gray-200/60 transition-colors duration-200;
@@ -64,18 +66,18 @@
 }
 
 .ring-style {
- @apply outline-none ring-2 ring-blue-400;
+  @apply outline-none ring-2 ring-blue-300 bg-blue-50 hover:bg-blue-100/50 
+  text-blue-700 shadow-soft;
 }
 
-
 .p-button {
-  @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
-  text-[1.012em];
+  @apply text-[1.012em];
 }
 .p-small-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
   text-[0.965em];
 }
 .square-button {
-  @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
+  @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 
+  hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
 }

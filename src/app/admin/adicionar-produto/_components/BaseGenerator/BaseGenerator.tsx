@@ -1,39 +1,54 @@
 "use client";
-import { HeaderCard } from "@/app/loja/_ui";
-import { iconMdStyles } from "@/app/lucideIconStyles";
-import { UserContext } from "@/contexts";
-import { clothingCatsSubcats } from "@/data/clothingData/clothingCatsSubcats";
-import { patterns } from "@/data/clothingData/patterns";
-import { Genders } from "@/types/types";
-import { ChevronDown } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
+import { UserContext } from "@/contexts";
+import { Genders, BasicClothingInformation } from "@/types/types";
+import { HeaderCard } from "@/app/loja/_ui";
+import { clothingCatsSubcats } from "@/data/clothingData/clothingCatsSubcats";
+import { prints } from "@/data/clothingData/prints";
+import { patterns } from "@/data/clothingData/patterns";
 import PropertyOptions from "./components/PropertyOptions";
+import AddedProperties from "./components/AddedProperties";
+import { ChevronDown } from "lucide-react";
+import { iconMdStyles } from "@/app/lucideIconStyles";
 
 const css = {
   wrapper: `
     basic-card-style max-w-3xl lg:max-w-4xl mx-auto transition-all duration-200
   `,
   wrapperButtons: `
-    flex flex-wrap gap-4 mb-6
+    flex flex-wrap gap-5 mb-5
   `,
   button: `
-    h-9 br-50 relative light-button font-normal text-gray-700
-    hover:bg-gray-100 hover:border-gray-400
-    focus:outline-none focus:ring-2 focus:ring-blue-400
-    transition-all duration-150
+    br-50 relative light-button font-normal px-5 text-gray-700
+    hover:bg-gray-100 transition-all duration-150
   `,
+  selected: `bg-white! border-1 border-gray-300/90 shadow-soft-soft hover:shadow-soft`,
   icon: `
     text-gray-600
   `,
 };
 
+interface Property {
+  name: string;
+  options?: string[];
+}
+
 const BaseGenerator = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
-  const [propSelected, setPropSelected] = useState<string | null>(null);
-  const [options, setOptions] = useState<string[]>([""]);
-  const [catSelected, setCatSelected] = useState<string>("");
-  const [subcats, setSubcats] = useState<string[] | null>([]);
-  const [booleanOptionsSelected, setBooleanOptionsSelected] = useState<string[]>([]);
+  const [propSelected, setPropSelected] = useState<string | null>("Gênero");
+  const [currentSubcats, setCurrentSubcats] = useState<string[] | null>([]);
+  // const [name, setName] = useState<string>("");
+  const [basicInformation, setBasicInformation] =
+    useState<BasicClothingInformation>({
+      gender: selectedGender,
+      cat: "",
+      subcat: "",
+      pattern: "",
+      modeling: "",
+      name: "",
+      print: "",
+      is_childish: "",
+    });
 
   /* gênero selecionado */
   const currentGender =
@@ -41,98 +56,97 @@ const BaseGenerator = () => {
       ? "masculino"
       : "feminino";
 
-  /* alternar opções booleanas */
-  const toggleBoolean = (name: string) => {
-    setBooleanOptionsSelected((prev) =>
-      prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
-    );
-  };
-
   function handleSelectOption(prop: string, option: string) {
-    if (prop === "Categoria") {
-      setCatSelected(option);
+    const updates: Partial<typeof basicInformation> = {};
+
+    switch (prop) {
+      case "Gênero":
+        if (option !== "unisex") setSelectedGender(option as Genders);
+        updates.gender = option as Genders;
+        break;
+      case "Categoria":
+        updates.cat = option;
+        break;
+      case "Subcategoria":
+        updates.subcat = option;
+        break;
+      case "Padrão":
+        updates.pattern = option;
+        break;
+      case "Estampa":
+        updates.print = option;
+        break;
+      case "É Infantil":
+        updates.is_childish = option;
+        break;
     }
-    if (prop === "Gênero") {
-      setSelectedGender(option as Genders);
+
+    if (Object.keys(updates).length > 0) {
+      setBasicInformation({ ...basicInformation, ...updates });
     }
   }
 
-  const baseProperties = [
-    { name: "Gênero", options: ["masculino", "feminino"] },
+  const properties: Property[] = [
+    { name: "Gênero", options: ["masculino", "feminino", "unisex"] },
     {
       name: "Categoria",
       options: Object.keys(clothingCatsSubcats[currentGender]),
     },
-    { name: "Subcategoria", options: subcats },
-    { name: "Padrão de aparência principal", options: patterns },
+    { name: "Subcategoria", options: currentSubcats ? currentSubcats : [] },
+    { name: "Padrão", options: patterns },
+    { name: "Estampa", options: prints },
+    { name: "É Infantil", options: ["Sim", "Não"] },
     { name: "Nome" },
-    { name: "É estampada", type: "boolean" },
-    { name: "É Infantil", type: "boolean" },
   ];
 
   useEffect(() => {
-    if (catSelected) {
-      setSubcats(clothingCatsSubcats[currentGender][catSelected]);
+    if (basicInformation.cat) {
+      setCurrentSubcats(
+        clothingCatsSubcats[currentGender][basicInformation.cat]
+      );
     }
-  }, [catSelected]);
-
-  useEffect(() => {
-    if (propSelected) {
-      const property = baseProperties.find((item) => item.name === propSelected);
-      if (property && property.options) {
-        setOptions(property.options);
-      } else {
-        setOptions([]);
-      }
-    }
-  }, [propSelected]);
+  }, [basicInformation.cat, currentGender]);
 
   return (
-    <div
-      className={css.wrapper}
-      onClick={() => setPropSelected(null)}
-    >
+    <div className={css.wrapper}>
       <HeaderCard
         title="Informações básicas"
-        subtitle="Recomendamos selecionar uma roupa básica"
+        subtitle="Selecione as caracteristicas principais (ou escolha uma roupa básica)"
         icon="edit_note"
         spanStyles="line-span text-[1.7em]! font-medium! mr-2"
       />
 
       <div className={css.wrapperButtons}>
-        {baseProperties.map((item) => (
-          <div key={item.name} className="relative group">
-            <button
-              className={css.button}
-              onClick={(e) => {
-                e.stopPropagation();
-                setPropSelected((prev) => (prev === item.name ? null : item.name));
-                if (item.type === "boolean") toggleBoolean(item.name);
-              }}
-            >
-              {item.name}
-              {item.options && (
-                <ChevronDown className={css.icon} {...iconMdStyles} />
-              )}
-              {item.type === "boolean" && (
-                <span
-                  className={`material-symbols-outlined text-[1.08em]! font-[550]! text-gray-700`}
-                >
-                  {booleanOptionsSelected.includes(item.name)
-                    ? "select_check_box"
-                    : "check_box_outline_blank"}
-                </span>
-              )}
-            </button>
-          </div>
+        {properties.slice(0, -1).map((item) => (
+          <button
+            key={item.name}
+            className={`${css.button} ${
+              propSelected === item.name && css.selected
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              setPropSelected(item.name);
+            }}
+          >
+            {item.name}
+
+            <div>
+              <ChevronDown className={css.icon} {...iconMdStyles} />
+            </div>
+          </button>
         ))}
       </div>
 
       <PropertyOptions
-        hasOptions={!!(propSelected && options.length > 0)}
-        options={options}
+        properties={properties}
         propSelected={propSelected}
+        basicInformation={basicInformation}
         handleSelectOption={handleSelectOption}
+      />
+
+      <AddedProperties
+        basicInformation={basicInformation}
+        setBasicInformation={setBasicInformation}
       />
     </div>
   );

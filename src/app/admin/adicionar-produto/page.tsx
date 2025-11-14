@@ -29,7 +29,8 @@ const page = () => {
       />
       <div className={`${css.wrapper}`}>
         <AlertInfo
-          styles="bs bg-transparent shadow-soft br-lg p-5 max-w-3xl lg:max-w-4xl m-auto"
+          styles={`bs bg-transparent mb-6! bg-gradient-to-tl from-gray-100 to-transparent 
+            br-lg max-w-3xl lg:max-w-4xl m-auto border border-gray-300`}
           text={`Registre um tipo de peça de cada vez. Por exemplo: primeiro as camisetas básicas lisas, 
               depois as camisas polos, e assim por diante. Isso facilita o cadastro e evita confusão.`}
         />
@@ -37,21 +38,21 @@ const page = () => {
           title="como cadastrar um produto"
           steps={[
             "Defina o gênero.               ",
-            "Se quiser, defina a roupa base.",
+            "Adicione as fotos.",
+            "Defina a roupa base, se houver, caso queira.",
             "Defina as informações básicas.",
             "Defina as informações especificas.",
-            "Adicione as fotos.",
             "Clique em 'Salvar' para concluir o cadastro.",
           ]}
           listStyles={`sm:flex-row sm:gap-4`}
           itemStyles="sm:mb-2"
+          dropDownWrapperStyles="h-28 min-[370px]:h-26 min-[486px]:h-18"
         />
-
+        <Photos />
         <GenderButtons />
         <ProductBasesList />
         <BaseGenerator />
         <FinalInformations />
-        <Photos />
         <Result />
       </div>
     </>

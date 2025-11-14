@@ -25,7 +25,7 @@ const ProductBasesList = () => {
         subtitle="Adicione informações mais rapidamente"
         icon="apparel"
         spanStyles="text-[1.2em]!"
-        wrapperStyles="bs-b bs-light-color"
+        wrapperStyles="bs-b bs-light-color mb-6"
       />
 
       <BaseClothingOptions

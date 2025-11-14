@@ -66,6 +66,36 @@ export interface ClothingItem {
   item: Clothing;
 }
 
+export interface BasicClothingInformation {
+  gender: Genders;
+  cat: string;
+  subcat: string;
+  pattern: string;
+  modeling: string;
+  name: string;
+  print: string;
+  is_childish: string;
+}
+
+
+
+export const mappingPropToKey: Record<string, keyof BasicClothingInformation> = {
+  Gênero: "gender",
+  Categoria: "cat",
+  Subcategoria: "subcat",
+  Padrão: "pattern",
+  Estampa: "print",
+  Nome: "name",
+  "É Infantil": "is_childish",
+};
+
+export interface Photo {
+  id: string;
+  url: string;
+  alt: string;
+  order: number;
+}
+
 /* Usuário */
 export interface UserData {
   name: string;

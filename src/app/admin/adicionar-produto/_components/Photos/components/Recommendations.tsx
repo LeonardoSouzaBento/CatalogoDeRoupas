@@ -4,59 +4,53 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 const css = {
-  wrapper: `relative p-4 bg-gray-50 br-md max-[430px]:text-left text-center overflow-hidden`,
+  wrapper: `relative p-4 flex br-md text-left overflow-hidden bg-gray-50`,
   wrapperTitle: `min-h-10 flex justify-between items-end gap-2 sm:gap-0 mb-1 box-border pb-3`,
-  title: `w-full text-left min-[430px]:text-center font-semibold`,
+  title: `w-full text-left font-semibold`,
   p: `small-p text-gray-700 transition-all duration-300`,
   highlight: `font-medium text-gray-900`,
-  button: `size-9 centralize px-0 br-50 absolute top-3 right-3 text-sm text-gray-500 
-  hover:text-gray-700 trans shadow-soft-hover light-button`,
+  button: `size-9 centralize px-0 br-50 text-gray-500 
+  hover:text-gray-700 trans white-button shadow-soft-hover`,
 };
 
 const Recommendations = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className={css.wrapper}>
-      <div className={`${css.wrapperTitle}`}>
-        <h2 className={css.title}>📸 Quantas fotos adicionar?</h2>
-
-        <div className="size-9">
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className={css.button}
-            aria-label="Mostrar mais ou menos"
-          >
-            {expanded ? (
-              <Minus {...iconSmStyles} />
-            ) : (
-              <Plus {...iconSmStyles} />
-            )}
-          </button>
-        </div>
+    <div className={`${css.wrapper}`}>
+      <div className="size-9">
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className={css.button}
+          aria-label="Mostrar mais ou menos"
+        >
+          {expanded ? <Minus {...iconSmStyles} /> : <Plus {...iconSmStyles} />}
+        </button>
       </div>
 
-      {expanded ? (
-        <>
+      <div>
+        {expanded ? (
+          <>
+            <p className={css.p}>
+              O ideal é <span className={css.highlight}>pelo menos 3 fotos</span>{" "}
+              para cada roupa (frente, costas e o tecido visto de perto).
+            </p>
+            <p className={`${css.p} mt-2`}>
+              O{" "}
+              <span className={css.highlight}>
+                mais recomendado é adicionar 5 fotos
+              </span>
+              , mostrando também a lateral da peça e a peça sendo usada por uma
+              pessoa. Assim o cliente entende melhor o caimento e a textura.
+            </p>
+          </>
+        ) : (
           <p className={css.p}>
             O ideal é <span className={css.highlight}>pelo menos 3 fotos</span>{" "}
-            para cada roupa (frente, costas e o tecido visto de perto).
+            para cada roupa (frente, costas e o tecido visto de perto)...
           </p>
-          <p className={`${css.p} mt-2`}>
-            O{" "}
-            <span className={css.highlight}>
-              mais recomendado é adicionar 5 fotos
-            </span>
-            , mostrando também a lateral da peça e a peça sendo usada por uma
-            pessoa. Assim o cliente entende melhor o caimento e a textura.
-          </p>
-        </>
-      ) : (
-        <p className={css.p}>
-          O ideal é <span className={css.highlight}>pelo menos 3 fotos</span>{" "}
-          para cada roupa (frente, costas e o tecido visto de perto)...
-        </p>
-      )}
+        )}
+      </div>
     </div>
   );
 };

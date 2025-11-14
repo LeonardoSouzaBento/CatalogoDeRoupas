@@ -9,7 +9,7 @@ import FavoritesCard from "./_components/FavoritesCard";
 const css = {
   mainWrapper: `px-3 m-auto lg:px-6 lg:flex lg:flex-wrap lg:gap-6 lg:max-w-[1208px]`,
   wrapper:
-    "basic-card-style mb-5 m-auto lg:m-0 lg:w-[calc(50%-12px)] pt-4 p-6 max-w-[592px] sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px]",
+    "basic-card-style mb-5 m-auto lg:m-0! lg:w-[calc(50%-12px)] pt-4 p-6 max-w-[592px] sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px]",
   p: ``,
   button: ``,
 };
