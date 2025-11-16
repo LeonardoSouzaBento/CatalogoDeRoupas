@@ -2,6 +2,11 @@
 @import "material-symbols/outlined.css";
 @import "./globals.css";
 
+/* 
+pink: #C61D74
+purple: #7E1FAC
+*/
+
 /* sombras */
 .heart-button-shadow {
   box-shadow: 0 8px 24px -6px hsla(329, 20%, 30%, 0.094);
@@ -75,7 +80,7 @@
 }
 .p-small-button {
   @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
-  text-[0.965em];
+  text-[0.96em];
 }
 .square-button {
   @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 

@@ -8,7 +8,7 @@ import EditButton from "./EditButton";
 
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative br-lg bg-white`,
-  wrapperImg: `h-16 min-w-16 w-16 relative bg-gray-100 br-50 border-none`,
+  wrapperImg: `h-17 min-w-17 w-17 relative bg-gray-100 br-50 border-none`,
   img: "!border-none !outline-none",
   wrapperInfo:
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",

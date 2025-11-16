@@ -13,10 +13,10 @@ interface HeaderCardProps {
 const css = {
   wrapper: `w-full min-h-10 flex flex-col i-start 
   mb-5 border-b bs-color br-0`,
-  wrapperTitle: `min-h-10 flex i-center gap-2 `,
-  title: `mt-[2px] font-semibold text-neutral-800 text-left text-[1.16em] tracking-normal`,
+  wrapperTitle: `min-h-10 flex i-center gap-1.5 `,
+  title: `mt-[2px] font-semibold text-neutral-800 text-left text-[1.147em] tracking-normal`,
   wrapperIcon: "min-h-full w-6 flex items-center justify-center",
-  icon: `text-[1.18em]!`,
+  icon: `text-[1.147em]! mr-2`,
 };
 
 const HeaderCard: React.FC<HeaderCardProps> = ({
@@ -33,9 +33,7 @@ const HeaderCard: React.FC<HeaderCardProps> = ({
         {icon && (
           <div className={`${css.wrapperIcon}`}>
             <span
-              className={`material-symbols-outlined text-gray-800/90 ${
-                spanStyles || css.icon
-              }`}
+              className={`material-symbols-outlined text-gray-800/90 ${css.icon} ${spanStyles}`}
             >
               {icon}
             </span>

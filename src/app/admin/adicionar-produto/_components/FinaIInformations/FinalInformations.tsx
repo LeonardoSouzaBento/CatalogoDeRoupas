@@ -10,7 +10,7 @@ const FinalInformations = () => {
       <HeaderCard
         title="Demais informações"
         icon="edit_note"
-        spanStyles="line-span text-[1.7em]! font-medium! mr-2"
+        spanStyles="font-medium! text-[1.277em]!"
       />
       <CompositionEditor />
       <SizeSelector />

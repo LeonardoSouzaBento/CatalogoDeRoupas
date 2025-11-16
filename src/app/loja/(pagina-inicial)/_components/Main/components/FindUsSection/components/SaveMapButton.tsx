@@ -1,17 +1,12 @@
-import React from "react";
 // import { BoolSetter } from "@/types/types";
-import { Check } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import SaveButton from "@/app/loja/_ui/SaveButton";
 
 const SaveMapButton = ({ inputValue } : { inputValue: string }) => {
-  function handleSave() {
+  async function handleSave() {
     console.log(inputValue);
   }
   return (
-    <button className="button min-w-max" onClick={handleSave}>
-      Salvar Mapa
-      <Check {...iconMdStyles} />
-    </button>
+    <SaveButton text="Salvar mapa" asyncFunction={handleSave}/>
   );
 };
 

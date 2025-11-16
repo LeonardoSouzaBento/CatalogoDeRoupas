@@ -2,6 +2,7 @@ import React from "react";
 import { Check } from "lucide-react";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { StateSetter } from "@/types/types";
+import SaveButton from "@/app/loja/_ui/SaveButton";
 
 function validateWhatsapp(number: string) {
   const digits = number.replace(/\D/g, "");
@@ -39,7 +40,7 @@ const SaveZapButton = ({
   inputValue: string;
   setZapErrors: StateSetter<string[]>;
 }) => {
-  function handleSave() {
+  async function handleSave() {
     console.log(inputValue);
     const result = validateWhatsapp(inputValue);
     setZapErrors(result.errors);
@@ -50,12 +51,6 @@ const SaveZapButton = ({
     }
   }
 
-  return (
-    <button className="button min-w-max" onClick={handleSave}>
-      Salvar Whatsapp
-      <Check {...iconMdStyles} />
-    </button>
-  );
+  return <SaveButton text="Salvar Whatsapp" asyncFunction={handleSave} />;
 };
-
 export default SaveZapButton;

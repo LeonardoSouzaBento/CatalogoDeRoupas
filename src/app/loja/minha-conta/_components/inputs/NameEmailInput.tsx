@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ButtonClose, HeaderCard } from "@/app/loja/_ui";
 import { BooleanSetter } from "@/types/types";
 import { UserContext } from "@/contexts";
+import SaveButton from "@/app/loja/_ui/SaveButton";
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
@@ -23,7 +24,7 @@ const NameEmailInput = ({
   const [nameErrors, setNameErrors] = useState<string>("");
   const [emailErrors, setEmailErrors] = useState<string>("");
 
-  function handleSaveNameEmail() {
+  async function handleSaveNameEmail() {
     setNameErrors(validateName(name));
     setTimeout(() => {
       setNameErrors("");
@@ -93,13 +94,11 @@ const NameEmailInput = ({
         />
       </div>
       {emailErrors && <p className={`${css.pError}`}>{emailErrors}</p>}
-      {/*  */}
-      <button className="mt-1" onClick={handleSaveNameEmail}>
-        <div className="wrapper-icon">
-          <Check {...iconMdStyles} />
-        </div>
-        Salvar Alterações
-      </button>
+      <SaveButton
+        text="Salvar Alterações"
+        asyncFunction={handleSaveNameEmail}
+        styles="mt-1"
+      />
     </div>
   );
 };

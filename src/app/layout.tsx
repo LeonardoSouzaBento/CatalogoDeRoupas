@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const fontStyles = `font-dm-sans text-gray-800 
-text-[1.090em] sm:text-[1.103em] md:text-[1.110em] lg:text-[1.122em] xl:text-[1.135em] 2xl:text-[1.148em]`;
+ text-[1.094em] sm:text-[1.107em] md:text-[1.114em] lg:text-[1.127em] xl:text-[1.140em] 2xl:text-[1.153em]`;
 
 export default function RootLayout({
   children,

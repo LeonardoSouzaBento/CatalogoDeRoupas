@@ -1,11 +1,12 @@
 "use client";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { MessageSquare } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const ButtonChat = () => {
   const css = {
-    wrapper: `h-12 w-12 bg-white centralize br-50 fixed bottom-4 right-4 
+    wrapper: `h-12 w-12 box-border bg-white centralize br-50 fixed bottom-4 right-4 
     [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-110 fast-trans`,
   };
 
@@ -20,7 +21,15 @@ const ButtonChat = () => {
 
   return (
     <div className={`${css.wrapper}`} onClick={handleOpenChat}>
-      <MessageSquare {...iconMdStyles} />
+      <div className={`size-max centralize relative`}>
+        <Image
+          src={`/icons/whatsapp(1).png`}
+          height={24}
+          width={24}
+          alt="imagem do whatssap"
+          className={`contrast-125`}
+        />
+      </div>
     </div>
   );
 };

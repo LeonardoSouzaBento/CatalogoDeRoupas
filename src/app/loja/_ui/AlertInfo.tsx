@@ -2,17 +2,20 @@ import React from "react";
 
 const css = {
   wrapper:
-    "min-h-10 w-full p-4 mb-5 flex justify-start items-center gap-2 bg-neutral-50 br-md",
-  span: "br-50 text-rose-500 font-[400]! text-[1.36em]!",
+    "min-h-10 w-full p-4 mb-5 flex justify-start items-center gap-3 bg-neutral-50 br-md",
+  span: `material-symbols-outlined line-span br-50 
+  text-red-500 font-[400]! text-[1.12em]!`,
 };
 
 const AlertInfo = ({ text, styles }: { text: string; styles?: string }) => {
   return (
     <div className={`${css.wrapper} ${styles}`}>
-      <span className={`${css.span} material-symbols-outlined line-span`}>
-        priority_high
-      </span>
-      <p className="text-gray-700">{text}</p>
+      <div className={`size-max p-1 centralize bg-red-400/10 br-50`}>
+        <span className={`${css.span}`}>
+          priority_high
+        </span>
+      </div>
+      <p className="text-gray-700 small-p">{text}</p>
     </div>
   );
 };

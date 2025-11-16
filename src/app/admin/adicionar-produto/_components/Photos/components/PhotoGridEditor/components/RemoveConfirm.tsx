@@ -64,7 +64,7 @@ const RemoveConfirm = ({
           Remover esta imagem ?
         </p>
 
-        <div className={`w-[240px]`}>
+        <div className={`w-max`}>
           <div className={`w-full h-auto flex justify-center relative mb-5`}>
             <Image
               src={photo?.url || "/home"}

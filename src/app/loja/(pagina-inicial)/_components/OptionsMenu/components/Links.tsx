@@ -1,16 +1,23 @@
-import React from "react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
-import { BookHeart, User } from "lucide-react";
 import Link from "next/link";
 
 const pageOptions = [
-  { name: "Meus favoritos", link: "/loja/favoritos", icon: BookHeart },
-  { name: "Minha Conta", link: "/loja/minha-conta", icon: User },
+  {
+    name: "Meus favoritos",
+    link: "/loja/favoritos",
+    icon: "favorite",
+    iconStyles: "text-[1.13em]!",
+  },
+  {
+    name: "Minha Conta",
+    link: "/loja/minha-conta",
+    icon: "account_circle",
+    iconStyles: "ml-[0px] text-[1.235em]!",
+  },
 ];
 
 const css = {
   wrapper: `w-full flex flex-col i-center j-start`,
-  wrapperLink: `h-11 w-full flex i-center pl-[22px] gap-3 br-0 bg-transparent hover:bg-gray-100 hover:pl-4 transition-all duration-200`,
+  wrapperLink: `h-11 w-full flex i-center pl-6 gap-3 br-0 bg-transparent hover:bg-gray-100 hover:pl-4 transition-all duration-200`,
   link: `font-normal bg-transparent hover:bg-gray-100 px-0 text-[1.06em] hover:text-black transition-colors`,
 };
 
@@ -19,7 +26,9 @@ const Links = () => {
     <div className={`${css.wrapper}`}>
       {pageOptions.map((item) => (
         <div key={item.name} className={`${css.wrapperLink}`}>
-          <item.icon {...iconMdStyles} />
+          <span className={`material-symbols-outlined ${item.iconStyles}`}>
+            {item.icon}
+          </span>
           <Link href={item.link} className={`${css.link}`}>
             {item.name}
           </Link>

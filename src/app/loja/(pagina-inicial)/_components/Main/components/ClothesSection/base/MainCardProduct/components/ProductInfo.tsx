@@ -2,7 +2,7 @@ import { HomeClothing } from "@/types/types";
 
 const css = {
   wrapperInfo: "w-full h-max p-6 flex flex-col items-start gap-3 bg-white br-0",
-  priceP: "font-semibold",
+  priceP: "font-bold text-[hsl(280_70%_40%)]",
 };
 
 const ProductInfo = ({

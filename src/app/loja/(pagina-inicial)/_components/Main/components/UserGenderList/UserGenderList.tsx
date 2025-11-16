@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/contexts/UserContext";
 import type { homeUserGender } from "@/types/types";
 import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
+import React, { useContext, useState } from "react";
 import ChildGenderButtons from "./components/ChildGenderButtons";
 
 const userGenders = [
@@ -11,11 +11,11 @@ const userGenders = [
 
 const css = {
   container:
-    "w-full h-auto max-w-220 m-auto centralize items-end flex-col gap-[6] sm:gap-3 sm:flex-row relative",
+    "w-full h-auto max-w-220 m-auto centralize items-end flex-col gap-4 sm:flex-row relative",
   wrapper:
     "h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-3",
   button: `w-full gap-2 !bg-gray-50 flex-auto justify-center! border border-gray-100 
-  transition-colors duration-200 br-lg font-normal text-[1.06em] relative hover:bg-gray-200/50! `,
+  transition-colors duration-200 br-lg font-normal relative hover:bg-gray-200/50! tracking-wide`,
   selected: "bg-white! shadow-soft border border-gray-200/70 hover:bg-white!",
 };
 
@@ -46,8 +46,7 @@ const UserGenderList = (): React.ReactElement => {
   return (
     <>
       <HomeTitleSubtitle
-        title="Selecione Um Gênero"
-        subtitle="E veja as coleções relacionadas"
+        title="Selecione um gênero"
         section="genders"
       />
       <div className={css.container}>

@@ -9,7 +9,7 @@ const css = {
     transition-all duration-150 relative`,
   selected: `ring-style`,
   buttonDelete: `h-8 w-8 flex px-0 items-center justify-center 
-  br-50 bg-white/90 hover:shadow-soft trans absolute right-1 top-1 [transition:_opacity_2s_ease]`,
+  br-50 bg-white/60 hover:shadow-soft trans absolute right-1 top-1 [transition:_opacity_2s_ease]`,
 };
 
 interface ButtonProps {
@@ -39,17 +39,19 @@ const BaseClothingOptions = ({
           >
             {shortName}
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedName("");
-              }}
-              className={`${css.buttonDelete} ${
-                selected ? "flex opacity-100" : "opacity-0! hidden!"
-              }`}
-            >
-              <X {...iconSmStyles} color="red" />
-            </button>
+            <div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedName("");
+                }}
+                className={`${css.buttonDelete} ${
+                  selected ? "flex opacity-100" : "opacity-0! hidden!"
+                }`}
+              >
+                <X {...iconSmStyles} color="red" strokeWidth={2.3} />
+              </button>
+            </div>
           </button>
         );
       })}

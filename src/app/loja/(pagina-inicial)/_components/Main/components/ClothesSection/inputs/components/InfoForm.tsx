@@ -1,3 +1,4 @@
+import SaveButton from "@/app/loja/_ui/SaveButton";
 import { iconMdStyles } from "@/app/lucideIconStyles";
 import { Check } from "lucide-react";
 import React from "react";
@@ -29,9 +30,7 @@ const InfoForm = ({ id }: { id: number | string}): React.ReactElement => {
         </div>
       </form>
 
-      <button className={`${css.saveButton}`}>
-        Salvar <Check {...iconMdStyles} />
-      </button>
+      <SaveButton />
     </div>
   );
 };

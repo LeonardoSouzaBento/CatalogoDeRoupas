@@ -24,8 +24,8 @@ const ProductBasesList = () => {
         title="Roupa base (opcional)"
         subtitle="Adicione informações mais rapidamente"
         icon="apparel"
-        spanStyles="text-[1.2em]!"
-        wrapperStyles="bs-b bs-light-color mb-6"
+        spanStyles="scale-93"
+        wrapperStyles="bs-b bs-light-color"
       />
 
       <BaseClothingOptions

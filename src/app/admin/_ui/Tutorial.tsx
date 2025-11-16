@@ -1,6 +1,6 @@
 "use client";
 import { HeaderCard } from "@/app/loja/_ui";
-import { icon2LgStyles } from "@/app/lucideIconStyles";
+import { icon2LgStyles, iconLgStyles } from "@/app/lucideIconStyles";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -56,7 +56,8 @@ const Tutorial = ({
         <HeaderCard
           icon="info"
           title={`Saiba ${title}`}
-          spanStyles="line-span zoom-out-span font-[550]!"
+          titleStyles="leading-7"
+          spanStyles="font-semibold! text-[1.147em]!"
         />
 
         <button
@@ -64,16 +65,12 @@ const Tutorial = ({
             e.stopPropagation();
             setDropDown((prev) => !prev);
           }}
-          className={`h-9 min-w-9 px-0 pt-px centralize 
-          br-50 box-border trans light-button sm:order-[-1] sm:mt-1`}
+          className={`h-9 min-w-9 -mr-2 px-0 pt-px centralize bs
+          br-50 box-border trans white-button sm:order-[-1] sm:mt-1 sm:mr-0 ${
+            dropDown ? "rotate-180 pt-1" : "rotate-0"
+          }`}
         >
-          <div
-            className={`wrapper-icon trans ${
-              dropDown ? "rotate-180 pt-1" : "rotate-0"
-            }`}
-          >
-            <ChevronDown {...icon2LgStyles} strokeWidth={1.8} />
-          </div>
+          <ChevronDown {...iconLgStyles} />
         </button>
       </div>
       <ol className={`${css.list} ${listStyles}`}>

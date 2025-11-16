@@ -25,7 +25,7 @@ const GenderButtons = () => {
       <HeaderCard
         title="Gênero"
         icon="wc"
-        spanStyles="text-[1.21em]! mb-px font-light!"
+        spanStyles="mb-px font-light!"
       />
       <div className={css.wrapper}>
         {buttons.map(({ label, value, icon }) => (

@@ -25,7 +25,7 @@ const MinhaConta = (): React.ReactElement => {
         lg:w-[calc(100%-24px)] lg:max-w-[1162px]`}
       />
       <div className={`${css.mainWrapper}`}>
-        <div className={`${css.wrapper}`}>
+        <div className={`${css.wrapper} p-6!`}>
           <UserCard userData={userData} />
         </div>
         <div className={`${css.wrapper}`}>

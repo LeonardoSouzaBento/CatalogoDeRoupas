@@ -1,32 +1,26 @@
-import React, { useContext } from "react";
-import Subtitle from "./Subtitle";
-import { BookHeart, Pen, Plus } from "lucide-react";
-import {
-  iconLgStyles,
-  iconMdStyles,
-  iconSmStyles,
-} from "@/app/lucideIconStyles";
-import Link from "next/link";
 import { HomeContext } from "@/contexts";
+import Link from "next/link";
+import { useContext } from "react";
+import Subtitle from "./Subtitle";
 
 const optionButtons = [
   {
     name: "Adicionar Produto",
     url: "/admin/adicionar-produto",
-    icon: Plus,
-    iconStyle: iconLgStyles,
+    icon: "add_circle",
+    iconStyles: "ml-[0.5px] rotate-180 -scale-x-100",
   },
   {
     name: "Atualizar Produtos",
     url: "/admin/atualizar-produto",
-    icon: Pen,
-    iconStyle: iconSmStyles,
+    icon: "edit_note",
+    iconStyles: "text-[1.47em]! -ml-[2px]",
   },
   {
     name: "Ver Favoritos Do Usúario",
     url: "/admin/favoritos-do-usuario",
-    icon: BookHeart,
-    iconStyle: iconMdStyles,
+    icon: "favorite",
+    iconStyles: "text-[1.13em]! -ml-0",
   },
 ];
 
@@ -47,12 +41,13 @@ const AdministrationOptions = () => {
             setHomeEditMode(true);
           }}
         >
-          <Pen {...iconMdStyles} />
+          <span className="material-symbols-outlined text-[1.17em]! -ml-[1px]">edit</span>
           Editar esta página
         </button>
         {optionButtons.map((item) => (
           <Link key={item.name} className={`${css.button}`} href={item.url}>
-            <item.icon {...item.iconStyle} />
+            {/* <item.icon {...item.iconStyle} /> */}
+            <span className={`material-symbols-outlined text-[1.17em]! ${item.iconStyles}`}>{item.icon}</span>
             {item.name}
           </Link>
         ))}

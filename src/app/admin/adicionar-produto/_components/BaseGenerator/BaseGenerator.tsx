@@ -16,13 +16,13 @@ const css = {
     basic-card-style max-w-3xl lg:max-w-4xl mx-auto transition-all duration-200
   `,
   wrapperButtons: `
-    flex flex-wrap gap-5 mb-5
+    flex flex-wrap gap-4 mb-[20.5px]
   `,
   button: `
     br-50 relative light-button font-normal px-5 text-gray-700
     hover:bg-gray-100 transition-all duration-150
   `,
-  selected: `bg-white! border-1 border-gray-300/90 shadow-soft-soft hover:shadow-soft`,
+  selected: `bg-white! bs shadow-soft-soft hover:shadow-soft`,
   icon: `
     text-gray-600
   `,
@@ -113,7 +113,7 @@ const BaseGenerator = () => {
         title="Informações básicas"
         subtitle="Selecione as caracteristicas principais (ou escolha uma roupa básica)"
         icon="edit_note"
-        spanStyles="line-span text-[1.7em]! font-medium! mr-2"
+        spanStyles="font-medium! text-[1.277em]!"
       />
 
       <div className={css.wrapperButtons}>

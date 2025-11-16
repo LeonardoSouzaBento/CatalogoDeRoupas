@@ -1,7 +1,7 @@
 "use client";
 
 const css = {
-  wrapperDesc: `bs-light p-5 pt-4 pb-5 br-lg`,
+  wrapperDesc: `bs p-5 pt-4 pb-5`,
 };
 
 interface DescriptionProps {
