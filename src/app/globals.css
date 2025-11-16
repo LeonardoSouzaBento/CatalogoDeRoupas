@@ -99,7 +99,7 @@ div::-webkit-scrollbar {
   
   button,
   a {
-    @apply leading-none font-medium capitalize transition-[background-color] duration-200 cursor-pointer rounded-md
+    @apply leading-none font-medium capitalize transition-[background-color] text-[1.0569em] duration-200 cursor-pointer rounded-md
     flex justify-start items-center gap-3 h-10 w-auto bg-gray-100 hover:bg-gray-200 px-6 
     ;
   }

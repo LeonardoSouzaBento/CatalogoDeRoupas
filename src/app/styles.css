@@ -32,7 +32,7 @@ purple: #7E1FAC
 
 /* divs */
 .basic-card-style {
-  @apply bg-white shadow-soft hover:shadow-soft-hover px-6 pt-4 pb-7 mb-6 
+  @apply bg-white shadow-soft hover:shadow-soft-hover px-6 pt-3.5 pb-7 mb-5 
   rounded-lg box-border transition-shadow duration-200;
 }
 
@@ -53,7 +53,7 @@ purple: #7E1FAC
   @apply text-gray-800 font-normal text-[1.07em];
 }
 .small-p {
-  @apply text-[0.96em];
+  @apply text-[0.943em];
 }
 .p-title {
   @apply text-gray-800 text-left text-[1.190em];

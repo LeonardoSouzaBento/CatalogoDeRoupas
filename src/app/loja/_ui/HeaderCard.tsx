@@ -14,7 +14,7 @@ const css = {
   wrapper: `w-full min-h-10 flex flex-col i-start 
   mb-5 border-b bs-color br-0`,
   wrapperTitle: `min-h-10 flex i-center gap-1.5 `,
-  title: `mt-[2px] font-semibold text-neutral-800 text-left text-[1.147em] tracking-normal`,
+  title: `mt-[2px] font-semibold text-neutral-800 text-left text-[1.1715em] tracking-normal`,
   wrapperIcon: "min-h-full w-6 flex items-center justify-center",
   icon: `text-[1.147em]! mr-2`,
 };
