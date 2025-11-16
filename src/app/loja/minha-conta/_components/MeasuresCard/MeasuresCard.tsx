@@ -10,7 +10,7 @@ import { UserData } from "@/types/types";
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
 const css = {
-  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:!border-b-0 bs !border-r-0 mb-5 br-md crop`,
+  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:border-b-0! bs border-r-0! mb-5 br-md crop`,
 };
 
 const MeasuresCard = ({ userData }: { userData: UserData }) => {

@@ -1,4 +1,4 @@
-import LogoName from "./components/LogoName";
+import StoreLogo from "./components/StoreLogo";
 import Core from "./components/Core";
 
 const css = {
@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className={`${css.container} bg-gradient-to-br from-white to-gray-100`}>
       <div className="w-full max-w-100">
-        <LogoName />
+        <StoreLogo />
         <div className={`${css.wrapper}`}>
           <div className="w-full flex flex-col">
             <Core />

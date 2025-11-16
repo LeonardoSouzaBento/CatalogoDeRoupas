@@ -15,7 +15,7 @@ const css = {
   wrapper:
     "h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-3",
   button: `w-full gap-2 !bg-gray-50 flex-auto justify-center! border border-gray-100 
-  transition-colors duration-200 br-lg font-normal relative hover:bg-gray-200/50! tracking-wide`,
+  transition-colors duration-200 br-lg font-light relative hover:bg-gray-200/50! tracking-wide`,
   selected: "bg-white! shadow-soft border border-gray-200/70 hover:bg-white!",
 };
 
@@ -45,10 +45,7 @@ const UserGenderList = (): React.ReactElement => {
 
   return (
     <>
-      <HomeTitleSubtitle
-        title="Selecione um gênero"
-        section="genders"
-      />
+      <HomeTitleSubtitle title="Selecione um gênero" section="genders" />
       <div className={css.container}>
         <div className={`${css.wrapper}`}>
           {userGenders.map((item) => {
@@ -64,7 +61,11 @@ const UserGenderList = (): React.ReactElement => {
                   css.selected
                 } ${fastReturn === item.name && "scale-106"}`}
               >
-                <span className="material-symbols-outlined">{item.icon}</span>{" "}
+                <span
+                  className={`material-symbols-outlined text-[21px]!`}
+                >
+                  {item.icon}
+                </span>
                 {item.name}
               </button>
             );

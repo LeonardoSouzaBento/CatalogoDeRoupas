@@ -62,7 +62,6 @@ p {
 }
 button{
   user-select: none;
-  
 }
 textarea::-webkit-scrollbar-track {
   background-color: #ffffff00;
@@ -99,7 +98,7 @@ div::-webkit-scrollbar {
   
   button,
   a {
-    @apply leading-none font-medium capitalize transition-[background-color] text-[1.0569em] duration-200 cursor-pointer rounded-md
+    @apply leading-none font-medium capitalize transition-[background-color] text-[1.05714em] duration-200 cursor-pointer rounded-md
     flex justify-start items-center gap-3 h-10 w-auto bg-gray-100 hover:bg-gray-200 px-6 
     ;
   }

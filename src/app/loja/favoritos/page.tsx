@@ -16,7 +16,7 @@ const Favoritos = (): React.ReactElement => {
       <div className={`${css.mainWrapper}`}>
         <div className={`${css.wrapper} shadow-soft`}>
           <HeaderCard
-            title="Sua lista de produtos curtidos"
+            title="Produtos curtidos"
             icon="bookmark_heart"
           />
 

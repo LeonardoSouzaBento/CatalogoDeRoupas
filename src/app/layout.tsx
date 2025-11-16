@@ -24,7 +24,8 @@ export const metadata: Metadata = {
 };
 
 const fontStyles = `font-dm-sans text-gray-800 
- text-[1.094em] sm:text-[1.107em] md:text-[1.114em] lg:text-[1.127em] xl:text-[1.140em] 2xl:text-[1.153em]`;
+ text-[1.09375em] sm:text-[1.11205em] md:text-[1.12089em] lg:text-[1.13857em] 
+ xl:text-[1.15625em] 2xl:text-[1.17393em]`; //novo tamanho base: 17.5px
 
 export default function RootLayout({
   children,

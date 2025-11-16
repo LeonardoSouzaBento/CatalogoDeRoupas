@@ -7,6 +7,41 @@
   @apply overflow-hidden;
 }
 
+/* tamanhos de fonte */
+
+.p165 {
+ @apply text-[0.94285em];
+}
+.p175 {
+ @apply text-[1.00em];
+}
+.p185 {
+ @apply text-[1.05714em];
+}
+.p195 {
+ @apply text-[1.11428em];
+}
+.p205 {
+ @apply text-[1.17143em];
+}
+.p215 {
+ @apply text-[1.2286em];
+}
+
+/* tamanhos de icones do google */
+.span18 {
+ @apply text-[1.0286em]!;
+}
+.span195 {
+ @apply text-[1.11428em]!;
+}
+.span21 {
+ @apply text-[1.200em]!;
+}
+.span225 {
+ @apply text-[1.28571em]!;
+}
+
 /* transição */
 
 .trans {
@@ -82,7 +117,7 @@
   @apply border border-gray-200;
 }
 .bs-color {
-  @apply border-gray-300/90;
+  @apply border-gray-300;
 }
 .bs-light-color {
   @apply border-gray-200;

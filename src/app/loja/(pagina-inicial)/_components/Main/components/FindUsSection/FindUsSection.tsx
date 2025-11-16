@@ -10,15 +10,15 @@ import ContactInput from "./inputs/ContactInput";
 import MapInput from "./inputs/MapInput";
 
 const css = {
-  wrapper: "w-full m-auto max-w-210 flex flex-col gap-[18px]",
+  wrapper: "w-full m-auto max-w-210 flex flex-col gap-4.5",
   container:
-    `w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 
+    `w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
     br-lg bg-white border-gray-200 shadow-soft hover:shadow-soft-hover fast-trans relative`,
   containerhomeEditMode: "sm:!flex-col !items-start pt-3 gap-4 ",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
   wrapperMap: "w-full h-[108vw] max-h-[480px]",
   wrapperMaphomeEditMode: "!h-auto !min-h-max p-5 pt-4",
-  firstP: "mb-1",
+  firstP: "mb-3 leading-none!",
   wrapperPs: "relative",
 };
 
@@ -69,7 +69,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seePhoneInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
-                  <span className="material-symbols-outlined span-fill">
+                  <span className="material-symbols-outlined span-fill text-[1.28571em]!">
                     call
                   </span>
                   <div className={`${css.wrapperPs}`}>

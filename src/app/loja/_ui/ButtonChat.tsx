@@ -1,8 +1,5 @@
 "use client";
-import { iconMdStyles } from "@/app/lucideIconStyles";
-import { MessageSquare } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 
 const ButtonChat = () => {
   const css = {
@@ -21,7 +18,7 @@ const ButtonChat = () => {
 
   return (
     <div className={`${css.wrapper}`} onClick={handleOpenChat}>
-      <div className={`size-max centralize relative`}>
+      <div className={`size-max centralize relative mb-[0.5px] ml-[1.5px]`}>
         <Image
           src={`/icons/whatsapp(1).png`}
           height={24}

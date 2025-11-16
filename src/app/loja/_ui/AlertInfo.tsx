@@ -2,7 +2,7 @@ import React from "react";
 
 const css = {
   wrapper:
-    "min-h-10 w-full p-4 mb-5 flex justify-start items-center gap-3 bg-neutral-50 br-md",
+    "min-h-10 w-full p-4 mb-5 flex justify-start items-center gap-3 bg-white bs br-md",
   span: `material-symbols-outlined line-span br-50 
   text-red-500 font-[400]! text-[1.12em]!`,
 };

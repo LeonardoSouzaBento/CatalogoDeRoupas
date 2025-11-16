@@ -14,7 +14,7 @@ purple: #7E1FAC
 
 /* icones  */
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL" 1, "GRAD" 0;
 }
 .line-span {
   @apply [font-variation-settings:'FILL'_0];
@@ -38,7 +38,7 @@ purple: #7E1FAC
 
 /* hs */
 .home-h1 {
-  @apply capitalize tracking-normal text-center text-[1.380em];
+  @apply capitalize tracking-normal text-center text-[1.2286em];
 }
 .h3-sizes {
   @apply font-medium text-[1.090em];

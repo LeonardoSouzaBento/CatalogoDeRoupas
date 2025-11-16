@@ -9,7 +9,7 @@ const css = {
   subtitle: `mb-6 text-gray-500 `,
 };
 
-const LogoName = () => {
+const StoreLogo = () => {
   return (
     <div className="flex flex-col items-center">
       <div className={`${css.wrapperLogo} bg-gradient-to-br from-stone-800 to-stone-700`}>
@@ -24,4 +24,4 @@ const LogoName = () => {
   );
 };
 
-export default LogoName;
+export default StoreLogo;
