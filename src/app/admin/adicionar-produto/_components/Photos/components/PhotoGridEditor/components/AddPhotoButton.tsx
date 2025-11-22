@@ -1,6 +1,6 @@
 import React from "react";
 import { Plus } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { Photo, StateSetter } from "@/types/types";
 
 const css = {
@@ -60,7 +60,7 @@ const AddPhotoButton = ({
     <button className={`${css.button}`}>
       Adicionar foto
       <div className={`wrapper-icon`}>
-        <Plus {...iconMdStyles} />
+        <Plus {...iconMd} />
       </div>
       <input
         className={`${css.input}`}

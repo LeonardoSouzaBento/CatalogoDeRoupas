@@ -1,6 +1,6 @@
 import React from "react";
 import { Check } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { StateSetter } from "@/types/types";
 import SaveButton from "@/app/loja/_ui/SaveButton";
 

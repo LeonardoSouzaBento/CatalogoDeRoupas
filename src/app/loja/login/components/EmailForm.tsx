@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ButtonClose, HeaderCard } from "../../_ui";
 import { BooleanSetter } from "@/types/types";
 import { Eye, EyeClosed, LogIn } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 
 const css = { button: `h-11 w-full j-center` };
 
@@ -21,7 +21,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         wrapperStyles="mb-4!"
         title="Entre com email"
         icon="mail"
-        spanStyles="font-semibold! text-[1.25em]!"
+        iconStyles="font-semibold! text-[1.25em]!"
       />
       <div className="mb-[18px]">
         <label htmlFor="email">Email</label>
@@ -41,15 +41,15 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           }}
         >
           {seePassword ? (
-            <EyeClosed {...iconMdStyles} color="gray" />
+            <EyeClosed {...iconMd} color="gray" />
           ) : (
-            <Eye {...iconMdStyles} color="gray" />
+            <Eye {...iconMd} color="gray" />
           )}
         </div>
       </div>
       <button className={`${css.button} mb-5`}>
         <div className="wrapper-icon">
-          <LogIn {...iconMdStyles} />
+          <LogIn {...iconMd} />
         </div>
         entrar
       </button>

@@ -3,9 +3,9 @@ import React, { useContext } from "react";
 import { HomeContext } from "@/contexts";
 import { BookHeart, Eye, Pen, Plus } from "lucide-react";
 import {
-  iconMdStyles,
-  iconSmStyles,
-  iconLgStyles,
+  iconMd,
+  iconSm,
+  iconLg,
 } from "@/app/lucideIconStyles";
 import "../globals.css";
 import Link from "next/link";
@@ -15,25 +15,25 @@ const optionButtons = [
     name: "Ver Minha loja",
     url: "/loja",
     icon: Eye,
-    iconStyle: iconSmStyles,
+    iconStyle: iconSm,
   },
   {
     name: "Adicionar Produto",
     url: "/admin/adicionar-produto",
     icon: Plus,
-    iconStyle: iconLgStyles,
+    iconStyle: iconLg,
   },
   {
     name: "Atualizar Produtos",
     url: "/admin/atualizar-produto",
     icon: Pen,
-    iconStyle: iconSmStyles,
+    iconStyle: iconSm,
   },
   {
     name: "Ver Favoritos Do Usúario",
     url: "/admin/favoritos-do-usuario",
     icon: BookHeart,
-    iconStyle: iconMdStyles,
+    iconStyle: iconMd,
   },
 ];
 

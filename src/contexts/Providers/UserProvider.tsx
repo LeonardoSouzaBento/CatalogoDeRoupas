@@ -1,6 +1,6 @@
 "use client";
 import { defaultUserData } from "@/data/UserData";
-import { useLocalStorage } from "@/hooks/UseLocalStorage";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import type { Genders, ProviderType, UserData } from "@/types/types";
 import React, { useState } from "react";
 import { UserContext } from "../UserContext";

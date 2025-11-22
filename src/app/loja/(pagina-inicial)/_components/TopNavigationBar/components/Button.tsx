@@ -1,6 +1,6 @@
 import React from "react";
 import type { LucideIcon } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import Link from "next/link";
 import { BooleanSetter } from "@/types/types";
 
@@ -18,7 +18,9 @@ const css = {
   wrapperIcon: "h-10 w-10 centralize bg-white/24 sm:bg-transparent",
   p: "hidden sm:inline pr-2 text-left text-neutral-800 leading-none p175",
   buttonSearch:
-    "h-10 w-34 sm:min-w-36 max-w-60 px-4 flex flex-auto justify-between items-center br-md lg:order-2 shadow-md/4 bg-white/24 border border-transparent hover:scale-102 transition-all! duration-300 p175",
+    `h-10 w-34 sm:min-w-36 max-w-60 px-4 flex flex-auto justify-between 
+    items-center br-md lg:order-2 shadow-md/4 bg-white/24 border border-transparent 
+    hover:scale-102 transition-all! duration-300 p175 `,
   wrapperIconSearch: "button-square",
 };
 
@@ -35,7 +37,7 @@ const Button = ({
     <Link className={`${css.buttonSearch} ${hoverStyle}`} href={link || "/"}>
       Buscar
       <div className={css.wrapperIconSearch}>
-        <Icon {...iconMdStyles} />
+        <Icon {...iconMd} />
       </div>
     </Link>
   ) : (
@@ -48,14 +50,14 @@ const Button = ({
           }}
         >
           <div className={css.wrapperIcon}>
-            <Icon {...iconMdStyles} />
+            <Icon {...iconMd} />
           </div>
           <p className={css.p}>{name}</p>
         </button>
       ) : (
         <Link className={`${css.button} ${hoverStyle}`} href={link}>
           <div className={css.wrapperIcon}>
-            <Icon {...iconMdStyles} />
+            <Icon {...iconMd} />
           </div>
           <p className={css.p}>{name}</p>
         </Link>

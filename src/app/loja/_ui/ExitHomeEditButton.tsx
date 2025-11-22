@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { PenOff } from "lucide-react";
 import { HomeContext } from "@/contexts";
 
@@ -21,7 +21,7 @@ const ExitHomeEditButton = () => {
       >
         Fechar edição
         <div className="wrapper-icon">
-          <PenOff {...iconMdStyles} strokeWidth={2.3} />
+          <PenOff {...iconMd} strokeWidth={2.3} />
         </div>
       </button>
     );

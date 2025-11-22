@@ -12,8 +12,8 @@ const css = {
   img: "!border-none !outline-none",
   wrapperInfo:
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",
-  name: `block font-bold break-words text-gray-800 capitalize leading-none text-[1.11429em] tracking-[0.24px]`,
-  email: "block text-[1.05714em] leading-none break-all",
+  name: `block font-bold break-words text-gray-800 capitalize leading-none p20`,
+  email: "block p18 leading-none break-all",
   buttonEdit: "square-button p-0 br-md shadow-soft-small",
 };
 

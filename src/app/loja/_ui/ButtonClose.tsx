@@ -1,5 +1,5 @@
 import React from "react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { BooleanSetter, StateSetter } from "@/types/types";
 import { X } from "lucide-react";
 
@@ -49,7 +49,7 @@ const ButtonClose = ({
         }
       }}
     >
-      <X {...iconMdStyles} strokeWidth={1.9} {...iconStyles} />
+      <X {...iconMd} strokeWidth={1.9} {...iconStyles} />
     </button>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { HomeContext } from "@/contexts/HomeContext";
 import CategoryCard from "./CategoryCard";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { Eye, EyeClosed, Plus } from "lucide-react";
 import { AlertInfo } from "@/app/loja/_ui";
 
@@ -13,7 +13,7 @@ const css = {
     "flex flex-col flex-wrap gap-4 sm:flex-row sm:justify-center mb-5",
   wrapperImg: "h-40 w-30",
   img: "size-full object-cover",
-  icon: iconMdStyles,
+  icon: iconMd,
 };
 
 const MainCatsInput = (): React.ReactElement => {
@@ -39,9 +39,9 @@ const MainCatsInput = (): React.ReactElement => {
         >
           <div className="wrapper-icon">
             {maleNoSelected ? (
-              <EyeClosed {...iconMdStyles} />
+              <EyeClosed {...iconMd} />
             ) : (
-              <Eye {...iconMdStyles} />
+              <Eye {...iconMd} />
             )}
           </div>
           Ver Categorias Masculinas
@@ -55,9 +55,9 @@ const MainCatsInput = (): React.ReactElement => {
           }}
         >
           {femaleNoSelected ? (
-            <EyeClosed {...iconMdStyles} />
+            <EyeClosed {...iconMd} />
           ) : (
-            <Eye {...iconMdStyles} />
+            <Eye {...iconMd} />
           )}
           Ver Categorias Femininas
         </button>
@@ -71,7 +71,7 @@ const MainCatsInput = (): React.ReactElement => {
         espaços vazios no site que é visto no tablet ou no computador, pois nesses dispositivos as categorias ficam dispostas numa grade de duas colunas.`} />
       <button className="mb-5">
         Adicionar Nova Categoria Principal
-        <Plus {...iconMdStyles} />
+        <Plus {...iconMd} />
       </button>
     </div>
   );

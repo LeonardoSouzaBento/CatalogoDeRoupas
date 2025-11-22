@@ -7,7 +7,7 @@ const css = {
   pReturn: "font-light pb-[1px] p175",
   wrapperIcon:
     "h-full min-w-10 w-max centralize gap-3 light-button br-50 fast-trans",
-  span: "material-symbols-outlined text-gray-800 font-[400]! pt-[2] text-[1.27em]!",
+  span: "material-symbols-outlined text-gray-800 font-[400]! pt-[2]",
 };
 
 const FavoriteButton = () => {

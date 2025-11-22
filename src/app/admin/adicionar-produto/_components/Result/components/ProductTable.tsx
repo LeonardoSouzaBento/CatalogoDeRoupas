@@ -4,9 +4,9 @@ import React, { useMemo } from "react";
 
 const css = {
   container: `rounded-md `,
-  grid: `grid grid-cols-1 lg:grid-cols-2`,
-  wrapper: `p-3 bg-white border border-gray-200 br-0`,
-  row: `flex flex-row justify-between items-center py-2 border-b border-gray-200 last:border-none
+  grid: `p-5 grid grid-cols-1 sm:grid-cols-2 crop br-md bs`,
+  wrapper: `bg-white br-0 `,
+  row: `h-9 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
   br-0`,
   label: `text-sm font-semibold text-gray-800 w-40`,
   value: `text-sm text-gray-700 flex-1 text-right br-0`,
@@ -68,7 +68,8 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({
     <div className={css.container}>
       <div className={css.grid}>
         {/* Coluna 1 */}
-        <div className={css.wrapper}>
+        <div className={`${css.wrapper} border-b bs-color 
+        sm:border-b-0 sm:pr-4`}>
           {items.map((item, i) =>
             col1.map((f) => (
               <div key={f.key + i} className={css.row}>
@@ -80,7 +81,8 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({
         </div>
 
         {/* Coluna 2 */}
-        <div className={css.wrapper}>
+        <div className={`${css.wrapper} sm:border-l sm:border-gray-300
+        sm:pl-4`}>
           {items.map((item, i) =>
             col2.map((f) => (
               <div key={f.key + i} className={css.row}>

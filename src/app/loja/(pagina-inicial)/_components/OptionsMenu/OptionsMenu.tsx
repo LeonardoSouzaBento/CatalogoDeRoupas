@@ -11,9 +11,9 @@ const css = {
   wrapper: `h-[calc(100vh-52px)] w-8/10 max-w-120 pb-6 min-h-screen z-6 
   bg-white rounded-none [box-shadow:_-8px_0_20px_rgba(0,0,0,0.05)] overflow-y-scroll trans absolute top-0 right-0
 `,
-  wrapperTitle: `h-13 w-full flex items-center j-start sticky top-0 right-0 box-border pl-6 br-0 bg-stone-800 
-  bg-gradient-to-b from-stone-800 to-stone-700`,
-  title: `text-white font-semibold text-[1.12em] mt-[1px]`,
+  wrapperTitle: `h-13 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 br-0 bg-stone-800 
+  bg-gradient-to-l from-stone-800 to-stone-700`,
+  title: `text-white font-semibold p20 mt-[1px]`,
 };
 
 const OptionsMenu = ({

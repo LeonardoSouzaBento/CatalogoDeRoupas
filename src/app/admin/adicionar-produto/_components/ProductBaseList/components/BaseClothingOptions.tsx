@@ -1,15 +1,15 @@
 "use client";
+import { iconSm } from "@/app/lucideIconStyles";
 import { X } from "lucide-react";
-import { iconSmStyles } from "@/app/lucideIconStyles";
 
 const css = {
   wrapperButtons: `flex flex-wrap gap-4 mb-6`,
-  button: `br-50 light-button font-normal px-5 hover:bg-gray-100 hover:border-gray-400
+  button: `br-50 light-button font-normal px-5 light-button hover:border-gray-400
     focus:outline-none focus:ring-2 focus:ring-blue-400
-    transition-all duration-150 relative`,
+    transition-all duration-150 relative max-[400px]:w-full sm:min-w-60`,
   selected: `ring-style`,
   buttonDelete: `h-8 w-8 flex px-0 items-center justify-center 
-  br-50 bg-white/60 hover:shadow-soft trans absolute right-1 top-1 [transition:_opacity_2s_ease]`,
+  br-50 bg-white/60 hover:shadow-soft trans absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
 };
 
 interface ButtonProps {
@@ -39,19 +39,17 @@ const BaseClothingOptions = ({
           >
             {shortName}
 
-            <div>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedName("");
-                }}
-                className={`${css.buttonDelete} ${
-                  selected ? "flex opacity-100" : "opacity-0! hidden!"
-                }`}
-              >
-                <X {...iconSmStyles} color="red" strokeWidth={2.3} />
-              </button>
-            </div>
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedName("");
+              }}
+              className={`${css.buttonDelete} ${
+                selected ? "flex opacity-100" : "opacity-0! hidden!"
+              }`}
+            >
+              <X {...iconSm} color="red" strokeWidth={2.3} />
+            </span>
           </button>
         );
       })}

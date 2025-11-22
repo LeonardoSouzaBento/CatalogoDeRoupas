@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { BooleanSetter, Photo, StateSetter } from "@/types/types";
 import { Check, X } from "lucide-react";
 import Image from "next/image";
@@ -85,7 +85,7 @@ const RemoveConfirm = ({
               }}
             >
               Não
-              <X {...iconMdStyles} strokeWidth={2} />
+              <X {...iconMd} strokeWidth={2} />
             </button>
             <button
               className={`${css.button} white-button bs-light`}
@@ -95,7 +95,7 @@ const RemoveConfirm = ({
               }}
             >
               Sim, remover
-              <Check{...iconMdStyles} strokeWidth={2} />
+              <Check{...iconMd} strokeWidth={2} />
             </button>
           </div>
         </div>

@@ -10,9 +10,8 @@ import ContactInput from "./inputs/ContactInput";
 import MapInput from "./inputs/MapInput";
 
 const css = {
-  wrapper: "w-full m-auto max-w-210 flex flex-col gap-4.5",
-  container:
-    `w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
+  wrapper: "w-full m-auto max-w-210 flex flex-col gap-5",
+  container: `w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
     br-lg bg-white border-gray-200 shadow-soft hover:shadow-soft-hover fast-trans relative`,
   containerhomeEditMode: "sm:!flex-col !items-start pt-3 gap-4 ",
   wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
@@ -69,9 +68,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seePhoneInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
-                  <span className="material-symbols-outlined span-fill text-[1.28571em]!">
-                    call
-                  </span>
+                  <span className="material-symbols-outlined span21">call</span>
                   <div className={`${css.wrapperPs}`}>
                     <p className={`${css.firstP}`}>
                       <strong>Whatsapp:</strong>
@@ -83,6 +80,7 @@ const FindUsSection = (): React.ReactElement => {
                   state={phoneCopied}
                   setState={setPhoneCopied}
                   firstText="Copiar Telefone"
+                  secondText="Telefone copiado!"
                   textToCopy={shopInfo.contact}
                 />
                 {sectionEditMode && (
@@ -107,9 +105,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seeAddressInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
-                  <span className="material-symbols-outlined span-fill zoom-in-span">
-                    home_pin
-                  </span>
+                  <span className={`material-symbols-outlined span23`}>home_pin</span>
                   <div className={`${css.wrapperPs}`}>
                     <p className={`${css.firstP}`}>
                       <strong>Onde estamos:</strong>
@@ -121,6 +117,7 @@ const FindUsSection = (): React.ReactElement => {
                   state={addressCopied}
                   setState={setAddressCopied}
                   firstText="Copiar Link Do Mapa"
+                  secondText="Link copiado!"
                   textToCopy={shopAddressFormatted}
                 />
                 {sectionEditMode && (

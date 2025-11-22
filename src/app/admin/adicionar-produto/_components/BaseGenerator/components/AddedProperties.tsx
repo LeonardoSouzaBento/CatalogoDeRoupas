@@ -6,14 +6,14 @@ import {
   StateSetter,
 } from "@/types/types";
 import { X } from "lucide-react";
-import { iconSmStyles } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/lucideIconStyles";
 
 const css = {
   container: `bg-white bs p-5`,
   wrapper: `flex flex-wrap gap-3`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
   bg-white br-50 shadow-soft-soft bs`,
-  button: `size-8 centralize px-0 br-50 text-red-500 hover:underline`,
+  button: `small-p size-8 centralize px-0 br-50 text-red-500 hover:underline `,
 };
 
 const AddedProperties = ({
@@ -58,7 +58,7 @@ const AddedProperties = ({
           (item) =>
             item.value && (
               <div key={item.label} className={`${css.wrapperButton}`}>
-                <span className={`capitalize text-gray-800`}>
+                <span className={`capitalize text-gray-800 small-p`}>
                   {item.label}:{" "}
                   <strong className={`font-semibold tracking-wide`}>
                     {item.value}
@@ -68,7 +68,7 @@ const AddedProperties = ({
                   className={`${css.button}`}
                   onClick={() => clearValue(item.label)}
                 >
-                  <X {...iconSmStyles} color="red" />
+                  <X {...iconSm} color="red" />
                 </button>
               </div>
             )

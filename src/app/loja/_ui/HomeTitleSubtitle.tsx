@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { HomeContext } from "@/contexts";
 import { BooleanSetter } from "@/types/types";
 import { PenOff } from "lucide-react";
@@ -15,9 +15,8 @@ interface HomeTitleSubtitleProps {
 
 const css = {
   h1: `font-bold capitalize leading-10 text-center text-[1.22857em]`,
-  h1SelectGender:
-    "text-center p215 capitalize leading-none! font-light pb-5",
-  h2: `w-full mb-6 font-light text-center text-neutral-600 capitalize`,
+  h1SelectGender: "text-center capitalize leading-none! text-neutral-700 pb-4",
+  h2: `w-full mb-6 font-normal text-center text-neutral-600/88 capitalize`,
 };
 
 const HomeTitleSubtitle = ({
@@ -37,16 +36,11 @@ const HomeTitleSubtitle = ({
     <div>
       <div className="w-full px-3 flex j-center i-center gap-3">
         <div className="flex flex-col size-auto">
-          {section == "genders" ? (
-            <div className={`flex flex-col items-center gap-2.5`}>
-              <span className="material-symbols-outlined -mt-px span21 text-gray-700">
-                family_restroom
-              </span>
-              <h1 className={`${css.h1SelectGender}`}>{title}</h1>
-            </div>
-          ) : (
-            <h1 className={`${css.h1}`}>{title}</h1>
-          )}
+          <h1
+            className={`${section == "genders" ? css.h1SelectGender : css.h1}`}
+          >
+            {title}
+          </h1>
 
           {subtitle && (
             <h2 className={`${css.h2} ${section == "clothes" && "mb-3!"}`}>
@@ -75,7 +69,7 @@ const HomeTitleSubtitle = ({
         >
           Fechar edição
           <div className="wrapper-icon">
-            <PenOff {...iconMdStyles} color="white" />
+            <PenOff {...iconMd} color="white" />
           </div>
         </button>
       )}

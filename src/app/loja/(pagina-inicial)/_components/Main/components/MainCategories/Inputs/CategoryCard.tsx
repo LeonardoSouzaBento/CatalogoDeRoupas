@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { MainCategory } from "@/types/types";
 import Image from "next/image";
 import CardEditMode from "./CardEditMode";
-import { iconSmStyles } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/lucideIconStyles";
 import { Pen } from "lucide-react";
 
 const css = {
@@ -55,7 +55,7 @@ const CategoryCard = ({ category }: CatCardResultProps) => {
             }}
           >
             Editar Categoria
-            <Pen {...iconSmStyles} />
+            <Pen {...iconSm} />
           </button>
         </div>
       ) : (

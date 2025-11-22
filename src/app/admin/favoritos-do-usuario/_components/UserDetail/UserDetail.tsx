@@ -1,6 +1,7 @@
 import { HeaderCard } from "@/app/loja/_ui";
 import UserInfo from "./components/UserInfo";
 import UserPhoto from "./components/UserPhoto";
+import CardWrapper from "@/app/loja/_ui/CardWrapper";
 
 const array = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -8,16 +9,14 @@ const array = [
 
 const css = {
   mainWrapper: `px-3 pb-6`,
-  wrapper: ``,
   p: ``,
   wrapperUsers: `flex flex-wrap gap-4`,
   h2: "",
 };
 
-
 const UserDetail = () => {
   return (
-    <div className={`${css.wrapper} basic-card-style`}>
+    <CardWrapper>
       <HeaderCard title="Usuários" icon="person" />
 
       <div className={``}>
@@ -28,7 +27,7 @@ const UserDetail = () => {
           ))}
         </div>
       </div>
-    </div>
+    </CardWrapper>
   );
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import { iconSmStyles } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { CornerUpLeft } from "lucide-react";
 
@@ -16,7 +16,7 @@ const BackButton = ({ styles, setState = () => {} }: Props) => {
       }}
       className={`w-full ${styles}`}
     >
-      <CornerUpLeft {...iconSmStyles} />
+      <CornerUpLeft {...iconSm} />
       voltar
     </button>
   );

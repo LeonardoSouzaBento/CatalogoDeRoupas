@@ -1,5 +1,6 @@
 "use client";
 import { HeaderCard } from "@/app/loja/_ui";
+import CardWrapper from "@/app/loja/_ui/CardWrapper";
 import { UserContext } from "@/contexts";
 import { Genders } from "@/types/types";
 import React, { useContext } from "react";
@@ -9,7 +10,7 @@ const css = {
   button: `w-full min-[500px]:w-[calc(50%-6px)] max-w-52 light-button br-50 j-center font-normal
   hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600`,
   selected: `ring-style`,
-  icon: `material-symbols-outlined line-span font-[450]! text-[1.245em]!`,
+  icon: `material-symbols-outlined font-[450]! text-[1.245em]!`,
 };
 
 const buttons: { label: string; value: Genders; icon?: string }[] = [
@@ -21,14 +22,10 @@ const GenderButtons = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
 
   return (
-    <div className="max-w-3xl lg:max-w-4xl m-auto basic-card-style">
-      <HeaderCard
-        title="Gênero"
-        icon="wc"
-        spanStyles="mb-px font-light!"
-      />
+    <CardWrapper>
+      <HeaderCard title="Gênero" icon="wc" iconStyles="mb-px font-light! span22" />
       <div className={css.wrapper}>
-        {buttons.map(({ label, value, icon }) => (
+        {buttons.map(({ label, value }) => (
           <button
             key={value}
             className={`${css.button} ${
@@ -37,15 +34,10 @@ const GenderButtons = () => {
             onClick={() => setSelectedGender(value)}
           >
             {label}
-            <span
-              className={`${css.icon}`}
-            >
-              {icon}
-            </span>
           </button>
         ))}
       </div>
-    </div>
+    </CardWrapper>
   );
 };
 

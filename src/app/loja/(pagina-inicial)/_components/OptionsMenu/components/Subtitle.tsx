@@ -2,7 +2,7 @@ import React from "react";
 
 const css = {
   wrapper: `w-full h-13 pl-6 flex i-center j-start`,
-  title: `font-semibold text-neutral-500 tracking-wide text-[1.12em]`,
+  title: `font-semibold text-neutral-500 tracking-wide p195`,
 };
 
 const Subtitle = ({ subtitle }: { subtitle: string }) => {

@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { Pen } from "lucide-react";
 
@@ -11,7 +11,7 @@ const EditButton = ({ setSeeEditMode} : { setSeeEditMode: BooleanSetter }) => {
           setSeeEditMode(true);
         }}
       >
-        <Pen {...iconMdStyles} color="black" />
+        <Pen {...iconMd} color="black" />
       </button>
     </div>
   );

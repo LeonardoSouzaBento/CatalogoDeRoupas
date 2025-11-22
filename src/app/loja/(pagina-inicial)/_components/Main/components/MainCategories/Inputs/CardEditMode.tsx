@@ -1,6 +1,6 @@
 import BackButton from "@/app/loja/_ui/BackButton";
 import SaveButton from "@/app/loja/_ui/SaveButton";
-import { iconSmStyles } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/lucideIconStyles";
 import { BooleanSetter, MainCategory } from "@/types/types";
 import { Upload } from "lucide-react";
 import Image from "next/image";
@@ -64,7 +64,7 @@ const CardEditMode = ({
           </div>
           <button className="mb-1 light-button min-[440px]:mb-0 sm:mb-1 md:mb-0">
             <div className="h-full min-w-8 centralize">
-              <Upload {...iconSmStyles} />
+              <Upload {...iconSm} />
             </div>
             Nova Imagem
           </button>

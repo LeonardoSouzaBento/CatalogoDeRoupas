@@ -2,11 +2,12 @@
 import React from "react";
 import { AlertInfo, HeaderCard } from "@/app/loja/_ui";
 import PhotoGridEditor from "./components/PhotoGridEditor/PhotoGridEditor";
+import CardWrapper from "@/app/loja/_ui/CardWrapper";
 
 const Photos = () => {
   return (
-    <div className={`basic-card-style max-w-3xl lg:max-w-4xl mx-auto relative`}>
-      <HeaderCard title="Fotos" icon="photo_library"/>
+    <CardWrapper>
+      <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 span19"/>
       <PhotoGridEditor />
       <AlertInfo
         styles="bg-gray-50/50! mb-0!"
@@ -15,7 +16,7 @@ const Photos = () => {
         , mostrando também a lateral da peça e a peça sendo usada por uma pessoa. 
           Assim o cliente se mantêm interessado.`}
       />
-    </div>
+    </CardWrapper>
   );
 };
 

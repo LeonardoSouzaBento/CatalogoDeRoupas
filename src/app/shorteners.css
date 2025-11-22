@@ -15,31 +15,41 @@
 .p175 {
  @apply text-[1.00em];
 }
+.p18 {
+ @apply text-[1.02857em];
+}
 .p185 {
  @apply text-[1.05714em];
 }
 .p195 {
  @apply text-[1.11428em];
 }
-.p205 {
- @apply text-[1.17143em];
+.p20 {
+ @apply text-[1.14286em];
 }
 .p215 {
  @apply text-[1.2286em];
 }
 
-/* tamanhos de icones do google */
+/* para spans */
+
 .span18 {
- @apply text-[1.0286em]!;
+ @apply text-[18px]!;
 }
-.span195 {
- @apply text-[1.11428em]!;
+.span19 {
+ @apply text-[19px]!;
+}
+.span20 {
+ @apply text-[20px]!;
 }
 .span21 {
- @apply text-[1.200em]!;
+ @apply text-[21px]!;
 }
-.span225 {
- @apply text-[1.28571em]!;
+.span22 {
+ @apply text-[22px]!;
+}
+.span23 {
+ @apply text-[23px]!;
 }
 
 /* transição */

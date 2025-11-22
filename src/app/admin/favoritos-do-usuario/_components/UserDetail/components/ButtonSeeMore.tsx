@@ -1,6 +1,6 @@
 import React from "react";
 import { BooleanSetter } from "@/types/types";
-import { iconLgStyles } from "@/app/lucideIconStyles";
+import { iconLg } from "@/app/lucideIconStyles";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const css = {
@@ -23,9 +23,9 @@ const ButtonSeeMore = ({
       >
         {!seeMoreUserInfo ? " Ver Mais" : " Ver Menos"}
         {!seeMoreUserInfo ? (
-          <ChevronDown {...iconLgStyles} />
+          <ChevronDown {...iconLg} />
         ) : (
-          <ChevronUp {...iconLgStyles} />
+          <ChevronUp {...iconLg} />
         )}
       </button>
     </div>

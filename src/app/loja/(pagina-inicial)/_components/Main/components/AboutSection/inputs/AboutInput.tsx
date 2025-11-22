@@ -1,5 +1,5 @@
 import { AlertInfo, ButtonClose } from "@/app/loja/_ui/index";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import type { ShopInfo } from "@/types/types";
 import { defaultShopInfo } from "@data/home/publicData";
 import { Check, Trash, X } from "lucide-react";
@@ -86,19 +86,19 @@ const AboutInput = ({
         >
           {" "}
           <div className="wrapper-icon">
-            <Trash {...iconMdStyles} size={19} />
+            <Trash {...iconMd} size={19} />
           </div>
           Deletar Todo o Texto
         </button>
         <button className={`${css.buttons} order-3 sm:order-3`}>
-          <Check {...iconMdStyles} />
+          <Check {...iconMd} />
           Salvar
         </button>
         <button
           className={`${css.buttons} order-2 sm:order-2`}
           onClick={handleDiscardChanges}
         >
-          <X {...iconMdStyles} />
+          <X {...iconMd} />
           Descartar Alterações
         </button>
       </div>

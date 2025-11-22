@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { UserContext } from "@/contexts";
 import { mostSearched } from "@/data/UserData";
 import { Search } from "lucide-react";
@@ -22,8 +22,8 @@ const Choices = () => {
     <div>
       {currentMostSearched.map((item) => (
         <div key={item} className={`${css.wrapper}`}>
-          <Search {...iconMdStyles} color="#737373" />
-          <p className="text-[1.06em]">{item}</p>
+          <Search {...iconMd} color="#737373" />
+          <p className="p18">{item}</p>
         </div>
       ))}
     </div>

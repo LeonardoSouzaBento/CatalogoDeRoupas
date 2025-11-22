@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { Check, Upload } from "lucide-react";
 import { validateName } from "@/functions/validateName";
 import { validateEmail } from "@/functions/validateEmail";
@@ -41,7 +41,7 @@ const NameEmailInput = ({
         title="Edite seus dados"
         icon="edit"
         wrapperStyles="bs-light-color"
-        spanStyles="text-[1.3em]!"
+        iconStyles="text-[1.3em]!"
       />
       <ButtonClose
         setState={setSeeEditMode}
@@ -57,7 +57,7 @@ const NameEmailInput = ({
         <button className="w-full light-button trans">
           Subir nova imagem
           <div className="wrapper-icon">
-            <Upload {...iconMdStyles} />
+            <Upload {...iconMd} />
           </div>
         </button>
       </div>

@@ -30,6 +30,11 @@ export interface SpecialSelectionItem {
   item: HomeClothing;
 }
 
+export interface ClothingProperty {
+  name: string;
+  options?: string[];
+}
+
 /* subtipos */
 
 interface Composition {

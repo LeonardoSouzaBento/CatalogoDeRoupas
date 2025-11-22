@@ -5,9 +5,12 @@ interface HeaderCardProps {
   title: string;
   subtitle?: string;
   icon?: string;
-  spanStyles?: string;
+  iconStyles?: string;
+  wrapperIconStyles?: string;
+  wrapperTitleStyles?: string;
   titleStyles?: string;
   wrapperStyles?: string;
+  collapsedDiv?: boolean;
 }
 
 //text-[1.1712em]
@@ -15,27 +18,30 @@ interface HeaderCardProps {
 const css = {
   wrapper: `w-full min-h-10 flex flex-col i-start 
   mb-5 border-b bs-color br-0`,
-  wrapperTitle: `min-h-10 flex i-center gap-1.5 `,
-  title: `mt-[2px] font-semibold text-neutral-800 text-left text-[1.11429em] tracking-[0.24px] leading-6.5 capitalize`,
+  wrapperTitle: `min-h-10 flex i-center gap-1 `,
+  title: `mt-[2px] font-semibold text-neutral-800 text-left p20 leading-6.5`,
   wrapperIcon: "min-h-full w-6 flex items-center justify-center",
-  icon: `text-[1.147em]! mr-2`,
+  icon: `mr-2 text-gray-700 span22`,
 };
 
 const HeaderCard: React.FC<HeaderCardProps> = ({
   title,
   subtitle,
+  wrapperIconStyles,
   icon,
+  iconStyles,
   wrapperStyles = "",
+  wrapperTitleStyles = "",
   titleStyles = "",
-  spanStyles = "",
+  collapsedDiv,
 }) => {
   return (
-    <div className={`${css.wrapper} ${wrapperStyles}`}>
-      <div className={`${css.wrapperTitle}`}>
+    <div className={`${css.wrapper} ${wrapperStyles} ${collapsedDiv && "mb-0!"}`}>
+      <div className={`${css.wrapperTitle} ${wrapperTitleStyles}`}>
         {icon && (
-          <div className={`${css.wrapperIcon}`}>
+          <div className={`${css.wrapperIcon} ${wrapperIconStyles}`}>
             <span
-              className={`material-symbols-outlined text-gray-800/90 ${css.icon} ${spanStyles}`}
+              className={`material-symbols-outlined -ml-1.5 ${iconStyles || css.icon}`}
             >
               {icon}
             </span>

@@ -1,37 +1,19 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/contexts";
-import { Genders, BasicClothingInformation } from "@/types/types";
 import { HeaderCard } from "@/app/loja/_ui";
+import CardWrapper from "@/app/loja/_ui/CardWrapper";
 import { clothingCatsSubcats } from "@/data/clothingData/clothingCatsSubcats";
-import { prints } from "@/data/clothingData/prints";
 import { patterns } from "@/data/clothingData/patterns";
-import PropertyOptions from "./components/PropertyOptions";
+import { prints } from "@/data/clothingData/prints";
+import {
+  BasicClothingInformation,
+  ClothingProperty,
+  Genders,
+} from "@/types/types";
 import AddedProperties from "./components/AddedProperties";
-import { ChevronDown } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
-
-const css = {
-  wrapper: `
-    basic-card-style max-w-3xl lg:max-w-4xl mx-auto transition-all duration-200
-  `,
-  wrapperButtons: `
-    flex flex-wrap gap-4 mb-[20.5px]
-  `,
-  button: `
-    br-50 relative light-button font-normal px-5 text-gray-700
-    hover:bg-gray-100 transition-all duration-150
-  `,
-  selected: `bg-white! bs shadow-soft-soft hover:shadow-soft`,
-  icon: `
-    text-gray-600
-  `,
-};
-
-interface Property {
-  name: string;
-  options?: string[];
-}
+import Properties from "./components/Properties";
+import PropertyOptions from "./components/PropertyOptions";
 
 const BaseGenerator = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
@@ -49,7 +31,6 @@ const BaseGenerator = () => {
       print: "",
       is_childish: "",
     });
-
   /* gênero selecionado */
   const currentGender =
     selectedGender !== "unisex" && selectedGender === "masculino"
@@ -86,7 +67,7 @@ const BaseGenerator = () => {
     }
   }
 
-  const properties: Property[] = [
+  const properties: ClothingProperty[] = [
     { name: "Gênero", options: ["masculino", "feminino", "unisex"] },
     {
       name: "Categoria",
@@ -108,34 +89,20 @@ const BaseGenerator = () => {
   }, [basicInformation.cat, currentGender]);
 
   return (
-    <div className={css.wrapper}>
+    <CardWrapper>
       <HeaderCard
+        wrapperTitleStyles="gap-[5px]!"
         title="Informações básicas"
         subtitle="Selecione as caracteristicas principais (ou escolha uma roupa básica)"
         icon="edit_note"
-        spanStyles="font-medium! text-[1.277em]!"
+        iconStyles="font-medium!"
       />
 
-      <div className={css.wrapperButtons}>
-        {properties.slice(0, -1).map((item) => (
-          <button
-            key={item.name}
-            className={`${css.button} ${
-              propSelected === item.name && css.selected
-            }`}
-            onClick={(e) => {
-              e.stopPropagation();
-              setPropSelected(item.name);
-            }}
-          >
-            {item.name}
-
-            <div>
-              <ChevronDown className={css.icon} {...iconMdStyles} />
-            </div>
-          </button>
-        ))}
-      </div>
+      <Properties
+        properties={properties}
+        propSelected={propSelected}
+        setPropSelected={setPropSelected}
+      />
 
       <PropertyOptions
         properties={properties}
@@ -148,7 +115,7 @@ const BaseGenerator = () => {
         basicInformation={basicInformation}
         setBasicInformation={setBasicInformation}
       />
-    </div>
+    </CardWrapper>
   );
 };
 

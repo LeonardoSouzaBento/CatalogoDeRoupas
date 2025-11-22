@@ -1,7 +1,7 @@
 import React from "react";
 // import { BoolSetter } from "@/types/types";
 import { Check } from "lucide-react";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { AddressSchema } from "@/types/types";
 
 const SaveAddressButton = ({
@@ -18,7 +18,7 @@ const SaveAddressButton = ({
   return (
     <button className="button min-w-max" onClick={handleSave}>
       Salvar Endereço
-      <Check {...iconMdStyles} />
+      <Check {...iconMd} />
     </button>
   );
 };

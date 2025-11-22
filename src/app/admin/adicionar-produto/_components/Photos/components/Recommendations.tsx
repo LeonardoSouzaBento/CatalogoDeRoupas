@@ -1,5 +1,5 @@
 "use client";
-import { iconSmStyles } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/lucideIconStyles";
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ const Recommendations = () => {
           className={css.button}
           aria-label="Mostrar mais ou menos"
         >
-          {expanded ? <Minus {...iconSmStyles} /> : <Plus {...iconSmStyles} />}
+          {expanded ? <Minus {...iconSm} /> : <Plus {...iconSm} />}
         </button>
       </div>
 

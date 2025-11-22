@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState } from "react";
 
@@ -22,9 +22,9 @@ const Property = ({
         {name}
         <div className={`wrapper-icon`}>
           {seeOptions ? (
-            <ChevronDown {...iconMdStyles} />
+            <ChevronDown {...iconMd} />
           ) : (
-            <ChevronUp {...iconMdStyles} />
+            <ChevronUp {...iconMd} />
           )}
         </div>
       </button>

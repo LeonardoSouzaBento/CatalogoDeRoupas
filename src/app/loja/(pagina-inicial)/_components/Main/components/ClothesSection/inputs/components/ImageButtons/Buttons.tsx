@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { CloudUpload } from "lucide-react";
 
 const css = {
@@ -21,13 +21,13 @@ const Buttons = ({ mainImage = true }: { mainImage?: boolean }) => {
       <button onClick={uploadImage} className={`${css.button}`}>
         Subir imagem menor
         <div className={`${css.wrapperIcon}`}>
-          <CloudUpload {...iconMdStyles} />
+          <CloudUpload {...iconMd} />
         </div>
       </button>
       <button onClick={uploadImage} className={`${css.button}`}>
         Subir imagem principal
         <div className={`${css.wrapperIcon}`}>
-          <CloudUpload {...iconMdStyles} />
+          <CloudUpload {...iconMd} />
         </div>
       </button>
     </div>

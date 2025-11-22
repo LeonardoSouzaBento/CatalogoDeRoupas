@@ -1,5 +1,5 @@
 "use client";
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { Mail } from "lucide-react";
 import { buttonStyles } from "../page";
@@ -18,7 +18,7 @@ const ButtonLoginEmail = ({
       }}
     >
       <div className="wrapper-icon">
-        <Mail {...iconMdStyles} />
+        <Mail {...iconMd} />
       </div>
       Login com email
     </button>

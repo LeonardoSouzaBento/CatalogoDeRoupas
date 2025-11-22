@@ -12,29 +12,19 @@ purple: #7E1FAC
   box-shadow: 0 8px 24px -6px hsla(329, 20%, 30%, 0.094);
 }
 
-/* icones  */
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "GRAD" 0;
-}
-.line-span {
-  @apply [font-variation-settings:'FILL'_0];
-}
-.zoom-in-span {
-  @apply scale-110;
-}
-.zoom-out-span {
-  @apply scale-90;
-}
-
 .wrapper-icon {
   @apply h-full min-w-max flex items-center justify-center;
 }
 
 /* divs */
-.basic-card-style {
+.card-styles {
   @apply bg-white shadow-soft hover:shadow-soft-hover px-6 pt-3.5 pb-7 mb-5 
-  rounded-lg box-border transition-shadow duration-200;
+  rounded-lg box-border transition-shadow duration-200 overflow-hidden relative;
 }
+.card-shadow {
+ @apply shadow-soft hover:shadow-soft-hover;
+}
+
 
 /* hs */
 .home-h1 {

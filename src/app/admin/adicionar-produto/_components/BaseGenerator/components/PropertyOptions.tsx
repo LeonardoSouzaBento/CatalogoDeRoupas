@@ -7,7 +7,7 @@ const css = {
   container: `bg-white bs p-5 mb-5`,
   title: `text-blue-600 font-medium mb-4.5 md-p tracking-wide uppercase leading-none!`,
   wrapperOptions: `flex flex-wrap gap-4`,
-  optionButton: `
+  optionButton: ` text-[1.00em]
     px-5 rounded-full bs shadow-soft-soft
     text-gray-800 font-normal bg-white
     hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600

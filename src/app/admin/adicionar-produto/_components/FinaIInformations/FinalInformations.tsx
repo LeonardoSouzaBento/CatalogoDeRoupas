@@ -3,19 +3,21 @@ import DescriptionInput from "./components/DescriptionInput";
 import SizeSelector from "./components/SizeSelector";
 import CompositionEditor from "./components/CompositionEditor";
 import { HeaderCard } from "@/app/loja/_ui";
+import CardWrapper from "@/app/loja/_ui/CardWrapper";
 
 const FinalInformations = () => {
   return (
-    <div className={`basic-card-style max-w-3xl lg:max-w-4xl mx-auto`}>
+    <CardWrapper>
       <HeaderCard
+        wrapperTitleStyles="gap-[5px]!"
         title="Demais informações"
         icon="edit_note"
-        spanStyles="font-medium! text-[1.277em]!"
+        iconStyles="font-medium!"
       />
       <CompositionEditor />
       <SizeSelector />
       <DescriptionInput />
-    </div>
+    </CardWrapper>
   );
 };
 

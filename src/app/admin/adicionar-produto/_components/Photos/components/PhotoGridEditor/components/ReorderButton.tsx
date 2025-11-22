@@ -1,4 +1,4 @@
-import { gray800, iconMdStyles } from "@/app/lucideIconStyles";
+import { gray800, iconMd } from "@/app/lucideIconStyles";
 import { BooleanSetter, Photo } from "@/types/types";
 import { Layers2, X } from "lucide-react";
 import React from "react";
@@ -45,10 +45,10 @@ const ReorderButton = ({
 
       <div className="wrapper-icon">
         {reorderMode ? (
-          <X {...iconMdStyles} color="blue" />
+          <X {...iconMd} color="blue" />
         ) : (
           <Layers2
-            {...iconMdStyles}
+            {...iconMd}
             color={isDisabled ? "#a1a1a1" : gray800}
           />
         )}

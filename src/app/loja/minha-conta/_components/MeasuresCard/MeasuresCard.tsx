@@ -1,6 +1,6 @@
 import React from "react";
 import MeasureItem from "./MeasureItem";
-import { iconMdStyles, iconSmStyles } from "@/app/lucideIconStyles";
+import { iconMd, iconSm } from "@/app/lucideIconStyles";
 import type { Measure } from "./MeasureItem";
 import { Pen, CircleQuestionMark } from "lucide-react";
 import AlertInfo from "@ui/AlertInfo";
@@ -10,7 +10,8 @@ import { UserData } from "@/types/types";
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
 const css = {
-  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col max-[375px]:border-b-0! bs border-r-0! mb-5 br-md crop`,
+  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col 
+  bs max-[375px]:border-b-transparent! mb-5 br-md crop`,
 };
 
 const MeasuresCard = ({ userData }: { userData: UserData }) => {
@@ -22,7 +23,7 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
 
   return (
     <>
-      <HeaderCard title="Minhas medidas" icon="square_foot" spanStyles="text-[1.3em]!" />
+      <HeaderCard title="Minhas medidas" icon="square_foot" iconStyles="mb-[1.5px] span21" />
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
       <table className="w-full">
         <tbody className={`${css.wrapper}`}>
@@ -33,12 +34,12 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
       </table>
       <button className="button max-[375px]:text-left mb-5 w-full">
         <div className="wrapper-icon">
-          <CircleQuestionMark {...iconMdStyles} />
+          <CircleQuestionMark {...iconMd} />
         </div>
         Ver Guia De Medidas
       </button>
       <button className="button max-[375px]:text-left w-full">
-        <Pen {...iconSmStyles} /> Atualizar Minhas Medidas
+        <Pen {...iconSm} /> Atualizar Minhas Medidas
       </button>
     </>
   );

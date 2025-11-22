@@ -1,11 +1,16 @@
-import { HeaderCard } from "../../_ui"
+import { HeaderCard } from "../../_ui";
 
 const FavoritesCard = () => {
   return (
     <>
-    <HeaderCard title="Meus favoritos" icon="bookmark_heart" spanStyles="text-[1.28em]!"/>
+      <HeaderCard
+        title="Meus favoritos"
+        titleStyles="-ml-[2.5px]"
+        icon="bookmark_heart"
+        iconStyles="span21 -ml-2.5"
+      />
     </>
-  )
-}
+  );
+};
 
-export default FavoritesCard
+export default FavoritesCard;

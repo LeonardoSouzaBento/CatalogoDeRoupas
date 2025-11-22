@@ -5,6 +5,14 @@ substituir ocorrencias em arquivos.ts
 (Get-Content 'src/data/home/homeData.ts') -replace 'Lorem ipsum, dolor sit amet consectetur adipisicing', 'Lorem ipsum sit amet consec' |
 Set-Content 'src/data/home/homeData.ts'
 
+/* trocar aspas duplas por barsticks em classes */
+
+Get-ChildItem -Recurse -Filter *.tsx | ForEach-Object {
+    (Get-Content $_.FullName) `
+    -replace 'className="([^"]*)"', 'className={`$1`}' |
+    Set-Content $_.FullName
+}
+
 /* para varios arquivos */
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse |
@@ -19,6 +27,14 @@ Get-ChildItem -Path . -Recurse |
 Where-Object { $_.Extension -match '^\.(ts|tsx)$' } |
 ForEach-Object {
     (Get-Content $_.FullName) -replace 'soft-shadow', 'shadow-soft' |
+    Set-Content $_.FullName
+}
+
+/* referenciando varias strings */
+
+Get-ChildItem -Recurse -Filter *.tsx |
+ForEach-Object {
+    (Get-Content $_.FullName) -replace 'text-(sm|md|lg|2xl|3xl|4xl)', '' |
     Set-Content $_.FullName
 }
 

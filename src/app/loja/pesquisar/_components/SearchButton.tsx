@@ -1,4 +1,4 @@
-import { iconMdStyles } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/lucideIconStyles";
 import { Search } from "lucide-react";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ const SearchButton = () => {
           className={`${css.input} input`}
         />
         <Link href={"/loja/produto/"} className={`${css.wrraperIcon}`}>
-          <Search {...iconMdStyles} />
+          <Search {...iconMd} />
         </Link>
       </button>
     </div>
