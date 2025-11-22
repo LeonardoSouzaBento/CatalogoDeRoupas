@@ -1,3 +1,4 @@
+"use client"
 import { StateSetter } from "@/types/types";
 import { useEffect, useRef } from "react";
 
