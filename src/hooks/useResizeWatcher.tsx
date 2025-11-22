@@ -2,13 +2,14 @@
 import { StateSetter } from "@/types/types";
 import { useEffect, useRef } from "react";
 
-export function useResizeWatcher(
-  setWasResize: StateSetter<number>
-) {
-  const windowWidthInitialRef = useRef<number>(window.innerWidth);
+export function useResizeWatcher(setWasResize: StateSetter<number>) {
+  const windowWidthInitialRef = useRef<number | null>(null);
   const resizeDowntime = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    // Agora é seguro acessar window
+    windowWidthInitialRef.current = window.innerWidth;
+
     function handleResize() {
       if (resizeDowntime.current) {
         clearTimeout(resizeDowntime.current);
@@ -17,7 +18,9 @@ export function useResizeWatcher(
       resizeDowntime.current = setTimeout(() => {
         const widthOfWindow = window.innerWidth;
 
-        if (widthOfWindow !== windowWidthInitialRef.current) {
+        if (windowWidthInitialRef.current !== null &&
+            widthOfWindow !== windowWidthInitialRef.current) {
+
           setWasResize((prev) => prev + 1);
           windowWidthInitialRef.current = widthOfWindow;
         }
