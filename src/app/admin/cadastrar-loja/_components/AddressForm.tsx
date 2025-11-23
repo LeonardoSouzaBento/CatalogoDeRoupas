@@ -116,7 +116,7 @@ const AddressForm = ({
                 }}
                 onChange={handleChange}
                 className={`${css.input} ${
-                  index === inputs.length - 1 ? "!mb-0" : ""
+                  index === inputs.length - 1 ? "mb-0!" : ""
                 }`}
               />
             </div>
@@ -126,7 +126,7 @@ const AddressForm = ({
 
       <SaveButton
         text="Salvar endereço"
-        asyncFunction={handleSaveAddress}
+        Function={handleSaveAddress}
         styles="mb-5"
       />
 

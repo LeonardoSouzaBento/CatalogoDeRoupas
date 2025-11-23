@@ -44,7 +44,7 @@ const ShopNameInput = ({
           onChange={(e) => setInputValue(e.target.value)}
         />
 
-        <SaveButton asyncFunction={handleEdit} />
+        <SaveButton Function={handleEdit} />
       </div>
     </div>
   );

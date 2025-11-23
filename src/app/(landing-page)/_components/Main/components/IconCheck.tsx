@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 
 const css = {
   wrapperIcon:
-    "min-w-7 h-7 br-50 inline-flex items-center justify-center bg-[#E8F9EE]",
+    "min-w-6 h-6 br-50 inline-flex items-center justify-center bg-[#E8F9EE]",
   fullPlanStyle: "!min-w-6 !h-6 !bg-yellow-400",
 };
 

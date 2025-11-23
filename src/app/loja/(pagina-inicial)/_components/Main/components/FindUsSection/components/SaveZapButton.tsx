@@ -51,6 +51,6 @@ const SaveZapButton = ({
     }
   }
 
-  return <SaveButton text="Salvar Whatsapp" asyncFunction={handleSave} />;
+  return <SaveButton text="Salvar Whatsapp" Function={handleSave} />;
 };
 export default SaveZapButton;

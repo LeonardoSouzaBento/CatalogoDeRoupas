@@ -118,7 +118,7 @@ const PersonalForm = () => {
           </div>
         ))}
       </form>
-      <SaveButton asyncFunction={handleSaveShopkeeper} />
+      <SaveButton Function={handleSaveShopkeeper} />
     </div>
   );
 };

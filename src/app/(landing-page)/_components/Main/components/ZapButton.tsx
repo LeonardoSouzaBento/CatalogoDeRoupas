@@ -1,11 +1,11 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const css = {
-  button: `h-13 w-full max-w-86 gap-3 px-6 rounded-2xl bg-white/8 border-[2px] border-white/64 
-  cursor-pointer hover:bg-white/93 hover:text-[#A21E92] hover:font-semibold transition-all duration-200 
-  text-white  font-medium leading-5 text-[1.085714em] relative
+  button: `h-13 w-full max-w-86 gap-2.5 px-6 rounded-2xl bg-white/8 border-[2px] border-white/64 
+  cursor-pointer hover:bg-white/90 hover:text-[#A21E92] font-semibold transition-all duration-200 
+  text-white  font-medium leading-5 text-[1.028571em] relative
   `,
 };
 
@@ -19,18 +19,28 @@ function handleOpenChat() {
 }
 
 const ZapButton = ({ hideInMobile = false }: { hideInMobile?: boolean }) => {
+  const [hover, setHover] = useState<boolean>(false);
+
   return (
     <button
       onClick={handleOpenChat}
+      onMouseEnter={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
       className={`${css.button} ${
         hideInMobile ? "hidden sm:centralize" : "centralize sm:hidden"
       }`}
     >
       <Image
-        src="/home/whatsapp.png"
+        src={
+          !hover ? "/icons/white-whatsapp.png" : "/icons/purple-whatsapp.png"
+        }
         alt="Logo do Whatsapp"
-        width={22.5}
-        height={22.5}
+        width={22}
+        height={22}
       />
       Fale Conosco
     </button>

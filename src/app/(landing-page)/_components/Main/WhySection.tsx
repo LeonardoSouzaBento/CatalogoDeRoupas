@@ -45,8 +45,8 @@ const content = [
 
 export const TextContent = () => {
   const css = {
-    wrapperP: "flex gap-4 items-start mb-6 sm:max-w-142 md:max-w-full m-auto",
-    p: `-mt-[7px] leading-8 p-landing-page`,
+    wrapperP: "flex gap-3 items-start mb-6 sm:max-w-142 md:max-w-full m-auto",
+    p: `-mt-[7px] leading-8 p185`,
     strong: "font-semibold",
     wrapperIcon:
       "inline-flex items-center justify-center bg-[#E8F9EE] p-1 br-sm",
@@ -57,7 +57,7 @@ export const TextContent = () => {
       {content.map((item) => (
         <div className={`${css.wrapperP}`} key={item.id}>
           <div className="w-8 h-8 flex items-start justify-center box-border mb-1">
-            <item.icon color="#DF2080" strokeWidth={2.2} size={23.5} />
+            <item.icon color="#DF2080" strokeWidth={2.1} size={24} />
           </div>
           <p className={`${css.p}`}>
             {item.text} <IconCheck />

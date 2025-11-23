@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonChat from "@ui/ButtonChat";
+import ZapFixedButton from "@/app/loja/_ui/ZapFixedButton";
 import TitlePage from "@ui/TitlePage";
 import { HeaderCard } from "../_ui";
 import NoClothesAlert from "./_components/NoClothesAlert";
@@ -22,7 +22,7 @@ const Favoritos = (): React.ReactElement => {
 
           <NoClothesAlert />
         </div>
-        <ButtonChat />
+        <ZapFixedButton />
       </div>
     </>
   );

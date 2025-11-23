@@ -6,7 +6,7 @@ const SaveMapButton = ({ inputValue } : { inputValue: string }) => {
     console.log(inputValue);
   }
   return (
-    <SaveButton text="Salvar mapa" asyncFunction={handleSave}/>
+    <SaveButton text="Salvar mapa" Function={handleSave}/>
   );
 };
 

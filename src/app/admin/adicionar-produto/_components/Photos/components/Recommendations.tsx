@@ -7,7 +7,7 @@ const css = {
   wrapper: `relative p-4 flex br-md text-left overflow-hidden bg-gray-50`,
   wrapperTitle: `min-h-10 flex justify-between items-end gap-2 sm:gap-0 mb-1 box-border pb-3`,
   title: `w-full text-left font-semibold`,
-  p: `small-p text-gray-700 transition-all duration-300`,
+  p: `p165 text-gray-700 transition-all duration-300`,
   highlight: `font-medium text-gray-900`,
   button: `size-9 centralize px-0 br-50 text-gray-500 
   hover:text-gray-700 trans white-button shadow-soft-hover`,

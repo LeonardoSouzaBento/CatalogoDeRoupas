@@ -54,8 +54,8 @@ body::-webkit-scrollbar {
   --shadow-light-medium: 0 8px 20px -6px hsla(330, 35%, 90%, 0.22);
   /* sombras coloridas */
   --shadow-accent: 0 4px 14px -5px hsla(25, 70%, 40%, 0.25); /* laranja queimado */
-  --shadow-green-soft: 0 6px 20px -8px hsla(160, 30%, 25%, 0.18); /* verde-pinho */
-  
+  --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
+
   --color-female-pink: hsl(332, 100%, 39%);
 }
 

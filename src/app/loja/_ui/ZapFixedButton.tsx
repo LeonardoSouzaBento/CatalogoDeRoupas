@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 
-const ButtonChat = () => {
+const ZapFixedButton = () => {
   const css = {
-    wrapper: `h-12 w-12 box-border bg-white centralize br-50 fixed bottom-4 right-4 
-    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-110 fast-trans`,
+    wrapper: `size-11 box-border bg-green-600 centralize br-lg fixed bottom-4 right-4 
+    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] fast-trans shadow-green-soft`,
   };
 
   function handleOpenChat() {
@@ -20,15 +20,14 @@ const ButtonChat = () => {
     <div className={`${css.wrapper}`} onClick={handleOpenChat}>
       <div className={`size-max centralize relative mb-[0.5px] ml-[1.5px]`}>
         <Image
-          src={`/icons/whatsapp(1).png`}
-          height={24}
-          width={24}
+          src={`/icons/white-whatsapp.png`}
+          height={26}
+          width={26}
           alt="imagem do whatssap"
-          className={`contrast-125`}
         />
       </div>
     </div>
   );
 };
 
-export default ButtonChat;
+export default ZapFixedButton;

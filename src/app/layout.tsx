@@ -23,9 +23,10 @@ export const metadata: Metadata = {
   description: "Crie seu catálogo de roupas online",
 };
 
+//novo tamanho base: 17.5px
 const fontStyles = `font-dm-sans text-gray-800 
  text-[1.09375em] sm:text-[1.11205em] md:text-[1.12089em] lg:text-[1.13857em] 
- xl:text-[1.15625em] 2xl:text-[1.17393em]`; //novo tamanho base: 17.5px
+ xl:text-[1.15625em] 2xl:text-[1.17393em]`; 
 
 export default function RootLayout({
   children,
@@ -33,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
+    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable} `}>
       <PublicDataProvider>
         <UserProvider>
           <body className={`${fontStyles} bg-gray-50`}>{children}</body>

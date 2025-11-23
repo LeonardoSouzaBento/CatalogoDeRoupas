@@ -13,7 +13,7 @@ const css = {
   wrapper: `flex flex-wrap gap-3`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
   bg-white br-50 shadow-soft-soft bs`,
-  button: `small-p size-8 centralize px-0 br-50 text-red-500 hover:underline `,
+  button: `p165 size-8 centralize px-0 br-50 text-red-500 hover:underline `,
 };
 
 const AddedProperties = ({
@@ -58,7 +58,7 @@ const AddedProperties = ({
           (item) =>
             item.value && (
               <div key={item.label} className={`${css.wrapperButton}`}>
-                <span className={`capitalize text-gray-800 small-p`}>
+                <span className={`capitalize text-gray-800 p165`}>
                   {item.label}:{" "}
                   <strong className={`font-semibold tracking-wide`}>
                     {item.value}

@@ -5,9 +5,9 @@ const css = {
   divLogo: "w-full min-h-21 pb-1 centralize flex-col relative z-4 rounded-none",
   normalBackground: "bg-stone-800 ",
   pLogo:
-    "leading-none mb-1 font-logo text-white text-[1.54285em]",
+    "leading-none mb-1 font-logo text-white text-[1.542857em]",
   pSubtitle:
-    "leading-none text-white !font-thin text-[1.02857em]",
+    "leading-none text-white !font-thin p18",
   landingPageStyles: "abso bg-gradient-to-b from-stone-800/25 to-transparent",
 };
 

@@ -100,7 +100,7 @@ const ItemLIst = ({
 }): React.ReactElement => {
   return (
     <li
-      className={`flex gap-3 py-2 px-1 p-landing-page ${fullPlan && "!text-white"}`}
+      className={`flex gap-3 py-2 px-1 p185 ${fullPlan && "!text-white"}`}
     >
       <IconCheck section={fullPlan ? "plansSection" : ""} /> {text}
     </li>

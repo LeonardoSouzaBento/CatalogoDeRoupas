@@ -5,19 +5,17 @@ import { CircleCheckBig } from "lucide-react";
 interface Props {
   text?: string;
   styles?: string;
-  defaultFunction?: () => void;
-  asyncFunction?: () => Promise<void>;
+  Function?: () => Promise<void>;
 }
 
 const SaveButton = ({
   text = "Salvar",
   styles,
-  defaultFunction,
-  asyncFunction,
+  Function,
 }: Props) => {
   return (
     <button
-      onClick={defaultFunction || asyncFunction}
+      onClick={Function}
       className={`w-full ${styles}`}
     >
       {text}

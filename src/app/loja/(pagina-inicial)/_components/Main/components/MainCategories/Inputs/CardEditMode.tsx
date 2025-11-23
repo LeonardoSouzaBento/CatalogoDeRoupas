@@ -84,7 +84,7 @@ const CardEditMode = ({
       </div>
       <SaveButton
         text="salvar alterações"
-        asyncFunction={handleSaveCat}
+        Function={handleSaveCat}
         styles="mb-1"
       />
       <BackButton setState={setCardEditMode} />

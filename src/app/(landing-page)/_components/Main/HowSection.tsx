@@ -53,7 +53,7 @@ const Messages = () => {
       "h-7 min-w-7 flex justify-center items-center rounded-[50%] bg-[#DF2080]",
     pNumber:
       "!text-white font-semibold  text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
-    p: `-mt-[1px] p-landing-page`,
+    p: `-mt-[1px] p185`,
     wrapperIcon: "inline-flex items-end justify-center box-border mt-1 mr-2",
   };
 

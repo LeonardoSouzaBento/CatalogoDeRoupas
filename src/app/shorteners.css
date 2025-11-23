@@ -8,9 +8,14 @@
 }
 
 /* tamanhos de fonte */
-
+.p16 {
+ @apply text-[0.914286em];
+}
 .p165 {
- @apply text-[0.94285em];
+ @apply text-[0.942857em];
+}
+.p17 {
+ @apply text-[0.971429em];
 }
 .p175 {
  @apply text-[1.00em];
@@ -20,6 +25,9 @@
 }
 .p185 {
  @apply text-[1.05714em];
+}
+.p19 {
+ @apply text-[1.085714em];
 }
 .p195 {
  @apply text-[1.11428em];

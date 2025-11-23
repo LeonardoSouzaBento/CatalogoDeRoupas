@@ -1,5 +1,27 @@
 substituir ocorrencias em arquivos.ts
 
+$path = "src/app/loja/_ui/FavoriteButton.tsx"
+
+# lê tudo
+$content = Get-Content $path -Raw
+
+# encontra o bloco da const css
+$cssBlock = [regex]::Match($content, '(?s)const\s+css\s*=\s*{.*?}').Value
+
+if ($cssBlock) {
+    # substitui apenas "texto" → `texto`
+    $fixedBlock = $cssBlock -replace '"([^"]*)"', '`$1`'
+
+    # substitui o bloco antigo pelo novo
+    $newContent = $content.Replace($cssBlock, $fixedBlock)
+
+    # salva
+    Set-Content $path $newContent
+}
+else {
+    Write-Host "Bloco 'const css' não encontrado."
+}
+
 /* exemplo para um arquivo */
 
 (Get-Content 'src/data/home/homeData.ts') -replace 'Lorem ipsum, dolor sit amet consectetur adipisicing', 'Lorem ipsum sit amet consec' |
@@ -17,7 +39,7 @@ Get-ChildItem -Recurse -Filter *.tsx | ForEach-Object {
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse |
 ForEach-Object {
-    (Get-Content $_.FullName) -replace 'HomeDataContext', 'HomeContext' |
+    (Get-Content $_.FullName) -replace 'asyncFunction', 'Function' |
     Set-Content $_.FullName
 }
 

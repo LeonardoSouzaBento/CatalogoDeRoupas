@@ -82,7 +82,7 @@ const GenderButton = ({
       }}
       className={`${mainCss.button} ${selected && mainCss.selected}`}
     >
-      <p className={`small-p`}>{gender}</p>
+      <p className={`p165`}>{gender}</p>
     </button>
   );
 };

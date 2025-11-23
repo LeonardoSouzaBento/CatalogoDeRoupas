@@ -15,7 +15,7 @@ const AlertInfo = ({ text, styles }: { text: string; styles?: string }) => {
           priority_high
         </span>
       </div>
-      <p className="text-gray-700 small-p">{text}</p>
+      <p className="text-gray-700 p165">{text}</p>
     </div>
   );
 };

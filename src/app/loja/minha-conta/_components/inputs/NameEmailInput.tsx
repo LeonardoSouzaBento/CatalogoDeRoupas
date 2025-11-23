@@ -96,7 +96,7 @@ const NameEmailInput = ({
       {emailErrors && <p className={`${css.pError}`}>{emailErrors}</p>}
       <SaveButton
         text="Salvar Alterações"
-        asyncFunction={handleSaveNameEmail}
+        Function={handleSaveNameEmail}
         styles="mt-1"
       />
     </div>

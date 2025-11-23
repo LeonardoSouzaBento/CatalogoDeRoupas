@@ -1,6 +1,6 @@
 "use client";
 import { HomeDataProvider } from "@/contexts/Providers/HomeProvider";
-import ButtonChat from "@ui/ButtonChat";
+import ZapFixedButton from "@/app/loja/_ui/ZapFixedButton";
 import { useState } from "react";
 import ExitHomeEditButton from "../_ui/ExitHomeEditButton";
 import Footer from "./_components/Footer/Footer";
@@ -22,7 +22,7 @@ const Core = () => {
       <Main />
       <Footer />
       <ExitHomeEditButton />
-      <ButtonChat />
+      <ZapFixedButton />
     </HomeDataProvider>
   );
 };
