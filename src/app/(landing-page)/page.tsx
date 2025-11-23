@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className={`bg-gray-50`}>
       <LogoSection page="landing-page" />
       <main>
         {/* Seção principal */}
@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </div>
         {/* Seção dos planos */}
-        <div className="pb-9">
+        <div className={`pb-9`}>
           <TitleSubtitleSection
             title="Quanto Custa?"
             subtitle="Temos preços acessíveis"

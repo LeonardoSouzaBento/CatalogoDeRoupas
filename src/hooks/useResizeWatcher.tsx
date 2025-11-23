@@ -7,7 +7,7 @@ export function useResizeWatcher(setWasResize: StateSetter<number>) {
   const resizeDowntime = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    // Agora é seguro acessar window
+    // o window acessado aqui não causa erro
     windowWidthInitialRef.current = window.innerWidth;
 
     function handleResize() {
@@ -37,3 +37,4 @@ export function useResizeWatcher(setWasResize: StateSetter<number>) {
     };
   }, [setWasResize]);
 }
+

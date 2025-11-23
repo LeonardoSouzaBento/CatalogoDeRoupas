@@ -5,7 +5,7 @@ import Image from "next/image";
 const css = {
   button: `h-13 w-full max-w-86 gap-3 px-6 rounded-2xl bg-white/8 border-[2px] border-white/64 
   cursor-pointer hover:bg-white/93 hover:text-[#A21E92] hover:font-semibold transition-all duration-200 
-  text-white  font-medium leading-5 text-[1.050em] sm:text-[1.065em] md:text-[1.072em] lg:text-[1.086em] xl:text-[1.100em] 2xl:text-[1.114em] relative
+  text-white  font-medium leading-5 text-[1.085714em] relative
   `,
 };
 

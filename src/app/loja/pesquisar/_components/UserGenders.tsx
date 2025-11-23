@@ -21,9 +21,9 @@ const UserGenders = () => {
   } = useContext(UserContext);
 
   return (
-    <div className="px-2">
+    <div className={`px-2`}>
       <div className={`${mainCss.wrapper}`}>
-        <p className="mb-4 text-[1.033em]">Gênero:</p>
+        <p className={`mb-4 text-[1.033em]`}>Gênero:</p>
         <div className={`${mainCss.wrapperGenders}`}>
           {genders.map((item) => (
             <GenderButton
@@ -82,7 +82,7 @@ const GenderButton = ({
       }}
       className={`${mainCss.button} ${selected && mainCss.selected}`}
     >
-      <p className="small-p">{gender}</p>
+      <p className={`small-p`}>{gender}</p>
     </button>
   );
 };
@@ -126,3 +126,4 @@ const ChildButtons = ({
     </>
   );
 };
+
