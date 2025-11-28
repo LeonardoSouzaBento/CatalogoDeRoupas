@@ -14,7 +14,7 @@ const css = {
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",
   name: `block font-bold break-words text-gray-800 capitalize leading-none p20`,
   email: "block p18 leading-none break-all",
-  buttonEdit: "square-button p-0 br-md shadow-soft-small",
+  buttonEdit: "square-button p-0 br-md ",
 };
 
 

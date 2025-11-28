@@ -26,7 +26,7 @@ const Links = () => {
     <div className={`${css.wrapper}`}>
       {pageOptions.map((item) => (
         <div key={item.name} className={`${css.wrapperLink}`}>
-          <span className={`material-symbols-outlined ${item.iconStyles}`}>
+          <span className={`material-symbols-rounded ${item.iconStyles}`}>
             {item.icon}
           </span>
           <Link href={item.link} className={`${css.link}`}>

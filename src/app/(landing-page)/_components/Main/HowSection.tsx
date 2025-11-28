@@ -17,12 +17,12 @@ const HowSection = (): React.ReactElement => {
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperInfo}`}>
           <Messages />
-          <ButtonCall hideInMobile={true} specifStyles="justify-center" />
+          <ButtonCall hideInMobile={true} wrapperStyles="justify-center" />
         </div>
 
         <div className={`${css.wrapperImg}`}>
           <MainImage />
-          <ButtonCall specifStyles="justify-center" />
+          <ButtonCall wrapperStyles="justify-center" />
         </div>
       </div>
     </section>
@@ -47,12 +47,12 @@ const content = [
 
 const Messages = () => {
   const css = {
-    wrapper: "w-auto flex items-start gap-4 sm:flex-row",
+    wrapper: "w-auto flex items-start gap-3.5 sm:flex-row",
     wrapperP: "flex items-center",
     wrapperPNumber:
       "h-7 min-w-7 flex justify-center items-center rounded-[50%] bg-[#DF2080]",
     pNumber:
-      "!text-white font-semibold  text-[1.200em] sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
+      "!text-white font-semibold p20 sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
     p: `-mt-[1px] p185`,
     wrapperIcon: "inline-flex items-end justify-center box-border mt-1 mr-2",
   };

@@ -7,6 +7,7 @@ import BaseGenerator from "./_components/BaseGenerator/BaseGenerator";
 import FinalInformations from "./_components/FinaIInformations/FinalInformations";
 import Queuer from "./_components/Queuer/Queuer";
 import Result from "./_components/Result/Result";
+import SaveCard from "./_components/SaveCard";
 
 const Core = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(0);
@@ -18,11 +19,12 @@ const Core = () => {
       <GenderButtons />
       <BaseGenerator />
       <FinalInformations />
+      <Result />
       <Queuer
         selectedQuantity={selectedQuantity}
         setSelectedQuantity={setSelectedQuantity}
       />
-      <Result />
+      <SaveCard />
     </div>
   );
 };

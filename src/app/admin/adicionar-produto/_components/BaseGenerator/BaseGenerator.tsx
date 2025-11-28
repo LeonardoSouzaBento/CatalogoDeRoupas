@@ -91,6 +91,7 @@ const BaseGenerator = () => {
   return (
     <CardWrapper>
       <HeaderCard
+        wrapperStyles="border-none mb-0!"
         wrapperTitleStyles="gap-[5px]!"
         title="Informações básicas"
         subtitle="Selecione as caracteristicas principais (ou escolha uma roupa básica)"

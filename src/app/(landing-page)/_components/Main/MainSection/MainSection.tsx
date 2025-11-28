@@ -1,8 +1,8 @@
 import React from "react";
-import { ButtonCall, ZapButton } from "../components/index";
+import { ButtonCall } from "../components/index";
 import MainImage from "./ui/MainImage";
-import TitleSubtitle from "./ui/TitleSubtitle";
 import P from "./ui/P";
+import TitleSubtitle from "./ui/TitleSubtitle";
 
 const css = {
   mainSection: `h-auto w-full pt-26 sm:pt-25 md:pt-23 xl:pt-21 p-6 rounded-none 
@@ -22,12 +22,10 @@ const MainSection = (): React.ReactElement => {
           <TitleSubtitle />
           <P />
           <ButtonCall section="main" hideInMobile={true} />
-          <ZapButton />
         </div>
         <div className={`${css.wrapperImg}`}>
           <MainImage />
-          <ButtonCall section="main" specifStyles="justify-center" />
-          <ZapButton hideInMobile={true} />
+          <ButtonCall section="main" wrapperStyles="justify-center" />
         </div>
       </div>
     </section>

@@ -15,8 +15,10 @@ const Queuer = ({ selectedQuantity, setSelectedQuantity }: Props) => {
   return (
     <CardWrapper>
       <HeaderCard
+        icon="layers"
         title="Enfileirar produtos"
         subtitle="Fazer cópias editáveis desse produto"
+        iconStyles="span21"
       />
 
       <QuantitySelector

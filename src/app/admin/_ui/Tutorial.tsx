@@ -16,7 +16,7 @@ const css = {
   `,
   wrapperTitle: `flex justify-between gap-4 sm:justify-start`,
   button: `h-8 min-w-8 -mr-2 px-0 pt-px centralize bs
-  br-50 box-border trans white-button sm:order-[-1] sm:mt-1 sm:mr-0`,
+  br-50 box-border trans white-button sm:mt-1 sm:mr-0`,
   list: `flex flex-col j-start`,
   wrapperList: `w-full text-gray-700`,
   itemList: ` w-full min-h-10 hover:bg-blue-50 trans mb-0 cursor-default break-words`,
@@ -50,9 +50,10 @@ const Tutorial = ({ title, steps, listStyles, itemStyles }: Props) => {
         valueToFixHeight={10}
       >
         <HeaderCard
+          icon="info"
           title={`Saiba ${title}`}
           titleStyles="leading-7"
-          wrapperIconStyles="sm:hidden!"
+          iconStyles="span20 mt-px"
         />
       </ResizableDivTitle>
 

@@ -25,7 +25,7 @@ const page = () => {
       <div className={`${css.wrapper}`}>
         <div className={`max-w-3xl lg:max-w-4xl mx-auto`}>
           <AlertInfo
-            styles={`card-styles border-none p-6!`}
+            styles={`card-styles border-none p-6! bg-white!`}
             text={`Registre um tipo de peça de cada vez. Por exemplo: primeiro as camisetas básicas lisas,
                 depois as camisas polos, e assim por diante. Isso facilita o cadastro e evita confusão.`}
           />

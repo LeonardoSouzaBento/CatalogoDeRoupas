@@ -5,8 +5,7 @@ import Link from "next/link";
 
 const css = {
   wrapperButtonCall: "size-auto flex",
-  buttonCall:
-    `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center 
+  buttonCall: `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center 
     rounded-2xl bg-yellow-400 text-stone-800 font-semibold leading-5 
     cursor-pointer hover:bg-yellow-500 hover:scale-104 transition-all duration-200 
     text-[1.086em] shadow-accent`,
@@ -17,22 +16,24 @@ const iconStyles = { size: 20, strokeWidth: 2.3, color: "#802954" };
 const ButtonCall = ({
   text = "one",
   section,
-  specifStyles,
+  wrapperStyles,
+  buttonStyles,
   hideInMobile = false,
 }: {
   text?: string;
   section?: string;
-  specifStyles?: string;
+  wrapperStyles?: string;
+  buttonStyles?: string;
   hideInMobile?: boolean | null;
 }): React.ReactElement => {
   return (
     <div
-      className={`${css.wrapperButtonCall} ${specifStyles} ${
+      className={`${css.wrapperButtonCall} ${wrapperStyles} ${
         hideInMobile ? "hidden md:flex!" : "flex md:hidden!"
       }`}
     >
       <Link
-        className={`${css.buttonCall} ${text === "one" && "max-[374px]:gap-0"}`}
+        className={`${css.buttonCall} ${buttonStyles} ${text === "one" && "max-[374px]:gap-0"}`}
         href={text === "one" ? "/loja" : "/loja"}
       >
         {section === "main" && <ShoppingBag {...iconStyles} />}

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BasicClothingInformation, mappingPropToKey } from "@/types/types";
 
 const css = {
-  container: `bg-white bs p-5 mb-5`,
+  container: `p-5 bs bg-white border-b-transparent rounded-br-none rounded-bl-none`,
   title: `text-blue-600 font-medium mb-4.5 md-p tracking-wide uppercase leading-none!`,
   wrapperOptions: `flex flex-wrap gap-4`,
   optionButton: ` text-[1.00em]

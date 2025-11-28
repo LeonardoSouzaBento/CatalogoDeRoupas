@@ -20,13 +20,44 @@ const cookie = Cookie({
 
 export const metadata: Metadata = {
   title: "Roupas Online",
-  description: "Crie seu catálogo de roupas online",
+  description: "Veja um catálogo de roupas online",
+  keywords: ["roupas online", "catálogo de roupas", "roupas"],
+  authors: [{ name: "Roupas Online", url: "https://leopetshop.netlify.app" }],
+
+  icons: {
+    icon: "/favicon.ico",
+  },
+
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#292524" },
+    { media: "(prefers-color-scheme: dark)", color: "#292524" },
+  ],
+
+  openGraph: {
+    title: "Roupas Online",
+    description: "Veja um catálogo de roupas online",
+    type: "website",
+    url: "https://leopetshop.netlify.app",
+    images: ["/shop-logo-colorfull.png"],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@RoupasOnline",
+    images: ["/shop-logo-colorfull.png"],
+  },
 };
 
 //novo tamanho base: 17.5px
 const fontStyles = `font-dm-sans text-gray-800 
  text-[1.09375em] sm:text-[1.11205em] md:text-[1.12089em] lg:text-[1.13857em] 
- xl:text-[1.15625em] 2xl:text-[1.17393em]`; 
+ xl:text-[1.15625em] 2xl:text-[1.17393em]`; //17,5 até 18,5 em xl
 
 export default function RootLayout({
   children,
@@ -35,11 +66,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable} `}>
-      <PublicDataProvider>
-        <UserProvider>
-          <body className={`${fontStyles} bg-gray-50`}>{children}</body>
-        </UserProvider>
-      </PublicDataProvider>
+      <body className={`bg-gray-50 `}>
+        <PublicDataProvider>
+          <UserProvider>
+            <div className={`${fontStyles}`}>{children}</div>
+          </UserProvider>
+        </PublicDataProvider>
+      </body>
     </html>
   );
 }

@@ -1,15 +1,16 @@
 // ProductTable.tsx
 "use client";
 import React, { useMemo } from "react";
+import TablePart from "./TablePart";
 
 const css = {
-  container: `rounded-md `,
-  grid: `p-5 grid grid-cols-1 sm:grid-cols-2 crop br-md bs`,
+  grid: `px-5 py-2 grid grid-cols-1 sm:grid-cols-2 crop br-md bs`,
   wrapper: `bg-white br-0 `,
-  row: `h-9 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
+  row: `h-9.5 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
   br-0`,
-  label: `text-sm font-semibold text-gray-800 w-40`,
-  value: `text-sm text-gray-700 flex-1 text-right br-0`,
+  label: `p16 font-medium text-gray-800 w-40`,
+  value: `text-gray-700 flex-1 text-right br-0`,
+  voidValue: `font-semibold text-gray-400 text-right`,
 };
 
 type Field = {
@@ -65,34 +66,19 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({
   );
 
   return (
-    <div className={css.container}>
-      <div className={css.grid}>
-        {/* Coluna 1 */}
-        <div className={`${css.wrapper} border-b bs-color 
-        sm:border-b-0 sm:pr-4`}>
-          {items.map((item, i) =>
-            col1.map((f) => (
-              <div key={f.key + i} className={css.row}>
-                <span className={css.label}>{f.label}</span>
-                <span className={css.value}>{item[f.key] || "—"}</span>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Coluna 2 */}
-        <div className={`${css.wrapper} sm:border-l sm:border-gray-300
-        sm:pl-4`}>
-          {items.map((item, i) =>
-            col2.map((f) => (
-              <div key={f.key + i} className={css.row}>
-                <span className={css.label}>{f.label}</span>
-                <span className={css.value}>{item[f.key] || "—"}</span>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
+    <div className={css.grid}>
+      <TablePart
+        items={items}
+        fields={col1}
+        wrapperClass={`border-b bs-color 
+            sm:border-b-0 sm:pr-4`}
+      />
+      <TablePart
+        items={items}
+        fields={col2}
+        wrapperClass={`sm:border-l sm:border-gray-300
+        sm:pl-4`}
+      />
     </div>
   );
 };

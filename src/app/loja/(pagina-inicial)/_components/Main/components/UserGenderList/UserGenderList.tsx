@@ -62,7 +62,7 @@ const UserGenderList = (): React.ReactElement => {
                   css.selected
                 } ${fastReturn === item.name && "scale-106"}`}
               >
-                <span className={`material-symbols-outlined span22`}>
+                <span className={`material-symbols-rounded span22`}>
                   {item.icon}
                 </span>
                 {item.name}
@@ -78,7 +78,7 @@ const UserGenderList = (): React.ReactElement => {
               fastReturn === "infantil" && "scale-106"
             }`}
           >
-            <span className="material-symbols-outlined">boy</span> infantil
+            <span className="material-symbols-rounded">boy</span> infantil
           </button>
           {childCatSelected && <ChildGenderButtons />}
         </div>

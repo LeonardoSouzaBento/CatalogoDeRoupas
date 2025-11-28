@@ -6,7 +6,7 @@ import { useContext } from "react";
 const mainCss = {
   wrapper: `br-0 py-6`,
   wrapperGenders: "flex flex-wrap gap-4",
-  selected: `bs bg-white hover:shadow-soft-soft hover:bg-white shadow-soft-small`,
+  selected: `bs bg-white hover:shadow-soft-soft hover:bg-white `,
   button: `h-10 max-[375px]:min-w-1/2 min-[375px]:min-w-none centralize bg-gray-50 hover:bg-gray-100 font-normal`,
 };
 

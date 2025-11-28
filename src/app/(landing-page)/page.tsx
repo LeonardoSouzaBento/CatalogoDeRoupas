@@ -1,3 +1,4 @@
+import { ZapFixedButton } from "../loja/_ui";
 import LogoSection from "./_components/LogoSection";
 import { TitleSubtitleSection } from "./_components/Main/components";
 import {
@@ -16,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`bg-gray-50`}>
+    <div>
       <LogoSection page="landing-page" />
       <main>
         {/* Seção principal */}
@@ -50,6 +51,7 @@ export default function Home() {
           <PlansSection />
         </div>
       </main>
+      <ZapFixedButton myNumber={true}/>
     </div>
   );
 }

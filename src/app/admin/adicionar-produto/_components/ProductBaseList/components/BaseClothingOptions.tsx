@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 
 const css = {
   wrapperButtons: `flex flex-wrap gap-4 mb-6`,
-  button: `br-50 light-button font-normal px-5 light-button hover:border-gray-400
+  button: `p175 br-50 light-button font-normal px-6 light-button hover:border-gray-400
     focus:outline-none focus:ring-2 focus:ring-blue-400
     transition-all duration-150 relative max-[400px]:w-full sm:min-w-60`,
   selected: `ring-style`,

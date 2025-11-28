@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "material-symbols/outlined.css";
+@import "material-symbols/rounded.css";
 
 /* 
 sm	 (640px)
@@ -37,7 +37,6 @@ body::-webkit-scrollbar {
   --shadow-soft-soft: 0 4px 8px -4px hsla(330, 23%, 30%, 0.11);
   --shadow-soft-hover: 0 4px 16px -7px hsla(330, 20%, 67%, 0.6);
   --shadow-soft-hover-dark: 0 4px 16px -7px hsla(340, 82%, 61%, 0.6);
-  --shadow-soft-small: 0 8px 26px -10px hsla(330, 20%, 30%, 0.15);
   --shadow-special-selections: inset 0 8px 24px -6px hsl(0, 0%, 100%),
     inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
   /* sombras leves */
@@ -55,13 +54,12 @@ body::-webkit-scrollbar {
   /* sombras coloridas */
   --shadow-accent: 0 4px 14px -5px hsla(25, 70%, 40%, 0.25); /* laranja queimado */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
-
   --color-female-pink: hsl(332, 100%, 39%);
 }
 
 body {
   width: 100%;
-  max-width: 1390px;
+  max-width: 1400px;
   min-height: 100vh;
   margin: auto;
   position: relative;
@@ -70,7 +68,7 @@ p {
   cursor: default;
 }
 
-.material-symbols-outlined {
+.material-symbols-rounded {
   font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
 }
 .line-span {
@@ -109,20 +107,17 @@ div::-webkit-scrollbar {
   textarea {
     @apply focus:outline-none font-light text-neutral-950 bg-neutral-100;
   }
-  .span {
-    @apply text-[#c91d73];
-  }
-
   button,
   a {
-    @apply leading-none font-medium capitalize transition-[background-color] text-[1.02857em] duration-200 cursor-pointer rounded-md
+    @apply leading-none font-medium capitalize transition-[background-color] text-[1.0285715em] duration-200 cursor-pointer rounded-md
     flex justify-start items-center gap-3 h-10 w-auto bg-gray-100 hover:bg-gray-200 px-6;
   }
   label {
-    @apply capitalize block size-max mb-2 font-normal text-gray-800;
+    @apply capitalize block size-max mb-2 font-normal;
   }
+  /* input tem cor mais forte devido ao fundo cinza */
   input {
-    @apply block w-full h-10 pl-[13px] text-[1.033em] text-neutral-900 bg-neutral-100 border-none rounded-md box-border focus:outline-none;
+    @apply block w-full h-10 pl-[13px] text-[1.314286em] text-neutral-900 bg-neutral-100 border-none rounded-md box-border focus:outline-none;
   }
   img {
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;

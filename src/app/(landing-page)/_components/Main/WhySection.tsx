@@ -15,12 +15,12 @@ const WhySection = (): React.ReactElement => {
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperInfo}`}>
           <TextContent />
-          <ButtonCall specifStyles="justify-center" hideInMobile={true} />
+          <ButtonCall wrapperStyles="justify-center" hideInMobile={true} />
         </div>
 
         <div className={`${css.wrapperImg}`}>
           <MainImage />
-          <ButtonCall specifStyles="justify-center" />
+          <ButtonCall wrapperStyles="justify-center" />
         </div>
       </div>
     </section>

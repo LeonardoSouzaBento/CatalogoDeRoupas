@@ -41,13 +41,13 @@ const AdministrationOptions = () => {
             setHomeEditMode(true);
           }}
         >
-          <span className="material-symbols-outlined span20 -ml-[1px]">edit</span>
+          <span className="material-symbols-rounded span20 -ml-[1px]">edit</span>
           Editar esta página
         </button>
         {optionButtons.map((item) => (
           <Link key={item.name} className={`${css.button}`} href={item.url}>
             {/* <item.icon {...item.iconStyle} /> */}
-            <span className={`material-symbols-outlined ${item.iconStyles}`}>{item.icon}</span>
+            <span className={`material-symbols-rounded ${item.iconStyles}`}>{item.icon}</span>
             {item.name}
           </Link>
         ))}

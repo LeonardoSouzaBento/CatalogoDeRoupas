@@ -4,14 +4,14 @@ import { iconMd } from "@/app/lucideIconStyles";
 import { ClothingProperty, StateSetter } from "@/types/types";
 
 const css = {
-  wrapperButtons: `
-    flex flex-wrap gap-4 mb-[20.5px]
+  wrapper: `
+    flex flex-wrap gap-4 mt-0.5 mb-[20.1px] bs p-5 py-5.5
   `,
   button: `text-[1.00em] br-50 relative light-button gap-0 font-normal pl-5 
   pr-0 text-gray-700 hover:bg-gray-100 transition-all 
   duration-150 tetx-[1.00em]! border border-transparent
   `,
-  selected: `bg-white! bs shadow-soft-soft hover:shadow-soft`,
+  selected: `bg-white border border-gray-300! shadow-soft-soft hover:shadow-soft`,
   icon: `
     text-gray-600 mr-1
   `,
@@ -29,7 +29,7 @@ const Properties = ({
   setPropSelected,
 }: Props) => {
   return (
-    <div className={css.wrapperButtons}>
+    <div className={css.wrapper}>
       {properties.slice(0, -1).map((item) => (
         <button
           key={item.name}

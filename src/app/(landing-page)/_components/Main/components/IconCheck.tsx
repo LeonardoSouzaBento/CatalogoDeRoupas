@@ -3,8 +3,8 @@ import { Check } from "lucide-react";
 
 const css = {
   wrapperIcon:
-    "min-w-6 h-6 br-50 inline-flex items-center justify-center bg-[#E8F9EE]",
-  fullPlanStyle: "!min-w-6 !h-6 !bg-yellow-400",
+    "min-w-6 h-6 br-50 inline-flex items-center justify-center bg-[#E8F9EE] ml-px",
+  fullPlanStyle: "min-w-5.5! h-5.5! bg-yellow-400!",
 };
 
 const IconCheck = ({

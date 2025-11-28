@@ -9,11 +9,12 @@ import { X } from "lucide-react";
 import { iconSm } from "@/app/lucideIconStyles";
 
 const css = {
-  container: `bg-white bs p-5`,
-  wrapper: `flex flex-wrap gap-3`,
+  wrapper: `bs p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
-  bg-white br-50 shadow-soft-soft bs`,
-  button: `p165 size-8 centralize px-0 br-50 text-red-500 hover:underline `,
+  bg-white br-50 bs`,
+  button: `size-8 centralize px-0 br-50 text-red-500 hover:underline `,
+  name: `capitalize text-gray-800 p165`,
+  strong: `font-medium tracking-wide`,
 };
 
 const AddedProperties = ({
@@ -52,28 +53,24 @@ const AddedProperties = ({
   };
 
   return (
-    <div className={`${css.container}`}>
-      <div className={`${css.wrapper}`}>
-        {infoArray.map(
-          (item) =>
-            item.value && (
-              <div key={item.label} className={`${css.wrapperButton}`}>
-                <span className={`capitalize text-gray-800 p165`}>
-                  {item.label}:{" "}
-                  <strong className={`font-semibold tracking-wide`}>
-                    {item.value}
-                  </strong>
-                </span>
-                <button
-                  className={`${css.button}`}
-                  onClick={() => clearValue(item.label)}
-                >
-                  <X {...iconSm} color="red" />
-                </button>
-              </div>
-            )
-        )}
-      </div>
+    <div className={`${css.wrapper}`}>
+      {infoArray.map(
+        (item) =>
+          item.value && (
+            <div key={item.label} className={`${css.wrapperButton}`}>
+              <span className={css.name}>
+                {item.label}:{" "}
+                <strong className={css.strong}>{item.value}</strong>
+              </span>
+              <button
+                className={`${css.button}`}
+                onClick={() => clearValue(item.label)}
+              >
+                <X {...iconSm} color="red" />
+              </button>
+            </div>
+          )
+      )}
     </div>
   );
 };

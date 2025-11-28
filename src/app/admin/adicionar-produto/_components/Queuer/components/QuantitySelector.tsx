@@ -8,11 +8,11 @@ const css = {
   wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end j-center gap-3.5 
   bs relative`,
   wrapperButtons: `flex gap-3`,
-  p: ``,
-  button: `size-9 px-4 centralize br-50 `,
+  p: `p165`,
+  button: `size-9 p-0 centralize br-50 p175`,
   selected: `white-button bs shadow-soft hover:shadow-soft-hover`,
   plusButton: `size-9 centralize p-0 br-50`,
-  cancelButton: `p-0 size-9 light-button centralize absolute -top-2 -right-2
+  cancelButton: `p-0 size-9 bg-gray-100/70 centralize absolute -top-2 -right-2
   br-50`,
 };
 
@@ -56,6 +56,7 @@ const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
         <X {...iconSm} color="red" />
       </button>
       <p className={`${numberOptions[0] !== 1 && "min-[450px]:ml-12"}`}>Tenho</p>
+
       <div className={`${css.wrapperButtons}`}>
         {numberOptions.map((item, index) => {
           const selected = selectedQuantity === item;

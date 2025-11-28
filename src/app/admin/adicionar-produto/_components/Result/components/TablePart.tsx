@@ -15,7 +15,7 @@ const css = {
   wrapper: `bg-white br-0 `,
   row: `h-10 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
   br-0`,
-  label: `p165 font-medium text-gray-800 w-40`,
+  label: `p165 font-normal text-gray-800 w-40`,
   value: `text-sm text-gray-700 flex-1 text-right br-0`,
 };
 
@@ -29,10 +29,10 @@ function TablePart({ items, fields, wrapperClass }: Props) {
 
             <span
               className={`${css.value} ${
-                !item[f.key] && "font-semibold text-gray-300!"
+                !item[f.key] && "font-light text-gray-300!"
               }`}
             >
-              {item[f.key] || "—"}
+              {item[f.key] || "——"}
             </span>
           </div>
         ))

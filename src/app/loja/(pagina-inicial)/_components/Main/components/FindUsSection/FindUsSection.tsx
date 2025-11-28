@@ -68,7 +68,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seePhoneInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
-                  <span className="material-symbols-outlined span21">call</span>
+                  <span className="material-symbols-rounded span22">call</span>
                   <div className={`${css.wrapperPs}`}>
                     <p className={`${css.firstP}`}>
                       <strong>Whatsapp:</strong>
@@ -105,7 +105,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seeAddressInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
-                  <span className={`material-symbols-outlined span23`}>home_pin</span>
+                  <span className={`material-symbols-rounded`}>home_pin</span>
                   <div className={`${css.wrapperPs}`}>
                     <p className={`${css.firstP}`}>
                       <strong>Onde estamos:</strong>

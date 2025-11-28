@@ -10,7 +10,7 @@ const NoClothesAlert = () => {
   return (
     <div className={`${css.wrapper}`}>
       <p>Não há roupas ou outros produtos curtidos por você.</p>
-      <span className="material-symbols-outlined text-rose-400 rotate-10">heart_broken</span>
+      <span className="material-symbols-rounded text-rose-400 rotate-10">heart_broken</span>
     </div>
   );
 };
