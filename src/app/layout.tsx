@@ -1,10 +1,13 @@
+import type { Viewport } from "next";
+import type { Metadata } from "next";
 import { UserProvider } from "@/contexts/Providers/UserProvider";
 import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
-import type { Metadata } from "next";
 import { DM_Sans, Cookie } from "next/font/google";
+import "./reset.css";
 import "./globals.css";
 import "./shorteners.css";
 import "./styles.css";
+
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -19,39 +22,39 @@ const cookie = Cookie({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "Roupas Online",
   description: "Veja um catálogo de roupas online",
   keywords: ["roupas online", "catálogo de roupas", "roupas"],
-  authors: [{ name: "Roupas Online", url: "https://leopetshop.netlify.app" }],
+  authors: [{ name: "Roupas Online", url: "http://localhost:3000" }],
 
-  icons: {
-    icon: "/favicon.ico",
-  },
-
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
-
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#292524" },
-    { media: "(prefers-color-scheme: dark)", color: "#292524" },
-  ],
+  // icons: {
+  //   icon: "/favicon.ico",
+  // },
 
   openGraph: {
     title: "Roupas Online",
     description: "Veja um catálogo de roupas online",
     type: "website",
-    url: "https://leopetshop.netlify.app",
-    images: ["/shop-logo-colorfull.png"],
+    url: "http://localhost:3000",
+    images: ["/og-card.png"],
+    locale: "pt-BR",
+    siteName: "Roupas Online",
   },
 
   twitter: {
     card: "summary_large_image",
     site: "@RoupasOnline",
-    images: ["/shop-logo-colorfull.png"],
+    images: ["/tw-card.png"],
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#292524" },
+    { media: "(prefers-color-scheme: dark)", color: "#292524" },
+  ],
 };
 
 //novo tamanho base: 17.5px
@@ -66,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable} `}>
-      <body className={`bg-gray-50 `}>
+      <body className={`bg-gray-50`}>
         <PublicDataProvider>
           <UserProvider>
             <div className={`${fontStyles}`}>{children}</div>

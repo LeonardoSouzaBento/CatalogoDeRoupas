@@ -4,7 +4,7 @@ import { HeaderCard } from "@/app/loja/_ui";
 import QueuerButton from "./components/QueuerButton";
 import QuantitySelector from "./components/QuantitySelector";
 import { StateSetter } from "@/types/types";
-import CardWrapper from "@/app/loja/_ui/CardWrapper";
+import CardWrapper from "@/app/loja/_ui/card-wrapper";
 
 interface Props {
   selectedQuantity: number;

@@ -15,8 +15,8 @@ const Description = ({ selectedName }: DescriptionProps) => {
 
   return (
     <div className={css.wrapperDesc}>
-      <p className="text-gray-800 font-semibold mb-1 md-p">Descrição completa: </p>
-      <p className="text-gray-800 md-p">
+      <p className="text-gray-800 font-semibold mb-1 p16">Descrição completa: </p>
+      <p className="text-gray-800 p16">
         {selectedName ? (
           <>
             {firstPart} - {restPart}

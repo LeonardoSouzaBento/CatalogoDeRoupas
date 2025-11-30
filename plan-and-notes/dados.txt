@@ -1,0 +1,147 @@
+Organização das Roupas
+
+Atributos da roupa: Nome, preço, marca, genêro, categoria, subcategoria, diferencial, cores, tamanho, material e disponibilidade
+
+//
+Genêro
+
+masculino ou feminino ou unisex
+
+//
+Categorias 
+
+do publico masculino
+Camisas: jeans, social, manga longa, polos, regatas, 
+Calças: Jeans, sarja, academia, social
+Shorts: jeans, casuais, de praia,
+Calçados: satatos, sandalias, 
+Acessorios: meias, bonés
+Agasalhos: blusas, casacos e jaquetas
+Outros:
+
+(do publico feminino)
+Tudo do publico masculino +
+Vestidos
+Saias,
+
+//
+Subcategoria:
+
+Para Camisas: jeans, social, manga longa, polo, regata, camisetas.
+
+Para Calças: jeans, sarja, academia, social, moletom.
+
+Para Vestidos: casual, longo, curto, de festa.
+
+//
+Cores: [cor, quantidade no estoque, disponibilidade, tamanho]
+
+//
+Tamanho:
+
+PP, P, M, G, GG, XGG
+
+34, 36, 38, 40, 42... (para calças)
+
+//
+Material:
+
+Algodão
+
+Poliéster
+
+Lycra
+
+Jeans
+
+Sarja
+
+//
+Disponibilidade:
+
+Em Estoque
+
+Esgotado
+
+Sob Encomenda
+
+Você levantou um ponto essencial para a modelagem de um banco de dados relacional. De fato, lidar com as variações de um mesmo produto (como cor e tamanho) exige uma abordagem que separe as informações gerais das específicas.
+
+A melhor prática é criar uma estrutura de três tabelas, em vez de uma única tabela com campos aninhados. Isso garante a integridade dos dados, facilita a busca e otimiza o gerenciamento do inventário.
+
+Veja como você poderia modelar isso, usando as suas sugestões de atributos:
+
+Estrutura do Banco de Dados Relacional
+Tabela Produtos
+
+Aqui você armazena as informações que são comuns a todas as variações da peça.
+
+ID_Produto (Chave primária)
+Nome (Camisa Polo Clássica)
+Preço (R$ 89,90)
+Marca (Marca X)
+Gênero (Masculino)
+Categoria (Camisas)
+Subcategoria (Polo)
+Diferencial (Algodão Pima, slim fit)
+Material (Algodão)
+Descrição (Uma camisa polo clássica e confortável...)
+Tabela Variações
+
+Esta tabela armazena as informações que são únicas para cada variação de cor e tamanho.
+
+ID_Variacao (Chave primária)
+ID_Produto (Chave estrangeira, ligando à tabela Produtos)
+Cor (Azul Marinho, Branco, Preto)
+Tamanho (P, M, G)
+SKU (Código de identificação único para cada variação)
+
+Tabela Estoque
+
+Aqui você armazena a quantidade em estoque de cada variação.
+
+ID_Estoque (Chave primária)
+ID_Variacao (Chave estrangeira, ligando à tabela Variações)
+Quantidade (15, 20, 10...)
+Disponibilidade (Em Estoque, Esgotado, Últimas Unidades)
+
+Como isso funciona na prática?
+
+Você tem um único registro na tabela Produtos para a "Camisa Polo Clássica".
+
+Você tem múltiplos registros na tabela Variações, um para cada combinação de cor e tamanho. Por exemplo:
+
+ID_Variacao=1, ID_Produto=101, Cor='Azul Marinho', Tamanho='P'
+
+ID_Variacao=2, ID_Produto=101, Cor='Azul Marinho', Tamanho='M'
+
+ID_Variacao=3, ID_Produto=101, Cor='Branco', Tamanho='P'
+
+Sugestões de melhoria
+
+Preço por variação
+Se algumas cores/tamanhos tiverem preço diferente, adicione um campo Preco em Variações (mantendo um preço “base” em Produtos).
+
+Normalização de atributos
+Se você pretende filtrar muito por cor ou tamanho, pode criar tabelas auxiliares:
+
+Cores(ID_Cor, NomeCor, Hex)
+
+Tamanhos(ID_Tamanho, Sigla, Ordem)
+Assim você evita escrever “Azul Marinho” de formas diferentes e pode definir uma ordem lógica de tamanhos.
+
+Restrições de integridade
+
+SKU único (chave candidata) na tabela Variações.
+
+Quantidade não deve ser negativa → constraint CHECK (Quantidade >= 0).
+
+Soft delete / status
+Acrescente um campo Ativo ou Status (ex.: “ativo”, “descontinuado”) nas tabelas, caso precise ocultar produtos sem apagá-los.
+
+Imagens
+Se cada cor tiver foto própria, crie uma tabela ImagensVariacao(ID, ID_Variacao, URL, Principal).
+
+Clique em Roupa Social> Botoes: Calças, produtos Camisas, produtos Sapatos, produtos abaixo
+
+

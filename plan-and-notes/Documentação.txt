@@ -1,0 +1,40 @@
+Se o usuario for homem, mostrar roupas masculinas, e vise-versa.
+
+Barra de pesquisa no topo
+
+Sites de referencia
+Hering
+
+Fontes recomendadas: Plus Jakarta Sans, inter e Figtree
+
+Estilos Gerais
+
+divs sem border-radius e com borda solida de 1px
+
+Funcionalidades
+
+Página lista de de produtos separados por tipos
+https://nl.tommy.com/heren-poloshirts?epik=dj0yJnU9dDFJQ19VXzR4aUV6RXpOdllxMHIyMjd6amF4R2pvck8mcD0wJm49Yk1sajA1WDAxXzlpYTNVN0thRTVXdyZ0PUFBQUFBR2l0WnZj
+Filtrar por cor, preço, tamanho
+
+
+Página do produto especifico:
+
+Header: logo da loja, botão de pesquisa, botão minha conta, botão favoritos
+Botão de mais opçoes: navegue: Minha Conta, Favoritos; Explore: polos, calcas...
+
+card do produto: 
+fotos das roupas (em modelos) > 
+a) Nome
+b) preço
+c) Cores disponiveis
+d) Tamanhos disponiveis
+selecionado M por padrão
+e) Composição
+
+Section: roupas similares
+
+Footer: endereço da empresa, contatos, nome do desenvolvedor
+
+Exemplo:
+https://nl.tommy.com/tommy-x-us-sail-gp-relaxed-fit-poloshirt-mw0mw41415bds

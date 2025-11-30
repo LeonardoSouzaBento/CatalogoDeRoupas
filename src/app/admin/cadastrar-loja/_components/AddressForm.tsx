@@ -93,11 +93,11 @@ const AddressForm = ({
       <div>
         <HeaderCard
           title="Endereço"
+          wrapperStyles="mb-3.5!"
           icon="location_home"
-          wrapperStyles="mb-4!"
-          iconStyles="text-[1.25em]! font-medium!"
+          iconStyles="span21 font-medium!"
         />
-        <form className={`mb-5`}>
+        <form className={`mb-5 px-0.5 pb-5 bs-b bs-color`}>
           {inputs.map((field, index) => (
             <div key={field.label}>
               <label htmlFor={field.label}>{field.label}</label>
@@ -130,7 +130,7 @@ const AddressForm = ({
         styles="mb-5"
       />
 
-      <BackButton setState={setSeeAddresForm} />
+      <BackButton setState={setSeeAddresForm}/>
     </>
   );
 };

@@ -1,8 +1,13 @@
 const P = () => {
   const css = {
     wrapperP:
-      "w-full max-w-86 px-4 h-13 flex justify-center items-center gap-2 bg-[linear-gradient(135deg,hsl(330_75%_45%)_0%,hsl(280_70%_40%)_100%)] rounded-2xl",
-    p: "text-indigo-50  font-light leading-6 mb-[1px] w-max text-[1.057143em]",
+      `w-full max-w-86 px-4 h-13 flex justify-center items-center gap-2 
+      bg-[linear-gradient(135deg,hsl(330_75%_45%)_0%,hsl(280_70%_40%)_100%)] 
+      rounded-2xl`,
+    p: 
+    `text-indigo-50  font-light leading-6 mb-[1px] w-max text-[1.02857em] 
+    sm:text-[1.04395em] md:text-[1.05137em] lg:text-[1.06623em] 
+    xl:text-[1.08108em] 2xl:text-[1.09593em]`,
   };
 
   return (

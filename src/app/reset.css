@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+html,
+body {
+  min-height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: auto;
+  position: relative;
+}
+p {
+  cursor: default;
+}
+
+button {
+  user-select: none;
+}
+textarea::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: oklch(87% 0 0); /* cor botão */
+  border-radius: 6px;
+}
+textarea {
+  scrollbar-width: thin; /* Opções: auto | thin | none */
+  scrollbar-color: oklch(87% 0 0) #ffffff00; /*botão | fundo */
+}
+
+div {
+  scrollbar-width: auto;
+  scrollbar-color: #d1d5db transparent;
+}
+
+div::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 6px;
+  z-index: 3;
+}
+

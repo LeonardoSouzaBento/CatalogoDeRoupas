@@ -89,11 +89,11 @@ const PersonalForm = () => {
     <div>
       <HeaderCard
         title="Informações gerais"
-        wrapperStyles="mb-4!"
+        wrapperStyles="mb-3.5!"
         icon="assignment_ind"
-        iconStyles="text-[1.18em]! font-medium!"
+        iconStyles="span19 font-medium!"
       />
-      <form className={`mb-5`}>
+      <form className={`mb-5 px-0.5 pb-5 bs-b bs-color `}>
         {inputs.map((field, index) => (
           <div key={field.name}>
             <label
@@ -112,13 +112,13 @@ const PersonalForm = () => {
               maxLength={field.maxLength}
               onChange={handleChange}
               className={`${css.input} ${
-                index === inputs.length - 1 ? "!mb-0" : ""
+                index === inputs.length - 1 ? "mb-0!" : ""
               }`}
             />
           </div>
         ))}
       </form>
-      <SaveButton Function={handleSaveShopkeeper} />
+      <SaveButton Function={handleSaveShopkeeper} styles="justify-center" />
     </div>
   );
 };

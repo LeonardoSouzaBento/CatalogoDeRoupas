@@ -1,12 +1,14 @@
+import { HeaderCard } from "@/app/loja/_ui";
 import { BooleanSetter } from "@/types/types";
 import React from "react";
 
 const css = {
-  wrapper: `p-6 mb-6 flex flex-col gap-3 text-gray-600 font-medium bs `,
-  wrapperButtons: `flex flex-col min-[480px]:flex-row gap-5`,
-  title: `text-[1.06em] uppercase tracking-wide text-gray-500`,
-  button: `h-9 rounded-full bg-gray-200/60 text-gray-500 trans`,
-  selected: `bg-blue-600! text-white!`,
+  wrapper: `p-6 pt-5 mb-6 flex flex-col text-gray-600 font-medium bg-white card-styles`,
+  wrapperButtons: `grid grid-cols-1 min-[480px]:grid-cols-2 gap-4`,
+  title: `p20 tracking-wide text-gray-500/70 font-semibold`,
+  button: `h-9 rounded-full  trans font-normal`,
+  selected: `ring-style`,
+  noSelected: `bg-gray-200/60 text-gray-500`,
 };
 
 const Header = ({
@@ -18,28 +20,52 @@ const Header = ({
 }) => {
   return (
     <div className={`${css.wrapper}`}>
-      <p className={`${css.title}`}>Etapas:</p>
+      <HeaderCard
+        title="Etapas"
+        icon={seeAddresForm ? "filter_2" : "filter_1"}
+        iconStyles="span19 font-medium!"
+      />
 
       <div className={`${css.wrapperButtons}`}>
-        <button
-          className={`${css.button} ${!seeAddresForm && css.selected}`}
+        <StepButton
           onClick={() => {
             setSeeAddresForm(false);
           }}
+          isSelected={!seeAddresForm}
         >
           1º Informações gerais
-        </button>
-        <button
-          className={`${css.button} ${seeAddresForm && css.selected}`}
+        </StepButton>
+
+        <StepButton
           onClick={() => {
             setSeeAddresForm(true);
           }}
+          isSelected={seeAddresForm}
         >
           2º Endereço
-        </button>
+        </StepButton>
       </div>
     </div>
   );
 };
 
 export default Header;
+
+const StepButton = ({
+  onClick,
+  isSelected,
+  children,
+}: {
+  onClick: () => void;
+  isSelected: boolean;
+  children: React.ReactNode;
+}) => {
+  return (
+    <button
+      className={`${css.button} ${isSelected ? css.selected : css.noSelected}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};

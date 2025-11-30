@@ -1,7 +1,7 @@
 import { HeaderCard } from "@/app/loja/_ui";
 import UserInfo from "./components/UserInfo";
 import UserPhoto from "./components/UserPhoto";
-import CardWrapper from "@/app/loja/_ui/CardWrapper";
+import CardWrapper from "@/app/loja/_ui/card-wrapper";
 
 const array = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,

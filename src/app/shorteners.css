@@ -153,22 +153,4 @@
   .bg-bt2 {
     @apply bg-gray-50 hover:bg-gray-100 transition-colors duration-200;
   }
-
-  /* tamanhos de fonte*/
-
-  .sm-p {
-    @apply text-[0.97em];
-  }
-  .md-p {
-    @apply text-[1.012em];
-  }
-  .lg-p {
-    @apply text-[1.016em];
-  }
-  .xl-p {
-    @apply text-[1.020em];
-  }
-  .xl2-p {
-    @apply text-[1.024em];
-  }
 }

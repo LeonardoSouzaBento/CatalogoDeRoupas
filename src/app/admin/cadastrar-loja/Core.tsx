@@ -6,6 +6,7 @@ import Header from "./_components/Header";
 
 const Core = () => {
   const [seeAddresForm, setSeeAddresForm] = useState<boolean>(false);
+  
   return (
     <div>
       <Header

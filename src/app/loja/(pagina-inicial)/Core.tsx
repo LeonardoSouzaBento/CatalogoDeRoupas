@@ -1,21 +1,19 @@
 "use client";
-import { HomeDataProvider } from "@/contexts/Providers/HomeProvider";
 import ZapFixedButton from "@/app/loja/_ui/ZapFixedButton";
+import { HomeDataProvider } from "@/contexts/Providers/HomeProvider";
 import { useState } from "react";
 import ExitHomeEditButton from "../_ui/ExitHomeEditButton";
 import Footer from "./_components/Footer/Footer";
-import TopNavigationBar from "./_components/TopNavigationBar/TopNavigationBar";
 import LogoArea from "./_components/LogoArea";
 import Main from "./_components/Main/Main";
 import OptionsMenu from "./_components/OptionsMenu/OptionsMenu";
-// import LoadingPage from "../_ui/LoadingPage";
+import TopNavigationBar from "./_components/TopNavigationBar/TopNavigationBar";
 
 const Core = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
 
   return (
     <HomeDataProvider>
-      {/* <LoadingPage /> */}
       <LogoArea />
       <TopNavigationBar setSeeOptionsSection={setSeeOptionsSection} />
       {seeOptionsSection && (

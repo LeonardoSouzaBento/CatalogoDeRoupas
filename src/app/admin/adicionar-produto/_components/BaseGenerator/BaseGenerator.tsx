@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/contexts";
 import { HeaderCard } from "@/app/loja/_ui";
-import CardWrapper from "@/app/loja/_ui/CardWrapper";
+import CardWrapper from "@/app/loja/_ui/card-wrapper";
 import { clothingCatsSubcats } from "@/data/clothingData/clothingCatsSubcats";
 import { patterns } from "@/data/clothingData/patterns";
 import { prints } from "@/data/clothingData/prints";
@@ -14,6 +14,7 @@ import {
 import AddedProperties from "./components/AddedProperties";
 import Properties from "./components/Properties";
 import PropertyOptions from "./components/PropertyOptions";
+import { modelings } from "@/data/clothingData/modelings";
 
 const BaseGenerator = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
@@ -77,6 +78,7 @@ const BaseGenerator = () => {
     { name: "Padrão", options: patterns },
     { name: "Estampa", options: prints },
     { name: "É Infantil", options: ["Sim", "Não"] },
+    { name: "Modelagem", options: modelings.map((modeling) => modeling.name) },
     { name: "Nome" },
   ];
 

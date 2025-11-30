@@ -7,13 +7,7 @@ const CardWrapper = ({
   children: React.ReactNode;
   styles?: string;
 }) => {
-  return (
-    <div
-      className={`card-styles ${styles}`}
-    >
-      {children}
-    </div>
-  );
+  return <div className={`card-styles ${styles}`}>{children}</div>;
 };
 
 export default CardWrapper;

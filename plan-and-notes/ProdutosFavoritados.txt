@@ -1,0 +1,7 @@
+card dos usuarios orgaizados por atividade mais recente (foto do usuario mais quantidade de produtos recentemente favoritados)
+
+Ver informações do usuário (seta para baixo)
+(foto avatar, nome, tamanho)
+
+Produtos favoritados (grade de produtos)
+

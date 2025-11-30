@@ -16,8 +16,8 @@ const BackButton = ({ styles, setState = () => {} }: Props) => {
       }}
       className={`w-full ${styles}`}
     >
-      <CornerUpLeft {...iconSm} />
       voltar
+      <CornerUpLeft {...iconSm} />
     </button>
   );
 };

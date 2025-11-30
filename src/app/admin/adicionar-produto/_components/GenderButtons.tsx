@@ -1,6 +1,6 @@
 "use client";
 import { HeaderCard } from "@/app/loja/_ui";
-import CardWrapper from "@/app/loja/_ui/CardWrapper";
+import CardWrapper from "@/app/loja/_ui/card-wrapper";
 import { UserContext } from "@/contexts";
 import { Genders } from "@/types/types";
 import React, { useContext } from "react";
@@ -23,7 +23,11 @@ const GenderButtons = () => {
 
   return (
     <CardWrapper>
-      <HeaderCard title="Gênero" icon="wc" iconStyles="mb-px font-light! span22" />
+      <HeaderCard
+        title="Gênero"
+        icon="wc"
+        iconStyles="mb-px font-light! span22"
+      />
       <div className={css.wrapper}>
         {buttons.map(({ label, value }) => (
           <button

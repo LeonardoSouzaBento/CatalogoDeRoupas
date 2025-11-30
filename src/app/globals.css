@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "material-symbols/rounded.css";
-
 /* 
 sm	 (640px)
 md	 (768px)	
@@ -8,26 +7,6 @@ lg	 (1024px)
 xl   (1280px)	
 2xl  (1536px) 
 */
-
-html,
-body {
-  min-height: 100vh;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
-
-body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
 
 @theme {
   --font-dm-sans: "DM Sans", "sans-serif";
@@ -52,52 +31,17 @@ body::-webkit-scrollbar {
   --shadow-light-soft: 0 4px 12px -6px hsla(330, 30%, 85%, 0.2);
   --shadow-light-medium: 0 8px 20px -6px hsla(330, 35%, 90%, 0.22);
   /* sombras coloridas */
-  --shadow-accent: 0 4px 14px -5px hsla(25, 70%, 40%, 0.25); /* laranja queimado */
+  --shadow-accent: 0 4px 14px -5px hsla(200, 70%, 40%, 0.25); /* azul */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
+  
+  /*  cores */
+  --color-bs-color: #e5e7eb;
+  --color-bs-light-color: #e5e7eb;
   --color-female-pink: hsl(332, 100%, 39%);
-}
 
-body {
-  width: 100%;
-  max-width: 1400px;
-  min-height: 100vh;
-  margin: auto;
-  position: relative;
-}
-p {
-  cursor: default;
-}
-
-.material-symbols-rounded {
-  font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
-}
-.line-span {
-  @apply [font-variation-settings:'FILL'_0]!;
-}
-
-button {
-  user-select: none;
-}
-textarea::-webkit-scrollbar-track {
-  background-color: #ffffff00;
-}
-
-textarea::-webkit-scrollbar-thumb {
-  background: oklch(87% 0 0); /* cor botão */
-  border-radius: 6px;
-}
-textarea {
-  scrollbar-width: thin; /* Opções: auto | thin | none */
-  scrollbar-color: oklch(87% 0 0) #ffffff00; /*botão | fundo */
-}
-
-div {
-  scrollbar-width: none;
-}
-div::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  visibility: hidden;
+  /* breakpoints */
+  --breakpoint-sm375: 375px;
+  --breakpoint-sm575: 575px;
 }
 
 @layer components {
@@ -105,7 +49,7 @@ div::-webkit-scrollbar {
     @apply rounded-md;
   }
   textarea {
-    @apply focus:outline-none font-light text-neutral-950 bg-neutral-100;
+    @apply w-full min-h-12 focus:outline-none font-light text-neutral-950 bg-gray-100 rounded-md;
   }
   button,
   a {
@@ -117,7 +61,7 @@ div::-webkit-scrollbar {
   }
   /* input tem cor mais forte devido ao fundo cinza */
   input {
-    @apply block w-full h-10 pl-[13px] text-[1.314286em] text-neutral-900 bg-neutral-100 border-none rounded-md box-border focus:outline-none;
+    @apply block w-full h-10 pl-[13px] text-neutral-900 bg-neutral-100 border-none rounded-md box-border focus:outline-none;
   }
   img {
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;
@@ -127,5 +71,9 @@ div::-webkit-scrollbar {
   h3,
   h4 {
     @apply cursor-default;
+  }
+  .material-symbols-rounded {
+    font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
+    @apply text-gray-800/93;
   }
 }

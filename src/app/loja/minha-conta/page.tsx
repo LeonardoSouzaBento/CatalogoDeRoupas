@@ -5,11 +5,11 @@ import MeasuresCard from "./_components/MeasuresCard/MeasuresCard";
 import UserCard from "./_components/UserCard/UserCard";
 import TitlePage from "@ui/TitlePage";
 import FavoritesCard from "./_components/FavoritesCard";
-import CardWrapper from "../_ui/CardWrapper";
+import CardWrapper from "../_ui/card-wrapper";
 
 const css = {
   mainWrapper: `px-3 m-auto lg:px-6 lg:flex lg:flex-wrap lg:gap-5 lg:max-w-[1208px]`,
-  wrapper: `m-auto lg:m-0! lg:w-[calc(50%-12px)] pt-4 p-6 max-w-[592px] 
+  wrapper: `pt-4 p-6 m-auto mb-5 lg:m-0! lg:w-[calc(50%-12px)] max-w-[592px] 
      sm:max-w-[564px] md:max-w-[640px] lg:max-w-[592px]`,
   p: ``,
   button: ``,

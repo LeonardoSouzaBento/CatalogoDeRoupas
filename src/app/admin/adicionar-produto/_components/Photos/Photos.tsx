@@ -2,12 +2,12 @@
 import React from "react";
 import { AlertInfo, HeaderCard } from "@/app/loja/_ui";
 import PhotoGridEditor from "./components/PhotoGridEditor/PhotoGridEditor";
-import CardWrapper from "@/app/loja/_ui/CardWrapper";
+import CardWrapper from "@/app/loja/_ui/card-wrapper";
 
 const Photos = () => {
   return (
     <CardWrapper>
-      <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 span19"/>
+      <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 span19" />
       <PhotoGridEditor />
       <AlertInfo
         styles="bg-gray-50/50! mb-0!"

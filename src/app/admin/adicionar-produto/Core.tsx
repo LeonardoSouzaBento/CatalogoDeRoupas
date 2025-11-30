@@ -8,12 +8,14 @@ import FinalInformations from "./_components/FinaIInformations/FinalInformations
 import Queuer from "./_components/Queuer/Queuer";
 import Result from "./_components/Result/Result";
 import SaveCard from "./_components/SaveCard";
+import Queue from "./_components/Queue/Queue";
 
 const Core = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(0);
 
   return (
     <div className={`max-w-3xl lg:max-w-4xl mx-auto`}>
+      <Queue />
       <ProductBasesList />
       <Photos />
       <GenderButtons />

@@ -2,6 +2,9 @@
 import React from "react";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
+import { generateFontSizes } from "@/utils/generateFontSizes";
+
+console.log(generateFontSizes(18, 22));
 
 const css = {
   wrapperButtonCall: "size-auto flex",

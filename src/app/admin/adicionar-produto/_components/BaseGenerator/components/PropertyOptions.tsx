@@ -1,20 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
 import { BasicClothingInformation, mappingPropToKey } from "@/types/types";
+import WrapperOptions from "@/app/admin/_ui/wrapper-options";
 
 const css = {
   container: `p-5 bs bg-white border-b-transparent rounded-br-none rounded-bl-none`,
-  title: `text-blue-600 font-medium mb-4.5 md-p tracking-wide uppercase leading-none!`,
+  title: `text-blue-600 font-medium mb-4.5 p16 tracking-wide uppercase leading-none!`,
   wrapperOptions: `flex flex-wrap gap-4`,
   optionButton: ` text-[1.00em]
     px-5 rounded-full bs shadow-soft-soft
     text-gray-800 font-normal bg-white
     hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600
-    focus:ring-2 focus:ring-blue-300 focus:outline-none
     transition-all duration-150
     active:scale-95
   `,
-  optionSelected: `ring-style `,
+  optionSelected: `ring-hover-style `,
 };
 
 interface Property {
@@ -52,9 +52,7 @@ const PropertyOptions = ({
   }, [propSelected]);
 
   return (
-    <div className={css.container} onClick={(e) => e.stopPropagation()}>
-      <p className={css.title}>Selecione</p>
-
+    <WrapperOptions styles={css.container}>
       <div className={css.wrapperOptions}>
         {options.map((option) => {
           const isSelected =
@@ -81,7 +79,7 @@ const PropertyOptions = ({
           <p>Selecione uma categoria primeiro.</p>
         )}
       </div>
-    </div>
+    </WrapperOptions>
   );
 };
 
