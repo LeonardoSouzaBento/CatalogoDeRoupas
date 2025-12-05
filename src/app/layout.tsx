@@ -57,10 +57,11 @@ export const viewport: Viewport = {
   ],
 };
 
-//novo tamanho base: 17.5px
-const fontStyles = `font-dm-sans text-gray-800 
- text-[1.09375em] sm:text-[1.11205em] md:text-[1.12089em] lg:text-[1.13857em] 
- xl:text-[1.15625em] 2xl:text-[1.17393em]`; //17,5 até 18,5 em xl
+// novo tamanho base: 17.5px
+const fontStyles = `font-dm-sans 
+ text-[1.09375rem] sm:text-[1.11205rem] md:text-[1.12089rem] lg:text-[1.13857rem] 
+ xl:text-[1.15625rem] 2xl:text-[1.17393rem]`; 
+// 17,5 até 18,5 em xl
 
 export default function RootLayout({
   children,
@@ -68,8 +69,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable} `}>
-      <body className={`bg-gray-50`}>
+    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
+      <body className={`bg-body-background text-[1rem] text-black-text`}>
         <PublicDataProvider>
           <UserProvider>
             <div className={`${fontStyles}`}>{children}</div>

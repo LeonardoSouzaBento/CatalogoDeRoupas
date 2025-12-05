@@ -5,7 +5,7 @@ import { Genders } from "@/types/types";
 const css = {
   wrapper: "w-max h-10 box-border flex items-center justify-between gap-3 z-2",
   buttons: "h-10 w-10 px-0 centralize bg-gray-100 rounded-lg",
-  selected: "font-extrabold bg-white bs-light shadow-soft-soft",
+  selected: "font-extrabold bg-white bs-light shadow-sm",
 };
 
 const ChildGenderButtons = () => {

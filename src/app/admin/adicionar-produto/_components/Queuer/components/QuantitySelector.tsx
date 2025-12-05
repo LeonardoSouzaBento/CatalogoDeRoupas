@@ -10,7 +10,7 @@ const css = {
   wrapperButtons: `flex gap-3`,
   p: `p165`,
   button: `size-9 p-0 centralize br-50 p175`,
-  selected: `white-button bs shadow-soft hover:shadow-soft-hover`,
+  selected: `white-button bs shadow-lg hover:shadow-lg-hover`,
   plusButton: `size-9 centralize p-0 br-50`,
   cancelButton: `p-0 size-9 bg-gray-100/70 centralize absolute -top-2 -right-2
   br-50`,

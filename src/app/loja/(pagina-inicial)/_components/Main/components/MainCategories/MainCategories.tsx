@@ -13,7 +13,7 @@ const css = {
     xl:h-[390px] relative
   `,
   sectiooInEditMode: "pb-0 mb-0 m-auto max-w-210",
-  wrapperEditMode: "p-6 pt-3 bg-white br-lg mb-10 shadow-soft-hover",
+  wrapperEditMode: "p-6 pt-3 bg-white br-lg mb-10 shadow-lg-hover",
   wrapperImg: `
     w-[calc(50%-6px)] h-[66vw] max-w-[320px] max-h-[420px] bg-gray-100 flex items-end relative overflow-hidden
     br-lg lg:h-full

@@ -28,7 +28,7 @@ const css = {
 };
 
 const selectedStyles = {
-  optionList: `bg-white hover:bg-white/60 shadow-soft-soft border border-gray-300`,
+  optionList: `bg-white hover:bg-white/60 shadow-sm border border-gray-300`,
   outlined: `ring-style`,
 };
 

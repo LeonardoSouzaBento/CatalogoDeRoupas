@@ -8,7 +8,7 @@ type Props = {
 
 const css = {
   section: `w-full px-3`,
-  wrapper: `w-full max-w-[1180px] m-auto pt-6 pb-9`,
+  wrapper: `w-full max-w-[1180px] m-auto pt-7 pb-9`,
 };
 
 const WrapperSection = ({ child, sectionStyles, wrapperStyles }: Props) => {

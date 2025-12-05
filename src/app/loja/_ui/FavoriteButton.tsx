@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const css = {
   buttonHeart:
     `h-10 px-0 box-border pt-[1px] absolute bottom-3 right-3 z-1 flex 
-    bg-white br-3xl heart-button-shadow transition-all duration-200 cursor-pointer`,
+    bg-white br-3xl shadow-sm transition-all duration-200 cursor-pointer`,
   wrapperPReturn: `centralize h-full w-33 box-border`,
   pReturn: `pb-[1px] p175 font-normal`,
   wrapperIcon:

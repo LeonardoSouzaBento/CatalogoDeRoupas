@@ -3,8 +3,8 @@ import { BooleanSetter } from "@/types/types";
 
 const css = {
   divLogo: "w-full min-h-21 pb-1 centralize flex-col z-6 rounded-none",
-  pLogo: "leading-none mb-1 font-logo text-white text-[1.542857em]",
-  pSubtitle: "leading-none text-white !font-thin p18",
+  pLogo: "leading-none mb-1 font-logo text-white text-[1.57428em]",
+  pSubtitle: "leading-none text-white !font-thin normal-p",
   normalBackground: "bg-stone-800 relative",
   landingPageBackground:
     "absolute top-0 left-0 bg-linear-to-b from-stone-800/30 to-transparent",
@@ -28,7 +28,7 @@ const LogoSection = ({
             : css.normalBackground
         } ${css.divLogo}`}
       >
-        <p className={`${css.pLogo}`}>Roupas Online</p>
+        <h1 className={`${css.pLogo}`}>Roupas Online</h1>
         <p className={`${css.pSubtitle}`}>Guardamos suas curtidas</p>
       </div>
       {homeEditMode && (

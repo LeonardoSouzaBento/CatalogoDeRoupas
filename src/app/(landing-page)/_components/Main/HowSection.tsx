@@ -32,15 +32,15 @@ const HowSection = (): React.ReactElement => {
 export default HowSection;
 
 const content = [
-  { id: 1, text: "Compartilhe o link nas redes sociais", icon: Share2 },
+  { id: 1, text: "1. Compartilhe o link nas redes sociais", icon: Share2 },
   {
     id: 2,
-    text: "Seu cliente busca e favorita os produtos com facilidade",
+    text: "2. Seu cliente busca e favorita os produtos com facilidade",
     icon: Search,
   },
   {
     id: 3,
-    text: "Veja os favoritos do usuário de modo organizado",
+    text: "3 - Veja os favoritos do usuário. Mostrados um quadro intuitivo e organizado",
     icon: Heart,
   },
 ];
@@ -49,10 +49,6 @@ const Messages = () => {
   const css = {
     wrapper: "w-auto flex items-start gap-3.5 sm:flex-row",
     wrapperP: "flex items-center",
-    wrapperPNumber:
-      "h-7 min-w-7 flex justify-center items-center rounded-[50%] bg-[#DF2080]",
-    pNumber:
-      "!text-white font-semibold p20 sm:text-[1.250em] md:text-[1.274em] lg:text-[1.322em] xl:text-[1.370em] 2xl:text-[1.418em]",
     p: `-mt-[1px] p185`,
     wrapperIcon: "inline-flex items-end justify-center box-border mt-1 mr-2",
   };
@@ -61,13 +57,14 @@ const Messages = () => {
     <>
       {content.map((item) => (
         <div className={`${css.wrapper}`} key={item.id}>
-          <div className={`${css.wrapperPNumber}`}>
-            <p className={`${css.pNumber}`}>{item.id}</p>
-          </div>
           <div className={`${css.wrapperP}`}>
             <p className={`${css.p}`}>
               <span className={`${css.wrapperIcon}`}>
-                <item.icon color="#DF2080" strokeWidth={2.2} size={22} />
+                <item.icon
+                  className="text-magenta"
+                  strokeWidth={2.2}
+                  size={22}
+                />
               </span>{" "}
               {item.text}.
             </p>

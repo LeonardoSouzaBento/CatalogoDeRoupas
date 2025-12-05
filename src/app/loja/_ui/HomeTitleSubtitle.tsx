@@ -14,9 +14,10 @@ interface HomeTitleSubtitleProps {
 }
 
 const css = {
-  h1: `font-bold capitalize leading-10 text-center text-[1.22857em]`,
-  h1SelectGender: "text-center capitalize leading-none! text-neutral-700 pb-4",
-  h2: `w-full mb-6 font-normal text-center text-neutral-600/88 capitalize`,
+  title: `font-semibold capitalize leading-10 text-center`,
+  selectGenderTitle:
+    "text-center uppercase leading-none! pb-4 normal-p font-medium text-gray-800",
+  subtitle: `w-full mb-0.5 font-normal text-center text-neutral-600/88 capitalize big-p`,
 };
 
 const HomeTitleSubtitle = ({
@@ -34,19 +35,21 @@ const HomeTitleSubtitle = ({
 
   return (
     <div>
-      <div className="w-full px-3 flex j-center i-center gap-3">
+      <div
+        className={`w-full px-3 flex j-center i-center gap-3 ${
+          section == "clothes" ? "mb-3" : "mb-6"
+        }`}
+      >
         <div className="flex flex-col size-auto">
-          <h1
-            className={`${section == "genders" ? css.h1SelectGender : css.h1}`}
+          <h2
+            className={`${
+              section == "genders" ? css.selectGenderTitle : css.title
+            }`}
           >
             {title}
-          </h1>
+          </h2>
 
-          {subtitle && (
-            <h2 className={`${css.h2} ${section == "clothes" && "mb-3!"}`}>
-              {subtitle}
-            </h2>
-          )}
+          {subtitle && <h3 className={`${css.subtitle}`}>{subtitle}</h3>}
         </div>
       </div>
       {seeButtonEdit && (
@@ -60,7 +63,7 @@ const HomeTitleSubtitle = ({
       {seeButtonCloseEdit && (
         <button
           className={`h-11 min-w-52 centralize m-auto mb-5 br-2xl 
-            bg-gradient-to-br from-stone-800 to-stone-800/88 text-white shadow-soft hover:shadow-soft-hover ${
+            bg-linear-to-br from-stone-800 to-stone-800/88 text-white shadow-lg hover:shadow-lg-hover ${
               section === "clothes" && "mb-3!"
             }`}
           onClick={() => {

@@ -4,9 +4,9 @@ import MainImage from "./ui/MainImage";
 import P from "./ui/P";
 import TitleSubtitle from "./ui/TitleSubtitle";
 
+
 const css = {
   mainSection: `h-auto w-full pt-26 sm:pt-25 md:pt-23 xl:pt-21 p-6 rounded-none 
-  bg-[linear-gradient(135deg,hsl(330_75%_45%)_0%,hsl(280_70%_40%)_100%)]
 `,
   wrapper: "m-auto max-w-[1200px] flex flex-col md:flex-row gap-8",
   wrapperMainMessage:
@@ -16,7 +16,7 @@ const css = {
 
 const MainSection = (): React.ReactElement => {
   return (
-    <section className={`${css.mainSection}`}>
+    <section className={`${css.mainSection} bg-linear-to-br from-magenta to-violet`}>
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperMainMessage}`}>
           <TitleSubtitle />

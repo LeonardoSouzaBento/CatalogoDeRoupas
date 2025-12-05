@@ -13,7 +13,7 @@ const Core = () => {
         seeAddresForm={seeAddresForm}
         setSeeAddresForm={setSeeAddresForm}
       />
-      <div className="bg-white p-6 pt-4 shadow-soft hover:shadow-soft-hover br-lg">
+      <div className="bg-white p-6 pt-4 shadow-lg hover:shadow-lg-hover br-lg">
         {!seeAddresForm ? (
           <PersonalForm />
         ) : (

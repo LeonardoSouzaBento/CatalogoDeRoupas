@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 const css = {
   button: `h-9 min-w-9 p-0 flex justify-center items-center rounded-md 
   transition-colors duration-200`,
-  lightStyle: "bg-gray-50 hover:bg-gray-100 shadow-soft-hover",
+  lightStyle: "bg-gray-50 hover:bg-gray-100 shadow-lg-hover",
   simpleStyle: `bg-gray-100 hover:bg-gray-200 trans`,
   defaultPosition: "absolute top-[10.5px] right-[10.5px]",
 };

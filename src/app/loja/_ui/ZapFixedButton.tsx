@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
   const css = {
-    wrapper: `size-11 box-border bg-green-600 centralize br-lg fixed bottom-4 right-4 z-6
+    wrapper: `size-12 box-border bg-green-600 centralize br-xl fixed bottom-4 right-4 z-6
     [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] fast-trans shadow-green-soft`,
   };
 
@@ -24,6 +24,7 @@ const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
           height={26}
           width={26}
           alt="imagem do whatssap"
+          className="mb-px"
         />
       </div>
     </div>

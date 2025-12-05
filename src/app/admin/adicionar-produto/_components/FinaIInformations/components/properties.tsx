@@ -6,7 +6,7 @@ const css = {
   duration-150 tetx-[1.00em]! border border-transparent
   `,
   notSelected: ``,
-  selected: `bg-white border border-gray-300! shadow-soft-soft hover:shadow-soft`,
+  selected: `bg-white border border-gray-300! shadow-sm hover:shadow-lg`,
 };
 
 const properties = () => {

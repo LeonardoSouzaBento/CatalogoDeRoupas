@@ -4,7 +4,7 @@ import Core from "./components/Core";
 const css = {
   container: `h-screen w-full px-3 centralize`,
   wrapper: `h-auto w-full max-w-100 mb-12 p-6 pt-5 pb-8 br-2xl bg-white
-  shadow-soft hover:shadow-soft-hover trans relative`,
+  shadow-lg hover:shadow-lg-hover trans relative`,
   title:
     "text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left text-[1.33em]",
   button: ``,

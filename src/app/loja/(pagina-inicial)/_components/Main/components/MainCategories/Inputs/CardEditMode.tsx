@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 bs
-p-5 rounded-none hover:shadow-soft fast-trans`,
+p-5 rounded-none hover:shadow-lg fast-trans`,
   wrapperInput: `flex flex-col gap-3 mb-px`,
   wrapperImg: "rounded-none flex flex-wrap i-center gap-4 relative mb-px",
   imghomeEditMode: "grayscale opacity-70",

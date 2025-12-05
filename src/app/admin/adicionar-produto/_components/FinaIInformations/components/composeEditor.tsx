@@ -124,7 +124,7 @@ const Materials: React.FC<MaterialsProps> = ({
                 hover:bg-blue-100/50
                 hover:text-blue-600 hover:border-blue-400 ${
                   isFiltered && "-order-1"
-                } ${hasCorrespondence && "text-blue-600 shadow-soft-soft"}`}
+                } ${hasCorrespondence && "text-blue-600 shadow-sm"}`}
             >
               {material}
             </Button>

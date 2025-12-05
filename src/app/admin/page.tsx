@@ -40,7 +40,7 @@ const optionButtons = [
 const css = {
   wrapper: "min-h-[100vh] min-w-[100vw] px-3 pb-12 centralize bg-transparent",
   container:
-    "h-auto w-full max-w-[592px] px-8 py-6 mb-12 min-[688px]:max-w-[672px] lg:mb-0 rounded-xl bg-white shadow-soft",
+    "h-auto w-full max-w-[592px] px-8 py-6 mb-12 min-[688px]:max-w-[672px] lg:mb-0 rounded-xl bg-white shadow-lg",
   wrapperButtons:
     "flex flex-col min-[680px]:flex-row min-[680px]:flex-wrap gap-4 mb-2",
   h1: "text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left text-[1.33em]",

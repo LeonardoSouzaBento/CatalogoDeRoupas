@@ -14,7 +14,7 @@ const Favoritos = (): React.ReactElement => {
     <>
       <TitlePage title="Meus Favoritos" />
       <div className={`${css.mainWrapper}`}>
-        <div className={`${css.wrapper} shadow-soft`}>
+        <div className={`${css.wrapper} shadow-lg`}>
           <HeaderCard
             title="Produtos curtidos"
             icon="bookmark_heart"

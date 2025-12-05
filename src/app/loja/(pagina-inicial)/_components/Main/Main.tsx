@@ -42,7 +42,7 @@ const Main = (): React.ReactElement => {
       <WrapperSection
         child={<UserGenderList />}
         sectionStyles="bg-gray-50 bg-gradient-to-b from-[#F9FAFB] to-white shadow-none!"
-        wrapperStyles="pb-6!"
+        wrapperStyles="pb-8! "
       />
       <WrapperSection
         child={<SpecialClothes />}
@@ -68,7 +68,7 @@ const Main = (): React.ReactElement => {
       <WrapperSection
         child={<AboutSection />}
         sectionStyles="bg-white pt-3 pb-3"
-        wrapperStyles="max-w-210! h-auto box-border bg-white shadow-soft p-6! br-lg "
+        wrapperStyles="max-w-210! h-auto box-border bg-white shadow-lg p-6! br-lg "
       />
     </main>
   );

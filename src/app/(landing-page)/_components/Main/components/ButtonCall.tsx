@@ -2,15 +2,12 @@
 import React from "react";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
-import { generateFontSizes } from "@/utils/generateFontSizes";
-
-console.log(generateFontSizes(18, 22));
 
 const css = {
   wrapperButtonCall: "size-auto flex",
   buttonCall: `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center 
-    rounded-2xl bg-yellow-400 text-stone-800 font-semibold leading-5 
-    cursor-pointer hover:bg-yellow-500 hover:scale-104 transition-all duration-200 
+    rounded-2xl bg-yellow text-magenta-black font-semibold leading-5 
+    cursor-pointer hover:bg-yellow-hover hover:scale-104 transition-all duration-200 
     text-[1.086em] shadow-accent`,
 };
 

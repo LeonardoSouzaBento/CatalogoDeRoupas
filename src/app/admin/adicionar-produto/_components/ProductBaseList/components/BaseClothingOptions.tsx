@@ -9,7 +9,7 @@ const css = {
     transition-all duration-150 relative max-[400px]:w-full sm:min-w-60`,
   selected: `ring-style`,
   buttonDelete: `h-8 w-8 flex px-0 items-center justify-center 
-  br-50 bg-white/60 hover:shadow-soft trans absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
+  br-50 bg-white/60 hover:shadow-lg trans absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
 };
 
 interface ButtonProps {

@@ -23,12 +23,12 @@ purple: #7E1FAC
 
   /* divs */
   .card-styles {
-    @apply bg-white shadow-soft hover:shadow-soft-hover px-6 pt-3.5 pb-7 mb-5 
+    @apply bg-white shadow-lg hover:shadow-lg-hover px-6 pt-3.5 pb-7 mb-5 
     rounded-lg box-border transition-shadow duration-200 overflow-hidden relative;
   }
 
   .card-shadow {
-    @apply shadow-soft hover:shadow-soft-hover;
+    @apply shadow-lg hover:shadow-lg-hover;
   }
 
   /* hs */
@@ -71,9 +71,9 @@ purple: #7E1FAC
 
   .ring-style {
     @apply outline-none ring-2 ring-blue-300 bg-blue-50 hover:bg-blue-100/50 
-  text-blue-700 shadow-soft;
+  text-blue-700 shadow-lg;
   }
- 
+
   .p-button {
     @apply text-[1.012em];
   }

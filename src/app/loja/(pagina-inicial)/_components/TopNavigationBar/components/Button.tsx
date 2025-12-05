@@ -14,11 +14,10 @@ export interface ButtonType {
 
 const css = {
   button:
-    "font-medium h-10 px-0 centralize gap-[6px] sm:px-4 sm:pl-[14px] br-md bg-white/24 p165",
+    "font-medium h-10 px-0 centralize gap-[6px] sm:px-4 sm:pl-[14px] br-md bg-white/24 small-p",
   wrapperIcon: "h-10 w-10 centralize bg-white/24 sm:bg-transparent",
-  p: "hidden sm:inline pr-2 text-left text-neutral-800 leading-none p175",
-  buttonSearch:
-    `h-10 w-34 sm:min-w-36 max-w-60 px-4 flex flex-auto justify-between 
+  p: "hidden sm:inline pr-2 text-left text-neutral-800 leading-none normal-p",
+  buttonSearch: `h-10 w-34 sm:min-w-36 max-w-60 px-4 flex flex-auto justify-between 
     items-center br-md lg:order-2 shadow-md/4 bg-white/24 border border-transparent 
     hover:scale-102 transition-all! duration-300 p175 `,
   wrapperIconSearch: "button-square",

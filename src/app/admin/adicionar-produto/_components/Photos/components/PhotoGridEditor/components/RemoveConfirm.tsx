@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const css = {
   container: `size-full abso centralize z-4 bg-black/1`,
-  wrapper: `size-auto p-6 pb-6.7 bg-md bg-white shadow-soft-hover br-xl`,
+  wrapper: `size-auto p-6 pb-6.7 bg-md bg-white shadow-lg-hover br-xl`,
   wrapperButtons: `flex flex-col gap-5`,
   button: `j-center br-lg`,
 };

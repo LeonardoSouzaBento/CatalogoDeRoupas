@@ -15,9 +15,10 @@ const css = {
     "w-full h-auto max-w-220 m-auto centralize items-end flex-col gap-4 sm:flex-row relative",
   wrapper:
     "h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-4",
-  button: `w-full gap-2 !bg-gray-50 flex-auto justify-center! border border-gray-100 
-  transition-colors duration-200 br-lg relative hover:bg-gray-200/50! font-normal`,
-  selected: "bg-white! shadow-soft border border-gray-200 hover:bg-white!",
+  button: `w-full gap-2 flex-auto justify-center border traking-wide
+  transition-colors duration-200 br-lg relative font-normal uppercase small-p`,
+  notSelected: "border-gray-100 hover:bg-gray-200/50 border-transparent ",
+  selected: "bg-transparent bs shadow-xs hover:bg-white ",
 };
 
 const UserGenderList = (): React.ReactElement => {
@@ -58,8 +59,9 @@ const UserGenderList = (): React.ReactElement => {
                 }}
                 className={`${css.button} ${
                   selectedGender === item.name &&
-                  !childCatSelected &&
-                  css.selected
+                  !childCatSelected ?
+                  css.selected :
+                  css.notSelected
                 } ${fastReturn === item.name && "scale-106"}`}
               >
                 <span className={`material-symbols-rounded span22`}>
@@ -74,7 +76,7 @@ const UserGenderList = (): React.ReactElement => {
             onClick={() => {
               handleSelectGender("infantil");
             }}
-            className={`${css.button} ${childCatSelected && css.selected} ${
+            className={`${css.button} ${childCatSelected ? css.selected : css.notSelected} ${
               fastReturn === "infantil" && "scale-106"
             }`}
           >

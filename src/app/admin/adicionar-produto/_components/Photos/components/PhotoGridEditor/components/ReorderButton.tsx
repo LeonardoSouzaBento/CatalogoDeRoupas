@@ -5,7 +5,7 @@ import React from "react";
 
 const css = {
   button: `light-button j-center`,
-  reorderMode: `bg-white! text-blue-700 ring ring-blue-300 shadow-soft-soft`,
+  reorderMode: `bg-white! text-blue-700 ring ring-blue-300 shadow-sm`,
 };
 
 interface Props {
