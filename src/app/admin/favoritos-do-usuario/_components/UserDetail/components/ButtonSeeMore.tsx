@@ -1,6 +1,6 @@
 import React from "react";
 import { BooleanSetter } from "@/types/types";
-import { iconLg } from "@/app/lucideIconStyles";
+import { iconLg } from "@/app/styles/lucideIconStyles";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const css = {

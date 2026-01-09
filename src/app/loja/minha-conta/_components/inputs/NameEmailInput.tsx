@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { Check, Upload } from "lucide-react";
 import { validateName } from "@/functions/validateName";
 import { validateEmail } from "@/functions/validateEmail";

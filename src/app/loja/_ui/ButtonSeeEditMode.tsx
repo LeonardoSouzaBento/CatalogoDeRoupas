@@ -1,4 +1,4 @@
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { Pen } from "lucide-react";
 
@@ -37,7 +37,7 @@ const ButtonSeeEditMode = ({
     >
       {!variantion && <span className={css.icon}>stylus</span>}
       {variantion === "title" && "Editar seção"}
-      {variantion === "title" && <Pen {...iconMd} color="white" />}
+      {variantion === "title" && <Pen {...iconMd} />}
     </button>
   );
 };

@@ -10,13 +10,14 @@ import BrandInput from "./components/brandInput";
 import DifferentialInput from "./components/differentialInput";
 import Button from "@/app/loja/_ui/button";
 import { ChevronDown } from "lucide-react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import WrapperButtons from "@/app/admin/_ui/wrapper-buttons";
 
 //cores, tamanhos, composição, preço, marca, descrição, diferencial,
 
 const FinalInformations = () => {
-  const [selectedPropertie, setSelectedPropertie] = React.useState<string>("Composição");
+  const [selectedPropertie, setSelectedPropertie] =
+    React.useState<string>("Composição");
 
   const properties = [
     "Composição",

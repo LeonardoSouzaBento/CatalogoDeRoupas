@@ -57,7 +57,7 @@ export const TextContent = () => {
       {content.map((item) => (
         <div className={`${css.wrapperP}`} key={item.id}>
           <div className="w-8 h-8 flex items-start justify-center box-border mb-1">
-            <item.icon color="#DF2080" strokeWidth={2.1} size={24} />
+            <item.icon strokeWidth={2.1} size={24} />
           </div>
           <p className={`${css.p}`}>
             {item.text} <IconCheck />

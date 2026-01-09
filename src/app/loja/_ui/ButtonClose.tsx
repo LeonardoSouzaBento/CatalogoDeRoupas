@@ -1,5 +1,5 @@
 import React from "react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter, StateSetter } from "@/types/types";
 import { X } from "lucide-react";
 
@@ -29,7 +29,7 @@ const ButtonClose = ({
   styles,
   iconStyles,
   delay,
-  setStateAnimation = ()=>{},
+  setStateAnimation = () => {},
 }: ButtonCloseProps) => {
   return (
     <button

@@ -6,7 +6,7 @@ import {
   StateSetter,
 } from "@/types/types";
 import { X } from "lucide-react";
-import { iconSm } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/styles/lucideIconStyles";
 
 const css = {
   wrapper: `bs p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
@@ -66,7 +66,7 @@ const AddedProperties = ({
                 className={`${css.button}`}
                 onClick={() => clearValue(item.label)}
               >
-                <X {...iconSm} color="red" />
+                <X {...iconSm} />
               </button>
             </div>
           )

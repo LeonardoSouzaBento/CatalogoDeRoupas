@@ -1,7 +1,6 @@
-import { gray800, iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter, Photo } from "@/types/types";
 import { Layers2, X } from "lucide-react";
-import React from "react";
 
 const css = {
   button: `light-button j-center`,
@@ -45,12 +44,9 @@ const ReorderButton = ({
 
       <div className="wrapper-icon">
         {reorderMode ? (
-          <X {...iconMd} color="blue" />
+          <X {...iconMd} />
         ) : (
-          <Layers2
-            {...iconMd}
-            color={isDisabled ? "#a1a1a1" : gray800}
-          />
+          <Layers2 {...iconMd} color={isDisabled ? "#a1a1a1" : "gray"} />
         )}
       </div>
     </button>

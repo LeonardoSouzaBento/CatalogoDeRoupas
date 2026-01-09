@@ -1,6 +1,6 @@
 import React from "react";
 import { Plus } from "lucide-react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { Photo, StateSetter } from "@/types/types";
 
 const css = {
@@ -9,18 +9,16 @@ const css = {
   button: `light-button j-center relative`,
 };
 
-const AddPhotoButton = ({
-  setPhotos,
-}: {
-  setPhotos: StateSetter<Photo[]>;
-}) => {
+const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
   function handleAddPhoto(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
 
     const allowed = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
     if (!allowed.includes(file.type)) {
-      alert("Formato de imagem não permitido. Escolha JPG (ou JPEG), PNG, ou WEBP.");
+      alert(
+        "Formato de imagem não permitido. Escolha JPG (ou JPEG), PNG, ou WEBP."
+      );
       return;
     }
 

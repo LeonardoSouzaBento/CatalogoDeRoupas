@@ -1,6 +1,6 @@
 "use client";
 import { ChevronDown } from "lucide-react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { ClothingProperty, StateSetter } from "@/types/types";
 import Button from "@/app/loja/_ui/button";
 import WrapperButtons from "@/app/admin/_ui/wrapper-buttons";
@@ -21,11 +21,7 @@ interface Props {
   setPropSelected: StateSetter<string | null>;
 }
 
-const Properties = ({
-  properties,
-  propSelected,
-  setPropSelected,
-}: Props) => {
+const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
   return (
     <WrapperButtons styles="mb-5 bs">
       {properties.slice(0, -1).map((item) => (

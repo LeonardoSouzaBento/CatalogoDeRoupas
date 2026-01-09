@@ -1,4 +1,4 @@
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { HomeContext } from "@/contexts";
 import { BooleanSetter } from "@/types/types";
 import { PenOff } from "lucide-react";
@@ -72,7 +72,7 @@ const HomeTitleSubtitle = ({
         >
           Fechar edição
           <div className="wrapper-icon">
-            <PenOff {...iconMd} color="white" />
+            <PenOff {...iconMd} />
           </div>
         </button>
       )}

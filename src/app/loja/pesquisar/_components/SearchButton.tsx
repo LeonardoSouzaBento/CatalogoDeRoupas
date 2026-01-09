@@ -1,4 +1,4 @@
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { Search } from "lucide-react";
 import Link from "next/link";
 

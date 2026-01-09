@@ -1,5 +1,5 @@
 "use client";
-import { iconSm } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { CornerUpLeft } from "lucide-react";
 

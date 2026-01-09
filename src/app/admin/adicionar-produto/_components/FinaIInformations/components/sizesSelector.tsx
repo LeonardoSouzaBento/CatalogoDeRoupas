@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useState } from "react";
 import Button from "@/app/loja/_ui/button";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { Eye } from "lucide-react";
 import { UserContext } from "@/contexts";
 import { letterSizes } from "@/data/clothingData/sizes";
@@ -46,7 +46,6 @@ const SizeSelector = () => {
 
 export default SizeSelector;
 
-
 interface Props {
   dataList: string[] | number[];
 }
@@ -82,6 +81,3 @@ const SizeList = ({ dataList }: Props) => {
     </div>
   );
 };
-
-
-

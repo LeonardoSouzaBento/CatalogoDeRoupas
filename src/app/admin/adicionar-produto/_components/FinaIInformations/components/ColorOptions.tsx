@@ -4,7 +4,7 @@ import { colorFamilies } from "@/data/clothingData/colors";
 import { colorsByFamily } from "@/data/clothingData/colors";
 import { StateSetter } from "@/types/types";
 import { ChevronDown, Plus, X } from "lucide-react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 
 const css = {
   wrapper: `flex flex-col gap-2`,
@@ -121,7 +121,7 @@ const ColorList = ({ selectedFamily }: { selectedFamily: string }) => {
                 </p>
               </div>
               <Button onClick={() => setSelectedColor("")} squareOrCircular>
-                <X {...iconMd} color="red" />
+                <X {...iconMd} />
               </Button>
             </div>
           );
@@ -155,4 +155,3 @@ const ColorInput = ({
     </div>
   );
 };
-

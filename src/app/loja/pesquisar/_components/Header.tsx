@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { X } from "lucide-react";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) => {
 
       {seeButtonClose && (
         <Link className={`${css.button} `} href={"/loja"}>
-          <X {...iconMd} color="white" />
+          <X {...iconMd} />
         </Link>
       )}
     </div>

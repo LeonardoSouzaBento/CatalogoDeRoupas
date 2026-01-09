@@ -1,5 +1,5 @@
 "use client";
-import { iconSm } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/styles/lucideIconStyles";
 import { X } from "lucide-react";
 
 const css = {
@@ -48,7 +48,7 @@ const BaseClothingOptions = ({
                 selected ? "flex opacity-100" : "opacity-0! hidden!"
               }`}
             >
-              <X {...iconSm} color="red" strokeWidth={2.3} />
+              <X {...iconSm} strokeWidth={2.3} />
             </span>
           </button>
         );

@@ -1,5 +1,5 @@
 "use client";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { CircleCheckBig } from "lucide-react";
 
 interface Props {
@@ -8,16 +8,9 @@ interface Props {
   Function?: () => Promise<void>;
 }
 
-const SaveButton = ({
-  text = "Salvar",
-  styles,
-  Function,
-}: Props) => {
+const SaveButton = ({ text = "Salvar", styles, Function }: Props) => {
   return (
-    <button
-      onClick={Function}
-      className={`w-full ${styles}`}
-    >
+    <button onClick={Function} className={`w-full ${styles}`}>
       {text}
       <div className={`wrapper-icon relative`}>
         <CircleCheckBig {...iconMd} />

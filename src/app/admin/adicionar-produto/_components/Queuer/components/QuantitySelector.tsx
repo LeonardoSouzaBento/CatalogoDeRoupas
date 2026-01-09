@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { iconMd, iconSm } from "@/app/lucideIconStyles";
+import { iconMd, iconSm } from "@/app/styles/lucideIconStyles";
 import { StateSetter } from "@/types/types";
 import { Minus, Plus, X } from "lucide-react";
 
@@ -53,9 +53,11 @@ const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
           setSelectedQuantity(0);
         }}
       >
-        <X {...iconSm} color="red" />
+        <X {...iconSm} />
       </button>
-      <p className={`${numberOptions[0] !== 1 && "min-[450px]:ml-12"}`}>Tenho</p>
+      <p className={`${numberOptions[0] !== 1 && "min-[450px]:ml-12"}`}>
+        Tenho
+      </p>
 
       <div className={`${css.wrapperButtons}`}>
         {numberOptions.map((item, index) => {

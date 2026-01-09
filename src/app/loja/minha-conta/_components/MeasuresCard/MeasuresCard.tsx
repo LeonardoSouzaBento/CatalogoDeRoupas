@@ -1,6 +1,6 @@
 import React from "react";
 import MeasureItem from "./MeasureItem";
-import { iconMd, iconSm } from "@/app/lucideIconStyles";
+import { iconMd, iconSm } from "@/app/styles/lucideIconStyles";
 import type { Measure } from "./MeasureItem";
 import { Pen, CircleQuestionMark } from "lucide-react";
 import AlertInfo from "@ui/AlertInfo";
@@ -23,7 +23,11 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
 
   return (
     <>
-      <HeaderCard title="Minhas medidas" icon="square_foot" iconStyles="mb-[1.5px] span21" />
+      <HeaderCard
+        title="Minhas medidas"
+        icon="square_foot"
+        iconStyles="mb-[1.5px] span21"
+      />
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
       <table className="w-full">
         <tbody className={`${css.wrapper}`}>

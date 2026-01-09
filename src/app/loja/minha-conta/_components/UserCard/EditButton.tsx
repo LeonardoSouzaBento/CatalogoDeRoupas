@@ -1,8 +1,8 @@
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { Pen } from "lucide-react";
 
-const EditButton = ({ setSeeEditMode} : { setSeeEditMode: BooleanSetter }) => {
+const EditButton = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
   return (
     <div className="h-16 w-auto flex items-center mb-1 br-0">
       <button
@@ -11,7 +11,7 @@ const EditButton = ({ setSeeEditMode} : { setSeeEditMode: BooleanSetter }) => {
           setSeeEditMode(true);
         }}
       >
-        <Pen {...iconMd} color="black" />
+        <Pen {...iconMd} />
       </button>
     </div>
   );

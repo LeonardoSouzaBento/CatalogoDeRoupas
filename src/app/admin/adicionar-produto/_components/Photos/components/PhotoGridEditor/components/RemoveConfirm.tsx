@@ -1,4 +1,4 @@
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter, Photo, StateSetter } from "@/types/types";
 import { Check, X } from "lucide-react";
 import Image from "next/image";
@@ -95,7 +95,7 @@ const RemoveConfirm = ({
               }}
             >
               Sim, remover
-              <Check{...iconMd} strokeWidth={2} />
+              <Check {...iconMd} strokeWidth={2} />
             </button>
           </div>
         </div>

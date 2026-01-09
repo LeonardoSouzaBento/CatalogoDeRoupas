@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ButtonClose, HeaderCard } from "../../_ui";
 import { BooleanSetter } from "@/types/types";
 import { Eye, EyeClosed, LogIn } from "lucide-react";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 
 const css = { button: `h-11 w-full j-center` };
 
@@ -41,9 +41,9 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           }}
         >
           {seePassword ? (
-            <EyeClosed {...iconMd} color="gray" />
+            <EyeClosed {...iconMd} />
           ) : (
-            <Eye {...iconMd} color="gray" />
+            <Eye {...iconMd} />
           )}
         </div>
       </div>

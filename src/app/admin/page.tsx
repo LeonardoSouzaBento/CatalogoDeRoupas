@@ -1,12 +1,8 @@
-"use client"
+"use client";
 import React, { useContext } from "react";
 import { HomeContext } from "@/contexts";
 import { BookHeart, Eye, Pen, Plus } from "lucide-react";
-import {
-  iconMd,
-  iconSm,
-  iconLg,
-} from "@/app/lucideIconStyles";
+import { iconMd, iconSm, iconLg } from "@/app/styles/lucideIconStyles";
 import "../globals.css";
 import Link from "next/link";
 
@@ -72,7 +68,10 @@ const AdminPannel = () => {
                 }
               }}
             >
-              <button.icon {...button.iconStyle} {...(index === 0 ? { strokeWidth: 2.4 } : {})}/>
+              <button.icon
+                {...button.iconStyle}
+                {...(index === 0 ? { strokeWidth: 2.4 } : {})}
+              />
               {button.name}
             </Link>
           ))}

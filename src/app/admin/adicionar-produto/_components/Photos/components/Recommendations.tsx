@@ -1,5 +1,5 @@
 "use client";
-import { iconSm } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/styles/lucideIconStyles";
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -32,8 +32,9 @@ const Recommendations = () => {
         {expanded ? (
           <>
             <p className={css.p}>
-              O ideal é <span className={css.highlight}>pelo menos 3 fotos</span>{" "}
-              para cada roupa (frente, costas e o tecido visto de perto).
+              O ideal é{" "}
+              <span className={css.highlight}>pelo menos 3 fotos</span> para
+              cada roupa (frente, costas e o tecido visto de perto).
             </p>
             <p className={`${css.p} mt-2`}>
               O{" "}

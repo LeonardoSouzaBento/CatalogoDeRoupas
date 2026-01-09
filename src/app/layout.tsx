@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import { UserProvider } from "@/contexts/Providers/UserProvider";
 import { PublicDataProvider } from "@/contexts/Providers/PublicDataProvider";
 import { DM_Sans, Cookie } from "next/font/google";
-import "./reset.css";
-import "./globals.css";
-import "./shorteners.css";
-import "./styles.css";
-
+import "./styles/reset.css";
+import "./styles/globals.css";
+import "./styles/shorteners.css";
+import "./styles/styles.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -58,9 +57,7 @@ export const viewport: Viewport = {
 };
 
 // novo tamanho base: 17.5px
-const fontStyles = `font-dm-sans 
- text-[1.09375rem] sm:text-[1.11205rem] md:text-[1.12089rem] lg:text-[1.13857rem] 
- xl:text-[1.15625rem] 2xl:text-[1.17393rem]`; 
+const fontStyles = `font-dm-sans text-[1.09375rem] sm:text-[1.12500rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.18125rem]`;
 // 17,5 até 18,5 em xl
 
 export default function RootLayout({
@@ -69,7 +66,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
+    <html
+      lang="pt-br"
+      className={`${dmSans.variable} ${cookie.variable}`}
+    >
       <body className={`bg-body-background text-[1rem] text-black-text`}>
         <PublicDataProvider>
           <UserProvider>

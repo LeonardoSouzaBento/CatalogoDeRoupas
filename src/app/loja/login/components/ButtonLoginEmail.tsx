@@ -1,5 +1,5 @@
 "use client";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { BooleanSetter } from "@/types/types";
 import { Mail } from "lucide-react";
 import { buttonStyles } from "../page";

@@ -1,4 +1,4 @@
-import { iconSm } from "@/app/lucideIconStyles";
+import { iconSm } from "@/app/styles/lucideIconStyles";
 import { X } from "lucide-react";
 
 const css = {
@@ -6,12 +6,11 @@ const css = {
   shadow-sm br-50`,
 };
 
-
 const RemovePhotoButton = () => {
   return (
     <>
       <button className={`${css.button}`}>
-        <X {...iconSm} color="#FF2056" />
+        <X {...iconSm} />
       </button>
     </>
   );

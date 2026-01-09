@@ -3,7 +3,7 @@ import WrapperButtons from "@/app/admin/_ui/wrapper-buttons";
 import WrapperOptions from "@/app/admin/_ui/wrapper-options";
 import { ButtonClose } from "@/app/loja/_ui";
 import Button from "@/app/loja/_ui/button";
-import { iconMd } from "@/app/lucideIconStyles";
+import { iconMd } from "@/app/styles/lucideIconStyles";
 import { commonFabrics } from "@/data/clothingData/commonFabrics";
 import { materials } from "@/data/clothingData/materials";
 import { StateSetter } from "@/types/types";
