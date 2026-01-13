@@ -114,7 +114,7 @@ const PhotoGridEditor = () => {
             <div className={`${css.reorderAlert}`}>
               <span
                 className={`material-symbols-rounded
-                font-semibold text-[1.21em]!`}
+                font-semibold !`}
               >
                 touch_app
               </span>

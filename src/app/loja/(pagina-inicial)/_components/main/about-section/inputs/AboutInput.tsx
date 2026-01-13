@@ -13,7 +13,7 @@ const css = {
   textarea:
     'w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none',
   wrapperButtons: 'w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2',
-  buttons: 'w-full sm:w-70 md:w-max button !justify-start text-[1.025em] xl:text-[1.035em]',
+  buttons: 'w-full sm:w-70 md:w-max button !justify-start  xl:',
 };
 
 type AboutInputProps = {

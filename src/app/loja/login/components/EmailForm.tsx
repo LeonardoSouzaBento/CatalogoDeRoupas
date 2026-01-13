@@ -21,7 +21,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         wrapperStyles="mb-4!"
         title="Entre com email"
         icon="mail"
-        iconStyles="font-semibold! text-[1.25em]!"
+        iconStyles="font-semibold! !"
       />
       <div className="mb-[18px]">
         <label htmlFor="email">Email</label>

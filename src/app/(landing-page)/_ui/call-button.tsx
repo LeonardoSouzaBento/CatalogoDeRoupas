@@ -8,7 +8,7 @@ const css = {
   buttonCall: `h-13 w-full max-w-86 flex items-center justify-center gap-3 px-6 text-center 
     rounded-2xl bg-yellow text-magenta-black font-semibold leading-5 
     cursor-pointer hover:bg-yellow-hover hover:scale-104 transition-all duration-200 
-    text-[1.086em] shadow-accent`,
+     shadow-accent`,
 };
 
 const iconStyles = { size: 20, strokeWidth: 2.3, color: '#802954' };

@@ -37,7 +37,7 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
         title="Edite seus dados"
         icon="edit"
         wrapperStyles="bs-light-color"
-        iconStyles="text-[1.3em]!"
+        iconStyles="!"
       />
       <ButtonClose
         setState={setSeeEditMode}

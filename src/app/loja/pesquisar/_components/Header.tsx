@@ -7,7 +7,7 @@ import Link from 'next/link';
 const css = {
   wrapper: `h-14 px-5 mb-5 box-content flex items-center j-between br-0 
   bg-gradient-to-r from-stone-800 to-stone-700`,
-  pLogo: 'leading-none font-logo text-white text-stone-800 text-[1.780em]',
+  pLogo: 'leading-none font-logo text-white text-stone-800 ',
   button: 'h-9 w-9 p-0 flex-center br-md bg-stone-600/38 hover:bg-stone-600/76 trans',
 };
 

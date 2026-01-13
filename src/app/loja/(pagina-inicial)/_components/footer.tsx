@@ -1,7 +1,7 @@
 const css = {
   footer: "w-full h-18 px-6 box-border flex-center bg-stone-900 rounded-none",
   wrapperP: "size-full relative z-0 bg-white",
-  p: "inline text-stone-300 font-extralight text-[0.9em]",
+  p: "inline text-stone-300 font-extralight ",
 };
 
 const Footer = (): React.ReactElement => {

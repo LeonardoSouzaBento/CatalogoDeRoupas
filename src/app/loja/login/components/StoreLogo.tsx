@@ -4,8 +4,8 @@ import React from "react";
 const css = {
   wrapperLogo: `size-20 mb-8 box-content flex flex-col justify-center items-center gap-6 
   bg-stone-800 br-50 shadow-lg-hover`,
-  pLogo: `h-max text-center text-white font-logo text-[1.28em] pl-[1px] leading-0`,
-  shopName: `text-center text-[1.36em] font-semibold leading-0 mb-4 capitalize`,
+  pLogo: `h-max text-center text-white font-logo  pl-[1px] leading-0`,
+  shopName: `text-center  font-semibold leading-0 mb-4 capitalize`,
   subtitle: `mb-6 text-gray-500 `,
 };
 

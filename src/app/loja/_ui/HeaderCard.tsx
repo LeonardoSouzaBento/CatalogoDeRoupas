@@ -13,7 +13,7 @@ interface HeaderCardProps {
   collapsedDiv?: boolean;
 }
 
-//text-[1.1712em]
+//
 
 const css = {
   wrapper: `w-full min-h-10 flex flex-col i-start 

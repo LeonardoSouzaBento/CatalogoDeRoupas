@@ -10,7 +10,7 @@ const css = {
   button: `h-9 w-full min-[500px]:w-[calc(50%-6px)] max-w-52 light-button br-50 j-center font-normal
   hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600 5`,
   selected: `ring-style`,
-  icon: `material-symbols-rounded font-[450]! text-[1.245em]!`,
+  icon: `material-symbols-rounded font-[450]! !`,
 };
 
 const buttons: { label: string; value: Genders; icon?: string }[] = [

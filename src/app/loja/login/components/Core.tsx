@@ -15,8 +15,8 @@ const Core = () => {
           <HeaderCard
             title="Fazer Login"
             subtitle="Recomendamos o login com Google"
-            iconStyles="font-medium! text-[1.35em]! mt-1"
-            titleStyles="font-semibold text-[1.12em]!"
+            iconStyles="font-medium! ! mt-1"
+            titleStyles="font-semibold !"
           />
           <ButtonLoginGoogle />
           <ButtonLoginEmail

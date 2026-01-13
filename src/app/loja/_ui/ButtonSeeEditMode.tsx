@@ -14,7 +14,7 @@ const ButtonSeeEditMode = ({ setState, styles, positionStyles, variantion, secti
   const css = {
     squareButton: `flex-center h-11 min-w-11 p-0 bg-gradient-to-br from-stone-800 to-stone-700 br-2xl shadow-lg`,
     titleButton: `h-11 m-auto mb-5 bg-gradient-to-br from-stone-800 to-stone-700 br-2xl text-white shadow-lg hover:shadow-lg-hover`,
-    icon: 'material-symbols-rounded font-[300]! text-[1.35em]! text-white ',
+    icon: 'material-symbols-rounded font-[300]! ! text-white ',
     defaultPosition: `absolute bottom-3 right-3`,
   };
   const isTitle = variantion === 'title';

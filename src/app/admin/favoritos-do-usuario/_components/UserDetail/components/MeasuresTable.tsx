@@ -8,7 +8,7 @@ const MeasuresTable = ({ userData }: { userData: UserData }) => {
 
   return (
     <table className="w-full border-collapse">
-      <caption className="text-[1.09em] text-left">Medidas</caption>
+      <caption className=" text-left">Medidas</caption>
 
       <tbody className="flex ">
         <tr className={`${css.tr}`}>

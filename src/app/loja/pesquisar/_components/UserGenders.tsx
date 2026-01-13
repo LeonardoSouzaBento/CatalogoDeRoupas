@@ -23,7 +23,7 @@ const UserGenders = () => {
   return (
     <div className={`px-2`}>
       <div className={`${mainCss.wrapper}`}>
-        <p className={`mb-4 text-[1.033em]`}>Gênero:</p>
+        <p className={`mb-4 `}>Gênero:</p>
         <div className={`${mainCss.wrapperGenders}`}>
           {genders.map((item) => (
             <GenderButton

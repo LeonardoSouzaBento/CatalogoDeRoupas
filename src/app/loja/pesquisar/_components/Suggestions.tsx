@@ -16,7 +16,7 @@ const Suggestions = () => {
 
   return (
     <div className="h-max px-2 py-5 border-t bs-light-color br-0">
-      <p className="mb-5 text-[1.033em]">Buscas Frequentes:</p>
+      <p className="mb-5 ">Buscas Frequentes:</p>
       <div className={`${css.wrapperSuggestions}`}>
         {suggestions.map((item: string) => (
           <Button key={item} item={item} />

@@ -31,7 +31,7 @@ const ImageAndName = ({
     wrapperImg: "h-25 min-w-21 bg-gray-100 crop br-md",
     img: "size-full object-contain box-border p-2",
     wrapperNameFile: "w-full max-h-25 box-border p-2 br-0 crop",
-    nameFile: "break-all text-[0.91em]",
+    nameFile: "break-all ",
   };
 
   return (

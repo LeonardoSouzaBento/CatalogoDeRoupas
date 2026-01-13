@@ -38,8 +38,8 @@ const css = {
   container:
     'h-auto w-full max-w-[592px] px-8 py-6 mb-12 min-[688px]:max-w-[672px] lg:mb-0 rounded-xl bg-white shadow-lg',
   wrapperButtons: 'flex flex-col min-[680px]:flex-row min-[680px]:flex-wrap gap-4 mb-2',
-  h1: 'text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left text-[1.33em]',
-  h2: 'w-full mb-6 font-light text-left text-neutral-600 text-[1.09em] cursor-default',
+  h1: 'text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left ',
+  h2: 'w-full mb-6 font-light text-left text-neutral-600  cursor-default',
   button:
     'h-10 min-[680px]:min-w-[calc(50%-8px)] min-[680px]:max-w-[calc(50%-8px)] flex flex-auto button',
 };
