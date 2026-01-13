@@ -1,6 +1,6 @@
-import { iconSm } from "@/app/styles/lucideIconStyles";
-import { BooleanSetter } from "@/types/types";
-import { Copy, CopyCheck } from "lucide-react";
+import { iconSm } from '@/app/css/lucideIconStyles';
+import { BooleanSetter } from '@/types/types';
+import { Copy, CopyCheck } from 'lucide-react';
 
 interface ButtonCopyProps {
   state: boolean;
@@ -10,15 +10,9 @@ interface ButtonCopyProps {
   textToCopy: string;
 }
 
-const css = { button: "button min-w-max" };
+const css = { button: 'button min-w-max' };
 
-const ButtonCopy = ({
-  state,
-  setState,
-  firstText,
-  secondText,
-  textToCopy,
-}: ButtonCopyProps) => {
+const ButtonCopy = ({ state, setState, firstText, secondText, textToCopy }: ButtonCopyProps) => {
   function handleClickCopy() {
     navigator.clipboard
       .writeText(textToCopy)
@@ -31,7 +25,7 @@ const ButtonCopy = ({
 
   return (
     <button className={`${css.button}`} onClick={handleClickCopy}>
-      {!state ? firstText : secondText || "Copiado!"}
+      {!state ? firstText : secondText || 'Copiado!'}
       {!state ? <Copy {...iconSm} /> : <CopyCheck {...iconSm} />}
     </button>
   );

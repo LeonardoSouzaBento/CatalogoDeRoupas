@@ -68,7 +68,7 @@ const FindUsSection = (): React.ReactElement => {
             {!seePhoneInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
-                  <span className="material-symbols-rounded span22">call</span>
+                  <span className="material-symbols-rounded ">call</span>
                   <div className={`${css.wrapperPs}`}>
                     <p className={`${css.firstP}`}>
                       <strong>Whatsapp:</strong>

@@ -1,17 +1,17 @@
-import  useLocalStorage  from "@/hooks/useLocalStorage2";
-import type { ProviderType } from "@localtypes/types";
-import React from "react";
-import { AdminContext } from "../AdminContext";
+import useLocalStorage from '@/hooks/useLocalStorage';
+import type { ProviderType } from '@localtypes/types';
+import React from 'react';
+import { AdminContext } from '../AdminContext';
 
 export const AdminProvider: React.FC<ProviderType> = ({ children }) => {
-  const [blobUrls , setBlobUrls ] = useLocalStorage("blobUrls", [""]);
+  const [blobUrls, setBlobUrls] = useLocalStorage('blobUrls', ['']);
 
   return (
     <AdminContext.Provider
       value={{
-        blobUrls , setBlobUrls
-      }}
-    >
+        blobUrls,
+        setBlobUrls,
+      }}>
       {children}
     </AdminContext.Provider>
   );

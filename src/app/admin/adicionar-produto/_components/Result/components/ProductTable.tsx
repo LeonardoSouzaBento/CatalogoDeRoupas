@@ -8,7 +8,7 @@ const css = {
   wrapper: `bg-white br-0 `,
   row: `h-9.5 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
   br-0`,
-  label: `p16 font-medium text-gray-800 w-40`,
+  label: ` font-medium text-gray-800 w-40`,
   value: `text-gray-700 flex-1 text-right br-0`,
   voidValue: `font-semibold text-gray-400 text-right`,
 };

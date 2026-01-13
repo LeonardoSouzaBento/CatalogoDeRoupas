@@ -10,7 +10,7 @@ interface Props {
 }
 
 const css = {
-  wrapper: `w-full min-h-screen fixed top-0 right-0 centralize bg-black/25 z-4`,
+  wrapper: `w-full min-h-screen fixed top-0 right-0 flex-center bg-black/25 z-4`,
   container: `w-120 h-auto br-lg shadow-lg bg-white hover:shadow-lg-hover p-6 relative`,
   header: `min-h-10 w-full flex flex items-center justify-start gap-2 mb-4`,
   title: `font-medium text-[1.12em]`,

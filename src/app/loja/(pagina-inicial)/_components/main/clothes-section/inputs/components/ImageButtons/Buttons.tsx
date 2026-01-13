@@ -1,18 +1,18 @@
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { CloudUpload } from "lucide-react";
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { CloudUpload } from 'lucide-react';
 
 const css = {
   wrapperButtons: `size-full flex flex-col gap-5 pb-5 bg-white/86 z-2`,
   button: `min-w-full max-w-none j-center`,
-  wrapperIcon: "h-10 min-w-10 centralize",
+  wrapperIcon: 'h-10 min-w-10 flex-center',
 };
 
 const Buttons = ({ mainImage = true }: { mainImage?: boolean }) => {
   function uploadImage() {
     if (mainImage) {
-      console.log("");
+      console.log('');
     } else {
-      console.log("");
+      console.log('');
     }
   }
   return (

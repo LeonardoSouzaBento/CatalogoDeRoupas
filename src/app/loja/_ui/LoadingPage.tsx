@@ -10,7 +10,7 @@ const LoadingPage = () => {
       <div
         className={`w-max p-12 h-max flex flex-col items-center gap-2 br-2xl`}
       >
-        <div className="w-max h-max relative flex centralize">
+        <div className="w-max h-max relative flex flex-center">
           <span
             className={`material-symbols-rounded animate-spin relative z-2 text-[#124da5] font-[350]!`}
             style={{ fontSize: "36px" }}
@@ -25,7 +25,7 @@ const LoadingPage = () => {
             circle
           </span>
         </div>
-        <p className={`ml-2 p21 font-semibold text-[#124da5]`}>Carregando...</p>
+        <p className={`ml-2  font-semibold text-[#124da5]`}>Carregando...</p>
       </div>
     </div>
   );

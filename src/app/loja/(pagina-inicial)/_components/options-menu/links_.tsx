@@ -5,13 +5,13 @@ const pageOptions = [
     name: "Meus favoritos",
     link: "/loja/favoritos",
     icon: "favorite",
-    iconStyles: "span20",
+    iconStyles: "",
   },
   {
     name: "Minha Conta",
     link: "/loja/minha-conta",
     icon: "account_circle",
-    iconStyles: "ml-[0px] span20",
+    iconStyles: "ml-[0px] ",
   },
 ];
 

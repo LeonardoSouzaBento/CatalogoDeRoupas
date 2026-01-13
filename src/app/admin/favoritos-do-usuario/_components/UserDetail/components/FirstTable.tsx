@@ -3,7 +3,7 @@ import React from 'react'
 
 const FirstTable = ({ userData }: { userData: UserData }) => {
   const css = {
-    caption: "min-h-7 pb-5 centralize justify-start! box-border text-[1.09em] text-left",
+    caption: "min-h-7 pb-5 flex-center justify-start! box-border text-[1.09em] text-left",
     tr: "h-max flex flex-col sm:flex-row sm:items-start ",
     thEtd: "h-10 px-5 flex i-center j-start sm:[j-center]",
     th: "bg-neutral-200 font-medium",

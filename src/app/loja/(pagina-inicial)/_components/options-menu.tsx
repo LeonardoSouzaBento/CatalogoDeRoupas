@@ -10,7 +10,7 @@ const css = {
   `,
   wrapperTitle: `h-13 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 br-0 bg-stone-800 
   bg-gradient-to-l from-stone-800 to-stone-700/70`,
-  title: `text-white font-semibold p20 mt-[1px]`,
+  title: `text-white font-semibold  mt-[1px]`,
 };
 
 const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSetter }) => {

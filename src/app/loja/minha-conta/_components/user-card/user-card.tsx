@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { UserData } from "@/types/types";
-import NameEmailInput from "../inputs/NameEmailInput";
-import EditButton from "./EditButton";
+import NameEmailInput from "../inputs/name-email-input";
+import EditButton from "./edit-button";
 
 //min-[500px]:flex-row min-[500px]:gap-4
 
@@ -12,8 +12,8 @@ const css = {
   img: "!border-none !outline-none",
   wrapperInfo:
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",
-  name: `block font-bold break-words text-gray-800 capitalize leading-none p20`,
-  email: "block p18 leading-none break-all",
+  name: `block font-bold break-words text-gray-800 capitalize leading-none `,
+  email: "block  leading-none break-all",
   buttonEdit: "square-button p-0 br-md ",
 };
 

@@ -1,15 +1,15 @@
-import SaveButton from "@/app/loja/_ui/SaveButton";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { Check } from "lucide-react";
-import React from "react";
+import SaveButton from '@/app/loja/_ui/SaveButton';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { Check } from 'lucide-react';
+import React from 'react';
 
 const css = {
   wrapper: `w-full flex flex-col items-start gap-3 mb-5`,
   wrapperInput: `w-full flex flex-col items-start gap-2`,
-  button: "button min-w-9 !h-9 !px-0 centralize mr-0",
-  wrapperButton: "w-full flex justify-end",
-  saveButton: "button w-full !justify-center",
-  label: " font-medium",
+  button: 'button min-w-9 !h-9 !px-0 flex-center mr-0',
+  wrapperButton: 'w-full flex justify-end',
+  saveButton: 'button w-full !justify-center',
+  label: ' font-medium',
 };
 
 const InfoForm = ({ id }: { id: number | string }): React.ReactElement => {

@@ -1,23 +1,20 @@
-"use client";
-import { defaultUserData } from "@/data/UserData";
-import useLocalStorage  from "@/hooks/useLocalStorage2";
-import type { Genders, ProviderType, UserData } from "@/types/types";
-import React, { useState } from "react";
-import { UserContext } from "../UserContext";
+'use client';
+import { defaultUserData } from '@/data/UserData';
+import useLocalStorage from '@/hooks/useLocalStorage';
+import type { Genders, ProviderType, UserData } from '@/types/types';
+import React, { useState } from 'react';
+import { UserContext } from '../UserContext';
 
 export const UserProvider: React.FC<ProviderType> = ({ children }) => {
   const [userData, setUserData] = useState<UserData>(defaultUserData);
   /* Generos do usuário */
   const [selectedGender, setSelectedGender] = useLocalStorage(
-    "selectedGender",
-    "masculino" as Genders
+    'selectedGender',
+    'masculino' as Genders
   );
-  const [childCatSelected, setChildCatSelected] = useLocalStorage(
-    "childCatSelected",
-    false
-  );
+  const [childCatSelected, setChildCatSelected] = useLocalStorage('childCatSelected', false);
 
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   return (
     <UserContext.Provider
@@ -32,8 +29,7 @@ export const UserProvider: React.FC<ProviderType> = ({ children }) => {
         setSelectedGender,
         childCatSelected,
         setChildCatSelected,
-      }}
-    >
+      }}>
       {children}
     </UserContext.Provider>
   );

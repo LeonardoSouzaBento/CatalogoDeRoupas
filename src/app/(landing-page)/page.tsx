@@ -1,19 +1,13 @@
-import { ZapFixedButton } from "../loja/_ui";
-import LogoSection from "./_components/LogoSection";
-import { TitleSubtitleSection } from "./_components/Main/components";
-import {
-  WhySection,
-  PlansSection,
-  MainSection,
-  HowSection,
-} from "./_components/Main/index";
+import { ZapFixedButton } from '../loja/_ui';
+import { TitleSubtitle } from './_ui';
+import { Questions, Plans, Hero, Process, LogoSection } from './_sections/index';
 
 // segundo branco: #FFFFFF
 
 export default function Home() {
   const css = {
     wrapperTwoSections: `xl:mb-7 xl:w-auto xl:h-[712px] xl:m-auto pt-6 xl:flex xl:gap-6 xl:px-[calc((100%-1280px)/2)] xl:items-start xl:justify-center`,
-    wrapperSection: "xl:w-[calc(100%-14px)] xl:h-[546px]",
+    wrapperSection: 'xl:w-[calc(100%-14px)] xl:h-[546px]',
   };
 
   return (
@@ -21,37 +15,30 @@ export default function Home() {
       <LogoSection page="landing-page" />
       <main>
         {/* Seção principal */}
-        <MainSection />
+        <Hero />
         <div className={`${css.wrapperTwoSections}`}>
           {/* Seção "porque" */}
           <div className={`${css.wrapperSection}`}>
-            <TitleSubtitleSection
+            <TitleSubtitle
               title="Porque ter um catálogo?"
               subtitle="Ajudamos você a vender mais"
               secondSection={true}
             />
-            <WhySection />
+            <Questions />
           </div>
           {/* Seção "como" */}
           <div className={css.wrapperSection}>
-            <TitleSubtitleSection
-              title="Como Funciona?"
-              subtitle="É simples"
-              thirdSection={true}
-            />
-            <HowSection />
+            <TitleSubtitle title="Como Funciona?" subtitle="É simples" thirdSection={true} />
+            <Process />
           </div>
         </div>
         {/* Seção dos planos */}
         <div className={`pb-9`}>
-          <TitleSubtitleSection
-            title="Quanto Custa?"
-            subtitle="Temos preços acessíveis"
-          />
-          <PlansSection />
+          <TitleSubtitle title="Quanto Custa?" subtitle="Temos preços acessíveis" />
+          <Plans />
         </div>
       </main>
-      <ZapFixedButton myNumber={true}/>
+      <ZapFixedButton myNumber={true} />
     </div>
   );
 }

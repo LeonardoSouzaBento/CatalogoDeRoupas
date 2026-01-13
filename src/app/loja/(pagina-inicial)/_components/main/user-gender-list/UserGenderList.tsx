@@ -12,7 +12,7 @@ const userGenders = [
 
 const css = {
   container:
-    "w-full h-auto max-w-220 m-auto centralize items-end flex-col gap-4 sm:flex-row relative",
+    "w-full h-auto max-w-220 m-auto flex-center items-end flex-col gap-4 sm:flex-row relative",
   wrapper:
     "h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-4",
   button: `w-full gap-2 flex-auto justify-center border traking-wide
@@ -64,7 +64,7 @@ const UserGenderList = (): React.ReactElement => {
                   css.notSelected
                 } ${fastReturn === item.name && "scale-106"}`}
               >
-                <span className={`material-symbols-rounded span22`}>
+                <span className={`material-symbols-rounded `}>
                   {item.icon}
                 </span>
                 {item.name}

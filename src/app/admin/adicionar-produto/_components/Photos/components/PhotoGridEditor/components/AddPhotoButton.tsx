@@ -1,11 +1,11 @@
-import React from "react";
-import { Plus } from "lucide-react";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { Photo, StateSetter } from "@/types/types";
+import React from 'react';
+import { Plus } from 'lucide-react';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { Photo, StateSetter } from '@/types/types';
 
 const css = {
   wrapper: ``,
-  input: `size-full p-0 abso bs-0 z-2 centralize opacity-0`,
+  input: `size-full p-0 abso bs-0 z-2 flex-center opacity-0`,
   button: `light-button j-center relative`,
 };
 
@@ -14,11 +14,9 @@ const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const allowed = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+    const allowed = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     if (!allowed.includes(file.type)) {
-      alert(
-        "Formato de imagem não permitido. Escolha JPG (ou JPEG), PNG, ou WEBP."
-      );
+      alert('Formato de imagem não permitido. Escolha JPG (ou JPEG), PNG, ou WEBP.');
       return;
     }
 
@@ -51,7 +49,7 @@ const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
         },
       ];
     });
-    event.target.value = "";
+    event.target.value = '';
   }
 
   return (

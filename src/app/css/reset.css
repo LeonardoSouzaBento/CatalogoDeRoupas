@@ -2,19 +2,13 @@
 
 html,
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
-
-body::-webkit-scrollbar {
+html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 0;
   height: 0;
   visibility: hidden;
@@ -23,8 +17,7 @@ body::-webkit-scrollbar {
 body {
   width: 100%;
   max-width: 1400px;
-  min-height: 100vh;
-  margin: auto;
+  margin-inline: auto;
   position: relative;
 }
 p {

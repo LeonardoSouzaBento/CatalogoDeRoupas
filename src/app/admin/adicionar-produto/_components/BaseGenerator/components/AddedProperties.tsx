@@ -1,19 +1,15 @@
-import { useContext } from "react";
-import { UserContext } from "@/contexts";
-import {
-  BasicClothingInformation,
-  mappingPropToKey,
-  StateSetter,
-} from "@/types/types";
-import { X } from "lucide-react";
-import { iconSm } from "@/app/styles/lucideIconStyles";
+import { useContext } from 'react';
+import { UserContext } from '@/contexts';
+import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
+import { X } from 'lucide-react';
+import { iconSm } from '@/app/css/lucideIconStyles';
 
 const css = {
   wrapper: `bs p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
   bg-white br-50 bs`,
-  button: `size-8 centralize px-0 br-50 text-red-500 hover:underline `,
-  name: `capitalize text-gray-800 p165`,
+  button: `size-8 flex-center px-0 br-50 text-red-500 hover:underline `,
+  name: `capitalize text-gray-800 5`,
   strong: `font-medium tracking-wide`,
 };
 
@@ -27,13 +23,13 @@ const AddedProperties = ({
   const { selectedGender } = useContext(UserContext);
   // transforma em array de pares rotulo/valor
   const infoArray = [
-    { label: "Gênero", value: basicInformation.gender },
-    { label: "Categoria", value: basicInformation.cat },
-    { label: "Subcategoria", value: basicInformation.subcat },
-    { label: "Padrão", value: basicInformation.pattern },
-    { label: "Estampa", value: basicInformation.print },
+    { label: 'Gênero', value: basicInformation.gender },
+    { label: 'Categoria', value: basicInformation.cat },
+    { label: 'Subcategoria', value: basicInformation.subcat },
+    { label: 'Padrão', value: basicInformation.pattern },
+    { label: 'Estampa', value: basicInformation.print },
     {
-      label: "É Infantil",
+      label: 'É Infantil',
       value: basicInformation.is_childish,
     },
   ];
@@ -44,7 +40,7 @@ const AddedProperties = ({
 
     if (!key) return;
 
-    const valueToSet = key === "gender" ? selectedGender : "";
+    const valueToSet = key === 'gender' ? selectedGender : '';
 
     setBasicInformation((prev) => ({
       ...prev,
@@ -59,13 +55,9 @@ const AddedProperties = ({
           item.value && (
             <div key={item.label} className={`${css.wrapperButton}`}>
               <span className={css.name}>
-                {item.label}:{" "}
-                <strong className={css.strong}>{item.value}</strong>
+                {item.label}: <strong className={css.strong}>{item.value}</strong>
               </span>
-              <button
-                className={`${css.button}`}
-                onClick={() => clearValue(item.label)}
-              >
+              <button className={`${css.button}`} onClick={() => clearValue(item.label)}>
                 <X {...iconSm} />
               </button>
             </div>

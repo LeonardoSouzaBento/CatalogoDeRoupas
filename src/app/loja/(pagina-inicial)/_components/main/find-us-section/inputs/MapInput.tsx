@@ -6,9 +6,9 @@ const css = {
   wrapperInfo: "mb-3 pt-[19] p-5 bs-light",
   h4: "mb-3 text-neutral-800 font-medium h4-sizes",
   ul: "list-decimal pl-4 space-y-2 flex flex-col gap-[10]",
-  li: "p165 text-neutral-800 mb-0",
+  li: "5 text-neutral-800 mb-0",
   textarea:
-    "w-full min-h-[86px] centralize p-4 mb-3 br-md box-border",
+    "w-full min-h-[86px] flex-center p-4 mb-3 br-md box-border",
   button: "",
 };
 

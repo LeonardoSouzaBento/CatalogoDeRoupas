@@ -8,64 +8,7 @@
     @apply overflow-hidden;
   }
 
-  /* tamanhos de fonte */
-  .p16 {
-    @apply text-[0.914286em];
-  }
-  .p165 {
-    @apply text-[0.942857em];
-  }
-  .p17 {
-    @apply text-[0.971429em];
-  }
-  .p175 {
-    @apply text-[1.00em];
-  }
-  .p18 {
-    @apply text-[1.02857em];
-  }
-  .p185 {
-    @apply text-[1.05714em];
-  }
-  .p19 {
-    @apply text-[1.085714em];
-  }
-  .p195 {
-    @apply text-[1.11428em];
-  }
-  .p20 {
-    @apply text-[1.14286em];
-  }
-  .p21 {
-    @apply text-[1.20em];
-  }
-  .p215 {
-    @apply text-[1.2286em];
-  }
-
-  /* para spans */
-
-  .span18 {
-    @apply text-[18px]!;
-  }
-  .span19 {
-    @apply text-[19px]!;
-  }
-  .span20 {
-    @apply text-[20px]!;
-  }
-  .span21 {
-    @apply text-[21px]!;
-  }
-  .span22 {
-    @apply text-[22px]!;
-  }
-  .span23 {
-    @apply text-[23px]!;
-  }
-
   /* transição */
-
   .trans {
     @apply transition-all duration-300;
   }
@@ -75,7 +18,7 @@
 
   /* Display flex */
 
-  .centralize {
+  .flex-center {
     @apply flex justify-center items-center;
   }
   .j-center {

@@ -1,22 +1,19 @@
-
 const TitleSubtitle = () => {
   const css = {
     title: `text-white tracking-tight font-extrabold max-w-120 lg:max-w-130 
     text-center text-[1.82857em] sm:text-[1.86294em] md:text-[1.87954em] 
     lg:text-[1.91274em] xl:text-[1.94595em] 2xl:text-[1.97915em]`,
-    subtitle: 
-    `text-white/93 tracking-tight text-center max-w-110 lg:max-w-130 
+    subtitle: `text-white/93 tracking-tight text-center max-w-110 lg:max-w-130 
        font-light text-[1.25714em] sm:text-[1.26890em] md:text-[1.27458em] 
        lg:text-[1.28594em] xl:text-[1.29730em] 2xl:text-[1.30866em]`,
-    strong: "text-yellow-400",
+    strong: 'text-yellow-400',
   };
 
   return (
     <>
       <h1 className={`${css.title}`}>
-        Tenha um <strong className={`${css.strong}`}>catálogo online</strong>{" "}
-        para mostrar seus produtos e{" "}
-        <strong className={`${css.strong}`}>aumente suas vendas.</strong>
+        Tenha um <strong className={`${css.strong}`}>catálogo online</strong> para mostrar seus
+        produtos e <strong className={`${css.strong}`}>aumente suas vendas.</strong>
       </h1>
       <h2 className={`${css.subtitle}`}>
         Facilite o processo de compra e aumente a visibilidade da sua loja.

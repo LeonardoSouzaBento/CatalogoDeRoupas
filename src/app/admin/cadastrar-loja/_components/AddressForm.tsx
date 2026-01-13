@@ -95,7 +95,7 @@ const AddressForm = ({
           title="Endereço"
           wrapperStyles="mb-3.5!"
           icon="location_home"
-          iconStyles="span21 font-medium!"
+          iconStyles=" font-medium!"
         />
         <form className={`mb-5 px-0.5 pb-5 bs-b bs-color`}>
           {inputs.map((field, index) => (

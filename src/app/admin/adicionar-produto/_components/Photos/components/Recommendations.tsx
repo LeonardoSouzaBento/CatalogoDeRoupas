@@ -1,15 +1,15 @@
-"use client";
-import { iconSm } from "@/app/styles/lucideIconStyles";
-import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
+'use client';
+import { iconSm } from '@/app/css/lucideIconStyles';
+import { Minus, Plus } from 'lucide-react';
+import { useState } from 'react';
 
 const css = {
   wrapper: `relative p-4 flex br-md text-left overflow-hidden bg-gray-50`,
   wrapperTitle: `min-h-10 flex justify-between items-end gap-2 sm:gap-0 mb-1 box-border pb-3`,
   title: `w-full text-left font-semibold`,
-  p: `p165 text-gray-700 transition-all duration-300`,
+  p: `5 text-gray-700 transition-all duration-300`,
   highlight: `font-medium text-gray-900`,
-  button: `size-9 centralize px-0 br-50 text-gray-500 
+  button: `size-9 flex-center px-0 br-50 text-gray-500 
   hover:text-gray-700 trans white-button shadow-lg-hover`,
 };
 
@@ -22,8 +22,7 @@ const Recommendations = () => {
         <button
           onClick={() => setExpanded(!expanded)}
           className={css.button}
-          aria-label="Mostrar mais ou menos"
-        >
+          aria-label="Mostrar mais ou menos">
           {expanded ? <Minus {...iconSm} /> : <Plus {...iconSm} />}
         </button>
       </div>
@@ -32,23 +31,19 @@ const Recommendations = () => {
         {expanded ? (
           <>
             <p className={css.p}>
-              O ideal é{" "}
-              <span className={css.highlight}>pelo menos 3 fotos</span> para
-              cada roupa (frente, costas e o tecido visto de perto).
+              O ideal é <span className={css.highlight}>pelo menos 3 fotos</span> para cada roupa
+              (frente, costas e o tecido visto de perto).
             </p>
             <p className={`${css.p} mt-2`}>
-              O{" "}
-              <span className={css.highlight}>
-                mais recomendado é adicionar 5 fotos
-              </span>
-              , mostrando também a lateral da peça e a peça sendo usada por uma
-              pessoa. Assim o cliente entende melhor o caimento e a textura.
+              O <span className={css.highlight}>mais recomendado é adicionar 5 fotos</span>,
+              mostrando também a lateral da peça e a peça sendo usada por uma pessoa. Assim o
+              cliente entende melhor o caimento e a textura.
             </p>
           </>
         ) : (
           <p className={css.p}>
-            O ideal é <span className={css.highlight}>pelo menos 3 fotos</span>{" "}
-            para cada roupa (frente, costas e o tecido visto de perto)...
+            O ideal é <span className={css.highlight}>pelo menos 3 fotos</span> para cada roupa
+            (frente, costas e o tecido visto de perto)...
           </p>
         )}
       </div>

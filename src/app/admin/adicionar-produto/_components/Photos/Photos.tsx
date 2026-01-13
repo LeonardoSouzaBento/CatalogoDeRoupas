@@ -7,7 +7,7 @@ import CardWrapper from "@/app/loja/_ui/card-wrapper";
 const Photos = () => {
   return (
     <CardWrapper>
-      <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 span19" />
+      <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 " />
       <PhotoGridEditor />
       <AlertInfo
         styles="bg-gray-50/50! mb-0!"

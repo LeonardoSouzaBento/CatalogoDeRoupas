@@ -1,64 +1,57 @@
-"use client";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "@/contexts";
-import { HeaderCard } from "@/app/loja/_ui";
-import CardWrapper from "@/app/loja/_ui/card-wrapper";
-import { clothingCatsSubcats } from "@/data/clothingData/clothingCatsSubcats";
-import { patterns } from "@/data/clothingData/patterns";
-import { prints } from "@/data/clothingData/prints";
-import {
-  BasicClothingInformation,
-  ClothingProperty,
-  Genders,
-} from "@/types/types";
-import AddedProperties from "./components/AddedProperties";
-import Properties from "./components/Properties";
-import PropertyOptions from "./components/PropertyOptions";
-import { modelings } from "@/data/clothingData/modelings";
+'use client';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '@/contexts';
+import { HeaderCard } from '@/app/loja/_ui';
+import CardWrapper from '@/app/loja/_ui/card-wrapper';
+import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
+import { patterns } from '@/data/clothings/patterns';
+import { prints } from '@/data/clothings/prints';
+import { BasicClothingInformation, ClothingProperty, Genders } from '@/types/types';
+import AddedProperties from './components/AddedProperties';
+import Properties from './components/Properties';
+import PropertyOptions from './components/PropertyOptions';
+import { modelings } from '@/data/clothings/modelings';
 
 const BaseGenerator = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
-  const [propSelected, setPropSelected] = useState<string | null>("Gênero");
+  const [propSelected, setPropSelected] = useState<string | null>('Gênero');
   const [currentSubcats, setCurrentSubcats] = useState<string[] | null>([]);
   // const [name, setName] = useState<string>("");
-  const [basicInformation, setBasicInformation] =
-    useState<BasicClothingInformation>({
-      gender: selectedGender,
-      cat: "",
-      subcat: "",
-      pattern: "",
-      modeling: "",
-      name: "",
-      print: "",
-      is_childish: "",
-    });
+  const [basicInformation, setBasicInformation] = useState<BasicClothingInformation>({
+    gender: selectedGender,
+    cat: '',
+    subcat: '',
+    pattern: '',
+    modeling: '',
+    name: '',
+    print: '',
+    is_childish: '',
+  });
   /* gênero selecionado */
   const currentGender =
-    selectedGender !== "unisex" && selectedGender === "masculino"
-      ? "masculino"
-      : "feminino";
+    selectedGender !== 'unisex' && selectedGender === 'masculino' ? 'masculino' : 'feminino';
 
   function handleSelectOption(prop: string, option: string) {
     const updates: Partial<typeof basicInformation> = {};
 
     switch (prop) {
-      case "Gênero":
-        if (option !== "unisex") setSelectedGender(option as Genders);
+      case 'Gênero':
+        if (option !== 'unisex') setSelectedGender(option as Genders);
         updates.gender = option as Genders;
         break;
-      case "Categoria":
+      case 'Categoria':
         updates.cat = option;
         break;
-      case "Subcategoria":
+      case 'Subcategoria':
         updates.subcat = option;
         break;
-      case "Padrão":
+      case 'Padrão':
         updates.pattern = option;
         break;
-      case "Estampa":
+      case 'Estampa':
         updates.print = option;
         break;
-      case "É Infantil":
+      case 'É Infantil':
         updates.is_childish = option;
         break;
     }
@@ -69,24 +62,22 @@ const BaseGenerator = () => {
   }
 
   const properties: ClothingProperty[] = [
-    { name: "Gênero", options: ["masculino", "feminino", "unisex"] },
+    { name: 'Gênero', options: ['masculino', 'feminino', 'unisex'] },
     {
-      name: "Categoria",
+      name: 'Categoria',
       options: Object.keys(clothingCatsSubcats[currentGender]),
     },
-    { name: "Subcategoria", options: currentSubcats ? currentSubcats : [] },
-    { name: "Padrão", options: patterns },
-    { name: "Estampa", options: prints },
-    { name: "É Infantil", options: ["Sim", "Não"] },
-    { name: "Modelagem", options: modelings.map((modeling) => modeling.name) },
-    { name: "Nome" },
+    { name: 'Subcategoria', options: currentSubcats ? currentSubcats : [] },
+    { name: 'Padrão', options: patterns },
+    { name: 'Estampa', options: prints },
+    { name: 'É Infantil', options: ['Sim', 'Não'] },
+    { name: 'Modelagem', options: modelings.map((modeling) => modeling.name) },
+    { name: 'Nome' },
   ];
 
   useEffect(() => {
     if (basicInformation.cat) {
-      setCurrentSubcats(
-        clothingCatsSubcats[currentGender][basicInformation.cat]
-      );
+      setCurrentSubcats(clothingCatsSubcats[currentGender][basicInformation.cat]);
     }
   }, [basicInformation.cat, currentGender]);
 

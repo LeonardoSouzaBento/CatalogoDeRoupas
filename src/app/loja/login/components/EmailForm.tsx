@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { ButtonClose, HeaderCard } from "../../_ui";
-import { BooleanSetter } from "@/types/types";
-import { Eye, EyeClosed, LogIn } from "lucide-react";
-import { iconMd } from "@/app/styles/lucideIconStyles";
+import React, { useState } from 'react';
+import { ButtonClose, HeaderCard } from '../../_ui';
+import { BooleanSetter } from '@/types/types';
+import { Eye, EyeClosed, LogIn } from 'lucide-react';
+import { iconMd } from '@/app/css/lucideIconStyles';
 
 const css = { button: `h-11 w-full j-center` };
 
@@ -30,7 +30,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
       <div className="mb-6 relative">
         <label htmlFor="password">Senha</label>
         <input
-          type={seePassword ? "text" : "password"}
+          type={seePassword ? 'text' : 'password'}
           id="password"
           placeholder="Geramos uma, se preferir."
         />
@@ -38,13 +38,8 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           className={`wrapper-icon absolute bottom-0 right-1`}
           onClick={() => {
             setSeePassword((prev) => !prev);
-          }}
-        >
-          {seePassword ? (
-            <EyeClosed {...iconMd} />
-          ) : (
-            <Eye {...iconMd} />
-          )}
+          }}>
+          {seePassword ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
         </div>
       </div>
       <button className={`${css.button} mb-5`}>
@@ -53,9 +48,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         </div>
         entrar
       </button>
-      <button
-        className={`${css.button} h-10! font-light bg-white bs-light text-neutral-600`}
-      >
+      <button className={`${css.button} h-10! font-light bg-white bs-light text-neutral-600`}>
         esqueci minha senha
       </button>
     </div>

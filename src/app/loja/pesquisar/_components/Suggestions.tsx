@@ -32,7 +32,7 @@ const Button = ({ item }: { item: string }) => {
   const [selected, setSelected] = useState<boolean>(false);
 
   const css = {
-    wrapperItem: "min-h-10 centralize px-[18px] br-md bg-gray-100 hover:bg-gray-200 trans",
+    wrapperItem: "min-h-10 flex-center px-[18px] br-md bg-gray-100 hover:bg-gray-200 trans",
     selected: "",
   };
 

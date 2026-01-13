@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { PenOff } from "lucide-react";
-import { HomeContext } from "@/contexts";
+import React, { useContext } from 'react';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { PenOff } from 'lucide-react';
+import { HomeContext } from '@/contexts';
 
 const css = {
   button: `h-11 fixed bottom-19 right-4 bg-white rounded-2xl 
@@ -17,8 +17,7 @@ const ExitHomeEditButton = () => {
         onClick={() => {
           setHomeEditMode(false);
         }}
-        className={`${css.button} `}
-      >
+        className={`${css.button} `}>
         Fechar edição
         <div className="wrapper-icon">
           <PenOff {...iconMd} strokeWidth={2.3} />

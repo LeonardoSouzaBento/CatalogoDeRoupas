@@ -2,7 +2,7 @@ import { ButtonSeeEditMode } from "@/app/loja/_ui";
 import { BooleanSetter } from "@/types/types";
 
 const css = {
-  divLogo: "w-full min-h-21 pb-1 centralize flex-col z-6 rounded-none",
+  divLogo: "w-full min-h-21 pb-1 flex-center flex-col z-6 rounded-none",
   pLogo: "leading-none mb-1 font-logo text-white text-[1.57428em]",
   pSubtitle: "leading-none text-white !font-thin normal-p",
   normalBackground: "bg-stone-800 relative",

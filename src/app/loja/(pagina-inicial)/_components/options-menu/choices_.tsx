@@ -1,8 +1,8 @@
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { UserContext } from "@/contexts";
-import { mostSearched } from "@/data/UserData";
-import { Search } from "lucide-react";
-import { useContext } from "react";
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { UserContext } from '@/contexts';
+import { mostSearched } from '@/data/UserData';
+import { Search } from 'lucide-react';
+import { useContext } from 'react';
 
 const css = {
   wrapper: `w-full h-11 pl-[22px] flex i-center j-start gap-3 
@@ -12,9 +12,9 @@ const css = {
 const Choices = () => {
   const { selectedGender } = useContext(UserContext);
   const currentMostSearched =
-    selectedGender === "masculino"
+    selectedGender === 'masculino'
       ? mostSearched.masculino
-      : selectedGender === "feminino"
+      : selectedGender === 'feminino'
       ? mostSearched.feminino
       : mostSearched.infantil;
 
@@ -23,7 +23,7 @@ const Choices = () => {
       {currentMostSearched.map((item) => (
         <div key={item} className={`${css.wrapper}`}>
           <Search {...iconMd} />
-          <p className="p18">{item}</p>
+          <p className="">{item}</p>
         </div>
       ))}
     </div>

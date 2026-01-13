@@ -15,7 +15,7 @@ const css = {
     card-styles bg-white relative crop
   `,
   wrapperTitle: `flex justify-between gap-4 sm:justify-start`,
-  button: `h-8 min-w-8 -mr-2 px-0 pt-px centralize bs
+  button: `h-8 min-w-8 -mr-2 px-0 pt-px flex-center bs
   br-50 box-border trans white-button sm:mt-1 sm:mr-0`,
   list: `flex flex-col j-start`,
   wrapperList: `w-full text-gray-700`,
@@ -53,7 +53,7 @@ const Tutorial = ({ title, steps, listStyles, itemStyles }: Props) => {
           icon="info"
           title={`Saiba ${title}`}
           titleStyles="leading-7"
-          iconStyles="span20 mt-px"
+          iconStyles=" mt-px"
         />
       </ResizableDivTitle>
 

@@ -19,7 +19,7 @@ const css = {
     br-lg lg:h-full
   `,
   img: "absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30",
-  wrapperP: `h-20 w-full centralize relative bg-gradient-to-t from-stone-800/80 to-transparent 
+  wrapperP: `h-20 w-full flex-center relative bg-gradient-to-t from-stone-800/80 to-transparent 
     [text-shadow:_0_0_8px_rgb(0,_4px,_8px,_0.8)]`,
   p: "w-full px-8 text-white font-medium home-h1 sm:text-center leading-none",
 };

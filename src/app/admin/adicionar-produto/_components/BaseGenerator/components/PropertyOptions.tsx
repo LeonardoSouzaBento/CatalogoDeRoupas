@@ -5,7 +5,7 @@ import WrapperOptions from "@/app/admin/_ui/wrapper-options";
 
 const css = {
   container: `p-5 bs bg-white border-b-transparent rounded-br-none rounded-bl-none`,
-  title: `text-blue-600 font-medium mb-4.5 p16 tracking-wide uppercase leading-none!`,
+  title: `text-blue-600 font-medium mb-4.5  tracking-wide uppercase leading-none!`,
   wrapperOptions: `flex flex-wrap gap-4`,
   optionButton: ` text-[1.00em]
     px-5 rounded-full bs shadow-sm

@@ -1,37 +1,33 @@
-import React, { useContext, useState } from "react";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { Check, Upload } from "lucide-react";
-import { validateName } from "@/functions/validateName";
-import { validateEmail } from "@/functions/validateEmail";
-import Image from "next/image";
-import { ButtonClose, HeaderCard } from "@/app/loja/_ui";
-import { BooleanSetter } from "@/types/types";
-import { UserContext } from "@/contexts";
-import SaveButton from "@/app/loja/_ui/SaveButton";
+import React, { useContext, useState } from 'react';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { Check, Upload } from 'lucide-react';
+import { validateName } from '@/functions/validateName';
+import { validateEmail } from '@/functions/validateEmail';
+import Image from 'next/image';
+import { ButtonClose, HeaderCard } from '@/app/loja/_ui';
+import { BooleanSetter } from '@/types/types';
+import { UserContext } from '@/contexts';
+import SaveButton from '@/app/loja/_ui/SaveButton';
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
 };
 
-const NameEmailInput = ({
-  setSeeEditMode,
-}: {
-  setSeeEditMode: BooleanSetter;
-}) => {
+const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
   const { userData } = useContext(UserContext);
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [nameErrors, setNameErrors] = useState<string>("");
-  const [emailErrors, setEmailErrors] = useState<string>("");
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [nameErrors, setNameErrors] = useState<string>('');
+  const [emailErrors, setEmailErrors] = useState<string>('');
 
   async function handleSaveNameEmail() {
     setNameErrors(validateName(name));
     setTimeout(() => {
-      setNameErrors("");
+      setNameErrors('');
     }, 5000);
     setEmailErrors(validateEmail(email));
     setTimeout(() => {
-      setEmailErrors("");
+      setEmailErrors('');
     }, 5000);
   }
 
@@ -94,11 +90,7 @@ const NameEmailInput = ({
         />
       </div>
       {emailErrors && <p className={`${css.pError}`}>{emailErrors}</p>}
-      <SaveButton
-        text="Salvar Alterações"
-        Function={handleSaveNameEmail}
-        styles="mt-1"
-      />
+      <SaveButton text="Salvar Alterações" Function={handleSaveNameEmail} styles="mt-1" />
     </div>
   );
 };

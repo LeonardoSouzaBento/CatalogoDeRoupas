@@ -1,12 +1,12 @@
-"use client";
-import React, { useContext, useState } from "react";
-import Button from "@/app/loja/_ui/button";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { Eye } from "lucide-react";
-import { UserContext } from "@/contexts";
-import { letterSizes } from "@/data/clothingData/sizes";
-import { numericalSizes } from "@/data/clothingData/sizes";
-import { childNumericalSizes } from "@/data/clothingData/sizes";
+'use client';
+import React, { useContext, useState } from 'react';
+import Button from '@/app/loja/_ui/button';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { Eye } from 'lucide-react';
+import { UserContext } from '@/contexts';
+import { letterSizes } from '@/data/clothings/sizes';
+import { numericalSizes } from '@/data/clothings/sizes';
+import { childNumericalSizes } from '@/data/clothings/sizes';
 
 // interface Props {}
 
@@ -25,8 +25,7 @@ const SizeSelector = () => {
         onClick={() => {
           setSeeNumericalSizes(!seeNumericalSizes);
         }}
-        icon={<Eye {...iconMd} />}
-      >
+        icon={<Eye {...iconMd} />}>
         Ver medidas numéricas
       </Button>
 
@@ -35,8 +34,7 @@ const SizeSelector = () => {
           onClick={() => {
             setSeeNumericalSizes(!seeNumericalSizes);
           }}
-          icon={<Eye {...iconMd} />}
-        >
+          icon={<Eye {...iconMd} />}>
           Ver medidas numéricas infantis
         </Button>
       )}
@@ -59,7 +57,7 @@ const css = {
 };
 
 const SizeList = ({ dataList }: Props) => {
-  const [selectedSize, setSelectedSize] = useState<string>("");
+  const [selectedSize, setSelectedSize] = useState<string>('');
 
   const handleSelectSize = (size: string) => {
     setSelectedSize(size);
@@ -70,11 +68,8 @@ const SizeList = ({ dataList }: Props) => {
       {dataList.map((size) => (
         <button
           key={size}
-          className={`${css.wrapperItem} ${
-            selectedSize === size ? css.selected : css.notSelected
-          }`}
-          onClick={() => handleSelectSize(size.toString())}
-        >
+          className={`${css.wrapperItem} ${selectedSize === size ? css.selected : css.notSelected}`}
+          onClick={() => handleSelectSize(size.toString())}>
           <p className={css.p}>{size.toString()}</p>
         </button>
       ))}

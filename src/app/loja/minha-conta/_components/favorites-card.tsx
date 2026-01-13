@@ -7,7 +7,7 @@ const FavoritesCard = () => {
         title="Meus favoritos"
         titleStyles="-ml-[2.5px]"
         icon="bookmark_heart"
-        iconStyles="span21 -ml-2.5"
+        iconStyles=" -ml-2.5"
       />
     </>
   );

@@ -91,7 +91,7 @@ const PersonalForm = () => {
         title="Informações gerais"
         wrapperStyles="mb-3.5!"
         icon="assignment_ind"
-        iconStyles="span19 font-medium!"
+        iconStyles=" font-medium!"
       />
       <form className={`mb-5 px-0.5 pb-5 bs-b bs-color `}>
         {inputs.map((field, index) => (

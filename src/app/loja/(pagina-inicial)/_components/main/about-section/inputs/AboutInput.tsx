@@ -1,21 +1,19 @@
-import { AlertInfo, ButtonClose } from "@/app/loja/_ui/index";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import type { ShopInfo } from "@/types/types";
-import { defaultShopInfo } from "@data/home/publicData";
-import { Check, Trash, X } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { AlertInfo, ButtonClose } from '@/app/loja/_ui/index';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import type { ShopInfo } from '@/types/types';
+import { defaultShopInfo } from '@data/home/publicData';
+import { Check, Trash, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
 const css = {
-  wrapper: "abso z-2 size-full bg-white p-5 br-lg",
+  wrapper: 'abso z-2 size-full bg-white p-5 br-lg',
   header:
-    "h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none",
-  h3: "h3-sizes font-medium text-gray-800",
+    'h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none',
+  h3: 'h3-sizes font-medium text-gray-800',
   textarea:
-    "w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none",
-  wrapperButtons:
-    "w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2",
-  buttons:
-    "w-full sm:w-70 md:w-max button !justify-start text-[1.025em] xl:text-[1.035em]",
+    'w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none',
+  wrapperButtons: 'w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2',
+  buttons: 'w-full sm:w-70 md:w-max button !justify-start text-[1.025em] xl:text-[1.035em]',
 };
 
 type AboutInputProps = {
@@ -29,10 +27,10 @@ const AboutInput = ({
   setShopInfo,
   setSeeAboutInput,
 }: AboutInputProps): React.ReactElement => {
-  const [inputValue, setInputValue] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>('');
 
   useEffect(() => {
-    setInputValue(shopInfo.aboutText.join("\n\n"));
+    setInputValue(shopInfo.aboutText.join('\n\n'));
   }, []);
 
   function handleEnterEdit() {
@@ -61,10 +59,7 @@ const AboutInput = ({
     <div className={`${css.wrapper}`}>
       <div className={`${css.header}`}>
         <h3 className={`${css.h3}`}>Edite o Sobre</h3>
-        <ButtonClose
-          setState={setSeeAboutInput}
-          positionStyles="absolute top-3 right-3"
-        />
+        <ButtonClose setState={setSeeAboutInput} positionStyles="absolute top-3 right-3" />
       </div>
       <AlertInfo text="Quebre de linha para definir novos paragrafos." />
       <textarea
@@ -81,10 +76,9 @@ const AboutInput = ({
         <button
           className={`${css.buttons} order-[2] sm:order-1`}
           onClick={() => {
-            setInputValue("");
-          }}
-        >
-          {" "}
+            setInputValue('');
+          }}>
+          {' '}
           <div className="wrapper-icon">
             <Trash {...iconMd} size={19} />
           </div>
@@ -94,10 +88,7 @@ const AboutInput = ({
           <Check {...iconMd} />
           Salvar
         </button>
-        <button
-          className={`${css.buttons} order-2 sm:order-2`}
-          onClick={handleDiscardChanges}
-        >
+        <button className={`${css.buttons} order-2 sm:order-2`} onClick={handleDiscardChanges}>
           <X {...iconMd} />
           Descartar Alterações
         </button>

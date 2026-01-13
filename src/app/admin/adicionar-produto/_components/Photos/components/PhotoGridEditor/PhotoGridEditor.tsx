@@ -118,7 +118,7 @@ const PhotoGridEditor = () => {
               >
                 touch_app
               </span>
-              <p className={`font-medium p16`}>
+              <p className={`font-medium `}>
                 Clique em duas imagens para trocar as posições.
               </p>
             </div>

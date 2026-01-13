@@ -1,7 +1,7 @@
-import React from "react";
-import { BooleanSetter } from "@/types/types";
-import { iconLg } from "@/app/styles/lucideIconStyles";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import React from 'react';
+import { BooleanSetter } from '@/types/types';
+import { iconLg } from '@/app/css/lucideIconStyles';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const css = {
   wrapper: `w-full flex justify-start`,
@@ -17,16 +17,9 @@ const ButtonSeeMore = ({
 }) => {
   return (
     <div className={`${css.wrapper}`}>
-      <button
-        className={`${css.button}`}
-        onClick={() => setSeeMoreUserInfo(!seeMoreUserInfo)}
-      >
-        {!seeMoreUserInfo ? " Ver Mais" : " Ver Menos"}
-        {!seeMoreUserInfo ? (
-          <ChevronDown {...iconLg} />
-        ) : (
-          <ChevronUp {...iconLg} />
-        )}
+      <button className={`${css.button}`} onClick={() => setSeeMoreUserInfo(!seeMoreUserInfo)}>
+        {!seeMoreUserInfo ? ' Ver Mais' : ' Ver Menos'}
+        {!seeMoreUserInfo ? <ChevronDown {...iconLg} /> : <ChevronUp {...iconLg} />}
       </button>
     </div>
   );

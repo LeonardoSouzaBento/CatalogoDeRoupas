@@ -1,11 +1,11 @@
-import React from "react";
-import MeasureItem from "./MeasureItem";
-import { iconMd, iconSm } from "@/app/styles/lucideIconStyles";
-import type { Measure } from "./MeasureItem";
-import { Pen, CircleQuestionMark } from "lucide-react";
-import AlertInfo from "@ui/AlertInfo";
-import HeaderCard from "@ui/HeaderCard";
-import { UserData } from "@/types/types";
+import React from 'react';
+import MeasureItem from './measure-item';
+import { iconMd, iconSm } from '@/app/css/lucideIconStyles';
+import type { Measure } from './measure-item';
+import { Pen, CircleQuestionMark } from 'lucide-react';
+import AlertInfo from '@ui/AlertInfo';
+import HeaderCard from '@ui/HeaderCard';
+import { UserData } from '@/types/types';
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
@@ -16,18 +16,14 @@ const css = {
 
 const MeasuresCard = ({ userData }: { userData: UserData }) => {
   const measuresData: Measure[] = [
-    { type: "Camisa", value: userData.camisa },
-    { type: "Calça", value: userData.calça },
-    { type: "Calçado", value: userData.calçado },
+    { type: 'Camisa', value: userData.camisa },
+    { type: 'Calça', value: userData.calça },
+    { type: 'Calçado', value: userData.calçado },
   ];
 
   return (
     <>
-      <HeaderCard
-        title="Minhas medidas"
-        icon="square_foot"
-        iconStyles="mb-[1.5px] span21"
-      />
+      <HeaderCard title="Minhas medidas" icon="square_foot" iconStyles="mb-[1.5px] " />
       <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
       <table className="w-full">
         <tbody className={`${css.wrapper}`}>

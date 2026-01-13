@@ -1,30 +1,27 @@
-import React, { useState, useContext } from "react";
-import { HomeContext } from "@/contexts/HomeContext";
-import CategoryCard from "./CategoryCard";
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { Eye, EyeClosed, Plus } from "lucide-react";
-import { AlertInfo } from "@/app/loja/_ui";
+import React, { useState, useContext } from 'react';
+import { HomeContext } from '@/contexts/HomeContext';
+import CategoryCard from './CategoryCard';
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { Eye, EyeClosed, Plus } from 'lucide-react';
+import { AlertInfo } from '@/app/loja/_ui';
 
 const css = {
-  wrapper: "pb-0",
-  wrapperUserGenders: "flex flex-col mb-5 gap-3 sm:flex-row ",
-  buttonGender: "button w-full sm:max-w-80 max-[350px]:!leading-4 ",
-  wrapperCardCats:
-    "flex flex-col flex-wrap gap-4 sm:flex-row sm:justify-center mb-5",
-  wrapperImg: "h-40 w-30",
-  img: "size-full object-cover",
+  wrapper: 'pb-0',
+  wrapperUserGenders: 'flex flex-col mb-5 gap-3 sm:flex-row ',
+  buttonGender: 'button w-full sm:max-w-80 max-[350px]:!leading-4 ',
+  wrapperCardCats: 'flex flex-col flex-wrap gap-4 sm:flex-row sm:justify-center mb-5',
+  wrapperImg: 'h-40 w-30',
+  img: 'size-full object-cover',
   icon: iconMd,
 };
 
 const MainCatsInput = (): React.ReactElement => {
   const { mainCategories } = useContext(HomeContext);
-  const [selectedGender, setSelectedGender] = useState<string>("masculino");
+  const [selectedGender, setSelectedGender] = useState<string>('masculino');
   const selectedMainCategories =
-    selectedGender === "masculino"
-      ? mainCategories.masculino
-      : mainCategories.feminino;
-  const maleNoSelected = selectedGender !== "masculino" ? "!bg-gray-50" : "";
-  const femaleNoSelected = selectedGender !== "feminino" ? "!bg-gray-50" : "";
+    selectedGender === 'masculino' ? mainCategories.masculino : mainCategories.feminino;
+  const maleNoSelected = selectedGender !== 'masculino' ? '!bg-gray-50' : '';
+  const femaleNoSelected = selectedGender !== 'feminino' ? '!bg-gray-50' : '';
 
   return (
     <div className={`${css.wrapper}`}>
@@ -32,11 +29,10 @@ const MainCatsInput = (): React.ReactElement => {
         <button
           className={`${css.buttonGender} ${maleNoSelected}`}
           onClick={() => {
-            if (selectedGender !== "masculino") {
-              setSelectedGender("masculino");
+            if (selectedGender !== 'masculino') {
+              setSelectedGender('masculino');
             }
-          }}
-        >
+          }}>
           <div className="wrapper-icon">
             {maleNoSelected ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
           </div>
@@ -45,11 +41,10 @@ const MainCatsInput = (): React.ReactElement => {
         <button
           className={`${css.buttonGender} ${femaleNoSelected}`}
           onClick={() => {
-            if (selectedGender !== "feminino") {
-              setSelectedGender("feminino");
+            if (selectedGender !== 'feminino') {
+              setSelectedGender('feminino');
             }
-          }}
-        >
+          }}>
           {femaleNoSelected ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
           Ver Categorias Femininas
         </button>

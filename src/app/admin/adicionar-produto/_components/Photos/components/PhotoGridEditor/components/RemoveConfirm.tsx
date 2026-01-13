@@ -1,10 +1,10 @@
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { BooleanSetter, Photo, StateSetter } from "@/types/types";
-import { Check, X } from "lucide-react";
-import Image from "next/image";
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { BooleanSetter, Photo, StateSetter } from '@/types/types';
+import { Check, X } from 'lucide-react';
+import Image from 'next/image';
 
 const css = {
-  container: `size-full abso centralize z-4 bg-black/1`,
+  container: `size-full abso flex-center z-4 bg-black/1`,
   wrapper: `size-auto p-6 pb-6.7 bg-md bg-white shadow-lg-hover br-xl`,
   wrapperButtons: `flex flex-col gap-5`,
   button: `j-center br-lg`,
@@ -17,12 +17,7 @@ interface Props {
   setPhotoTaken: StateSetter<Photo | null>;
 }
 
-const RemoveConfirm = ({
-  setSeeRemoveConfirm,
-  photo,
-  setPhotos,
-  setPhotoTaken,
-}: Props) => {
+const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoTaken }: Props) => {
   function handleRemovePhoto() {
     if (!photo) return;
 
@@ -33,14 +28,14 @@ const RemoveConfirm = ({
       const oldUrl = updated[index].url;
 
       // limpa blob
-      if (oldUrl.startsWith("blob:")) {
+      if (oldUrl.startsWith('blob:')) {
         URL.revokeObjectURL(oldUrl);
       }
       // mais de 3 itens → remover
       if (updated.length > 3) {
         const oldUrl = updated[index].url;
 
-        if (oldUrl.startsWith("blob:")) {
+        if (oldUrl.startsWith('blob:')) {
           URL.revokeObjectURL(oldUrl);
         }
         updated.splice(index, 1);
@@ -49,7 +44,7 @@ const RemoveConfirm = ({
 
       updated[index] = {
         ...updated[index],
-        url: "",
+        url: '',
       };
 
       return updated;
@@ -60,14 +55,12 @@ const RemoveConfirm = ({
   return (
     <div className={`${css.container}`}>
       <div className={`${css.wrapper}`}>
-        <p className={`font-semibold tracking-normal mb-3 -mt-1`}>
-          Remover esta imagem ?
-        </p>
+        <p className={`font-semibold tracking-normal mb-3 -mt-1`}>Remover esta imagem ?</p>
 
         <div className={`w-max`}>
           <div className={`w-full h-auto flex justify-center relative mb-5`}>
             <Image
-              src={photo?.url || "/home"}
+              src={photo?.url || '/home'}
               height={220}
               width={220}
               alt=""
@@ -82,8 +75,7 @@ const RemoveConfirm = ({
                 e.stopPropagation();
                 setPhotoTaken(null);
                 setSeeRemoveConfirm(false);
-              }}
-            >
+              }}>
               Não
               <X {...iconMd} strokeWidth={2} />
             </button>
@@ -92,8 +84,7 @@ const RemoveConfirm = ({
               onClick={(e) => {
                 e.stopPropagation();
                 handleRemovePhoto();
-              }}
-            >
+              }}>
               Sim, remover
               <Check {...iconMd} strokeWidth={2} />
             </button>

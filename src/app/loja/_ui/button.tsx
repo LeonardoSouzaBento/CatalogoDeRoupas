@@ -21,7 +21,7 @@ interface Props {
 }
 
 const css = {
-  optionList: `option-list-button p175`,
+  optionList: `option-list-button 5`,
   white: `white-button`,
   transparent: `transparent-button`,
   outlined: `outlined-button`,
@@ -47,7 +47,7 @@ export const Button = ({
 }: Props) => {
   const extraClasses = [
     fullWidth && "w-full",
-    squareOrCircular && "p-0 centralize",
+    squareOrCircular && "p-0 flex-center",
     mb && "mb-5",
     justifyCenter && "justify-center",
   ]

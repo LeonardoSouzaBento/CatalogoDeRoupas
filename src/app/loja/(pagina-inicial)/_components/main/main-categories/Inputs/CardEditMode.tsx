@@ -1,19 +1,19 @@
-import BackButton from "@/app/loja/_ui/BackButton";
-import SaveButton from "@/app/loja/_ui/SaveButton";
-import { iconSm } from "@/app/styles/lucideIconStyles";
-import { BooleanSetter, MainCategory } from "@/types/types";
-import { Upload } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import BackButton from '@/app/loja/_ui/BackButton';
+import SaveButton from '@/app/loja/_ui/SaveButton';
+import { iconSm } from '@/app/css/lucideIconStyles';
+import { BooleanSetter, MainCategory } from '@/types/types';
+import { Upload } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 bs
 p-5 rounded-none hover:shadow-lg fast-trans`,
   wrapperInput: `flex flex-col gap-3 mb-px`,
-  wrapperImg: "rounded-none flex flex-wrap i-center gap-4 relative mb-px",
-  imghomeEditMode: "grayscale opacity-70",
-  label: "font-medium !text-neutral-800 leading-none mb-0",
-  u: "font-normal",
+  wrapperImg: 'rounded-none flex flex-wrap i-center gap-4 relative mb-px',
+  imghomeEditMode: 'grayscale opacity-70',
+  label: 'font-medium !text-neutral-800 leading-none mb-0',
+  u: 'font-normal',
 };
 
 const CardEditMode = ({
@@ -31,7 +31,7 @@ const CardEditMode = ({
 
   useEffect(() => {
     if (catUpdated) {
-      console.log("Sim");
+      console.log('Sim');
     }
   }, [catUpdated]);
 
@@ -63,7 +63,7 @@ const CardEditMode = ({
             />
           </div>
           <button className="mb-1 light-button min-[440px]:mb-0 sm:mb-1 md:mb-0">
-            <div className="h-full min-w-8 centralize">
+            <div className="h-full min-w-8 flex-center">
               <Upload {...iconSm} />
             </div>
             Nova Imagem
@@ -82,11 +82,7 @@ const CardEditMode = ({
           placeholder="Digite aqui"
         />
       </div>
-      <SaveButton
-        text="salvar alterações"
-        Function={handleSaveCat}
-        styles="mb-1"
-      />
+      <SaveButton text="salvar alterações" Function={handleSaveCat} styles="mb-1" />
       <BackButton setState={setCardEditMode} />
     </div>
   );

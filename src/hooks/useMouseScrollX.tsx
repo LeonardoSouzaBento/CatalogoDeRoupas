@@ -2,19 +2,19 @@ import { RefObject, useEffect, useRef } from 'react';
 
 type ScrollStart = 'start' | 'center';
 
-interface UseScrollXForMouseParams {
+interface Params {
   containerRef: RefObject<HTMLElement>;
   scrollWidth: number;
   parentWidth: number;
   scrollStart?: ScrollStart;
 }
 
-export function useScrollXForMouse({
+export function useMouseScrollX({
   containerRef,
   scrollWidth,
   parentWidth,
   scrollStart = 'start',
-}: UseScrollXForMouseParams) {
+}: Params) {
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);

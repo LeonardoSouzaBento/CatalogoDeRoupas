@@ -10,7 +10,7 @@ const SaveCard = () => {
       <HeaderCard
         title="Salvar produto"
         icon="bucket_check"
-        iconStyles="span20"
+        iconStyles=""
       />
       <SaveProductButton />
     </div>

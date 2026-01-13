@@ -1,10 +1,10 @@
 "use client";
 import React, { useContext } from "react";
 import { UserContext } from "@/contexts";
-import MeasuresCard from "./_components/MeasuresCard/MeasuresCard";
-import UserCard from "./_components/UserCard/UserCard";
+import MeasuresCard from "./_components/measures-card/measures-card";
+import UserCard from "./_components/user-card/user-card";
 import TitlePage from "@ui/TitlePage";
-import FavoritesCard from "./_components/FavoritesCard";
+import FavoritesCard from "./_components/favorites-card";
 import CardWrapper from "../_ui/card-wrapper";
 
 const css = {

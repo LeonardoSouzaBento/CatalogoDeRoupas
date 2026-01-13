@@ -8,7 +8,7 @@ const optionButtons = [
     name: "Adicionar Produto",
     url: "/admin/adicionar-produto",
     icon: "add_circle",
-    iconStyles: "ml-[0.5px] span20 rotate-180 -scale-x-100",
+    iconStyles: "ml-[0.5px]  rotate-180 -scale-x-100",
   },
   {
     name: "Atualizar Produtos",
@@ -20,7 +20,7 @@ const optionButtons = [
     name: "Ver Favoritos Do Usúario",
     url: "/admin/favoritos-do-usuario",
     icon: "favorite",
-    iconStyles: "span20 -ml-0",
+    iconStyles: " -ml-0",
   },
 ];
 
@@ -41,7 +41,7 @@ const AdministrationOptions = () => {
             setHomeEditMode(true);
           }}
         >
-          <span className="material-symbols-rounded span20 -ml-px">edit</span>
+          <span className="material-symbols-rounded  -ml-px">edit</span>
           Editar esta página
         </button>
         {optionButtons.map((item) => (

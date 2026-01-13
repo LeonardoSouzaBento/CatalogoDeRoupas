@@ -1,7 +1,7 @@
-const MainImage = () => {
+const Image = () => {
   const css = {
-    wrapperImg: "size-full",
-    img: "block m-auto object-cover size-full",
+    wrapperImg: 'size-full',
+    img: 'block m-auto object-cover size-full',
   };
 
   return (
@@ -11,4 +11,4 @@ const MainImage = () => {
   );
 };
 
-export default MainImage;
+export default Image;

@@ -1,6 +1,6 @@
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { BooleanSetter, Photo } from "@/types/types";
-import { Layers2, X } from "lucide-react";
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { BooleanSetter, Photo } from '@/types/types';
+import { Layers2, X } from 'lucide-react';
 
 const css = {
   button: `light-button j-center`,
@@ -14,13 +14,8 @@ interface Props {
   photos: Photo[];
 }
 
-const ReorderButton = ({
-  reorderMode,
-  setReorderMode,
-  styles,
-  photos,
-}: Props) => {
-  const nonEmptyCount = photos.filter((p) => p.url?.trim() !== "").length;
+const ReorderButton = ({ reorderMode, setReorderMode, styles, photos }: Props) => {
+  const nonEmptyCount = photos.filter((p) => p.url?.trim() !== '').length;
   const isDisabled = nonEmptyCount < 2;
 
   function handleActiveReorderMode() {
@@ -37,16 +32,15 @@ const ReorderButton = ({
         ${css.button} 
         ${styles} 
         ${reorderMode && css.reorderMode}
-        ${isDisabled ? "text-neutral-400 cursor-not-allowed" : ""}
-      `}
-    >
-      {reorderMode ? "Sair de reordenar" : "Reordenar imagens"}
+        ${isDisabled ? 'text-neutral-400 cursor-not-allowed' : ''}
+      `}>
+      {reorderMode ? 'Sair de reordenar' : 'Reordenar imagens'}
 
       <div className="wrapper-icon">
         {reorderMode ? (
           <X {...iconMd} />
         ) : (
-          <Layers2 {...iconMd} color={isDisabled ? "#a1a1a1" : "gray"} />
+          <Layers2 {...iconMd} color={isDisabled ? '#a1a1a1' : 'gray'} />
         )}
       </div>
     </button>

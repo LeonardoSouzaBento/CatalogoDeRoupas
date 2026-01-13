@@ -6,7 +6,7 @@ import CardWrapper from "@/app/loja/_ui/card-wrapper";
 const Result = () => {
   return (
     <CardWrapper>
-      <HeaderCard title="Resultado" icon="equal" iconStyles="span19" />
+      <HeaderCard title="Resultado" icon="equal" iconStyles="" />
       <ProductTable />
     </CardWrapper>
   );

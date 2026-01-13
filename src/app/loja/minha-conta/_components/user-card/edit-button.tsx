@@ -1,6 +1,6 @@
-import { iconMd } from "@/app/styles/lucideIconStyles";
-import { BooleanSetter } from "@/types/types";
-import { Pen } from "lucide-react";
+import { iconMd } from '@/app/css/lucideIconStyles';
+import { BooleanSetter } from '@/types/types';
+import { Pen } from 'lucide-react';
 
 const EditButton = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
   return (
@@ -9,8 +9,7 @@ const EditButton = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
         className="square-button p-0 br-md "
         onClick={() => {
           setSeeEditMode(true);
-        }}
-      >
+        }}>
         <Pen {...iconMd} />
       </button>
     </div>

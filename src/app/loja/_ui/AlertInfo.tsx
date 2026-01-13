@@ -10,12 +10,12 @@ const css = {
 const AlertInfo = ({ text, styles }: { text: string; styles?: string }) => {
   return (
     <div className={`${css.wrapper} ${styles}`}>
-      <div className={`size-max p-1 centralize bg-red-400/10 br-50`}>
+      <div className={`size-max p-1 flex-center bg-red-400/10 br-50`}>
         <span className={`${css.span}`}>
           priority_high
         </span>
       </div>
-      <p className="text-gray-700 p165">{text}</p>
+      <p className="text-gray-700 5">{text}</p>
     </div>
   );
 };

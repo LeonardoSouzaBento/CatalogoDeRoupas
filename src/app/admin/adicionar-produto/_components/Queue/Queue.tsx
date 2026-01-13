@@ -5,7 +5,7 @@ import React from "react";
 const Queue = () => {
   return (
     <CardWrapper>
-      <HeaderCard title="Fila" icon="layers" iconStyles="span20 font-medium!" />
+      <HeaderCard title="Fila" icon="layers" iconStyles=" font-medium!" />
     </CardWrapper>
   );
 };
