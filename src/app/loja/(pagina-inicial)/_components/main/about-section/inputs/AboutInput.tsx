@@ -74,7 +74,7 @@ const AboutInput = ({
       />
       <div className={`${css.wrapperButtons}`}>
         <button
-          className={`${css.buttons} order-[2] sm:order-1`}
+          className={`${css.buttons} order-2 sm:order-1`}
           onClick={() => {
             setInputValue('');
           }}>

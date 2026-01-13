@@ -7,6 +7,7 @@ import './css/reset.css';
 import './css/globals.css';
 import './css/shorteners.css';
 import './css/styles.css';
+import './css/typography.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -56,8 +57,7 @@ export const viewport: Viewport = {
   ],
 };
 
-// novo tamanho base: 17.5px
-const fontStyles = `font-dm-sans text-[1.09375rem] sm:text-[1.12500rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.18125rem]`;
+
 // 17,5 até 18,5 em xl
 
 export default function RootLayout({
@@ -67,10 +67,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
-      <body className={`bg-body-background text-[1rem] text-black-text`}>
+      <body className={`bg-body-background text-black-text`}>
         <PublicDataProvider>
           <UserProvider>
-            <div className={`${fontStyles}`}>{children}</div>
+            <div>{children}</div>
           </UserProvider>
         </PublicDataProvider>
       </body>

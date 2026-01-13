@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "material-symbols/rounded.css";
+@import 'tailwindcss';
+@import 'material-symbols/rounded.css';
 /* 
 sm	 (640px)
 md	 (768px)	
@@ -10,20 +10,24 @@ xl   (1280px)
 
 @theme {
   /* Fonts */
-  --font-dm-sans: "DM Sans", "sans-serif";
-  --font-logo: "Cookie", "cursive";
+  --font-dm-sans: 'DM Sans', 'sans-serif';
+  --font-logo: 'Cookie', 'cursive';
 
   /* Tamanhos de fonte */
-  --text-xs: 0.878em;
-  --text-sm: 0.937em;
+  --text-xs: 0.878357em;
+  --text-sm: 0.937207em;
   --text-base: 1em;
   --text-lg: 1.067em;
-
-  /* Tamanhos de fonte para landing-page*/
-  --text-xs2: 0.864198em;
-  --text-base2: 1em;
-  --text-sm2: 0.972222em;
-  --text-lg2: 1.230469em;
+  --text-h6: 1.067em;
+  --text-h5: 1.138489em;
+  --text-h4: 1.214768em;
+  --text-h3: 1.296157em;
+  --text-h2: 1.383em;
+  --text-h1: 1.475661em;
+  --text-big-h1: 1.57453em;
+  --text-button: 0.968095em;
+  --text-sm-button: 0.937207em;
+  --text-lg-button: 1em;
 
   /* Shadows */
   --shadow-xs: 0 1px 3px -1px hsla(330, 24%, 30%, 0.06);
@@ -69,6 +73,15 @@ xl   (1280px)
 } */
 
 @layer base {
+  * {
+    border-color: var(--color-bs-color);
+    @apply cursor-default;
+  }
+  body,
+  html {
+    scrollbar-width: none;
+    @apply font-dm-sans;
+  }
   div {
     @apply rounded-md;
   }
@@ -90,45 +103,8 @@ xl   (1280px)
   img {
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;
   }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply cursor-default;
-  }
-
-  h1 {
-    @apply text-[1.476em];
-  }
-  h2 {
-    font-size: clamp(24.2px, calc(22.92px + 0.2vw), 25.98px);
-  }
-  h3 {
-    @apply text-[1.296em];
-  }
-  h4 {
-    @apply text-[1.215em];
-  }
-  h5 {
-    @apply text-[1.138em];
-  }
-  h6 {
-    @apply text-[1.067em];
-  }
-  .big-p {
-    @apply text-[1.067em];
-  }
-  .small-p {
-    @apply text-[0.937em];
-  }
-  .normal-p {
-    @apply text-[1em];
-  }
-  .smaller-p {
-    @apply text-[0.878em];
-  }
   .material-symbols-rounded {
-    font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24;
+    font-variation-settings: 'FILL' 1, 'GRAD' 0, 'opsz' 24;
     @apply text-gray-800/93;
   }
 }

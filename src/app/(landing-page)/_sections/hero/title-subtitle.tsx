@@ -1,11 +1,9 @@
 const TitleSubtitle = () => {
   const css = {
     title: `text-white tracking-tight font-extrabold max-w-120 lg:max-w-130 
-    text-center text-[1.82857em] sm:text-[1.86294em] md:text-[1.87954em] 
-    lg:text-[1.91274em] xl:text-[1.94595em] 2xl:text-[1.97915em]`,
+    text-center`,
     subtitle: `text-white/93 tracking-tight text-center max-w-110 lg:max-w-130 
-       font-light text-[1.25714em] sm:text-[1.26890em] md:text-[1.27458em] 
-       lg:text-[1.28594em] xl:text-[1.29730em] 2xl:text-[1.30866em]`,
+       font-light`,
     strong: 'text-yellow-400',
   };
 

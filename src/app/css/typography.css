@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+@layer components {
+body {
+@apply text-[1.09375rem] sm:text-[1.125rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
+}
+
+.smaller-text {@apply text-xs;}
+
+.small-text, label {@apply text-sm;}
+
+.normal-text, li, input, select, option {@apply text-base;}
+
+.large-text {@apply text-lg;}
+
+h6 {@apply text-h6;}
+
+h5 {@apply text-h5;}
+
+h4 {@apply text-h4;}
+
+h3 {@apply text-h3;}
+
+h2 {@apply text-h2;}
+
+h1 {@apply text-h1;}
+
+.big-h1 {@apply text-big-h1;}
+
+button {@apply text-button;}
+
+.small-button {@apply text-sm-button;}
+
+.large-button {@apply text-lg-button;}
+}
