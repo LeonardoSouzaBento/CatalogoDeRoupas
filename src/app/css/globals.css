@@ -24,11 +24,10 @@ xl   (1280px)
   --text-h3: 1.296157em;
   --text-h2: 1.383em;
   --text-h1: 1.475661em;
-  --text-big-h1: 1.57453em;
+  --text-h1-hero: 1.57453em;
   --text-button: 0.968095em;
   --text-sm-button: 0.937207em;
   --text-lg-button: 1em;
-
   /* Shadows */
   --shadow-xs: 0 1px 3px -1px hsla(330, 24%, 30%, 0.06);
   --shadow-sm: 0 4px 8px -4px hsla(330, 23%, 30%, 0.11);
@@ -40,7 +39,6 @@ xl   (1280px)
     inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
   --shadow-accent: 0 4px 14px -5px hsla(200, 70%, 40%, 0.25); /* azul */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
-
   /* Colors */
   --color-black-text: #1f2937;
   --color-gray-text: #fff;
@@ -62,10 +60,13 @@ xl   (1280px)
   --color-green-hover: #20915d;
   --color-red: #e5464f;
   --color-red-hover: #c23c41;
-
-  /* breakpoints */
-  --breakpoint-sm375: 375px;
-  --breakpoint-sm575: 575px;
+  /* Breakpoints */
+  --breakpoint-xxs: 337px;
+  --breakpoint-xs: 375px;
+  --breakpoint-md-sm: 425px;
+  --breakpoint-pre-sm: 575px;
+  --breakpoint-pre-md: 768px;
+  --breakpoint-next-md: 840px;
 }
 
 /* .dark {

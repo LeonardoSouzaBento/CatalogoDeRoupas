@@ -32,7 +32,7 @@ const Plans = (): React.ReactElement => {
     <section className={`${css.section}`}>
       <div className={`${css.containerPlans}`}>
         <div className={`${css.wrapperPlan}`}>
-          <TitleAndSubtitle h2="Plano Básico" h3="Um mês de teste grátis!" />
+          <TitleAndSubtitle title="Plano Básico" subtitle="Um mês de teste grátis!" />
 
           <ul className={`${css.ul}`}>
             {basicPlan.map((item, index) => (
@@ -45,7 +45,7 @@ const Plans = (): React.ReactElement => {
         </div>
 
         <div className={`${css.wrapperPlan} ${css.fullPlanStyles}`}>
-          <TitleAndSubtitle h2="Plano Completo" h3="Tudo o que você precisa!" fullPlan={true} />
+          <TitleAndSubtitle title="Plano Completo" subtitle="Tudo o que você precisa!" fullPlan={true} />
 
           <ul className={`${css.ul}`}>
             {fullPlan.map((item, index) => (
@@ -62,16 +62,16 @@ const Plans = (): React.ReactElement => {
 
 export default Plans;
 
-const TitleAndSubtitle = ({ h2, h3, fullPlan }: { h2: string; h3: string; fullPlan?: boolean }) => {
+const TitleAndSubtitle = ({ title, subtitle, fullPlan }: { title: string; subtitle: string; fullPlan?: boolean }) => {
   const css = {
-    h2: 'text-gray-800 leading-10  font-semibold ',
-    h3: 'text-gray-600 mb-4 font-light 5',
+    title: 'text-gray-800 leading-10  font-semibold ',
+    subtitle: 'text-gray-600 mb-4 font-light 5',
   };
 
   return (
     <>
-      <h2 className={`${css.h2} ${fullPlan && 'text-white!'}`}>{h2}</h2>
-      <h3 className={`${css.h3} ${fullPlan && 'text-white!'}`}>{h3}</h3>
+      <h4 className={`${css.title} ${fullPlan && 'text-white!'}`}>{title}</h4>
+      <h6 className={`${css.subtitle} ${fullPlan && 'text-white!'}`}>{subtitle}</h6>
     </>
   );
 };

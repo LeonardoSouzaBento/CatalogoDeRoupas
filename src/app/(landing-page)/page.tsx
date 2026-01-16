@@ -1,7 +1,7 @@
 import { ZapFixedButton } from '../loja/_ui';
 import { TitleSubtitle } from './_ui';
 import { Questions, Plans, Hero, Process, LogoSection } from './_sections/index';
-
+import '../css/landing-page.css';
 // segundo branco: #FFFFFF
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="landing-page">
       <LogoSection page="landing-page" />
       <main>
         {/* Seção principal */}

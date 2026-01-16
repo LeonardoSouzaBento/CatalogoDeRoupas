@@ -25,8 +25,8 @@ const TitleSubtitle = ({
       className={`${css.div} ${thirdSection && 'xl:border-none'} ${
         secondSection && 'border-none'
       }`}>
-      <h2 className={`${css.title}`}>{title}</h2>
-      {subtitle && <h3 className={`${css.subtitle}`}>{subtitle}</h3>}
+      <h3 className={`${css.title}`}>{title}</h3>
+      {subtitle && <h6 className={`${css.subtitle}`}>{subtitle}</h6>}
     </div>
   );
 };

@@ -220,7 +220,7 @@ const CompositionEditor = () => {
         searchValue={searchValue}
       />
 
-      <WrapperButtons grid={true} styles={`p-5 grid grid-cols-1 sm575:grid-cols-2 gap-4`}>
+      <WrapperButtons grid={true} styles={`p-5 grid grid-cols-1 pre-sm:grid-cols-2 gap-4`}>
         <SearchMaterial
           setSearchButtonClicked={setSearchButtonClicked}
           searchValue={searchValue}
