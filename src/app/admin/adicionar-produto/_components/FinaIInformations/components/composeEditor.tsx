@@ -1,8 +1,8 @@
 'use client';
 import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
 import WrapperOptions from '@/app/admin/_ui/wrapper-options';
-import { ButtonClose } from '@/app/loja/_ui';
-import Button from '@/app/loja/_ui/button';
+import { ButtonClose } from '@/app/_ui';
+import Button from '@/app/_ui/button';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { commonFabrics } from '@/data/clothings/commonFabrics';
 import { materials } from '@/data/clothings/materials';
@@ -116,8 +116,8 @@ const Materials: React.FC<MaterialsProps> = ({
               styles={` hover:bg-blue-50
                 hover:bg-blue-100/50
                 hover:text-blue-600 hover:border-blue-400 ${isFiltered && '-order-1'} ${
-                hasCorrespondence && 'text-blue-600 shadow-sm'
-              }`}>
+                  hasCorrespondence && 'text-blue-600 shadow-sm'
+                }`}>
               {material}
             </Button>
           );

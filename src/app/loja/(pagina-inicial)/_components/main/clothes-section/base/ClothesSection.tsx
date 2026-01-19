@@ -1,13 +1,12 @@
-import { UserContext } from "@/contexts";
-import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
-import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
-import { useContext, useEffect } from "react";
-import MainProductCard from "./MainCardProduct/MainProductCard";
+import { UserContext } from '@/contexts';
+import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
+import HomeTitleSubtitle from '@/app/_ui/HomeTitleSubtitle';
+import { useContext, useEffect } from 'react';
+import MainProductCard from './MainCardProduct/MainProductCard';
 
 const css = {
-  wrapper: "crop relative",
-  scrollableDiv:
-    "flex gap-3 pt-3 px-3 md:px-4 box-border lg:mr-4 pb-9 overflow-x-scroll relative",
+  wrapper: 'crop relative',
+  scrollableDiv: 'flex gap-3 pt-3 px-3 md:px-4 box-border lg:mr-4 pb-9 overflow-x-scroll relative',
 };
 
 interface ClothesSectionProps {
@@ -40,10 +39,10 @@ const ClothesSection = ({
   setSectionEditMode,
 }: ClothesSectionProps) => {
   const { selectedGender, childCatSelected } = useContext(UserContext);
-  const isGirlsSection = childCatSelected && selectedGender === "feminino";
-  const isBoysSection = childCatSelected && selectedGender === "masculino";
-  const isWomanSection = !childCatSelected && selectedGender === "feminino";
-  const isManSection = !childCatSelected && selectedGender === "masculino";
+  const isGirlsSection = childCatSelected && selectedGender === 'feminino';
+  const isBoysSection = childCatSelected && selectedGender === 'masculino';
+  const isWomanSection = !childCatSelected && selectedGender === 'feminino';
+  const isManSection = !childCatSelected && selectedGender === 'masculino';
 
   const displayedItems = (() => {
     if (isGirlsSection) return girlsClothes ?? [];

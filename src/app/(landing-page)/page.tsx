@@ -1,6 +1,6 @@
-import { ZapFixedButton } from '../loja/_ui';
+import { ZapFixedButton } from '../_ui';
 import { TitleSubtitle } from './_ui';
-import { Questions, Plans, Hero, Process, LogoSection } from './_sections/index';
+import { Questions, Plans, Hero, Process, LogoSection } from './_components/index';
 import '../css/landing-page.css';
 // segundo branco: #FFFFFF
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { StateSetter } from '@/types/types';
-import SaveButton from '@/app/loja/_ui/SaveButton';
+import SaveButton from '@/app/_ui/SaveButton';
 
 function validateWhatsapp(number: string) {
   const digits = number.replace(/\D/g, '');

@@ -1,38 +1,32 @@
-import ButtonSeeEditMode from "@/app/loja/_ui/ButtonSeeEditMode";
-import WrapperHomeInput from "@/app/loja/_ui/WrapperHomeInput";
-import type { AddressSchema } from "@/types/types";
-import { PublicDataContext } from "@contexts/index";
-import HomeTitleSubtitle from "@ui/HomeTitleSubtitle";
-import React, { useContext, useState } from "react";
-import ButtonCopy from "./components/ButtonCopy";
-import AddressInput from "./inputs/AddressInput";
-import ContactInput from "./inputs/ContactInput";
-import MapInput from "./inputs/MapInput";
+import ButtonSeeEditMode from '@/app/_ui/button-see-edit-mode';
+import WrapperHomeInput from '@/app/_ui/WrapperHomeInput';
+import type { AddressSchema } from '@/types/types';
+import { PublicDataContext } from '@contexts/index';
+import HomeTitleSubtitle from '@/app/_ui/HomeTitleSubtitle';
+import React, { useContext, useState } from 'react';
+import ButtonCopy from './components/ButtonCopy';
+import AddressInput from './inputs/AddressInput';
+import ContactInput from './inputs/ContactInput';
+import MapInput from './inputs/MapInput';
 
 const css = {
-  wrapper: "w-full m-auto max-w-210 flex flex-col gap-5",
+  wrapper: 'w-full m-auto max-w-210 flex flex-col gap-5',
   container: `w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
     br-lg bg-white border-gray-200 shadow-lg hover:shadow-lg-hover fast-trans relative`,
-  containerhomeEditMode: "sm:!flex-col !items-start pt-3 gap-4 ",
-  wrapperInfo: "w-full flex justify-start items-center flex-auto gap-4",
-  wrapperMap: "w-full h-[108vw] max-h-[480px]",
-  wrapperMaphomeEditMode: "!h-auto !min-h-max p-5 pt-4",
-  firstP: "mb-3 leading-none!",
-  wrapperPs: "relative",
+  containerhomeEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
+  wrapperInfo: 'w-full flex justify-start items-center flex-auto gap-4',
+  wrapperMap: 'w-full h-[108vw] max-h-[480px]',
+  wrapperMaphomeEditMode: '!h-auto !min-h-max p-5 pt-4',
+  firstP: 'mb-3 leading-none!',
+  wrapperPs: 'relative',
 };
 
 function formatAddress(address: AddressSchema): string {
   const { rua, número, complemento, bairro, cidade, estado } = address;
 
-  const parts = [
-    rua,
-    `${número}${complemento ? ` - ${complemento}` : ""}`,
-    bairro,
-    cidade,
-    estado,
-  ];
+  const parts = [rua, `${número}${complemento ? ` - ${complemento}` : ''}`, bairro, cidade, estado];
 
-  return parts.filter(Boolean).join(", ");
+  return parts.filter(Boolean).join(', ');
 }
 
 const FindUsSection = (): React.ReactElement => {
@@ -59,11 +53,7 @@ const FindUsSection = (): React.ReactElement => {
 
       <div>
         <div className={`${css.wrapper}`}>
-          <div
-            className={`${css.container} ${
-              seePhoneInput && css.containerhomeEditMode
-            }`}
-          >
+          <div className={`${css.container} ${seePhoneInput && css.containerhomeEditMode}`}>
             {/* Telefone */}
             {!seePhoneInput ? (
               <>
@@ -83,25 +73,16 @@ const FindUsSection = (): React.ReactElement => {
                   secondText="Telefone copiado!"
                   textToCopy={shopInfo.contact}
                 />
-                {sectionEditMode && (
-                  <ButtonSeeEditMode setState={setSeePhoneInput} />
-                )}
+                {sectionEditMode && <ButtonSeeEditMode setState={setSeePhoneInput} />}
               </>
             ) : (
-              <WrapperHomeInput
-                title="Adicione Seu Whatsapp"
-                setState={setSeePhoneInput}
-              >
+              <WrapperHomeInput title="Adicione Seu Whatsapp" setState={setSeePhoneInput}>
                 <ContactInput />
               </WrapperHomeInput>
             )}
           </div>
           {/* Endereço */}
-          <div
-            className={`${css.container} ${
-              seeAddressInput && css.containerhomeEditMode
-            }`}
-          >
+          <div className={`${css.container} ${seeAddressInput && css.containerhomeEditMode}`}>
             {!seeAddressInput ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
@@ -120,15 +101,10 @@ const FindUsSection = (): React.ReactElement => {
                   secondText="Link copiado!"
                   textToCopy={shopAddressFormatted}
                 />
-                {sectionEditMode && (
-                  <ButtonSeeEditMode setState={setSeeAddressInput} />
-                )}
+                {sectionEditMode && <ButtonSeeEditMode setState={setSeeAddressInput} />}
               </>
             ) : (
-              <WrapperHomeInput
-                title="Adicione Seu Endereço"
-                setState={setSeeAddressInput}
-              >
+              <WrapperHomeInput title="Adicione Seu Endereço" setState={setSeeAddressInput}>
                 <AddressInput />
               </WrapperHomeInput>
             )}
@@ -137,8 +113,7 @@ const FindUsSection = (): React.ReactElement => {
           <div
             className={`${css.container} ${css.wrapperMap} ${
               seeMapInput && css.wrapperMaphomeEditMode
-            }`}
-          >
+            }`}>
             {!seeMapInput ? (
               <>
                 <iframe
@@ -152,17 +127,11 @@ const FindUsSection = (): React.ReactElement => {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 {sectionEditMode && (
-                  <ButtonSeeEditMode
-                    setState={setSeeMapInput}
-                    styles="absolute top-3 right-0"
-                  />
+                  <ButtonSeeEditMode setState={setSeeMapInput} styles="absolute top-3 right-0" />
                 )}
               </>
             ) : (
-              <WrapperHomeInput
-                title="Atualize Seu Mapa"
-                setState={setSeeMapInput}
-              >
+              <WrapperHomeInput title="Atualize Seu Mapa" setState={setSeeMapInput}>
                 <MapInput />
               </WrapperHomeInput>
             )}

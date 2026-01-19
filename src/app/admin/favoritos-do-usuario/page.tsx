@@ -1,12 +1,12 @@
-import HeaderCard from "@ui/HeaderCard";
-import TitlePage from "@ui/TitlePage";
-import UserDetail from "./_components/UserDetail/UserDetail";
-import CardWrapper from "@/app/loja/_ui/card-wrapper";
+import HeaderCard from '@/app/_ui/HeaderCard';
+import TitlePage from '@/app/_ui/TitlePage';
+import UserDetail from './_components/UserDetail/UserDetail';
+import CardWrapper from '@/app/_ui/card-wrapper';
 
 const css = {
   mainWrapper: `px-3 pb-6`,
   p: ``,
-  h2: "",
+  h2: '',
 };
 
 const page = () => {

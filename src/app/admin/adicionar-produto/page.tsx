@@ -1,6 +1,6 @@
-import { AlertInfo, TitlePage } from "@/app/loja/_ui";
-import Tutorial from "../_ui/Tutorial";
-import Core from "./Core";
+import { AlertInfo, TitlePage } from '@/app/_ui';
+import Tutorial from '../_ui/Tutorial';
+import Core from './Core';
 
 // const specificProperties = [
 //   { name: "Nome" },
@@ -18,10 +18,7 @@ const css = { wrapper: `px-3 pb-6 bg-gray-50` };
 const page = () => {
   return (
     <>
-      <TitlePage
-        title="Cadastrar Produtos"
-        styles="md:px-0 md:max-w-3xl lg:max-w-4xl"
-      />
+      <TitlePage title="Cadastrar Produtos" styles="md:px-0 md:max-w-3xl lg:max-w-4xl" />
       <div className={`${css.wrapper}`}>
         <div className={`max-w-3xl lg:max-w-4xl mx-auto`}>
           <AlertInfo
@@ -32,11 +29,11 @@ const page = () => {
           <Tutorial
             title="como cadastrar"
             steps={[
-              "Adicione as fotos.",
-              "Defina o gênero.",
-              "Caso queira, defina uma roupa base, se houver.",
-              "Defina as informações básicas.",
-              "Defina as informações especificas.",
+              'Adicione as fotos.',
+              'Defina o gênero.',
+              'Caso queira, defina uma roupa base, se houver.',
+              'Defina as informações básicas.',
+              'Defina as informações especificas.',
               "Confira todas as informações e depois clique em 'Salvar' para concluir o cadastro.",
             ]}
             listStyles={`sm:flex-row sm:gap-4`}

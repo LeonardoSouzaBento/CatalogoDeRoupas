@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@/app/loja/_ui/button';
+import Button from '@/app/_ui/button';
 import { colorFamilies } from '@/data/clothings/colors';
 import { colorsByFamily } from '@/data/clothings/colors';
 import { StateSetter } from '@/types/types';

@@ -1,4 +1,4 @@
-import { AlertInfo, ButtonClose } from '@/app/loja/_ui/index';
+import { AlertInfo, ButtonClose } from '@/app/_ui/index';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import type { ShopInfo } from '@/types/types';
 import { defaultShopInfo } from '@data/home/publicData';

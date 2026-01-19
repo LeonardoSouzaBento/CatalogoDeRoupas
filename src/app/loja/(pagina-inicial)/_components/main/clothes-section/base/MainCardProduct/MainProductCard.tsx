@@ -1,18 +1,14 @@
-import FavoriteButton from "@/app/loja/_ui/FavoriteButton";
-import type {
-  HomeClothing
-} from "@/types/types";
-import { MainImage } from "./components/MainImage";
-import ProductInfo from "./components/ProductInfo";
-import { SecondaryImage } from "./components/SecondaryImage";
-import ProductInput from "../../inputs/ProductInput";
+import FavoriteButton from '@/app/_ui/favorite-button';
+import type { HomeClothing } from '@/types/types';
+import { MainImage } from './components/MainImage';
+import ProductInfo from './components/ProductInfo';
+import { SecondaryImage } from './components/SecondaryImage';
+import ProductInput from '../../inputs/ProductInput';
 
 const css = {
-  wrapperProduct:
-    `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-lg 
+  wrapperProduct: `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-lg 
      hover:shadow-lg-hover hover:scale-101 fast-trans br-lg  overflow-hidden`,
-  wrapperImgs:
-    `w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex relative bg-white rounded-none`,
+  wrapperImgs: `w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex relative bg-white rounded-none`,
 };
 
 const MainProductCard = ({

@@ -3,7 +3,7 @@ import { HomeContext } from '@/contexts/HomeContext';
 import CategoryCard from './CategoryCard';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { Eye, EyeClosed, Plus } from 'lucide-react';
-import { AlertInfo } from '@/app/loja/_ui';
+import { AlertInfo } from '@/app/_ui';
 
 const css = {
   wrapper: 'pb-0',

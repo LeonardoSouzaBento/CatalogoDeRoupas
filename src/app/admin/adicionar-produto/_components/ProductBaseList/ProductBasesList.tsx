@@ -1,5 +1,5 @@
 'use client';
-import { HeaderCard } from '@/app/loja/_ui';
+import { HeaderCard } from '@/app/_ui';
 import { UserContext } from '@/contexts/UserContext';
 import { basicMaleClothes } from '@/data/clothings/basicMaleClothes';
 import { basicFemaleClothes } from '@/data/clothings/basicFemaleClothes';

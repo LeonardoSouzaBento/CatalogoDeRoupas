@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { HomeContext } from '@/contexts';
 import ShopNameInput from './top-navigation-bar/shop-name-input';
-import LogoSection from '@/app/(landing-page)/_sections/logo-section';
+import LogoSection from '@/app/(landing-page)/_components/logo-section';
 
 const LogoArea = () => {
   const [seeInputNameShop, setSeeInputNameShop] = useState<boolean>(false);

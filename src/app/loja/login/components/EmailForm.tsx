@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonClose, HeaderCard } from '../../_ui';
+import { ButtonClose, HeaderCard } from '../../../_ui';
 import { BooleanSetter } from '@/types/types';
 import { Eye, EyeClosed, LogIn } from 'lucide-react';
 import { iconMd } from '@/app/css/lucideIconStyles';

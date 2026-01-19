@@ -2,7 +2,7 @@
 import { ChevronDown } from 'lucide-react';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { ClothingProperty, StateSetter } from '@/types/types';
-import Button from '@/app/loja/_ui/button';
+import Button from '@/app/_ui/button';
 import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
 
 const css = {

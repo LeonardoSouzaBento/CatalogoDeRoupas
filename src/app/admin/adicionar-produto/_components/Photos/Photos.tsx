@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
-import { AlertInfo, HeaderCard } from "@/app/loja/_ui";
-import PhotoGridEditor from "./components/PhotoGridEditor/PhotoGridEditor";
-import CardWrapper from "@/app/loja/_ui/card-wrapper";
+'use client';
+import React from 'react';
+import { AlertInfo, HeaderCard } from '@/app/_ui';
+import PhotoGridEditor from './components/PhotoGridEditor/PhotoGridEditor';
+import CardWrapper from '@/app/_ui/card-wrapper';
 
 const Photos = () => {
   return (

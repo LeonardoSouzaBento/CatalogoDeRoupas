@@ -1,4 +1,4 @@
-import SaveButton from '@/app/loja/_ui/SaveButton';
+import SaveButton from '@/app/_ui/SaveButton';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { Check } from 'lucide-react';
 import React from 'react';

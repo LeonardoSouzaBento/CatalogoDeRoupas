@@ -1,11 +1,11 @@
-"use client";
-import React, { useContext } from "react";
-import { UserContext } from "@/contexts";
-import MeasuresCard from "./_components/measures-card/measures-card";
-import UserCard from "./_components/user-card/user-card";
-import TitlePage from "@ui/TitlePage";
-import FavoritesCard from "./_components/favorites-card";
-import CardWrapper from "../_ui/card-wrapper";
+'use client';
+import React, { useContext } from 'react';
+import { UserContext } from '@/contexts';
+import MeasuresCard from './_components/measures-card/measures-card';
+import UserCard from './_components/user-card/user-card';
+import TitlePage from '@/app/_ui/TitlePage';
+import FavoritesCard from './_components/favorites-card';
+import CardWrapper from '../../_ui/card-wrapper';
 
 const css = {
   mainWrapper: `px-3 m-auto lg:px-6 lg:flex lg:flex-wrap lg:gap-5 lg:max-w-[1208px]`,

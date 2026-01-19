@@ -1,9 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import { HeaderCard } from "../../_ui";
-import ButtonLoginGoogle from "./ButtonLoginGoogle";
-import ButtonLoginEmail from "./ButtonLoginEmail";
-import EmailForm from "./EmailForm";
+'use client';
+import React, { useState } from 'react';
+import { HeaderCard } from '../../../_ui';
+import ButtonLoginGoogle from './ButtonLoginGoogle';
+import ButtonLoginEmail from './ButtonLoginEmail';
+import EmailForm from './EmailForm';
 
 const Core = () => {
   const [seeEmailForm, setSeeEmailForm] = useState<boolean>(false);
@@ -19,10 +19,7 @@ const Core = () => {
             titleStyles="font-semibold !"
           />
           <ButtonLoginGoogle />
-          <ButtonLoginEmail
-            seeEmailForm={seeEmailForm}
-            setSeeEmailForm={setSeeEmailForm}
-          />
+          <ButtonLoginEmail seeEmailForm={seeEmailForm} setSeeEmailForm={setSeeEmailForm} />
         </>
       ) : (
         <EmailForm setSeeEmailForm={setSeeEmailForm} />

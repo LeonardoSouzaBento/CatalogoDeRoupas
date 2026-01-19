@@ -1,6 +1,6 @@
-import React from "react";
-import { StateSetter } from "@/types/types";
-import ButtonClose from "./ButtonClose";
+import React from 'react';
+import { StateSetter } from '@/types/types';
+import ButtonClose from './button-close';
 
 interface Props {
   text?: string;
@@ -14,11 +14,10 @@ const css = {
   container: `w-120 h-auto br-lg shadow-lg bg-white hover:shadow-lg-hover p-6 relative`,
   header: `min-h-10 w-full flex flex items-center justify-start gap-2 mb-4`,
   title: `font-medium `,
-  text: "",
+  text: '',
 };
 
 const AlertFullScrren = ({ text, title, children, setState }: Props) => {
-
   return (
     <div className={`${css.wrapper}`}>
       <div className={`${css.container}`}>

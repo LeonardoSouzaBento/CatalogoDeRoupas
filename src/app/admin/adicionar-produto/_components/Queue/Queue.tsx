@@ -1,6 +1,6 @@
-import { HeaderCard } from "@/app/loja/_ui";
-import CardWrapper from "@/app/loja/_ui/card-wrapper";
-import React from "react";
+import { HeaderCard } from '@/app/_ui';
+import CardWrapper from '@/app/_ui/card-wrapper';
+import React from 'react';
 
 const Queue = () => {
   return (

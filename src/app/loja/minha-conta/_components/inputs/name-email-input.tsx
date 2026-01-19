@@ -4,10 +4,10 @@ import { Check, Upload } from 'lucide-react';
 import { validateName } from '@/functions/validateName';
 import { validateEmail } from '@/functions/validateEmail';
 import Image from 'next/image';
-import { ButtonClose, HeaderCard } from '@/app/loja/_ui';
+import { ButtonClose, HeaderCard } from '@/app/_ui';
 import { BooleanSetter } from '@/types/types';
 import { UserContext } from '@/contexts';
-import SaveButton from '@/app/loja/_ui/SaveButton';
+import SaveButton from '@/app/_ui/SaveButton';
 
 const css = {
   pError: `text-red-600 mb-[14px]`,

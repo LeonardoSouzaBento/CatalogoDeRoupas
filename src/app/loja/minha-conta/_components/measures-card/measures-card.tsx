@@ -3,8 +3,8 @@ import MeasureItem from './measure-item';
 import { iconMd, iconSm } from '@/app/css/lucideIconStyles';
 import type { Measure } from './measure-item';
 import { Pen, CircleQuestionMark } from 'lucide-react';
-import AlertInfo from '@ui/AlertInfo';
-import HeaderCard from '@ui/HeaderCard';
+import AlertInfo from '@/app/_ui/alert-info';
+import HeaderCard from '@/app/_ui/HeaderCard';
 import { UserData } from '@/types/types';
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];

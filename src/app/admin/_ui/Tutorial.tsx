@@ -1,7 +1,7 @@
-"use client";
-import { HeaderCard } from "@/app/loja/_ui";
-import { useState } from "react";
-import { ResizableDivTitle } from "./ResizableCardTitle";
+'use client';
+import { HeaderCard } from '@/app/_ui';
+import { useState } from 'react';
+import { ResizableDivTitle } from './ResizableCardTitle';
 
 interface Props {
   title: string;
@@ -25,7 +25,7 @@ const css = {
 const Tutorial = ({ title, steps, listStyles, itemStyles }: Props) => {
   /* estados para expandir */
   const [expand, setExpand] = useState<boolean>(false);
-  const [divHeight, setDivHeight] = useState<string | null>("");
+  const [divHeight, setDivHeight] = useState<string | null>('');
 
   const middle = Math.ceil(steps.length / 2);
   const firstHalf = steps.slice(0, middle);
@@ -39,16 +39,12 @@ const Tutorial = ({ title, steps, listStyles, itemStyles }: Props) => {
     ));
 
   return (
-    <section
-      className={`${css.section}`}
-      style={{ height: expand ? "auto" : divHeight || "auto" }}
-    >
+    <section className={`${css.section}`} style={{ height: expand ? 'auto' : divHeight || 'auto' }}>
       <ResizableDivTitle
         expand={expand}
         setExpand={setExpand}
         setDivHeight={setDivHeight}
-        valueToFixHeight={10}
-      >
+        valueToFixHeight={10}>
         <HeaderCard
           icon="info"
           title={`Saiba ${title}`}
@@ -59,9 +55,7 @@ const Tutorial = ({ title, steps, listStyles, itemStyles }: Props) => {
 
       <ol className={`${css.list} ${listStyles}`}>
         <div className={`${css.wrapperList}`}>{renderItems(firstHalf, 0)}</div>
-        <div className={`${css.wrapperList}`}>
-          {renderItems(secondHalf, firstHalf.length)}
-        </div>
+        <div className={`${css.wrapperList}`}>{renderItems(secondHalf, firstHalf.length)}</div>
       </ol>
     </section>
   );

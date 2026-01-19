@@ -1,6 +1,6 @@
-import { HeaderCard } from "@/app/loja/_ui";
-import { BooleanSetter } from "@/types/types";
-import React from "react";
+import { HeaderCard } from '@/app/_ui';
+import { BooleanSetter } from '@/types/types';
+import React from 'react';
 
 const css = {
   wrapper: `p-6 pt-5 mb-6 flex flex-col text-gray-600 font-medium bg-white card-styles`,
@@ -22,7 +22,7 @@ const Header = ({
     <div className={`${css.wrapper}`}>
       <HeaderCard
         title="Etapas"
-        icon={seeAddresForm ? "filter_2" : "filter_1"}
+        icon={seeAddresForm ? 'filter_2' : 'filter_1'}
         iconStyles=" font-medium!"
       />
 
@@ -31,8 +31,7 @@ const Header = ({
           onClick={() => {
             setSeeAddresForm(false);
           }}
-          isSelected={!seeAddresForm}
-        >
+          isSelected={!seeAddresForm}>
           1º Informações gerais
         </StepButton>
 
@@ -40,8 +39,7 @@ const Header = ({
           onClick={() => {
             setSeeAddresForm(true);
           }}
-          isSelected={seeAddresForm}
-        >
+          isSelected={seeAddresForm}>
           2º Endereço
         </StepButton>
       </div>
@@ -63,8 +61,7 @@ const StepButton = ({
   return (
     <button
       className={`${css.button} ${isSelected ? css.selected : css.noSelected}`}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {children}
     </button>
   );

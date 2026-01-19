@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext, useState } from 'react';
-import Button from '@/app/loja/_ui/button';
+import Button from '@/app/_ui/button';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { Eye } from 'lucide-react';
 import { UserContext } from '@/contexts';

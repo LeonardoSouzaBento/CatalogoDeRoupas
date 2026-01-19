@@ -3,7 +3,7 @@ import { HomeContext } from '@/contexts';
 import { BooleanSetter } from '@/types/types';
 import { PenOff } from 'lucide-react';
 import { useContext } from 'react';
-import ButtonSeeEditMode from './ButtonSeeEditMode';
+import ButtonSeeEditMode from './button-see-edit-mode';
 
 interface HomeTitleSubtitleProps {
   title: string;

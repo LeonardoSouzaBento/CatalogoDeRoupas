@@ -1,4 +1,4 @@
-import { HeaderCard } from "../../_ui";
+import { HeaderCard } from '../../../_ui';
 
 const FavoritesCard = () => {
   return (

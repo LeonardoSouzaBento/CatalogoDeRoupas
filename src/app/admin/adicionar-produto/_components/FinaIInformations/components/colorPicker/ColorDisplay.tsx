@@ -1,5 +1,5 @@
-import Button from "@/app/loja/_ui/button";
-import { ColorDisplayProps } from "./types";
+import Button from '@/app/_ui/button';
+import { ColorDisplayProps } from './types';
 
 export function ColorDisplay({ color, onCapture }: ColorDisplayProps) {
   return (

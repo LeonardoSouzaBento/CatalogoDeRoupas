@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ButtonClose } from '@/app/loja/_ui';
+import { ButtonClose } from '@/app/_ui';
 import { BooleanSetter } from '@/types/types';
 import { Choices, Links, Subtitle, AdministrationOptions } from './options-menu/index';
 

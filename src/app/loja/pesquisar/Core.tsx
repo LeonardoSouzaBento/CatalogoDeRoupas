@@ -1,9 +1,9 @@
-import React from 'react'
-import ZapFixedButton from "@/app/loja/_ui/ZapFixedButton";
-import Header from "./_components/Header";
-import SearchButton from "./_components/SearchButton";
-import UserGenders from "./_components/UserGenders";
-import Suggestions from "./_components/Suggestions";
+import React from 'react';
+import ZapFixedButton from '@/app/_ui/ZapFixedButton';
+import Header from './_components/Header';
+import SearchButton from './_components/SearchButton';
+import UserGenders from './_components/UserGenders';
+import Suggestions from './_components/Suggestions';
 
 const Core = () => {
   return (
@@ -16,7 +16,7 @@ const Core = () => {
         <ZapFixedButton />
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Core;
