@@ -14,7 +14,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
       <ButtonClose
         setState={setSeeEmailForm}
         simpleDesign={true}
-        styles="br-lg size-[38px]! light-button"
+        styles="br-lg size-[38px]! "
         positionStyles="absolute -top-[7px] -right-3"
       />
       <HeaderCard
@@ -35,7 +35,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           placeholder="Geramos uma, se preferir."
         />
         <div
-          className={`wrapper-icon absolute bottom-0 right-1`}
+          className={`absolute bottom-0 right-1`}
           onClick={() => {
             setSeePassword((prev) => !prev);
           }}>
@@ -43,9 +43,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         </div>
       </div>
       <button className={`${css.button} mb-5`}>
-        <div className="wrapper-icon">
-          <LogIn {...iconMd} />
-        </div>
+        <LogIn {...iconMd} />
         entrar
       </button>
       <button className={`${css.button} h-10! font-light bg-white  text-neutral-600`}>

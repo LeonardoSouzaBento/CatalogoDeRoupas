@@ -52,7 +52,7 @@ const css = {
   wrapper: `flex flex-wrap`,
   wrapperItem: `h-10 min-w-10 flex items-center justify-center`,
   p: ``,
-  notSelected: `light-button p-0`,
+  notSelected: ` p-0`,
   selected: `ring-style p-0`,
 };
 

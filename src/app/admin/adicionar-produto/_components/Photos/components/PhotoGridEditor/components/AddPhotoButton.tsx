@@ -6,7 +6,7 @@ import { Photo, StateSetter } from '@/types/types';
 const css = {
   wrapper: ``,
   input: `size-full p-0 abso bs-0 z-2 flex-center opacity-0`,
-  button: `light-button j-center relative`,
+  button: ` j-center relative`,
 };
 
 const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
@@ -55,9 +55,7 @@ const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
   return (
     <button className={`${css.button}`}>
       Adicionar foto
-      <div className={`wrapper-icon`}>
-        <Plus {...iconMd} />
-      </div>
+      <Plus {...iconMd} />
       <input
         className={`${css.input}`}
         type="file"

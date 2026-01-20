@@ -79,9 +79,7 @@ const AboutInput = ({
             setInputValue('');
           }}>
           {' '}
-          <div className="wrapper-icon">
-            <Trash {...iconMd} size={19} />
-          </div>
+          <Trash {...iconMd} size={19} />
           Deletar Todo o Texto
         </button>
         <button className={`${css.buttons} order-3 sm:order-3`}>

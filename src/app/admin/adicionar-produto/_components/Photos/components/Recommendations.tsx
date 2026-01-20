@@ -10,7 +10,7 @@ const css = {
   p: `5 text-gray-700 transition-all duration-300`,
   highlight: `font-medium text-gray-900`,
   button: `size-9 flex-center px-0 br-50 text-gray-500 
-  hover:text-gray-700 trans white-button shadow-lg-hover`,
+  hover:text-gray-700 trans  shadow-lg-hover`,
 };
 
 const Recommendations = () => {

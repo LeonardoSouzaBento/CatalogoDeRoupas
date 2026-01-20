@@ -38,12 +38,12 @@ Get-ChildItem -Recurse -Filter *.tsx | ForEach-Object {
 /* para varios arquivos */
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace 'text-female-foreground|text-male-foreground|text-female-white|text-male-white', '' | 
+    (Get-Content $_.FullName) -replace 'line-span|card-shadow|home-h1|h3-sizes|h4-sizes|input|ring-style|p-button|p-small-button|square-button', '' | 
     Set-Content $_.FullName
 }
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace '@contexts', '@/contexts' | 
+    (Get-Content $_.FullName) -replace 'heart-button-shadow', 'shadow-favorite-button' | 
     Set-Content $_.FullName
 }
 

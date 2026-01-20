@@ -37,7 +37,7 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
       <ButtonClose
         setState={setSeeEditMode}
         simpleDesign={true}
-        styles="light-button size-9!"
+        styles=" size-9!"
         positionStyles="absolute -top-1 -right-3"
       />
       {/* <p>Foto de perfil</p> */}
@@ -45,11 +45,9 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
         <div className="size-16 min-w-16 br-50 bg-gray-100 crop relative">
           <Image src={`/`} fill={true} alt="" />
         </div>
-        <button className="w-full light-button trans">
+        <button className="w-full  trans">
           Subir nova imagem
-          <div className="wrapper-icon">
-            <Upload {...iconMd} />
-          </div>
+          <Upload {...iconMd} />
         </button>
       </div>
 

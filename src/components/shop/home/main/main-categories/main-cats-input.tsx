@@ -33,9 +33,7 @@ const MainCatsInput = (): React.ReactElement => {
               setSelectedGender('masculino');
             }
           }}>
-          <div className="wrapper-icon">
-            {maleNoSelected ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
-          </div>
+          {maleNoSelected ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
           Ver Categorias Masculinas
         </button>
         <button

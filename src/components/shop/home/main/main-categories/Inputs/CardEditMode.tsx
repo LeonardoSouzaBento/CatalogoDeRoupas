@@ -62,7 +62,7 @@ const CardEditMode = ({
               width={104}
             />
           </div>
-          <button className="mb-1 light-button min-[440px]:mb-0 sm:mb-1 md:mb-0">
+          <button className="mb-1  min-[440px]:mb-0 sm:mb-1 md:mb-0">
             <div className="h-full min-w-8 flex-center">
               <Upload {...iconSm} />
             </div>

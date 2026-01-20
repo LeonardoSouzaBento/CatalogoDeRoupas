@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { iconMd } from '@/css/lucideIconStyles';
-import { Check, Upload } from 'lucide-react';
-import { validateName } from '@/functions/validateName';
-import { validateEmail } from '@/functions/validateEmail';
-import Image from 'next/image';
 import { ButtonClose, HeaderCard } from '@/app/_ui';
-import { BooleanSetter } from '@/types/types';
-import { UserContext } from '@/contexts';
 import SaveButton from '@/app/_ui/SaveButton';
+import { UserContext } from '@/contexts';
+import { iconMd } from '@/css/lucideIconStyles';
+import { validateEmail } from '@/functions/validateEmail';
+import { validateName } from '@/functions/validateName';
+import { BooleanSetter } from '@/types/types';
+import { Upload } from 'lucide-react';
+import Image from 'next/image';
+import { useContext, useState } from 'react';
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
@@ -37,7 +37,7 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
       <ButtonClose
         setState={setSeeEditMode}
         simpleDesign={true}
-        styles="light-button size-9!"
+        styles=" size-9!"
         positionStyles="absolute -top-1 -right-3"
       />
       {/* <p>Foto de perfil</p> */}
@@ -45,11 +45,9 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
         <div className="size-16 min-w-16 br-50 bg-gray-100 crop relative">
           <Image src={`/`} fill={true} alt="" />
         </div>
-        <button className="w-full light-button trans">
+        <button className="w-full  trans">
           Subir nova imagem
-          <div className="wrapper-icon">
-            <Upload {...iconMd} />
-          </div>
+          <Upload {...iconMd} />
         </button>
       </div>
 

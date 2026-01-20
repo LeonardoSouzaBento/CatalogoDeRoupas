@@ -21,10 +21,10 @@ interface Props {
 }
 
 const css = {
-  optionList: `option-list-button 5`,
-  white: `white-button`,
-  transparent: `transparent-button`,
-  outlined: `outlined-button`,
+  optionList: ` 5`,
+  white: ``,
+  transparent: ``,
+  outlined: ``,
 };
 
 const selectedStyles = {
@@ -68,9 +68,9 @@ export const Button = ({
         css[(variant as keyof typeof css) || ""]
       } ${extraClasses} ${selectedClasses}`}
     >
-      {iconFirst && <div className="wrapper-icon">{icon}</div>}
+      {iconFirst && icon}
       {children}
-      {!iconFirst && <div className="wrapper-icon">{icon}</div>}
+      {!iconFirst && icon}
     </button>
   );
 };

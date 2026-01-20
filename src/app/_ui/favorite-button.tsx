@@ -7,7 +7,7 @@ const css = {
   wrapperPReturn: `flex-center h-full w-33 box-border`,
   pReturn: `pb-[1px] 5 font-normal`,
   wrapperIcon:
-    `h-full min-w-10 w-max flex-center gap-3 light-button br-50 fast-trans`,
+    `h-full min-w-10 w-max flex-center gap-3  br-50 fast-trans`,
   span: `material-symbols-rounded text-gray-800 font-[400]! pt-[2]`,
 };
 

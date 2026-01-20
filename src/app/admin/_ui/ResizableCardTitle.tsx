@@ -18,7 +18,7 @@ interface Props {
 const css = {
   wrapperTitle: `max-h-max flex justify-between gap-4 sm:justify-start`,
   button: `size-9 min-w-9 -mr-2 px-0 pt-px flex-center
-  br-50 box-border trans white-button sm:mt-1 sm:mr-0`,
+  br-50 box-border trans  sm:mt-1 sm:mr-0`,
 };
 
 export function ResizableDivTitle({

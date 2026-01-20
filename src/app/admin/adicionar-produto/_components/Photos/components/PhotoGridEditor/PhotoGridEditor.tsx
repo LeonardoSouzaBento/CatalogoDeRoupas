@@ -10,7 +10,7 @@ import ReorderButton from "./components/ReorderButton";
 const css = {
   wrapper: `my-5 flex flex-wrap justify-start gap-4 crop relative`,
   wrapperEditMode: `ring ring-blue-300 p-4`,
-  wrapperImg: `relative h-36.25 w-29 light-button overflow-hidden`,
+  wrapperImg: `relative h-36.25 w-29  overflow-hidden`,
   wrapperButtons: `flex flex-col gap-5 mb-5 min-[560px]:grid min-[560px]:grid-cols-2`,
   reorderAlert: `w-full min-h-10 p-3 px-6 bg-yellow-100/85 text-gray-800 flex items-center justify-start
   gap-2 `,

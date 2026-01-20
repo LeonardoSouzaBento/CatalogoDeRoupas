@@ -70,7 +70,7 @@ const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoTaken }:
 
           <div className={`${css.wrapperButtons}`}>
             <button
-              className={`${css.button} light-button`}
+              className={`${css.button} `}
               onClick={(e) => {
                 e.stopPropagation();
                 setPhotoTaken(null);
@@ -80,7 +80,7 @@ const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoTaken }:
               <X {...iconMd} strokeWidth={2} />
             </button>
             <button
-              className={`${css.button} white-button `}
+              className={`${css.button}  `}
               onClick={(e) => {
                 e.stopPropagation();
                 handleRemovePhoto();

@@ -16,7 +16,7 @@ const css = {
   `,
   wrapperTitle: `flex justify-between gap-4 sm:justify-start`,
   button: `h-8 min-w-8 -mr-2 px-0 pt-px flex-center bs
-  br-50 box-border trans white-button sm:mt-1 sm:mr-0`,
+  br-50 box-border trans  sm:mt-1 sm:mr-0`,
   list: `flex flex-col j-start`,
   wrapperList: `w-full text-gray-700`,
   itemList: ` w-full min-h-10 hover:bg-blue-50 trans mb-0 cursor-default break-words`,

@@ -3,7 +3,7 @@ import { BooleanSetter, Photo } from '@/types/types';
 import { Layers2, X } from 'lucide-react';
 
 const css = {
-  button: `light-button j-center`,
+  button: ` j-center`,
   reorderMode: `bg-white! text-blue-700 ring ring-blue-300 shadow-sm`,
 };
 
@@ -36,13 +36,11 @@ const ReorderButton = ({ reorderMode, setReorderMode, styles, photos }: Props) =
       `}>
       {reorderMode ? 'Sair de reordenar' : 'Reordenar imagens'}
 
-      <div className="wrapper-icon">
-        {reorderMode ? (
-          <X {...iconMd} />
-        ) : (
-          <Layers2 {...iconMd} color={isDisabled ? '#a1a1a1' : 'gray'} />
-        )}
-      </div>
+      {reorderMode ? (
+        <X {...iconMd} />
+      ) : (
+        <Layers2 {...iconMd} color={isDisabled ? '#a1a1a1' : 'gray'} />
+      )}
     </button>
   );
 };

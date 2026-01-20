@@ -2,29 +2,15 @@
 @import "material-symbols/outlined.css";
 @import "./globals.css";
 
-/* 
-pink: #C61D74
-purple: #7E1FAC
-*/
-
 @layer components {
-  /* sombras */
-  .heart-button-shadow {
-    box-shadow: 0 8px 24px -6px hsla(329, 20%, 30%, 0.094);
-  }
-
-  .wrapper-icon {
-    @apply h-full min-w-max flex items-center justify-center;
-  }
-
-  .line-span {
-    @apply [font-variation-settings:'FILL'_0]!;
-  }
-
   /* divs */
   .card-styles {
     @apply bg-white shadow-lg hover:shadow-lg-hover px-6 pt-3.5 pb-7 mb-5 
     rounded-lg box-border transition-shadow duration-200 overflow-hidden relative;
+  }
+  
+  .line-span {
+    @apply [font-variation-settings:'FILL'_0]!;
   }
 
   .card-shadow {
@@ -49,26 +35,6 @@ purple: #7E1FAC
   text-neutral-900 bg-neutral-100 border-none! rounded-md box-border focus:outline-none;
   }
 
-  /* estilos para botões */
-
-  .light-button {
-    @apply bg-gray-50 hover:bg-gray-200/60 transition-colors duration-200;
-  }
-  .white-button {
-    @apply bg-white hover:bg-gray-50 transition-colors duration-200;
-  }
-  .transparent-button {
-    @apply bg-transparent hover:bg-gray-100 transition-colors duration-200;
-  }
-  .option-list-button {
-    @apply rounded-full bg-gray-50 hover:bg-gray-200/60 transition-colors 
-    duration-200 font-normal pr-4.5 border border-transparent;
-  }
-  .outlined-button {
-    @apply bg-white transition-colors duration-200
-    border border-gray-300 rounded-full;
-  }
-
   .ring-style {
     @apply outline-none ring-2 ring-blue-300 bg-blue-50 hover:bg-blue-100/50 
   text-blue-700 shadow-lg;
@@ -85,6 +51,6 @@ purple: #7E1FAC
 
   .square-button {
     @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 
-  hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
+    hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
   }
 }
