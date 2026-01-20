@@ -1,5 +1,5 @@
 import { AlertInfo, ButtonClose } from '@/app/_ui/index';
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import type { ShopInfo } from '@/types/types';
 import { defaultShopInfo } from '@/data/home/publicData';
 import { Check, Trash, X } from 'lucide-react';

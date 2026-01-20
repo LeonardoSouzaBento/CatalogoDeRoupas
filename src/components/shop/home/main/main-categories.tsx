@@ -5,7 +5,7 @@ import { HomeContext } from '@/contexts/HomeContext';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import MainCatsInput from './main-categories/main-cats-input';
+import MainCatsInput from './main-categories/Inputs/MainCatsInput';
 
 const css = {
   container: `

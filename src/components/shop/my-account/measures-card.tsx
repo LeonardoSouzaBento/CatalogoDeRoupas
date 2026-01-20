@@ -1,6 +1,6 @@
 import AlertInfo from '@/app/_ui/alert-info';
 import HeaderCard from '@/app/_ui/HeaderCard';
-import { iconMd, iconSm } from '@/app/css/lucideIconStyles';
+import { iconMd, iconSm } from '@/css/lucideIconStyles';
 import { UserData } from '@/types/types';
 import { CircleQuestionMark, Pen } from 'lucide-react';
 import React from 'react';
@@ -53,13 +53,12 @@ interface Measure {
 
 const MeasureItem: React.FC<Measure> = ({ type, value }) => {
   const css = {
-    wrapper:
-      `w-1/3 max-[375px]:w-full flex flex-col min-[375px]:border-r 
+    wrapper: `w-1/3 max-[375px]:w-full flex flex-col min-[375px]:border-r 
       min-[375px]:border-gray-300 mr-md crop last:border-none`,
-    thEtd: "h-10 flex j-sart i-center box-border px-4",
+    thEtd: 'h-10 flex j-sart i-center box-border px-4',
     th: `font-normal text-neutral-900 text-left border-b border 
     max-[375px]:border-none bg-neutral-100`,
-    td: "max-[375px]:border-b max-[375px]:border-gray-300",
+    td: 'max-[375px]:border-b max-[375px]:border-gray-300',
   };
 
   return (
@@ -69,7 +68,3 @@ const MeasureItem: React.FC<Measure> = ({ type, value }) => {
     </tr>
   );
 };
-
-
-
-

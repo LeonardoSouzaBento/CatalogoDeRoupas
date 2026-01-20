@@ -1,7 +1,7 @@
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import { PublicDataContext } from '@/contexts/PublicDataContext';
 import { useContext, useState } from 'react';
-import AboutInput from './inputs/AboutInput';
+import AboutInput from './about-section/about-input';
 
 const css = {
   wrapperAbout: 'm-auto relative',
@@ -23,7 +23,7 @@ const AboutSection = () => {
         setSectionEditMode={setSeeAboutInput}
       />
       <div className={`${css.wrapperAbout} ${seeAboutInput && css.homeEditMode}`}>
-        {shopInfo.aboutText.map((paragraph, index: number) => (
+        {shopInfo.aboutText.map((paragraph: string, index: number) => (
           <div className={`${css.wrapperP}`} key={index}>
             <p key={index} className={`${css.p}`}>
               {paragraph}

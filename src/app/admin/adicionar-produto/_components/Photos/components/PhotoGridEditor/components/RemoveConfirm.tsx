@@ -1,4 +1,4 @@
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import { BooleanSetter, Photo, StateSetter } from '@/types/types';
 import { Check, X } from 'lucide-react';
 import Image from 'next/image';

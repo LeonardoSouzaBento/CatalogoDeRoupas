@@ -1,9 +1,8 @@
+import HomeSectionTitle from '@/app/_ui/home-section-title';
 import { UserContext } from '@/contexts/UserContext';
 import type { homeUserGender } from '@/types/types';
-import HomeSectionTitle from '@/app/_ui/home-section-title';
 import React, { useContext, useState } from 'react';
-import ChildGenderButtons from './components/ChildGenderButtons';
-import { writeSpanStyle } from '@/functions/writeSpanStyle';
+import ChildGenderButtons from './user-gender-list/child-gender-buttons';
 
 const userGenders = [
   { name: 'masculino', icon: 'man_2' },

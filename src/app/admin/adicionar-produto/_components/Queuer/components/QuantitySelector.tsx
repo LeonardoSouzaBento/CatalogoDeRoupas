@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { iconMd, iconSm } from '@/app/css/lucideIconStyles';
+import { iconMd, iconSm } from '@/css/lucideIconStyles';
 import { StateSetter } from '@/types/types';
 import { Minus, Plus, X } from 'lucide-react';
 

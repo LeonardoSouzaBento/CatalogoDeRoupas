@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 

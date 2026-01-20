@@ -1,7 +1,7 @@
 'use client';
 import React, { useContext, useState } from 'react';
 import Button from '@/app/_ui/button';
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import { Eye } from 'lucide-react';
 import { UserContext } from '@/contexts';
 import { letterSizes } from '@/data/clothings/sizes';

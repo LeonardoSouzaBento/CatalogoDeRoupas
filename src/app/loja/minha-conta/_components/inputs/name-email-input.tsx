@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import { Check, Upload } from 'lucide-react';
 import { validateName } from '@/functions/validateName';
 import { validateEmail } from '@/functions/validateEmail';
@@ -33,12 +33,7 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
 
   return (
     <div className={`flex flex-col gap-4 relative`}>
-      <HeaderCard
-        title="Edite seus dados"
-        icon="edit"
-        wrapperStyles=""
-        iconStyles="!"
-      />
+      <HeaderCard title="Edite seus dados" icon="edit" wrapperStyles="" iconStyles="!" />
       <ButtonClose
         setState={setSeeEditMode}
         simpleDesign={true}

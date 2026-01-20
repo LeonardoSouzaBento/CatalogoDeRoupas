@@ -2,7 +2,7 @@ import { UserContext } from '@/contexts';
 import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import { useContext, useEffect } from 'react';
-import MainProductCard from './MainCardProduct/MainProductCard';
+import HomeProduct from '../../../product/home-product';
 
 const css = {
   wrapper: 'crop relative',
@@ -72,7 +72,7 @@ const ClothesSection = ({
         <div className={`${css.wrapper}`}>
           <div className={css.scrollableDiv}>
             {displayedItems.map((item, index) => (
-              <MainProductCard
+              <HomeProduct
                 sectionEditMode={sectionEditMode}
                 item={item}
                 key={`${index} ${item.id}`}

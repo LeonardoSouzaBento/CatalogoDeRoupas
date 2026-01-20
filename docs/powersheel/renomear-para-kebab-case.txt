@@ -1,0 +1,11 @@
+Get-ChildItem -Path "C:\Users\souza\Desktop\repositorios-publicos\catálogo-de-roupas\src\components\shop\home\main\main-categories\Inputs" -File | Rename-Item -NewName {
+    # 1. Captura o nome sem extensão
+    $newName = $_.BaseName
+    
+    # 2. Insere hífen entre minúscula/número e maiúscula
+    $newName = [regex]::Replace($newName, '([a-z0-9])([A-Z])', '$1-$2')
+    
+    # 3. Converte tudo para minúsculo e junta com a extensão
+    ($newName.ToLower() + $_.Extension)
+}
+

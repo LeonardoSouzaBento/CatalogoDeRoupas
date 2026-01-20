@@ -1,5 +1,5 @@
 'use client';
-import { iconSm } from '@/app/css/lucideIconStyles';
+import { iconSm } from '@/css/lucideIconStyles';
 import { Minus, Plus } from 'lucide-react';
 import { useState } from 'react';
 

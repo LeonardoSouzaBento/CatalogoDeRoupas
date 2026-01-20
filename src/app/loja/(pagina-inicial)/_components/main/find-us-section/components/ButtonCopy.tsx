@@ -1,4 +1,4 @@
-import { iconSm } from '@/app/css/lucideIconStyles';
+import { iconSm } from '@/css/lucideIconStyles';
 import { BooleanSetter } from '@/types/types';
 import { Copy, CopyCheck } from 'lucide-react';
 

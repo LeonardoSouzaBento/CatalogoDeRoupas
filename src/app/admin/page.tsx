@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { HomeContext } from '@/contexts';
 import { BookHeart, Eye, Pen, Plus } from 'lucide-react';
-import { iconMd, iconSm, iconLg } from '@/app/css/lucideIconStyles';
+import { iconMd, iconSm, iconLg } from '@/css/lucideIconStyles';
 import '../globals.css';
 import Link from 'next/link';
 

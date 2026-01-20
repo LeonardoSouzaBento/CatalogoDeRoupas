@@ -1,4 +1,4 @@
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import { UserContext } from '@/contexts';
 import { mostSearched } from '@/data/UserData';
 import { Search } from 'lucide-react';
@@ -15,8 +15,8 @@ const Choices = () => {
     selectedGender === 'masculino'
       ? mostSearched.masculino
       : selectedGender === 'feminino'
-      ? mostSearched.feminino
-      : mostSearched.infantil;
+        ? mostSearched.feminino
+        : mostSearched.infantil;
 
   return (
     <div>

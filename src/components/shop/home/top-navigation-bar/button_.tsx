@@ -1,6 +1,6 @@
 import React from 'react';
 import type { LucideIcon } from 'lucide-react';
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import Link from 'next/link';
 import { BooleanSetter } from '@/types/types';
 
@@ -13,8 +13,7 @@ export interface ButtonType {
 }
 
 const css = {
-  button:
-    'font-medium h-10 px-0 flex-center gap-[6px] sm:px-4 sm:pl-[14px] br-md bg-white/24 ',
+  button: 'font-medium h-10 px-0 flex-center gap-[6px] sm:px-4 sm:pl-[14px] br-md bg-white/24 ',
   wrapperIcon: 'h-10 w-10 flex-center bg-white/24 sm:bg-transparent',
   p: 'hidden sm:inline pr-2 text-left text-neutral-800 leading-none ',
   buttonSearch: `h-10 w-34 sm:min-w-36 max-w-60 px-4 flex flex-auto justify-between 

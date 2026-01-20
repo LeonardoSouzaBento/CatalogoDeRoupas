@@ -1,6 +1,6 @@
-import Buttons from "./components/ImageButtons/Buttons";
-import Images from "./components/ImageButtons/Images";
-import InfoForm from "./components/InfoForm";
+import Buttons from "./Buttons";
+import Images from "./Images";
+import InfoForm from "./InfoForm";
 
 
 const ProductInput = ({ id }: { id: number | string}) => {

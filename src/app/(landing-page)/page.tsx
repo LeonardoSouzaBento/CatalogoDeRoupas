@@ -1,7 +1,7 @@
 import { ZapFixedButton } from '../_ui';
 import { TitleSubtitle } from './_ui';
 import { Questions, Plans, Hero, Process, LogoSection } from './_components/index';
-import '../css/landing-page.css';
+import '../../css/landing-page.css';
 // segundo branco: #FFFFFF
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="landing-page">
       <LogoSection page="landing-page" />
-      <main className='bg-linear-to-t from-body-background via-white to-white z-0'>
+      <main className="bg-linear-to-t from-body-background via-white to-white z-0">
         {/* Seção principal */}
         <Hero />
         <div className={`${css.wrapperTwoSections}`}>

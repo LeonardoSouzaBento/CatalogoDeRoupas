@@ -1,4 +1,4 @@
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import { CloudUpload } from 'lucide-react';
 
 const css = {

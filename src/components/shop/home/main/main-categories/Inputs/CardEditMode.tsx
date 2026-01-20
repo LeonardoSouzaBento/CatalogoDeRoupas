@@ -1,6 +1,6 @@
 import BackButton from '@/app/_ui/back-button';
 import SaveButton from '@/app/_ui/SaveButton';
-import { iconSm } from '@/app/css/lucideIconStyles';
+import { iconSm } from '@/css/lucideIconStyles';
 import { BooleanSetter, MainCategory } from '@/types/types';
 import { Upload } from 'lucide-react';
 import Image from 'next/image';

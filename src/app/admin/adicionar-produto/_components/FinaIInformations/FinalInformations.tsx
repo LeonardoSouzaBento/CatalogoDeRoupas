@@ -10,7 +10,7 @@ import BrandInput from './components/brandInput';
 import DifferentialInput from './components/differentialInput';
 import Button from '@/app/_ui/button';
 import { ChevronDown } from 'lucide-react';
-import { iconMd } from '@/app/css/lucideIconStyles';
+import { iconMd } from '@/css/lucideIconStyles';
 import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
 
 //cores, tamanhos, composição, preço, marca, descrição, diferencial,

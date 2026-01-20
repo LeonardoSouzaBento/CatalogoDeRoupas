@@ -98,7 +98,7 @@
 
 @layer base {
   * {
-    @apply cursor-default border-border;
+    @apply cursor-default border-border box-border;
   }
   body {
     @apply bg-background text-foreground;

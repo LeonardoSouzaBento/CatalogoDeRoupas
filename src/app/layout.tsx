@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import { UserProvider } from '@/contexts/Providers/UserProvider';
 import { PublicDataProvider } from '@/contexts/Providers/PublicDataProvider';
 import { DM_Sans, Cookie } from 'next/font/google';
-import './css/reset.css';
-import './css/globals.css';
-import './css/shorteners.css';
-import './css/styles.css';
-import './css/typography.css';
+import '../css/reset.css';
+import '../css/globals.css';
+import '../css/shorteners.css';
+import '../css/styles.css';
+import '../css/typography.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -56,7 +56,6 @@ export const viewport: Viewport = {
     { media: '(prefers-color-scheme: dark)', color: '#292524' },
   ],
 };
-
 
 // 17,5 até 18,5 em xl
 

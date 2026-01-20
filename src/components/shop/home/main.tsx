@@ -8,7 +8,7 @@ import {
   UserGenderList,
   WrapperSection,
 } from './main/index';
-import { EverydayClothes, GymClothes, SpecialClothes } from './main/clothes-section/sections';
+import { EverydayClothes, GymClothes, SpecialClothes } from './main/clothes-section';
 
 const clothesSectionStyles =
   '!px-0 bg-gradient-to-r from-gray-50 to-white shadow-special-selections';

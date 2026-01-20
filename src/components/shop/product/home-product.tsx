@@ -1,9 +1,9 @@
 import FavoriteButton from '@/app/_ui/favorite-button';
 import type { HomeClothing } from '@/types/types';
-import { MainImage } from './components/MainImage';
-import ProductInfo from './components/ProductInfo';
-import { SecondaryImage } from './components/SecondaryImage';
-import ProductInput from '../../inputs/ProductInput';
+import { MainImage } from './MainCardProduct/components/MainImage';
+import ProductInfo from './MainCardProduct/components/ProductInfo';
+import { SecondaryImage } from './MainCardProduct/components/SecondaryImage';
+import ProductInput from '../home/main/clothes-section/inputs/ProductInput';
 
 const css = {
   wrapperProduct: `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-lg 
@@ -11,7 +11,7 @@ const css = {
   wrapperImgs: `w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex relative bg-white rounded-none`,
 };
 
-const MainProductCard = ({
+const HomeProduct = ({
   item,
   sectionEditMode,
 }: {
@@ -38,4 +38,4 @@ const MainProductCard = ({
   );
 };
 
-export default MainProductCard;
+export default HomeProduct;
