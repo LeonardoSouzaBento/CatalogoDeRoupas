@@ -1,0 +1,1 @@
+export * from "./no-clothes-alert";

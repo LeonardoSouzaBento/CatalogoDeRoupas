@@ -1,5 +1,4 @@
 'use client';
-import { iconMd } from '@/css/lucideIconStyles';
 import { CircleCheckBig } from 'lucide-react';
 
 interface Props {

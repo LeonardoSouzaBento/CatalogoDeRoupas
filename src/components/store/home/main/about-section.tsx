@@ -1,5 +1,5 @@
-import HomeSectionTitle from '@/app/_ui/home-section-title';
-import { PublicDataContext } from '@/contexts/PublicDataContext';
+import { SectionHeader } from '@/components/store/home/ui/index';
+import { PublicDataContext } from '@/contexts/publicDataContext';
 import { useContext, useState } from 'react';
 import AboutInput from './about-section/about-input';
 
@@ -16,7 +16,7 @@ export const AboutSection = () => {
 
   return (
     <>
-      <HomeSectionTitle
+      <SectionHeader
         title="Sobre Nós"
         subtitle="Conheça mais a nossa loja"
         sectionEditMode={seeInput}
@@ -31,11 +31,7 @@ export const AboutSection = () => {
           </div>
         ))}
         {seeInput && (
-          <AboutInput
-            shopInfo={shopInfo}
-            setShopInfo={setShopInfo}
-            setSeeInput={setSeeInput}
-          />
+          <AboutInput shopInfo={shopInfo} setShopInfo={setShopInfo} setSeeInput={setSeeInput} />
         )}
       </div>
     </>

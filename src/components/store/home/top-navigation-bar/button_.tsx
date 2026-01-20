@@ -1,8 +1,7 @@
-import React from 'react';
-import type { LucideIcon } from 'lucide-react';
-import { iconMd } from '@/css/lucideIconStyles';
-import Link from 'next/link';
 import { BooleanSetter } from '@/types/types';
+import type { LucideIcon } from 'lucide-react';
+import Link from 'next/link';
+import React from 'react';
 
 export interface ButtonType {
   icon: LucideIcon;

@@ -1,11 +1,12 @@
 'use client';
-import WrapperHome from '@/app/_ui/WrapperHome';
-import { UserContext } from '@/contexts';
-import { HomeContext } from '@/contexts/HomeContext';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
+import { WrapperInput } from '@/components/store/home/ui/index';
+import { UserContext } from '@/contexts';
+import { HomeContext } from '@/contexts/homeContext';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import MainCats from './main-categories/s/MainCats';
+import { MainCatsInput } from './main-categories/_inputs/main-cats-input';
+import { MainCategory } from '@/types/types';
 
 const css = {
   container: `
@@ -48,7 +49,7 @@ export const MainCategories = () => {
 
         {!sectionEditMode ? (
           <div className={`${css.container}`}>
-            {categories.map((item) => (
+            {categories.map((item: MainCategory) => (
               <div key={item.urlImg} className={`${css.wrapperImg}`}>
                 <Image src={item.urlImg} alt={item.alt} className={`${css.img}`} fill={true} />
                 <div className={`${css.wrapperP}`}>
@@ -59,11 +60,11 @@ export const MainCategories = () => {
           </div>
         ) : (
           <div className={`${css.wrapperEditMode}`}>
-            <WrapperHome
+            <WrapperInput
               title="Defina as principais categorias de cada gênero"
               setState={setSectionEditMode}>
-              <MainCats />
-            </WrapperHome>
+              <MainCatsInput />
+            </WrapperInput>
           </div>
         )}
       </div>

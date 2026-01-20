@@ -1,5 +1,5 @@
-import WrapperHome from '@/app/_ui/WrapperHome';
-import { SectionHeader } from '@/components/store/home/main/section-header';
+import { WrapperInput } from '@/components/store/home/ui/index';
+import { SectionHeader } from '@/components/store/home/ui/index';
 import ButtonSeeEditMode from '@/components/store/home/ui/button-see-edit-mode';
 import { PublicDataContext } from '@/contexts/index';
 import type { AddressSchema } from '@/types/types';
@@ -73,9 +73,9 @@ export const FindUsSection = (): React.ReactElement => {
                 {sectionEditMode && <ButtonSeeEditMode setState={setSeePhone} />}
               </>
             ) : (
-              <WrapperHome title="Adicione Seu Whatsapp" setState={setSeePhone}>
+              <WrapperInput title="Adicione Seu Whatsapp" setState={setSeePhone}>
                 <InputContact />
-              </WrapperHome>
+              </WrapperInput>
             )}
           </div>
           {/* Endereço */}
@@ -101,9 +101,9 @@ export const FindUsSection = (): React.ReactElement => {
                 {sectionEditMode && <ButtonSeeEditMode setState={setSeeAddress} />}
               </>
             ) : (
-              <WrapperHome title="Adicione Seu Endereço" setState={setSeeAddress}>
+              <WrapperInput title="Adicione Seu Endereço" setState={setSeeAddress}>
                 <InputAddress />
-              </WrapperHome>
+              </WrapperInput>
             )}
           </div>
           {/* Mapa */}
@@ -128,9 +128,9 @@ export const FindUsSection = (): React.ReactElement => {
                 )}
               </>
             ) : (
-              <WrapperHome title="Atualize Seu Mapa" setState={setSeeMap}>
+              <WrapperInput title="Atualize Seu Mapa" setState={setSeeMap}>
                 <InputMap />
-              </WrapperHome>
+              </WrapperInput>
             )}
           </div>
         </div>

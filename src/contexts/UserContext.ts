@@ -4,7 +4,7 @@ import type {
   Genders,
   StateSetter,
   UserData
-} from "@localtypes/types";
+} from "@/types/types";
 import { createContext } from "react";
 
 export interface UserContextType {

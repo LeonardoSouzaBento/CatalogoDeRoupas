@@ -1,6 +1,6 @@
 'use client';
 import { HeaderCard } from '@/app/_ui';
-import { UserContext } from '@/contexts/UserContext';
+import { UserContext } from '@/contexts/userContext';
 import { basicMaleClothes } from '@/data/clothings/basicMaleClothes';
 import { basicFemaleClothes } from '@/data/clothings/basicFemaleClothes';
 import { useContext, useState } from 'react';

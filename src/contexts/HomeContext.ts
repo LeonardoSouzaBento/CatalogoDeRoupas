@@ -3,8 +3,8 @@ import { createContext } from "react";
 import type {
   MainCategoriesType,
   StateSetter,
-} from "@localtypes/types";
-import { defaultMainCategories } from "@data/home/homeData";
+} from "@/types/types";
+import { defaultMainCategories } from "@/data/home/homeData";
 
 
 interface HomeContextType {

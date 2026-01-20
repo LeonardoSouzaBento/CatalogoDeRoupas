@@ -1,5 +1,5 @@
 import { SectionHeader } from './index';
-import { UserContext } from '@/contexts/UserContext';
+import { UserContext } from '@/contexts/userContext';
 import type { homeUserGender } from '@/types/types';
 import React, { useContext, useState } from 'react';
 import ChildGenderButtons from './user-gender-list/child-gender-buttons';

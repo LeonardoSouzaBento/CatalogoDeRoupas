@@ -1,6 +1,7 @@
 import { ButtonClose } from '@/app/_ui';
 import SaveButton from '@/app/_ui/SaveButton';
-import { PublicDataContext } from '@/contexts/PublicDataContext';
+import { Input } from '@/components/ui';
+import { PublicDataContext } from '@/contexts/publicDataContext';
 import React, { useContext, useState } from 'react';
 
 const css = {
@@ -33,7 +34,7 @@ const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
         <label htmlFor="name" className={`${css.label}`}>
           Digite o nome da sua loja
         </label>
-        <
+        <Input
           id="name"
           name="name"
           className={` mb-0!`}

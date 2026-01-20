@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import type { MainCategory } from '@/types/types';
 import Image from 'next/image';
-import CardEditMode from './s/CardEditMode';
-import { iconSm } from '@/css/lucideIconStyles';
+import CardEditMode from './_inputs/card-edit-mode';
 import { Pen } from 'lucide-react';
 
 const css = {

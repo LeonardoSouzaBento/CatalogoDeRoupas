@@ -1,4 +1,3 @@
-import { iconMd } from '@/css/lucideIconStyles';
 import { UserContext } from '@/contexts';
 import { mostSearched } from '@/data/UserData';
 import { Search } from 'lucide-react';

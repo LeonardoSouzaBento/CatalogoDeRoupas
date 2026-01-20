@@ -1,4 +1,3 @@
-export * from "./HomeContext"; 
-export * from "./PublicDataContext"; 
-export * from "./UserContext";
-
+export * from './homeContext';
+export * from './publicDataContext';
+export * from './userContext';

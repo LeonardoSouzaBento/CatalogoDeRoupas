@@ -1,4 +1,4 @@
-export { default as WrapperHomeInput } from './WrapperHomeInput';
+export { default as WrapperHomeInput } from '../../components/store/home/ui/wrapper-input';
 export { default as TitlePage } from '../../components/ui/title-page';
 export { default as HomeSectionTitle } from './home-section-title';
 export { default as HeaderCard } from './HeaderCard';
