@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'material-symbols/rounded.css';
+
 /* 
 sm	 (640px)
 md	 (768px)	
@@ -10,23 +11,23 @@ xl   (1280px)
 
 @theme {
   /* Fonts */
-  --font-dm-sans: 'DM Sans', 'sans-serif';
+  --font-default: 'DM Sans', 'sans-serif';
   --font-logo: 'Cookie', 'cursive';
 
   /* Tamanhos de fonte */
-  --text-xs: 0.878357em;
-  --text-sm: 0.937207em;
+  --text-xs: 0.790123em;
+  --text-sm: 0.888889em;
   --text-base: 1em;
-  --text-lg: 1.067em;
-  --text-h6: 1.067em;
-  --text-h5: 1.138489em;
-  --text-h4: 1.214768em;
-  --text-h3: 1.296157em;
-  --text-h2: 1.383em;
-  --text-h1: 1.475661em;
-  --text-h1-hero: 1.57453em;
-  --text-button: 0.968095em;
-  --text-sm-button: 0.937207em;
+  --text-lg: 1.125em;
+  --text-h6: 1.125em;
+  --text-h5: 1.265625em;
+  --text-h4: 1.423828em;
+  --text-h3: 1.601807em;
+  --text-h2: 1.802032em;
+  --text-h1: 2.027287em;
+  --text-h1-hero: 2.28em;
+  --text-button: 0.943em;
+  --text-sm-button: 0.888em;
   --text-lg-button: 1em;
   /* Shadows */
   --shadow-xs: 0 1px 3px -1px hsla(330, 24%, 30%, 0.06);
@@ -35,24 +36,29 @@ xl   (1280px)
   --shadow-md: 0 6px 16px -5px hsla(330, 22%, 30%, 0.115);
   --shadow-xl: 0 14px 38px -8px hsla(330, 18%, 30%, 0.14);
   --shadow-lg-hover: 0 4px 16px -7px hsla(330, 20%, 67%, 0.6);
-  --shadow-special-selections: inset 0 8px 24px -6px hsl(0, 0%, 100%),
-    inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
+  --shadow-special-selections:
+    inset 0 8px 24px -6px hsl(0, 0%, 100%), inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
   --shadow-accent: 0 4px 14px -5px hsla(200, 70%, 40%, 0.25); /* azul */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
-  /* Colors */
+  /* cores */
+  /* neutras */
+  --color-card-foreground: hsl(236 17% 19%);
+  --color-muted-foreground: hsl(236 9.71% 41%);
+  --color-border: hsl(236 5.86% 86%);
+  --color-input-border: hsl(236 9.14% 70.6%);
+  --color-input-bg: hsl(236 4.57% 97.4%);
   --color-black-text: #1f2937;
   --color-gray-text: #fff;
   --color-body-background: #f9fafb;
   --color-white: #fff;
   --color-card-background: #fff;
-  --color-bs-color: #e5e7eb;
-  --color-bs-light-color: #e5e7eb;
-  --color-magenta: #c81e72;
-  --color-violet: #7119a8;
-  --color-magenta-black: #3b0f23;
-  --color-violet-black: #261335;
-  --color-magenta-white: #fdebf3;
-  --color-violet-white: #f4edfb;
+  --color-female: #c81e72;
+  --color-male: #7119a8;
+  /* --color-male: #1A4CAB; */
+  --color-female-foreground: #3b0f23;
+  --color-male-foreground: #261335;
+  --color-female-white: #fdebf3;
+  --color-male-white: #f4edfb;
   --color-yellow: #f5d43b;
   --color-yellow-hover: hsl(49, 90%, 50%);
   --color-green: #2fbf71;
@@ -69,19 +75,17 @@ xl   (1280px)
   --breakpoint-next-md: 840px;
 }
 
-/* .dark {
-  
-} */
-
 @layer base {
   * {
-    border-color: var(--color-bs-color);
-    @apply cursor-default;
+    @apply cursor-default border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
   body,
   html {
     scrollbar-width: none;
-    @apply font-dm-sans;
+    @apply font-default;
   }
   div {
     @apply rounded-md;
@@ -105,7 +109,10 @@ xl   (1280px)
     transition: order 0.5s ease height 0.2s ease width 0.2s ease;
   }
   .material-symbols-rounded {
-    font-variation-settings: 'FILL' 1, 'GRAD' 0, 'opsz' 24;
+    font-variation-settings:
+      'FILL' 1,
+      'GRAD' 0,
+      'opsz' 24;
     @apply text-gray-800/93;
   }
 }

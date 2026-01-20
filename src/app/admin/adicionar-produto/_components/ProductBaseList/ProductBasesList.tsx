@@ -34,7 +34,7 @@ const ProductBasesList = () => {
           subtitle="Adicione informações mais rapidamente"
           icon="apparel"
           iconStyles=" mr-1"
-          wrapperStyles="bs-b bs-light-color"
+          wrapperStyles="border-b "
           collapsedDiv={!expand}
         />
       </ResizableDivTitle>

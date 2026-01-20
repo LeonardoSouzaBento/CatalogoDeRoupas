@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonClose, HeaderCard } from '../../../_ui';
+import { ButtonClose, HeaderCard } from '../../../app/_ui';
 import { BooleanSetter } from '@/types/types';
 import { Eye, EyeClosed, LogIn } from 'lucide-react';
 import { iconMd } from '@/app/css/lucideIconStyles';
@@ -48,7 +48,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         </div>
         entrar
       </button>
-      <button className={`${css.button} h-10! font-light bg-white bs-light text-neutral-600`}>
+      <button className={`${css.button} h-10! font-light bg-white  text-neutral-600`}>
         esqueci minha senha
       </button>
     </div>

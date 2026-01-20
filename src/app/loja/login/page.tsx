@@ -1,17 +1,15 @@
-import StoreLogo from "./components/StoreLogo";
-import Core from "./components/Core";
+import StoreLogo from '../../../components/shop/login/store-logo';
+import Core from '../../../components/shop/login/Core';
 
 const css = {
   container: `h-screen w-full px-3 flex-center`,
   wrapper: `h-auto w-full max-w-100 mb-12 p-6 pt-5 pb-8 br-2xl bg-white
   shadow-lg hover:shadow-lg-hover trans relative`,
-  title:
-    "text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left ",
+  title: 'text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left ',
   button: ``,
 };
 
-export const buttonStyles =
-  "w-full h-11 j-center  hover:scale-102 trans";
+export const buttonStyles = 'w-full h-11 j-center  hover:scale-102 trans';
 
 const Login = () => {
   return (

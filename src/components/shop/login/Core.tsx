@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import { HeaderCard } from '../../../_ui';
-import ButtonLoginGoogle from './ButtonLoginGoogle';
-import ButtonLoginEmail from './ButtonLoginEmail';
-import EmailForm from './EmailForm';
+import { HeaderCard } from '../../../app/_ui';
+import ButtonLoginGoogle from './button-login-google';
+import ButtonLoginEmail from './button-login-email';
+import EmailForm from './email-form';
 
 const Core = () => {
   const [seeEmailForm, setSeeEmailForm] = useState<boolean>(false);

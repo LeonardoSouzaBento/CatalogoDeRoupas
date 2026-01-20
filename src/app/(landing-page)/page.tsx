@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="landing-page">
       <LogoSection page="landing-page" />
-      <main>
+      <main className='bg-linear-to-t from-body-background via-white to-white z-0'>
         {/* Seção principal */}
         <Hero />
         <div className={`${css.wrapperTwoSections}`}>

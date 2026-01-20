@@ -17,9 +17,9 @@ interface HeaderCardProps {
 
 const css = {
   wrapper: `w-full min-h-10 flex flex-col i-start 
-  mb-5 border-b bs-color br-0`,
+  mb-5 border-b border br-0`,
   wrapperTitle: `min-h-10 flex i-center gap-1 `,
-  title: `mt-[2px] font-semibold text-gray-800 text-left  leading-6.5`,
+  title: `mt-[2px] font-semibold text-gray-800 text-left`,
   wrapperIcon: "min-h-full w-6 flex items-center justify-center",
   icon: `mr-2 `,
 };

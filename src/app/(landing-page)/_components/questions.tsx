@@ -46,7 +46,7 @@ const content = [
 export const TextContent = () => {
   const css = {
     wrapperP: 'flex gap-3 items-start mb-6 sm:max-w-142 md:max-w-full m-auto',
-    p: `-mt-[7px] leading-8 5`,
+    p: `-mt-[7px]`,
     strong: 'font-semibold',
     wrapperIcon: 'inline-flex items-center justify-center bg-[#E8F9EE] p-1 br-sm',
   };

@@ -2,7 +2,7 @@
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { BooleanSetter } from '@/types/types';
 import { Mail } from 'lucide-react';
-import { buttonStyles } from '../page';
+import { buttonStyles } from '../../../app/loja/login/page';
 
 const ButtonLoginEmail = ({
   setSeeEmailForm,

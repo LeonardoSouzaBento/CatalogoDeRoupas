@@ -95,7 +95,7 @@ const AddressForm = ({
           icon="location_home"
           iconStyles=" font-medium!"
         />
-        <form className={`mb-5 px-0.5 pb-5 bs-b bs-color`}>
+        <form className={`mb-5 px-0.5 pb-5 border-b border`}>
           {inputs.map((field, index) => (
             <div key={field.label}>
               <label htmlFor={field.label}>{field.label}</label>

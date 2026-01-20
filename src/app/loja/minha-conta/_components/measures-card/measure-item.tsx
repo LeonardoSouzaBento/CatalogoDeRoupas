@@ -9,7 +9,7 @@ const MeasureItem: React.FC<Measure> = ({ type, value }) => {
       `w-1/3 max-[375px]:w-full flex flex-col min-[375px]:border-r 
       min-[375px]:border-gray-300 mr-md crop last:border-none`,
     thEtd: "h-10 flex j-sart i-center box-border px-4",
-    th: `font-normal text-neutral-900 text-left border-b bs-color 
+    th: `font-normal text-neutral-900 text-left border-b border 
     max-[375px]:border-none bg-neutral-100`,
     td: "max-[375px]:border-b max-[375px]:border-gray-300",
   };

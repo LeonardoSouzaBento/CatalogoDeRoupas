@@ -37,9 +37,13 @@ Get-ChildItem -Recurse -Filter *.tsx | ForEach-Object {
 
 /* para varios arquivos */
 
-Get-ChildItem -Path . -Filter *.tsx -Recurse |
-ForEach-Object {
-    (Get-Content $_.FullName) -replace 'asyncFunction', 'Function' |
+Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
+    (Get-Content $_.FullName) -replace 'normal-p|small-p|big-p', '' | 
+    Set-Content $_.FullName
+}
+
+Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
+    (Get-Content $_.FullName) -replace 'bs-b', 'border-b' | 
     Set-Content $_.FullName
 }
 

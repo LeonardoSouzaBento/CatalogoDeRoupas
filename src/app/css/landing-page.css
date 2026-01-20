@@ -6,21 +6,4 @@
     @apply text-[1.15625rem] sm:text-[1.178125rem] md:text-[1.182500rem] 
     lg:text-[1.19125rem] xl:text-[1.20rem] 2xl:text-[1.20875rem];
   }
-
-  .landing-page {
-    --text-xs: 0.790123em;
-    --text-sm: 0.888889em;
-    --text-base: 1em;
-    --text-lg: 1.125em;
-    --text-h6: 1.125em;
-    --text-h5: 1.265625em;
-    --text-h4: 1.423828em;
-    --text-h3: 1.601807em;
-    --text-h2: 1.802032em;
-    --text-h1: 2.027287em;
-    --text-h1-hero: 2.280697em;
-    --text-button: 0.942809em;
-    --text-sm-button: 0.888889em;
-    --text-lg-button: 1em;
-  }
 }

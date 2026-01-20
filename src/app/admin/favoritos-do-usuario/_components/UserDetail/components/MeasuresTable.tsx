@@ -2,7 +2,7 @@ import { UserData } from "@/types/types";
 
 const MeasuresTable = ({ userData }: { userData: UserData }) => {
   const css = {
-    tr: "flex flex-col i-star border-b bs-color",
+    tr: "flex flex-col i-star border-b border",
     th: "",
   };
 

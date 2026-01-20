@@ -12,7 +12,7 @@ import './css/typography.css';
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600', '700', '800'],
-  variable: '--dm-sans',
+  variable: '--font-default',
 });
 
 const cookie = Cookie({

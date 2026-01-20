@@ -64,7 +64,7 @@ export default Plans;
 
 const TitleAndSubtitle = ({ title, subtitle, fullPlan }: { title: string; subtitle: string; fullPlan?: boolean }) => {
   const css = {
-    title: 'text-gray-800 leading-10  font-semibold ',
+    title: 'text-gray-800 font-semibold ',
     subtitle: 'text-gray-600 mb-4 font-light 5',
   };
 

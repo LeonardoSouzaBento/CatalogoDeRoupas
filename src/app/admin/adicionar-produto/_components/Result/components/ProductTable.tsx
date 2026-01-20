@@ -70,7 +70,7 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({
       <TablePart
         items={items}
         fields={col1}
-        wrapperClass={`border-b bs-color 
+        wrapperClass={`border-b border 
             sm:border-b-0 sm:pr-4`}
       />
       <TablePart

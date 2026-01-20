@@ -13,13 +13,7 @@ interface HomeTitleSubtitleProps {
   setSectionEditMode?: BooleanSetter;
 }
 
-const css = {
-  title: `font-semibold capitalize leading-10 text-center`,
-  selectGenderTitle: 'text-center uppercase leading-none! pb-4 normal-p font-medium text-gray-800',
-  subtitle: `w-full mb-0.5 font-normal text-center text-neutral-600/88 capitalize big-p`,
-};
-
-const HomeTitleSubtitle = ({
+const HomeSectionTitle = ({
   title,
   subtitle,
   section,
@@ -37,9 +31,27 @@ const HomeTitleSubtitle = ({
           section == 'clothes' ? 'mb-3' : 'mb-6'
         }`}>
         <div className="flex flex-col size-auto">
-          <h2 className={`${section == 'genders' ? css.selectGenderTitle : css.title}`}>{title}</h2>
+          {section == 'genders' ? (
+            <p
+              className={`text-center uppercase font-medium 
+            text-muted-foreground large-text`}>
+              {title}
+            </p>
+          ) : (
+            <h3
+              className={`font-semibold capitalize 
+              text-center`}>
+              {title}
+            </h3>
+          )}
 
-          {subtitle && <h3 className={`${css.subtitle}`}>{subtitle}</h3>}
+          {subtitle && (
+            <h6
+              className={`w-full mb-0.5 font-normal text-center 
+              text-muted-foreground capitalize`}>
+              {subtitle}
+            </h6>
+          )}
         </div>
       </div>
       {seeButtonEdit && (
@@ -69,4 +81,4 @@ const HomeTitleSubtitle = ({
   );
 };
 
-export default HomeTitleSubtitle;
+export default HomeSectionTitle;
