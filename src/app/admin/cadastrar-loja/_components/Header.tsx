@@ -7,7 +7,7 @@ const css = {
   wrapperButtons: `grid grid-cols-1 min-[480px]:grid-cols-2 gap-4`,
   title: ` tracking-wide text-gray-500/70 font-semibold`,
   button: `h-9 rounded-full  trans font-normal`,
-  selected: `ring-style`,
+  selected: ``,
   noSelected: `bg-gray-200/60 text-gray-500`,
 };
 

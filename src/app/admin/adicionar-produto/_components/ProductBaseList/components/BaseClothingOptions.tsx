@@ -7,7 +7,7 @@ const css = {
   button: `5 br-50  font-normal px-6  hover:border-gray-400
     focus:outline-none focus:ring-2 focus:ring-blue-400
     transition-all duration-150 relative max-[400px]:w-full sm:min-w-60`,
-  selected: `ring-style`,
+  selected: ``,
   buttonDelete: `h-8 w-8 flex px-0 items-center justify-center 
   br-50 bg-white/60 hover:shadow-lg trans absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
 };

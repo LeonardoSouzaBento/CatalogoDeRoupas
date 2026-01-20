@@ -4,53 +4,8 @@
 
 @layer components {
   /* divs */
-  .card-styles {
+  /* .card-styles {
     @apply bg-white shadow-lg hover:shadow-lg-hover px-6 pt-3.5 pb-7 mb-5 
     rounded-lg box-border transition-shadow duration-200 overflow-hidden relative;
-  }
-  
-  .line-span {
-    @apply [font-variation-settings:'FILL'_0]!;
-  }
-
-  .card-shadow {
-    @apply shadow-lg hover:shadow-lg-hover;
-  }
-
-  /* hs */
-  .home-h1 {
-    @apply capitalize tracking-normal text-center text-[1.2286em];
-  }
-
-  .h3-sizes {
-    @apply font-medium text-[1.090em];
-  }
-
-  .h4-sizes {
-    @apply text-[1.010em];
-  }
-
-  .input {
-    @apply block w-full h-10 pl-[13px] pb-0.5 text-[1.033em] font-light 
-  text-neutral-900 bg-neutral-100 border-none! rounded-md box-border focus:outline-none;
-  }
-
-  .ring-style {
-    @apply outline-none ring-2 ring-blue-300 bg-blue-50 hover:bg-blue-100/50 
-  text-blue-700 shadow-lg;
-  }
-
-  .p-button {
-    @apply text-[1.012em];
-  }
-
-  .p-small-button {
-    @apply leading-none font-medium tracking-normal capitalize transition-colors duration-200 cursor-pointer 
-  text-[0.96em];
-  }
-
-  .square-button {
-    @apply h-10 w-10 flex justify-center items-center gap-3 rounded-md text-gray-800 bg-gray-100 
-    hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
-  }
+  } */
 }

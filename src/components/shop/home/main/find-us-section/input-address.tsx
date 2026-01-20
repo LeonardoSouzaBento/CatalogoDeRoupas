@@ -2,7 +2,7 @@ import type { AddressSchema } from '@/types/types';
 import React, { useEffect, useState } from 'react';
 import SaveAddressButton from './save-address-button';
 
-const inputs = [
+const s = [
   {
     label: 'rua',
     placeholder: 'Digite sua rua',
@@ -38,10 +38,10 @@ const inputs = [
 const css = {
   wrapper: 'w-full block border-none mb-5',
   form: 'w-full',
-  input: `mb-4`,
+  : `mb-4`,
 };
 
-const InputAddress = (): React.ReactElement => {
+const Address = (): React.ReactElement => {
   const [formData, setFormData] = useState<AddressSchema>({
     rua: '',
     número: '',
@@ -52,7 +52,7 @@ const InputAddress = (): React.ReactElement => {
   });
   const [addressComplete, setAddressComplete] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
     setFormData({
       ...formData,
       [e.target.name]:
@@ -82,10 +82,10 @@ const InputAddress = (): React.ReactElement => {
     <>
       <div className={`${css.wrapper}`}>
         <form className={`${css.form}`}>
-          {inputs.map((field, index) => (
+          {s.map((field, index) => (
             <div key={field.label}>
               <label htmlFor={field.label}>{field.label}</label>
-              <input
+              <
                 type={field.label === 'número' ? 'number' : 'text'}
                 id={field.label}
                 name={field.label}
@@ -94,20 +94,20 @@ const InputAddress = (): React.ReactElement => {
                 required={field.label == 'complemento' ? false : true}
                 maxLength={field.maxLength}
                 onClick={(e) => {
-                  const ta = e.currentTarget as HTMLInputElement;
+                  const ta = e.currentTarget as HTMLElement;
                   if (ta.dataset.cleared === 'true') return;
                   ta.dataset.cleared = 'true';
                 }}
                 onChange={handleChange}
-                className={`${css.input} ${index === inputs.length - 1 ? '!mb-0' : ''}`}
+                className={`${css.} ${index === s.length - 1 ? '!mb-0' : ''}`}
               />
             </div>
           ))}
         </form>
       </div>
-      <SaveAddressButton inputValue={formData} addressComplete={addressComplete} />
+      <SaveAddressButton Value={formData} addressComplete={addressComplete} />
     </>
   );
 };
 
-export default InputAddress;
+export default Address;

@@ -4,7 +4,7 @@ const css = {
   wrapper: `flex flex-col`,
 };
 
-const DescriptionInput = () => {
+const Description = () => {
   return (
     <div className={css.wrapper}>
       <label htmlFor="description">Descrição</label>
@@ -13,4 +13,4 @@ const DescriptionInput = () => {
   );
 };
 
-export default DescriptionInput;
+export default Description;

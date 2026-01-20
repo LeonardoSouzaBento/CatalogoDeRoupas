@@ -25,11 +25,11 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
       />
       <div className="mb-[18px]">
         <label htmlFor="email">Email</label>
-        <input type="text" id="email" placeholder="meuemail@email.com" />
+        < type="text" id="email" placeholder="meuemail@email.com" />
       </div>
       <div className="mb-6 relative">
         <label htmlFor="password">Senha</label>
-        <input
+        <
           type={seePassword ? 'text' : 'password'}
           id="password"
           placeholder="Geramos uma, se preferir."

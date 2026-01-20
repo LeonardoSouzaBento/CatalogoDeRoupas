@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 bs
 p-5 rounded-none hover:shadow-lg fast-trans`,
-  wrapperInput: `flex flex-col gap-3 mb-px`,
+  wrapper: `flex flex-col gap-3 mb-px`,
   wrapperImg: 'rounded-none flex flex-wrap i-center gap-4 relative mb-px',
   imghomeEditMode: 'grayscale opacity-70',
   label: 'font-medium !text-neutral-800 leading-none mb-0',
@@ -37,11 +37,11 @@ const CardEditMode = ({
 
   return (
     <div className={`${css.wrapperCardCat}`}>
-      <div className={`${css.wrapperInput}`}>
+      <div className={`${css.wrapper}`}>
         <label className={`${css.label}`} htmlFor={category.name}>
           1 - Nome da categoria:
         </label>
-        <input
+        <
           type="text"
           id={category.name}
           name={category.name}
@@ -71,11 +71,11 @@ const CardEditMode = ({
         </div>
       </div>
 
-      <div className={`${css.wrapperInput} mb-1!`}>
+      <div className={`${css.wrapper} mb-1!`}>
         <label className={`${css.label}`} htmlFor={`${category.order}`}>
           3 - Ordem de posição na grade:
         </label>
-        <input
+        <
           type="number"
           name={`${category.order}`}
           id={`${category.order}`}

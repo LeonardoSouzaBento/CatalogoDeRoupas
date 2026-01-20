@@ -11,7 +11,7 @@ const css = {
 };
 
 const ColorOptions = () => {
-  const [showColorInput, setShowColorInput] = React.useState<boolean>(false);
+  const [showColor, setShowColor] = React.useState<boolean>(false);
   const [selectedFamily, setSelectedFamily] = React.useState<string>('');
   const [selectedColor, setSelectedColor] = React.useState<string>('');
 
@@ -22,11 +22,11 @@ const ColorOptions = () => {
       <ColorFamilySelector selectedFamily={selectedFamily} setSelectedFamily={setSelectedFamily} />
       {selectedFamily && <ColorList selectedFamily={selectedFamily} />}
 
-      <Button onClick={() => setShowColorInput(!showColorInput)} icon={<Plus {...iconMd} />}>
+      <Button onClick={() => setShowColor(!showColor)} icon={<Plus {...iconMd} />}>
         Quero outra cor
       </Button>
-      {showColorInput && (
-        <ColorInput selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
+      {showColor && (
+        <Color selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
       )}
     </div>
   );
@@ -111,8 +111,8 @@ const ColorList = ({ selectedFamily }: { selectedFamily: string }) => {
   );
 };
 
-/* ---------- ColorInput ---------- */
-const ColorInput = ({
+/* ---------- Color ---------- */
+const Color = ({
   selectedColor,
   setSelectedColor,
 }: {
@@ -126,7 +126,7 @@ const ColorInput = ({
   return (
     <div className={css.wrapper}>
       <label htmlFor="colorName">Escolha a da cor</label>
-      <input type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
+      < type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
       <Button onClick={() => {}}>Adicionar</Button>
     </div>
   );

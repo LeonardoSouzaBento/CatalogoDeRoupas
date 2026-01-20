@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import SaveZapButton from './save-zap-button';
+import SaveZapButton from './save-za';
 
-const InputContact = (): React.ReactElement => {
-  const [inputValue, setInputValue] = useState<string>('');
+const Contact = (): React.ReactElement => {
+  const [Value, setValue] = useState<string>('');
   const [zapErrors, setZapErrors] = useState<string[]>(['']); //length, without9, ddd
   // const [canSave, setCanSave] = useState<boolean>(false);
 
   useEffect(() => {
-    const digits = inputValue.replace(/\D/g, '');
+    const digits = Value.replace(/\D/g, '');
     if (digits.length >= 10) {
       let formatted = digits;
 
@@ -17,20 +17,20 @@ const InputContact = (): React.ReactElement => {
       } else if (digits.length === 11) {
         formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
       }
-      setInputValue(formatted);
+      setValue(formatted);
     }
-  }, [inputValue]);
+  }, [Value]);
 
   return (
     <>
       <div className={`mb-5`}>
-        <input
+        <
           type="text"
           aria-label="Número do WhatsApp"
           placeholder="Apenas números"
-          className={`input`}
+          className={``}
           onChange={(e) => {
-            setInputValue(e.target.value);
+            setValue(e.target.value);
           }}
         />
         {zapErrors.length > 0 && (
@@ -41,9 +41,9 @@ const InputContact = (): React.ReactElement => {
           </ul>
         )}
       </div>
-      <SaveZapButton setZapErrors={setZapErrors} inputValue={inputValue} />
+      <SaveZapButton setZapErrors={setZapErrors} Value={Value} />
     </>
   );
 };
 
-export default InputContact;
+export default Contact;

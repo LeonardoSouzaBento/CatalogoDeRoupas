@@ -53,7 +53,7 @@ const css = {
   wrapperItem: `h-10 min-w-10 flex items-center justify-center`,
   p: ``,
   notSelected: ` p-0`,
-  selected: `ring-style p-0`,
+  selected: ` p-0`,
 };
 
 const SizeList = ({ dataList }: Props) => {

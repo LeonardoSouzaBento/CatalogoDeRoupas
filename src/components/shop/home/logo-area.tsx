@@ -1,17 +1,17 @@
 'use client';
 import React, { useContext, useState } from 'react';
 import { HomeContext } from '@/contexts';
-import ShopNameInput from './top-navigation-bar/shop-name-input';
+import ShopName from './top-navigation-bar/shop-name-';
 import LogoSection from '@/app/(landing-page)/_components/logo-section';
 
 const LogoArea = () => {
-  const [seeInputNameShop, setSeeInputNameShop] = useState<boolean>(false);
+  const [seeNameShop, setSeeNameShop] = useState<boolean>(false);
   const { homeEditMode } = useContext(HomeContext);
 
   return (
     <>
-      <LogoSection setSeeInputNameShop={setSeeInputNameShop} homeEditMode={homeEditMode} />
-      {seeInputNameShop && <ShopNameInput setSeeInputNameShop={setSeeInputNameShop} />}
+      <LogoSection setSeeNameShop={setSeeNameShop} homeEditMode={homeEditMode} />
+      {seeNameShop && <ShopName setSeeNameShop={setSeeNameShop} />}
     </>
   );
 };

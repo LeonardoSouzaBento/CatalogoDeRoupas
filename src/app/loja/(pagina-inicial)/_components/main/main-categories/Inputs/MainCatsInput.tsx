@@ -15,7 +15,7 @@ const css = {
   icon: iconMd,
 };
 
-const MainCatsInput = (): React.ReactElement => {
+const MainCats = (): React.ReactElement => {
   const { mainCategories } = useContext(HomeContext);
   const [selectedGender, setSelectedGender] = useState<string>('masculino');
   const selectedMainCategories =
@@ -64,4 +64,4 @@ const MainCatsInput = (): React.ReactElement => {
   );
 };
 
-export default MainCatsInput;
+export default MainCats;

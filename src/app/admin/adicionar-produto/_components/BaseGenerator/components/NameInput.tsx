@@ -1,13 +1,13 @@
 import React from "react";
 
-const NameInput = () => {
+const Name = () => {
   return (
     <div>
       <label htmlFor="name">Nome completo</label>
-      <input type="text" id="name" />
+      < type="text" id="name" />
     </div>
   );
 };
 
-export default NameInput;
+export default Name;
 

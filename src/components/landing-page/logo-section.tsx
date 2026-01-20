@@ -11,11 +11,11 @@ const css = {
 
 const LogoSection = ({
   page,
-  setSeeInputNameShop = () => {},
+  setSeeNameShop = () => {},
   homeEditMode = false,
 }: {
   page?: string;
-  setSeeInputNameShop?: BooleanSetter;
+  setSeeNameShop?: BooleanSetter;
   homeEditMode?: boolean;
 }): React.ReactElement => {
   return (
@@ -29,7 +29,7 @@ const LogoSection = ({
       </div>
       {homeEditMode && (
         <ButtonSeeEditMode
-          setState={setSeeInputNameShop}
+          setState={setSeeNameShop}
           positionStyles="absolute top-5 right-4 z-5"
         />
       )}

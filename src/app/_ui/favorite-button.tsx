@@ -35,7 +35,7 @@ const FavoriteButton = () => {
           handleClickFavorite();
         }}
       >
-        <span className={`${css.span} ${!isFavorite && "line-span"}`}>
+        <span className={`${css.span} ${!isFavorite && ""}`}>
           favorite
         </span>
       </div>

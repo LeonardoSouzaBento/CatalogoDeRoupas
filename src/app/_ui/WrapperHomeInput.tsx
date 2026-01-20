@@ -15,7 +15,7 @@ interface WrapperFormProps {
   children: React.ReactElement;
 }
 
-const WrapperHomeInput = ({ title, children, setState }: WrapperFormProps): React.ReactElement => {
+const WrapperHome = ({ title, children, setState }: WrapperFormProps): React.ReactElement => {
   return (
     <div className={`${css.wrapper}`}>
       <div className={`${css.wrapperTitle}`}>
@@ -27,4 +27,4 @@ const WrapperHomeInput = ({ title, children, setState }: WrapperFormProps): Reac
   );
 };
 
-export default WrapperHomeInput;
+export default WrapperHome;

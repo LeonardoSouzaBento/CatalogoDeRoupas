@@ -1,7 +1,7 @@
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import { PublicDataContext } from '@/contexts/PublicDataContext';
 import { useContext, useState } from 'react';
-import AboutInput from './about-section/about-input';
+import About from './about-section/about-';
 
 const css = {
   wrapperAbout: 'm-auto relative',
@@ -11,7 +11,7 @@ const css = {
 };
 
 const AboutSection = () => {
-  const [seeAboutInput, setSeeAboutInput] = useState<boolean>(false);
+  const [seeAbout, setSeeAbout] = useState<boolean>(false);
   const { shopInfo, setShopInfo } = useContext(PublicDataContext);
 
   return (
@@ -19,10 +19,10 @@ const AboutSection = () => {
       <HomeSectionTitle
         title="Sobre Nós"
         subtitle="Conheça mais a nossa loja"
-        sectionEditMode={seeAboutInput}
-        setSectionEditMode={setSeeAboutInput}
+        sectionEditMode={seeAbout}
+        setSectionEditMode={setSeeAbout}
       />
-      <div className={`${css.wrapperAbout} ${seeAboutInput && css.homeEditMode}`}>
+      <div className={`${css.wrapperAbout} ${seeAbout && css.homeEditMode}`}>
         {shopInfo.aboutText.map((paragraph: string, index: number) => (
           <div className={`${css.wrapperP}`} key={index}>
             <p key={index} className={`${css.p}`}>
@@ -30,11 +30,11 @@ const AboutSection = () => {
             </p>
           </div>
         ))}
-        {seeAboutInput && (
-          <AboutInput
+        {seeAbout && (
+          <About
             shopInfo={shopInfo}
             setShopInfo={setShopInfo}
-            setSeeAboutInput={setSeeAboutInput}
+            setSeeAbout={setSeeAbout}
           />
         )}
       </div>

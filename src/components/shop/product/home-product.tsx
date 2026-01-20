@@ -3,7 +3,7 @@ import type { HomeClothing } from '@/types/types';
 import { MainImage } from './MainCardProduct/components/MainImage';
 import ProductInfo from './MainCardProduct/components/ProductInfo';
 import { SecondaryImage } from './MainCardProduct/components/SecondaryImage';
-import ProductInput from '../home/main/clothes-section/inputs/ProductInput';
+import Product from '../home/main/clothes-section/s/Product';
 
 const css = {
   wrapperProduct: `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-lg 
@@ -18,7 +18,7 @@ const HomeProduct = ({
   item: HomeClothing;
   sectionEditMode: boolean;
 }): React.ReactElement => {
-  /* inputs de edição */
+  /* s de edição */
 
   return (
     <div className={`${css.wrapperProduct}`}>
@@ -32,7 +32,7 @@ const HomeProduct = ({
           <ProductInfo item={item} />
         </>
       ) : (
-        <ProductInput id={item.id} />
+        <Product id={item.id} />
       )}
     </div>
   );

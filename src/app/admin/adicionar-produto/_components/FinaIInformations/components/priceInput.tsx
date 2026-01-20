@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PriceInput = () => {
+const Price = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const PriceInput = () => {
   )
 }
 
-export default PriceInput;
+export default Price;

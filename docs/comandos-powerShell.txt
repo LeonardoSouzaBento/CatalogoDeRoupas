@@ -43,7 +43,7 @@ Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
 }
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace 'heart-button-shadow', 'shadow-favorite-button' | 
+    (Get-Content $_.FullName) -replace 'card-styes', '' | 
     Set-Content $_.FullName
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DifferentialInput = () => {
+const Differential = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const DifferentialInput = () => {
   )
 }
 
-export default DifferentialInput;
+export default Differential;

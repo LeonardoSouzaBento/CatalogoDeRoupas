@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { HomeContext } from '@/contexts/HomeContext';
-import CategoryCard from './Inputs/CategoryCard';
+import CategoryCard from './s/CategoryCard';
 import { iconMd } from '@/css/lucideIconStyles';
 import { Eye, EyeClosed, Plus } from 'lucide-react';
 import { AlertInfo } from '@/app/_ui';
@@ -15,7 +15,7 @@ const css = {
   icon: iconMd,
 };
 
-const MainCatsInput = (): React.ReactElement => {
+const MainCats = (): React.ReactElement => {
   const { mainCategories } = useContext(HomeContext);
   const [selectedGender, setSelectedGender] = useState<string>('masculino');
   const selectedMainCategories =
@@ -64,4 +64,4 @@ const MainCatsInput = (): React.ReactElement => {
   );
 };
 
-export default MainCatsInput;
+export default MainCats;

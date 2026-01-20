@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import SaveMapButton from './save-map-button';
+import SaveMapButton from './save-ma';
 
 const css = {
   wrapper: 'min-h-full',
   wrapperInfo: 'mb-3 pt-[19] p-5 ',
-  h4: 'mb-3 text-neutral-800 font-medium h4-sizes',
+  h4: 'mb-3 text-neutral-800 font-medium ',
   ul: 'list-decimal pl-4 space-y-2 flex flex-col gap-[10]',
   li: '5 text-neutral-800 mb-0',
   textarea: 'w-full min-h-[86px] flex-center p-4 mb-3 br-md box-border',
   button: '',
 };
 
-const InputMap = (): React.ReactElement => {
-  const [inputValue, setInputValue] = useState<string>(
+const Map = (): React.ReactElement => {
+  const [Value, setValue] = useState<string>(
     'Cole aqui o novo link copiado do Google Maps',
   );
 
   useEffect(() => {
-    if (inputValue !== '') {
+    if (Value !== '') {
       console.log('');
     }
-  }, [inputValue]);
+  }, [Value]);
 
   return (
     <>
       <div className={`${css.wrapper}`}>
         <textarea
-          value={inputValue}
+          value={Value}
           onClick={(e) => {
             const ta = e.currentTarget as HTMLTextAreaElement;
             if (ta.dataset.cleared === 'true') return;
-            setInputValue('');
+            setValue('');
             ta.dataset.cleared = 'true';
           }}
           onChange={(e) => {
-            setInputValue(e.target.value);
+            setValue(e.target.value);
           }}
           className={`${css.textarea}`}
           id="novoCodigo"
@@ -60,9 +60,9 @@ const InputMap = (): React.ReactElement => {
           </ul>
         </div>
       </div>
-      <SaveMapButton inputValue={inputValue} />
+      <SaveMapButton Value={Value} />
     </>
   );
 };
 
-export default InputMap;
+export default Map;

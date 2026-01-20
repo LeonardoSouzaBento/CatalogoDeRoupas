@@ -3,14 +3,14 @@ import SaveButton from '@/app/_ui/SaveButton';
 import { Shopkeeper } from '@/types/types';
 import React, { useState } from 'react';
 
-interface InputField {
+interface Field {
   label: string;
   name: keyof Shopkeeper;
   placeholder: string;
   maxLength: number;
 }
 
-const inputs: InputField[] = [
+const s: Field[] = [
   {
     label: 'Nome pessoal',
     name: 'personalName',
@@ -57,7 +57,7 @@ const inputs: InputField[] = [
 
 const css = {
   wrapper: 'w-full block border-none mb-5',
-  input: `mb-4`,
+  : `mb-4`,
 };
 
 const PersonalForm = () => {
@@ -73,7 +73,7 @@ const PersonalForm = () => {
     startDate: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
     const { name, value } = e.target;
     setShopkeeper((prev) => ({
       ...prev,
@@ -94,12 +94,12 @@ const PersonalForm = () => {
         iconStyles=" font-medium!"
       />
       <form className={`mb-5 px-0.5 pb-5 border-b border `}>
-        {inputs.map((field, index) => (
+        {s.map((field, index) => (
           <div key={field.name}>
             <label htmlFor={field.name} className={`normal-case!`}>
               {field.label}
             </label>
-            <input
+            <
               type="text"
               id={field.name}
               name={field.name}
@@ -108,7 +108,7 @@ const PersonalForm = () => {
               required
               maxLength={field.maxLength}
               onChange={handleChange}
-              className={`${css.input} ${index === inputs.length - 1 ? 'mb-0!' : ''}`}
+              className={`${css.} ${index === s.length - 1 ? 'mb-0!' : ''}`}
             />
           </div>
         ))}

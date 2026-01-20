@@ -5,12 +5,12 @@ import { Photo, StateSetter } from '@/types/types';
 
 const css = {
   wrapper: ``,
-  input: `size-full p-0 abso bs-0 z-2 flex-center opacity-0`,
+  : `size-full p-0 abso bs-0 z-2 flex-center opacity-0`,
   button: ` j-center relative`,
 };
 
 const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
-  function handleAddPhoto(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleAddPhoto(event: React.ChangeEvent<HTMLElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
 
@@ -56,8 +56,8 @@ const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
     <button className={`${css.button}`}>
       Adicionar foto
       <Plus {...iconMd} />
-      <input
-        className={`${css.input}`}
+      <
+        className={`${css.}`}
         type="file"
         accept=".jpg, .jpeg, .png, .webp"
         onChange={(event) => {

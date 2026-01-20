@@ -85,7 +85,7 @@ const PhotoGridEditor = () => {
               className={`${css.wrapperImg} ${
                 reorderMode &&
                 photo.id === firstSelectedId &&
-                "ring-style"
+                ""
               }`}
               onClick={() => {
                 handleImageClick(photo.id);

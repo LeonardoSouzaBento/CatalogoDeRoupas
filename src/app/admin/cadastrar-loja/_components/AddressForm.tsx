@@ -4,7 +4,7 @@ import SaveButton from '@/app/_ui/SaveButton';
 import type { AddressSchema, BooleanSetter } from '@/types/types';
 import React, { useEffect, useState } from 'react';
 
-const inputs = [
+const s = [
   {
     label: 'rua',
     placeholder: 'Digite sua rua',
@@ -38,7 +38,7 @@ const inputs = [
 ];
 
 const css = {
-  input: `mb-4`,
+  : `mb-4`,
 };
 
 const AddressForm = ({
@@ -60,7 +60,7 @@ const AddressForm = ({
     console.log('Sm');
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
     setFormData({
       ...formData,
       [e.target.name]:
@@ -96,10 +96,10 @@ const AddressForm = ({
           iconStyles=" font-medium!"
         />
         <form className={`mb-5 px-0.5 pb-5 border-b border`}>
-          {inputs.map((field, index) => (
+          {s.map((field, index) => (
             <div key={field.label}>
               <label htmlFor={field.label}>{field.label}</label>
-              <input
+              <
                 type={field.label === 'número' ? 'number' : 'text'}
                 id={field.label}
                 name={field.label}
@@ -108,12 +108,12 @@ const AddressForm = ({
                 required={field.label == 'complemento' ? false : true}
                 maxLength={field.maxLength}
                 onClick={(e) => {
-                  const ta = e.currentTarget as HTMLInputElement;
+                  const ta = e.currentTarget as HTMLElement;
                   if (ta.dataset.cleared === 'true') return;
                   ta.dataset.cleared = 'true';
                 }}
                 onChange={handleChange}
-                className={`${css.input} ${index === inputs.length - 1 ? 'mb-0!' : ''}`}
+                className={`${css.} ${index === s.length - 1 ? 'mb-0!' : ''}`}
               />
             </div>
           ))}

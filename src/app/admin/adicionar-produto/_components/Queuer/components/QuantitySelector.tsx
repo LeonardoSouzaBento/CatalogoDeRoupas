@@ -64,7 +64,7 @@ const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
           return (
             <button
               key={id}
-              className={`${css.button} ${selected && 'ring-style'}`}
+              className={`${css.button} ${selected && ''}`}
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedQuantity(item);

@@ -1,13 +1,13 @@
 import ButtonSeeEditMode from '@/app/_ui/button-see-edit-mode';
-import WrapperHomeInput from '@/app/_ui/WrapperHomeInput';
+import WrapperHome from '@/app/_ui/WrapperHome';
 import type { AddressSchema } from '@/types/types';
 import { PublicDataContext } from '@/contexts/index';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import React, { useContext, useState } from 'react';
 import ButtonCopy from './find-us-section/button-copy';
-import InputAddress from './find-us-section/input-address';
-import ContactInput from './find-us-section/input-contact';
-import MapInput from './find-us-section/input-map';
+import Address from './find-us-section/-address';
+import Contact from './find-us-section/-contact';
+import Map from './find-us-section/-map';
 
 const css = {
   wrapper: 'w-full m-auto max-w-210 flex flex-col gap-5',
@@ -35,9 +35,9 @@ const FindUsSection = (): React.ReactElement => {
   const [phoneCopied, setPhoneCopied] = useState<boolean>(false);
   const [addressCopied, setAddressCopied] = useState<boolean>(false);
   //ver
-  const [seePhoneInput, setSeePhoneInput] = useState<boolean>(false);
-  const [seeAddressInput, setSeeAddressInput] = useState<boolean>(false);
-  const [seeMapInput, setSeeMapInput] = useState<boolean>(false);
+  const [seePhone, setSeePhone] = useState<boolean>(false);
+  const [seeAddress, setSeeAddress] = useState<boolean>(false);
+  const [seeMap, setSeeMap] = useState<boolean>(false);
 
   const shopAddressFormatted = formatAddress(shopInfo.address);
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
@@ -53,9 +53,9 @@ const FindUsSection = (): React.ReactElement => {
 
       <div>
         <div className={`${css.wrapper}`}>
-          <div className={`${css.container} ${seePhoneInput && css.containerhomeEditMode}`}>
+          <div className={`${css.container} ${seePhone && css.containerhomeEditMode}`}>
             {/* Telefone */}
-            {!seePhoneInput ? (
+            {!seePhone ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
                   <span className="material-symbols-rounded ">call</span>
@@ -73,17 +73,17 @@ const FindUsSection = (): React.ReactElement => {
                   secondText="Telefone copiado!"
                   textToCopy={shopInfo.contact}
                 />
-                {sectionEditMode && <ButtonSeeEditMode setState={setSeePhoneInput} />}
+                {sectionEditMode && <ButtonSeeEditMode setState={setSeePhone} />}
               </>
             ) : (
-              <WrapperHomeInput title="Adicione Seu Whatsapp" setState={setSeePhoneInput}>
-                <ContactInput />
-              </WrapperHomeInput>
+              <WrapperHome title="Adicione Seu Whatsapp" setState={setSeePhone}>
+                <Contact />
+              </WrapperHome>
             )}
           </div>
           {/* Endereço */}
-          <div className={`${css.container} ${seeAddressInput && css.containerhomeEditMode}`}>
-            {!seeAddressInput ? (
+          <div className={`${css.container} ${seeAddress && css.containerhomeEditMode}`}>
+            {!seeAddress ? (
               <>
                 <div className={`${css.wrapperInfo}`}>
                   <span className={`material-symbols-rounded`}>home_pin</span>
@@ -101,20 +101,20 @@ const FindUsSection = (): React.ReactElement => {
                   secondText="Link copiado!"
                   textToCopy={shopAddressFormatted}
                 />
-                {sectionEditMode && <ButtonSeeEditMode setState={setSeeAddressInput} />}
+                {sectionEditMode && <ButtonSeeEditMode setState={setSeeAddress} />}
               </>
             ) : (
-              <WrapperHomeInput title="Adicione Seu Endereço" setState={setSeeAddressInput}>
-                <InputAddress />
-              </WrapperHomeInput>
+              <WrapperHome title="Adicione Seu Endereço" setState={setSeeAddress}>
+                <Address />
+              </WrapperHome>
             )}
           </div>
           {/* Mapa */}
           <div
             className={`${css.container} ${css.wrapperMap} ${
-              seeMapInput && css.wrapperMaphomeEditMode
+              seeMap && css.wrapperMaphomeEditMode
             }`}>
-            {!seeMapInput ? (
+            {!seeMap ? (
               <>
                 <iframe
                   className="rounded-md"
@@ -127,13 +127,13 @@ const FindUsSection = (): React.ReactElement => {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 {sectionEditMode && (
-                  <ButtonSeeEditMode setState={setSeeMapInput} styles="absolute top-3 right-0" />
+                  <ButtonSeeEditMode setState={setSeeMap} styles="absolute top-3 right-0" />
                 )}
               </>
             ) : (
-              <WrapperHomeInput title="Atualize Seu Mapa" setState={setSeeMapInput}>
-                <MapInput />
-              </WrapperHomeInput>
+              <WrapperHome title="Atualize Seu Mapa" setState={setSeeMap}>
+                <Map />
+              </WrapperHome>
             )}
           </div>
         </div>

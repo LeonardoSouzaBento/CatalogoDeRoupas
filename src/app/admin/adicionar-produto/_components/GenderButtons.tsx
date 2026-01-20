@@ -9,7 +9,7 @@ const css = {
   wrapper: `flex flex-wrap gap-4`,
   button: `h-9 w-full min-[500px]:w-[calc(50%-6px)] max-w-52  br-50 j-center font-normal
   hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600 5`,
-  selected: `ring-style`,
+  selected: ``,
   icon: `material-symbols-rounded font-[450]! !`,
 };
 

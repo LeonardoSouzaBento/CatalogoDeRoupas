@@ -1,9 +1,9 @@
 // import { BoolSetter } from "@/types/types";
 import SaveButton from '@/app/_ui/SaveButton';
 
-const SaveMapButton = ({ inputValue }: { inputValue: string }) => {
+const SaveMapButton = ({ Value }: { Value: string }) => {
   async function handleSave() {
-    console.log(inputValue);
+    console.log(Value);
   }
   return <SaveButton text="Salvar mapa" Function={handleSave} />;
 };

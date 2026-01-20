@@ -3,7 +3,7 @@ import Images from "./components/ImageButtons/Images";
 import InfoForm from "./components/InfoForm";
 
 
-const ProductInput = ({ id }: { id: number | string}) => {
+const Product = ({ id }: { id: number | string}) => {
   return (
     <div className="w-full bg-white relative p-6 br-lg">
       <Buttons />
@@ -13,4 +13,4 @@ const ProductInput = ({ id }: { id: number | string}) => {
   );
 };
 
-export default ProductInput;
+export default Product;

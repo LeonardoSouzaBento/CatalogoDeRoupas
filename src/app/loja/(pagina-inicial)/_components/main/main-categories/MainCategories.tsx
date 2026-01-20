@@ -1,11 +1,11 @@
 'use client';
-import WrapperHomeInput from '@/app/_ui/WrapperHomeInput';
+import WrapperHome from '@/app/_ui/WrapperHome';
 import { UserContext } from '@/contexts';
 import { HomeContext } from '@/contexts/HomeContext';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import MainCatsInput from './Inputs/MainCatsInput';
+import MainCats from './s/MainCats';
 
 const css = {
   container: `
@@ -21,7 +21,7 @@ const css = {
   img: 'absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30',
   wrapperP: `h-20 w-full flex-center relative bg-gradient-to-t from-stone-800/80 to-transparent 
     [text-shadow:_0_0_8px_rgb(0,_4px,_8px,_0.8)]`,
-  p: 'w-full px-8 text-white font-medium home-h1 sm:text-center leading-none',
+  p: 'w-full px-8 text-white font-medium  sm:text-center leading-none',
 };
 
 const MainCategories = () => {
@@ -59,11 +59,11 @@ const MainCategories = () => {
           </div>
         ) : (
           <div className={`${css.wrapperEditMode}`}>
-            <WrapperHomeInput
+            <WrapperHome
               title="Defina as principais categorias de cada gênero"
               setState={setSectionEditMode}>
-              <MainCatsInput />
-            </WrapperHomeInput>
+              <MainCats />
+            </WrapperHome>
           </div>
         )}
       </div>

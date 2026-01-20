@@ -34,19 +34,19 @@ function validateWhatsapp(number: string) {
 }
 
 const SaveZapButton = ({
-  inputValue,
+  Value,
   setZapErrors,
 }: {
-  inputValue: string;
+  Value: string;
   setZapErrors: StateSetter<string[]>;
 }) => {
   async function handleSave() {
-    console.log(inputValue);
-    const result = validateWhatsapp(inputValue);
+    console.log(Value);
+    const result = validateWhatsapp(Value);
     setZapErrors(result.errors);
 
     if (result.valid) {
-      // setShopInfo({ ...shopInfo, contact: inputValue });
+      // setShopInfo({ ...shopInfo, contact: Value });
       // setPhoneSaved(true);
     }
   }

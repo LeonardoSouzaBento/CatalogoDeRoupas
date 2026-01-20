@@ -10,17 +10,17 @@ import { StateSetter } from '@/types/types';
 import { Eye, Plus, Search } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
-/* ----------------input de material---------------- */
-interface InputMaterialProps {
+/* ---------------- de material---------------- */
+interface MaterialProps {
   selectedMaterial: string | null;
   setSelectedMaterial: StateSetter<string | null>;
-  setShowInput: StateSetter<boolean>;
+  setShow: StateSetter<boolean>;
 }
 
-const InputMaterial: React.FC<InputMaterialProps> = ({
+const Material: React.FC<MaterialProps> = ({
   selectedMaterial,
   setSelectedMaterial,
-  setShowInput,
+  setShow,
 }) => {
   const css = {
     container: `p-5 pt-0`,
@@ -31,7 +31,7 @@ const InputMaterial: React.FC<InputMaterialProps> = ({
   return (
     <div className={css.container}>
       <div className={css.wrapper}>
-        <input
+        <
           type="text"
           placeholder="Digite o material"
           value={selectedMaterial || ''}
@@ -40,7 +40,7 @@ const InputMaterial: React.FC<InputMaterialProps> = ({
 
         <ButtonClose
           {...iconMd}
-          setState={setShowInput}
+          setState={setShow}
           styles={`h-full`}
           positionStyles="relative"
         />
@@ -143,7 +143,7 @@ const SearchMaterial = ({
   const css = {
     wrapper: `h-10 box-content flex items-center relative
     crop focus-within:border focus-within:border-gray-300`,
-    input: `w-full 5 pl-4 pr-6 br-0`,
+    : `w-full 5 pl-4 pr-6 br-0`,
   };
 
   const [wasClicked, setWasClicked] = useState<boolean>(false);
@@ -153,7 +153,7 @@ const SearchMaterial = ({
     setFilteredMaterials(filtered);
   }
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLElement>) => {
     const searchValue = e.target.value.toLowerCase();
     setSearchValue(searchValue);
 
@@ -167,9 +167,9 @@ const SearchMaterial = ({
 
   return (
     <div className={css.wrapper}>
-      <input
+      <
         type="text"
-        className={`${css.input} ${!wasClicked && 'font-medium text-gray-800'}`}
+        className={`${css.} ${!wasClicked && 'font-medium text-gray-800'}`}
         value={searchValue}
         placeholder="Procurar material"
         onChange={handleSearch}
@@ -195,7 +195,7 @@ const SearchMaterial = ({
 /* ----------------Composition editor---------------- */
 const CompositionEditor = () => {
   const [seeCommonFabrics, setSeeCommonFabrics] = useState<boolean>(false);
-  const [showInput, setShowInput] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
   const [selectedMaterial, setSelectedMaterial] = useState<string | null>(null);
   const [filteredMaterials, setFilteredMaterials] = useState<string[]>([]);
   const [searchButtonClicked, setSearchButtonClicked] = useState<number>(0);
@@ -231,7 +231,7 @@ const CompositionEditor = () => {
         <Button
           onClick={() => {
             setSelectedMaterial('');
-            setShowInput(true);
+            setShow(true);
           }}
           iconFirst
           icon={<Plus {...iconMd} />}>
@@ -252,9 +252,9 @@ const CompositionEditor = () => {
         </Button>
       </WrapperButtons>
 
-      {showInput && (
-        <InputMaterial
-          setShowInput={setShowInput}
+      {show && (
+        <Material
+          setShow={setShow}
           selectedMaterial={selectedMaterial}
           setSelectedMaterial={setSelectedMaterial}
         />

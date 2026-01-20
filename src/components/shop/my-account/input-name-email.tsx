@@ -13,7 +13,7 @@ const css = {
   pError: `text-red-600 mb-[14px]`,
 };
 
-const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
+const NameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
   const { userData } = useContext(UserContext);
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -56,7 +56,7 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
         <label htmlFor="name" className="mb-2">
           Nome
         </label>
-        <input
+        <
           id="name"
           type="text"
           value={name}
@@ -72,7 +72,7 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
         <label htmlFor="email" className="mb-2">
           Email
         </label>
-        <input
+        <
           type="email"
           id="email"
           placeholder={userData.email}
@@ -88,4 +88,4 @@ const NameEmailInput = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) =
   );
 };
 
-export default NameEmailInput;
+export default NameEmail;

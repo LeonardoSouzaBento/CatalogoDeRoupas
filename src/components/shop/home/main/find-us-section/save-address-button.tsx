@@ -5,15 +5,15 @@ import { iconMd } from '@/css/lucideIconStyles';
 import { AddressSchema } from '@/types/types';
 
 const SaveAddressButton = ({
-  inputValue,
+  Value,
   addressComplete,
 }: {
-  inputValue: AddressSchema;
+  Value: AddressSchema;
   addressComplete: boolean;
 }) => {
   function handleSave() {
     console.log(addressComplete);
-    console.log(inputValue);
+    console.log(Value);
   }
   return (
     <button className="button min-w-max" onClick={handleSave}>

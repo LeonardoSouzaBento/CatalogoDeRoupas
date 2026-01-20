@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { UserData } from "@/types/types";
-import NameEmailInput from "../inputs/name-email-input";
+import NameEmail from "../s/name-email-";
 import EditButton from "./edit-button";
 
 //min-[500px]:flex-row min-[500px]:gap-4
@@ -14,7 +14,7 @@ const css = {
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",
   name: `block font-bold break-words text-gray-800 capitalize leading-none `,
   email: "block  leading-none break-all",
-  buttonEdit: "square-button p-0 br-md ",
+  buttonEdit: " p-0 br-md ",
 };
 
 
@@ -47,7 +47,7 @@ const UserCard = ({ userData }: { userData: UserData }) => {
           </p>
         </div>
       ) : (
-        <NameEmailInput setSeeEditMode={setSeeEditMode} />
+        <NameEmail setSeeEditMode={setSeeEditMode} />
       )}
     </>
   );

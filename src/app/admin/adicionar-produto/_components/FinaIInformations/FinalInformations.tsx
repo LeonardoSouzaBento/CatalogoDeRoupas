@@ -1,13 +1,13 @@
 import React from 'react';
-import DescriptionInput from './components/describeInput';
+import Description from './components/describe';
 import SizeSelector from './components/sizesSelector';
 import CompositionEditor from './components/composeEditor';
 import { HeaderCard } from '@/app/_ui';
 import CardWrapper from '@/app/_ui/card-wrapper';
 import ColorPicker from './components/colorPicker';
-import PriceInput from './components/priceInput';
-import BrandInput from './components/brandInput';
-import DifferentialInput from './components/differentialInput';
+import Price from './components/price';
+import Brand from './components/brand';
+import Differential from './components/differential';
 import Button from '@/app/_ui/button';
 import { ChevronDown } from 'lucide-react';
 import { iconMd } from '@/css/lucideIconStyles';
@@ -55,10 +55,10 @@ const FinalInformations = () => {
       <div className={`bs`}>
         {selectedPropertie === 'Composição' && <CompositionEditor />}
         {selectedPropertie === 'Tamanhos disponiveis' && <SizeSelector />}
-        {selectedPropertie === 'Descrição' && <DescriptionInput />}
-        {selectedPropertie === 'Preço' && <PriceInput />}
-        {selectedPropertie === 'Marca' && <BrandInput />}
-        {selectedPropertie === 'Diferencial' && <DifferentialInput />}
+        {selectedPropertie === 'Descrição' && <Description />}
+        {selectedPropertie === 'Preço' && <Price />}
+        {selectedPropertie === 'Marca' && <Brand />}
+        {selectedPropertie === 'Diferencial' && <Differential />}
         {selectedPropertie === 'Cores' && (
           <ColorPicker imageSrc="/shop/photos/female/mainCategories/blusas.png" />
         )}
