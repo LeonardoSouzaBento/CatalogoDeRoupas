@@ -7,7 +7,7 @@ import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
 
 const css = {
   wrapper: `
-    flex flex-wrap gap-4 mt-0.5 mb-[20.1px] bs p-5 py-5.5
+    flex flex-wrap gap-4 mt-0.5 mb-[20.1px] border p-5 py-5.5
   `,
   button: `5 br-50 relative light-button gap-0 font-normal pl-5 
   pr-0 text-gray-700 hover:bg-gray-100 transition-all 

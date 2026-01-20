@@ -17,7 +17,7 @@ const css = {
   button: `w-full gap-2 flex-auto justify-center border traking-wide
   transition-colors duration-200 br-lg relative font-normal uppercase `,
   notSelected: 'border-gray-100 hover:bg-gray-200/50 border-transparent ',
-  selected: 'bg-transparent bs shadow-xs hover:bg-white ',
+  selected: 'bg-transparent border shadow-xs hover:bg-white ',
 };
 
 const UserGenderList = (): React.ReactElement => {

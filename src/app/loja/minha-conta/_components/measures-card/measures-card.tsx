@@ -11,7 +11,7 @@ import { UserData } from '@/types/types';
 
 const css = {
   wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col 
-  bs max-[375px]:border-b-transparent! mb-5 br-md crop`,
+  border max-[375px]:border-b-transparent! mb-5 br-md crop`,
 };
 
 const MeasuresCard = ({ userData }: { userData: UserData }) => {

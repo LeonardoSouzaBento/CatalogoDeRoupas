@@ -43,7 +43,7 @@ Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
 }
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace 'bs-b', 'border-b' | 
+    (Get-Content $_.FullName) -replace ' bs ', ' border ' | 
     Set-Content $_.FullName
 }
 

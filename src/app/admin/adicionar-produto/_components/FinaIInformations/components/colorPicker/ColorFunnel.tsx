@@ -15,7 +15,7 @@ export function ColorFunnel({
       <div
         style={{ backgroundColor: color }}
         className={`size-14 rounded-full border-2 border-white 
-            shadow-lg bs relative z-2`}
+            shadow-lg border relative z-2`}
       />
 
       <div

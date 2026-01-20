@@ -6,11 +6,11 @@ import { Minus, Plus, X } from 'lucide-react';
 
 const css = {
   wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end j-center gap-3.5 
-  bs relative`,
+  border relative`,
   wrapperButtons: `flex gap-3`,
   p: `5`,
   button: `size-9 p-0 flex-center br-50 5`,
-  selected: `white-button bs shadow-lg hover:shadow-lg-hover`,
+  selected: `white-button border shadow-lg hover:shadow-lg-hover`,
   plusButton: `size-9 flex-center p-0 br-50`,
   cancelButton: `p-0 size-9 bg-gray-100/70 flex-center absolute -top-2 -right-2
   br-50`,
