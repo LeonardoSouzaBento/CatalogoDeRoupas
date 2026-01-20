@@ -49,7 +49,7 @@ const CategoryCard = ({ category }: CatCardResultProps) => {
               setCardEditMode(true);
             }}>
             Editar Categoria
-            <Pen {...iconSm} />
+            <Pen  />
           </button>
         </div>
       ) : (

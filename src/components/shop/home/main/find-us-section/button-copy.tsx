@@ -26,7 +26,7 @@ const ButtonCopy = ({ state, setState, firstText, secondText, textToCopy }: Butt
   return (
     <button className={`${css.button}`} onClick={handleClickCopy}>
       {!state ? firstText : secondText || 'Copiado!'}
-      {!state ? <Copy {...iconSm} /> : <CopyCheck {...iconSm} />}
+      {!state ? <Copy  /> : <CopyCheck  />}
     </button>
   );
 };

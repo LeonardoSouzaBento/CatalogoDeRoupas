@@ -38,7 +38,7 @@ Get-ChildItem -Recurse -Filter *.tsx | ForEach-Object {
 /* para varios arquivos */
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace 'line-span|card-shadow|home-h1|h3-sizes|h4-sizes|input|ring-style|p-button|p-small-button|square-button', '' | 
+    (Get-Content $_.FullName) -replace '{...iconSm}|{...iconMd}|{...iconLg}|{...iconXl}|{...icon2xl}', '' | 
     Set-Content $_.FullName
 }
 

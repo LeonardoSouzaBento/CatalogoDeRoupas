@@ -20,7 +20,7 @@ const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) => {
 
       {seeButtonClose && (
         <Link className={`${css.button} `} href={'/loja'}>
-          <X {...iconMd} />
+          <X  />
         </Link>
       )}
     </div>

@@ -12,7 +12,7 @@ const SaveButton = ({ text = 'Salvar', styles, Function }: Props) => {
   return (
     <button onClick={Function} className={`w-full ${styles}`}>
       {text}
-      <CircleCheckBig {...iconMd} />
+      <CircleCheckBig  />
     </button>
   );
 };

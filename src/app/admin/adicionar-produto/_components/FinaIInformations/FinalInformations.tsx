@@ -46,7 +46,7 @@ const FinalInformations = () => {
             onClick={() => {
               setSelectedPropertie(property);
             }}
-            icon={<ChevronDown {...iconMd} />}>
+            icon={<ChevronDown  />}>
             {property}
           </Button>
         ))}

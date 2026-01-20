@@ -58,7 +58,7 @@ const AddedProperties = ({
                 {item.label}: <strong className={css.strong}>{item.value}</strong>
               </span>
               <button className={`${css.button}`} onClick={() => clearValue(item.label)}>
-                <X {...iconSm} />
+                <X  />
               </button>
             </div>
           ),

@@ -79,15 +79,15 @@ const About = ({
             setValue('');
           }}>
           {' '}
-          <Trash {...iconMd} size={19} />
+          <Trash  size={19} />
           Deletar Todo o Texto
         </button>
         <button className={`${css.buttons} order-3 sm:order-3`}>
-          <Check {...iconMd} />
+          <Check  />
           Salvar
         </button>
         <button className={`${css.buttons} order-2 sm:order-2`} onClick={handleDiscardChanges}>
-          <X {...iconMd} />
+          <X  />
           Descartar Alterações
         </button>
       </div>

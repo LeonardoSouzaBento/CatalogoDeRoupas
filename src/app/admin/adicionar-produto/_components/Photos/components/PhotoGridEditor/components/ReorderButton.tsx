@@ -37,9 +37,9 @@ const ReorderButton = ({ reorderMode, setReorderMode, styles, photos }: Props) =
       {reorderMode ? 'Sair de reordenar' : 'Reordenar imagens'}
 
       {reorderMode ? (
-        <X {...iconMd} />
+        <X  />
       ) : (
-        <Layers2 {...iconMd} color={isDisabled ? '#a1a1a1' : 'gray'} />
+        <Layers2  color={isDisabled ? '#a1a1a1' : 'gray'} />
       )}
     </button>
   );

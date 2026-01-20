@@ -55,7 +55,7 @@ const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
   return (
     <button className={`${css.button}`}>
       Adicionar foto
-      <Plus {...iconMd} />
+      <Plus  />
       <
         className={`${css.}`}
         type="file"

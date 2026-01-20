@@ -22,7 +22,7 @@ const Choices = () => {
     <div>
       {currentMostSearched.map((item) => (
         <div key={item} className={`${css.wrapper}`}>
-          <Search {...iconMd} />
+          <Search  />
           <p className="">{item}</p>
         </div>
       ))}

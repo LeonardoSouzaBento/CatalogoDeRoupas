@@ -77,7 +77,7 @@ const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoTaken }:
                 setSeeRemoveConfirm(false);
               }}>
               Não
-              <X {...iconMd} strokeWidth={2} />
+              <X  strokeWidth={2} />
             </button>
             <button
               className={`${css.button}  `}
@@ -86,7 +86,7 @@ const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoTaken }:
                 handleRemovePhoto();
               }}>
               Sim, remover
-              <Check {...iconMd} strokeWidth={2} />
+              <Check  strokeWidth={2} />
             </button>
           </div>
         </div>

@@ -25,7 +25,7 @@ const SizeSelector = () => {
         onClick={() => {
           setSeeNumericalSizes(!seeNumericalSizes);
         }}
-        icon={<Eye {...iconMd} />}>
+        icon={<Eye  />}>
         Ver medidas numéricas
       </Button>
 
@@ -34,7 +34,7 @@ const SizeSelector = () => {
           onClick={() => {
             setSeeNumericalSizes(!seeNumericalSizes);
           }}
-          icon={<Eye {...iconMd} />}>
+          icon={<Eye  />}>
           Ver medidas numéricas infantis
         </Button>
       )}

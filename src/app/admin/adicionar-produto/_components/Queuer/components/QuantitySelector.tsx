@@ -52,7 +52,7 @@ const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
           setNumberOptions([1, 2, 3]);
           setSelectedQuantity(0);
         }}>
-        <X {...iconSm} />
+        <X  />
       </button>
       <p className={`${numberOptions[0] !== 1 && 'min-[450px]:ml-12'}`}>Tenho</p>
 
@@ -78,7 +78,7 @@ const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
           onClick={(e) => {
             incrementAll(e);
           }}>
-          <Plus {...iconMd} />
+          <Plus  />
         </button>
         {numberOptions[0] !== 1 && (
           <button
@@ -86,7 +86,7 @@ const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
             onClick={(e) => {
               decrementAll(e);
             }}>
-            <Minus {...iconMd} />
+            <Minus  />
           </button>
         )}
       </div>

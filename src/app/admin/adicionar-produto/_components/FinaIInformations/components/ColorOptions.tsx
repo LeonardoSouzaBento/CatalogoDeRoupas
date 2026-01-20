@@ -22,7 +22,7 @@ const ColorOptions = () => {
       <ColorFamilySelector selectedFamily={selectedFamily} setSelectedFamily={setSelectedFamily} />
       {selectedFamily && <ColorList selectedFamily={selectedFamily} />}
 
-      <Button onClick={() => setShowColor(!showColor)} icon={<Plus {...iconMd} />}>
+      <Button onClick={() => setShowColor(!showColor)} icon={<Plus  />}>
         Quero outra cor
       </Button>
       {showColor && (
@@ -59,11 +59,11 @@ const ColorFamilySelector = ({ selectedFamily, setSelectedFamily }: ColorFamilyS
           icon="">
           <h3>{family.name}</h3>
 
-          <ChevronDown {...iconMd} className={`shrink-0`} />
+          <ChevronDown  className={`shrink-0`} />
 
           {selectedFamily === family.id && (
             <div onClick={() => setSelectedFamily('')}>
-              <X {...iconMd} />
+              <X  />
             </div>
           )}
         </Button>
@@ -102,7 +102,7 @@ const ColorList = ({ selectedFamily }: { selectedFamily: string }) => {
               <p className={`${css.name} ${isSelected ? 'font-medium' : ''}`}>{color.name}</p>
             </div>
             <Button onClick={() => setSelectedColor('')} squareOrCircular>
-              <X {...iconMd} />
+              <X  />
             </Button>
           </div>
         );

@@ -18,7 +18,7 @@ const SaveAddressButton = ({
   return (
     <button className="button min-w-max" onClick={handleSave}>
       Salvar Endereço
-      <Check {...iconMd} />
+      <Check  />
     </button>
   );
 };

@@ -10,7 +10,7 @@ const RemovePhotoButton = () => {
   return (
     <>
       <button className={`${css.button}`}>
-        <X {...iconSm} />
+        <X  />
       </button>
     </>
   );

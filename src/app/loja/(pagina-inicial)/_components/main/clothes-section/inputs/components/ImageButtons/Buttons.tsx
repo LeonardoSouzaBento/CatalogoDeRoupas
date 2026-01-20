@@ -20,13 +20,13 @@ const Buttons = ({ mainImage = true }: { mainImage?: boolean }) => {
       <button onClick={uploadImage} className={`${css.button}`}>
         Subir imagem menor
         <div className={`${css.wrapperIcon}`}>
-          <CloudUpload {...iconMd} />
+          <CloudUpload  />
         </div>
       </button>
       <button onClick={uploadImage} className={`${css.button}`}>
         Subir imagem principal
         <div className={`${css.wrapperIcon}`}>
-          <CloudUpload {...iconMd} />
+          <CloudUpload  />
         </div>
       </button>
     </div>

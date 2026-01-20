@@ -64,7 +64,7 @@ const CardEditMode = ({
           </div>
           <button className="mb-1  min-[440px]:mb-0 sm:mb-1 md:mb-0">
             <div className="h-full min-w-8 flex-center">
-              <Upload {...iconSm} />
+              <Upload  />
             </div>
             Nova Imagem
           </button>

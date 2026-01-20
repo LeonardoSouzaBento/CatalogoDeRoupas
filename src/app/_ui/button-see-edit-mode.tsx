@@ -30,7 +30,7 @@ const ButtonSeeEditMode = ({ setState, styles, positionStyles, variantion, secti
       }}>
       {!variantion && <span className={css.icon}>stylus</span>}
       {variantion === 'title' && 'Editar seção'}
-      {variantion === 'title' && <Pen {...iconMd} />}
+      {variantion === 'title' && <Pen  />}
     </button>
   );
 };

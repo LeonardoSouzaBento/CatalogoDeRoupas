@@ -48,7 +48,7 @@ const ButtonClose = ({
           setState(false);
         }
       }}>
-      <X {...iconMd} strokeWidth={1.9} {...iconStyles} />
+      <X  strokeWidth={1.9} {...iconStyles} />
     </button>
   );
 };

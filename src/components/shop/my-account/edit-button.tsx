@@ -10,7 +10,7 @@ const EditButton = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
         onClick={() => {
           setSeeEditMode(true);
         }}>
-        <Pen {...iconMd} />
+        <Pen  />
       </button>
     </div>
   );

@@ -35,7 +35,7 @@ const Button = ({
     <Link className={`${css.buttonSearch} ${hoverStyle}`} href={link || '/'}>
       Buscar
       <div className={css.wrapperIconSearch}>
-        <Icon {...iconMd} />
+        <Icon  />
       </div>
     </Link>
   ) : (
@@ -47,14 +47,14 @@ const Button = ({
             setSeeOptionsSection?.(true);
           }}>
           <div className={css.wrapperIcon}>
-            <Icon {...iconMd} />
+            <Icon  />
           </div>
           <p className={css.p}>{name}</p>
         </button>
       ) : (
         <Link className={`${css.button} ${hoverStyle}`} href={link}>
           <div className={css.wrapperIcon}>
-            <Icon {...iconMd} />
+            <Icon  />
           </div>
           <p className={css.p}>{name}</p>
         </Link>

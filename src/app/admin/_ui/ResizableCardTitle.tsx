@@ -59,7 +59,7 @@ export function ResizableDivTitle({
         className={`${css.button} ${buttonStyles && buttonStyles} ${
           expand ? 'rotate-180 pt-1 pl-0 pr-px' : 'rotate-0 pl-px'
         }`}>
-        <ChevronDown {...iconLg} />
+        <ChevronDown  />
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "material-symbols/outlined.css";
-@import "./globals.css";
+@import 'tailwindcss';
+@import 'material-symbols/outlined.css';
+@import './globals.css';
 
 @layer components {
   /* divs */
@@ -8,4 +8,7 @@
     @apply bg-white shadow-lg hover:shadow-lg-hover px-6 pt-3.5 pb-7 mb-5 
     rounded-lg box-border transition-shadow duration-200 overflow-hidden relative;
   } */
+  .title-landing-page {
+    @apply w-full text-center;
+  }
 }

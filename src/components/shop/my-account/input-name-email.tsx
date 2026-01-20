@@ -47,7 +47,7 @@ const NameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
         </div>
         <button className="w-full  trans">
           Subir nova imagem
-          <Upload {...iconMd} />
+          <Upload  />
         </button>
       </div>
 

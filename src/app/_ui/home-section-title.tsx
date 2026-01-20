@@ -72,7 +72,7 @@ const HomeSectionTitle = ({
             setSectionEditMode(false);
           }}>
           Fechar edição
-          <PenOff {...iconMd} />
+          <PenOff  />
         </button>
       )}
     </div>

@@ -39,11 +39,11 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           onClick={() => {
             setSeePassword((prev) => !prev);
           }}>
-          {seePassword ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
+          {seePassword ? <EyeClosed  /> : <Eye  />}
         </div>
       </div>
       <button className={`${css.button} mb-5`}>
-        <LogIn {...iconMd} />
+        <LogIn  />
         entrar
       </button>
       <button className={`${css.button} h-10! font-light bg-white  text-neutral-600`}>

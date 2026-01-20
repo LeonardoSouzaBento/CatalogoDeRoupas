@@ -33,7 +33,7 @@ const MainCats = (): React.ReactElement => {
               setSelectedGender('masculino');
             }
           }}>
-          {maleNoSelected ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
+          {maleNoSelected ? <EyeClosed  /> : <Eye  />}
           Ver Categorias Masculinas
         </button>
         <button
@@ -43,7 +43,7 @@ const MainCats = (): React.ReactElement => {
               setSelectedGender('feminino');
             }
           }}>
-          {femaleNoSelected ? <EyeClosed {...iconMd} /> : <Eye {...iconMd} />}
+          {femaleNoSelected ? <EyeClosed  /> : <Eye  />}
           Ver Categorias Femininas
         </button>
       </div>
@@ -58,7 +58,7 @@ const MainCats = (): React.ReactElement => {
       />
       <button className="mb-5">
         Adicionar Nova Categoria Principal
-        <Plus {...iconMd} />
+        <Plus  />
       </button>
     </div>
   );

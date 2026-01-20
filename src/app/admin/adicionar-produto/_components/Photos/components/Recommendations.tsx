@@ -23,7 +23,7 @@ const Recommendations = () => {
           onClick={() => setExpanded(!expanded)}
           className={css.button}
           aria-label="Mostrar mais ou menos">
-          {expanded ? <Minus {...iconSm} /> : <Plus {...iconSm} />}
+          {expanded ? <Minus  /> : <Plus  />}
         </button>
       </div>
 

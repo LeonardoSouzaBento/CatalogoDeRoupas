@@ -33,11 +33,11 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
         </tbody>
       </table>
       <button className="button max-[375px]:text-left mb-5 w-full">
-        <CircleQuestionMark {...iconMd} />
+        <CircleQuestionMark  />
         Ver Guia De Medidas
       </button>
       <button className="button max-[375px]:text-left w-full">
-        <Pen {...iconSm} /> Atualizar Minhas Medidas
+        <Pen  /> Atualizar Minhas Medidas
       </button>
     </>
   );

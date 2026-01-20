@@ -14,7 +14,7 @@ const SearchButton = () => {
       <button className={`${css.button}`}>
         < type="search" placeholder="O que você procura?" className={`${css.} `} />
         <Link href={'/loja/produto/'} className={`${css.wrraperIcon}`}>
-          <Search {...iconMd} />
+          <Search  />
         </Link>
       </button>
     </div>

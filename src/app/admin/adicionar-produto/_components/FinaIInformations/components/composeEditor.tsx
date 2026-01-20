@@ -39,7 +39,7 @@ const Material: React.FC<MaterialProps> = ({
         />
 
         <ButtonClose
-          {...iconMd}
+          
           setState={setShow}
           styles={`h-full`}
           positionStyles="relative"
@@ -186,7 +186,7 @@ const SearchMaterial = ({
         styles="box-content h-full min-w-10 br-0"
         onClick={handleSearchButton}
         squareOrCircular={true}
-        icon={<Search {...iconMd} strokeWidth={2.2} className={`mb-0.5`} />}
+        icon={<Search  strokeWidth={2.2} className={`mb-0.5`} />}
       />
     </div>
   );
@@ -234,7 +234,7 @@ const CompositionEditor = () => {
             setShow(true);
           }}
           iconFirst
-          icon={<Plus {...iconMd} />}>
+          icon={<Plus  />}>
           Outro material
         </Button>
 
@@ -245,7 +245,7 @@ const CompositionEditor = () => {
               setSearchButtonClicked((prev) => prev + 1);
             }, 200);
           }}
-          icon={<Eye {...iconMd} />}
+          icon={<Eye  />}
           iconFirst
           styles={seeCommonFabrics ? 'ring ring-blue-300 hover:bg-gray-100' : ''}>
           {seeCommonFabrics ? 'Ver todos os materiais' : 'Ver tecidos comuns'}

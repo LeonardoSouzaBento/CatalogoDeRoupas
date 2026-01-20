@@ -32,7 +32,7 @@ const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
           onClick={() => {
             setPropSelected(item.name);
           }}
-          icon={<ChevronDown {...iconMd} />}>
+          icon={<ChevronDown  />}>
           {item.name}
         </Button>
       ))}

@@ -19,7 +19,7 @@ const ButtonSeeMore = ({
     <div className={`${css.wrapper}`}>
       <button className={`${css.button}`} onClick={() => setSeeMoreUserInfo(!seeMoreUserInfo)}>
         {!seeMoreUserInfo ? ' Ver Mais' : ' Ver Menos'}
-        {!seeMoreUserInfo ? <ChevronDown {...iconLg} /> : <ChevronUp {...iconLg} />}
+        {!seeMoreUserInfo ? <ChevronDown  /> : <ChevronUp  />}
       </button>
     </div>
   );
