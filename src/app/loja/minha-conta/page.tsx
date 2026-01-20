@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '@/contexts';
 import MeasuresCard from './_components/measures-card/measures-card';
 import UserCard from './_components/user-card/user-card';
-import TitlePage from '@/app/_ui/TitlePage';
+import TitlePage from '@/components/ui/title-page';
 import FavoritesCard from './_components/favorites-card';
 import CardWrapper from '../../_ui/card-wrapper';
 

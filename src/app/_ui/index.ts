@@ -1,5 +1,5 @@
 export { default as WrapperHomeInput } from './WrapperHomeInput';
-export { default as TitlePage } from './TitlePage';
+export { default as TitlePage } from '../../components/ui/title-page';
 export { default as HomeSectionTitle } from './home-section-title';
 export { default as HeaderCard } from './HeaderCard';
 export { default as ButtonSeeEditMode } from './button-see-edit-mode';

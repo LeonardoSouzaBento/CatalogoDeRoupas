@@ -1,5 +1,5 @@
 import HeaderCard from '@/app/_ui/HeaderCard';
-import TitlePage from '@/app/_ui/TitlePage';
+import TitlePage from '@/components/ui/title-page';
 import UserDetail from './_components/UserDetail/UserDetail';
 import CardWrapper from '@/app/_ui/card-wrapper';
 

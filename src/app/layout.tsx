@@ -5,8 +5,8 @@ import { PublicDataProvider } from '@/contexts/Providers/PublicDataProvider';
 import { DM_Sans, Cookie } from 'next/font/google';
 import '../css/reset.css';
 import '../css/globals.css';
-import '../css/shorteners.css';
 import '../css/components.css';
+import '../css/shorteners.css';
 import '../css/typography.css';
 
 const dmSans = DM_Sans({

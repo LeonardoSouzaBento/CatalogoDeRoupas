@@ -1,2 +1,2 @@
-(Get-ChildItem "C:\Users\souza\Desktop\repositorios-publicos\catálogo-de-roupas\src\components\shop\home\main\find-us-section" -Filter *.tsx -File | Select-Object -ExpandProperty BaseName) -join ' '
+(Get-ChildItem "C:\Users\souza\Desktop\repositorios-publicos\catálogo-de-roupas\src\components\shop\home\main" -Filter *.tsx -File | Select-Object -ExpandProperty BaseName) -join ' '
 

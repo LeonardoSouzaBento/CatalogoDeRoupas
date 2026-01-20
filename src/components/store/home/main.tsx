@@ -1,7 +1,7 @@
 'use client';
 import { HomeContext, UserContext } from '@/contexts';
 import React, { useContext, useEffect } from 'react';
-import { EverydayClothes, GymClothes, SpecialClothes } from './main/clothes-section/sections';
+import { EverydaySection, GymSection, SpecialSection } from './main/index';
 import { AboutSection, FindUsSection, MainCategories, UserGenderList } from './main/index';
 
 const Main = (): React.ReactElement => {
@@ -30,20 +30,20 @@ const Main = (): React.ReactElement => {
 
       <section className="home-store-section">
         <div>
-          <SpecialClothes />
+          <SpecialSection />
         </div>
       </section>
 
       <section className="home-store-section">
         <div>
-          <EverydayClothes />
+          <EverydaySection />
         </div>
       </section>
 
       {hasGymClothes && (
         <section className="home-store-section">
           <div>
-            <GymClothes />
+            <GymSection />
           </div>
         </section>
       )}

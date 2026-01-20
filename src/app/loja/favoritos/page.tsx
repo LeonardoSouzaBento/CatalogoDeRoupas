@@ -1,6 +1,6 @@
 import React from 'react';
 import ZapFixedButton from '@/app/_ui/ZapFixedButton';
-import TitlePage from '@/app/_ui/TitlePage';
+import TitlePage from '@/components/ui/title-page';
 import { HeaderCard } from '../../_ui';
 import NoClothesAlert from '@/components/shop/favorites/no-clothes-alert';
 
