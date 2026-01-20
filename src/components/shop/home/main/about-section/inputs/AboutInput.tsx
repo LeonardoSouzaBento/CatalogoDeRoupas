@@ -1,7 +1,7 @@
 import { AlertInfo, ButtonClose } from '@/app/_ui/index';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import type { ShopInfo } from '@/types/types';
-import { defaultShopInfo } from '@data/home/publicData';
+import { defaultShopInfo } from '@/data/home/publicData';
 import { Check, Trash, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 

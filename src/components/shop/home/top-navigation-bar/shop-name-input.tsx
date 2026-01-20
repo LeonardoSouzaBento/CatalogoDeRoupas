@@ -1,6 +1,6 @@
 import { ButtonClose } from '@/app/_ui';
 import SaveButton from '@/app/_ui/SaveButton';
-import { PublicDataContext } from '@contexts/PublicDataContext';
+import { PublicDataContext } from '@/contexts/PublicDataContext';
 import React, { useContext, useState } from 'react';
 
 const css = {

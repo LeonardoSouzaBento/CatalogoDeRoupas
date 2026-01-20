@@ -48,12 +48,13 @@ Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
 }
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace '@hooks', '@/hooks' | 
-    Set-Content $_.FullName
-}
-
-Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace '@data', '@/data' | 
+    (Get-Content $_.FullName) `
+        -replace '@contexts', '@/contexts' `
+        -replace '@hooks', '@/hooks' `
+        -replace '@ui', '@/ui' `
+        -replace '@hooks', '@/hooks' `
+        -replace '@providers', '@/providers' `
+        -replace '@localtypes', '@/localtypes' | 
     Set-Content $_.FullName
 }
 

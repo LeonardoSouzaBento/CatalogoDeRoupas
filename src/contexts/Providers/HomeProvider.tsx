@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import type { MainCategoriesType, ProviderType } from '@localtypes/types';
+import type { MainCategoriesType, ProviderType } from '@/localtypes/types';
 import { HomeContext } from '../HomeContext';
-import { defaultMainCategories } from '@data/home/homeData';
+import { defaultMainCategories } from '@/data/home/homeData';
 import useLocalStorage from '@/hooks/useLocalStorage';
 
 export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {

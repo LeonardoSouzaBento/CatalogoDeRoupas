@@ -1,7 +1,7 @@
 import ButtonSeeEditMode from '@/app/_ui/button-see-edit-mode';
 import WrapperHomeInput from '@/app/_ui/WrapperHomeInput';
 import type { AddressSchema } from '@/types/types';
-import { PublicDataContext } from '@contexts/index';
+import { PublicDataContext } from '@/contexts/index';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import React, { useContext, useState } from 'react';
 import ButtonCopy from './components/ButtonCopy';
