@@ -27,7 +27,8 @@
       "@localtypes/*": ["src/types/*"],
       "@contexts/*": ["src/contexts/*"],
       "@data/*": ["src/data/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@shop-components/*": ["src/components/shop/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

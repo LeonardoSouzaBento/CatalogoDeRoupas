@@ -67,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
-      <body className={`bg-body-background text-black-text`}>
+      <body>
         <PublicDataProvider>
           <UserProvider>
             <div>{children}</div>

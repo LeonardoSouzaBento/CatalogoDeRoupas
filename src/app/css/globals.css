@@ -41,24 +41,31 @@ xl   (1280px)
   --shadow-accent: 0 4px 14px -5px hsla(200, 70%, 40%, 0.25); /* azul */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
   /* cores */
-  /* neutras */
-  --color-card-foreground: hsl(236 17% 19%);
-  --color-muted-foreground: hsl(236 9.71% 41%);
-  --color-border: hsl(236 5.86% 86%);
-  --color-input-border: hsl(236 9.14% 70.6%);
-  --color-input-bg: hsl(236 4.57% 97.4%);
-  --color-black-text: #1f2937;
-  --color-gray-text: #fff;
+  /* neutras baseadas em azul */
+  --color-card-background: #fff;
+  --color-card-foreground: hsl(345 18% 17.5%);
+  --color-muted-foreground: hsl(345 10.57% 38%);
+  --color-border: hsl(345 6.29% 83%);
+  --color-input-border: hsl(345 9.71% 68.5%);
+  --color-input-bg: hsl(345 4.86% 96.5%);
   --color-body-background: #f9fafb;
   --color-white: #fff;
-  --color-card-background: #fff;
   --color-female: #c81e72;
   --color-male: #7119a8;
-  /* --color-male: #1A4CAB; */
-  --color-female-foreground: #3b0f23;
-  --color-male-foreground: #261335;
-  --color-female-white: #fdebf3;
-  --color-male-white: #f4edfb;
+  /* primária (baseada em female)*/
+  --color-primary-50: #f6f0f0;
+  --color-primary-100: #ede2e2;
+  --color-primary-200: #dac5c6;
+  --color-primary-300: #c8a9aa;
+  --color-primary-400: #b58e8f;
+  --color-primary-500: #a27375;
+  --color-primary-600: #8f595c;
+  --color-primary-700: #7b3f45;
+  --color-primary-800: #67252e;
+  --color-primary-900: #4e0015 /*Sua cor*/;
+  --color-primary-950: #44000b;
+  --color-primary-1000: #360000;
+  /* cores de estados */
   --color-yellow: #f5d43b;
   --color-yellow-hover: hsl(49, 90%, 50%);
   --color-green: #2fbf71;
@@ -73,6 +80,28 @@ xl   (1280px)
   --breakpoint-pre-sm: 575px;
   --breakpoint-pre-md: 768px;
   --breakpoint-next-md: 840px;
+}
+
+.male-colors {
+  /* --color-male: #1A4CAB; */
+  --color-card-foreground: hsl(236 17% 19%);
+  --color-muted-foreground: hsl(236 9.71% 41%);
+  --color-border: hsl(236 5.86% 86%);
+  --color-input-border: hsl(236 9.14% 70.6%);
+  --color-input-bg: hsl(236 4.57% 97.4%);
+  /* primária */
+  --color-primary-50: #f2f0f5;
+  --color-primary-100: #e5e1eb;
+  --color-primary-200: #cbc4d7;
+  --color-primary-300: #b2a8c3;
+  --color-primary-400: #9a8db0;
+  --color-primary-500: #81729d;
+  --color-primary-600: #69598a;
+  --color-primary-700: #514078;
+  --color-primary-800: #392966;
+  --color-primary-900: #1f1254;
+  --color-primary-950: #070047 /*Sua cor*/;
+  --color-primary-1000: #040041;
 }
 
 @layer base {

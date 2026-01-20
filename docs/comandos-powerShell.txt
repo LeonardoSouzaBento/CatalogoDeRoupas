@@ -38,12 +38,22 @@ Get-ChildItem -Recurse -Filter *.tsx | ForEach-Object {
 /* para varios arquivos */
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace 'normal-p|small-p|big-p', '' | 
+    (Get-Content $_.FullName) -replace 'text-female-foreground|text-male-foreground|text-female-white|text-male-white', '' | 
     Set-Content $_.FullName
 }
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
-    (Get-Content $_.FullName) -replace ' bs ', ' border ' | 
+    (Get-Content $_.FullName) -replace '@contexts', '@/contexts' | 
+    Set-Content $_.FullName
+}
+
+Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
+    (Get-Content $_.FullName) -replace '@hooks', '@/hooks' | 
+    Set-Content $_.FullName
+}
+
+Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
+    (Get-Content $_.FullName) -replace '@data', '@/data' | 
     Set-Content $_.FullName
 }
 

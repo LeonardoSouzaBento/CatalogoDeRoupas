@@ -2,7 +2,7 @@ import React from 'react';
 import ZapFixedButton from '@/app/_ui/ZapFixedButton';
 import TitlePage from '@/app/_ui/TitlePage';
 import { HeaderCard } from '../../_ui';
-import NoClothesAlert from './_components/NoClothesAlert';
+import NoClothesAlert from '@/components/shop/favorites/no-clothes-alert';
 
 const css = {
   mainWrapper: 'px-3 pb-5',
