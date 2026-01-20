@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { HomeContext } from '@/contexts/HomeContext';
-import CategoryCard from './CategoryCard';
+import CategoryCard from './category-card';
 import { iconMd } from '@/app/css/lucideIconStyles';
 import { Eye, EyeClosed, Plus } from 'lucide-react';
 import { AlertInfo } from '@/app/_ui';

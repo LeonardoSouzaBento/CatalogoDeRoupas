@@ -1,21 +1,33 @@
 'use client';
-import ZapFixedButton from '@/app/_ui/ZapFixedButton';
+import { ZapFixedButton } from '@/components/common';
+import { Icon } from '@/components/ui/lucide-icon';
+import { HomeContext } from '@/contexts';
 import { HomeDataProvider } from '@/contexts/Providers/HomeProvider';
-import { useState } from 'react';
-import ExitHomeEditButton from '../../_ui/exit-home-edit-button';
-import { Footer, LogoArea, Main, OptionsMenu, TopNavigationBar } from './_components';
+import { PenOff } from 'lucide-react';
+import { useContext, useState } from 'react';
+import { Footer, LogoArea, Main, OptionsMenu, TopNavBar } from './_components';
+import { Button } from '@/components/ui/button';
 
 const Core = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
+  const { homeEditMode, setHomeEditMode } = useContext(HomeContext);
 
   return (
     <HomeDataProvider>
       <LogoArea />
-      <TopNavigationBar setSeeOptionsSection={setSeeOptionsSection} />
+      <TopNavBar setSeeOptionsSection={setSeeOptionsSection} />
       {seeOptionsSection && <OptionsMenu setSeeOptionsSection={setSeeOptionsSection} />}
       <Main />
       <Footer />
-      <ExitHomeEditButton />
+      {homeEditMode && (
+        <Button
+          onClick={() => {
+            setHomeEditMode(false);
+          }}>
+          Fechar edição
+          <Icon LucideIcon={PenOff} size="md" />
+        </Button>
+      )}
       <ZapFixedButton />
     </HomeDataProvider>
   );

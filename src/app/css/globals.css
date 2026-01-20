@@ -1,14 +1,7 @@
 @import 'tailwindcss';
 @import 'material-symbols/rounded.css';
 
-/* 
-sm	 (640px)
-md	 (768px)	
-lg	 (1024px)	
-xl   (1280px)	
-2xl  (1536px) 
-*/
-
+/* sm: 640px; md: 768px; lg: 1024px; xl: 1280px; 2xl: 1536px; */
 @theme {
   /* Fonts */
   --font-default: 'DM Sans', 'sans-serif';
@@ -41,7 +34,9 @@ xl   (1280px)
   --shadow-accent: 0 4px 14px -5px hsla(200, 70%, 40%, 0.25); /* azul */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
   /* cores */
-  /* neutras baseadas em azul */
+  --color-female: #c81e72;
+  --color-male: #7119a8;
+  /* neutras */
   --color-card-background: #fff;
   --color-card-foreground: hsl(345 18% 17.5%);
   --color-muted-foreground: hsl(345 10.57% 38%);
@@ -49,10 +44,7 @@ xl   (1280px)
   --color-input-border: hsl(345 9.71% 68.5%);
   --color-input-bg: hsl(345 4.86% 96.5%);
   --color-body-background: #f9fafb;
-  --color-white: #fff;
-  --color-female: #c81e72;
-  --color-male: #7119a8;
-  /* primária (baseada em female)*/
+  /* primária */
   --color-primary-50: #f6f0f0;
   --color-primary-100: #ede2e2;
   --color-primary-200: #dac5c6;

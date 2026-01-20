@@ -18,17 +18,12 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["src/*"],
-      "@app/*": ["src/app/*"],
-      "@ui/*": ["src/app/loja/_ui/*"],
-      "@providers/*": ["src/contexts/Providers/*"],
-      "@localtypes/*": ["src/types/*"],
-      "@contexts/*": ["src/contexts/*"],
-      "@data/*": ["src/data/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@shop-components/*": ["src/components/shop/*"]
+      "@/*": ["*"],
+      "@app/*": ["app/*"],
+      "@ui/*": ["app/loja/_ui/*"],
+      "@shop-components/*": ["components/shop/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

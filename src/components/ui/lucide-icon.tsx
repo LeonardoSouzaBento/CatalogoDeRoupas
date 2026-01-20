@@ -1,10 +1,10 @@
 import { LucideIcon } from 'lucide-react';
 
 interface IconProps {
-  size?: string;
   LucideIcon: LucideIcon;
+  size?: string;
   className?: string;
-  strokeValue: string | number;
+  strokeValue?: string | number;
 }
 
 const iconSizes = {
@@ -27,7 +27,7 @@ const weights = {
   light: 2.4,
 };
 
-export const Icon = ({ size, LucideIcon, className, strokeValue }: IconProps) => {
+export const Icon = ({ LucideIcon, size, className, strokeValue }: IconProps) => {
   return (
     <LucideIcon
       size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}

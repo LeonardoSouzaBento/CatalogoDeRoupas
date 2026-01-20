@@ -1,7 +1,7 @@
 'use client';
 import React, { useContext, useState } from 'react';
 import { HomeContext } from '@/contexts';
-import ShopNameInput from './top-navigation-bar/shop-name-input';
+import ShopNameInput from './top-nav-bar/shop-name-input';
 import LogoSection from '@/app/(landing-page)/_components/logo-section';
 
 const LogoArea = () => {

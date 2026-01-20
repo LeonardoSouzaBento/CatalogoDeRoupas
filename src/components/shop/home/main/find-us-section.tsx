@@ -4,10 +4,10 @@ import type { AddressSchema } from '@/types/types';
 import { PublicDataContext } from '@/contexts/index';
 import HomeSectionTitle from '@/app/_ui/home-section-title';
 import React, { useContext, useState } from 'react';
-import ButtonCopy from './components/ButtonCopy';
-import AddressInput from './inputs/AddressInput';
-import ContactInput from './inputs/ContactInput';
-import MapInput from './inputs/MapInput';
+import ButtonCopy from './find-us-section/button-copy';
+import InputAddress from './find-us-section/input-address';
+import ContactInput from './find-us-section/input-contact';
+import MapInput from './find-us-section/input-map';
 
 const css = {
   wrapper: 'w-full m-auto max-w-210 flex flex-col gap-5',
@@ -105,7 +105,7 @@ const FindUsSection = (): React.ReactElement => {
               </>
             ) : (
               <WrapperHomeInput title="Adicione Seu Endereço" setState={setSeeAddressInput}>
-                <AddressInput />
+                <InputAddress />
               </WrapperHomeInput>
             )}
           </div>
