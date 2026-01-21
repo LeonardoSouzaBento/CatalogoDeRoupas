@@ -1,4 +1,4 @@
-import { iconSm } from '@/css/lucideIconStyles';
+
 import { X } from 'lucide-react';
 
 const css = {

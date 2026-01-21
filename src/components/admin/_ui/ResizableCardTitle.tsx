@@ -1,5 +1,5 @@
 'use client';
-import { iconLg } from '@/css/lucideIconStyles';
+
 import { setReducedHeight } from '@/functions/setReducedHeight';
 import { useResizingCounter } from '@/hooks/useResizingCounter';
 import { BooleanSetter, StateSetter } from '@/types/types';

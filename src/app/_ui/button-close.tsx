@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconMd } from '@/css/lucideIconStyles';
+
 import { BooleanSetter, StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
 

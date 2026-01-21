@@ -4,7 +4,7 @@ import { colorFamilies } from '@/data/clothings/colors';
 import { colorsByFamily } from '@/data/clothings/colors';
 import { StateSetter } from '@/types/types';
 import { ChevronDown, Plus, X } from 'lucide-react';
-import { iconMd } from '@/css/lucideIconStyles';
+
 
 const css = {
   wrapper: `flex flex-col gap-2`,

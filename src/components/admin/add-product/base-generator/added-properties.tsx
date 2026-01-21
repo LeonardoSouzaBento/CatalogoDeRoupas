@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from '@/contexts';
 import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
-import { iconSm } from '@/css/lucideIconStyles';
+
 
 const css = {
   wrapper: `bs p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
