@@ -4,11 +4,11 @@ import { HeaderCard } from '@/app/_ui';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
 import { PhotoGridEditor } from './_photos/photo-grid-editor';
-import CardWrapper from '@/components/ui/card-wrapper';
+import { Card } from '@/components/ui/card';
 
 const Photos = () => {
   return (
-    <CardWrapper>
+    <Card>
       <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 " />
       <PhotoGridEditor />
       <Alert variant="destructive" className="bg-gray-50/50 mb-0">
@@ -19,7 +19,7 @@ const Photos = () => {
           usada por uma pessoa. Assim o cliente se mantêm interessado.
         </AlertDescription>
       </Alert>
-    </CardWrapper>
+    </Card>
   );
 };
 

@@ -1,7 +1,7 @@
 import { HeaderCard } from '@/app/_ui';
 import UserInfo from './components/UserInfo';
 import UserPhoto from './components/UserPhoto';
-import CardWrapper from '@/components/ui/card-wrapper';
+import { Card } from '@/components/ui/card';
 
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
@@ -14,7 +14,7 @@ const css = {
 
 const UserDetail = () => {
   return (
-    <CardWrapper>
+    <Card>
       <HeaderCard title="Usuários" icon="person" />
 
       <div className={``}>
@@ -25,7 +25,7 @@ const UserDetail = () => {
           ))}
         </div>
       </div>
-    </CardWrapper>
+    </Card>
   );
 };
 

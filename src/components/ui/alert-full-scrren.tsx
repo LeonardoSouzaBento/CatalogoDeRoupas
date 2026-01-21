@@ -34,4 +34,4 @@ const AlertFullScrren = ({ text, title, children, setState }: Props) => {
   );
 };
 
-export default AlertFullScrren;
+export { AlertFullScrren };

@@ -1,4 +1,4 @@
-import BackButton from '@/components/ui/back-button';
+import { BackButton } from '@/components/ui/back-button';
 import { Button } from '@/components/ui/button';
 import { CircleCheckBig } from 'lucide-react';
 import { Input } from '@/components/ui';

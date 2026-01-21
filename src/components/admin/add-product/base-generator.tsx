@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '@/contexts';
 import { HeaderCard } from '@/app/_ui';
-import CardWrapper from '@/components/ui/card-wrapper';
+import { Card } from '@/components/ui/card';
 import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
 import { patterns } from '@/data/clothings/patterns';
 import { prints } from '@/data/clothings/prints';
@@ -82,7 +82,7 @@ const BaseGenerator = () => {
   }, [basicInformation.cat, currentGender]);
 
   return (
-    <CardWrapper>
+    <Card>
       <HeaderCard
         wrapperStyles="border-none mb-0!"
         wrapperTitleStyles="gap-[5px]!"
@@ -109,7 +109,7 @@ const BaseGenerator = () => {
         basicInformation={basicInformation}
         setBasicInformation={setBasicInformation}
       />
-    </CardWrapper>
+    </Card>
   );
 };
 

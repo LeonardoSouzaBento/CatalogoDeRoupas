@@ -1,5 +1,5 @@
 import { MyAccountCore } from '@/components/store/my-account-core';
-import { TitlePage } from '@/components/ui/title-page';
+import { TitlePage } from '@/components/ui/page-title';
 import React from 'react';
 
 const css = {

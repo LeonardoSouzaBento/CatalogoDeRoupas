@@ -1,4 +1,4 @@
-import FavoriteButton from '@/components/ui/favorite-button';
+import { FavoriteButton } from '@/components/ui/favorite-button';
 import type { HomeClothing } from '@/types/types';
 import { MainImage } from './MainCardProduct/components/MainImage';
 import ProductInfo from './MainCardProduct/components/ProductInfo';

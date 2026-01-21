@@ -4,7 +4,7 @@ import { HeaderCard } from '@/app/_ui';
 import { QueuerButton } from './_queuer/queuer-button';
 import { QuantitySelector } from './_queuer/quantity-selector';
 import { StateSetter } from '@/types/types';
-import CardWrapper from '@/components/ui/card-wrapper';
+import { Card } from '@/components/ui/card';
 
 interface Props {
   selectedQuantity: number;
@@ -13,7 +13,7 @@ interface Props {
 
 const Queuer = ({ selectedQuantity, setSelectedQuantity }: Props) => {
   return (
-    <CardWrapper>
+    <Card>
       <HeaderCard
         icon="layers"
         title="Enfileirar produtos"
@@ -26,7 +26,7 @@ const Queuer = ({ selectedQuantity, setSelectedQuantity }: Props) => {
         setSelectedQuantity={setSelectedQuantity}
       />
       <QueuerButton selectedQuantity={selectedQuantity} />
-    </CardWrapper>
+    </Card>
   );
 };
 

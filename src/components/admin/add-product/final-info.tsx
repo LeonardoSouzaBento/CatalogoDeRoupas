@@ -1,17 +1,16 @@
-import React from 'react';
-import Description from './components/describe';
-import SizeSelector from './components/sizesSelector';
-import CompositionEditor from './components/composeEditor';
-import { HeaderCard } from '@/app/_ui';
-import CardWrapper from '@/components/ui/card-wrapper';
-import ColorPicker from './components/colorPicker';
-import Price from './components/price';
-import Brand from './components/brand';
-import Differential from './components/differential';
+import { Card, CardHeader, CardTitle, Icon, MuiIcon, WrapperButtons } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
-
-import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
+import React from 'react';
+import {
+  Brand,
+  ColorPicker,
+  CompositionEditor,
+  Description,
+  Differential,
+  Price,
+  SizeSelector,
+} from './final-info/index';
 
 //cores, tamanhos, composição, preço, marca, descrição, diferencial,
 
@@ -29,25 +28,25 @@ const FinalInformations = () => {
   ];
 
   return (
-    <CardWrapper>
-      <HeaderCard
-        wrapperTitleStyles="gap-[5px]!"
-        title="Demais informações"
-        icon="edit_note"
-        iconStyles="font-medium!"
-      />
+    <Card>
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="edit_note" size="h3" />
+          Demais informações
+        </CardTitle>
+      </CardHeader>
 
-      <WrapperButtons styles="bs mb-5">
+      <WrapperButtons className="border mb-5">
         {properties.map((property) => (
           <Button
             key={property}
-            variant="optionList"
-            selected={selectedPropertie === property}
+            variant="ghost"
+            data-selected={selectedPropertie === property}
             onClick={() => {
               setSelectedPropertie(property);
-            }}
-            icon={<ChevronDown />}>
+            }}>
             {property}
+            <Icon LucideIcon={ChevronDown} />
           </Button>
         ))}
       </WrapperButtons>
@@ -63,8 +62,9 @@ const FinalInformations = () => {
           <ColorPicker imageSrc="/shop/photos/female/mainCategories/blusas.png" />
         )}
       </div>
-    </CardWrapper>
+    </Card>
   );
 };
 
 export { FinalInformations };
+

@@ -1,12 +1,12 @@
 import { HeaderCard } from '@/app/_ui';
-import CardWrapper from '@/components/ui/card-wrapper';
+import { Card } from '@/components/ui/card';
 import React from 'react';
 
 const Queue = () => {
   return (
-    <CardWrapper>
+    <Card>
       <HeaderCard title="Fila" icon="layers" iconStyles=" font-medium!" />
-    </CardWrapper>
+    </Card>
   );
 };
 

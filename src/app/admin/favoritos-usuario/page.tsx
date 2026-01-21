@@ -1,7 +1,7 @@
 import HeaderCard from '@/components/ui/HeaderCard';
-import TitlePage from '@/components/ui/title-page';
+import TitlePage from '@/components/ui/page-title';
 import UserDetail from '../../../components/admin/user-favorites/_components/UserDetail/UserDetail';
-import CardWrapper from '@/components/ui/card-wrapper';
+import { Card } from '@/components/ui/card';
 
 const css = {
   mainWrapper: `px-3 pb-6`,
@@ -16,9 +16,9 @@ const page = () => {
       <div className={`${css.mainWrapper}`}>
         <UserDetail />
 
-        <CardWrapper>
+        <Card>
           <HeaderCard title="Favoritos Deste usuário" icon="bookmark_heart" />
-        </CardWrapper>
+        </Card>
       </div>
     </>
   );

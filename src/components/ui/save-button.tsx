@@ -2,7 +2,6 @@
 // Para usar o novo botão: import { Button } from '@/components/ui/button'
 // Exemplo: <Button onClick={handleSave} className="w-full">Salvar<CircleCheckBig /></Button>
 
-/*
 'use client';
 import { CircleCheckBig } from 'lucide-react';
 
@@ -12,14 +11,11 @@ interface Props {
   Function?: () => Promise<void>;
 }
 
-const SaveButton = ({ text = 'Salvar', styles, Function }: Props) => {
+export const SaveButton = ({ text = 'Salvar', styles, Function }: Props) => {
   return (
     <button onClick={Function} className={`w-full ${styles}`}>
       {text}
-      <CircleCheckBig  />
+      <CircleCheckBig />
     </button>
   );
 };
-
-export default SaveButton;
-*/
