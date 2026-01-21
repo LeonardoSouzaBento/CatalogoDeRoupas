@@ -1,7 +1,7 @@
-import HeaderCard from '@/app/_ui/HeaderCard';
+import HeaderCard from '@/components/ui/HeaderCard';
 import TitlePage from '@/components/ui/title-page';
 import UserDetail from '../../../components/admin/user-favorites/_components/UserDetail/UserDetail';
-import CardWrapper from '@/app/_ui/card-wrapper';
+import CardWrapper from '@/components/ui/card-wrapper';
 
 const css = {
   mainWrapper: `px-3 pb-6`,

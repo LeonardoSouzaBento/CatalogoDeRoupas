@@ -22,7 +22,7 @@
     "paths": {
       "@/*": ["*"],
       "@app/*": ["app/*"],
-      "@ui/*": ["app/loja/_ui/*"],
+      "@ui/*": ["components/ui/*"],
       "@shop-components/*": ["components/shop/*"]
     }
   },

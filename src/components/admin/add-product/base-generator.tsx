@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '@/contexts';
 import { HeaderCard } from '@/app/_ui';
-import CardWrapper from '@/app/_ui/card-wrapper';
+import CardWrapper from '@/components/ui/card-wrapper';
 import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
 import { patterns } from '@/data/clothings/patterns';
 import { prints } from '@/data/clothings/prints';

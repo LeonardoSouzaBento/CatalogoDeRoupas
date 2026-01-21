@@ -1,6 +1,6 @@
 import React from 'react';
 import { StateSetter } from '@/types/types';
-import ButtonClose from './button-close';
+import { X } from 'lucide-react';
 
 interface Props {
   text?: string;
@@ -21,7 +21,9 @@ const AlertFullScrren = ({ text, title, children, setState }: Props) => {
   return (
     <div className={`${css.wrapper}`}>
       <div className={`${css.container}`}>
-        <ButtonClose setState={setState} />
+        <button onClick={() => setState(false)}>
+          <X />
+        </button>
         <header className={`${css.header}`}>
           {children}
           <p className={`${css.title}`}>{title}</p>

@@ -1,5 +1,5 @@
 import { HeaderCard } from '@/app/_ui';
-import BackButton from '@/app/_ui/back-button';
+import BackButton from '@/components/ui/back-button';
 import { Button } from '@/components/ui/button';
 import { CircleCheckBig } from 'lucide-react';
 import type { AddressSchema, BooleanSetter } from '@/types/types';

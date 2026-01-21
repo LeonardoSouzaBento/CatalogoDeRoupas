@@ -1,6 +1,6 @@
 import { UserContext } from '@/contexts';
 import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
-import HomeSectionTitle from '@/app/_ui/home-section-title';
+import HomeSectionTitle from '@/components/ui/home-section-title';
 import { useContext, useEffect } from 'react';
 import HomeProduct from '../../../product/home-product';
 

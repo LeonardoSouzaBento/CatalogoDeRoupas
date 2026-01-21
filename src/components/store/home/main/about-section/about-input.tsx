@@ -1,4 +1,6 @@
-import { AlertInfo, ButtonClose } from '@/app/_ui/index';
+import { ButtonClose } from '@/app/_ui/index';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { AlertCircle } from 'lucide-react';
 import { defaultShopInfo } from '@/data/home/publicData';
 import type { ShopInfo } from '@/types/types';
 import { Check, Trash, X } from 'lucide-react';
@@ -21,11 +23,7 @@ type AboutProps = {
   setSeeInput: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const AboutInput = ({
-  shopInfo,
-  setShopInfo,
-  setSeeInput,
-}: AboutProps): React.ReactElement => {
+const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.ReactElement => {
   const [Value, setValue] = useState<string>('');
 
   useEffect(() => {
@@ -34,8 +32,7 @@ const AboutInput = ({
 
   function handleEnterEdit() {
     if (Value.length >= 760 && Value.length <= 1000) {
-      const paragraphs = Value
-        .split(/\r?\n/)
+      const paragraphs = Value.split(/\r?\n/)
         .map((p) => p.trim())
         .filter((p) => p);
 
@@ -60,7 +57,10 @@ const AboutInput = ({
         <h3 className={`${css.h3}`}>Edite o Sobre</h3>
         <ButtonClose setState={setSeeInput} positionStyles="absolute top-3 right-3" />
       </div>
-      <AlertInfo text="Quebre de linha para definir novos paragrafos." />
+      <Alert variant="destructive">
+        <AlertCircle />
+        <AlertDescription>Quebre de linha para definir novos paragrafos.</AlertDescription>
+      </Alert>
       <textarea
         value={Value}
         className={`${css.textarea}`}
@@ -78,15 +78,15 @@ const AboutInput = ({
             setValue('');
           }}>
           {' '}
-          <Trash  size={19} />
+          <Trash size={19} />
           Deletar Todo o Texto
         </button>
         <button className={`${css.buttons} order-3 sm:order-3`}>
-          <Check  />
+          <Check />
           Salvar
         </button>
         <button className={`${css.buttons} order-2 sm:order-2`} onClick={handleDiscardChanges}>
-          <X  />
+          <X />
           Descartar Alterações
         </button>
       </div>

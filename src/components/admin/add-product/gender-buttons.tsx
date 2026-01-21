@@ -1,6 +1,6 @@
 'use client';
 import { HeaderCard } from '@/app/_ui';
-import CardWrapper from '@/app/_ui/card-wrapper';
+import CardWrapper from '@/components/ui/card-wrapper';
 import { UserContext } from '@/contexts';
 import { Genders } from '@/types/types';
 import React, { useContext } from 'react';

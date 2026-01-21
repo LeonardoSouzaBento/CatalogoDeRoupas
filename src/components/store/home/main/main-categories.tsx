@@ -1,5 +1,5 @@
 'use client';
-import HomeSectionTitle from '@/app/_ui/home-section-title';
+import HomeSectionTitle from '@/components/ui/home-section-title';
 import { WrapperInput } from '@/components/store/home/ui/index';
 import { UserContext } from '@/contexts';
 import { HomeContext } from '@/contexts/homeContext';

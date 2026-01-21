@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderCard } from '@/app/_ui';
 import ProductTable from './ProductTable';
-import CardWrapper from '@/app/_ui/card-wrapper';
+import CardWrapper from '@/components/ui/card-wrapper';
 
 const Result = () => {
   return (

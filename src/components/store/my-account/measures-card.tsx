@@ -1,4 +1,3 @@
-import AlertInfo from '@/app/_ui/alert-info';
 import {
   Alert,
   AlertDescription,

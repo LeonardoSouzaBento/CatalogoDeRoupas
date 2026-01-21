@@ -3,7 +3,7 @@ import Description from './components/describe';
 import SizeSelector from './components/sizesSelector';
 import CompositionEditor from './components/composeEditor';
 import { HeaderCard } from '@/app/_ui';
-import CardWrapper from '@/app/_ui/card-wrapper';
+import CardWrapper from '@/components/ui/card-wrapper';
 import ColorPicker from './components/colorPicker';
 import Price from './components/price';
 import Brand from './components/brand';

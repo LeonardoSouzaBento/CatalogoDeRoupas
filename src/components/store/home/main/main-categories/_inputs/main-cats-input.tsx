@@ -1,4 +1,5 @@
-import { AlertInfo } from '@/app/_ui';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { AlertCircle } from 'lucide-react';
 import { HomeContext } from '@/contexts/homeContext';
 import { MainCategory } from '@/types/types';
 import { Eye, EyeClosed, Plus } from 'lucide-react';
@@ -51,10 +52,14 @@ export const MainCatsInput = (): React.ReactElement => {
           <CategoryCard key={index} category={category} />
         ))}
       </div>
-      <AlertInfo
-        text={`Prefira definir um número par de categorias para evitar 
-        espaços vazios no site que é visto no tablet ou no computador, pois nesses dispositivos as categorias ficam dispostas numa grade de duas colunas.`}
-      />
+      <Alert variant="destructive">
+        <AlertCircle />
+        <AlertDescription>
+          Prefira definir um número par de categorias para evitar espaços vazios no site que é visto
+          no tablet ou no computador, pois nesses dispositivos as categorias ficam dispostas numa
+          grade de duas colunas.
+        </AlertDescription>
+      </Alert>
       <button className="mb-5">
         Adicionar Nova Categoria Principal
         <Plus />
