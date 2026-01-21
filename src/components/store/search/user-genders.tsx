@@ -1,24 +1,20 @@
-"use client";
-import { UserContext } from "@/contexts";
-import { BooleanSetter, Genders, StateSetter } from "@/types/types";
-import { useContext } from "react";
+'use client';
+import { UserContext } from '@/contexts';
+import { BooleanSetter, Genders, StateSetter } from '@/types/types';
+import { useContext } from 'react';
 
 const mainCss = {
   wrapper: `br-0 py-6`,
-  wrapperGenders: "flex flex-wrap gap-4",
+  wrapperGenders: 'flex flex-wrap gap-4',
   selected: `bs bg-white hover:shadow-sm hover:bg-white `,
   button: `h-10 max-[375px]:min-w-1/2 min-[375px]:min-w-none flex-center bg-gray-50 hover:bg-gray-100 font-normal`,
 };
 
-const genders: Genders[] = ["masculino", "feminino"];
+const genders: Genders[] = ['masculino', 'feminino'];
 
-const UserGenders = () => {
-  const {
-    selectedGender,
-    setSelectedGender,
-    childCatSelected,
-    setChildCatSelected,
-  } = useContext(UserContext);
+export const UserGenders = () => {
+  const { selectedGender, setSelectedGender, childCatSelected, setChildCatSelected } =
+    useContext(UserContext);
 
   return (
     <div className={`px-2`}>
@@ -48,8 +44,7 @@ const UserGenders = () => {
   );
 };
 
-export default UserGenders;
-
+/* botões masculino e feminino */
 interface ButtonsProps {
   selectedGender: Genders;
   setSelectedGender: StateSetter<Genders>;
@@ -80,21 +75,21 @@ const GenderButton = ({
           setChildCatSelected(false);
         }
       }}
-      className={`${mainCss.button} ${selected && mainCss.selected}`}
-    >
+      className={`${mainCss.button} ${selected && mainCss.selected}`}>
       <p className={`5`}>{gender}</p>
     </button>
   );
 };
 
+/* botões infantil */
 const ChildButtons = ({
   selectedGender,
   setSelectedGender,
   childCatSelected,
   setChildCatSelected,
 }: ButtonsProps) => {
-  const femaleSelected = selectedGender === "feminino" && childCatSelected;
-  const maleSelected = selectedGender === "masculino" && childCatSelected;
+  const femaleSelected = selectedGender === 'feminino' && childCatSelected;
+  const maleSelected = selectedGender === 'masculino' && childCatSelected;
 
   function handleSelectGender(gender: Genders) {
     if (selectedGender !== gender) {
@@ -110,20 +105,17 @@ const ChildButtons = ({
       <button
         className={`${mainCss.button} ${maleSelected && mainCss.selected} text-gray-800`}
         onClick={() => {
-          handleSelectGender("masculino");
-        }}
-      >
-         Infantil - masculino
+          handleSelectGender('masculino');
+        }}>
+        Infantil - masculino
       </button>
       <button
         className={`${mainCss.button} ${femaleSelected && mainCss.selected} text-gray-800`}
         onClick={() => {
-          handleSelectGender("feminino");
-        }}
-      >
+          handleSelectGender('feminino');
+        }}>
         Intantil - feminino
       </button>
     </>
   );
 };
-

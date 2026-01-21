@@ -49,12 +49,12 @@ Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
 
 Get-ChildItem -Path . -Filter *.tsx -Recurse | ForEach-Object {
     (Get-Content $_.FullName) `
-        -replace '@contexts', '@/contexts' `
-        -replace '@hooks', '@/hooks' `
-        -replace '@ui', '@/ui' `
-        -replace '@hooks', '@/hooks' `
-        -replace '@providers', '@/providers' `
-        -replace '@localtypes', '@/localtypes' | 
+        -replace 'import { iconXs } from '@/css/lucideIconStyles';', '' `
+        -replace 'import { iconSm } from '@/css/lucideIconStyles';', '' `
+        -replace 'import { iconMd } from '@/css/lucideIconStyles';', '' `
+        -replace 'import { iconLg } from '@/css/lucideIconStyles';', '' `
+        -replace 'import { iconXl } from '@/css/lucideIconStyles';', '' `
+        -replace 'import { icon2xl } from '@/css/lucideIconStyles';', '' `
     Set-Content $_.FullName
 }
 

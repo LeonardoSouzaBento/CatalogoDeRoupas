@@ -7,7 +7,7 @@ const css = {
   wrapperSuggestions: `h-max grid grid-cols-2 grid-rows-4 sm:grid-cols-3 sm:grid-rows-3 gap-3`,
 };
 
-const Suggestions = () => {
+export const Suggestions = () => {
   const { selectedGender } = useContext(UserContext);
   const suggestions =
     selectedGender === "masculino"
@@ -26,7 +26,6 @@ const Suggestions = () => {
   );
 };
 
-export default Suggestions;
 
 const Button = ({ item }: { item: string }) => {
   const [selected, setSelected] = useState<boolean>(false);

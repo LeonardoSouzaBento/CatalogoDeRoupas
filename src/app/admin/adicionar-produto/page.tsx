@@ -1,5 +1,5 @@
 import { AlertInfo, TitlePage } from '@/app/_ui';
-import Tutorial from '../_ui/Tutorial';
+import Tutorial from '../../../components/admin/_ui/Tutorial';
 import Core from './Core';
 
 // const specificProperties = [

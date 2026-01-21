@@ -1,4 +1,4 @@
-Get-ChildItem -Path "C:\Users\souza\Desktop\repositorios-publicos\catálogo-de-roupas\src\components\shop\home\main\main-categories\Inputs" -File | Rename-Item -NewName {
+Get-ChildItem -Path "C:\Users\souza\Desktop\repositorios-publicos\catálogo-de-roupas\src\components\admin\add-product\_photos\photo-grid-editor" -File | Rename-Item -NewName {
     # 1. Captura o nome sem extensão
     $newName = $_.BaseName
     

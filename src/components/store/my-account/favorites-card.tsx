@@ -1,16 +1,14 @@
-import { HeaderCard } from '../../../_ui';
+import { Card, CardHeader, CardTitle, MuiIcon } from '@/components/ui';
 
-const FavoritesCard = () => {
+export const FavoritesCard = () => {
   return (
-    <>
-      <HeaderCard
-        title="Meus favoritos"
-        titleStyles="-ml-[2.5px]"
-        icon="bookmark_heart"
-        iconStyles=" -ml-2.5"
-      />
-    </>
+    <Card>
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="bookmark_heart" size="h3" fill={1} className="-ml-2.5" />
+          Meus favoritos
+        </CardTitle>
+      </CardHeader>
+    </Card>
   );
 };
-
-export default FavoritesCard;

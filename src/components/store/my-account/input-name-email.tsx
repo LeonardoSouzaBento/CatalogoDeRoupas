@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { iconMd } from '@/css/lucideIconStyles';
-import { Check, Upload } from 'lucide-react';
+import { Upload } from 'lucide-react';
 import { validateName } from '@/functions/validateName';
 import { validateEmail } from '@/functions/validateEmail';
 import Image from 'next/image';
@@ -8,12 +7,13 @@ import { ButtonClose, HeaderCard } from '@/app/_ui';
 import { BooleanSetter } from '@/types/types';
 import { UserContext } from '@/contexts';
 import SaveButton from '@/app/_ui/SaveButton';
+import { Input, Label } from '@/components/ui';
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
 };
 
-const NameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
+export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
   const { userData } = useContext(UserContext);
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -53,10 +53,10 @@ const NameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
 
       {/* nome */}
       <div>
-        <label htmlFor="name" className="mb-2">
+        <Label htmlFor="name" className="mb-2">
           Nome
-        </label>
-        <
+        </Label>
+        <Input
           id="name"
           type="text"
           value={name}
@@ -69,10 +69,10 @@ const NameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
       {nameErrors && <p className={`${css.pError}`}>{nameErrors}</p>}
       {/* email */}
       <div>
-        <label htmlFor="email" className="mb-2">
+        <Label htmlFor="email" className="mb-2">
           Email
-        </label>
-        <
+        </Label>
+        <Input
           type="email"
           id="email"
           placeholder={userData.email}
@@ -87,5 +87,3 @@ const NameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
     </div>
   );
 };
-
-export default NameEmail;

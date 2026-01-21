@@ -1,8 +1,16 @@
 import AlertInfo from '@/app/_ui/alert-info';
-import HeaderCard from '@/app/_ui/HeaderCard';
-import { iconMd, iconSm } from '@/css/lucideIconStyles';
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  Button,
+  CardHeader,
+  CardTitle,
+  Icon,
+  MuiIcon,
+} from '@/components/ui';
 import { UserData } from '@/types/types';
-import { CircleQuestionMark, Pen } from 'lucide-react';
+import { CircleQuestionMark, Info, Pen } from 'lucide-react';
 import React from 'react';
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
@@ -12,7 +20,7 @@ const css = {
   border max-[375px]:border-b-transparent! mb-5 br-md crop`,
 };
 
-const MeasuresCard = ({ userData }: { userData: UserData }) => {
+export const MeasuresCard = ({ userData }: { userData: UserData }) => {
   const measuresData: Measure[] = [
     { type: 'Camisa', value: userData.camisa },
     { type: 'Calça', value: userData.calça },
@@ -21,8 +29,19 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
 
   return (
     <>
-      <HeaderCard title="Minhas medidas" icon="square_foot" iconStyles="mb-[1.5px] " />
-      <AlertInfo text="Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho" />
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="square_foot" size="h3" fill={1} className="-ml-2.5" />
+          Minhas medidas
+        </CardTitle>
+      </CardHeader>
+      <Alert>
+        <Icon LucideIcon={Info} className="-ml-2.5" />
+        <AlertTitle>Recomendação</AlertTitle>
+        <AlertDescription>
+          Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu tamanho
+        </AlertDescription>
+      </Alert>
       <table className="w-full">
         <tbody className={`${css.wrapper}`}>
           {measuresData.map((measure, index) => (
@@ -30,18 +49,17 @@ const MeasuresCard = ({ userData }: { userData: UserData }) => {
           ))}
         </tbody>
       </table>
-      <button className="button max-[375px]:text-left mb-5 w-full">
-        <CircleQuestionMark  />
+      <Button className="button max-[375px]:text-left mb-5 w-full">
+        <Icon LucideIcon={CircleQuestionMark} size="h3" className="-ml-2.5" />
         Ver Guia De Medidas
-      </button>
-      <button className="button max-[375px]:text-left w-full">
-        <Pen  /> Atualizar Minhas Medidas
-      </button>
+      </Button>
+      <Button className="button max-[375px]:text-left w-full">
+        <Icon LucideIcon={Pen} size="h3" className="-ml-2.5" />
+        Atualizar Minhas Medidas
+      </Button>
     </>
   );
 };
-
-export default MeasuresCard;
 
 /* measure item */
 interface Measure {

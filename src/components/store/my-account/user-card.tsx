@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { UserData } from "@/types/types";
-import NameEmail from "./-name-email";
+import { InputNameEmail } from "./input-name-email";
 import EditButton from "./edit-button";
+import { Card } from "@/components/ui";
 
 //min-[500px]:flex-row min-[500px]:gap-4
 
@@ -12,17 +13,17 @@ const css = {
   img: "!border-none !outline-none",
   wrapperInfo:
     "max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2",
-  name: `block font-bold break-words text-gray-800 capitalize leading-none `,
-  email: "block  leading-none break-all",
+  name: `block break-words capitalize leading-none`,
+  email: "block leading-none break-all",
   buttonEdit: " p-0 br-md ",
 };
 
 
-const UserCard = ({ userData }: { userData: UserData }) => {
+export const UserCard = ({ userData }: { userData: UserData }) => {
   const [seeEditMode, setSeeEditMode] = useState<boolean>(false);
 
   return (
-    <>
+    <Card>
       {!seeEditMode ? (
         <div className="h-max flex flex-col gap-4">
           <div className={`${css.wrapper} justify-between`}>
@@ -37,7 +38,7 @@ const UserCard = ({ userData }: { userData: UserData }) => {
             <div
               className={`min-[430px]:hidden h-16 flex items-center justify-center`}
             >
-              <p className={`${css.name}`}>{userData.name}</p>
+              <h3 className={`${css.name}`}>{userData.name}</h3>
             </div>
             <EditButton setSeeEditMode={setSeeEditMode}/>
           </div>
@@ -47,10 +48,8 @@ const UserCard = ({ userData }: { userData: UserData }) => {
           </p>
         </div>
       ) : (
-        <NameEmail setSeeEditMode={setSeeEditMode} />
+        <InputNameEmail setSeeEditMode={setSeeEditMode} />
       )}
-    </>
+    </Card>
   );
 };
-
-export default UserCard;

@@ -1,17 +1,14 @@
 'use client';
-import React from 'react';
-import { iconMd } from '@/css/lucideIconStyles';
+import { Button, CustomLink, Icon } from '@/components/ui';
 import { X } from 'lucide-react';
-import Link from 'next/link';
 
 const css = {
   wrapper: `h-14 px-5 mb-5 box-content flex items-center j-between br-0 
   bg-gradient-to-r from-stone-800 to-stone-700`,
   pLogo: 'leading-none font-logo text-white text-stone-800 ',
-  button: 'h-9 w-9 p-0 flex-center br-md bg-stone-600/38 hover:bg-stone-600/76 trans',
 };
 
-const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) => {
+export const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) => {
   return (
     <div className={`${css.wrapper}`}>
       <div className="h-13 w-max flex-center">
@@ -19,12 +16,11 @@ const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) => {
       </div>
 
       {seeButtonClose && (
-        <Link className={`${css.button} `} href={'/loja'}>
-          <X  />
-        </Link>
+        <Button variant={'transparent'} size="icon">
+          <Icon LucideIcon={X} />
+          <CustomLink link={'/loja'} />
+        </Button>
       )}
     </div>
   );
 };
-
-export default Header;
