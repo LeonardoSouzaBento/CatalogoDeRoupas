@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from '@/app/_ui/button';
+import { Button } from '@/components/ui/button';
 import { colorFamilies } from '@/data/clothings/colors';
 import { colorsByFamily } from '@/data/clothings/colors';
 import { StateSetter } from '@/types/types';
 import { ChevronDown, Plus, X } from 'lucide-react';
-
+import { Input } from '@/components/ui';
 
 const css = {
   wrapper: `flex flex-col gap-2`,
@@ -22,17 +22,16 @@ const ColorOptions = () => {
       <ColorFamilySelector selectedFamily={selectedFamily} setSelectedFamily={setSelectedFamily} />
       {selectedFamily && <ColorList selectedFamily={selectedFamily} />}
 
-      <Button onClick={() => setShowColor(!showColor)} icon={<Plus  />}>
+      <Button onClick={() => setShowColor(!showColor)}>
         Quero outra cor
+        <Plus />
       </Button>
-      {showColor && (
-        <Color selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
-      )}
+      {showColor && <Color selectedColor={selectedColor} setSelectedColor={setSelectedColor} />}
     </div>
   );
 };
 
-export default ColorOptions;
+export { ColorOptions };
 
 /* ---------- ColorGroups ---------- */
 interface ColorFamilySelectorProps {
@@ -55,15 +54,12 @@ const ColorFamilySelector = ({ selectedFamily, setSelectedFamily }: ColorFamilyS
         <Button
           key={family.id}
           onClick={() => handleSelectFamily(family.id)}
-          styles={`${selectedFamily === family.id ? 'flex' : 'hidden'}`}
-          icon="">
+          className={selectedFamily === family.id ? 'flex' : 'hidden'}>
           <h3>{family.name}</h3>
-
-          <ChevronDown  className={`shrink-0`} />
-
+          <ChevronDown className="shrink-0" />
           {selectedFamily === family.id && (
             <div onClick={() => setSelectedFamily('')}>
-              <X  />
+              <X />
             </div>
           )}
         </Button>
@@ -101,8 +97,8 @@ const ColorList = ({ selectedFamily }: { selectedFamily: string }) => {
                 onClick={() => setSelectedColor(color.code)}></div>
               <p className={`${css.name} ${isSelected ? 'font-medium' : ''}`}>{color.name}</p>
             </div>
-            <Button onClick={() => setSelectedColor('')} squareOrCircular>
-              <X  />
+            <Button onClick={() => setSelectedColor('')} size="icon" variant="ghost">
+              <X />
             </Button>
           </div>
         );
@@ -126,7 +122,7 @@ const Color = ({
   return (
     <div className={css.wrapper}>
       <label htmlFor="colorName">Escolha a da cor</label>
-      < type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
+      <Input type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
       <Button onClick={() => {}}>Adicionar</Button>
     </div>
   );

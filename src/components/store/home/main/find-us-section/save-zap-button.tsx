@@ -1,4 +1,5 @@
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import { StateSetter } from '@/types/types';
 
 function validateWhatsapp(number: string) {
@@ -48,6 +49,11 @@ const SaveZapButton = ({
     }
   }
 
-  return <SaveButton text="Salvar Whatsapp" Function={handleSave} />;
+  return (
+    <Button onClick={handleSave} className="w-full">
+      Salvar Whatsapp
+      <CircleCheckBig />
+    </Button>
+  );
 };
 export default SaveZapButton;

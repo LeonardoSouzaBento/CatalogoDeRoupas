@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const css = {
   button: ` br-50 relative  gap-0 font-normal pl-5 
@@ -10,11 +10,7 @@ const css = {
 };
 
 const properties = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default properties;
+export { properties };

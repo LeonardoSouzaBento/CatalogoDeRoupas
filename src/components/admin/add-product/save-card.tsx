@@ -1,5 +1,5 @@
 import React from 'react';
-import SaveProductButton from './result/save-product-button';
+import { SaveProductButton } from './result/save-product-button';
 import { HeaderCard } from '@/app/_ui';
 
 const css = { wrapper: `card-styles`, p: ``, button: `` };
@@ -13,4 +13,4 @@ const SaveCard = () => {
   );
 };
 
-export default SaveCard;
+export { SaveCard };

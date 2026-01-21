@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const css = {
   wrapper: `flex flex-col`,
@@ -13,4 +13,4 @@ const Description = () => {
   );
 };
 
-export default Description;
+export { Description };

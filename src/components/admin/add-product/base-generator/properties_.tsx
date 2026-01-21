@@ -2,7 +2,7 @@
 import { ChevronDown } from 'lucide-react';
 
 import { ClothingProperty, StateSetter } from '@/types/types';
-import Button from '@/app/_ui/button';
+import { Button } from '@/components/ui/button';
 import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
 
 const css = {
@@ -27,17 +27,16 @@ const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
       {properties.slice(0, -1).map((item) => (
         <Button
           key={item.name}
-          variant="optionList"
-          selected={propSelected === item.name}
+          variant={propSelected === item.name ? 'default' : 'outline'}
           onClick={() => {
             setPropSelected(item.name);
-          }}
-          icon={<ChevronDown  />}>
+          }}>
           {item.name}
+          <ChevronDown />
         </Button>
       ))}
     </WrapperButtons>
   );
 };
 
-export default Properties;
+export { Properties };

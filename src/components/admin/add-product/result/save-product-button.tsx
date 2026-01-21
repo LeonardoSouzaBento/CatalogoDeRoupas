@@ -1,7 +1,13 @@
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 
 const SaveProductButton = () => {
-  return <SaveButton text="Salvar produto no catálogo" styles="mt-5" />;
+  return (
+    <Button className="w-full mt-5">
+      Salvar produto no catálogo
+      <CircleCheckBig />
+    </Button>
+  );
 };
 
-export default SaveProductButton;
+export { SaveProductButton };

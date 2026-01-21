@@ -1,5 +1,6 @@
 import BackButton from '@/app/_ui/back-button';
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import { Input } from '@/components/ui';
 import { BooleanSetter, MainCategory } from '@/types/types';
 import { Upload } from 'lucide-react';
@@ -41,7 +42,7 @@ const CardEditMode = ({
         <label className={`${css.label}`} htmlFor={category.name}>
           1 - Nome da categoria:
         </label>
-        < Input
+        <Input
           type="text"
           id={category.name}
           name={category.name}
@@ -64,7 +65,7 @@ const CardEditMode = ({
           </div>
           <button className="mb-1  min-[440px]:mb-0 sm:mb-1 md:mb-0">
             <div className="h-full min-w-8 flex-center">
-              <Upload  />
+              <Upload />
             </div>
             Nova Imagem
           </button>
@@ -82,7 +83,10 @@ const CardEditMode = ({
           placeholder="Digite aqui"
         />
       </div>
-      <SaveButton text="salvar alterações" Function={handleSaveCat} styles="mb-1" />
+      <Button onClick={handleSaveCat} className="w-full mb-1">
+        salvar alterações
+        <CircleCheckBig />
+      </Button>
       <BackButton setState={setCardEditMode} />
     </div>
   );

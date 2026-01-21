@@ -3,7 +3,6 @@ import { UserContext } from '@/contexts';
 import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
 
-
 const css = {
   wrapper: `bs p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
@@ -58,7 +57,7 @@ const AddedProperties = ({
                 {item.label}: <strong className={css.strong}>{item.value}</strong>
               </span>
               <button className={`${css.button}`} onClick={() => clearValue(item.label)}>
-                <X  />
+                <X />
               </button>
             </div>
           ),
@@ -67,4 +66,4 @@ const AddedProperties = ({
   );
 };
 
-export default AddedProperties;
+export { AddedProperties };

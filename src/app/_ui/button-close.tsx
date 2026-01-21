@@ -1,3 +1,9 @@
+// ARQUIVO COMENTADO - Substituído pelo Button do shadcn UI em @/components/ui/button
+// Este componente não tinha usages ativos no código
+// Para criar um botão de fechar: import { Button } from '@/components/ui/button'
+// Exemplo: <Button size="icon" variant="ghost" onClick={() => setState(false)}><X /></Button>
+
+/*
 import React from 'react';
 
 import { BooleanSetter, StateSetter } from '@/types/types';
@@ -17,7 +23,6 @@ interface ButtonCloseProps {
   simpleDesign?: boolean;
   styles?: string;
   iconStyles?: object;
-  /* para animações */
   delay?: number;
   setStateAnimation?: StateSetter<boolean>;
 }
@@ -54,3 +59,4 @@ const ButtonClose = ({
 };
 
 export default ButtonClose;
+*/

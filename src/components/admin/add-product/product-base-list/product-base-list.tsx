@@ -4,8 +4,8 @@ import { UserContext } from '@/contexts/userContext';
 import { basicMaleClothes } from '@/data/clothings/basicMaleClothes';
 import { basicFemaleClothes } from '@/data/clothings/basicFemaleClothes';
 import { useContext, useState } from 'react';
-import Description from './description_';
-import BaseClothingOptions from './base-clothing-options';
+import { Description } from './description_';
+import { BaseClothingOptions } from './base-clothing-options';
 import { ResizableDivTitle } from '@/app/admin/_ui/ResizableCardTitle';
 
 const css = {
@@ -50,4 +50,4 @@ const ProductBasesList = () => {
   );
 };
 
-export default ProductBasesList;
+export { ProductBasesList };

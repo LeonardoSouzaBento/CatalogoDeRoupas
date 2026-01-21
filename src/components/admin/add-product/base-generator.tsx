@@ -7,9 +7,9 @@ import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
 import { patterns } from '@/data/clothings/patterns';
 import { prints } from '@/data/clothings/prints';
 import { BasicClothingInformation, ClothingProperty, Genders } from '@/types/types';
-import AddedProperties from './base-generator/added-properties';
-import Properties from './base-generator/properties_';
-import PropertyOptions from './base-generator/property-options';
+import { AddedProperties } from './base-generator/added-properties';
+import { Properties } from './base-generator/properties_';
+import { PropertyOptions } from './base-generator/property-options';
 import { modelings } from '@/data/clothings/modelings';
 
 const BaseGenerator = () => {
@@ -113,4 +113,4 @@ const BaseGenerator = () => {
   );
 };
 
-export default BaseGenerator;
+export { BaseGenerator };

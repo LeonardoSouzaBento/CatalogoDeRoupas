@@ -1,6 +1,7 @@
 import { HeaderCard } from '@/app/_ui';
 import BackButton from '@/app/_ui/back-button';
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import type { AddressSchema, BooleanSetter } from '@/types/types';
 import React, { useEffect, useState } from 'react';
 
@@ -120,7 +121,10 @@ const AddressForm = ({
         </form>
       </div>
 
-      <SaveButton text="Salvar endereço" Function={handleSaveAddress} styles="mb-5" />
+      <Button onClick={handleSaveAddress} className="w-full mb-5">
+        Salvar endereço
+        <CircleCheckBig />
+      </Button>
 
       <BackButton setState={setSeeAddresForm} />
     </>

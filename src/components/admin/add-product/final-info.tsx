@@ -8,7 +8,7 @@ import ColorPicker from './components/colorPicker';
 import Price from './components/price';
 import Brand from './components/brand';
 import Differential from './components/differential';
-import Button from '@/app/_ui/button';
+import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
 import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
@@ -46,7 +46,7 @@ const FinalInformations = () => {
             onClick={() => {
               setSelectedPropertie(property);
             }}
-            icon={<ChevronDown  />}>
+            icon={<ChevronDown />}>
             {property}
           </Button>
         ))}
@@ -67,4 +67,4 @@ const FinalInformations = () => {
   );
 };
 
-export default FinalInformations;
+export { FinalInformations };

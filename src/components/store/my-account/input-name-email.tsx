@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { ButtonClose, HeaderCard } from '@/app/_ui';
 import { BooleanSetter } from '@/types/types';
 import { UserContext } from '@/contexts';
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import { Input, Label } from '@/components/ui';
 
 const css = {
@@ -47,7 +48,7 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
         </div>
         <button className="w-full  trans">
           Subir nova imagem
-          <Upload  />
+          <Upload />
         </button>
       </div>
 
@@ -83,7 +84,10 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
         />
       </div>
       {emailErrors && <p className={`${css.pError}`}>{emailErrors}</p>}
-      <SaveButton text="Salvar Alterações" Function={handleSaveNameEmail} styles="mt-1" />
+      <Button onClick={handleSaveNameEmail} className="w-full mt-1">
+        Salvar Alterações
+        <CircleCheckBig />
+      </Button>
     </div>
   );
 };

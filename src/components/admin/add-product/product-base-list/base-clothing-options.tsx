@@ -40,7 +40,7 @@ const BaseClothingOptions = ({ clothes, selectedName, setSelectedName }: ButtonP
               className={`${css.buttonDelete} ${
                 selected ? 'flex opacity-100' : 'opacity-0! hidden!'
               }`}>
-              <X  strokeWidth={2.3} />
+              <X strokeWidth={2.3} />
             </span>
           </button>
         );
@@ -49,4 +49,4 @@ const BaseClothingOptions = ({ clothes, selectedName, setSelectedName }: ButtonP
   );
 };
 
-export default BaseClothingOptions;
+export { BaseClothingOptions };

@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext, useState } from 'react';
-import Button from '@/app/_ui/button';
+import { Button } from '@/components/ui/button';
 
 import { Eye } from 'lucide-react';
 import { UserContext } from '@/contexts';
@@ -24,25 +24,25 @@ const SizeSelector = () => {
       <Button
         onClick={() => {
           setSeeNumericalSizes(!seeNumericalSizes);
-        }}
-        icon={<Eye  />}>
+        }}>
         Ver medidas numéricas
+        <Eye />
       </Button>
 
       {childCatSelected && (
         <Button
           onClick={() => {
             setSeeNumericalSizes(!seeNumericalSizes);
-          }}
-          icon={<Eye  />}>
+          }}>
           Ver medidas numéricas infantis
+          <Eye />
         </Button>
       )}
     </div>
   );
 };
 
-export default SizeSelector;
+export { SizeSelector };
 
 interface Props {
   dataList: string[] | number[];

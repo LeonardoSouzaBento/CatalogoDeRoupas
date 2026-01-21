@@ -9,5 +9,5 @@ const Name = () => {
   );
 };
 
-export default Name;
+export { Name };
 

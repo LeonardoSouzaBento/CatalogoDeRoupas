@@ -1,5 +1,6 @@
 import { HeaderCard } from '@/app/_ui';
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import { Shopkeeper } from '@/types/types';
 import React, { useState } from 'react';
 
@@ -113,7 +114,10 @@ const PersonalForm = () => {
           </div>
         ))}
       </form>
-      <SaveButton Function={handleSaveShopkeeper} styles="justify-center" />
+      <Button onClick={handleSaveShopkeeper} className="w-full justify-center">
+        Salvar
+        <CircleCheckBig />
+      </Button>
     </div>
   );
 };

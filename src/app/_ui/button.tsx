@@ -1,3 +1,7 @@
+// ARQUIVO COMENTADO - Substituído pelo Button do shadcn UI em @/components/ui/button
+// Para usar o novo botão: import { Button } from '@/components/ui/button'
+
+/*
 import React, { ReactNode } from "react";
 
 interface Props {
@@ -76,3 +80,4 @@ export const Button = ({
 };
 
 export default Button;
+*/

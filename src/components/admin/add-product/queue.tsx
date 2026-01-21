@@ -10,4 +10,4 @@ const Queue = () => {
   );
 };
 
-export default Queue;
+export { Queue };

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface Field {
   key: string;
@@ -21,24 +21,20 @@ const css = {
 
 function TablePart({ items, fields, wrapperClass }: Props) {
   return (
-    <div className={`${css.wrapper} ${wrapperClass ?? ""}`}>
+    <div className={`${css.wrapper} ${wrapperClass ?? ''}`}>
       {items.map((item, i) =>
         fields.map((f) => (
           <div key={f.key + i} className={css.row}>
             <span className={css.label}>{f.label}</span>
 
-            <span
-              className={`${css.value} ${
-                !item[f.key] && "font-light text-gray-300!"
-              }`}
-            >
-              {item[f.key] || "——"}
+            <span className={`${css.value} ${!item[f.key] && 'font-light text-gray-300!'}`}>
+              {item[f.key] || '——'}
             </span>
           </div>
-        ))
+        )),
       )}
     </div>
   );
 }
 
-export default TablePart;
+export { TablePart };

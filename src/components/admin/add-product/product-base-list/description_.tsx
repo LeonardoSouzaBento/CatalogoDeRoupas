@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 const css = {
   wrapperDesc: `bs p-5 pt-4 pb-5`,
@@ -11,7 +11,7 @@ interface DescriptionProps {
 const Description = ({ selectedName }: DescriptionProps) => {
   const [firstPart, restPart] = selectedName
     ? selectedName.split(/–(.+)/).map((s) => s.trim())
-    : ["", ""];
+    : ['', ''];
 
   return (
     <div className={css.wrapperDesc}>
@@ -22,13 +22,11 @@ const Description = ({ selectedName }: DescriptionProps) => {
             {firstPart} - {restPart}
           </>
         ) : (
-          <strong className="font-normal">
-            Selecione um item caso queira
-          </strong>
+          <strong className="font-normal">Selecione um item caso queira</strong>
         )}
       </p>
     </div>
   );
 };
 
-export default Description;
+export { Description };

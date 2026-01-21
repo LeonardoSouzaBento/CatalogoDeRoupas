@@ -1,4 +1,4 @@
-import Button from '@/app/_ui/button';
+import { Button } from '@/components/ui/button';
 import { ColorDisplayProps } from './types';
 
 export function ColorDisplay({ color, onCapture }: ColorDisplayProps) {

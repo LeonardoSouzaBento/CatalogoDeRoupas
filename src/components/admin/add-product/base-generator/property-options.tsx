@@ -1,7 +1,7 @@
-"use client";
-import { useEffect, useState } from "react";
-import { BasicClothingInformation, mappingPropToKey } from "@/types/types";
-import WrapperOptions from "@/app/admin/_ui/wrapper-options";
+'use client';
+import { useEffect, useState } from 'react';
+import { BasicClothingInformation, mappingPropToKey } from '@/types/types';
+import WrapperOptions from '@/app/admin/_ui/wrapper-options';
 
 const css = {
   container: `p-5 border bg-white border-b-transparent rounded-br-none rounded-bl-none`,
@@ -38,7 +38,7 @@ const PropertyOptions = ({
   // converte o nome mostrado no botão para a chave do estado
   const key = propSelected ? mappingPropToKey[propSelected] : undefined;
 
-  const [options, setOptions] = useState<string[]>([""]);
+  const [options, setOptions] = useState<string[]>(['']);
 
   useEffect(() => {
     if (propSelected) {
@@ -56,26 +56,21 @@ const PropertyOptions = ({
       <div className={css.wrapperOptions}>
         {options.map((option) => {
           const isSelected =
-            key &&
-            basicInformation[key]?.toString().toLowerCase() ===
-              option.toLowerCase();
+            key && basicInformation[key]?.toString().toLowerCase() === option.toLowerCase();
 
           return (
             <button
               key={option}
               className={`
                   ${css.optionButton}
-                  ${isSelected ? css.optionSelected : ""}
+                  ${isSelected ? css.optionSelected : ''}
                 `}
-              onClick={() =>
-                propSelected && handleSelectOption(propSelected, option)
-              }
-            >
+              onClick={() => propSelected && handleSelectOption(propSelected, option)}>
               {option}
             </button>
           );
         })}
-        {propSelected === "Subcategoria" && options.length === 0 && (
+        {propSelected === 'Subcategoria' && options.length === 0 && (
           <p>Selecione uma categoria primeiro.</p>
         )}
       </div>
@@ -83,4 +78,4 @@ const PropertyOptions = ({
   );
 };
 
-export default PropertyOptions;
+export { PropertyOptions };

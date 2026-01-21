@@ -38,4 +38,4 @@ const GenderButtons = () => {
   );
 };
 
-export default GenderButtons;
+export { GenderButtons };

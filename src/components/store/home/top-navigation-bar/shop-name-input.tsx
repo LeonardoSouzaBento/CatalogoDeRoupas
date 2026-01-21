@@ -1,5 +1,6 @@
 import { ButtonClose } from '@/app/_ui';
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import { Input } from '@/components/ui';
 import { PublicDataContext } from '@/contexts/publicDataContext';
 import React, { useContext, useState } from 'react';
@@ -43,7 +44,10 @@ const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
           onChange={(e) => setValue(e.target.value)}
         />
 
-        <SaveButton Function={handleEdit} />
+        <Button onClick={handleEdit} className="w-full">
+          Salvar
+          <CircleCheckBig />
+        </Button>
       </div>
     </div>
   );

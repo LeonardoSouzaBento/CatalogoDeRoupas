@@ -1,20 +1,16 @@
-import React, { useRef, useState, useEffect } from "react";
-import { ImageCanvas } from "./color-picker/ImageCanvas";
-import { ColorFunnel } from "./color-picker/ColorFunnel";
-import { ColorDisplay } from "./color-picker/ColorDisplay";
-import { rgbToHex } from "./color-picker/utils";
-import type { ColorPickerProps } from "./color-picker/types";
+import React, { useRef, useState, useEffect } from 'react';
+import { ImageCanvas } from './color-picker/ImageCanvas';
+import { ColorFunnel } from './color-picker/ColorFunnel';
+import { ColorDisplay } from './color-picker/ColorDisplay';
+import { rgbToHex } from './color-picker/utils';
+import type { ColorPickerProps } from './color-picker/types';
 
-
-export default function ColorPicker({
-  imageSrc,
-  funnelSize = 80,
-}: ColorPickerProps) {
+export function ColorPicker({ imageSrc, funnelSize = 80 }: ColorPickerProps) {
   const imgRef = useRef<HTMLImageElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [pickedColor, setPickedColor] = useState<string>("#ffffff");
+  const [pickedColor, setPickedColor] = useState<string>('#ffffff');
   const [dragging, setDragging] = useState(false);
   const [position, setPosition] = useState({ x: 100, y: 100 });
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -26,7 +22,7 @@ export default function ColorPicker({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Calcula a posição da ponta do triângulo (funil)
@@ -42,7 +38,7 @@ export default function ColorPicker({
       const hex = rgbToHex(data[0], data[1], data[2]);
       setPickedColor(hex);
     } catch (error) {
-      console.error("Erro ao capturar cor:", error);
+      console.error('Erro ao capturar cor:', error);
     }
   }, [position, funnelSize, imageLoaded]);
 
@@ -68,7 +64,7 @@ export default function ColorPicker({
   };
 
   const handleCapture = () => {
-    console.log("Cor capturada:", pickedColor);
+    console.log('Cor capturada:', pickedColor);
     // Aqui você pode adicionar lógica para salvar a cor
   };
 
@@ -79,8 +75,7 @@ export default function ColorPicker({
         className="relative inline-block"
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
+        onMouseLeave={handleMouseUp}>
         <ImageCanvas
           imageSrc={imageSrc}
           imgRef={imgRef}
@@ -88,11 +83,7 @@ export default function ColorPicker({
           onImageLoad={() => setImageLoaded(true)}
         />
 
-        <ColorFunnel
-          position={position}
-          color={pickedColor}
-          onMouseDown={handleMouseDown}
-        />
+        <ColorFunnel position={position} color={pickedColor} onMouseDown={handleMouseDown} />
       </div>
 
       <ColorDisplay color={pickedColor} onCapture={handleCapture} />

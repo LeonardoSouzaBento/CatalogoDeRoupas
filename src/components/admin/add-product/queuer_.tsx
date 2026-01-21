@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import { HeaderCard } from '@/app/_ui';
-import QueuerButton from './_queuer/queuer-button';
-import QuantitySelector from './_queuer/quantity-selector';
+import { QueuerButton } from './_queuer/queuer-button';
+import { QuantitySelector } from './_queuer/quantity-selector';
 import { StateSetter } from '@/types/types';
 import CardWrapper from '@/app/_ui/card-wrapper';
 
@@ -30,4 +30,4 @@ const Queuer = ({ selectedQuantity, setSelectedQuantity }: Props) => {
   );
 };
 
-export default Queuer;
+export { Queuer };

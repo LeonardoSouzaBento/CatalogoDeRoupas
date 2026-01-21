@@ -7,7 +7,7 @@ const css = {
   grid: `px-5 py-2 grid grid-cols-1 sm:grid-cols-2 crop br-md bs`,
   wrapper: `bg-white br-0 `,
   row: `h-9.5 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
-  br-0`,
+  br-0`,  
   label: ` font-medium text-gray-800 w-40`,
   value: `text-gray-700 flex-1 text-right br-0`,
   voidValue: `font-semibold text-gray-400 text-right`,
@@ -81,5 +81,4 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({ i
   );
 };
 
-export default ProductTable;
-export { fields };
+export { ProductTable, fields };

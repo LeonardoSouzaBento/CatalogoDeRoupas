@@ -1,4 +1,5 @@
-import SaveButton from '@/app/_ui/SaveButton';
+import { Button } from '@/components/ui/button';
+import { CircleCheckBig } from 'lucide-react';
 import { Input } from '@/components/ui';
 import React from 'react';
 
@@ -29,7 +30,10 @@ const InfoForm = ({ id }: { id: number | string }): React.ReactElement => {
         </div>
       </form>
 
-      <SaveButton />
+      <Button className="w-full">
+        Salvar
+        <CircleCheckBig />
+      </Button>
     </div>
   );
 };

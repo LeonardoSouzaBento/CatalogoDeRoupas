@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { AlertInfo, HeaderCard } from '@/app/_ui';
-import PhotoGridEditor from './_photos/photo-grid-editor';
+import { PhotoGridEditor } from './_photos/photo-grid-editor';
 import CardWrapper from '@/app/_ui/card-wrapper';
 
 const Photos = () => {
@@ -20,4 +20,4 @@ const Photos = () => {
   );
 };
 
-export default Photos;
+export { Photos };

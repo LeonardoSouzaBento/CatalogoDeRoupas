@@ -1,14 +1,14 @@
 'use client';
 import React, { useState } from 'react';
-import GenderButtons from './GenderButtons';
-import Photos from './_photos/Photos';
-import ProductBasesList from './product-base-list/ProductBasesList';
-import BaseGenerator from './base-generator/BaseGenerator';
-import FinalInformations from './final-info/FinalInformations';
-import Queuer from './_queuer/Queuer';
-import Result from './result/Result';
-import SaveCard from './SaveCard';
-import Queue from './_queue/Queue';
+import { GenderButtons } from './add-product/gender-buttons';
+import { Photos } from './add-product/photos';
+import { ProductBasesList } from './add-product/product-base-list/product-base-list';
+import { BaseGenerator } from './add-product/base-generator';
+import { FinalInformations } from './add-product/final-info';
+import { Queuer } from './add-product/queuer_';
+import { Result } from './add-product/result_';
+import { SaveCard } from './add-product/save-card';
+import { Queue } from './add-product/queue';
 
 const AddProductCore = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(0);

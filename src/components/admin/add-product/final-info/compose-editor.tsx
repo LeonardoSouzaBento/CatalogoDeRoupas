@@ -2,13 +2,14 @@
 import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
 import WrapperOptions from '@/app/admin/_ui/wrapper-options';
 import { ButtonClose } from '@/app/_ui';
-import Button from '@/app/_ui/button';
+import { Button } from '@/components/ui/button';
 
 import { commonFabrics } from '@/data/clothings/commonFabrics';
 import { materials } from '@/data/clothings/materials';
 import { StateSetter } from '@/types/types';
 import { Eye, Plus, Search } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
+import { Input } from '@/components/ui';
 
 /* ---------------- de material---------------- */
 interface MaterialProps {
@@ -143,7 +144,6 @@ const SearchMaterial = ({
   const css = {
     wrapper: `h-10 box-content flex items-center relative
     crop focus-within:border focus-within:border-gray-300`,
-    : `w-full 5 pl-4 pr-6 br-0`,
   };
 
   const [wasClicked, setWasClicked] = useState<boolean>(false);
@@ -153,7 +153,7 @@ const SearchMaterial = ({
     setFilteredMaterials(filtered);
   }
 
-  const handleSearch = (e: React.ChangeEvent<HTMLElement>) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value.toLowerCase();
     setSearchValue(searchValue);
 
@@ -167,9 +167,9 @@ const SearchMaterial = ({
 
   return (
     <div className={css.wrapper}>
-      <
+      <Input
         type="text"
-        className={`${css.} ${!wasClicked && 'font-medium text-gray-800'}`}
+        className={`${!wasClicked && 'font-medium text-gray-800'}`}
         value={searchValue}
         placeholder="Procurar material"
         onChange={handleSearch}
@@ -263,4 +263,4 @@ const CompositionEditor = () => {
   );
 };
 
-export default CompositionEditor;
+export { CompositionEditor };
