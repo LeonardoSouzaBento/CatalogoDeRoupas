@@ -1,10 +1,10 @@
-import { WrapperInput } from '@/components/store/home/ui/index';
+import { InputWrapper } from '@/components/store/home/ui/index';
 import { SectionHeader } from '@/components/store/home/ui/index';
-import ButtonSeeEditMode from '@/components/store/home/ui/button-see-edit-mode';
+import { ButtonSeeEditMode } from '@/components/store/home/ui/button-see-edit-mode';
 import { PublicDataContext } from '@/contexts/index';
 import type { AddressSchema } from '@/types/types';
 import React, { useContext, useState } from 'react';
-import { ButtonCopy, InputAddress, InputContact, InputMap } from './find-us-section/index';
+import { CopyButton, InputAddress, InputContact, InputMap } from './find-us-section/index';
 
 const css = {
   wrapper: 'w-full m-auto max-w-210 flex flex-col gap-5',
@@ -63,7 +63,7 @@ export const FindUsSection = (): React.ReactElement => {
                     <p>{shopInfo.contact}</p>
                   </div>
                 </div>
-                <ButtonCopy
+                <CopyButton
                   state={phoneCopied}
                   setState={setPhoneCopied}
                   firstText="Copiar Telefone"
@@ -73,9 +73,9 @@ export const FindUsSection = (): React.ReactElement => {
                 {sectionEditMode && <ButtonSeeEditMode setState={setSeePhone} />}
               </>
             ) : (
-              <WrapperInput title="Adicione Seu Whatsapp" setState={setSeePhone}>
+              <InputWrapper title="Adicione Seu Whatsapp" setState={setSeePhone}>
                 <InputContact />
-              </WrapperInput>
+              </InputWrapper>
             )}
           </div>
           {/* Endereço */}
@@ -91,7 +91,7 @@ export const FindUsSection = (): React.ReactElement => {
                     <p>{shopAddressFormatted}</p>
                   </div>
                 </div>
-                <ButtonCopy
+                <CopyButton
                   state={addressCopied}
                   setState={setAddressCopied}
                   firstText="Copiar Link Do Mapa"
@@ -101,9 +101,9 @@ export const FindUsSection = (): React.ReactElement => {
                 {sectionEditMode && <ButtonSeeEditMode setState={setSeeAddress} />}
               </>
             ) : (
-              <WrapperInput title="Adicione Seu Endereço" setState={setSeeAddress}>
+              <InputWrapper title="Adicione Seu Endereço" setState={setSeeAddress}>
                 <InputAddress />
-              </WrapperInput>
+              </InputWrapper>
             )}
           </div>
           {/* Mapa */}
@@ -124,13 +124,13 @@ export const FindUsSection = (): React.ReactElement => {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 {sectionEditMode && (
-                  <ButtonSeeEditMode setState={setSeeMap} styles="absolute top-3 right-0" />
+                  <ButtonSeeEditMode setState={setSeeMap} className="absolute top-3 right-0" />
                 )}
               </>
             ) : (
-              <WrapperInput title="Atualize Seu Mapa" setState={setSeeMap}>
+              <InputWrapper title="Atualize Seu Mapa" setState={setSeeMap}>
                 <InputMap />
-              </WrapperInput>
+              </InputWrapper>
             )}
           </div>
         </div>

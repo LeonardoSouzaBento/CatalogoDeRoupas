@@ -1,15 +1,19 @@
 'use client';
-import React from 'react';
-import { HeaderCard } from '@/app/_ui';
+import { MuiIcon } from '@/components/ui';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertCircle } from 'lucide-react';
 import { PhotoGridEditor } from './_photos/photo-grid-editor';
-import { Card } from '@/components/ui/card';
 
 const Photos = () => {
   return (
     <Card>
-      <HeaderCard title="Fotos" icon="photo_library" iconStyles="mr-1 " />
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="photo_library" size="h3" className="mr-1" />
+          <h3>Fotos</h3>
+        </CardTitle>
+      </CardHeader>
       <PhotoGridEditor />
       <Alert variant="destructive" className="bg-gray-50/50 mb-0">
         <AlertCircle />
@@ -24,3 +28,4 @@ const Photos = () => {
 };
 
 export { Photos };
+

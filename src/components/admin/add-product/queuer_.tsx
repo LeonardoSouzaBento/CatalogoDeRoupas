@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import { HeaderCard } from '@/app/_ui';
 import { QueuerButton } from './_queuer/queuer-button';
 import { QuantitySelector } from './_queuer/quantity-selector';
 import { StateSetter } from '@/types/types';
-import { Card } from '@/components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { MuiIcon } from '@/components/ui';
 
 interface Props {
   selectedQuantity: number;
@@ -14,12 +14,13 @@ interface Props {
 const Queuer = ({ selectedQuantity, setSelectedQuantity }: Props) => {
   return (
     <Card>
-      <HeaderCard
-        icon="layers"
-        title="Enfileirar produtos"
-        subtitle="Fazer cópias editáveis desse produto"
-        iconStyles=""
-      />
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="layers" size="h3" className="mr-1" />
+          <h3>Enfileirar produtos</h3>
+        </CardTitle>
+        <CardDescription>Fazer cópias editáveis desse produto</CardDescription>
+      </CardHeader>
 
       <QuantitySelector
         selectedQuantity={selectedQuantity}

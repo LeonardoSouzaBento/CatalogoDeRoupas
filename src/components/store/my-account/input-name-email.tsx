@@ -1,14 +1,12 @@
-import React, { useContext, useState } from 'react';
-import { Upload } from 'lucide-react';
-import { validateName } from '@/functions/validateName';
-import { validateEmail } from '@/functions/validateEmail';
-import Image from 'next/image';
-import { ButtonClose, HeaderCard } from '@/app/_ui';
-import { BooleanSetter } from '@/types/types';
-import { UserContext } from '@/contexts';
+import { CardHeader, CardTitle, Icon, Input, Label, MuiIcon } from '@/components/ui';
 import { Button } from '@/components/ui/button';
-import { CircleCheckBig } from 'lucide-react';
-import { Input, Label } from '@/components/ui';
+import { UserContext } from '@/contexts';
+import { validateEmail } from '@/functions/validateEmail';
+import { validateName } from '@/functions/validateName';
+import { BooleanSetter } from '@/types/types';
+import { CircleCheckBig, Upload, X } from 'lucide-react';
+import Image from 'next/image';
+import { useContext, useState } from 'react';
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
@@ -34,13 +32,21 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
 
   return (
     <div className={`flex flex-col gap-4 relative`}>
-      <HeaderCard title="Edite seus dados" icon="edit" wrapperStyles="" iconStyles="!" />
-      <ButtonClose
-        setState={setSeeEditMode}
-        simpleDesign={true}
-        styles=" size-9!"
-        positionStyles="absolute -top-1 -right-3"
-      />
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="edit" />
+          <h3>Edite seus dados</h3>
+        </CardTitle>
+      </CardHeader>
+      <Button
+        className="absolute top-1 right-1"
+        variant="transparent"
+        size="icon"
+        onClick={() => {
+          setSeeEditMode(false);
+        }}>
+        <Icon LucideIcon={X} />
+      </Button>
       {/* <p>Foto de perfil</p> */}
       <div className="size-auto flex items-center justify-start max-[430px]:gap-3 gap-5">
         <div className="size-16 min-w-16 br-50 bg-gray-100 crop relative">

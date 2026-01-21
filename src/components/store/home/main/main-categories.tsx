@@ -1,12 +1,11 @@
 'use client';
-import HomeSectionTitle from '@/components/ui/home-section-title';
-import { WrapperInput } from '@/components/store/home/ui/index';
+import { InputWrapper, SectionHeader } from '@/components/store/home/ui/index';
 import { UserContext } from '@/contexts';
 import { HomeContext } from '@/contexts/homeContext';
+import { MainCategory } from '@/types/types';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
 import { MainCatsInput } from './main-categories/_inputs/main-cats-input';
-import { MainCategory } from '@/types/types';
 
 const css = {
   container: `
@@ -41,11 +40,11 @@ export const MainCategories = () => {
   if (categories && categories.length > 0) {
     return (
       <div className={`${sectionEditMode && css.sectiooInEditMode}`}>
-        <HomeSectionTitle
+        <SectionHeader
           title="Categorias de Destaque"
           subtitle="Os mais procurados"
           sectionEditMode={sectionEditMode}
-          setSectionEditMode={setSectionEditMode}></HomeSectionTitle>
+          setSectionEditMode={setSectionEditMode}/>
 
         {!sectionEditMode ? (
           <div className={`${css.container}`}>
@@ -60,11 +59,11 @@ export const MainCategories = () => {
           </div>
         ) : (
           <div className={`${css.wrapperEditMode}`}>
-            <WrapperInput
+            <InputWrapper
               title="Defina as principais categorias de cada gênero"
               setState={setSectionEditMode}>
               <MainCatsInput />
-            </WrapperInput>
+            </InputWrapper>
           </div>
         )}
       </div>

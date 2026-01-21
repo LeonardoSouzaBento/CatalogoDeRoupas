@@ -1,4 +1,4 @@
-import { ButtonClose } from '@/app/_ui/index';
+import { CloseButton } from '@/components/ui';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
 import { defaultShopInfo } from '@/data/home/publicData';
@@ -55,7 +55,7 @@ const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.R
     <div className={`${css.wrapper}`}>
       <div className={`${css.header}`}>
         <h3 className={`${css.h3}`}>Edite o Sobre</h3>
-        <ButtonClose setState={setSeeInput} positionStyles="absolute top-3 right-3" />
+        <CloseButton setState={setSeeInput} className="absolute top-3 right-3" />
       </div>
       <Alert variant="destructive">
         <AlertCircle />

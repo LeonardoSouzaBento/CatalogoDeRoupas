@@ -4,7 +4,7 @@ import { colorFamilies } from '@/data/clothings/colors';
 import { colorsByFamily } from '@/data/clothings/colors';
 import { StateSetter } from '@/types/types';
 import { ChevronDown, Plus, X } from 'lucide-react';
-import { Input } from '@/components/ui';
+import { Input, Label, InputWrapper } from '@/components/ui';
 
 const css = {
   wrapper: `flex flex-col gap-2`,
@@ -120,10 +120,10 @@ const Color = ({
   };
 
   return (
-    <div className={css.wrapper}>
-      <label htmlFor="colorName">Escolha a da cor</label>
-      <Input type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
+    <InputWrapper className={css.wrapper}>
+      <Label htmlFor="color-name">Escolha a da cor</Label>
+      <Input id="color-name" type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
       <Button onClick={() => {}}>Adicionar</Button>
-    </div>
+    </InputWrapper>
   );
 };

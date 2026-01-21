@@ -1,6 +1,6 @@
 import React from 'react';
 import { BooleanSetter } from '@/types/types';
-import ButtonClose from '../../../../app/_ui/button-close';
+import { CloseButton } from '@/components/ui';
 
 const css = {
   wrapper: 'w-full bg-white',
@@ -15,12 +15,12 @@ interface WrapperFormProps {
   children: React.ReactElement;
 }
 
-export const WrapperInput = ({ title, children, setState }: WrapperFormProps): React.ReactElement => {
+export const InputWrapper = ({ title, children, setState }: WrapperFormProps): React.ReactElement => {
   return (
     <div className={`${css.wrapper}`}>
       <div className={`${css.wrapperTitle}`}>
         <p className={`${css.h3}`}>{title}</p>
-        <ButtonClose setState={setState} />
+        <CloseButton setState={setState} />
       </div>
       {children}
     </div>

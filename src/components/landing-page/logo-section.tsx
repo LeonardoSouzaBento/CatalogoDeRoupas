@@ -1,4 +1,4 @@
-import { ButtonSeeEditMode } from '@/app/_ui';
+import { ButtonSeeEditMode } from '@/components/store/home/ui';
 import { BooleanSetter } from '@/types/types';
 
 const css = {
@@ -30,7 +30,7 @@ const LogoSection = ({
       {homeEditMode && (
         <ButtonSeeEditMode
           setState={setSeeNameShop}
-          positionStyles="absolute top-5 right-4 z-5"
+          className="absolute top-5 right-4 z-5"
         />
       )}
     </div>

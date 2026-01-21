@@ -9,4 +9,4 @@ const LoginReturn = () => {
   )
 }
 
-export default LoginReturn;
+export { LoginReturn };

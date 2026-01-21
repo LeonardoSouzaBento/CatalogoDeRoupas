@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import PersonalForm from "./register-store/PersonalForm";
-import AddressForm from "./register-store/AddressForm";
-import Header from "./register-store/Header";
+import { PersonalForm, AddressForm, Header } from "./register-store/index";
 
 const RegisterStoreCore = () => {
   const [seeAddresForm, setSeeAddresForm] = useState<boolean>(false);

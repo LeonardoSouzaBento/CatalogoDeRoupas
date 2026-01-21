@@ -1,5 +1,5 @@
 'use client';
-import { Button, Card, CardHeader, CardTitle, MuiIcon, WrapperButtons } from '@/components/ui';
+import { Button, Card, CardHeader, CardTitle, MuiIcon, ButtonsWrapper } from '@/components/ui';
 import { UserContext } from '@/contexts';
 import { Genders } from '@/types/types';
 import React, { useContext } from 'react';
@@ -20,7 +20,7 @@ const GenderButtons = () => {
           <h3>Gênero</h3>
         </CardTitle>
       </CardHeader>
-      <WrapperButtons>
+      <ButtonsWrapper>
         {buttons.map(({ label, value }) => (
           <Button
             key={value}
@@ -30,7 +30,7 @@ const GenderButtons = () => {
             {label}
           </Button>
         ))}
-      </WrapperButtons>
+      </ButtonsWrapper>
     </Card>
   );
 };

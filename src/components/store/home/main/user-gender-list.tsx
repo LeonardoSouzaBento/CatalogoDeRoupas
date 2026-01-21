@@ -1,4 +1,4 @@
-import { SectionHeader } from './index';
+import { SectionHeader } from '@/components/store/home/ui/index';
 import { UserContext } from '@/contexts/userContext';
 import type { homeUserGender } from '@/types/types';
 import React, { useContext, useState } from 'react';

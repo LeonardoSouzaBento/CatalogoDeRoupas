@@ -1,13 +1,18 @@
-import { HeaderCard } from '@/app/_ui';
-import { Card } from '@/components/ui/card';
-import React from 'react';
+import { MuiIcon } from '@/components/ui';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Queue = () => {
   return (
     <Card>
-      <HeaderCard title="Fila" icon="layers" iconStyles=" font-medium!" />
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="layers" size="h3" className="mr-1" weight={500} />
+          <h3>Fila</h3>
+        </CardTitle>
+      </CardHeader>
     </Card>
   );
 };
 
 export { Queue };
+

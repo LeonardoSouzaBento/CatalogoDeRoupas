@@ -24,4 +24,4 @@ const StoreLogo = () => {
   );
 };
 
-export default StoreLogo;
+export { StoreLogo };

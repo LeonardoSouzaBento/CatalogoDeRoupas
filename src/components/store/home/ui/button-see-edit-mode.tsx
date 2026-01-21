@@ -1,37 +1,35 @@
+import { Button, Icon, MuiIcon } from '@/components/ui';
+import { cn } from '@/lib/utils';
 import { BooleanSetter } from '@/types/types';
 import { Pen } from 'lucide-react';
 
 interface Props {
   setState: BooleanSetter;
-  styles?: string;
-  positionStyles?: string;
+  className?: string;
   variantion?: string;
   section?: string;
 }
 
-const ButtonSeeEditMode = ({ setState, styles, positionStyles, variantion, section }: Props) => {
-  const css = {
-    squareButton: `flex-center h-11 min-w-11 p-0 bg-gradient-to-br from-stone-800 to-stone-700 br-2xl shadow-lg`,
-    titleButton: `h-11 m-auto mb-5 bg-gradient-to-br from-stone-800 to-stone-700 br-2xl text-white shadow-lg hover:shadow-lg-hover`,
-    icon: 'material-symbols-rounded font-[300]! ! text-white ',
-    defaultPosition: `absolute bottom-3 right-3`,
-  };
+const ButtonSeeEditMode = ({ setState, className, variantion, section }: Props) => {
   const isTitle = variantion === 'title';
-  const clothesSection = section === 'clothes';
+  const clothesCss = section === 'clothes' ? 'mb-3' : '';
 
   return (
-    <button
-      className={`${!isTitle ? css.squareButton : css.titleButton} ${
-        positionStyles || css.defaultPosition
-      } ${clothesSection && 'mb-3!'} ${styles}`}
+    <Button
+      size={!isTitle ? 'icon' : 'default'}
+      className={cn('absolute bottom-3 right-3', clothesCss, className)}
       onClick={() => {
         setState(true);
       }}>
-      {!variantion && <span className={css.icon}>stylus</span>}
-      {variantion === 'title' && 'Editar seção'}
-      {variantion === 'title' && <Pen  />}
-    </button>
+      {!variantion && <MuiIcon icon="stylus" />}
+      {variantion === 'title' && (
+        <>
+          <Icon LucideIcon={Pen} />
+          Editar seção
+        </>
+      )}
+    </Button>
   );
 };
 
-export default ButtonSeeEditMode;
+export { ButtonSeeEditMode };

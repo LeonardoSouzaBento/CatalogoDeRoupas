@@ -1,17 +1,17 @@
 'use client';
+import { Button } from '@/components/ui';
 import Image from 'next/image';
-import React from 'react';
-import { buttonStyles } from '../../../app/loja/login/page';
 
 const ButtonLoginGoogle = () => {
   return (
-    <button className={`${buttonStyles} mb-5 bg-white border hover:bg-gray-100`}>
+    <Button>
       <div className="size-[18px] flex-center relative">
         <Image src={`/icons/google.png`} fill={true} alt="" />
       </div>
       Login Com Google
-    </button>
+    </Button>
   );
 };
 
-export default ButtonLoginGoogle;
+export { ButtonLoginGoogle };
+

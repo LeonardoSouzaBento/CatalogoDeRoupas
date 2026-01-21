@@ -1,23 +1,34 @@
 import React from 'react';
-import ZapFixedButton from '@/components/ui/ZapFixedButton';
-import { TitlePage } from '@/components/ui';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  MuiIcon,
+  PageHeader,
+  PageTitle,
+} from '@/components/ui';
 import { NoClothesAlert } from '@/components/store/favorites';
-
-const css = {
-  container: 'px-3 pb-5',
-  wrapper: `bg-white br-lg p-5`,
-};
+import { ZapFixedButton } from '@ui/index';
 
 const Favoritos = (): React.ReactElement => {
   return (
     <>
-      <TitlePage title="Meus Favoritos" />
-      <div className={`${css.container}`}>
-        <div className={`${css.wrapper} shadow-lg`}>
-          {/* <HeaderCard title="Produtos curtidos" icon="bookmark_heart" /> */}
-
-          <NoClothesAlert />
-        </div>
+      <PageHeader className="px-3">
+        <PageTitle>Meus Favoritos</PageTitle>
+      </PageHeader>
+      <div className={`px-3 pb-5`}>
+        <Card>
+          <CardHeader>
+            <CardTitle>
+              <MuiIcon icon="bookmark_heart" />
+              Produtos curtidos
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <NoClothesAlert />
+          </CardContent>
+        </Card>
         <ZapFixedButton />
       </div>
     </>

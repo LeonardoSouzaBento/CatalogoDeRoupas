@@ -127,6 +127,13 @@ export interface Shopkeeper {
   startDate?: string;
 }
 
+export interface ShopkeeperField {
+  label: string;
+  name: keyof Shopkeeper;
+  placeholder: string;
+  maxLength: number;
+}
+
 export interface AddressSchema {
   rua: string;
   número: number | "";

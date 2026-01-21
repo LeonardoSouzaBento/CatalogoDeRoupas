@@ -1,5 +1,5 @@
-import StoreLogo from '../../../components/shop/login/store-logo';
-import Core from '../../../components/shop/login/Core';
+import { StoreLogo } from '@/components/store/login/store-logo';
+import LoginCore from '@/components/store/login-core';
 
 const css = {
   container: `h-screen w-full px-3 flex-center`,
@@ -18,7 +18,7 @@ const Login = () => {
         <StoreLogo />
         <div className={`${css.wrapper}`}>
           <div className="w-full flex flex-col">
-            <Core />
+            <LoginCore />
           </div>
         </div>
       </div>

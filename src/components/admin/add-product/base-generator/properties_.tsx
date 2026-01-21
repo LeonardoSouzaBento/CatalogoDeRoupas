@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 
 import { ClothingProperty, StateSetter } from '@/types/types';
 import { Button } from '@/components/ui/button';
-import WrapperButtons from '@/app/admin/_ui/wrapper-buttons';
+import { ButtonsWrapper } from '@/components/ui';
 
 const css = {
   wrapper: `
@@ -23,7 +23,7 @@ interface Props {
 
 const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
   return (
-    <WrapperButtons styles="mb-5 bs">
+    <ButtonsWrapper className="mb-5">
       {properties.slice(0, -1).map((item) => (
         <Button
           key={item.name}
@@ -35,7 +35,7 @@ const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
           <ChevronDown />
         </Button>
       ))}
-    </WrapperButtons>
+    </ButtonsWrapper>
   );
 };
 

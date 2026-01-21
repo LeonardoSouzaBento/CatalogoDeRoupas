@@ -1,12 +1,17 @@
-import React from 'react';
-import { HeaderCard } from '@/app/_ui';
-import ProductTable from './ProductTable';
-import { Card } from '@/components/ui/card';
+import { MuiIcon } from '@/components/ui';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ProductTable } from './result/index';
 
 const Result = () => {
   return (
     <Card>
-      <HeaderCard title="Resultado" icon="equal" iconStyles="" />
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="equal" size="h3" className="mr-1" />
+          <h3>Resultado</h3>
+        </CardTitle>
+        <CardDescription>Resultado</CardDescription>
+      </CardHeader>
       <ProductTable />
     </Card>
   );

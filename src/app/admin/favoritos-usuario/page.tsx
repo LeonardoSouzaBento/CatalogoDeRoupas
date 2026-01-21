@@ -1,23 +1,23 @@
-import HeaderCard from '@/components/ui/HeaderCard';
-import TitlePage from '@/components/ui/page-title';
-import UserDetail from '../../../components/admin/user-favorites/_components/UserDetail/UserDetail';
-import { Card } from '@/components/ui/card';
-
-const css = {
-  mainWrapper: `px-3 pb-6`,
-  p: ``,
-  h2: '',
-};
+import { MuiIcon, PageHeader, PageTitle } from '@/components/ui';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import UserFavoritesCore from '@/components/admin/user-favorites-core';
 
 const page = () => {
   return (
     <>
-      <TitlePage title="Favoritos do usuário" />
-      <div className={`${css.mainWrapper}`}>
-        <UserDetail />
+      <PageHeader>
+        <PageTitle>Favoritos do usuário</PageTitle>
+      </PageHeader>
+      <div className={`px-3 pb-6`}>
+        <UserFavoritesCore />
 
         <Card>
-          <HeaderCard title="Favoritos Deste usuário" icon="bookmark_heart" />
+          <CardHeader>
+            <CardTitle>
+              <MuiIcon icon="bookmark_heart" />
+              Favoritos Deste usuário
+            </CardTitle>
+          </CardHeader>
         </Card>
       </div>
     </>

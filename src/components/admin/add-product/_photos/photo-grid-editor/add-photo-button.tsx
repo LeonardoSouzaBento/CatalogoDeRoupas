@@ -1,12 +1,7 @@
 import React from 'react';
 import { Plus } from 'lucide-react';
 import { Photo, StateSetter } from '@/types/types';
-import { Input } from '@/components/ui';
-
-const css = {
-  wrapper: ``,
-  button: ` j-center relative`,
-};
+import { Button, Icon, Input, InputWrapper } from '@/components/ui';
 
 export const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
   function handleAddPhoto(event: React.ChangeEvent<HTMLInputElement>) {
@@ -52,16 +47,18 @@ export const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> 
   }
 
   return (
-    <button className={`${css.button}`}>
-      Adicionar foto
-      <Plus  />
-      < Input
+    <InputWrapper>
+      <Button>
+        Adicionar foto
+        <Icon LucideIcon={Plus} />
+      </Button>
+      <Input
         type="file"
         accept=".jpg, .jpeg, .png, .webp"
         onChange={(event) => {
           handleAddPhoto(event);
         }}
       />
-    </button>
+    </InputWrapper>
   );
 };

@@ -5,8 +5,6 @@ import { InputNameEmail } from "./input-name-email";
 import EditButton from "./edit-button";
 import { Card } from "@/components/ui";
 
-//min-[500px]:flex-row min-[500px]:gap-4
-
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative br-lg bg-white`,
   wrapperImg: `h-17 min-w-17 w-17 relative bg-gray-100 br-50 border-none`,

@@ -1,8 +1,15 @@
 'use client';
 import { HomeContext, UserContext } from '@/contexts';
 import React, { useContext, useEffect } from 'react';
-import { EverydaySection, GymSection, SpecialSection } from './main/index';
-import { AboutSection, FindUsSection, MainCategories, UserGenderList } from './main/index';
+import {
+  AboutSection,
+  EverydaySection,
+  FindUsSection,
+  GymSection,
+  MainCategories,
+  SpecialSection,
+  UserGenderList,
+} from './main/index';
 
 const Main = (): React.ReactElement => {
   const { hasMainCategories, setHasMainCategories, hasGymClothes, setHasGymClothes } =

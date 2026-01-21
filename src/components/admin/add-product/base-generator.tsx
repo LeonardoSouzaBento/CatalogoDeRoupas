@@ -1,8 +1,7 @@
 'use client';
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '@/contexts';
-import { HeaderCard } from '@/app/_ui';
-import { Card } from '@/components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
 import { patterns } from '@/data/clothings/patterns';
 import { prints } from '@/data/clothings/prints';
@@ -11,6 +10,7 @@ import { AddedProperties } from './base-generator/added-properties';
 import { Properties } from './base-generator/properties_';
 import { PropertyOptions } from './base-generator/property-options';
 import { modelings } from '@/data/clothings/modelings';
+import { MuiIcon } from '@/components/ui';
 
 const BaseGenerator = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
@@ -83,15 +83,15 @@ const BaseGenerator = () => {
 
   return (
     <Card>
-      <HeaderCard
-        wrapperStyles="border-none mb-0!"
-        wrapperTitleStyles="gap-[5px]!"
-        title="Informações básicas"
-        subtitle="Selecione as caracteristicas principais (ou escolha uma roupa básica)"
-        icon="edit_note"
-        iconStyles="font-medium!"
-      />
-
+      <CardHeader>
+        <CardTitle className="gap-2">
+          <MuiIcon icon="edit_note" size="h3" className="mr-1" weight={500} />
+          <h3>Informações básicas</h3>
+        </CardTitle>
+        <CardDescription>
+          Selecione as caracteristicas principais (ou escolha uma roupa básica)
+        </CardDescription>
+      </CardHeader>
       <Properties
         properties={properties}
         propSelected={propSelected}

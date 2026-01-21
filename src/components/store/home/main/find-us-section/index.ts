@@ -1,4 +1,4 @@
-export * from './button-copy';
+export * from './copy-button';
 export * from './input-address';
 export * from './input-contact';
 export * from './input-map';

@@ -92,4 +92,4 @@ const CardEditMode = ({
   );
 };
 
-export default CardEditMode;
+export {CardEditMode};

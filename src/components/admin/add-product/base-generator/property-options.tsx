@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { BasicClothingInformation, mappingPropToKey } from '@/types/types';
-import WrapperOptions from '@/app/admin/_ui/wrapper-options';
+import { WrapperOptions } from '@/components/admin/ui/wrapper-options';
 
 const css = {
   container: `p-5 border bg-white border-b-transparent rounded-br-none rounded-bl-none`,

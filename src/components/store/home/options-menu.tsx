@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { ButtonClose } from '@/app/_ui';
+import { CloseButton } from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
-import { Choices, Links, Subtitle, AdministrationOptions } from './options-menu/index';
+import { useEffect, useState } from 'react';
+import { AdministrationOptions, Choices, Links, Subtitle } from './options-menu/index';
 
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,
@@ -43,14 +43,7 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
         <div className={`${css.wrapperTitle}`}>
           <h2 className={`${css.title}`}>Main Opções</h2>
 
-          <ButtonClose
-            setState={setSeeOptionsSection}
-            positionStyles="absolute top-2 right-2"
-            styles="bg-stone-700/30 br-md hover:bg-stone-700/60 shadow-none! "
-            delay={300}
-            setStateAnimation={setView}
-            iconStyles={{ color: 'white' }}
-          />
+          <CloseButton setState={setView} className="absolute top-2 right-2" />
         </div>
 
         <AdministrationOptions />

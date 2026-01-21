@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, Icon, MuiIcon, WrapperButtons } from '@/components/ui';
+import { Card, CardHeader, CardTitle, Icon, MuiIcon, ButtonsWrapper } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import React from 'react';
@@ -14,7 +14,7 @@ import {
 
 //cores, tamanhos, composição, preço, marca, descrição, diferencial,
 
-const FinalInformations = () => {
+const FinalInfo = () => {
   const [selectedPropertie, setSelectedPropertie] = React.useState<string>('Composição');
 
   const properties = [
@@ -36,7 +36,7 @@ const FinalInformations = () => {
         </CardTitle>
       </CardHeader>
 
-      <WrapperButtons className="border mb-5">
+      <ButtonsWrapper className="border mb-5">
         {properties.map((property) => (
           <Button
             key={property}
@@ -49,7 +49,7 @@ const FinalInformations = () => {
             <Icon LucideIcon={ChevronDown} />
           </Button>
         ))}
-      </WrapperButtons>
+      </ButtonsWrapper>
 
       <div className={`bs`}>
         {selectedPropertie === 'Composição' && <CompositionEditor />}
@@ -66,5 +66,5 @@ const FinalInformations = () => {
   );
 };
 
-export { FinalInformations };
+export { FinalInfo };
 

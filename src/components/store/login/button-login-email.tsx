@@ -1,8 +1,8 @@
 'use client';
 
+import { Button, Icon } from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
 import { Mail } from 'lucide-react';
-import { buttonStyles } from '../../../app/loja/login/page';
 
 const ButtonLoginEmail = ({
   setSeeEmailForm,
@@ -11,15 +11,15 @@ const ButtonLoginEmail = ({
   setSeeEmailForm: BooleanSetter;
 }) => {
   return (
-    <button
-      className={`${buttonStyles} bg-gray-50 hover:bg-gray-200/80 trans`}
+    <Button
       onClick={() => {
         setSeeEmailForm(true);
       }}>
-      <Mail  />
+      <Icon LucideIcon={Mail} />
       Login com email
-    </button>
+    </Button>
   );
 };
 
-export default ButtonLoginEmail;
+export { ButtonLoginEmail };
+

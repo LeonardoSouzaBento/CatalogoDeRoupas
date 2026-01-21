@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { ButtonClose, HeaderCard } from '../../../app/_ui';
+import { Button, CardHeader, CardTitle, Input, Icon, MuiIcon, Label, InputWrapper } from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
-import { Eye, EyeClosed, LogIn } from 'lucide-react';
-
+import { Eye, EyeClosed, LogIn, X } from 'lucide-react';
+import { useState } from 'react';
 
 const css = { button: `h-11 w-full j-center` };
 
@@ -11,25 +10,28 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
 
   return (
     <div className="bg-white z-3 relative">
-      <ButtonClose
-        setState={setSeeEmailForm}
-        simpleDesign={true}
-        styles="br-lg size-[38px]! "
-        positionStyles="absolute -top-[7px] -right-3"
-      />
-      <HeaderCard
-        wrapperStyles="mb-4!"
-        title="Entre com email"
-        icon="mail"
-        iconStyles="font-semibold! !"
-      />
-      <div className="mb-[18px]">
-        <label htmlFor="email">Email</label>
-        < type="text" id="email" placeholder="meuemail@email.com" />
-      </div>
-      <div className="mb-6 relative">
-        <label htmlFor="password">Senha</label>
-        <
+      <Button
+        className="absolute top-1 right-1"
+        variant="transparent"
+        size="icon"
+        onClick={() => {
+          setSeeEmailForm(false);
+        }}>
+        <Icon LucideIcon={X} />
+      </Button>
+      <CardHeader>
+        <CardTitle>
+          <MuiIcon icon="mail" />
+          <h3>Entre com email</h3>
+        </CardTitle>
+      </CardHeader>
+      <InputWrapper className="mb-[18px]">
+        <Label htmlFor="email">Email</Label>
+        <Input type="text" id="email" placeholder="meuemail@email.com" />
+      </InputWrapper>
+      <InputWrapper className="mb-6 relative">
+        <Label htmlFor="password">Senha</Label>
+        <Input
           type={seePassword ? 'text' : 'password'}
           id="password"
           placeholder="Geramos uma, se preferir."
@@ -39,18 +41,18 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           onClick={() => {
             setSeePassword((prev) => !prev);
           }}>
-          {seePassword ? <EyeClosed  /> : <Eye  />}
+          {seePassword ? <Icon LucideIcon={EyeClosed} /> : <Icon LucideIcon={Eye} />}
         </div>
-      </div>
-      <button className={`${css.button} mb-5`}>
-        <LogIn  />
-        entrar
-      </button>
-      <button className={`${css.button} h-10! font-light bg-white  text-neutral-600`}>
-        esqueci minha senha
-      </button>
+      </InputWrapper>
+      <Button className={`${css.button} mb-5`}>
+        <Icon LucideIcon={LogIn} />
+        Entrar
+      </Button>
+      <Button className={`${css.button} h-10! font-light bg-white  text-neutral-600`}>
+        Esqueci minha senha
+      </Button>
     </div>
   );
 };
 
-export default EmailForm;
+export { EmailForm };

@@ -2,7 +2,6 @@
 import React, { useContext } from 'react';
 import { HomeContext } from '@/contexts';
 import { BookHeart, Eye, Pen, Plus } from 'lucide-react';
-import { iconMd, iconSm, iconLg } from '@/css/lucideIconStyles';
 import '../globals.css';
 import Link from 'next/link';
 
@@ -11,25 +10,21 @@ const optionButtons = [
     name: 'Ver Minha loja',
     url: '/loja',
     icon: Eye,
-    iconStyle: iconSm,
   },
   {
     name: 'Adicionar Produto',
     url: '/admin/adicionar-produto',
     icon: Plus,
-    iconStyle: iconLg,
   },
   {
     name: 'Atualizar Produtos',
     url: '/admin/atualizar-produto',
     icon: Pen,
-    iconStyle: iconSm,
   },
   {
     name: 'Ver Favoritos Do Usúario',
     url: '/admin/favoritos-do-usuario',
     icon: BookHeart,
-    iconStyle: iconMd,
   },
 ];
 
@@ -66,7 +61,7 @@ const AdminPannel = () => {
                   setHomeEditMode(true);
                 }
               }}>
-              <button.icon {...button.iconStyle} {...(index === 0 ? { strokeWidth: 2.4 } : {})} />
+              <button.icon {...(index === 0 ? { strokeWidth: 2.4 } : {})} />
               {button.name}
             </Link>
           ))}

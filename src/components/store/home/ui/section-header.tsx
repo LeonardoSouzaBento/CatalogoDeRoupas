@@ -2,7 +2,8 @@ import { HomeContext } from '@/contexts';
 import { BooleanSetter } from '@/types/types';
 import { PenOff } from 'lucide-react';
 import { useContext } from 'react';
-import ButtonSeeEditMode from '../ui/button-see-edit-mode';
+import { ButtonSeeEditMode } from '../ui/button-see-edit-mode';
+import { Button, Icon } from '@/components/ui';
 
 interface HomeTitleSubtitleProps {
   title: string;
@@ -56,23 +57,21 @@ export const SectionHeader = ({
       {seeButtonEdit && (
         <ButtonSeeEditMode
           setState={setSectionEditMode}
-          positionStyles="relative"
+          className="relative"
           variantion="title"
           section={section}
         />
       )}
       {seeButtonCloseEdit && (
-        <button
-          className={`h-11 min-w-52 flex-center m-auto mb-5 br-2xl 
-            bg-linear-to-br from-stone-800 to-stone-800/88 text-white shadow-lg hover:shadow-lg-hover ${
-              section === 'clothes' && 'mb-3!'
-            }`}
+        <Button
+          className={`h-11 min-w-52 m-auto mb-5 
+             ${section === 'clothes' && 'mb-3'}`}
           onClick={() => {
             setSectionEditMode(false);
           }}>
           Fechar edição
-          <PenOff  />
-        </button>
+          <Icon LucideIcon={PenOff} />
+        </Button>
       )}
     </div>
   );

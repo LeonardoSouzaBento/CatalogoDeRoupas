@@ -1,5 +1,5 @@
 import React from 'react';
-import ZapFixedButton from '@/components/ui/ZapFixedButton';
+import {ZapFixedButton} from '@/components/ui/zap-fixed-button';
 import { Header, SearchButton, UserGenders, Suggestions } from './search/index';
 
 const SearchCore = () => {

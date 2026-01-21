@@ -1,8 +1,8 @@
 import { UserContext } from '@/contexts';
 import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
-import HomeSectionTitle from '@/components/ui/home-section-title';
+import {SectionHeader} from '@/components/store/home/ui/index';
 import { useContext, useEffect } from 'react';
-import HomeProduct from '../../../product/home-product';
+import { HomeProduct } from './home-product';
 
 const css = {
   wrapper: 'crop relative',
@@ -62,7 +62,7 @@ const Base = ({
   if (displayedItems.length > 0) {
     return (
       <>
-        <HomeSectionTitle
+        <SectionHeader
           title={title}
           subtitle={subtitle}
           section="clothes"
