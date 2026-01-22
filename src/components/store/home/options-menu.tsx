@@ -62,4 +62,4 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
   );
 };
 
-export default OptionsMenu;
+export {OptionsMenu};

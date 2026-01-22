@@ -23,4 +23,4 @@ const TextContent = () => {
   );
 };
 
-export default TextContent;
+export { TextContent };

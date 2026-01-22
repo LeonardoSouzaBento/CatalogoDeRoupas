@@ -1,5 +1,5 @@
 import React from 'react';
-import { CallButton, IconCheck } from '../_ui/index';
+import { CallButton, IconCheck } from '../ui/index';
 
 const basicPlan = [
   'Cadastre até 200 peças',
@@ -45,7 +45,11 @@ const Plans = (): React.ReactElement => {
         </div>
 
         <div className={`${css.wrapperPlan} ${css.fullPlanStyles}`}>
-          <TitleAndSubtitle title="Plano Completo" subtitle="Tudo o que você precisa!" fullPlan={true} />
+          <TitleAndSubtitle
+            title="Plano Completo"
+            subtitle="Tudo o que você precisa!"
+            fullPlan={true}
+          />
 
           <ul className={`${css.ul}`}>
             {fullPlan.map((item, index) => (
@@ -60,11 +64,19 @@ const Plans = (): React.ReactElement => {
   );
 };
 
-export default Plans;
+export { Plans };
 
-const TitleAndSubtitle = ({ title, subtitle, fullPlan }: { title: string; subtitle: string; fullPlan?: boolean }) => {
+const TitleAndSubtitle = ({
+  title,
+  subtitle,
+  fullPlan,
+}: {
+  title: string;
+  subtitle: string;
+  fullPlan?: boolean;
+}) => {
   const css = {
-    title: 'text-gray-800 font-semibold ',
+    title: 'text-gray-800 leading-10  font-semibold ',
     subtitle: 'text-gray-600 mb-4 font-light 5',
   };
 

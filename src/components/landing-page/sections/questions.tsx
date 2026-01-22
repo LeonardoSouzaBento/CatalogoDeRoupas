@@ -1,6 +1,6 @@
 import React from 'react';
 import { CalendarHeart, Eye, UserCheck } from 'lucide-react';
-import { CallButton, IconCheck, MainImage } from '../_ui/index';
+import { CallButton, IconCheck, MainImage } from '../ui/index';
 import { sectionHomeStyles } from '@app/(landing-page)/styles';
 
 const css = {
@@ -19,7 +19,7 @@ const Questions = (): React.ReactElement => {
         </div>
 
         <div className={`${css.wrapperImg}`}>
-          <MainImage />
+          <MainImage src="/home/phone4.png" />
           <CallButton wrapperStyles="justify-center" />
         </div>
       </div>
@@ -27,7 +27,7 @@ const Questions = (): React.ReactElement => {
   );
 };
 
-export default Questions;
+export { Questions };
 
 const content = [
   { id: 1, text: 'Um mês grátis para expor suas peças', icon: CalendarHeart },

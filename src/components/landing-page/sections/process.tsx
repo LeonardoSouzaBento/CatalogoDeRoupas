@@ -1,6 +1,6 @@
 import React from 'react';
 import { Share2, Search, Heart } from 'lucide-react';
-import { CallButton, MainImage } from '../_ui/index';
+import { CallButton } from '../ui/index';
 import { sectionHomeStyles } from '@app/(landing-page)/styles';
 
 const css = {
@@ -20,7 +20,7 @@ const Process = (): React.ReactElement => {
         </div>
 
         <div className={`${css.wrapperImg}`}>
-          <MainImage />
+          <img />
           <CallButton wrapperStyles="justify-center" />
         </div>
       </div>
@@ -28,7 +28,7 @@ const Process = (): React.ReactElement => {
   );
 };
 
-export default Process;
+export { Process };
 
 const content = [
   { id: 1, text: '1 - Compartilhe o link nas redes sociais', icon: Share2 },

@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { HomeContext } from '@/contexts';
 import { ShopName } from './header/shop-name';
-import LogoSection from '@/app/(landing-page)/_components/logo-section';
+import {LogoSection} from '@/components/landing-page/sections/logo-section';
 
 const LogoArea = () => {
   const [seeNameShop, setSeeNameShop] = useState<boolean>(false);
@@ -16,4 +16,4 @@ const LogoArea = () => {
   );
 };
 
-export default LogoArea;
+export {LogoArea};

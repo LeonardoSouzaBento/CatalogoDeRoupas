@@ -41,4 +41,4 @@ const CallButton = ({
   );
 };
 
-export default CallButton;
+export {CallButton};

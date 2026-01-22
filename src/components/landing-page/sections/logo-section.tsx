@@ -37,4 +37,4 @@ const LogoSection = ({
   );
 };
 
-export default LogoSection;
+export {LogoSection};

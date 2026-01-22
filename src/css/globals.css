@@ -38,6 +38,7 @@
   --color-female: #c81e72;
   --color-male: #7119a8;
   /* neutras */
+  --color-background: #fff;
   --color-card-background: #fff;
   --color-card-foreground: hsl(345 18% 17.5%);
   --color-muted-foreground: hsl(345 10.57% 38%);
@@ -102,7 +103,7 @@
     @apply cursor-default border-border box-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-card-foreground;
   }
   body,
   html {

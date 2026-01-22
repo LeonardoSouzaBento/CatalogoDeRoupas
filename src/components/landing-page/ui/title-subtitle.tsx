@@ -31,4 +31,4 @@ const TitleSubtitle = ({
   );
 };
 
-export default TitleSubtitle;
+export { TitleSubtitle };

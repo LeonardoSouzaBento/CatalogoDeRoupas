@@ -1,5 +1,5 @@
 import React from 'react';
-import { CallButton } from '../_ui/index';
+import { CallButton } from '../ui/index';
 import { Image, TextContent } from './hero/index';
 
 const css = {
@@ -28,4 +28,4 @@ const Hero = (): React.ReactElement => {
   );
 };
 
-export default Hero;
+export {Hero};

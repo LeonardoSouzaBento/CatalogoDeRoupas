@@ -29,7 +29,7 @@ const Main = (): React.ReactElement => {
 
   return (
     <main>
-      <section className="bg-gray-50 bg-gradient-to-b from-[#F9FAFB] to-white shadow-none!">
+      <section className="bg-gray-50 bg-linear-to-b from-[#F9FAFB] to-white shadow-none!">
         <div>
           <UserGenderList />
         </div>
@@ -80,4 +80,4 @@ const Main = (): React.ReactElement => {
   );
 };
 
-export default Main;
+export {Main};
