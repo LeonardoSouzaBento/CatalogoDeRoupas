@@ -1,4 +1,4 @@
-import type { AddressSchema, ShopInfo } from "@localtypes/types";
+import type { AddressSchema, ShopInfo } from "@/types/types";
 
 /* Dados da loja */
 const defaultShopAddress: AddressSchema = {
