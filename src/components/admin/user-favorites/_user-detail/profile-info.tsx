@@ -1,5 +1,5 @@
 'use client';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { useContext, useState } from 'react';
 import { SeeMoreButton } from './see-more-button';
 import { FirstTable, MeasuresTable } from './index';

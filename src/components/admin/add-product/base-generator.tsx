@@ -1,6 +1,6 @@
 'use client';
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
 import { patterns } from '@/data/clothings/patterns';

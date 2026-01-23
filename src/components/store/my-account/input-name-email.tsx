@@ -1,7 +1,7 @@
-"use client"
+'use client';
 import { CardHeader, CardTitle, Icon, Input, Label, MuiIcon } from '@/components/ui';
 import { Button } from '@/components/ui/button';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { validateEmail } from '@/functions/validateEmail';
 import { validateName } from '@/functions/validateName';
 import { BooleanSetter } from '@/types/types';

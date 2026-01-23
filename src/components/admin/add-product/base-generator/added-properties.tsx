@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
 

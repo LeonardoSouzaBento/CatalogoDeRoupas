@@ -1,5 +1,5 @@
 'use client';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/userContext';
 import { BooleanSetter, Genders, StateSetter } from '@/types/types';
 import { useContext } from 'react';
 

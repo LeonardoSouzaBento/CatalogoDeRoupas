@@ -1,5 +1,5 @@
 import { Button, Icon } from '@/components/ui';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { mostSearched } from '@/data/UserData';
 import { Search } from 'lucide-react';
 import { useContext } from 'react';

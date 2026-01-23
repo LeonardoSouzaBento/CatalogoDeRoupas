@@ -1,6 +1,6 @@
 'use client';
 import { InputWrapper, SectionHeader } from '@/components/store/home/ui/index';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { HomeContext } from '@/contexts/homeContext';
 import { MainCategory } from '@/types/types';
 import Image from 'next/image';
@@ -45,7 +45,8 @@ export const MainCategories = () => {
             title="Categorias de Destaque"
             subtitle="Os mais procurados"
             sectionEditMode={sectionEditMode}
-            setSectionEditMode={setSectionEditMode}/>
+            setSectionEditMode={setSectionEditMode}
+          />
           {!sectionEditMode ? (
             <div className={`${css.container}`}>
               {categories.map((item: MainCategory) => (

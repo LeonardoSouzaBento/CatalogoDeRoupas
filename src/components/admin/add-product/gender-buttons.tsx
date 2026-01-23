@@ -1,6 +1,6 @@
 'use client';
 import { Button, Card, CardHeader, CardTitle, MuiIcon, ButtonsWrapper } from '@/components/ui';
-import { UserContext } from '@/contexts';
+import { UserContext } from '@/contexts/index';
 import { Genders } from '@/types/types';
 import React, { useContext } from 'react';
 
