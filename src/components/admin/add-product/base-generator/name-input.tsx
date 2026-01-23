@@ -1,10 +1,11 @@
+import { Input, Label } from "@/components/ui";
 import React from "react";
 
 const Name = () => {
   return (
     <div>
-      <label htmlFor="name">Nome completo</label>
-      < type="text" id="name" />
+      <Label htmlFor="name">Nome completo</Label>
+      <Input type="text" id="name" />
     </div>
   );
 };
