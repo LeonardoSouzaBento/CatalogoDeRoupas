@@ -1,4 +1,4 @@
-import { AdminContext } from '@/contexts/adminContext';
+import { AdminContext } from '@/contexts/adminContext_';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import type { ProviderType } from '@/types/types';
 import React from 'react';

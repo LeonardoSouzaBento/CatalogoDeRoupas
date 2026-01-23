@@ -1,5 +1,5 @@
 'use client';
-import { HomeContext } from '@/contexts/homeContext';
+import { HomeContext } from '@/contexts/homeContext_';
 import { defaultMainCategories } from '@/data/home/homeData';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import type { MainCategoriesType, ProviderType } from '@/types/types';

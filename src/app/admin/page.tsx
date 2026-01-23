@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext } from 'react';
-import { HomeContext } from '@/contexts';
+import { HomeContext } from '@/contexts/index';
 import { BookHeart, Eye, Pen, Plus } from 'lucide-react';
 import Link from 'next/link';
 

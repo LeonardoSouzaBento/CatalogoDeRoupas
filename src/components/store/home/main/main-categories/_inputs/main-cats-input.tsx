@@ -1,6 +1,6 @@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
-import { HomeContext } from '@/contexts/homeContext';
+import { HomeContext } from '@/contexts/homeContext_';
 import { MainCategory } from '@/types/types';
 import { Eye, EyeClosed, Plus } from 'lucide-react';
 import React, { useContext, useState } from 'react';

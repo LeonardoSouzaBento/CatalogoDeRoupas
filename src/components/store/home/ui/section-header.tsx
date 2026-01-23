@@ -1,4 +1,4 @@
-import { HomeContext } from '@/contexts';
+import { HomeContext } from '@/contexts/index';
 import { BooleanSetter } from '@/types/types';
 import { PenOff } from 'lucide-react';
 import { useContext } from 'react';
@@ -27,8 +27,7 @@ export const SectionHeader = ({
 
   return (
     <div>
-      <div
-        className={`w-full px-3 flex j-center i-center gap-3 ${pb}`}>
+      <div className={`w-full px-3 flex j-center i-center gap-3 ${pb}`}>
         <div className="flex flex-col size-auto">
           <h3
             className={`font-semibold capitalize 

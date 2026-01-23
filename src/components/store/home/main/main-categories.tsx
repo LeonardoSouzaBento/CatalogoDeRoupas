@@ -1,7 +1,7 @@
 'use client';
 import { InputWrapper, SectionHeader } from '@/components/store/home/ui/index';
 import { UserContext } from '@/contexts/index';
-import { HomeContext } from '@/contexts/homeContext';
+import { HomeContext } from '@/contexts/homeContext_';
 import { MainCategory } from '@/types/types';
 import Image from 'next/image';
 import { useContext, useState } from 'react';

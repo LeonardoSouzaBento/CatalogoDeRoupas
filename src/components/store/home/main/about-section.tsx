@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/store/home/ui/index';
-import { PublicDataContext } from '@/contexts/publicDataContext';
+import { PublicDataContext } from '@/contexts/publicDataContext_';
 import { useContext, useState } from 'react';
 import AboutInput from './about-section/about-input';
 

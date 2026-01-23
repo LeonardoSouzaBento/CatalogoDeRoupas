@@ -1,7 +1,7 @@
 'use client';
 import { ZapFixedButton } from '@/components/ui/index';
 import { Icon } from '@/components/ui/lucide-icon';
-import { HomeContext } from '@/contexts';
+import { HomeContext } from '@/contexts/index';
 import { HomeDataProvider } from '@/_providers/homeProvider';
 import { PenOff } from 'lucide-react';
 import { useContext, useState } from 'react';

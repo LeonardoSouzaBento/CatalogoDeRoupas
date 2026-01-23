@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext, useState } from 'react';
-import { HomeContext } from '@/contexts';
+import { HomeContext } from '@/contexts/index';
 import { ShopName } from './header/shop-name';
 import { ButtonSeeEditMode } from './ui';
 

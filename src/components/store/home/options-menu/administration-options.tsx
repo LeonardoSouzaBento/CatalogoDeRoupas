@@ -1,5 +1,5 @@
 import { Button, CustomLink, MuiIcon, Separator } from '@/components/ui';
-import { HomeContext } from '@/contexts';
+import { HomeContext } from '@/contexts/index';
 import { useContext } from 'react';
 import { TitleButtonGroup } from './title-button-group';
 

@@ -1,6 +1,6 @@
 import { CloseButton, Input } from '@/components/ui';
 import { Button } from '@/components/ui/button';
-import { PublicDataContext } from '@/contexts/publicDataContext';
+import { PublicDataContext } from '@/contexts/publicDataContext_';
 import { CircleCheckBig } from 'lucide-react';
 import React, { useContext, useState } from 'react';
 
@@ -53,4 +53,3 @@ const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
 };
 
 export { ShopName };
-

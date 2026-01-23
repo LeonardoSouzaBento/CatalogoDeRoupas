@@ -1,5 +1,5 @@
 'use client';
-import { HomeContext, UserContext } from '@/contexts';
+import { HomeContext, UserContext } from '@/contexts/index';
 import React, { useContext, useEffect } from 'react';
 import {
   AboutSection,
@@ -52,9 +52,7 @@ const Main = (): React.ReactElement => {
       )}
 
       {hasMainCategories && (
-        <SectionWrapper
-          data-default-shadow="false"
-          className="bg-linear-to-b from-white to-white">
+        <SectionWrapper data-default-shadow="false" className="bg-linear-to-b from-white to-white">
           <MainCategories />
         </SectionWrapper>
       )}

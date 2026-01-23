@@ -1,5 +1,5 @@
 'use client';
-import { PublicDataContext } from '@/contexts/publicDataContext';
+import { PublicDataContext } from '@/contexts/publicDataContext_';
 import { defaultShopInfo } from '@/data/home/publicData';
 import type { ProviderType, ShopInfo } from '@/types/types';
 import React, { useState } from 'react';
