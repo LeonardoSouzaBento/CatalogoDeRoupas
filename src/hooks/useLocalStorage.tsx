@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect } from "react";
+'use client';
+import { useState, useEffect } from 'react';
 
-function useLocalStorage<T>(key: string, initialValue: T) {
+export function useLocalStorage<T>(key: string, initialValue: T) {
   const [value, setValue] = useState<T>(initialValue);
   const [isReady, setIsReady] = useState(false);
 
@@ -29,5 +29,3 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
   return [value, setValue] as const;
 }
-
-export default useLocalStorage;

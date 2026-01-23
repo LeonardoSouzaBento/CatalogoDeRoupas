@@ -1,8 +1,8 @@
+import { Button, ButtonsWrapper, MuiIcon } from '@/components/ui';
 import { UserContext } from '@/contexts/userContext_';
 import type { homeUserGender } from '@/types/types';
 import React, { useContext, useState } from 'react';
-import ChildGenderButtons from './user-gender-list/child-gender-buttons';
-import { Button, ButtonsWrapper, MuiIcon } from '@/components/ui';
+import { ChildGenderButtons } from './user-gender-list/child-gender-buttons';
 
 const userGenders = [
   { name: 'masculino', icon: 'man_2' },

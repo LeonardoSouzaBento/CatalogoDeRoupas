@@ -43,4 +43,4 @@ const ChildGenderButtons = () => {
   );
 };
 
-export default ChildGenderButtons;
+export {ChildGenderButtons};

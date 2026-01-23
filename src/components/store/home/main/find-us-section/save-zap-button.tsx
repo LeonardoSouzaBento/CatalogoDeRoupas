@@ -31,7 +31,7 @@ function validateWhatsapp(number: string) {
   };
 }
 
-const SaveZapButton = ({
+export const SaveZapButton = ({
   Value,
   setZapErrors,
 }: {
@@ -56,4 +56,3 @@ const SaveZapButton = ({
     </Button>
   );
 };
-export default SaveZapButton;

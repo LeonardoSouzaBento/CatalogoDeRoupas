@@ -22,4 +22,4 @@ const FullProductImages = () => {
   );
 };
 
-export default FullProductImages;
+export {FullProductImages};

@@ -1,6 +1,6 @@
 import type { AddressSchema } from '@/types/types';
 import React, { useEffect, useState } from 'react';
-import SaveAddressButton from './save-address-button';
+import { SaveAddressButton } from './save-address-button';
 import { Input } from '@/components/ui/index';
 
 const inputs = [
@@ -96,7 +96,7 @@ export const InputAddress = (): React.ReactElement => {
                   ta.dataset.cleared = 'true';
                 }}
                 onChange={handleChange}
-                className={index === inputs.length - 1 ? '!mb-0' : ''}
+                className={index === inputs.length - 1 ? 'mb-0!' : ''}
               />
             </div>
           ))}

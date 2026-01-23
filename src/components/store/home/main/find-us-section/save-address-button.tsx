@@ -2,7 +2,7 @@
 import { AddressSchema } from '@/types/types';
 import { Check } from 'lucide-react';
 
-const SaveAddressButton = ({
+export const SaveAddressButton = ({
   Value,
   addressComplete,
 }: {
@@ -16,9 +16,7 @@ const SaveAddressButton = ({
   return (
     <button className="button min-w-max" onClick={handleSave}>
       Salvar Endereço
-      <Check  />
+      <Check />
     </button>
   );
 };
-
-export default SaveAddressButton;

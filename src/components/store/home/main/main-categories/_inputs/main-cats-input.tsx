@@ -1,10 +1,9 @@
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { AlertCircle } from 'lucide-react';
 import { HomeContext } from '@/contexts/homeContext_';
 import { MainCategory } from '@/types/types';
-import { Eye, EyeClosed, Plus } from 'lucide-react';
+import { AlertCircle, Eye, EyeClosed, Plus } from 'lucide-react';
 import React, { useContext, useState } from 'react';
-import CategoryCard from './category-card';
+import { CatCardInput } from './cat-card-input';
 
 const css = {
   wrapper: 'pb-0',
@@ -49,7 +48,7 @@ export const MainCatsInput = (): React.ReactElement => {
       </div>
       <div className={`${css.wrapperCardCats}`}>
         {selectedMainCategories.map((category: MainCategory, index: number) => (
-          <CategoryCard key={index} category={category} />
+          <CatCardInput key={index} category={category} />
         ))}
       </div>
       <Alert variant="destructive">

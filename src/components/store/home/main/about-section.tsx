@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/store/home/ui/index';
 import { PublicDataContext } from '@/contexts/publicDataContext_';
 import { useContext, useState } from 'react';
-import AboutInput from './about-section/about-input';
+import { AboutInput } from './about-section/about-input';
 
 const css = {
   wrapperAbout: 'm-auto relative',

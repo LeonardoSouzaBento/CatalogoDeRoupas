@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { CircleCheckBig } from 'lucide-react';
 
-const SaveMapButton = ({ Value }: { Value: string }) => {
+export const SaveMapButton = ({ Value }: { Value: string }) => {
   async function handleSave() {
     console.log(Value);
   }
@@ -13,5 +13,3 @@ const SaveMapButton = ({ Value }: { Value: string }) => {
     </Button>
   );
 };
-
-export default SaveMapButton;

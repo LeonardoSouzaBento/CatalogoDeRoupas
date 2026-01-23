@@ -94,4 +94,4 @@ const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.R
   );
 };
 
-export default AboutInput;
+export {AboutInput};

@@ -16,4 +16,4 @@ const EditButton = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
   );
 };
 
-export default EditButton;
+export {EditButton};

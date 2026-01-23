@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import { UserData } from "@/types/types";
-import { InputNameEmail } from "./input-name-email";
-import EditButton from "./edit-button";
 import { Card } from "@/components/ui";
+import { UserData } from "@/types/types";
+import Image from "next/image";
+import { useState } from "react";
+import { EditButton } from "./edit-button";
+import { InputNameEmail } from "./input-name-email";
 
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative br-lg bg-white`,

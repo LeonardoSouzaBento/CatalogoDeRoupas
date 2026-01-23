@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import type { MainCategory } from '@/types/types';
-import Image from 'next/image';
-import { CardEditMode } from './_inputs/card-edit-mode';
 import { Pen } from 'lucide-react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { CardEditMode } from './_inputs/card-edit-mode';
 
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] flex flex-col justify-center gap-4 bs
@@ -48,7 +48,7 @@ const CategoryCard = ({ category }: CatCardResultProps) => {
               setCardEditMode(true);
             }}>
             Editar Categoria
-            <Pen  />
+            <Pen />
           </button>
         </div>
       ) : (
@@ -58,4 +58,5 @@ const CategoryCard = ({ category }: CatCardResultProps) => {
   );
 };
 
-export default CategoryCard;
+export { CategoryCard };
+

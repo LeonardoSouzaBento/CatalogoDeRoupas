@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SaveMapButton from './save-map-button';
+import { SaveMapButton } from './save-map-button';
 
 const css = {
   wrapper: 'min-h-full',
@@ -12,9 +12,7 @@ const css = {
 };
 
 export const InputMap = (): React.ReactElement => {
-  const [Value, setValue] = useState<string>(
-    'Cole aqui o novo link copiado do Google Maps',
-  );
+  const [Value, setValue] = useState<string>('Cole aqui o novo link copiado do Google Maps');
 
   useEffect(() => {
     if (Value !== '') {

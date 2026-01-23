@@ -6,4 +6,4 @@ const MainInfo = () => {
   );
 }
 
-export default MainInfo;
+export {MainInfo};

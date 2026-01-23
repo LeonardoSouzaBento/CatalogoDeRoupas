@@ -1,6 +1,6 @@
 import { Input } from '@/components/ui/index';
 import React, { useEffect, useState } from 'react';
-import SaveZapButton from './save-zap-button';
+import { SaveZapButton } from './save-zap-button';
 
 export const InputContact = (): React.ReactElement => {
   const [Value, setValue] = useState<string>('');
