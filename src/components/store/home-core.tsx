@@ -5,7 +5,7 @@ import { HomeContext } from '@/contexts';
 import { HomeDataProvider } from '@/_providers/homeProvider';
 import { PenOff } from 'lucide-react';
 import { useContext, useState } from 'react';
-import { Footer, LogoArea, Main, OptionsMenu, TopNavBar } from '@/components/store/home/';
+import { Footer, HomeLogo, Main, OptionsMenu, TopNavBar } from '@/components/store/home/';
 import { Button } from '@/components/ui/button';
 
 const HomeCore = () => {
@@ -14,7 +14,7 @@ const HomeCore = () => {
 
   return (
     <HomeDataProvider>
-      <LogoArea />
+      <HomeLogo />
       <TopNavBar setSeeOptionsSection={setSeeOptionsSection} />
       {seeOptionsSection && <OptionsMenu setSeeOptionsSection={setSeeOptionsSection} />}
       <Main />

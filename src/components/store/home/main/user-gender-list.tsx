@@ -1,8 +1,8 @@
-import { SectionHeader } from '@/components/store/home/ui/index';
 import { UserContext } from '@/contexts/userContext';
 import type { homeUserGender } from '@/types/types';
 import React, { useContext, useState } from 'react';
 import ChildGenderButtons from './user-gender-list/child-gender-buttons';
+import { Button, ButtonsWrapper, MuiIcon } from '@/components/ui';
 
 const userGenders = [
   { name: 'masculino', icon: 'man_2' },
@@ -10,11 +10,10 @@ const userGenders = [
 ];
 
 const css = {
-  container:
-    'w-full h-auto max-w-220 m-auto flex-center items-end flex-col gap-4 sm:flex-row relative',
-  wrapper: 'h-max w-full px-3 sm:h-12 flex flex-col items-center j-between sm:flex-row gap-4',
-  button: `w-full gap-2 flex-auto justify-center border traking-wide
-  transition-colors duration-200 br-lg relative font-normal uppercase `,
+  container: `w-full h-auto max-w-220 m-auto flex-center items-end flex-col gap-4 
+    sm:flex-row relative`,
+  wrapper: 'h-max w-full px-3 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-3',
+  button: `w-full gap-1 transition-colors duration-200 font-medium uppercase tracking-wide`,
   notSelected: 'border-gray-100 hover:bg-gray-200/50 border-transparent ',
   selected: 'bg-transparent border shadow-xs hover:bg-white ',
 };
@@ -40,38 +39,49 @@ export const UserGenderList = (): React.ReactElement => {
   }
 
   return (
-    <>
-      <SectionHeader title="Selecione um gênero" section="genders" />
+    <div>
+      <h6
+        className={`max-w-none w-full text-center mb-2 uppercase
+          large-text text-muted-foreground`}>
+        Selecione um gênero
+      </h6>
       <div className={css.container}>
-        <div className={`${css.wrapper}`}>
+        <ButtonsWrapper className={`${css.wrapper}`}>
           {userGenders.map((item) => {
+            const selected = selectedGender === item.name && !childCatSelected;
             return (
-              <button
-                key={item.name}
-                onClick={() => {
-                  handleSelectGender(item.name as homeUserGender);
-                }}
-                className={`${css.button} ${
-                  selectedGender === item.name && !childCatSelected ? css.selected : css.notSelected
-                } ${fastReturn === item.name && 'scale-106'}`}>
-                <span className={`material-symbols-rounded `}>{item.icon}</span>
-                {item.name}
-              </button>
+              <div key={item.name}>
+                <Button
+                  variant={selected ? 'default' : 'outline'}
+                  size={selected ? 'default' : 'outline'}
+                  data-selected={selected}
+                  onClick={() => {
+                    handleSelectGender(item.name as homeUserGender);
+                  }}
+                  className={`${css.button} ${fastReturn === item.name && 'scale-106'}`}>
+                  <MuiIcon icon={item.icon} size="2xl" />
+                  {item.name}
+                </Button>
+              </div>
             );
           })}
           {/* botão infantil */}
-          <button
-            onClick={() => {
-              handleSelectGender('infantil');
-            }}
-            className={`${css.button} ${childCatSelected ? css.selected : css.notSelected} ${
-              fastReturn === 'infantil' && 'scale-106'
-            }`}>
-            <span className="material-symbols-rounded">boy</span> infantil
-          </button>
-          {childCatSelected && <ChildGenderButtons />}
-        </div>
+          <div>
+            <Button
+              variant={childCatSelected ? 'default' : 'outline'}
+              size={childCatSelected ? 'default' : 'outline'}
+              data-selected={childCatSelected}
+              onClick={() => {
+                handleSelectGender('infantil');
+              }}
+              className={`${css.button} ${fastReturn === 'infantil' && 'scale-106'}`}>
+              <MuiIcon icon="boy" size="2xl" />
+              infantil
+            </Button>
+            {childCatSelected && <ChildGenderButtons />}
+          </div>
+        </ButtonsWrapper>
       </div>
-    </>
+    </div>
   );
 };

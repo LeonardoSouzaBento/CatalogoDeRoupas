@@ -1,5 +1,5 @@
 import React from 'react';
-import { CallButton, IconCheck } from '../ui/index';
+import { CTAButton, IconCheck } from '../ui/index';
 
 const basicPlan = [
   'Cadastre até 200 peças',
@@ -17,7 +17,7 @@ const fullPlan = [
 ];
 
 const css = {
-  section:
+  wrapper:
     'w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto rounded-2xl',
   containerPlans: 'pb-2 flex flex-col gap-6 md:flex-row',
   wrapperPlan:
@@ -29,38 +29,34 @@ const css = {
 
 const Plans = (): React.ReactElement => {
   return (
-    <section className={`${css.section}`}>
+    <div className={`${css.wrapper}`}>
       <div className={`${css.containerPlans}`}>
         <div className={`${css.wrapperPlan}`}>
           <TitleAndSubtitle title="Plano Básico" subtitle="Um mês de teste grátis!" />
-
           <ul className={`${css.ul}`}>
             {basicPlan.map((item, index) => (
               <ItemLIst text={item} key={index} />
             ))}
           </ul>
-
-          <CallButton hideInMobile={true} buttonStyles="md:max-w-none!" />
-          <CallButton />
+          <CTAButton hideInMobile={true} classNames={['md:max-w-none', '']} />
+          <CTAButton />
         </div>
-
         <div className={`${css.wrapperPlan} ${css.fullPlanStyles}`}>
           <TitleAndSubtitle
             title="Plano Completo"
             subtitle="Tudo o que você precisa!"
             fullPlan={true}
           />
-
           <ul className={`${css.ul}`}>
             {fullPlan.map((item, index) => (
               <ItemLIst text={item} key={index} fullPlan={true} />
             ))}
           </ul>
-          <CallButton hideInMobile={true} buttonStyles="md:max-w-none!" />
-          <CallButton />
+          <CTAButton hideInMobile={true} classNames={['md:max-w-none', '']} />
+          <CTAButton />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

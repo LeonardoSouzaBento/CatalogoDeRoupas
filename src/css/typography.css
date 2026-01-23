@@ -2,10 +2,10 @@
 @import './globals.css';
 
 @layer components {
+/* 17.5px a  18.5px*/
 body {
 @apply text-[1.09375rem] sm:text-[1.125rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
 }
-
 .smaller-text {@apply text-xs;}
 
 .small-text, label {@apply text-sm;}
@@ -55,12 +55,12 @@ a, h6, h5, h4 {
   @apply font-medium; 
 }
 
-button, label, .small-button, 
+label, .small-button, 
 .big-link, .small-link { 
   @apply font-medium; 
 } 
 
-h3, h2 { 
+h3, h2, button { 
   @apply font-semibold; 
 }
 

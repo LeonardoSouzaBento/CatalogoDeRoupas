@@ -3,37 +3,33 @@ import { StateSetter } from '@/types/types';
 import { useEffect, useRef } from 'react';
 
 export function useResizingCounter(setResizingCounter: StateSetter<number>) {
-  const windowWidthInitialRef = useRef<number | null>(null);
-  const resizeDowntime = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastWidthRef = useRef<number>(0);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    // o window acessado aqui não causa erro
-    windowWidthInitialRef.current = window.innerWidth;
+    lastWidthRef.current = window.innerWidth;
 
-    function handleResize() {
-      if (resizeDowntime.current) {
-        clearTimeout(resizeDowntime.current);
+    const handleResize = () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
       }
 
-      resizeDowntime.current = setTimeout(() => {
-        const widthOfWindow = window.innerWidth;
+      debounceRef.current = setTimeout(() => {
+        const currentWidth = window.innerWidth;
 
-        if (
-          windowWidthInitialRef.current !== null &&
-          widthOfWindow !== windowWidthInitialRef.current
-        ) {
+        if (currentWidth !== lastWidthRef.current) {
           setResizingCounter((prev) => prev + 1);
-          windowWidthInitialRef.current = widthOfWindow;
+          lastWidthRef.current = currentWidth;
         }
-      }, 500);
-    }
+      }, 200);
+    };
 
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (resizeDowntime.current) {
-        clearTimeout(resizeDowntime.current);
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
       }
     };
   }, [setResizingCounter]);

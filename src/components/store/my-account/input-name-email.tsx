@@ -1,3 +1,4 @@
+"use client"
 import { CardHeader, CardTitle, Icon, Input, Label, MuiIcon } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { UserContext } from '@/contexts';

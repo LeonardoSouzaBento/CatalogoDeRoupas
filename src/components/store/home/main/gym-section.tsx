@@ -17,19 +17,21 @@ export const GymSection = (): React.ReactElement => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
 
   return (
-    <Base
-      title="Esporte & Academia"
-      subtitle="Energia e movimento com estilo"
-      mensClothing={mensClothing}
-      womensClothing={womensClothing}
-      boysClothes={boysClothes}
-      girlsClothes={girlsClothes}
-      setMensClothing={setMensClothing}
-      setWomensClothing={setWomensClothing}
-      setBoysClothes={setBoysClothes}
-      setGirlsClothes={setGirlsClothes}
-      sectionEditMode={sectionEditMode}
-      setSectionEditMode={setSectionEditMode}
-    />
+    <div>
+      <Base
+        title="Esporte & Academia"
+        subtitle="Energia e movimento com estilo"
+        mensClothing={mensClothing}
+        womensClothing={womensClothing}
+        boysClothes={boysClothes}
+        girlsClothes={girlsClothes}
+        setMensClothing={setMensClothing}
+        setWomensClothing={setWomensClothing}
+        setBoysClothes={setBoysClothes}
+        setGirlsClothes={setGirlsClothes}
+        sectionEditMode={sectionEditMode}
+        setSectionEditMode={setSectionEditMode}
+      />
+    </div>
   );
 };

@@ -1,41 +1,44 @@
-import React from 'react';
-import { Hero, LogoSection, Plans, Process, Questions } from './sections';
-import { TitleSubtitle } from './ui';
 import { ZapFixedButton } from '@/components/ui/index';
+import { Hero, Logo, Plans, Process, Questions } from './sections';
+import { SectionDescription, SectionHeader, SectionTitle } from './ui';
 
-const css = {
-  wrapperTwoSections: `xl:mb-7 xl:w-auto xl:h-[712px] xl:m-auto pt-6 xl:flex xl:gap-6 xl:px-[calc((100%-1280px)/2)] xl:items-start xl:justify-center`,
-  wrapperSection: 'xl:w-[calc(100%-14px)] xl:h-[546px]',
-};
+const wrapperCss = `xl:mb-7 xl:w-auto xl:h-178 xl:m-auto pt-4 xl:flex 
+xl:gap-6 xl:px-[calc((100%-80rem)/2)] xl:items-start xl:justify-center 
+[&_section]:xl:w-[calc(100%-0.875rem)] [&_section]:xl:h-136.5`;
 
 const LandingPageCore = () => {
   return (
-    <div className="landing-page">
-      <LogoSection page="landing-page" />
+    <div>
+      <Logo />
       <main className="bg-linear-to-t from-body-background via-white to-white z-0">
-        {/* Seção principal */}
-        <Hero />
-        <div className={`${css.wrapperTwoSections}`}>
-          {/* Seção "porque" */}
-          <div className={`${css.wrapperSection}`}>
-            <TitleSubtitle
-              title="Porque ter um catálogo?"
-              subtitle="Ajudamos você a vender mais"
-              secondSection={true}
-            />
+        <section
+          className={`h-auto w-full pt-[4.5em] p-8 pb-0 rounded-none 
+          md:px-8 lg:px-10 bg-linear-to-br from-female to-male`}>
+          <Hero />
+        </section>
+        <div className={wrapperCss}>
+          <section>
+            <SectionHeader className='border-none'>
+              <SectionTitle>Porque ter um catálogo?</SectionTitle>
+              <SectionDescription>Ajudamos você a vender mais</SectionDescription>
+            </SectionHeader>
             <Questions />
-          </div>
-          {/* Seção "como" */}
-          <div className={css.wrapperSection}>
-            <TitleSubtitle title="Como Funciona?" subtitle="É simples" thirdSection={true} />
+          </section>
+          <section>
+            <SectionHeader>
+              <SectionTitle>Como Funciona?</SectionTitle>
+              <SectionDescription>É simples</SectionDescription>
+            </SectionHeader>
             <Process />
-          </div>
+          </section>
         </div>
-        {/* Seção dos planos */}
-        <div className={`pb-9`}>
-          <TitleSubtitle title="Quanto Custa?" subtitle="Temos preços acessíveis" />
+        <section className="pb-10">
+          <SectionHeader>
+            <SectionTitle>Quanto Custa?</SectionTitle>
+            <SectionDescription>Temos preços acessíveis</SectionDescription>
+          </SectionHeader>
           <Plans />
-        </div>
+        </section>
       </main>
       <ZapFixedButton myNumber={true} />
     </div>

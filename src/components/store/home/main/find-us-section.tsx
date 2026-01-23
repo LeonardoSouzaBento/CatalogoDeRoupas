@@ -5,17 +5,19 @@ import { PublicDataContext } from '@/contexts/index';
 import type { AddressSchema } from '@/types/types';
 import React, { useContext, useState } from 'react';
 import { CopyButton, InputAddress, InputContact, InputMap } from './find-us-section/index';
+import { MuiIcon } from '@/components/ui';
 
 const css = {
-  wrapper: 'w-full m-auto max-w-210 flex flex-col gap-5',
-  container: `w-full p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
-    br-lg bg-white border-gray-200 shadow-lg hover:shadow-lg-hover fast-trans relative`,
-  containerhomeEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
-  wrapperInfo: 'w-full flex justify-start items-center flex-auto gap-4',
-  wrapperMap: 'w-full h-[108vw] max-h-[480px]',
-  wrapperMaphomeEditMode: '!h-auto !min-h-max p-5 pt-4',
-  firstP: 'mb-3 leading-none!',
-  wrapperPs: 'relative',
+  wrapper: 'w-full m-auto max-w-210 grid grid-cols-1 gap-4',
+  container: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
+  br-md bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative`,
+  containerEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
+  infoWrapper: `w-full flex justify-start items-start flex-auto gap-3 
+  [&>div>span]:text-female [&>div>span]:mt-[1em]`,
+  mapWrapper: 'w-full h-[108vw] max-h-[480px]',
+  mapWrapperEditMode: '!h-auto !min-h-max p-5 pt-4',
+  textWrapper: `relative space-y-0.5 [&>p:first-child]:text-lg [&>p:first-child]:font-semibold
+  [&>p:last-child]:text-muted-foreground`,
 };
 
 function formatAddress(address: AddressSchema): string {
@@ -40,7 +42,7 @@ export const FindUsSection = (): React.ReactElement => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
 
   return (
-    <>
+    <div>
       <SectionHeader
         title="Nos Encontre"
         subtitle="Visite nossa loja ou fale conosco"
@@ -50,20 +52,21 @@ export const FindUsSection = (): React.ReactElement => {
 
       <div>
         <div className={`${css.wrapper}`}>
-          <div className={`${css.container} ${seePhone && css.containerhomeEditMode}`}>
+          <div className={`${css.container} ${seePhone && css.containerEditMode}`}>
             {/* Telefone */}
             {!seePhone ? (
               <>
-                <div className={`${css.wrapperInfo}`}>
-                  <span className="material-symbols-rounded ">call</span>
-                  <div className={`${css.wrapperPs}`}>
-                    <p className={`${css.firstP}`}>
-                      <strong>Whatsapp:</strong>
+                <div className={`${css.infoWrapper}`}>
+                  <MuiIcon icon="call" fill={1} size="h5" />
+                  <div className={`${css.textWrapper}`}>
+                    <p>
+                      Whatsapp:
                     </p>
                     <p>{shopInfo.contact}</p>
                   </div>
                 </div>
                 <CopyButton
+                  className="min-w-57"
                   state={phoneCopied}
                   setState={setPhoneCopied}
                   firstText="Copiar Telefone"
@@ -79,14 +82,14 @@ export const FindUsSection = (): React.ReactElement => {
             )}
           </div>
           {/* Endereço */}
-          <div className={`${css.container} ${seeAddress && css.containerhomeEditMode}`}>
+          <div className={`${css.container} ${seeAddress && css.containerEditMode}`}>
             {!seeAddress ? (
               <>
-                <div className={`${css.wrapperInfo}`}>
-                  <span className={`material-symbols-rounded`}>home_pin</span>
-                  <div className={`${css.wrapperPs}`}>
-                    <p className={`${css.firstP}`}>
-                      <strong>Onde estamos:</strong>
+                <div className={`${css.infoWrapper}`}>
+                  <MuiIcon icon="home_pin" fill={1} size="h4" weight={500} />
+                  <div className={`${css.textWrapper}`}>
+                    <p>
+                      Onde estamos:
                     </p>
                     <p>{shopAddressFormatted}</p>
                   </div>
@@ -108,8 +111,8 @@ export const FindUsSection = (): React.ReactElement => {
           </div>
           {/* Mapa */}
           <div
-            className={`${css.container} ${css.wrapperMap} ${
-              seeMap && css.wrapperMaphomeEditMode
+            className={`${css.container} ${css.mapWrapper} ${
+              seeMap && css.mapWrapperEditMode
             }`}>
             {!seeMap ? (
               <>
@@ -135,6 +138,6 @@ export const FindUsSection = (): React.ReactElement => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

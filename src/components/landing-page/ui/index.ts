@@ -1,4 +1,4 @@
-export { CallButton } from './call-button';
-export { IconCheck } from './icon-check';
-export { TitleSubtitle } from './title-subtitle';
-export { MainImage } from './main-image';
+export * from './cta-button';
+export * from './icon-check';
+export * from './main-image';
+export * from './section-header';

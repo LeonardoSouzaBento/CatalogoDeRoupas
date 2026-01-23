@@ -10,6 +10,8 @@ import {
   SpecialSection,
   UserGenderList,
 } from './main/index';
+import { SectionWrapper } from './ui';
+import { Separator } from '@/components/ui';
 
 const Main = (): React.ReactElement => {
   const { hasMainCategories, setHasMainCategories, hasGymClothes, setHasGymClothes } =
@@ -29,55 +31,45 @@ const Main = (): React.ReactElement => {
 
   return (
     <main>
-      <section className="bg-gray-50 bg-linear-to-b from-[#F9FAFB] to-white shadow-none!">
-        <div>
-          <UserGenderList />
-        </div>
-      </section>
+      <SectionWrapper
+        className={`bg-gray-50 bg-linear-to-b from-[#F9FAFB]
+         to-white shadow-none`}>
+        <UserGenderList />
+      </SectionWrapper>
 
-      <section className="home-store-section">
-        <div>
-          <SpecialSection />
-        </div>
-      </section>
-
-      <section className="home-store-section">
-        <div>
-          <EverydaySection />
-        </div>
-      </section>
+      <SectionWrapper data-clothes>
+        <SpecialSection />
+      </SectionWrapper>
+      <Separator />
+      <SectionWrapper data-clothes>
+        <EverydaySection />
+      </SectionWrapper>
 
       {hasGymClothes && (
-        <section className="home-store-section">
-          <div>
-            <GymSection />
-          </div>
-        </section>
+        <SectionWrapper data-clothes>
+          <GymSection />
+        </SectionWrapper>
       )}
 
       {hasMainCategories && (
-        <section className="home-store-section">
-          <div>
-            <MainCategories />
-          </div>
-        </section>
+        <SectionWrapper
+          data-default-shadow="false"
+          className="bg-linear-to-b from-white to-white">
+          <MainCategories />
+        </SectionWrapper>
       )}
 
-      <section className="home-store-section">
-        <div>
-          <FindUsSection />
-        </div>
-      </section>
+      <SectionWrapper>
+        <FindUsSection />
+      </SectionWrapper>
 
-      <section
-        className={`bg-white pt-3 pb-3 first:max-w-210 first:h-auto first:bg-white
-        first:shadow-lg first:p-6 first:br-lg`}>
-        <div>
-          <AboutSection />
-        </div>
-      </section>
+      <SectionWrapper
+        className={`from-white to-white [&>div]:max-w-210 [&>div]:h-auto
+        [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-lg [&>div]:mx-auto`}>
+        <AboutSection />
+      </SectionWrapper>
     </main>
   );
 };
 
-export {Main};
+export { Main };

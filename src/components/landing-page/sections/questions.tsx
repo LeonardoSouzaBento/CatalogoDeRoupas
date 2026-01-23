@@ -1,7 +1,8 @@
 import React from 'react';
 import { CalendarHeart, Eye, UserCheck } from 'lucide-react';
-import { CallButton, IconCheck, MainImage } from '../ui/index';
+import { CTAButton, IconCheck, MainImage } from '../ui/index';
 import { sectionHomeStyles } from '@app/(landing-page)/styles';
+import { Icon } from '@/components/ui';
 
 const css = {
   wrapper: 'block md:flex md:gap-7',
@@ -11,19 +12,19 @@ const css = {
 
 const Questions = (): React.ReactElement => {
   return (
-    <section className={sectionHomeStyles}>
+    <div className={sectionHomeStyles}>
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperInfo}`}>
           <TextContent />
-          <CallButton wrapperStyles="justify-center" hideInMobile={true} />
+          <CTAButton classNames={['justify-center', '']} hideInMobile={true} />
         </div>
 
         <div className={`${css.wrapperImg}`}>
           <MainImage src="/home/phone4.png" />
-          <CallButton wrapperStyles="justify-center" />
+          <CTAButton classNames={['justify-center', '']} />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -56,7 +57,12 @@ export const TextContent = () => {
       {content.map((item) => (
         <div className={`${css.wrapperP}`} key={item.id}>
           <div className="w-8 h-8 flex items-start justify-center box-border mb-1">
-            <item.icon strokeWidth={2.1} size={24} />
+            <Icon
+              LucideIcon={item.icon}
+              className="text-female mt-1"
+              size="xl"
+              strokeValue={'thin'}
+            />
           </div>
           <p className={`${css.p}`}>
             {item.text} <IconCheck />

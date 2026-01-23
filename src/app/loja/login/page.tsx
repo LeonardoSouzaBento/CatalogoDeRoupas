@@ -13,7 +13,7 @@ export const buttonStyles = 'w-full h-11 j-center  hover:scale-102 trans';
 
 const Login = () => {
   return (
-    <div className={`${css.container} bg-gradient-to-br from-white to-gray-100`}>
+    <div className={`${css.container} bg-linear-to-br from-white to-gray-100`}>
       <div className="w-full max-w-100">
         <StoreLogo />
         <div className={`${css.wrapper}`}>

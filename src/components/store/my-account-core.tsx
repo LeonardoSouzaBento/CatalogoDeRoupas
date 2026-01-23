@@ -1,3 +1,4 @@
+"use client"
 import { FavoritesCard, MeasuresCard, UserCard } from '@/components/store/my-account/index';
 import { UserContext } from '@/contexts';
 import { useContext } from 'react';

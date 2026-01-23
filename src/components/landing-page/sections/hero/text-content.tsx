@@ -1,21 +1,24 @@
+
 const TextContent = () => {
   return (
     <>
       <h1
-        className={`text-white font-extrabold max-w-120 lg:max-w-130 
-        text-center h1-hero [&>strong]:text-yellow-400 mb-4`}>
+        className={`pt-[1cap] text-primary-50 font-extrabold
+        text-center h1-hero [&>strong]:text-yellow-400 mb-4 leading-[1.125em]`}>
         Tenha um <strong>catálogo online</strong> para mostrar seus produtos e{' '}
         <strong>aumente suas vendas.</strong>
       </h1>
-      <h3 className={`text-white/93 text-center max-w-110 lg:max-w-130 font-thin mb-6`}>
+
+      <h3 className={`text-primary-50/93 text-center font-thin mb-8`}>
         Facilite o processo de compra do cliente e aumente as vendas da sua loja.
       </h3>
 
       <div
-        className={`w-full max-w-86 mb-6 px-4 h-13 flex justify-center items-center gap-2 
+        className={`w-full max-w-81.5 mb-6 flex-center gap-2 
       bg-linear-to-br from-female to-male 
-      rounded-2xl`}>
-        <p className={`text-indigo-50 font-light leading-none mb-0.5 max-w-max text-lg`}>
+      rounded-xl`}>
+        <p
+          className={`text-indigo-50 font-light leading-none mb-0.5 text-lg px-[0.9em] py-cap-offset`}>
           Experimente um mês grátis!
         </p>
       </div>
@@ -24,3 +27,4 @@ const TextContent = () => {
 };
 
 export { TextContent };
+

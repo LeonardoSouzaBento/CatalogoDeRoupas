@@ -5,9 +5,9 @@ import AboutInput from './about-section/about-input';
 
 const css = {
   wrapperAbout: 'm-auto relative',
-  homeEditMode: 'bg-white shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg ',
-  wrapperP: 'size-full relative z-0 bg-white',
-  p: 'pb-3 relative',
+  homeEditMode: 'shadow-lg/12 py-47 sm:py-40 md:py-34 br-lg ',
+  wrapperP: 'size-full relative z-0',
+  p: 'pb-3 relative last:pb-0',
 };
 
 export const AboutSection = () => {
@@ -15,8 +15,9 @@ export const AboutSection = () => {
   const { shopInfo, setShopInfo } = useContext(PublicDataContext);
 
   return (
-    <>
+    <div>
       <SectionHeader
+        section="about"
         title="Sobre Nós"
         subtitle="Conheça mais a nossa loja"
         sectionEditMode={seeInput}
@@ -34,6 +35,6 @@ export const AboutSection = () => {
           <AboutInput shopInfo={shopInfo} setShopInfo={setShopInfo} setSeeInput={setSeeInput} />
         )}
       </div>
-    </>
+    </div>
   );
 };

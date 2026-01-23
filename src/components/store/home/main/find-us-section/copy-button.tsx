@@ -1,3 +1,4 @@
+import { Button, Icon } from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
 import { Copy, CopyCheck } from 'lucide-react';
 
@@ -7,9 +8,8 @@ interface CopyButtonProps {
   firstText: string;
   secondText?: string;
   textToCopy: string;
+  className?: string;
 }
-
-const css = { button: 'button min-w-max' };
 
 export const CopyButton = ({
   state,
@@ -17,6 +17,7 @@ export const CopyButton = ({
   firstText,
   secondText,
   textToCopy,
+  className,
 }: CopyButtonProps) => {
   function handleClickCopy() {
     navigator.clipboard
@@ -29,9 +30,9 @@ export const CopyButton = ({
   }
 
   return (
-    <button className={`${css.button}`} onClick={handleClickCopy}>
+    <Button variant="ghost" className={className} onClick={handleClickCopy}>
       {!state ? firstText : secondText || 'Copiado!'}
-      {!state ? <Copy /> : <CopyCheck />}
-    </button>
+      <Icon LucideIcon={state ? CopyCheck : Copy} />
+    </Button>
   );
 };

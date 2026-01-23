@@ -1,3 +1,4 @@
+import { MuiIcon, Separator } from "@/components/ui";
 import Link from "next/link";
 
 const pageOptions = [
@@ -26,14 +27,13 @@ const Links = () => {
     <div className={`${css.wrapper}`}>
       {pageOptions.map((item) => (
         <div key={item.name} className={`${css.wrapperLink}`}>
-          <span className={`material-symbols-rounded ${item.iconStyles}`}>
-            {item.icon}
-          </span>
+          <MuiIcon icon={item.icon} />
           <Link href={item.link} className={`${css.link}`}>
             {item.name}
           </Link>
         </div>
       ))}
+      <Separator />
     </div>
   );
 };

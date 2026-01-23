@@ -1,10 +1,11 @@
+import { Button, Icon } from '@/components/ui';
 import { UserContext } from '@/contexts';
 import { mostSearched } from '@/data/UserData';
 import { Search } from 'lucide-react';
 import { useContext } from 'react';
 
 const css = {
-  wrapper: `w-full h-11 pl-[22px] flex i-center j-start gap-3 
+  wrapper: `w-full h-11 flex i-center j-start gap-3 
   br-0 hover:bg-gray-100 hover:pl-4 fast-trans`,
 };
 
@@ -20,10 +21,10 @@ const Choices = () => {
   return (
     <div>
       {currentMostSearched.map((item) => (
-        <div key={item} className={`${css.wrapper}`}>
-          <Search  />
-          <p className="">{item}</p>
-        </div>
+        <Button key={item} className={`${css.wrapper}`}>
+          <Icon LucideIcon={Search} />
+          {item}
+        </Button>
       ))}
     </div>
   );

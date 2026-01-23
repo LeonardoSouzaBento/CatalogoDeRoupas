@@ -2,15 +2,16 @@ import { CloseButton } from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
 import { useEffect, useState } from 'react';
 import { AdministrationOptions, Choices, Links, Subtitle } from './options-menu/index';
+import { TitleButtonGroup } from './options-menu/title-button-group';
 
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,
   wrapper: `h-[calc(100vh-52px)] w-8/10 max-w-120 pb-6 min-h-screen z-6 
-  bg-white rounded-none [box-shadow:_-8px_0_20px_rgba(0,0,0,0.05)] overflow-y-scroll trans absolute top-0 right-0
-  `,
-  wrapperTitle: `h-13 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 br-0 bg-stone-800 
-  bg-gradient-to-l from-stone-800 to-stone-700/70`,
-  title: `text-white font-semibold  mt-[1px]`,
+  bg-white rounded-none shadow-md overflow-y-scroll trans absolute top-0 right-0
+  [&_[data-slot="separator"]:mx-6]`,
+  header: `h-12 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 br-0 bg-stone-800 
+  bg-gradient-to-l from-primary-900 to-primary-800`,
+  title: `text-white font-semibold mt-[1px]`,
 };
 
 const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSetter }) => {
@@ -40,21 +41,18 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
         }
       }}>
       <div className={`${css.wrapper} ${view ? 'translate-x-0' : 'translate-x-120'}`}>
-        <div className={`${css.wrapperTitle}`}>
-          <h2 className={`${css.title}`}>Main Opções</h2>
-
+        <div className={`${css.header}`}>
+          <p className={`text-primary-50 font-semibold large-text`}>Main Opções</p>
           <CloseButton setState={setView} className="absolute top-2 right-2" />
         </div>
 
         <AdministrationOptions />
-
         <div className={`br-0 bg-[rgb(252,252,252)] z-2`}>
-          <Subtitle subtitle="Navegue" />
+          <TitleButtonGroup title="Navegue" />
           <Links />
         </div>
-
         <div className={`br-0 bg-white`}>
-          <Subtitle subtitle="Escolha" />
+          <TitleButtonGroup title="Escolha" />
           <Choices />
         </div>
       </div>
@@ -62,4 +60,4 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
   );
 };
 
-export {OptionsMenu};
+export { OptionsMenu };

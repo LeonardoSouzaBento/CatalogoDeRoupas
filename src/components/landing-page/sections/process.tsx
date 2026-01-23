@@ -1,7 +1,8 @@
-import React from 'react';
-import { Share2, Search, Heart } from 'lucide-react';
-import { CallButton } from '../ui/index';
 import { sectionHomeStyles } from '@app/(landing-page)/styles';
+import { Heart, Search, Share2 } from 'lucide-react';
+import React from 'react';
+import { CTAButton } from '../ui/index';
+import { Icon } from '@/components/ui';
 
 const css = {
   section: '',
@@ -12,19 +13,19 @@ const css = {
 
 const Process = (): React.ReactElement => {
   return (
-    <section className={sectionHomeStyles}>
+    <div className={sectionHomeStyles}>
       <div className={`${css.wrapper}`}>
         <div className={`${css.wrapperInfo}`}>
           <Messages />
-          <CallButton hideInMobile={true} wrapperStyles="justify-center" />
+          <CTAButton hideInMobile={true} classNames={['justify-center', '']} />
         </div>
 
         <div className={`${css.wrapperImg}`}>
           <img />
-          <CallButton wrapperStyles="justify-center" />
+          <CTAButton classNames={['justify-center', '']} />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -59,7 +60,12 @@ const Messages = () => {
           <div className={`${css.wrapperP}`}>
             <p className={`${css.p}`}>
               <span className={`${css.wrapperIcon}`}>
-                <item.icon className="text-female" strokeWidth={2.2} size={22} />
+                <Icon
+                  LucideIcon={item.icon}
+                  className="text-female mt-1"
+                  size="lg"
+                  strokeValue={'thin'}
+                />
               </span>{' '}
               {item.text}.
             </p>

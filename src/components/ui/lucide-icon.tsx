@@ -8,31 +8,37 @@ interface IconProps {
 }
 
 const iconSizes = {
-  xs: '0.937em',
-  sm: '0.968em',
+  xs: '0.889em',
+  sm: '0.943em',
   md: '1em',
-  lg: '1.033em',
-  h6: '1.067em',
-  h5: '1.138em',
-  h4: '1.215em',
-  h3: '1.296em',
-  xl: '1.067em',
-  '2xl': '1.138em',
-  '3xl': '1.215em',
-  '4xl': '1.296em',
+  lg: '1.061em',
+  h6: '1.125em',
+  h5: '1.266em',
+  h4: '1.424em',
+  h3: '1.602em',
+  xl: '1.125em',
+  '2xl': '1.266em',
+  '3xl': '1.424em',
+  '4xl': '1.602em',
 };
 
 const weights = {
-  thin: 2.2,
-  light: 2.4,
+  thin: 2.25,
+  light: 2.35,
+  normal: 2.5,
+  semibold: 2.67,
+  bold: 2.8,
+  extrabold: 3,
 };
 
 export const Icon = ({ LucideIcon, size, className, strokeValue }: IconProps) => {
   return (
-    <LucideIcon
-      size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}
-      strokeWidth={weights[strokeValue as keyof typeof weights] || strokeValue || 2.6}
-      className={className || ''}
-    />
+    <div className="h-3 flex-center overflow-visible">
+      <LucideIcon
+        size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}
+        strokeWidth={weights[strokeValue as keyof typeof weights] || strokeValue || 2.5}
+        className={className || ''}
+      />
+    </div>
   );
 };

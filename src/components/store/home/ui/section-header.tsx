@@ -23,27 +23,18 @@ export const SectionHeader = ({
   const { homeEditMode } = useContext(HomeContext);
   const seeButtonEdit = homeEditMode && !sectionEditMode && section !== 'genders';
   const seeButtonCloseEdit = sectionEditMode && homeEditMode && section !== 'genders';
+  const pb = section === 'clothes' ? 'mb-3' : section === 'about' ? 'mb-4' : 'mb-6';
 
   return (
     <div>
       <div
-        className={`w-full px-3 flex j-center i-center gap-3 ${
-          section == 'clothes' ? 'mb-3' : 'mb-6'
-        }`}>
+        className={`w-full px-3 flex j-center i-center gap-3 ${pb}`}>
         <div className="flex flex-col size-auto">
-          {section == 'genders' ? (
-            <p
-              className={`text-center uppercase font-medium 
-            text-muted-foreground large-text`}>
-              {title}
-            </p>
-          ) : (
-            <h3
-              className={`font-semibold capitalize 
+          <h3
+            className={`font-semibold capitalize 
               text-center`}>
-              {title}
-            </h3>
-          )}
+            {title}
+          </h3>
 
           {subtitle && (
             <h6
