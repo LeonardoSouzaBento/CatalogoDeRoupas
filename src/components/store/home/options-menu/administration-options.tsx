@@ -52,4 +52,4 @@ const AdministrationOptions = () => {
   );
 };
 
-export default AdministrationOptions;
+export { AdministrationOptions };

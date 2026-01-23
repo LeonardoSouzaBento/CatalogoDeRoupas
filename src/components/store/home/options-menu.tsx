@@ -1,8 +1,7 @@
 import { CloseButton } from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
 import { useEffect, useState } from 'react';
-import { AdministrationOptions, Choices, Links, Subtitle } from './options-menu/index';
-import { TitleButtonGroup } from './options-menu/title-button-group';
+import { AdministrationOptions, Choices, Links, TitleButtonGroup } from './options-menu/index';
 
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,

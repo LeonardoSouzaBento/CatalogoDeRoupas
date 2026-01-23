@@ -30,4 +30,4 @@ const Choices = () => {
   );
 };
 
-export default Choices;
+export { Choices };

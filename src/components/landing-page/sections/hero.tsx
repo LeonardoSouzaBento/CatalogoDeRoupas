@@ -18,7 +18,7 @@ const Hero = (): React.ReactElement => {
       </div>
       <div className={`${css.imageWrapper}`}>
         <Image />
-        <CTAButton classNames={['', 'justify-center shadow-accent']} />
+        <CTAButton classNames={['max-w-none justify-center', 'shadow-accent']} />
       </div>
     </div>
   );

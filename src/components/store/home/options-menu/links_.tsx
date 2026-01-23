@@ -38,4 +38,4 @@ const Links = () => {
   );
 };
 
-export default Links;
+export {Links};

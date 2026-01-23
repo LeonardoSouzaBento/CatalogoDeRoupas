@@ -21,7 +21,7 @@ const css = {
     'w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto rounded-2xl',
   containerPlans: 'pb-2 flex flex-col gap-6 md:flex-row',
   wrapperPlan:
-    'bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-lg hover:scale-102 trans',
+    'bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-lg hover:scale-101 trans',
   ul: 'mb-6 ',
   fullPlanStyles:
     'border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none',
@@ -38,8 +38,8 @@ const Plans = (): React.ReactElement => {
               <ItemLIst text={item} key={index} />
             ))}
           </ul>
-          <CTAButton hideInMobile={true} classNames={['md:max-w-none', '']} />
-          <CTAButton />
+          <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
+          <CTAButton classNames={['max-w-none', 'w-full']} />
         </div>
         <div className={`${css.wrapperPlan} ${css.fullPlanStyles}`}>
           <TitleAndSubtitle
@@ -52,8 +52,8 @@ const Plans = (): React.ReactElement => {
               <ItemLIst text={item} key={index} fullPlan={true} />
             ))}
           </ul>
-          <CTAButton hideInMobile={true} classNames={['md:max-w-none', '']} />
-          <CTAButton />
+          <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
+          <CTAButton classNames={['max-w-none', 'w-full']} />
         </div>
       </div>
     </div>

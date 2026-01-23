@@ -13,7 +13,7 @@ export function Button({ className, ...props }: React.ComponentProps<'button'>) 
     <button
       className={cn(
         `
-        h-12 max-w-86 flex items-center justify-center gap-2 px-[1.5em]
+        h-12 flex items-center justify-center gap-2 px-[1.5em]
         text-center rounded-xl font-semibold cursor-pointer
         bg-linear-to-r from-yellow-300 to-yellow-400
         hover:scale-104 transition-all duration-200
