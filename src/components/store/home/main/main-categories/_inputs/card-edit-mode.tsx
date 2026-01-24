@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const css = {
-  wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 bs
+  wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 border
 p-5 rounded-none hover:shadow-lg fast-trans`,
   wrapper: `flex flex-col gap-3 mb-px`,
   wrapperImg: 'rounded-none flex flex-wrap i-center gap-4 relative mb-px',
@@ -92,4 +92,4 @@ const CardEditMode = ({
   );
 };
 
-export {CardEditMode};
+export { CardEditMode };

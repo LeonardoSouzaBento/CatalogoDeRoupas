@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 
 const css = {
   wrapperLogo: `size-20 mb-8 box-content flex flex-col justify-center items-center gap-6 
-  bg-stone-800 br-50 shadow-lg-hover`,
+  bg-stone-800 round-full shadow-lg-hover`,
   pLogo: `h-max text-center text-white font-logo  pl-[1px] leading-0`,
   shopName: `text-center  font-semibold leading-0 mb-4 capitalize`,
   subtitle: `mb-6 text-gray-500 `,
@@ -16,9 +16,7 @@ const StoreLogo = () => {
         <p className={`${css.pLogo} pt-1`}>Roupas</p>
         <p className={`${css.pLogo}`}>Online</p>
       </div>
-      <p className={`${css.shopName} tracking-tight`}>
-        Nome da sua loja
-      </p>
+      <p className={`${css.shopName} tracking-tight`}>Nome da sua loja</p>
       <p className={`${css.subtitle}`}>Facilite sua compra</p>
     </div>
   );

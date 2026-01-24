@@ -6,7 +6,7 @@ interface Props {
   target?: string;
 }
 
-export const CustomLink = ({ link, className, target = '_blank' }: Props) => {
+export const CustomLink = ({ link, className, target = '_self' }: Props) => {
   return (
     <Link
       href={link}

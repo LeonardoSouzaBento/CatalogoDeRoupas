@@ -5,6 +5,7 @@ interface IconProps {
   size?: string;
   className?: string;
   strokeValue?: string | number;
+  fill?: string;
 }
 
 const iconSizes = {
@@ -31,13 +32,14 @@ const weights = {
   extrabold: 3,
 };
 
-export const Icon = ({ LucideIcon, size, className, strokeValue }: IconProps) => {
+export const Icon = ({ LucideIcon, size, className, strokeValue, fill }: IconProps) => {
   return (
-    <div className="h-3 flex-center overflow-visible">
+    <div className="h-3 inline-flex items-center justify-center overflow-visible [&_svg]:shrink-0">
       <LucideIcon
         size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}
         strokeWidth={weights[strokeValue as keyof typeof weights] || strokeValue || 2.5}
-        className={className || ''}
+        className={className}
+        fill={fill || 'none'}
       />
     </div>
   );

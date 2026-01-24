@@ -8,7 +8,7 @@ const css = {
   wrapper: `h-[calc(100vh-52px)] w-8/10 max-w-120 pb-6 min-h-screen z-6 
   bg-white rounded-none shadow-md overflow-y-scroll trans absolute top-0 right-0
   [&_[data-slot="separator"]:mx-6]`,
-  header: `h-12 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 br-0 bg-stone-800 
+  header: `h-12 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 round-none bg-stone-800 
   bg-gradient-to-l from-primary-900 to-primary-800`,
   title: `text-white font-semibold mt-[1px]`,
 };
@@ -46,11 +46,11 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
         </div>
 
         <AdministrationOptions />
-        <div className={`br-0 bg-[rgb(252,252,252)] z-2`}>
+        <div className={`round-none bg-[rgb(252,252,252)] z-2`}>
           <TitleButtonGroup title="Navegue" />
           <Links />
         </div>
-        <div className={`br-0 bg-white`}>
+        <div className={`round-none bg-white`}>
           <TitleButtonGroup title="Escolha" />
           <Choices />
         </div>

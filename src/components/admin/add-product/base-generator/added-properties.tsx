@@ -4,11 +4,11 @@ import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types
 import { X } from 'lucide-react';
 
 const css = {
-  wrapper: `bs p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
+  wrapper: `border p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
-  bg-white br-50 bs`,
-  button: `size-8 flex-center px-0 br-50 text-red-500 hover:underline `,
-  name: `capitalize text-gray-800 5`,
+  bg-white round-full border`,
+  button: `size-8 flex-center px-0 round-full text-red-500 hover:underline `,
+  name: `capitalize text-gray-800`,
   strong: `font-medium tracking-wide`,
 };
 

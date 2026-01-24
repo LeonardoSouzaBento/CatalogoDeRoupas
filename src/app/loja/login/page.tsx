@@ -3,7 +3,7 @@ import LoginCore from '@/components/store/login-core';
 
 const css = {
   container: `h-screen w-full px-3 flex-center`,
-  wrapper: `h-auto w-full max-w-100 mb-12 p-6 pt-5 pb-8 br-2xl bg-white
+  wrapper: `h-auto w-full max-w-100 mb-12 p-6 pt-5 pb-8 round-2xl bg-white
   shadow-lg hover:shadow-lg-hover trans relative`,
   title: 'text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left ',
   button: ``,

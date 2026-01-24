@@ -6,7 +6,7 @@ import { useContext } from 'react';
 
 const css = {
   wrapper: `w-full h-11 flex i-center j-start gap-3 
-  br-0 hover:bg-gray-100 hover:pl-4 fast-trans`,
+  round-none hover:bg-gray-100 hover:pl-4 fast-trans`,
 };
 
 const Choices = () => {

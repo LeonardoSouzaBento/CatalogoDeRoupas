@@ -11,7 +11,7 @@ function SectionHeader({
         `
         w-[calc(100%-3.25rem)] lg:w-[calc(100%-9.375rem)]
         m-auto flex flex-col items-center pt-4
-        border-t-2 border-dashed
+        border-t-2 border-dashed border-border/66
         `,
         className
       )}

@@ -24,12 +24,12 @@ const FavoriteButton = () => {
       <Button
         variant="transparent"
         size="icon"
-        className='br-full'
+        className="round-full"
         onClick={(e) => {
           e.stopPropagation();
           handleClickFavorite();
         }}>
-        <MuiIcon icon="favorite" size="3xl" weight={400} className='pt-0.5' />
+        <MuiIcon icon="favorite" size="3xl" weight={400} className="pt-0.5" />
       </Button>
     </div>
   );

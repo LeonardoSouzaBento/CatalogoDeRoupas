@@ -4,12 +4,12 @@ import React, { useMemo } from 'react';
 import { TablePart } from './table-part';
 
 const css = {
-  grid: `px-5 py-2 grid grid-cols-1 sm:grid-cols-2 crop br-md bs`,
-  wrapper: `bg-white br-0 `,
+  grid: `px-5 py-2 grid grid-cols-1 sm:grid-cols-2 crop round-md border`,
+  wrapper: `bg-white round-none `,
   row: `h-9.5 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
-  br-0`,
+  round-none`,
   label: ` font-medium text-gray-800 w-40`,
-  value: `text-gray-700 flex-1 text-right br-0`,
+  value: `text-gray-700 flex-1 text-right round-none`,
   voidValue: `font-semibold text-gray-400 text-right`,
 };
 

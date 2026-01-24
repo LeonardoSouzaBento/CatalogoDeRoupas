@@ -4,13 +4,13 @@ import { SectionDescription, SectionHeader, SectionTitle } from './ui';
 
 const wrapperCss = `xl:mb-7 xl:w-auto xl:h-178 xl:m-auto pt-4 xl:flex 
 xl:gap-6 xl:px-[calc((100%-80rem)/2)] xl:items-start xl:justify-center 
-[&_section]:xl:w-[calc(100%-0.875rem)] [&_section]:xl:h-136.5`;
+[&_section]:xl:w-[calc(100%-0.875rem)] [&_section]:xl:h-136.5 [&_section]:rounded-xl`;
 
 const LandingPageCore = () => {
   return (
     <div>
       <Logo />
-      <main className="bg-linear-to-t from-body-background via-white to-white z-0">
+      <main className="bg-linear-to-t from-medium-bg via-light-bg to-light-bg z-0">
         <section
           className={`h-auto w-full pt-[4.5em] p-8 pb-0 rounded-none 
           md:px-8 lg:px-10 bg-linear-to-br from-female to-male`}>

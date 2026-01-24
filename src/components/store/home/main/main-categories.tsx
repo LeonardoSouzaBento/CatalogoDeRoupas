@@ -13,10 +13,10 @@ const css = {
     xl:h-[390px] relative
   `,
   sectiooInEditMode: 'pb-0 mb-0 m-auto max-w-210',
-  wrapperEditMode: 'p-6 pt-3 bg-white br-md mb-10 shadow-lg',
+  wrapperEditMode: 'p-6 pt-3 bg-white round-md mb-10 shadow-lg',
   wrapperImg: `
     w-[calc(50%-6px)] h-[66vw] max-w-[320px] max-h-[420px] bg-gray-100 flex items-end relative overflow-hidden
-    br-lg lg:h-full
+    round-lg lg:h-full
   `,
   img: 'absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30',
   nameWrapper: `w-full flex-center relative bg-linear-to-t from-primary-950/80 to-transparent 

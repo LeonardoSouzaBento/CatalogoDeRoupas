@@ -1,5 +1,6 @@
 import React from 'react';
-import { CTAButton, IconCheck } from '../ui/index';
+import { CTAButton, CheckIcon } from '../ui/index';
+import { cn } from '@/lib/utils';
 
 const basicPlan = [
   'Cadastre até 200 peças',
@@ -16,6 +17,8 @@ const fullPlan = [
   '+ Todos os recursos do plano básico',
 ];
 
+const plans = [basicPlan, fullPlan];
+
 const css = {
   wrapper:
     'w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto rounded-2xl',
@@ -23,8 +26,9 @@ const css = {
   wrapperPlan:
     'bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-lg hover:scale-101 trans',
   ul: 'mb-6 ',
-  fullPlanStyles:
+  fullPlan:
     'border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none',
+  itemList: `flex gap-3 py-2.5 px-1`,
 };
 
 const Plans = (): React.ReactElement => {
@@ -35,13 +39,15 @@ const Plans = (): React.ReactElement => {
           <TitleAndSubtitle title="Plano Básico" subtitle="Um mês de teste grátis!" />
           <ul className={`${css.ul}`}>
             {basicPlan.map((item, index) => (
-              <ItemLIst text={item} key={index} />
+              <li key={index} className={`${css.itemList}`}>
+                <CheckIcon section={fullPlan ? 'plans' : ''} /> {item}
+              </li>
             ))}
           </ul>
           <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
           <CTAButton classNames={['max-w-none', 'w-full']} />
         </div>
-        <div className={`${css.wrapperPlan} ${css.fullPlanStyles}`}>
+        <div className={`${css.wrapperPlan} ${css.fullPlan}`}>
           <TitleAndSubtitle
             title="Plano Completo"
             subtitle="Tudo o que você precisa!"
@@ -49,7 +55,9 @@ const Plans = (): React.ReactElement => {
           />
           <ul className={`${css.ul}`}>
             {fullPlan.map((item, index) => (
-              <ItemLIst text={item} key={index} fullPlan={true} />
+              <li key={index} className={`${css.itemList} text-white`}>
+                <CheckIcon section={fullPlan ? 'plans' : ''} /> {item}
+              </li>
             ))}
           </ul>
           <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
@@ -72,8 +80,8 @@ const TitleAndSubtitle = ({
   fullPlan?: boolean;
 }) => {
   const css = {
-    title: 'text-gray-800 leading-10  font-semibold ',
-    subtitle: 'text-gray-600 mb-4 font-light 5',
+    title: 'text-gray-800',
+    subtitle: 'text-gray-600 mb-4 font-light',
   };
 
   return (
@@ -84,10 +92,18 @@ const TitleAndSubtitle = ({
   );
 };
 
-const ItemLIst = ({ text, fullPlan }: { text: string; fullPlan?: boolean }): React.ReactElement => {
+function Title({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <li className={`flex gap-3 py-2.5 px-1 5 ${fullPlan && 'text-white!'}`}>
-      <IconCheck section={fullPlan ? 'plansSection' : ''} /> {text}
-    </li>
+    <div data-slot="plans-title" className={cn('flex items-center gap-2', className)} {...props} />
   );
-};
+}
+
+function Description({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="plans-description"
+      className={cn('flex items-center gap-2', className)}
+      {...props}
+    />
+  );
+}

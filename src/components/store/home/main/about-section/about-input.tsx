@@ -7,7 +7,7 @@ import { Check, Trash, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 const css = {
-  wrapper: 'abso z-2 size-full bg-white p-5 br-lg',
+  wrapper: 'abso z-2 size-full bg-white p-5 round-lg',
   header:
     'h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none',
   h3: ' font-medium text-gray-800',
@@ -94,4 +94,4 @@ const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.R
   );
 };
 
-export {AboutInput};
+export { AboutInput };

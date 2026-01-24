@@ -16,7 +16,7 @@ const css = {
   buttonWrapper: ` [&>button:first-child]:hidden [&>button:first-child]:md:flex 
   [&>button:last-child]:flex [&>button:last-child]:md:hidden
   [&>button:hover]:bg-white/66`,
-  button: 'font-medium h-10 px-0 flex-center gap-[6px] sm:px-4 sm:pl-[14px] br-md bg-white/24 ',
+  button: 'font-medium h-10 px-0 flex-center gap-[6px] sm:px-4 sm:pl-[14px] round-md bg-white/24 ',
   searchButton: `w-34 sm:min-w-36 max-w-60 justify-between lg:order-2 
   shadow-md/4 bg-white/24 border border-transparent hover:scale-102 transition-all duration-300`,
 };

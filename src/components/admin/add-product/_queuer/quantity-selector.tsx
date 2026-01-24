@@ -8,11 +8,11 @@ const css = {
   border relative`,
   wrapperButtons: `flex gap-3`,
   p: `5`,
-  button: `size-9 p-0 flex-center br-50 5`,
+  button: `size-9 p-0 flex-center round-full`,
   selected: ` border shadow-lg hover:shadow-lg-hover`,
-  plusButton: `size-9 flex-center p-0 br-50`,
+  plusButton: `size-9 flex-center p-0 round-full`,
   cancelButton: `p-0 size-9 bg-gray-100/70 flex-center absolute -top-2 -right-2
-  br-50`,
+  round-full`,
 };
 
 interface Props {
@@ -51,7 +51,7 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
           setNumberOptions([1, 2, 3]);
           setSelectedQuantity(0);
         }}>
-        <X  />
+        <X />
       </button>
       <p className={`${numberOptions[0] !== 1 && 'min-[450px]:ml-12'}`}>Tenho</p>
 
@@ -77,7 +77,7 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
           onClick={(e) => {
             incrementAll(e);
           }}>
-          <Plus  />
+          <Plus />
         </button>
         {numberOptions[0] !== 1 && (
           <button
@@ -85,7 +85,7 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
             onClick={(e) => {
               decrementAll(e);
             }}>
-            <Minus  />
+            <Minus />
           </button>
         )}
       </div>

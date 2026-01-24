@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const css = {
   wrapperProduct: `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-lg 
-     hover:shadow-lg-hover hover:scale-101 fast-trans br-lg  overflow-hidden`,
+     hover:shadow-lg-hover hover:scale-101 fast-trans round-lg  overflow-hidden`,
   wrapperImgs: `w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex relative bg-white rounded-none`,
 };
 

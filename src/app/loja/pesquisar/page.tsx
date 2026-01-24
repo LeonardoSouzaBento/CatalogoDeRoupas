@@ -1,8 +1,8 @@
-import SearchCore from "@/components/store/search-core";
+import SearchCore from '@/components/store/search-core';
 
 const Pesquisar = () => {
   return (
-    <div className="min-h-screen bg-white br-0">
+    <div className="min-h-screen bg-white round-none">
       <SearchCore />
     </div>
   );

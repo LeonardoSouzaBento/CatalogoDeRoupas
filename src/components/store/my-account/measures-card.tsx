@@ -16,7 +16,7 @@ import React from 'react';
 
 const css = {
   wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col 
-  border max-[375px]:border-b-transparent! mb-5 br-md crop`,
+  border max-[375px]:border-b-transparent! mb-5 round-md crop`,
 };
 
 export const MeasuresCard = ({ userData }: { userData: UserData }) => {

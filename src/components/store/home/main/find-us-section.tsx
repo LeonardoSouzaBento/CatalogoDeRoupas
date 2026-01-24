@@ -10,7 +10,7 @@ import { MuiIcon } from '@/components/ui';
 const css = {
   wrapper: 'w-full m-auto max-w-210 grid grid-cols-1 gap-4',
   container: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
-  br-md bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative`,
+  round-md bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative`,
   containerEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
   infoWrapper: `w-full flex justify-start items-start flex-auto gap-3 
   [&>div>span]:text-female [&>div>span]:mt-[1em]`,
@@ -59,9 +59,7 @@ export const FindUsSection = (): React.ReactElement => {
                 <div className={`${css.infoWrapper}`}>
                   <MuiIcon icon="call" fill={1} size="h5" />
                   <div className={`${css.textWrapper}`}>
-                    <p>
-                      Whatsapp:
-                    </p>
+                    <p>Whatsapp:</p>
                     <p>{shopInfo.contact}</p>
                   </div>
                 </div>
@@ -88,9 +86,7 @@ export const FindUsSection = (): React.ReactElement => {
                 <div className={`${css.infoWrapper}`}>
                   <MuiIcon icon="home_pin" fill={1} size="h4" weight={500} />
                   <div className={`${css.textWrapper}`}>
-                    <p>
-                      Onde estamos:
-                    </p>
+                    <p>Onde estamos:</p>
                     <p>{shopAddressFormatted}</p>
                   </div>
                 </div>
@@ -110,10 +106,7 @@ export const FindUsSection = (): React.ReactElement => {
             )}
           </div>
           {/* Mapa */}
-          <div
-            className={`${css.container} ${css.mapWrapper} ${
-              seeMap && css.mapWrapperEditMode
-            }`}>
+          <div className={`${css.container} ${css.mapWrapper} ${seeMap && css.mapWrapperEditMode}`}>
             {!seeMap ? (
               <>
                 <iframe

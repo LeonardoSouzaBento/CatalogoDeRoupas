@@ -7,7 +7,7 @@ const css = {
   h4: 'mb-3 text-neutral-800 font-medium ',
   ul: 'list-decimal pl-4 space-y-2 flex flex-col gap-[10]',
   li: '5 text-neutral-800 mb-0',
-  textarea: 'w-full min-h-[86px] flex-center p-4 mb-3 br-md box-border',
+  textarea: 'w-full min-h-[86px] flex-center p-4 mb-3 round-md box-border',
   button: '',
 };
 

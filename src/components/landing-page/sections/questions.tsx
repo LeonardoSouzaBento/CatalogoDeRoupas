@@ -1,6 +1,6 @@
 import React from 'react';
 import { CalendarHeart, Eye, UserCheck } from 'lucide-react';
-import { CTAButton, IconCheck, MainImage } from '../ui/index';
+import { CTAButton, CheckIcon, MainImage } from '../ui/index';
 import { sectionHomeStyles } from '@app/(landing-page)/styles';
 import { Icon } from '@/components/ui';
 
@@ -47,9 +47,9 @@ const content = [
 export const TextContent = () => {
   const css = {
     wrapperP: 'flex gap-3 items-start mb-6 sm:max-w-142 md:max-w-full m-auto',
-    p: `-mt-[7px] leading-8 5`,
+    p: `-mt-[7px] leading-8`,
     strong: 'font-semibold',
-    wrapperIcon: 'inline-flex items-center justify-center bg-[#E8F9EE] p-1 br-sm',
+    wrapperIcon: 'inline-flex items-center justify-center bg-[#E8F9EE] p-1 round-sm',
   };
 
   return (
@@ -62,10 +62,11 @@ export const TextContent = () => {
               className="text-female mt-1"
               size="xl"
               strokeValue={'thin'}
+              fill="var(--color-primary-50)"
             />
           </div>
           <p className={`${css.p}`}>
-            {item.text} <IconCheck />
+            {item.text} <CheckIcon />
           </p>
         </div>
       ))}

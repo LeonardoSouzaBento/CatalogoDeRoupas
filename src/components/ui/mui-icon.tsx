@@ -23,7 +23,7 @@ interface IconProps {
 
 export const MuiIcon = ({ icon, size, fill = 0, weight = 600, className }: IconProps) => {
   return (
-    <div className="h-3 flex-center overflow-visible">
+    <div className="h-3 inline-flex items-center justify-center overflow-visible">
       <span
         className={`material-symbols-rounded ${className}`}
         style={{

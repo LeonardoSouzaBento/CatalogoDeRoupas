@@ -17,7 +17,7 @@ export function Button({ className, ...props }: React.ComponentProps<'button'>) 
         text-center rounded-xl font-semibold cursor-pointer
         bg-linear-to-r from-yellow-300 to-yellow-400
         hover:scale-104 transition-all duration-200
-      [&_svg]:text-female large-button
+      [&_svg]:text-female large-button leading-none
         `,
         className,
       )}

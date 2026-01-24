@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer components {
   .abso {
@@ -39,48 +39,37 @@
 
   /* Border-radius */
 
-  .br-0 {
+  .round-none {
     @apply rounded-none;
   }
-  .br-xs {
+  .round-xs {
     @apply rounded-xs;
   }
-  .br-sm {
+  .round-sm {
     @apply rounded-sm;
   }
-  .br-md {
+  .round-md {
     @apply rounded-md;
   }
-  .br-lg {
+  .round-lg {
     @apply rounded-lg;
   }
-  .br-xl {
+  .round-xl {
     @apply rounded-xl;
   }
-  .br-2xl {
+  .round-2xl {
     @apply rounded-2xl;
   }
-  .br-3xl {
+  .round-3xl {
     @apply rounded-3xl;
   }
-  .br-50 {
+  .round-full {
     @apply rounded-full;
   }
 
-  /* borda solida */
-
+  /* borda solida para ver elementos rapidamente */
   .bss {
     @apply border border-black;
   }
-  .bs {
-    @apply border border-gray-300;
-  }
 
-  /* background */
-  .bg-button {
-    @apply bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
-  }
-  .bg-bt2 {
-    @apply bg-gray-50 hover:bg-gray-100 transition-colors duration-200;
-  }
 }

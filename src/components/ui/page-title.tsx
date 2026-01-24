@@ -6,7 +6,7 @@ function PageHeader({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="page-header"
       className={cn(
-        'h-14 box-border px-3 pl-[13px] mb-3 bg-stone-800 flex items-center justify-center br-0',
+        'h-14 box-border px-3 pl-[13px] mb-3 bg-stone-800 flex items-center justify-center round-none',
         className,
       )}
       {...props}

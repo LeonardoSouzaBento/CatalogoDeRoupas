@@ -39,14 +39,15 @@
   --color-female: #c81e72;
   --color-male: #7119a8;
   /* neutras */
-  --color-background: #fff;
+  --color-light-bg: #fff;
+  --color-medium-bg: hsl(357, 20%, 98%);
+  --color-dark-bg: hsl(357, 20%, 96.68%);
   --color-card-background: #fff;
   --color-card-foreground: hsl(345 18% 17.5%);
   --color-muted-foreground: hsl(345 10.57% 38%);
   --color-border: hsl(345 6.29% 83%);
   --color-input-border: hsl(345 9.71% 68.5%);
   --color-input-bg: hsl(345 4.86% 96.5%);
-  --color-body-background: #f9fafb;
   /* primária */
   --color-primary: #44000b;
   --color-primary-50: #f6f0f0;
@@ -139,7 +140,7 @@
     scrollbar-width: none;
   }
   body {
-    @apply bg-background text-card-foreground relative w-full max-w-[1400px] mx-auto;
+    @apply bg-medium-bg text-card-foreground relative w-full max-w-[1400px] mx-auto;
   }
   button {
     user-select: none;

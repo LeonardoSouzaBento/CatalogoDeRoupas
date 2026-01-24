@@ -1,10 +1,10 @@
-"use client"
+'use client';
 import { FavoritesCard, MeasuresCard, UserCard } from '@/components/store/my-account/index';
 import { UserContext } from '@/contexts/index';
 import { useContext } from 'react';
 
 const css = {
-  wrapper: `bg-white br-lg p-5`,
+  wrapper: `bg-white round-lg p-5`,
 };
 
 export function MyAccountCore() {

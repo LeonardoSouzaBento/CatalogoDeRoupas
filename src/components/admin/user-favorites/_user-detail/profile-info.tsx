@@ -9,7 +9,7 @@ const ProfileInfo = () => {
   const { userData } = useContext(UserContext);
 
   const css = {
-    wrapper: 'mb-5 br-lg bg-neutral-50 p-3',
+    wrapper: 'mb-5 round-lg bg-neutral-50 p-3',
   };
 
   return (
