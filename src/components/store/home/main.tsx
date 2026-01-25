@@ -33,7 +33,7 @@ const Main = (): React.ReactElement => {
     <main>
       <SectionWrapper
         className={`bg-gray-50 bg-linear-to-b from-[#F9FAFB]
-         to-white shadow-none`}>
+         to-white shadow-none px-0`}>
         <UserGenderList />
       </SectionWrapper>
 

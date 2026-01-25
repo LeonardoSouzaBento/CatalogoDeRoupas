@@ -2,7 +2,9 @@
 import { StateSetter } from '@/types/types';
 import { useEffect, useRef } from 'react';
 
-export function useResizingCounter(setResizingCounter: StateSetter<number>) {
+export function useResizingCounter(
+  setResizingCounter: StateSetter<number>,
+) {
   const lastWidthRef = useRef<number>(0);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -32,5 +34,5 @@ export function useResizingCounter(setResizingCounter: StateSetter<number>) {
         clearTimeout(debounceRef.current);
       }
     };
-  }, [setResizingCounter]);
+  }, []);
 }

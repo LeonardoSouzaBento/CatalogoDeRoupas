@@ -21,8 +21,8 @@ const css = {
 
 const Process = (): React.ReactElement => {
   return (
-    <section className="landing-page-section w-full space-y-4">
-      <div className="landing-page-section-wrapper">
+    <section className="landing-page-section w-full">
+      <div className="landing-page-content-wrapper">
         <SectionHeader className="items-start">
           <SectionTitle>Como Funciona?</SectionTitle>
           <SectionDescription>É simples</SectionDescription>

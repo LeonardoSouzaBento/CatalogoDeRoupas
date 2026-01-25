@@ -13,6 +13,7 @@ interface Props {
   setDivHeight: StateSetter<string | null>;
   valueToFixHeight?: number;
   buttonStyles?: string;
+  resizeCount?: number;
 }
 
 export function ResizableCardTitle({
@@ -22,10 +23,8 @@ export function ResizableCardTitle({
   setDivHeight,
   valueToFixHeight = 10,
   buttonStyles,
+  resizeCount,
 }: Props) {
-  const [resizeCount, setResizeCount] = useState<number>(0);
-  useResizingCounter(setResizeCount);
-
   const wrapperTitleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

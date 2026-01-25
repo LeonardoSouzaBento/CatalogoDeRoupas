@@ -6,7 +6,8 @@ import Image from 'next/image';
 const css = {
   wrapperProduct: `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-lg 
      hover:shadow-lg-hover hover:scale-101 fast-trans round-lg  overflow-hidden`,
-  wrapperImgs: `w-full min-h-[80vw] sm:min-h-[480px] md:h-[480px] flex relative bg-white rounded-none`,
+  wrapperImgs: `w-full h-[80vw] max-h-120 
+  grid grid-cols-[1fr_1.5fr] relative bg-white rounded-none`,
 };
 
 const HomeProduct = ({
@@ -16,7 +17,7 @@ const HomeProduct = ({
   item: HomeClothing;
   sectionEditMode: boolean;
 }): React.ReactElement => {
-  /* s de edição */
+  const images = [item.img1, item.img2];
 
   return (
     <div className={`${css.wrapperProduct}`}>
@@ -24,10 +25,21 @@ const HomeProduct = ({
         <>
           <div className={`${css.wrapperImgs}`} id="wrapperImgs">
             <FavoriteButton />
-            <SecondaryImage item={item} />
-            <MainImage item={item} />
+            {images.map((image, index) => (
+              <div key={index} className={`relative w-full p-2`}>
+                <Image
+                  src={image}
+                  alt={`Img do produto: ${item.alt}`}
+                  fill={true}
+                  className="size-full object-cover"
+                />
+              </div>
+            ))}
           </div>
-          <ProductInfo item={item} />
+          <div className="w-full px-5 py-4 bg-light-bg border-t border-border/30">
+            <p className="capitalize">{item.name}</p>
+            <p className="large-text font-semibold">R${item.price}</p>
+          </div>
         </>
       ) : (
         <ProductInput id={item.id} />
@@ -37,47 +49,3 @@ const HomeProduct = ({
 };
 
 export { HomeProduct };
-
-/* Imagem principal */
-const MainImage = ({ item }: { item: HomeClothing }) => {
-  const css = {
-    wrapperImg: 'p-2 min-w-[60%] relative',
-    img: 'size-full object-cover',
-  };
-  return (
-    <div className={`${css.wrapperImg}`}>
-      <Image
-        src={item.img2}
-        alt={`Img do produto: ${item.alt}`}
-        className={`${css.img}`}
-        fill={true}
-      />
-    </div>
-  );
-};
-
-const SecondaryImage = ({ item }: { item: HomeClothing }) => {
-  const css = {
-    wrapperImg: 'p-2 min-w-[40%] relative',
-    img: 'size-full object-cover',
-  };
-  return (
-    <div className={`${css.wrapperImg}`}>
-      <Image
-        src={item.img1}
-        alt={`Img do produto: ${item.alt}`}
-        className={`${css.img}`}
-        fill={true}
-      />
-    </div>
-  );
-};
-
-const ProductInfo = ({ item }: { item: HomeClothing }) => {
-  return (
-    <div>
-      <p className="capitalize">{item.name}</p>
-      <p>R${item.price}</p>
-    </div>
-  );
-};

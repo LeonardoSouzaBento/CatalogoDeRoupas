@@ -1,26 +1,31 @@
+import Image from 'next/image';
 import React from 'react';
 import { CTAButton } from '../ui/index';
-import { Image, TextContent } from './hero/index';
+import { TextContent } from './hero/index';
 
 const css = {
-  wrapper: `pb-12 m-auto max-w-280 flex flex-col gap-8 sm:px-6 md:px-8 
-  pre-lg:flex-row pre-lg:px-0!`,
-  messageWrapper: 'w-full max-w-256 flex flex-col justify-center items-center pre-lg:w-1/2',
-  imageWrapper: 'w-full max-w-256 flex flex-col pre-lg:w-1/2',
+  section: `h-auto w-full pt-[4.5em] pb-11 rounded-none 
+  bg-linear-to-br from-female to-male px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14`,
+  wrapper: `m-auto max-w-274 grid grid-cols-1 gap-8 
+  pre-lg:grid-cols-2`,
+  messageWrapper: 'w-full flex flex-col justify-center items-center',
+  imageContainer: `h-full relative pt-10 space-y-4`,
+  imageWrapper: `w-full h-120 pre-lg:h-full pt-4 relative
+  overflow-y-scroll [&_img]:rounded-xl`,
 };
 
 const Hero = (): React.ReactElement => {
   return (
-    <section
-      className={`h-auto w-full pt-[4.5em] p-8 pb-0 rounded-none 
-      bg-linear-to-br from-female to-male`}>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.messageWrapper}`}>
+    <section className={css.section}>
+      <div className={css.wrapper}>
+        <div className={css.messageWrapper}>
           <TextContent />
           <CTAButton hideInMobile={true} />
         </div>
-        <div className={`${css.imageWrapper}`}>
-          <Image />
+        <div className={css.imageContainer}>
+          <div className={css.imageWrapper}>
+            <Image src="/home/phone3.png" alt="" fill={true} />
+          </div>
           <CTAButton classNames={['max-w-none justify-center', 'shadow-accent']} />
         </div>
       </div>

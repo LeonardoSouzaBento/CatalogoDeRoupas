@@ -64,10 +64,7 @@
   }
 
   button,
-  label,
-  .small-button,
-  .big-link,
-  .small-link {
+  label {
     @apply font-semibold; /* 600 */
   }
 

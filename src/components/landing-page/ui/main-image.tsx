@@ -5,7 +5,7 @@ import { CTAButton } from './cta-button';
 const MainImage = ({ src = '/home/phone3.png' }: { src: string }) => {
   const css = {
     container: `w-full h-120 p-6 m-auto flex items-start relative
-      relative rounded-2xl bg-primary-50 crop border-dashed border-2 border-female/22`,
+      relative rounded-b-2xl bg-primary-50 crop border-dashed border-t border-female/22`,
     image: 'size-full w-full object-cover mx-auto bg-light-bg',
   };
 

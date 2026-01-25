@@ -10,12 +10,12 @@ const userGenders = [
 ];
 
 const css = {
-  container: `w-full h-auto max-w-220 m-auto flex-center items-end flex-col gap-4 
+  container: `w-full h-auto max-w-212 m-auto flex-center items-end flex-col gap-4 
     sm:flex-row relative`,
-  wrapper: 'h-max w-full px-3 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-3',
-  button: `w-full gap-1 transition-colors duration-200 font-medium uppercase tracking-wide`,
+  wrapper: 'h-max w-full grid grid-cols-1 sm:grid-cols-3 gap-3',
+  button: `w-full gap-1 transition-colors duration-200 uppercase tracking-wide`,
   notSelected: 'border-gray-100 hover:bg-gray-200/50 border-transparent ',
-  selected: 'bg-transparent border shadow-xs hover:bg-white ',
+  selected: 'bg-transparent border shadow-xs hover:bg-white',
 };
 
 export const UserGenderList = (): React.ReactElement => {
@@ -40,11 +40,11 @@ export const UserGenderList = (): React.ReactElement => {
 
   return (
     <div>
-      <h6
+      <p
         className={`max-w-none w-full text-center mb-2 uppercase
           large-text text-muted-foreground`}>
         Selecione um gênero
-      </h6>
+      </p>
       <div className={css.container}>
         <ButtonsWrapper className={`${css.wrapper}`}>
           {userGenders.map((item) => {

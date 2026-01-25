@@ -27,14 +27,15 @@ const weights = {
   thin: 2.25,
   light: 2.35,
   normal: 2.5,
-  semibold: 2.67,
-  bold: 2.8,
-  extrabold: 3,
+  medium: 2.67,
+  semibold: 2.8,
+  bold: 3,
 };
 
 export const Icon = ({ LucideIcon, size, className, strokeValue, fill }: IconProps) => {
   return (
-    <div className="h-3 w-max inline-flex items-center justify-center gap-0 [&_svg]:shrink-0">
+    <div className={`h-3 w-max inline-flex items-center justify-center gap-0
+      [&_svg]:shrink-0 [&_svg]:pointer-events-none`}>
       <LucideIcon
         size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}
         strokeWidth={weights[strokeValue as keyof typeof weights] || strokeValue || 2.5}

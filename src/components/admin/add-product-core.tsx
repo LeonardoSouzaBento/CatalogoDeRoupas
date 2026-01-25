@@ -11,14 +11,17 @@ import {
   Result,
   SaveCard,
 } from './add-product';
+import { useResizingCounter } from '@/hooks';
 
 const AddProductCore = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(0);
+  const [resizeCount, setResizeCount] = useState<number>(0);
+  useResizingCounter(setResizeCount);
 
   return (
     <div className={`max-w-3xl lg:max-w-4xl mx-auto`}>
       <Queue />
-      <ProductBasesList />
+      <ProductBasesList resizeCount={resizeCount} />
       <Photos />
       <GenderButtons />
       <BaseGenerator />

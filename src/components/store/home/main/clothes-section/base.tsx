@@ -6,7 +6,7 @@ import { HomeProduct } from './home-product';
 
 const css = {
   wrapper: 'crop relative',
-  scrollableDiv: `flex gap-3 pt-3 pb-6 px-3 md:px-4 box-border 
+  scrollableDiv: `flex gap-4 pt-3 pb-6 px-4 box-border 
   lg:mr-4 overflow-x-scroll relative scrollbar-hidden`,
 };
 

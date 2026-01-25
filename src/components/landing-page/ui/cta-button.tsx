@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
-import { ShoppingBag } from 'lucide-react';
 import { CustomLink, Icon } from '@/components/ui';
 import { cn } from '@/lib/utils';
+import { ShoppingBag } from 'lucide-react';
+import React from 'react';
 
 export function ButtonWrapper({ className, ...props }: React.ComponentProps<'div'>) {
   return <div className={cn('size-auto flex', className)} {...props} />;
@@ -39,7 +39,7 @@ export function CTAButton({
 }: CTAButtonProps) {
   return (
     <ButtonWrapper
-      className={cn(hideInMobile ? 'hidden md:flex!' : 'flex md:hidden!', classNames[0])}>
+      className={`${hideInMobile ? 'hidden md:flex!' : 'flex md:hidden!'} ${classNames[0]}`}>
       <Button className={classNames[1]}>
         {showIcon && <Icon LucideIcon={ShoppingBag} size="lg" className="mb-0.5" />}
         Ver Um Catálogo Completo

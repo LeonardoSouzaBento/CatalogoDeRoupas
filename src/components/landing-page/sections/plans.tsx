@@ -30,19 +30,20 @@ const plans = [
 
 const css = {
   card: `w-full xl:h-full m-auto rounded-2xl`,
-  container: 'grid grid-cols-1 pre-lg:grid-cols-2 gap-6',
-  wrapper: `w-full max-w-2xl mx-auto bg-white p-6 pt-4 rounded-2xl border border-gray-100 shadow-lg hover:scale-101 trans
-    [&>p]:mb-1 [&>p]:large-text`,
+  container: 'grid grid-cols-1 pre-lg:grid-cols-2 gap-4',
+  wrapper: `w-full max-w-2xl mx-auto bg-white p-6 pt-4 rounded-2xl border border-gray-100 hover:scale-101 trans
+    [&>p]:mb-1 [&>p]:large-text border-dashed border-2 border-female/22`,
   emphasis:
-    'border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none',
+    'border-solid border-4 border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none',
   item: `flex gap-2 py-2.5`,
 };
 
 const Plans = (): React.ReactElement => {
   return (
-    <section className={`landing-page-section p-6 pt-3 md:max-w-max lg:max-w-5xl 
-    xl:max-w-274 border-dashed border-2 border-female/22`}>
-      <SectionHeader>
+    <section
+      className={`landing-page-section p-6 pt-4 md:max-w-max lg:max-w-5xl 
+    xl:max-w-274`}>
+      <SectionHeader className="mb-1">
         <SectionTitle>Quanto Custa?</SectionTitle>
         <SectionDescription>Temos preços acessíveis</SectionDescription>
       </SectionHeader>

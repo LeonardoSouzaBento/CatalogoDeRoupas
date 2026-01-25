@@ -12,7 +12,7 @@ const css = {
   wrapper: `card-styles crop`,
 };
 
-const ProductBasesList = () => {
+const ProductBasesList = ({ resizeCount }: { resizeCount: number }) => {
   const { selectedGender } = useContext(UserContext);
   const [selectedName, setSelectedName] = useState<string>('');
 
@@ -28,7 +28,8 @@ const ProductBasesList = () => {
         setExpand={setExpand}
         setDivHeight={setDivHeight}
         valueToFixHeight={12}
-        buttonStyles="mt-4!">
+        buttonStyles="mt-4!"
+        resizeCount={resizeCount}>
         <CardHeader>
           <CardTitle>
             <MuiIcon icon="apparel" size="h3" className="mr-1" />

@@ -5,15 +5,15 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  `h-max inline-flex items-center justify-center box-border leading-none! gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none [&_svg]:block [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive relative box-border tracking-wide`,
+  `h-max inline-flex items-center justify-center box-border leading-none gap-2 rounded-md transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer`,
   {
     variants: {
       variant: {
         default: 'bg-primary-700 text-primary-50 hover:bg-primary/90',
         destructive:
-          'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
+          'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20',
         outline:
-          'border-2 border-primary-700 bg-transparent hover:bg-primary-50 text-primary-700 shadow-xs hover:bg-accent dark:bg-/30 dark:border- dark:hover:bg-/50',
+          'border-2 border-primary-700 bg-transparent hover:bg-primary-50 text-primary-700 hover:bg-accent',
         secondary: 'bg-primary-100 text-primary-800 hover:bg-primary-300',
         ghost:
           'text-primary-800 ring ring-border hover:bg-primary-50/50',
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         transparent: 'bg-transparent hover:bg-transparent',
       },
       size: {
-        sm: 'py-[0.63885rem] rounded-md gap-1.5',
+        sm: 'py-[0.63885rem] rounded-md',
         default: 'py-[0.73438rem]',
         lg: 'py-[0.82813rem] text-lg-button rounded-md',
         'outline-sm': 'px-[0.79716em] py-[0.54794rem] text-sm-button',

@@ -19,7 +19,7 @@ const FavoriteButton = () => {
     setTimeout(() => setFastReturn(false), 1800);
   }
   return (
-    <div className={css.wrapper}>
+    <span className={css.wrapper}>
       {fastReturn && <span className={css.pReturn}>{isFavorite ? 'Salvo!' : 'Removido!'}</span>}
       <Button
         variant="transparent"
@@ -31,7 +31,7 @@ const FavoriteButton = () => {
         }}>
         <MuiIcon icon="favorite" size="3xl" weight={400} className="pt-0.5" />
       </Button>
-    </div>
+    </span>
   );
 };
 

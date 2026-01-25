@@ -26,8 +26,8 @@ const css = {
 
 const Questions = (): React.ReactElement => {
   return (
-    <section className="landing-page-section space-y-4">
-      <div className="landing-page-section-wrapper">
+    <section className="landing-page-section">
+      <div className="landing-page-content-wrapper">
         <SectionHeader className="items-start">
           <SectionTitle>Porque ter um catálogo?</SectionTitle>
           <SectionDescription>Ajudamos você a vender mais</SectionDescription>
