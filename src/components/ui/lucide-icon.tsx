@@ -34,7 +34,7 @@ const weights = {
 
 export const Icon = ({ LucideIcon, size, className, strokeValue, fill }: IconProps) => {
   return (
-    <div className="h-3 inline-flex items-center justify-center overflow-visible [&_svg]:shrink-0">
+    <div className="h-3 w-max inline-flex items-center justify-center gap-0 [&_svg]:shrink-0">
       <LucideIcon
         size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}
         strokeWidth={weights[strokeValue as keyof typeof weights] || strokeValue || 2.5}

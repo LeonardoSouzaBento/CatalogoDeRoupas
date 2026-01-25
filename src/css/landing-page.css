@@ -3,8 +3,14 @@
 
 @layer components {
   /* 18.5px */
-  body {
+  /* body {
     @apply text-[1.15625rem] sm:text-[1.178125rem] md:text-[1.182500rem] 
     lg:text-[1.19125rem] xl:text-[1.20rem] 2xl:text-[1.20875rem];
+  } */
+  .landing-page-section {
+    @apply w-full rounded-2xl;
+  }
+  .landing-page-section-wrapper {
+    @apply bg-light-bg shadow-lg px-6 pt-5 pb-4 rounded-2xl overflow-hidden;
   }
 }

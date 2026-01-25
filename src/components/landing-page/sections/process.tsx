@@ -1,77 +1,63 @@
-import { sectionHomeStyles } from '@app/(landing-page)/styles';
-import { Heart, Search, Share2 } from 'lucide-react';
 import React from 'react';
-import { CTAButton } from '../ui/index';
-import { Icon } from '@/components/ui';
+import { MainImage, SectionDescription, SectionHeader, SectionTitle } from '../ui/index';
+
+const content = [
+  { id: 1, text: 'Compartilhe o link nas redes sociais' },
+  {
+    id: 2,
+    text: 'Seu cliente busca e favorita os produtos com facilidade',
+  },
+  {
+    id: 3,
+    text: 'Veja os favoritos do usuário. Mostrados em um quadro intuitivo e organizado',
+  },
+];
 
 const css = {
   section: '',
-  wrapper: 'block flex flex-col justify-center md:flex-row gap-3 xl:items-center',
-  wrapperInfo: 'w-auto flex flex-col gap-6 md:w-1/2',
-  wrapperImg: 'w-full md:w-1/2 flex flex-col gap-3',
+  contentWrapper: `pt-[1cap] border-dashed border-t-2 border-border/50`,
+  wrapperInfo: 'w-full flex flex-col gap-6',
 };
 
 const Process = (): React.ReactElement => {
   return (
-    <div className={sectionHomeStyles}>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.wrapperInfo}`}>
-          <Messages />
-          <CTAButton hideInMobile={true} classNames={['justify-center', '']} />
-        </div>
-
-        <div className={`${css.wrapperImg}`}>
-          <img />
-          <CTAButton classNames={['justify-center', '']} />
+    <section className="landing-page-section w-full space-y-4">
+      <div className="landing-page-section-wrapper">
+        <SectionHeader className="items-start">
+          <SectionTitle>Como Funciona?</SectionTitle>
+          <SectionDescription>É simples</SectionDescription>
+        </SectionHeader>
+        <div className={`${css.contentWrapper}`}>
+          <div className={`${css.wrapperInfo}`}>
+            <Messages />
+          </div>
         </div>
       </div>
-    </div>
+      <MainImage src="/home/phone4.png" />
+    </section>
   );
 };
 
 export { Process };
 
-const content = [
-  { id: 1, text: '• Compartilhe o link nas redes sociais', icon: Share2 },
-  {
-    id: 2,
-    text: '• Seu cliente busca e favorita os produtos com facilidade',
-    icon: Search,
-  },
-  {
-    id: 3,
-    text: '• Veja os favoritos do usuário. Mostrados um quadro intuitivo e organizado',
-    icon: Heart,
-  },
-];
-
 const Messages = () => {
   const css = {
-    wrapper: 'w-auto flex items-start gap-3.5 sm:flex-row',
-    textWrapper: 'flex items-center [&>p]:-mt-px',
-    iconWrapper: 'inline-flex items-end justify-center box-border mt-1 mr-1',
+    wrapper: 'w-auto flex items-start gap-4 sm:flex-row',
+    textWrapper: 'flex items-start gap-3',
   };
 
   return (
     <>
-      {content.map((item) => (
+      {content.map((item, index) => (
         <div className={`${css.wrapper}`} key={item.id}>
           <div className={`${css.textWrapper}`}>
-            <p>
-              <span className={`${css.iconWrapper}`}>
-                <Icon
-                  LucideIcon={item.icon}
-                  className="text-female mt-1"
-                  size="xl"
-                  strokeValue={'thin'}
-                  fill="var(--color-primary-50)"
-                />
-              </span>{' '}
-              {item.text}.
-            </p>
+            <div className={`-mt-1.5`}>
+              <strong className="text-lg text-female">{index + 1}.</strong> {item.text}
+            </div>
           </div>
         </div>
       ))}
+      <div className="h-[1.06em]" />
     </>
   );
 };

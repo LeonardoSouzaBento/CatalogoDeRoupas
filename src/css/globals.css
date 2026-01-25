@@ -75,8 +75,9 @@
   --breakpoint-xs: 375px;
   --breakpoint-md-sm: 425px;
   --breakpoint-pre-sm: 575px;
-  --breakpoint-pre-md: 768px;
+  --breakpoint-pre-md: 704px;
   --breakpoint-next-md: 840px;
+  --breakpoint-pre-lg: 932px;
 }
 
 .male-colors {

@@ -3,100 +3,113 @@
 
 @layer components {
 /* 17.5px a  18.5px*/
-body {
-@apply text-[1.09375rem] sm:text-[1.125rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
-}
-.smaller-text {@apply text-xs;}
+  body {
+  @apply text-[1.09375rem] sm:text-[1.125rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
+  }
+  .smaller-text {@apply text-xs;}
 
-.small-text, label {@apply text-sm;}
+  .small-text, label {@apply text-sm;}
 
-.normal-text, li, input, select, option {@apply text-base;}
+  .normal-text, li, input, select, option {@apply text-base;}
 
-.large-text {@apply text-lg;}
+  .large-text {@apply text-lg;}
 
-h6 {@apply text-h6;}
+  h6 {@apply text-h6;}
 
-h5 {@apply text-h5;}
+  h5 {@apply text-h5;}
 
-h4 {@apply text-h4;}
+  h4 {@apply text-h4;}
 
-h3 {@apply text-h3;}
+  h3 {@apply text-h3;}
 
-h2 {@apply text-h2;}
+  h2 {@apply text-h2;}
 
-h1 {@apply text-h1;}
+  h1 {@apply text-h1;}
 
-.h1-hero {@apply text-h1-hero;}
+  .h1-hero {@apply text-h1-hero;}
 
-button {@apply text-button;}
+  button {@apply text-button;}
 
-.small-button {@apply text-sm-button;}
+  .small-button {@apply text-sm-button;}
 
-.large-button {@apply text-lg-button;}
+  .large-button {@apply text-lg-button;}
 
-/* LARGURA MÁXIMA DO CORPO */ 
-p { 
-  @apply max-w-[65ch] sm:max-w-[73ch] 
-  md:max-w-[75ch] lg:max-w-[78ch] xl:max-w-[82ch] 
-  2xl:max-w-[85ch]; 
-}
+  /* LARGURA MÁXIMA DO CORPO */ 
+  p { 
+    @apply max-w-[65ch] sm:max-w-[73ch] 
+    md:max-w-[75ch] lg:max-w-[78ch] xl:max-w-[82ch] 
+    2xl:max-w-[85ch]; 
+  }
 
-/* PESOS */
-input::placeholder, .helper-text, 
-.description-text { 
-  @apply font-light; 
-} 
+  /* PESOS */
+  input::placeholder,
+  .helper-text,
+  .description-text {
+    @apply font-normal; /* 400 */
+  }
 
-p, li, input, select, option { 
-  @apply font-normal; 
-} 
+  p,
+  li,
+  input,
+  select,
+  option {
+    @apply font-normal; /* 500 */
+  }
 
-a, h6, h5, h4 { 
-  @apply font-medium; 
-}
+  a,
+  h6,
+  h5,
+  h4 {
+    @apply font-semibold; /* 600 */
+  }
 
-label, .small-button, 
-.big-link, .small-link { 
-  @apply font-medium; 
-} 
+  button,
+  label,
+  .small-button,
+  .big-link,
+  .small-link {
+    @apply font-semibold; /* 600 */
+  }
 
-h3, h2, button { 
-  @apply font-semibold; 
-}
+  h3,
+  h2 {
+    @apply font-bold; /* 700 */
+  }
 
-h1, strong { 
-  @apply font-bold; 
-} 
+  h1,
+  strong {
+    @apply font-extrabold; /* 800 */
+  } 
 
 /* LINE HEIGHTS */ 
-.h1-hero { @apply leading-[1.1]; } 
-h1 { @apply leading-[1.22]; } 
-h2 { @apply leading-[1.24]; } 
-h3 { @apply leading-[1.28]; } 
-h4 { @apply leading-[1.32]; } 
-h5 { @apply leading-[1.38]; } 
-h6 { @apply leading-[1.44]; } 
+  .h1-hero { @apply leading-[1.1]; } 
+  h1 { @apply leading-[1.22]; } 
+  h2 { @apply leading-[1.24]; } 
+  h3 { @apply leading-[1.28]; } 
+  h4 { @apply leading-[1.32]; } 
+  h5 { @apply leading-[1.38]; } 
+  h6 { @apply leading-[1.44]; } 
 
-p, li, input, select, option { 
-  @apply leading-[1.52]; 
-} 
+  p, li, input, select, option { 
+    @apply leading-[1.52]; 
+  } 
 
-label { @apply leading-[1.35];} 
+  label { @apply leading-[1.35];} 
 
-button { 
-  @apply leading-[1.15]; 
-} 
+  button { 
+    @apply leading-[1.15]; 
+  } 
 
-.large-text { @apply leading-[1.68]; } 
-.normal-text { @apply leading-normal; } 
-.small-text { @apply leading-[1.6]; } 
-.smaller-text { @apply leading-normal; } 
+  .large-text { @apply leading-[1.68]; } 
+  .normal-text { @apply leading-normal; } 
+  .small-text { @apply leading-[1.6]; } 
+  .smaller-text { @apply leading-normal; } 
 
-.large-button { @apply leading-[1.20]; } 
-.small-button { @apply leading-[1.10]; }
+  .large-button { @apply leading-[1.20]; } 
+  .small-button { @apply leading-[1.10]; }
 
 /* Letter spacing */
-h1, .h1-hero, h2, h3 { 
-  @apply tracking-tight; 
-}
+  h1, .h1-hero, h2, h3 { 
+    @apply tracking-tight; 
+  }
 }

@@ -1,34 +1,7 @@
-import React from 'react';
-import { CalendarHeart, Eye, UserCheck } from 'lucide-react';
-import { CTAButton, CheckIcon, MainImage } from '../ui/index';
-import { sectionHomeStyles } from '@app/(landing-page)/styles';
 import { Icon } from '@/components/ui';
-
-const css = {
-  wrapper: 'block md:flex md:gap-7',
-  wrapperInfo: 'w-full md:w-1/2',
-  wrapperImg: 'w-full md:w-1/2 flex flex-col gap-3',
-};
-
-const Questions = (): React.ReactElement => {
-  return (
-    <div className={sectionHomeStyles}>
-      <div className={`${css.wrapper}`}>
-        <div className={`${css.wrapperInfo}`}>
-          <TextContent />
-          <CTAButton classNames={['justify-center', '']} hideInMobile={true} />
-        </div>
-
-        <div className={`${css.wrapperImg}`}>
-          <MainImage src="/home/phone4.png" />
-          <CTAButton classNames={['justify-center', '']} />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export { Questions };
+import { CalendarHeart, Eye, UserCheck } from 'lucide-react';
+import React from 'react';
+import { CheckIcon, MainImage, SectionDescription, SectionHeader, SectionTitle } from '../ui/index';
 
 const content = [
   { id: 1, text: 'Um mês grátis para expor suas peças', icon: CalendarHeart },
@@ -44,30 +17,51 @@ const content = [
   },
 ];
 
-export const TextContent = () => {
-  const css = {
-    wrapperP: 'flex gap-3 items-start mb-6 sm:max-w-142 md:max-w-full m-auto',
-    p: `-mt-[7px] leading-8`,
-    strong: 'font-semibold',
-    wrapperIcon: 'inline-flex items-center justify-center bg-[#E8F9EE] p-1 round-sm',
-  };
+const css = {
+  container: 'block grid grid-cols-1 gap-2',
+  contentWrapper: `pt-[1cap] border-dashed border-t-2 border-border/50`,
+  infoWrapper: 'w-full',
+  imageWrapper: 'w-full flex flex-col gap-3',
+};
 
+const Questions = (): React.ReactElement => {
+  return (
+    <section className="landing-page-section space-y-4">
+      <div className="landing-page-section-wrapper">
+        <SectionHeader className="items-start">
+          <SectionTitle>Porque ter um catálogo?</SectionTitle>
+          <SectionDescription>Ajudamos você a vender mais</SectionDescription>
+        </SectionHeader>
+        <div className={css.contentWrapper}>
+          <div className={`${css.container}`}>
+            <div className={`${css.infoWrapper}`}>
+              <TextContent />
+            </div>
+          </div>
+        </div>
+      </div>
+      <MainImage src="/home/phone4.png" />
+    </section>
+  );
+};
+
+export { Questions };
+
+export const TextContent = () => {
   return (
     <>
       {content.map((item) => (
-        <div className={`${css.wrapperP}`} key={item.id}>
-          <div className="w-8 h-8 flex items-start justify-center box-border mb-1">
-            <Icon
-              LucideIcon={item.icon}
-              className="text-female mt-1"
-              size="xl"
-              strokeValue={'thin'}
-              fill="var(--color-primary-50)"
-            />
-          </div>
-          <p className={`${css.p}`}>
+        <div key={item.id} className={`flex gap-3 items-start mb-4`}>
+          <Icon
+            LucideIcon={item.icon}
+            className="text-female mt-1"
+            size="xl"
+            strokeValue={'thin'}
+            fill="var(--color-primary-50)"
+          />
+          <div className={`-mt-1.5`}>
             {item.text} <CheckIcon />
-          </p>
+          </div>
         </div>
       ))}
     </>

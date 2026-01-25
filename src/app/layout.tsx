@@ -6,6 +6,7 @@ import { DM_Sans, Cookie } from 'next/font/google';
 import '../css/globals.css';
 import '../css/shorteners.css';
 import '../css/typography.css';
+import '../css/landing-page.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],

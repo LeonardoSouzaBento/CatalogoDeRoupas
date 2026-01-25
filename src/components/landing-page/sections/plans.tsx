@@ -1,109 +1,74 @@
 import React from 'react';
-import { CTAButton, CheckIcon } from '../ui/index';
+import { CTAButton, CheckIcon, SectionDescription, SectionHeader, SectionTitle } from '../ui/index';
 import { cn } from '@/lib/utils';
 
-const basicPlan = [
-  'Cadastre até 200 peças',
-  'Logo Simples (O nome da sua loja)',
-  'Link direto para seu Whatsapp',
-  'Painel de favoritos',
-  'Suporte humanizado',
+const plans = [
+  {
+    title: 'Plano Básico',
+    subtitle: 'Um mês de teste grátis!',
+    features: [
+      'Cadastre até 200 peças',
+      'Logo Simples (O nome da sua loja)',
+      'Link direto para seu Whatsapp',
+      'Painel de favoritos',
+      'Suporte humanizado',
+    ],
+    emphasis: false,
+  },
+  {
+    title: 'Plano Completo',
+    subtitle: 'Tudo o que você precisa!',
+    features: [
+      'Cadastro ilimitado de peças',
+      'Logo própria, insira a logo da sua loja',
+      'Cores personalizadas, mude a paleta de cores do site como desejar',
+      '+ Todos os recursos do plano básico',
+    ],
+    emphasis: true,
+  },
 ];
-
-const fullPlan = [
-  'Cadastro ilimitado de peças',
-  'Logo própria, insira a logo da sua loja',
-  'Cores Personalizadas, mude as cores do site como desejar',
-  '+ Todos os recursos do plano básico',
-];
-
-const plans = [basicPlan, fullPlan];
 
 const css = {
-  wrapper:
-    'w-[calc(100%-24px)] sm:w-[calc(100%-40px)] md:max-w-[980px] xl:h-full m-auto rounded-2xl',
-  containerPlans: 'pb-2 flex flex-col gap-6 md:flex-row',
-  wrapperPlan:
-    'bg-white p-5 md:w-[49%] rounded-3xl border border-gray-100 shadow-lg hover:scale-101 trans',
-  ul: 'mb-6 ',
-  fullPlan:
+  card: `w-full xl:h-full m-auto rounded-2xl`,
+  container: 'grid grid-cols-1 pre-lg:grid-cols-2 gap-6',
+  wrapper: `w-full max-w-2xl mx-auto bg-white p-6 pt-4 rounded-2xl border border-gray-100 shadow-lg hover:scale-101 trans
+    [&>p]:mb-1 [&>p]:large-text`,
+  emphasis:
     'border-[4px] border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none',
-  itemList: `flex gap-3 py-2.5 px-1`,
+  item: `flex gap-2 py-2.5`,
 };
 
 const Plans = (): React.ReactElement => {
   return (
-    <div className={`${css.wrapper}`}>
-      <div className={`${css.containerPlans}`}>
-        <div className={`${css.wrapperPlan}`}>
-          <TitleAndSubtitle title="Plano Básico" subtitle="Um mês de teste grátis!" />
-          <ul className={`${css.ul}`}>
-            {basicPlan.map((item, index) => (
-              <li key={index} className={`${css.itemList}`}>
-                <CheckIcon section={fullPlan ? 'plans' : ''} /> {item}
-              </li>
-            ))}
-          </ul>
-          <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
-          <CTAButton classNames={['max-w-none', 'w-full']} />
-        </div>
-        <div className={`${css.wrapperPlan} ${css.fullPlan}`}>
-          <TitleAndSubtitle
-            title="Plano Completo"
-            subtitle="Tudo o que você precisa!"
-            fullPlan={true}
-          />
-          <ul className={`${css.ul}`}>
-            {fullPlan.map((item, index) => (
-              <li key={index} className={`${css.itemList} text-white`}>
-                <CheckIcon section={fullPlan ? 'plans' : ''} /> {item}
-              </li>
-            ))}
-          </ul>
-          <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
-          <CTAButton classNames={['max-w-none', 'w-full']} />
+    <section className={`landing-page-section p-6 pt-3 md:max-w-max lg:max-w-5xl 
+    xl:max-w-274 border-dashed border-2 border-female/22`}>
+      <SectionHeader>
+        <SectionTitle>Quanto Custa?</SectionTitle>
+        <SectionDescription>Temos preços acessíveis</SectionDescription>
+      </SectionHeader>
+      <div className={`${css.card}`}>
+        <div className={`${css.container}`}>
+          {plans.map((plan, index) => (
+            <div key={index} className={cn(css.wrapper, plan.emphasis && css.emphasis)}>
+              <h4 className={plan.emphasis ? 'text-white' : ''}>{plan.title}</h4>
+              <p className={plan.emphasis ? 'text-white' : 'text-muted-foreground'}>
+                {plan.subtitle}
+              </p>
+              <ul className={`mb-2 last:mb-0`}>
+                {plan.features.map((item, index) => (
+                  <li key={index} className={cn(css.item, plan.emphasis && 'text-white')}>
+                    <CheckIcon section={plan.emphasis ? 'plans' : undefined} /> {item}
+                  </li>
+                ))}
+              </ul>
+              <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
+              <CTAButton classNames={['max-w-none', 'w-full']} />
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export { Plans };
-
-const TitleAndSubtitle = ({
-  title,
-  subtitle,
-  fullPlan,
-}: {
-  title: string;
-  subtitle: string;
-  fullPlan?: boolean;
-}) => {
-  const css = {
-    title: 'text-gray-800',
-    subtitle: 'text-gray-600 mb-4 font-light',
-  };
-
-  return (
-    <>
-      <h4 className={`${css.title} ${fullPlan && 'text-white!'}`}>{title}</h4>
-      <h6 className={`${css.subtitle} ${fullPlan && 'text-white!'}`}>{subtitle}</h6>
-    </>
-  );
-};
-
-function Title({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div data-slot="plans-title" className={cn('flex items-center gap-2', className)} {...props} />
-  );
-}
-
-function Description({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="plans-description"
-      className={cn('flex items-center gap-2', className)}
-      {...props}
-    />
-  );
-}

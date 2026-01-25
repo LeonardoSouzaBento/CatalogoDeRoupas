@@ -1,47 +1,28 @@
 import { ZapFixedButton } from '@/components/ui/index';
 import { Hero, Logo, Plans, Process, Questions } from './sections';
-import { SectionDescription, SectionHeader, SectionTitle } from './ui';
 
-const wrapperCss = `xl:mb-7 xl:w-auto xl:h-178 xl:m-auto pt-4 xl:flex 
-xl:gap-6 xl:px-[calc((100%-80rem)/2)] xl:items-start xl:justify-center 
-[&_section]:xl:w-[calc(100%-0.875rem)] [&_section]:xl:h-136.5 [&_section]:rounded-xl`;
+const css = {
+  main: `px-4 pt-6 pb-10 sm:px-6 md:px-8 lg:px-12 xl:px-14 
+  bg-linear-to-t from-medium-bg via-light-bg to-light-bg z-0 space-y-8
+  [&>section]:mx-auto`,
+  firstWrapper: `h-max grid grid-cols-1 pre-lg:grid-cols-2 gap-6 max-w-176 mx-auto pre-lg:max-w-none
+  xl:max-w-274`,
+};
 
 const LandingPageCore = () => {
   return (
-    <div>
+    <>
       <Logo />
-      <main className="bg-linear-to-t from-medium-bg via-light-bg to-light-bg z-0">
-        <section
-          className={`h-auto w-full pt-[4.5em] p-8 pb-0 rounded-none 
-          md:px-8 lg:px-10 bg-linear-to-br from-female to-male`}>
-          <Hero />
-        </section>
-        <div className={wrapperCss}>
-          <section>
-            <SectionHeader className='border-none'>
-              <SectionTitle>Porque ter um catálogo?</SectionTitle>
-              <SectionDescription>Ajudamos você a vender mais</SectionDescription>
-            </SectionHeader>
-            <Questions />
-          </section>
-          <section>
-            <SectionHeader>
-              <SectionTitle>Como Funciona?</SectionTitle>
-              <SectionDescription>É simples</SectionDescription>
-            </SectionHeader>
-            <Process />
-          </section>
+      <Hero />
+      <main className={css.main}>
+        <div className={css.firstWrapper}>
+          <Questions />
+          <Process />
         </div>
-        <section className="pb-10">
-          <SectionHeader>
-            <SectionTitle>Quanto Custa?</SectionTitle>
-            <SectionDescription>Temos preços acessíveis</SectionDescription>
-          </SectionHeader>
-          <Plans />
-        </section>
+        <Plans />
       </main>
       <ZapFixedButton myNumber={true} />
-    </div>
+    </>
   );
 };
 

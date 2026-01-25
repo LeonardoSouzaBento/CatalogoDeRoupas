@@ -4,25 +4,28 @@ import { Image, TextContent } from './hero/index';
 
 const css = {
   wrapper: `pb-12 m-auto max-w-280 flex flex-col gap-8 sm:px-6 md:px-8 
-  next-md:flex-row next-md:px-0!`,
-  messageWrapper: 'w-full max-w-256 flex flex-col justify-center items-center next-md:w-1/2',
-  imageWrapper: 'w-full max-w-256 flex flex-col next-md:w-1/2',
+  pre-lg:flex-row pre-lg:px-0!`,
+  messageWrapper: 'w-full max-w-256 flex flex-col justify-center items-center pre-lg:w-1/2',
+  imageWrapper: 'w-full max-w-256 flex flex-col pre-lg:w-1/2',
 };
 
 const Hero = (): React.ReactElement => {
   return (
-    <div className={`${css.wrapper}`}>
-      <div className={`${css.messageWrapper}`}>
-        <TextContent />
-        <CTAButton hideInMobile={true} />
+    <section
+      className={`h-auto w-full pt-[4.5em] p-8 pb-0 rounded-none 
+      bg-linear-to-br from-female to-male`}>
+      <div className={`${css.wrapper}`}>
+        <div className={`${css.messageWrapper}`}>
+          <TextContent />
+          <CTAButton hideInMobile={true} />
+        </div>
+        <div className={`${css.imageWrapper}`}>
+          <Image />
+          <CTAButton classNames={['max-w-none justify-center', 'shadow-accent']} />
+        </div>
       </div>
-      <div className={`${css.imageWrapper}`}>
-        <Image />
-        <CTAButton classNames={['max-w-none justify-center', 'shadow-accent']} />
-      </div>
-    </div>
+    </section>
   );
 };
 
 export { Hero };
-
