@@ -62,8 +62,8 @@ const Plans = (): React.ReactElement => {
                   </li>
                 ))}
               </ul>
-              <CTAButton hideInMobile={true} classNames={['max-w-none', 'w-full']} />
-              <CTAButton classNames={['max-w-none', 'w-full']} />
+              <CTAButton hideInMobile={true}  cssButton="w-full"/>
+              <CTAButton cssButton="w-full" />
             </div>
           ))}
         </div>

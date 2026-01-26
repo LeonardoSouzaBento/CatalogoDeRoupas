@@ -27,9 +27,9 @@ const ImageAndName = ({
 }) => {
   const css = {
     wrapper: 'w-full sm:w-1/2 relative flex',
-    wrapperImg: 'h-25 min-w-21 bg-gray-100 crop round-md',
+    wrapperImg: 'h-25 min-w-21 bg-gray-100 crop rounded-md',
     img: 'size-full object-contain box-border p-2',
-    wrapperNameFile: 'w-full max-h-25 box-border p-2 round-none crop',
+    wrapperNameFile: 'w-full max-h-25 box-border p-2 rounded-none crop',
     nameFile: 'break-all ',
   };
 

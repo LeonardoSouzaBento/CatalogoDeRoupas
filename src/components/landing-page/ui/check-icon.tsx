@@ -10,7 +10,7 @@ interface Props {
 const CheckIcon = ({ section, className }: Props): React.ReactElement => {
   return (
     <span
-      className={`inline-flex items-center justify-center round-full
+      className={`inline-flex items-center justify-center rounded-full
       ${section === 'plans' ? 'min-w-5.5 h-5.5 bg-yellow-400/96' : 'min-w-6 h-6 bg-[#E8F9EE]'} 
       ${className}`}>
       <Icon

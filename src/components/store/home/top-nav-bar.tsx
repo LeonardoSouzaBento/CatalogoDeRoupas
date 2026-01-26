@@ -59,7 +59,9 @@ const TopNavBar = ({
                   variant="transparent"
                   className={`hover:shadow-sm`}
                   onClick={() => {
-                    setSeeOptionsSection?.(true);
+                    if (button.name === 'Mais Opções') {
+                      setSeeOptionsSection(true);
+                    }
                   }}>
                   <Icon
                     LucideIcon={button.LucideIcon}

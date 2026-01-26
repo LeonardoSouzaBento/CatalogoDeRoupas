@@ -13,7 +13,7 @@ export const Suggestions = () => {
     selectedGender === 'masculino' ? mostSearched.masculino : mostSearched.feminino;
 
   return (
-    <div className="h-max px-2 py-5 border-t  round-none">
+    <div className="h-max px-2 py-5 border-t  rounded-none">
       <p className="mb-5 ">Buscas Frequentes:</p>
       <div className={`${css.wrapperSuggestions}`}>
         {suggestions.map((item: string) => (
@@ -28,7 +28,7 @@ const Button = ({ item }: { item: string }) => {
   const [selected, setSelected] = useState<boolean>(false);
 
   const css = {
-    wrapperItem: 'min-h-10 flex-center px-[18px] round-md bg-gray-100 hover:bg-gray-200 trans',
+    wrapperItem: 'min-h-10 flex-center px-[18px] rounded-md bg-gray-100 hover:bg-gray-200 trans',
     selected: '',
   };
 

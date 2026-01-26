@@ -1,18 +1,27 @@
 @import 'tailwindcss';
+@import './globals.css';
 
 @layer components {
-  .abso {
+  .body-wrapper {
+    @apply bg-linear-to-tl from-dark-bg to-light-bg
+    pt-3 sm:pt-4 pb-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 mx-auto;
+  }
+
+  .absolute-top {
     @apply absolute top-0 left-0;
+  }
+  .absolute-bottom {
+    @apply absolute bottom-0 left-0;
   }
   .crop {
     @apply overflow-hidden;
   }
 
   /* transição */
-  .trans {
+  .default-transition {
     @apply transition-all duration-300;
   }
-  .fast-trans {
+  .default-fast-transition {
     @apply transition-all duration-200;
   }
 
@@ -37,39 +46,8 @@
     @apply items-start;
   }
 
-  /* Border-radius */
-
-  .round-none {
-    @apply rounded-none;
-  }
-  .round-xs {
-    @apply rounded-xs;
-  }
-  .round-sm {
-    @apply rounded-sm;
-  }
-  .round-md {
-    @apply rounded-md;
-  }
-  .round-lg {
-    @apply rounded-lg;
-  }
-  .round-xl {
-    @apply rounded-xl;
-  }
-  .round-2xl {
-    @apply rounded-2xl;
-  }
-  .round-3xl {
-    @apply rounded-3xl;
-  }
-  .round-full {
-    @apply rounded-full;
-  }
-
   /* borda solida para ver elementos rapidamente */
   .bss {
     @apply border border-black;
   }
-
 }

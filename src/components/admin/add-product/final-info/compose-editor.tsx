@@ -76,7 +76,7 @@ const Materials: React.FC<MaterialsProps> = ({
     notSelected: `bg-gray-100`,
     addMaterial: `bg-gray-100`,
     after: `block h-5 w-full z-0 sticky bottom-0 left-0
-    bg-linear-to-t from-white to-transparent round-none`,
+    bg-linear-to-t from-white to-transparent rounded-none`,
   };
 
   const materialsList = seeCommonFabrics ? Object.keys(commonFabrics) : materials;
@@ -170,7 +170,7 @@ const SearchMaterial = ({
           }
         }}
       />
-      <Button className="box-content h-full min-w-10 round-none" onClick={handleSearchButton}>
+      <Button className="box-content h-full min-w-10 rounded-none" onClick={handleSearchButton}>
         <Icon LucideIcon={Search} />
       </Button>
     </div>

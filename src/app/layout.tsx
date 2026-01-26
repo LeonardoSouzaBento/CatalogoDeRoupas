@@ -4,7 +4,7 @@ import { UserProvider } from '@/_providers/userProvider';
 import { PublicDataProvider } from '@/_providers/publicDataProvider';
 import { DM_Sans, Cookie } from 'next/font/google';
 import '../css/globals.css';
-import '../css/shorteners.css';
+import '../css/more.css';
 import '../css/typography.css';
 import '../css/landing-page.css';
 

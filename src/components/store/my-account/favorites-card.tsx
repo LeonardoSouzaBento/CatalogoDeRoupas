@@ -5,8 +5,8 @@ export const FavoritesCard = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="bookmark_heart" size="h3" fill={1} className="-ml-2.5" />
-          Meus favoritos
+          <MuiIcon icon="bookmark_heart" size="h3" fill={1} className="-ml-1" />
+          <h3>Favoritos</h3>
         </CardTitle>
       </CardHeader>
     </Card>

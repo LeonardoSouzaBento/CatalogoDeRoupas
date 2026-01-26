@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const UserProfile = () => {
   const css = {
-    wrapper: `h-13 w-13 relative bg-neutral-100 round-lg crop`,
+    wrapper: `h-13 w-13 relative bg-neutral-100 rounded-lg crop`,
     img: `object-cover size-full`,
     p: '',
   };

@@ -3,7 +3,7 @@ import { Button, CustomLink, Icon } from '@/components/ui';
 import { X } from 'lucide-react';
 
 const css = {
-  wrapper: `h-14 px-5 mb-5 box-content flex items-center j-between round-none 
+  wrapper: `h-14 px-5 mb-5 box-content flex items-center j-between rounded-none 
   bg-gradient-to-r from-stone-800 to-stone-700`,
   pLogo: 'leading-none font-logo text-white text-stone-800 ',
 };

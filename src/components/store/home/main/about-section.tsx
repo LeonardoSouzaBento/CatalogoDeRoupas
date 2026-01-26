@@ -5,7 +5,7 @@ import { AboutInput } from './about-section/about-input';
 
 const css = {
   wrapperAbout: 'm-auto relative',
-  homeEditMode: 'shadow-lg/12 py-47 sm:py-40 md:py-34 round-lg ',
+  homeEditMode: 'shadow-lg/12 py-47 sm:py-40 md:py-34 rounded-lg ',
   wrapperP: 'size-full relative z-0',
   p: 'pb-3 relative last:pb-0',
 };

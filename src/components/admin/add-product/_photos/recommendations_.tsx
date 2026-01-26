@@ -4,13 +4,13 @@ import { Minus, Plus } from 'lucide-react';
 import { useState } from 'react';
 
 const css = {
-  wrapper: `relative p-4 flex round-md text-left overflow-hidden bg-gray-50`,
+  wrapper: `relative p-4 flex rounded-md text-left overflow-hidden bg-gray-50`,
   wrapperTitle: `min-h-10 flex justify-between items-end gap-2 sm:gap-0 mb-1 box-border pb-3`,
   title: `w-full text-left font-semibold`,
   p: `5 text-gray-700 transition-all duration-300`,
   highlight: `font-medium text-gray-900`,
-  button: `size-9 flex-center px-0 round-full text-gray-500 
-  hover:text-gray-700 trans  shadow-lg-hover`,
+  button: `size-9 flex-center px-0 rounded-full text-gray-500 
+  hover:text-gray-700 default-transition  shadow-lg-hover`,
 };
 
 export const Recommendations = () => {

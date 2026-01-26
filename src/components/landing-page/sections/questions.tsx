@@ -19,7 +19,7 @@ const content = [
 
 const css = {
   container: 'block grid grid-cols-1 gap-2',
-  contentWrapper: `pt-[1cap] border-dashed border-t-2 border-border/50`,
+  contentWrapper: `pt-4 border-dashed border-t-2 border-border/50`,
   infoWrapper: 'w-full',
   imageWrapper: 'w-full flex flex-col gap-3',
 };
@@ -33,8 +33,8 @@ const Questions = (): React.ReactElement => {
           <SectionDescription>Ajudamos você a vender mais</SectionDescription>
         </SectionHeader>
         <div className={css.contentWrapper}>
-          <div className={`${css.container}`}>
-            <div className={`${css.infoWrapper}`}>
+          <div className={css.container}>
+            <div className={css.infoWrapper}>
               <TextContent />
             </div>
           </div>
@@ -47,7 +47,7 @@ const Questions = (): React.ReactElement => {
 
 export { Questions };
 
-export const TextContent = () => {
+const TextContent = () => {
   return (
     <>
       {content.map((item) => (

@@ -10,7 +10,7 @@ import { MuiIcon } from '@/components/ui';
 const css = {
   wrapper: 'w-full m-auto max-w-210 grid grid-cols-1 gap-4',
   container: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
-  round-md bg-white border-gray-200 shadow-md hover:shadow-lg fast-trans relative`,
+  rounded-md bg-white border-gray-200 shadow-md hover:shadow-lg default-fast-transition relative`,
   containerEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
   infoWrapper: `w-full flex justify-start items-start flex-auto gap-3 
   [&>div>span]:text-female [&>div>span]:mt-[1em]`,

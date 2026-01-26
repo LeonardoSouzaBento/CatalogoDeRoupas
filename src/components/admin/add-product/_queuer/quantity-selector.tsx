@@ -8,11 +8,11 @@ const css = {
   border relative`,
   wrapperButtons: `flex gap-3`,
   p: `5`,
-  button: `size-9 p-0 flex-center round-full`,
+  button: `size-9 p-0 flex-center rounded-full`,
   selected: ` border shadow-lg hover:shadow-lg-hover`,
-  plusButton: `size-9 flex-center p-0 round-full`,
+  plusButton: `size-9 flex-center p-0 rounded-full`,
   cancelButton: `p-0 size-9 bg-gray-100/70 flex-center absolute -top-2 -right-2
-  round-full`,
+  rounded-full`,
 };
 
 interface Props {

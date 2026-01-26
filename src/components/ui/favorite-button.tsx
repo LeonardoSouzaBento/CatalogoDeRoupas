@@ -24,7 +24,7 @@ const FavoriteButton = () => {
       <Button
         variant="transparent"
         size="icon"
-        className="round-full"
+        className="rounded-full"
         onClick={(e) => {
           e.stopPropagation();
           handleClickFavorite();

@@ -50,7 +50,7 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
       </Button>
       {/* <p>Foto de perfil</p> */}
       <div className="size-auto flex items-center justify-start max-[430px]:gap-3 gap-5">
-        <div className="size-16 min-w-16 round-full bg-gray-100 crop relative">
+        <div className="size-16 min-w-16 rounded-full bg-gray-100 crop relative">
           <Image src={`/`} fill={true} alt="" />
         </div>
         <button className="w-full  trans">

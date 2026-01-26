@@ -4,24 +4,24 @@ import { useContext } from 'react';
 
 const optionButtons = [
   {
-    name: 'Editar esta página',
+    name: 'editar esta página',
     icon: 'edit',
     iconStyles: '',
   },
   {
-    name: 'Adicionar Produto',
+    name: 'adicionar produto',
     url: '/admin/adicionar-produto',
     icon: 'add_circle',
     iconStyles: '',
   },
   {
-    name: 'Atualizar Produtos',
+    name: 'atualizar produtos',
     url: '/admin/atualizar-produto',
     icon: 'edit_note',
     iconStyles: '',
   },
   {
-    name: 'Ver Favoritos Do Usúario',
+    name: 'ver favoritos do usuário',
     url: '/admin/favoritos-do-usuario',
     icon: 'favorite',
     iconStyles: '',
@@ -38,7 +38,12 @@ const AdministrationOptions = () => {
           variant="transparent"
           key={item.name}
           onClick={() => (item.url ? null : setHomeEditMode(true))}>
-          <MuiIcon icon={item.icon} />
+          <MuiIcon
+            icon={item.icon}
+            fill={1}
+            className="text-female"
+            size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
+          />
           {item.name}
           {item.url && <CustomLink link={item.url} />}
         </Button>
@@ -48,4 +53,3 @@ const AdministrationOptions = () => {
 };
 
 export { AdministrationOptions };
-

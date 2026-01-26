@@ -12,11 +12,11 @@ interface Props {
 }
 
 const css = {
-  wrapper: `bg-white round-none `,
+  wrapper: `bg-white rounded-none `,
   row: `h-10 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
-  round-none`,
+  rounded-none`,
   label: `5 font-normal text-gray-800 w-40`,
-  value: `text-sm text-gray-700 flex-1 text-right round-none`,
+  value: `text-sm text-gray-700 flex-1 text-right rounded-none`,
 };
 
 function TablePart({ items, fields, wrapperClass }: Props) {

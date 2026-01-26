@@ -9,16 +9,16 @@ const TextContent = () => {
         <strong>aumente suas vendas.</strong>
       </h1>
 
-      <h3 className={`text-primary-50/93 text-center font-thin mb-8`}>
+      <h3 className={`text-primary-50/93 text-center font-thin mb-6`}>
         Facilite o processo de compra do cliente e aumente as vendas da sua loja.
       </h3>
 
       <div
-        className={`w-full max-w-81.5 mb-6 flex-center gap-2 
+        className={`w-full max-w-81.5 flex-center gap-2 
       bg-linear-to-br from-female to-male 
       rounded-xl`}>
         <p
-          className={`text-indigo-50 font-light leading-none mb-0.5 text-lg px-[0.9em] py-cap-offset`}>
+          className={`text-indigo-50 font-light leading-none text-lg px-[0.9em] py-cap-offset`}>
           Experimente um mês grátis!
         </p>
       </div>

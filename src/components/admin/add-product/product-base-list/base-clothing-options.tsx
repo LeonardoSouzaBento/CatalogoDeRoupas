@@ -4,12 +4,12 @@ import { X } from 'lucide-react';
 
 const css = {
   wrapperButtons: `flex flex-wrap gap-4 mb-6`,
-  button: `5 round-full  font-normal px-6  hover:border-gray-400
+  button: `5 rounded-full  font-normal px-6  hover:border-gray-400
     focus:outline-none focus:ring-2 focus:ring-blue-400
     transition-all duration-150 relative max-[400px]:w-full sm:min-w-60`,
   selected: ``,
   buttonDelete: `h-8 w-8 flex px-0 items-center justify-center 
-  round-full bg-white/60 hover:shadow-lg trans absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
+  rounded-full bg-white/60 hover:shadow-lg default-transition absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
 };
 
 interface ButtonProps {

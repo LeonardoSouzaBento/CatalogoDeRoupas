@@ -9,12 +9,12 @@ import { Search, X } from 'lucide-react';
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,
   wrapper: `h-[100dvh] w-8/10 max-w-120 pb-6 min-h-screen z-6 
-  bg-white rounded-none shadow-md overflow-y-scroll trans absolute top-0 right-0`,
-  header: `h-12 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 round-none bg-stone-800 
+  bg-white rounded-none shadow-md overflow-y-scroll default-transition absolute top-0 right-0`,
+  header: `h-12 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 rounded-none bg-stone-800 
   bg-gradient-to-l from-primary-900 to-primary-800`,
   title: `text-white font-semibold mt-[1px]`,
   buttonsWrapper: `flex flex-col items-start gap-2 
-  [&_[data-separator]]:w-[calc(100%-2rem)] [&_[data-separator]]:mx-auto`,
+  [&_[data-separator]]:w-[calc(100%-2rem)] [&_[data-separator]]:mx-auto `,
 };
 
 const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSetter }) => {
@@ -49,27 +49,27 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
           <Button
             size="icon"
             variant="default"
-            className="absolute top-1.5 right-3 rounded-full bg-primary-50/20 hover:bg-primary-50/40"
+            className="absolute top-1.5 right-3 rounded-full bg-primary-50/18 hover:bg-primary-50/24"
             onClick={() => setView(false)}>
             <Icon LucideIcon={X} size="lg" strokeValue={'medium'} />
           </Button>
         </div>
 
-        <TitleButtonGroup title="Administrar" />
-        <div className={css.buttonsWrapper}>
-          <AdministrationOptions />
-          <Separator />
-        </div>
-
-        <TitleButtonGroup title="Navegue" />
-        <div className={css.buttonsWrapper}>
-          <Links />
-          <Separator />
-        </div>
-
-        <TitleButtonGroup title="Escolha" />
-        <div className={css.buttonsWrapper}>
-          <Choices />
+        <div className="pl-1">
+          <TitleButtonGroup title="Administrar" />
+          <div className={css.buttonsWrapper}>
+            <AdministrationOptions />
+            <Separator />
+          </div>
+          <TitleButtonGroup title="Navegar" />
+          <div className={css.buttonsWrapper}>
+            <Links />
+            <Separator />
+          </div>
+          <TitleButtonGroup title="Pesquiar" />
+          <div className={css.buttonsWrapper}>
+            <Choices />
+          </div>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@ const Choices = () => {
     <>
       {currentMostSearched.map((item) => (
         <Button variant="transparent" key={item}>
-          <Icon LucideIcon={Search} />
+          <Icon LucideIcon={Search} fill="var(--color-primary-50)" />
           {item}
         </Button>
       ))}

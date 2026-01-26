@@ -13,12 +13,6 @@ const content = [
   },
 ];
 
-const css = {
-  section: '',
-  contentWrapper: `pt-[1cap] border-dashed border-t-2 border-border/50`,
-  wrapperInfo: 'w-full flex flex-col gap-6',
-};
-
 const Process = (): React.ReactElement => {
   return (
     <section className="landing-page-section w-full">
@@ -27,10 +21,9 @@ const Process = (): React.ReactElement => {
           <SectionTitle>Como Funciona?</SectionTitle>
           <SectionDescription>É simples</SectionDescription>
         </SectionHeader>
-        <div className={`${css.contentWrapper}`}>
-          <div className={`${css.wrapperInfo}`}>
-            <Messages />
-          </div>
+        <div className={`w-full pt-4 flex flex-col gap-6 pb-4 pre-lg:pb-0 
+          border-dashed border-t-2 border-border/50`}>
+          <TextContent />
         </div>
       </div>
       <MainImage src="/home/phone4.png" />
@@ -40,24 +33,19 @@ const Process = (): React.ReactElement => {
 
 export { Process };
 
-const Messages = () => {
-  const css = {
-    wrapper: 'w-auto flex items-start gap-4 sm:flex-row',
-    textWrapper: 'flex items-start gap-3',
-  };
-
+const TextContent = () => {
   return (
     <>
       {content.map((item, index) => (
-        <div className={`${css.wrapper}`} key={item.id}>
-          <div className={`${css.textWrapper}`}>
+        <div className={`w-auto flex items-start gap-4 sm:flex-row`} key={item.id}>
+          <div className={`flex items-start gap-3`}>
             <div className={`-mt-1.5`}>
               <strong className="text-lg text-female">{index + 1}.</strong> {item.text}
             </div>
           </div>
         </div>
       ))}
-      <div className="h-[1.06em]" />
+      <div className="hidden pre-lg:block h-[1.06em]" />
     </>
   );
 };

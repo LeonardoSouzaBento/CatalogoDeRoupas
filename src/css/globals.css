@@ -37,12 +37,23 @@
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
   /* cores */
   --color-female: #c81e72;
+  --color-female-50: #fdeff3;
+  --color-female-100: #fadee7;
+  --color-female-200: #f4becf;
+  --color-female-300: #ec9db7;
+  --color-female-400: #e27ba1;
+  --color-female-500: #d7578b;
+  --color-female-600: #c81e72 /*Sua cor*/;
+  --color-female-700: #ac005b;
+  --color-female-800: #8b0042;
+  --color-female-900: #6b002a;
+  --color-female-950: #5b001e;
+  --color-female-1000: #4c0013;
   --color-male: #7119a8;
   /* neutras */
   --color-light-bg: #fff;
   --color-medium-bg: hsl(357, 20%, 98%);
   --color-dark-bg: hsl(357, 20%, 96.68%);
-  --color-card-background: #fff;
   --color-card-foreground: hsl(345 18% 17.5%);
   --color-muted-foreground: hsl(345 10.57% 38%);
   --color-border: hsl(345 6.29% 83%);
@@ -71,10 +82,10 @@
   --color-red: #e5464f;
   --color-red-hover: #c23c41;
   /* Breakpoints */
-  --breakpoint-xxs: 337px;
+  --breakpoint-xxs: 320px;
   --breakpoint-xs: 375px;
-  --breakpoint-md-sm: 425px;
-  --breakpoint-pre-sm: 575px;
+  --breakpoint-md-sm: 430px;
+  --breakpoint-pre-sm: 576px;
   --breakpoint-pre-md: 704px;
   --breakpoint-next-md: 840px;
   --breakpoint-pre-lg: 932px;
@@ -113,14 +124,14 @@
     font-family: var(--font-default);
     /* scrollbar */
     scrollbar-width: thin;
-    scrollbar-color: var(--color-primary-100) transparent;
+    scrollbar-color: var(--color-border) transparent;
   }
   /* *::-webkit-scrollbar {
     width: 4px;
     height: 4px;
   } */
   *::-webkit-scrollbar-thumb {
-    background: var(--color-primary-100);
+    background: var(--color-border);
   }
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-200) !important;

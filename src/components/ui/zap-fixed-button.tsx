@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
   const css = {
-    wrapper: `size-12 box-border bg-green-600 flex-center round-xl fixed bottom-4 right-4 z-6
-    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] fast-trans shadow-green-soft`,
+    wrapper: `size-12 box-border bg-green-600 flex-center rounded-xl fixed bottom-4 right-4 z-6
+    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] default-fast-transition shadow-green-soft`,
   };
 
   function handleOpenChat() {

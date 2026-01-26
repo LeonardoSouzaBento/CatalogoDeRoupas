@@ -9,7 +9,7 @@ const css = {
   wrapper: `
     flex flex-wrap gap-4 mt-0.5 mb-[20.1px] border p-5 py-5.5
   `,
-  button: `5 round-full relative  gap-0 font-normal pl-5 
+  button: `5 rounded-full relative  gap-0 font-normal pl-5 
   pr-0 text-gray-700 hover:bg-gray-100 transition-all 
   duration-150 border border-transparent
   `,
