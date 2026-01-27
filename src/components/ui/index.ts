@@ -8,7 +8,7 @@ export * from './label';
 export * from './lucide-icon';
 export * from './mui-icon';
 export * from './separator';
-export * from './page-title';
+export * from './page-header';
 export * from './zap-fixed-button';
 export * from './input-wrapper';
 export * from './alert-full-scrren';

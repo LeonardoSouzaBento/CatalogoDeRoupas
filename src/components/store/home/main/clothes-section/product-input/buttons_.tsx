@@ -10,7 +10,7 @@ const Buttons = ({ mainImage = true }: { mainImage?: boolean }) => {
     }
   }
   return (
-    <div className={`size-full flex flex-col gap-5 pb-5 bg-white/86 z-2`}>
+    <div className={`size-full flex flex-col gap-5 pb-5 bg-light-bg/86 z-2`}>
       <Button onClick={uploadImage}>
         Subir imagem menor
         <Icon LucideIcon={CloudUpload} />

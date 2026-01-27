@@ -19,13 +19,13 @@ const buttons: ButtonType[] = [
 ];
 
 const css = {
-  mainWrapper: 'w-full h-auto sticky top-0 left-0 z-2 bg-white/36 backdrop-blur-xs shadow-sm',
+  mainWrapper: 'w-full h-auto sticky top-0 left-0 z-2 bg-light-bg/36 backdrop-blur-xs shadow-sm',
   wrapper:
-    'w-[calc(100%-32px)] max-w-[1180px] m-auto flex justify-between items-center flex-wrap gap-4 sm:flex-nowrap md:justify-center lg:gap-8',
-  nav: `h-18 w-full max-w-212 flex justify-between items-center sm:justify-center 
-  gap-4 flex-auto [&>button]:font-medium [&>button]:bg-white/24 [&>button]:flex-auto`,
-  searchButton: `min-w-1/3 justify-between lg:order-2 
-  shadow-md/4 bg-white/24 hover:scale-102 
+    'px-8 max-w-216 m-auto flex justify-center items-center flex-wrap gap-4 sm:flex-nowrap',
+  nav: `h-18 w-full max-w-212 flex justify-between items-center
+  gap-4 flex-auto [&>button]:font-medium [&>button]:bg-light-bg/24`,
+  searchButton: `w-1/3 max-w-64 justify-between lg:order-2 
+  shadow-md/4 bg-light-bg/24 hover:scale-102 
   transition-all duration-300`,
 };
 
@@ -45,11 +45,16 @@ const TopNavBar = ({
               return button.searchButton ? (
                 <Button
                   key={button.name}
-                  size={isMobile ? 'icon' : 'sm'}
+                  size={'sm'}
                   variant="transparent"
-                  className={`${css.searchButton}`}>
+                  className={`${css.searchButton} ${!isMobile ? 'flex-auto' : ''}`}>
                   Buscar
-                  <Icon LucideIcon={button.LucideIcon} strokeValue={'medium'} size={'lg'} />
+                  <Icon
+                    LucideIcon={button.LucideIcon}
+                    strokeValue={'medium'}
+                    size={'lg'}
+                    fill="var(--color-theme-50)"
+                  />
                   <CustomLink link={'/loja/pesquisar'} />
                 </Button>
               ) : (
@@ -68,6 +73,7 @@ const TopNavBar = ({
                     strokeValue={'medium'}
                     size={'lg'}
                     className="mb-[0.5px]"
+                    fill="var(--color-theme-50)"
                   />
                   {isMobile ? null : button.name}
                   {button.link ? <CustomLink link={button.link} /> : null}

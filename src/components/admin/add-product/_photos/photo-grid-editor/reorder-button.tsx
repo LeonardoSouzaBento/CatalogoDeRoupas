@@ -1,10 +1,9 @@
-
 import { BooleanSetter, Photo } from '@/types/types';
 import { Layers2, X } from 'lucide-react';
 
 const css = {
   button: ` j-center`,
-  reorderMode: `bg-white! text-blue-700 ring ring-blue-300 shadow-sm`,
+  reorderMode: `bg-light-bg! text-blue-700 ring ring-blue-300 shadow-sm`,
 };
 
 interface Props {
@@ -36,11 +35,7 @@ export const ReorderButton = ({ reorderMode, setReorderMode, styles, photos }: P
       `}>
       {reorderMode ? 'Sair de reordenar' : 'Reordenar imagens'}
 
-      {reorderMode ? (
-        <X  />
-      ) : (
-        <Layers2  color={isDisabled ? '#a1a1a1' : 'gray'} />
-      )}
+      {reorderMode ? <X /> : <Layers2 color={isDisabled ? '#a1a1a1' : 'gray'} />}
     </button>
   );
 };

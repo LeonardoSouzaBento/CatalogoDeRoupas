@@ -25,7 +25,7 @@ const page = () => {
       </PageHeader>
       <div className={`${css.wrapper}`}>
         <div className={`max-w-3xl lg:max-w-4xl mx-auto`}>
-          <Alert variant="destructive" className="card-styles border-none p-6 bg-white">
+          <Alert variant="destructive" className="card-styles border-none p-6 bg-light-bg">
             <AlertCircle />
             <AlertDescription>
               Registre um tipo de peça de cada vez. Por exemplo: primeiro as camisetas básicas

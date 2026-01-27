@@ -7,7 +7,7 @@ import React, { useContext, useState } from 'react';
 const css = {
   wrapper: 'w-full absolute-top pt-3 pb-3 bg-gray-100 z-1',
   wrapperForm:
-    'w-[calc(100%-16px)] h-max p-5 m-auto max-w-128 flex flex-col gap-4 bg-white rounded-lg relative shadow-md',
+    'w-[calc(100%-16px)] h-max p-5 m-auto max-w-128 flex flex-col gap-4 bg-light-bg rounded-lg relative shadow-md',
   label: ` leading-5 font-medium !text-neutral-800 border-b border-neutral-300 pb-[14px]`,
   wrapperButtons: 'flex items-start gap-3',
   buttonSend: 'button',

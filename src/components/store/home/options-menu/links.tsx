@@ -20,7 +20,7 @@ const Links = () => {
     <>
       {pageOptions.map((item) => (
         <Button variant="transparent" key={item.name}>
-          <MuiIcon icon={item.icon} fill={1} className="text-female" size="xl" />
+          <MuiIcon icon={item.icon} fill={1} className="text-theme" size="xl" />
           {item.name}
           <CustomLink link={item.link} />
         </Button>
@@ -30,4 +30,3 @@ const Links = () => {
 };
 
 export { Links };
-

@@ -5,7 +5,7 @@ import { TextContent } from './hero/index';
 
 const css = {
   section: `h-auto w-full pt-[4.5em] pb-11 rounded-none 
-  bg-linear-to-br from-female to-male px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14`,
+  bg-linear-to-br from-theme to-male-theme px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14`,
   wrapper: `max-w-176 mx-auto pre-lg:max-w-none xl:max-w-274 grid grid-cols-1 gap-8 
   pre-lg:grid-cols-2`,
   messageWrapper: 'w-full flex flex-col justify-center items-center',

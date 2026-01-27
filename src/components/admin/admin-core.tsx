@@ -31,7 +31,7 @@ const optionButtons = [
 const css = {
   wrapper: 'min-h-[100vh] min-w-[100vw] px-3 pb-12 flex-center bg-transparent',
   container:
-    'h-auto w-full max-w-[592px] px-8 py-6 mb-12 min-[688px]:max-w-[672px] lg:mb-0 rounded-xl bg-white shadow-lg',
+    'h-auto w-full max-w-[592px] px-8 py-6 mb-12 min-[688px]:max-w-[672px] lg:mb-0 rounded-xl bg-light-bg shadow-lg',
   wrapperButtons: 'flex flex-col min-[680px]:flex-row min-[680px]:flex-wrap gap-4 mb-2',
   h1: 'text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left ',
   h2: 'w-full mb-6 font-light text-left text-neutral-600  cursor-default',

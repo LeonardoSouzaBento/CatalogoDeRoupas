@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary-700 text-primary-50 hover:bg-primary/90',
+        default: 'bg-primary-800 text-primary-50 hover:bg-primary-700 focus:bg-primary-900',
         destructive:
           'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20',
         outline:
           'border-2 border-primary-700 bg-transparent hover:bg-primary-50 text-primary-700 hover:bg-accent',
         secondary: 'bg-primary-100 text-primary-800 hover:bg-primary-300',
         ghost:
-          'text-primary-800 ring ring-border hover:bg-primary-50/50',
+          'text-primary-800 border hover:bg-primary-50/50',
         link: 'text-blue-600 underline-offset-4 hover:underline',
         transparent: 'bg-transparent hover:bg-transparent',
       },
@@ -27,6 +27,7 @@ const buttonVariants = cva(
         'outline-sm': 'px-[0.79716em] py-[0.54794rem] text-sm-button',
         outline: 'px-[0.80304em] py-[0.64347rem]',
         'outline-lg': 'px-[0.80857em] py-[0.73722rem] text-lg-button',
+        ghost: 'py-[0.70313rem]',
         icon: 'size-8.5',
         'icon-sm': 'size-8',
         'icon-md': 'size-9',

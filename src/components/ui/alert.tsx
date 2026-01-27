@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  `text-sm relative w-full rounded-lg border px-4 py-3 grid grid-cols-1 items-start
+  `small-text relative w-full rounded-lg border px-4 py-3 grid grid-cols-1 items-start
   has-[svg]:grid-cols-[max-content_1fr] has-[svg]:gap-x-2 [&_svg:first-child]:mt-[0.9em]`,
   {
     variants: {
@@ -56,7 +56,7 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "text-muted-foreground col-start-2 grid justify-items-start gap-1 [&_p]:leading-relaxed [&_p]:text-sm",
+        "text-muted-foreground col-start-2 grid justify-items-start gap-1",
         className
       )}
       {...props}

@@ -1,12 +1,13 @@
 import { UserContext } from '@/contexts/index';
 import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
 import { SectionHeader } from '@/components/store/home/ui/index';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { HomeProduct } from './home-product';
+import { useMouseScrollX } from '@/hooks';
 
 const css = {
   wrapper: 'crop relative',
-  scrollableDiv: `flex gap-4 pt-3 pb-6 px-4 box-border 
+  scrollableDiv: `flex gap-4 pt-3 pb-8 px-4 box-border 
   lg:mr-4 overflow-x-scroll relative scrollbar-hidden`,
 };
 
@@ -23,6 +24,7 @@ interface ClothesSectionProps {
   setGirlsClothes?: StateSetter<HomeClothing[]>;
   sectionEditMode: boolean;
   setSectionEditMode: BooleanSetter;
+  resizeCount: number;
 }
 
 const Base = ({
@@ -38,12 +40,37 @@ const Base = ({
   setGirlsClothes,
   sectionEditMode,
   setSectionEditMode,
+  resizeCount,
 }: ClothesSectionProps) => {
   const { selectedGender, childCatSelected } = useContext(UserContext);
   const isGirlsSection = childCatSelected && selectedGender === 'feminino';
   const isBoysSection = childCatSelected && selectedGender === 'masculino';
   const isWomanSection = !childCatSelected && selectedGender === 'feminino';
   const isManSection = !childCatSelected && selectedGender === 'masculino';
+  /* variaveis para rolagem */
+  const parentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [parentWidth, setParentWidth] = useState(0);
+  const [scrollWidth, setScrollWidth] = useState(0);
+
+  useMouseScrollX(containerRef, scrollWidth, parentWidth);
+
+  function getVariables() {
+    if (parentRef.current && containerRef.current) {
+      const parentWidth = parentRef.current.offsetWidth;
+      const scrollWidth = containerRef.current.scrollWidth;
+      setParentWidth(parentWidth);
+      setScrollWidth(scrollWidth);
+    }
+  }
+
+  useEffect(() => {
+    getVariables();
+  }, []);
+
+  useEffect(() => {
+    getVariables();
+  }, [resizeCount]);
 
   const displayedItems = (() => {
     if (isGirlsSection) return girlsClothes ?? [];
@@ -70,8 +97,8 @@ const Base = ({
           sectionEditMode={sectionEditMode}
           setSectionEditMode={setSectionEditMode}
         />
-        <div className={`${css.wrapper}`}>
-          <div className={css.scrollableDiv}>
+        <div className={`${css.wrapper}`} ref={parentRef}>
+          <div className={css.scrollableDiv} ref={containerRef}>
             {displayedItems.map((item, index) => (
               <HomeProduct
                 sectionEditMode={sectionEditMode}

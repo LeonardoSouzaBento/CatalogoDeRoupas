@@ -7,7 +7,7 @@ const FirstTable = ({ userData }: { userData: UserData }) => {
     tr: 'h-max flex flex-col sm:flex-row sm:items-start ',
     thEtd: 'h-10 px-5 flex i-center j-start sm:[j-center]',
     th: 'bg-neutral-200 font-medium',
-    td: 'bg-white',
+    td: 'bg-light-bg',
   };
 
   return (

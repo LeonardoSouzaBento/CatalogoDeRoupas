@@ -41,7 +41,7 @@ const AdministrationOptions = () => {
           <MuiIcon
             icon={item.icon}
             fill={1}
-            className="text-female"
+            className="text-theme"
             size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
           />
           {item.name}

@@ -9,25 +9,28 @@ import { MainCatsInput } from './main-categories/_inputs/main-cats-input';
 
 const css = {
   container: `
-    size-auto max-w-[648px] sm:px-6 m-auto flex j-start flex-wrap gap-4 lg:flex-nowrap lg:h-[360px] lg:max-w-none
-    xl:h-[390px] relative
+    relative mx-auto pb-2 grid grid-cols-2 md-sm:grid-cols-2 gap-4 
+    next-md:max-w-none next-md:flex next-md:flex-nowrap next-md:overflow-x-scroll
+    next-md:justify-center
   `,
-  sectiooInEditMode: 'pb-0 mb-0 m-auto max-w-210',
-  wrapperEditMode: 'p-6 pt-3 bg-white rounded-md mb-10 shadow-lg',
-  wrapperImg: `
-    w-[calc(50%-6px)] h-[66vw] max-w-[320px] max-h-[420px] bg-gray-100 flex items-end relative overflow-hidden
-    rounded-lg lg:h-full
+  sectionEditMode: 'pb-0 mb-0 m-auto max-w-210',
+  wrapperEditMode: 'p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg',
+  imageWrapper: `
+    h-[66dvw] max-h-108 flex items-end relative overflow-hidden bg-theme-100 rounded-lg 
+    next-md:w-74 next-md:min-w-74
   `,
-  img: 'absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30',
+  image: 'absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30',
   nameWrapper: `w-full flex-center relative bg-linear-to-t from-primary-950/80 to-transparent 
     [text-shadow:_0_0_8px_rgb(0,_4px,_8px,_0.8)]`,
   name: 'w-full py-6 px-8 text-primary-50 sm:text-center leading-none',
 };
 
-export const MainCategories = () => {
+export const MainCategories = ({ resizeCount } : { resizeCount: number }) => {
   const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
   const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
+
+  console.log(resizeCount);
 
   const categories = childCatSelected
     ? []
@@ -40,7 +43,7 @@ export const MainCategories = () => {
   if (categories && categories.length > 0) {
     return (
       <div>
-        <div className={`${sectionEditMode && css.sectiooInEditMode}`}>
+        <div className={`${sectionEditMode && css.sectionEditMode}`}>
           <SectionHeader
             title="Categorias de Destaque"
             subtitle="Os mais procurados"
@@ -50,8 +53,8 @@ export const MainCategories = () => {
           {!sectionEditMode ? (
             <div className={`${css.container}`}>
               {categories.map((item: MainCategory) => (
-                <div key={item.urlImg} className={`${css.wrapperImg}`}>
-                  <Image src={item.urlImg} alt={item.alt} className={`${css.img}`} fill={true} />
+                <div key={item.urlImg} className={`${css.imageWrapper}`}>
+                  <Image src={item.urlImg} alt={item.alt} className={`${css.image}`} fill={true} />
                   <div className={`${css.nameWrapper}`}>
                     <h4 className={`${css.name}`}>{item.name}</h4>
                   </div>

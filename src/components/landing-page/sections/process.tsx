@@ -21,7 +21,8 @@ const Process = (): React.ReactElement => {
           <SectionTitle>Como Funciona?</SectionTitle>
           <SectionDescription>É simples</SectionDescription>
         </SectionHeader>
-        <div className={`w-full pt-4 flex flex-col gap-6 pb-4 pre-lg:pb-0 
+        <div
+          className={`w-full pt-4 flex flex-col gap-6 pb-4 pre-lg:pb-0 
           border-dashed border-t-2 border-border/50`}>
           <TextContent />
         </div>
@@ -40,7 +41,7 @@ const TextContent = () => {
         <div className={`w-auto flex items-start gap-4 sm:flex-row`} key={item.id}>
           <div className={`flex items-start gap-3`}>
             <div className={`-mt-1.5`}>
-              <strong className="text-lg text-female">{index + 1}.</strong> {item.text}
+              <strong className="text-lg text-theme">{index + 1}.</strong> {item.text}
             </div>
           </div>
         </div>

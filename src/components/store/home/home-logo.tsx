@@ -12,7 +12,7 @@ const HomeLogo = () => {
     <>
       <div className="w-full h-max relative">
         <div
-          className={`bg-primary-900 relative w-full min-h-21 pb-1 flex-center flex-col z-6 rounded-none`}>
+          className={`bg-primary-800 relative w-full min-h-21 pb-1 flex-center flex-col z-6 rounded-none`}>
           <h2 className={`leading-none mb-1 font-logo text-white font-medium`}>Roupas Online</h2>
           <p className={`leading-none text-white font-thin`}>Guardamos suas curtidas</p>
         </div>

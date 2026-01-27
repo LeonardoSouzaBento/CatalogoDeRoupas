@@ -31,8 +31,8 @@ const plans = [
 const css = {
   card: `w-full xl:h-full m-auto rounded-2xl`,
   container: 'grid grid-cols-1 pre-lg:grid-cols-2 gap-4',
-  wrapper: `w-full max-w-2xl mx-auto bg-white p-6 pt-4 rounded-2xl border border-gray-100 hover:scale-101 trans
-    [&>p]:mb-1 [&>p]:large-text border-dashed border-2 border-female/22`,
+  wrapper: `w-full max-w-2xl mx-auto bg-light-bg p-6 pt-4 rounded-2xl border border-gray-100 hover:scale-101 trans
+    [&>p]:mb-1 [&>p]:large-text border-dashed border-2 border-theme/22`,
   emphasis:
     'border-solid border-4 border-yellow-400 bg-[linear-gradient(135deg,#df2081,#8e22c2)] shadow-none',
   item: `flex gap-2 py-2.5`,
@@ -62,7 +62,7 @@ const Plans = (): React.ReactElement => {
                   </li>
                 ))}
               </ul>
-              <CTAButton hideInMobile={true}  cssButton="w-full"/>
+              <CTAButton hideInMobile={true} cssButton="w-full" />
               <CTAButton cssButton="w-full" />
             </div>
           ))}

@@ -9,7 +9,7 @@ const css = {
     transition-all duration-150 relative max-[400px]:w-full sm:min-w-60`,
   selected: ``,
   buttonDelete: `h-8 w-8 flex px-0 items-center justify-center 
-  rounded-full bg-white/60 hover:shadow-lg default-transition absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
+  rounded-full bg-light-bg/60 hover:shadow-lg transition-300 absolute right-1 bottom-1 [transition:_opacity_2s_ease]`,
 };
 
 interface ButtonProps {

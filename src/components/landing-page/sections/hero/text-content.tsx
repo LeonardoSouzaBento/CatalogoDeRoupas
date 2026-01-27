@@ -1,4 +1,3 @@
-
 const TextContent = () => {
   return (
     <>
@@ -15,10 +14,9 @@ const TextContent = () => {
 
       <div
         className={`w-full max-w-81.5 flex-center gap-2 
-      bg-linear-to-br from-female to-male 
+      bg-linear-to-br from-theme to-male-theme 
       rounded-xl`}>
-        <p
-          className={`text-indigo-50 font-light leading-none text-lg px-[0.9em] py-cap-offset`}>
+        <p className={`text-indigo-50 font-light leading-none text-lg px-[0.9em] py-cap-offset`}>
           Experimente um mês grátis!
         </p>
       </div>
@@ -27,4 +25,3 @@ const TextContent = () => {
 };
 
 export { TextContent };
-

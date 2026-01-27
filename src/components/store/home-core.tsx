@@ -23,7 +23,7 @@ const HomeCore = () => {
       <HomeLogo />
       <TopNavBar setSeeOptionsSection={setSeeOptionsSection} isMobile={isMobile} />
       {seeOptionsSection && <OptionsMenu setSeeOptionsSection={setSeeOptionsSection} />}
-      <Main />
+      <Main resizeCount={resizeCount} />
       <Footer />
       {homeEditMode && (
         <Button

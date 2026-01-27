@@ -10,12 +10,8 @@ const userGenders = [
 ];
 
 const css = {
-  container: `w-full h-auto max-w-212 m-auto flex-center items-end flex-col gap-4 
-    sm:flex-row relative`,
-  wrapper: 'h-max w-full grid grid-cols-1 sm:grid-cols-3 gap-3',
-  button: `w-full gap-1 transition-colors duration-200 uppercase tracking-wide`,
-  notSelected: 'border-gray-100 hover:bg-gray-200/50 border-transparent ',
-  selected: 'bg-transparent border shadow-xs hover:bg-white',
+  wrapper: `w-full max-w-3xl h-max mx-auto px-4 sm:px-6 relative`,
+  button: `gap-1 flex-auto transition-200 uppercase tracking-wide`,
 };
 
 export const UserGenderList = (): React.ReactElement => {
@@ -45,31 +41,33 @@ export const UserGenderList = (): React.ReactElement => {
           large-text text-muted-foreground`}>
         Selecione um gênero
       </p>
-      <div className={css.container}>
-        <ButtonsWrapper className={`${css.wrapper}`}>
+      <div className={css.wrapper}>
+        <ButtonsWrapper className={`grid grid-cols-1 sm:grid-cols-3`}>
           {userGenders.map((item) => {
             const selected = selectedGender === item.name && !childCatSelected;
             return (
-              <div key={item.name}>
-                <Button
-                  variant={selected ? 'default' : 'outline'}
-                  size={selected ? 'default' : 'outline'}
-                  data-selected={selected}
-                  onClick={() => {
-                    handleSelectGender(item.name as homeUserGender);
-                  }}
-                  className={`${css.button} ${fastReturn === item.name && 'scale-106'}`}>
-                  <MuiIcon icon={item.icon} size="2xl" />
-                  {item.name}
-                </Button>
-              </div>
+              <Button
+                key={item.name}
+                variant={selected ? 'default' : 'ghost'}
+                size={selected ? 'default' : 'ghost'}
+                data-selected={selected}
+                onClick={() => {
+                  handleSelectGender(item.name as homeUserGender);
+                }}
+                className={`${css.button} w-full ${fastReturn === item.name && 'scale-106'}`}>
+                <MuiIcon icon={item.icon} size="2xl" />
+                {item.name}
+              </Button>
             );
           })}
-          {/* botão infantil */}
-          <div>
+          <div
+            style={{
+              gridTemplateColumns: childCatSelected ? '1fr max-content max-content' : 'auto',
+            }}
+            className={`w-full grid gap-2`}>
             <Button
-              variant={childCatSelected ? 'default' : 'outline'}
-              size={childCatSelected ? 'default' : 'outline'}
+              variant={childCatSelected ? 'default' : 'ghost'}
+              size={'default'}
               data-selected={childCatSelected}
               onClick={() => {
                 handleSelectGender('infantil');

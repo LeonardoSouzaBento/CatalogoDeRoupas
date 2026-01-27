@@ -12,7 +12,7 @@ interface Props {
 }
 
 const css = {
-  wrapper: `bg-white rounded-none `,
+  wrapper: `bg-light-bg rounded-none `,
   row: `h-10 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
   rounded-none`,
   label: `5 font-normal text-gray-800 w-40`,

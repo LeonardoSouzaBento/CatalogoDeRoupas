@@ -3,8 +3,8 @@ import LoginCore from '@/components/store/login-core';
 
 const css = {
   container: `h-screen w-full px-3 flex-center`,
-  wrapper: `h-auto w-full max-w-100 mb-12 p-6 pt-5 pb-8 rounded-2xl bg-white
-  shadow-lg hover:shadow-lg-hover default-transition relative`,
+  wrapper: `h-auto w-full max-w-100 mb-12 p-6 pt-5 pb-8 rounded-2xl bg-light-bg
+  shadow-lg hover:shadow-lg-hover transition-300 relative`,
   title: 'text-gray-900 font-semibold capitalize tracking-normal mb-3 text-left ',
   button: ``,
 };

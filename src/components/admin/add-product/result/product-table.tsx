@@ -5,7 +5,7 @@ import { TablePart } from './table-part';
 
 const css = {
   grid: `px-5 py-2 grid grid-cols-1 sm:grid-cols-2 crop rounded-md border`,
-  wrapper: `bg-white rounded-none `,
+  wrapper: `bg-light-bg rounded-none `,
   row: `h-9.5 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
   rounded-none`,
   label: ` font-medium text-gray-800 w-40`,

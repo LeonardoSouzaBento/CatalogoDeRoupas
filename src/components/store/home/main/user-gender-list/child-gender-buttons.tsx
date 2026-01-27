@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '@/contexts/userContext_';
 import { Genders } from '@/types/types';
+import { Button } from '@/components/ui';
 
 const css = {
-  wrapper: 'w-max h-10 box-border flex items-center justify-between gap-3 z-2',
-  buttons: 'h-10 w-10 px-0 flex-center bg-gray-100 rounded-lg',
-  selected: 'font-extrabold bg-white  shadow-sm',
+  wrapper: 'w-max box-border flex items-center justify-between gap-3 z-2',
 };
 
 const ChildGenderButtons = () => {
@@ -28,19 +27,21 @@ const ChildGenderButtons = () => {
   }, [childCatSelected]);
 
   return (
-    <div className={`${css.wrapper} ${!visible && 'hidden!'}`}>
-      <button
-        className={`${css.buttons} ${selectedGender === 'masculino' && css.selected} `}
+    <>
+      <Button
+        size={'icon-lg'}
+        variant={selectedGender === 'masculino' ? 'default' : 'ghost'}
         onClick={(e) => handleGenderClick(e, 'masculino' as Genders)}>
         M
-      </button>
-      <button
-        className={`${css.buttons}  ${selectedGender === 'feminino' && css.selected}`}
+      </Button>
+      <Button
+        size={'icon-lg'}
+        variant={selectedGender === 'feminino' ? 'default' : 'ghost'}
         onClick={(e) => handleGenderClick(e, 'feminino' as Genders)}>
         F
-      </button>
-    </div>
+      </Button>
+    </>
   );
 };
 
-export {ChildGenderButtons};
+export { ChildGenderButtons };

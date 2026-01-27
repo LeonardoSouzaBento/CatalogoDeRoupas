@@ -18,10 +18,10 @@
   }
 
   /* transição */
-  .default-transition {
+  .transition-300 {
     @apply transition-all duration-300;
   }
-  .default-fast-transition {
+  .transition-200 {
     @apply transition-all duration-200;
   }
 

@@ -1,4 +1,13 @@
-import { Button, CardHeader, CardTitle, Input, Icon, MuiIcon, Label, InputWrapper } from '@/components/ui';
+import {
+  Button,
+  CardHeader,
+  CardTitle,
+  Input,
+  Icon,
+  MuiIcon,
+  Label,
+  InputWrapper,
+} from '@/components/ui';
 import { BooleanSetter } from '@/types/types';
 import { Eye, EyeClosed, LogIn, X } from 'lucide-react';
 import { useState } from 'react';
@@ -9,7 +18,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
   const [seePassword, setSeePassword] = useState<boolean>(false);
 
   return (
-    <div className="bg-white z-3 relative">
+    <div className="bg-light-bg z-3 relative">
       <Button
         className="absolute top-1 right-1"
         variant="transparent"
@@ -48,7 +57,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         <Icon LucideIcon={LogIn} />
         Entrar
       </Button>
-      <Button className={`${css.button} h-10! font-light bg-white  text-neutral-600`}>
+      <Button className={`${css.button} h-10! font-light bg-light-bg  text-neutral-600`}>
         Esqueci minha senha
       </Button>
     </div>

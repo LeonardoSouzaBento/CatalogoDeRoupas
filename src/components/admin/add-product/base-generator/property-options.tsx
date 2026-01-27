@@ -4,12 +4,12 @@ import { BasicClothingInformation, mappingPropToKey } from '@/types/types';
 import { WrapperOptions } from '@/components/admin/ui/wrapper-options';
 
 const css = {
-  container: `p-5 border bg-white border-b-transparent rounded-br-none rounded-bl-none`,
+  container: `p-5 border bg-light-bg border-b-transparent rounded-br-none rounded-bl-none`,
   title: `text-blue-600 font-medium mb-4.5  tracking-wide uppercase leading-none!`,
   wrapperOptions: `flex flex-wrap gap-4`,
   optionButton: ` 
     px-5 rounded-full border shadow-sm
-    text-gray-800 font-normal bg-white
+    text-gray-800 font-normal bg-light-bg
     hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600
     transition-all duration-150
     active:scale-95

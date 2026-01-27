@@ -10,7 +10,7 @@ const css = {
   p: `5 text-gray-700 transition-all duration-300`,
   highlight: `font-medium text-gray-900`,
   button: `size-9 flex-center px-0 rounded-full text-gray-500 
-  hover:text-gray-700 default-transition  shadow-lg-hover`,
+  hover:text-gray-700 transition-300  shadow-lg-hover`,
 };
 
 export const Recommendations = () => {

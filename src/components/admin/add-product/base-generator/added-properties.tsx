@@ -6,7 +6,7 @@ import { X } from 'lucide-react';
 const css = {
   wrapper: `border p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
-  bg-white rounded-full border`,
+  bg-light-bg rounded-full border`,
   button: `size-8 flex-center px-0 rounded-full text-red-500 hover:underline `,
   name: `capitalize text-gray-800`,
   strong: `font-medium tracking-wide`,

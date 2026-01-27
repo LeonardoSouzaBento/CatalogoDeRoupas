@@ -54,7 +54,7 @@ const TextContent = () => {
         <div key={item.id} className={`flex gap-3 items-start mb-4`}>
           <Icon
             LucideIcon={item.icon}
-            className="text-female mt-1"
+            className="text-theme mt-1"
             size="xl"
             strokeValue={'thin'}
             fill="var(--color-primary-50)"

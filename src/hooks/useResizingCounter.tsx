@@ -23,7 +23,7 @@ export function useResizingCounter(
           setResizingCounter((prev) => prev + 1);
           lastWidthRef.current = currentWidth;
         }
-      }, 200);
+      }, 400);
     };
 
     window.addEventListener('resize', handleResize);

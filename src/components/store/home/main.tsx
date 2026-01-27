@@ -10,10 +10,9 @@ import {
   SpecialSection,
   UserGenderList,
 } from './main/index';
-import { SectionWrapper } from './ui';
-import { Separator } from '@/components/ui';
+import { Section } from './ui';
 
-const Main = (): React.ReactElement => {
+const Main = ({ resizeCount }: { resizeCount: number }) => {
   const { hasMainCategories, setHasMainCategories, hasGymClothes, setHasGymClothes } =
     useContext(HomeContext);
   const { childCatSelected } = useContext(UserContext);
@@ -31,41 +30,43 @@ const Main = (): React.ReactElement => {
 
   return (
     <main>
-      <SectionWrapper
-        className={`bg-gray-50 bg-linear-to-b from-[#F9FAFB]
-         to-white shadow-none px-0`}>
+      <Section bgLinear={false} defaultShadow={false} className={`bg-light-bg px-0 pt-4 pb-5`}>
         <UserGenderList />
-      </SectionWrapper>
+      </Section>
 
-      <SectionWrapper data-clothes>
-        <SpecialSection />
-      </SectionWrapper>
-      <Separator />
-      <SectionWrapper data-clothes>
-        <EverydaySection />
-      </SectionWrapper>
+      <Section data-clothes>
+        <SpecialSection resizeCount={resizeCount} />
+      </Section>
+
+      <Section data-clothes>
+        <EverydaySection resizeCount={resizeCount} />
+      </Section>
 
       {hasGymClothes && (
-        <SectionWrapper data-clothes>
-          <GymSection />
-        </SectionWrapper>
+        <Section data-clothes>
+          <GymSection resizeCount={resizeCount} />
+        </Section>
       )}
 
       {hasMainCategories && (
-        <SectionWrapper data-default-shadow="false" className="bg-linear-to-b from-white to-white">
-          <MainCategories />
-        </SectionWrapper>
+        <Section defaultShadow={false} className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1)]">
+          <MainCategories resizeCount={resizeCount} />
+        </Section>
       )}
 
-      <SectionWrapper>
+      <Section
+        defaultShadow={false}
+        className="bg-transparent shadow-[inset_0_6px_12px_hsla(0,0%,0%,0.016)]">
         <FindUsSection />
-      </SectionWrapper>
+      </Section>
 
-      <SectionWrapper
-        className={`from-white to-white [&>div]:max-w-210 [&>div]:h-auto
+      <Section
+        bgLinear={false}
+        defaultShadow={false}
+        className={`bg-light-bg [&>div]:max-w-210 [&>div]:h-auto
         [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-lg [&>div]:mx-auto`}>
         <AboutSection />
-      </SectionWrapper>
+      </Section>
     </main>
   );
 };

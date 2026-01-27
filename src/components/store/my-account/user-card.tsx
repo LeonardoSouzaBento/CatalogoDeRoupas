@@ -6,11 +6,11 @@ import { useState } from 'react';
 import { InputNameEmail } from './input-name-email';
 
 const css = {
-  wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-lg bg-white`,
+  wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-lg bg-light-bg`,
   avatar: `size-[3.6em] shrink-0 relative bg-primary-50 rounded-xl border-none`,
   img: 'border-none outline-none',
   wrapperInfo: 'max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2',
-  name: `block break-words capitalize leading-none text-female-700`,
+  name: `block break-words capitalize leading-none text-theme-700`,
   email: 'block leading-none break-all text-muted-foreground large-text font-medium',
 };
 
@@ -18,7 +18,7 @@ export const UserCard = ({ userData }: { userData: UserData }) => {
   const [seeEditMode, setSeeEditMode] = useState<boolean>(false);
 
   return (
-    <Card>
+    <Card data-no-header>
       {!seeEditMode ? (
         <div className="h-max flex flex-col gap-4">
           <div className={`${css.wrapper} justify-between`}>

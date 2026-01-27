@@ -5,21 +5,18 @@ function PageHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="page-header"
-      className={cn(
-        'box-border bg-stone-800 flex items-center justify-center rounded-none',
-        className,
-      )}
+      className={cn('bg-stone-800 rounded-none', className)}
       {...props}
     />
   );
 }
 
-export function PageHeaderWrapper({ className, ...props }: React.ComponentProps<'div'>) {
+function PageHeaderWrapper({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="page-header"
       className={cn(
-        'box-border bg-stone-800 flex items-center justify-center rounded-none',
+        'px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 flex items-center justify-center rounded-none',
         className,
       )}
       {...props}
@@ -40,4 +37,4 @@ function PageTitle({ className, ...props }: React.ComponentProps<'h2'>) {
   );
 }
 
-export { PageHeader, PageTitle };
+export { PageHeader, PageTitle, PageHeaderWrapper };

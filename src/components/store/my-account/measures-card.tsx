@@ -53,8 +53,7 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
             <h6 className="font-medium">Recomendação</h6>
           </AlertTitle>
           <AlertDescription>
-            Definir suas medidas é importante para mostrarmos roupas preferencialmente do seu
-            tamanho
+            <p>Defina suas medidas para podermos separar as peças mais rapidamente para você.</p>
           </AlertDescription>
         </Alert>
         <div className="border rounded-lg">

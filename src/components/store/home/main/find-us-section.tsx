@@ -8,12 +8,12 @@ import { CopyButton, InputAddress, InputContact, InputMap } from './find-us-sect
 import { MuiIcon } from '@/components/ui';
 
 const css = {
-  wrapper: 'w-full m-auto max-w-210 grid grid-cols-1 gap-4',
+  wrapper: 'w-full m-auto max-w-180 grid grid-cols-1 gap-4',
   container: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
-  rounded-md bg-white border-gray-200 shadow-md hover:shadow-lg default-fast-transition relative`,
+  rounded-md bg-light-bg shadow-md hover:shadow-lg transition-200 relative`,
   containerEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
   infoWrapper: `w-full flex justify-start items-start flex-auto gap-3 
-  [&>div>span]:text-female [&>div>span]:mt-[1em]`,
+  [&>div>span]:text-theme [&>div>span]:mt-[1em]`,
   mapWrapper: 'w-full h-[108vw] max-h-[480px]',
   mapWrapperEditMode: '!h-auto !min-h-max p-5 pt-4',
   textWrapper: `relative space-y-0.5 [&>p:first-child]:text-lg [&>p:first-child]:font-semibold

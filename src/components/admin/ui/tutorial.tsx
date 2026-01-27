@@ -12,14 +12,14 @@ interface Props {
 
 const css = {
   section: `
-    card-styles bg-white relative crop
+    card-styles bg-light-bg relative crop
   `,
   wrapperTitle: `flex justify-between gap-4 sm:justify-start`,
   button: `h-8 min-w-8 -mr-2 px-0 pt-px flex-center border
-  rounded-full box-border default-transition  sm:mt-1 sm:mr-0`,
+  rounded-full box-border transition-300  sm:mt-1 sm:mr-0`,
   list: `flex flex-col j-start`,
   wrapperList: `w-full text-gray-700`,
-  itemList: ` w-full min-h-10 hover:bg-blue-50 default-transition mb-0 cursor-default break-words`,
+  itemList: ` w-full min-h-10 hover:bg-blue-50 transition-300 mb-0 cursor-default break-words`,
 };
 
 const Tutorial = ({ title, steps, listStyles, itemStyles }: Props) => {
