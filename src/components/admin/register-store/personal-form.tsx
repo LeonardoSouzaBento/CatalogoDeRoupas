@@ -1,9 +1,9 @@
+import { CardHeader, CardTitle, Input, InputWrapper, Label, MuiIcon } from '@/components/ui';
 import { Button } from '@/components/ui/button';
-import { CircleCheckBig } from 'lucide-react';
-import type { Shopkeeper } from '@/types/types';
-import React, { useState } from 'react';
-import { CardHeader, CardTitle, Input, Label, MuiIcon, InputWrapper } from '@/components/ui';
 import { shopkeeperInputs } from '@/data/admin/shopkeeperInputs';
+import type { Shopkeeper } from '@/types/types';
+import { CircleCheckBig } from 'lucide-react';
+import React, { useState } from 'react';
 
 const PersonalForm = () => {
   const [shopkeeper, setShopkeeper] = useState<Shopkeeper>({
@@ -63,4 +63,4 @@ const PersonalForm = () => {
   );
 };
 
-export {PersonalForm};
+export { PersonalForm };

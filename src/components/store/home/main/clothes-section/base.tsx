@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/store/home/ui/index';
 import { ScrollBar } from '@/components/ui/scroll-bar';
 import { UserContext } from '@/contexts/index';
-import { useMouseScrollX } from '@/hooks';
+import { useMouseScrollX, useScrollGetVars } from '@/hooks';
 import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { HomeProduct } from './home-product';
@@ -50,34 +50,13 @@ const Base = ({
   /* variaveis para rolagem */
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [parentWidth, setParentWidth] = useState(0);
-  const [scrollWidth, setScrollWidth] = useState(0);
-  const [thumbWidth, setThumbWidth] = useState(0);
-
+  const { parentWidth, scrollWidth, thumbWidth } = useScrollGetVars({
+    parentRef,
+    containerRef,
+    resizeCount,
+    calcThumbWidth: true,
+  });
   useMouseScrollX(containerRef, scrollWidth, parentWidth);
-
-  function getVariables() {
-    if (parentRef.current && containerRef.current) {
-      const parent = parentRef.current.offsetWidth;
-      const scroll = containerRef.current.scrollWidth;
-
-      setParentWidth(parent);
-      setScrollWidth(scroll);
-
-      if (scroll > 0) {
-        const percent = (parent / scroll) * 100;
-        setThumbWidth(percent);
-      }
-    }
-  }
-
-  useEffect(() => {
-    getVariables();
-  }, []);
-
-  useEffect(() => {
-    getVariables();
-  }, [resizeCount]);
 
   const displayedItems = (() => {
     if (isGirlsSection) return girlsClothes ?? [];

@@ -1,10 +1,10 @@
-import { Button, CloseButton, Icon, Separator } from '@/components/ui';
-import type { BooleanSetter } from '@/types/types';
-import { useContext, useEffect, useState } from 'react';
-import { AdministrationOptions, Links, TitleButtonGroup } from './options-menu/index';
+import { Button, Icon, Separator } from '@/components/ui';
 import { UserContext } from '@/contexts';
 import { mostSearched } from '@/data/UserData';
+import type { BooleanSetter } from '@/types/types';
 import { Search, X } from 'lucide-react';
+import { useContext, useEffect, useState } from 'react';
+import { AdministrationOptions, Links, TitleButtonGroup } from './options-menu/index';
 
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,

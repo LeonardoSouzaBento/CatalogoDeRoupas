@@ -1,9 +1,9 @@
 'use client';
 import { ChevronDown } from 'lucide-react';
 
-import type { ClothingProperty, StateSetter } from '@/types/types';
-import { Button } from '@/components/ui/button';
 import { ButtonsWrapper } from '@/components/ui';
+import { Button } from '@/components/ui/button';
+import type { ClothingProperty, StateSetter } from '@/types/types';
 
 const css = {
   wrapper: `
@@ -40,3 +40,4 @@ const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
 };
 
 export { Properties };
+

@@ -4,8 +4,9 @@ import { UserContext } from '@/contexts/index';
 import { HomeContext } from '@/contexts/homeContext_';
 import { MainCategory } from '@/types/types';
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { MainCatsInput } from './main-categories/_inputs/main-cats-input';
+import { useMouseScrollX, useResizeCount, useScrollGetVars } from '@/hooks';
 
 const css = {
   container: `
@@ -29,6 +30,15 @@ export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
   const [editMode, setEditMode] = useState<boolean>(false);
   const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
+  const parentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { parentWidth, scrollWidth } = useScrollGetVars({
+    parentRef,
+    containerRef,
+    resizeCount,
+    calcThumbWidth: false,
+  });
+  useMouseScrollX(containerRef, scrollWidth, parentWidth);
 
   const categories = childCatSelected
     ? []
@@ -49,9 +59,9 @@ export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
             setEditMode={setEditMode}
           />
           {!editMode ? (
-            <div className={`${css.container}`}>
+            <div className={`${css.container}`} ref={parentRef}>
               {categories.map((item: MainCategory) => (
-                <div key={item.urlImg} className={`${css.imageWrapper}`}>
+                <div key={item.urlImg} className={`${css.imageWrapper}`} ref={containerRef}>
                   <Image src={item.urlImg} alt={item.alt} className={`${css.image}`} fill />
                   <div className={`${css.nameWrapper}`}>
                     <h4 className={`${css.name}`}>{item.name}</h4>

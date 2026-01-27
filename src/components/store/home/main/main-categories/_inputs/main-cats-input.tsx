@@ -1,12 +1,11 @@
+import { Button, ButtonsWrapper } from '@/components/ui';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { HomeContext } from '@/contexts/homeContext_';
-import { MainCategory } from '@/types/types';
-import { AlertCircle, Eye, EyeClosed, Ghost, Plus } from 'lucide-react';
+import type { Gender } from '@/types/types';
+import { genders, MainCategory } from '@/types/types';
+import { AlertCircle, Eye, EyeClosed, Plus } from 'lucide-react';
 import React, { useContext, useState } from 'react';
 import { CatCardInput } from './cat-card-input';
-import { Button, ButtonsWrapper } from '@/components/ui';
-import type { Gender } from '@/types/types';
-import { genders } from '@/types/types';
 
 const css = {
   wrapperCardCats: 'flex flex-col flex-wrap gap-4 sm:flex-row sm:justify-center mb-5',
@@ -25,6 +24,7 @@ export const MainCatsInput = (): React.ReactElement => {
       <ButtonsWrapper>
         {genders.map((gender: Gender) => (
           <Button
+            key={gender}
             variant="ghost"
             size={'ghost'}
             onClick={() => {

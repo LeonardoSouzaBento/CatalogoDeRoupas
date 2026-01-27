@@ -1,10 +1,9 @@
 'use client';
 import { Button } from '@/components/ui';
 import { setReducedHeight } from '@/functions/setReducedHeight';
-import { useResizeCount } from '@/hooks/useResizeCount';
 import type { BooleanSetter, StateSetter } from '@/types/types';
 import { ChevronDown } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Props {
   children: React.ReactNode;

@@ -1,11 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { Button } from '@/components/ui';
 import { UserContext } from '@/contexts/userContext_';
 import type { Gender } from '@/types/types';
-import { Button } from '@/components/ui';
+import React, { useContext, useEffect, useState } from 'react';
 
-const css = {
-  wrapper: 'w-max box-border flex items-center justify-between gap-3 z-2',
-};
 
 const ChildGenderButtons = () => {
   const { selectedGender, setSelectedGender, childCatSelected, setChildCatSelected } =
@@ -45,3 +42,4 @@ const ChildGenderButtons = () => {
 };
 
 export { ChildGenderButtons };
+

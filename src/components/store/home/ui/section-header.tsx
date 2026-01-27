@@ -1,9 +1,7 @@
 import { HomeContext } from '@/contexts/index';
 import type { BooleanSetter } from '@/types/types';
-import { PenOff } from 'lucide-react';
 import { useContext } from 'react';
 import { EditSectionButton } from './edit-section-button';
-import { Button, Icon } from '@/components/ui';
 
 interface HomeTitleSubtitleProps {
   title: string;

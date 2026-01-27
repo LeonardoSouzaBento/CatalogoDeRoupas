@@ -1,9 +1,9 @@
+import { Button, Icon } from '@/components/ui';
 import type { MainCategory } from '@/types/types';
 import { Pen } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { CardEditMode } from './card-edit-mode';
-import { Button, Icon, MuiIcon } from '@/components/ui';
 
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] flex flex-col justify-center gap-4 border
@@ -59,3 +59,4 @@ const CatCardInput = ({ category }: CatCardResultProps) => {
 };
 
 export { CatCardInput };
+

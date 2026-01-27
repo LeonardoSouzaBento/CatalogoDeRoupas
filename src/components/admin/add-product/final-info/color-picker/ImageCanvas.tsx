@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ImageCanvasProps } from "./types";
+import Image from "next/image";
 
 export function ImageCanvas({
   imageSrc,
@@ -35,7 +36,7 @@ export function ImageCanvas({
   return (
     <>
       <div className="h-[400px] w-[300px] relative overflow-hidden">
-        <img
+        <Image
           ref={imgRef}
           src={imageSrc}
           alt="Roupa"

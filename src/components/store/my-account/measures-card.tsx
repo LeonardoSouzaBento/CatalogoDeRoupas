@@ -9,8 +9,7 @@ import {
   CardHeader,
   CardTitle,
   Icon,
-  MuiIcon,
-  Separator,
+  MuiIcon
 } from '@/components/ui';
 import {
   Table,
@@ -21,8 +20,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import type { UserData } from '@/types/types';
-import { CircleQuestionMark, Info, Pen, PenLine } from 'lucide-react';
-import React from 'react';
+import { CircleQuestionMark, Info, PenLine } from 'lucide-react';
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
