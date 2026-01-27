@@ -3,11 +3,12 @@ import { StateSetter } from '@/types/types';
 import { useEffect, useRef } from 'react';
 
 export function useResizeCount(setResizingCounter: StateSetter<number>) {
-  const lastWidthRef = useRef(window.innerWidth);
+  const lastWidthRef = useRef<number | null>(null);
   const tickingRef = useRef(false);
   const resizeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    lastWidthRef.current = window.innerWidth;
     let timeout: ReturnType<typeof setTimeout>;
 
     const handleResize = () => {

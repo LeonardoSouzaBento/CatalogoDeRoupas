@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 export function useIsMobile(resizeCount: number, setIsMobile: StateSetter<boolean>) {
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
+    const isMobile = window.innerWidth <= 768;
+    setIsMobile(isMobile);
   }, [resizeCount]);
 }
