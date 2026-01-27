@@ -1,4 +1,4 @@
-import { BooleanSetter, Photo } from '@/types/types';
+import type { BooleanSetter, Photo } from '@/types/types';
 import { Layers2, X } from 'lucide-react';
 
 const css = {

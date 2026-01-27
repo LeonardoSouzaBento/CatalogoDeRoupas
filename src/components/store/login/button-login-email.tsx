@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, Icon } from '@/components/ui';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { Mail } from 'lucide-react';
 
 const ButtonLoginEmail = ({
@@ -22,4 +22,3 @@ const ButtonLoginEmail = ({
 };
 
 export { ButtonLoginEmail };
-

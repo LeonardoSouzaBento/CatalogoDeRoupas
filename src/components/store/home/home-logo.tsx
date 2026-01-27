@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { HomeContext } from '@/contexts/index';
 import { ShopName } from './header/shop-name';
-import { ButtonSeeEditMode } from './ui';
+import { EditSectionButton } from './ui';
 
 const HomeLogo = () => {
   const [seeNameShop, setSeeNameShop] = useState<boolean>(false);
@@ -17,7 +17,11 @@ const HomeLogo = () => {
           <p className={`leading-none text-white font-thin`}>Guardamos suas curtidas</p>
         </div>
         {homeEditMode && (
-          <ButtonSeeEditMode setState={setSeeNameShop} className="absolute top-5 right-4 z-5" />
+          <EditSectionButton
+            editMode={seeNameShop}
+            setEditMode={setSeeNameShop}
+            className="absolute top-5 right-4 z-5"
+          />
         )}
       </div>
       {seeNameShop && <ShopName setSeeNameShop={setSeeNameShop} />}

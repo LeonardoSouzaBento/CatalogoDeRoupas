@@ -27,10 +27,10 @@ const Hero = (): React.ReactElement => {
         <div className={css.imageContainer}>
           <div className={css.imageWrapper}>
             <div className={css.firstImgWrapper}>
-              <Image src="/home/phone3.png" alt="" fill={true} />
+              <Image src="/home/phone3.png" alt="" fill />
             </div>
             <div className={css.secondImgWrapper}>
-              <Image src="/home/phone4.png" alt="" fill={true} />
+              <Image src="/home/phone4.png" alt="" fill />
             </div>
           </div>
           <CTAButton

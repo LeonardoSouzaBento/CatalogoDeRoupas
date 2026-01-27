@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { UserContext } from '@/contexts/index';
 import { validateEmail } from '@/functions/validateEmail';
 import { validateName } from '@/functions/validateName';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { CircleCheckBig, Upload, X } from 'lucide-react';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
@@ -51,7 +51,7 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
       {/* <p>Foto de perfil</p> */}
       <div className="size-auto flex items-center justify-start max-[430px]:gap-3 gap-5">
         <div className="size-16 min-w-16 rounded-full bg-gray-100 crop relative">
-          <Image src={`/`} fill={true} alt="" />
+          <Image src={`/`} fill alt="" />
         </div>
         <button className="w-full  trans">
           Subir nova imagem

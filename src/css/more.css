@@ -3,8 +3,7 @@
 
 @layer components {
   .body-wrapper {
-    @apply bg-linear-to-tl from-dark-bg to-light-bg
-    pt-3 sm:pt-4 pb-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 mx-auto;
+    @apply pt-3 sm:pt-4 pb-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 mx-auto;
   }
 
   .absolute-top {

@@ -1,4 +1,4 @@
-import { BooleanSetter, Photo, StateSetter } from '@/types/types';
+import type { BooleanSetter, Photo, StateSetter } from '@/types/types';
 import { Check, X } from 'lucide-react';
 import Image from 'next/image';
 

@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { CircleCheckBig } from 'lucide-react';
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 
 function validateWhatsapp(number: string) {
   const digits = number.replace(/\D/g, '');

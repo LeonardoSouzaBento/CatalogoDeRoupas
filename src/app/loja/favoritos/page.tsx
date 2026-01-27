@@ -6,6 +6,7 @@ import {
   CardTitle,
   MuiIcon,
   PageHeader,
+  PageHeaderWrapper,
   PageTitle,
 } from '@/components/ui';
 import { NoClothesAlert } from '@/components/store/favorites';
@@ -14,15 +15,17 @@ import { ZapFixedButton } from '@ui/index';
 const Favoritos = (): React.ReactElement => {
   return (
     <>
-      <PageHeader className="px-3">
-        <PageTitle>Meus Favoritos</PageTitle>
+      <PageHeader>
+        <PageHeaderWrapper>
+          <PageTitle>Meus Favoritos</PageTitle>
+        </PageHeaderWrapper>
       </PageHeader>
-      <div className={`px-3 pb-5`}>
+      <main className={`body-wrapper`}>
         <Card>
           <CardHeader>
             <CardTitle>
-              <MuiIcon icon="bookmark_heart" />
-              Produtos curtidos
+              <MuiIcon icon="bookmark_heart" fill size="h3" />
+              <h3>Produtos curtidos</h3>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -30,7 +33,7 @@ const Favoritos = (): React.ReactElement => {
           </CardContent>
         </Card>
         <ZapFixedButton />
-      </div>
+      </main>
     </>
   );
 };

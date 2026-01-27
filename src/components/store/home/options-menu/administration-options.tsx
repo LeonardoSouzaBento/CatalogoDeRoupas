@@ -40,7 +40,7 @@ const AdministrationOptions = () => {
           onClick={() => (item.url ? null : setHomeEditMode(true))}>
           <MuiIcon
             icon={item.icon}
-            fill={1}
+            fill
             className="text-theme"
             size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
           />

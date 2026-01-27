@@ -1,6 +1,6 @@
 import { Button, ButtonsWrapper, MuiIcon } from '@/components/ui';
 import { UserContext } from '@/contexts/userContext_';
-import type { homeUserGender } from '@/types/types';
+import type { HomepageUserGender } from '@/types/types';
 import React, { useContext, useState } from 'react';
 import { ChildGenderButtons } from './user-gender-list/child-gender-buttons';
 
@@ -19,7 +19,7 @@ export const UserGenderList = (): React.ReactElement => {
     useContext(UserContext);
   const [fastReturn, setFastReturn] = useState<string | null>('');
 
-  function handleSelectGender(gender: homeUserGender) {
+  function handleSelectGender(gender: HomepageUserGender) {
     if (gender == 'masculino' || gender === 'feminino') {
       setChildCatSelected(false);
       setSelectedGender(gender);
@@ -52,7 +52,7 @@ export const UserGenderList = (): React.ReactElement => {
                 size={selected ? 'default' : 'ghost'}
                 data-selected={selected}
                 onClick={() => {
-                  handleSelectGender(item.name as homeUserGender);
+                  handleSelectGender(item.name as HomepageUserGender);
                 }}
                 className={`${css.button} w-full ${fastReturn === item.name && 'scale-106'}`}>
                 <MuiIcon icon={item.icon} size="2xl" />

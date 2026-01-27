@@ -13,7 +13,7 @@ const css = {
     next-md:max-w-none next-md:flex next-md:flex-nowrap next-md:overflow-x-scroll
     next-md:justify-center
   `,
-  sectionEditMode: 'pb-0 mb-0 m-auto max-w-210',
+  editMode: 'pb-0 mb-0 m-auto max-w-210',
   wrapperEditMode: 'p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg',
   imageWrapper: `
     h-[66dvw] max-h-108 flex items-end relative overflow-hidden bg-theme-100 rounded-lg 
@@ -25,8 +25,8 @@ const css = {
   name: 'w-full py-6 px-8 text-primary-50 sm:text-center leading-none',
 };
 
-export const MainCategories = ({ resizeCount } : { resizeCount: number }) => {
-  const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
+export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
+  const [editMode, setEditMode] = useState<boolean>(false);
   const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
 
@@ -41,18 +41,18 @@ export const MainCategories = ({ resizeCount } : { resizeCount: number }) => {
   if (categories && categories.length > 0) {
     return (
       <div>
-        <div className={`${sectionEditMode && css.sectionEditMode}`}>
+        <div className={`${editMode && css.editMode}`}>
           <SectionHeader
             title="Categorias de Destaque"
             subtitle="Os mais procurados"
-            sectionEditMode={sectionEditMode}
-            setSectionEditMode={setSectionEditMode}
+            editMode={editMode}
+            setEditMode={setEditMode}
           />
-          {!sectionEditMode ? (
+          {!editMode ? (
             <div className={`${css.container}`}>
               {categories.map((item: MainCategory) => (
                 <div key={item.urlImg} className={`${css.imageWrapper}`}>
-                  <Image src={item.urlImg} alt={item.alt} className={`${css.image}`} fill={true} />
+                  <Image src={item.urlImg} alt={item.alt} className={`${css.image}`} fill />
                   <div className={`${css.nameWrapper}`}>
                     <h4 className={`${css.name}`}>{item.name}</h4>
                   </div>
@@ -63,7 +63,7 @@ export const MainCategories = ({ resizeCount } : { resizeCount: number }) => {
             <div className={`${css.wrapperEditMode}`}>
               <InputWrapper
                 title="Defina as principais categorias de cada gênero"
-                setState={setSectionEditMode}>
+                setState={setEditMode}>
                 <MainCatsInput />
               </InputWrapper>
             </div>

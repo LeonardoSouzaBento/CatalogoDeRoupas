@@ -1,4 +1,4 @@
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
 import { Button } from './button';
 import { Icon } from './lucide-icon';

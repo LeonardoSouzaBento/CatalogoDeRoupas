@@ -1,13 +1,13 @@
 'use client';
 import { Avatar, AvatarFallback, AvatarImage, Button, Card, Icon } from '@/components/ui';
-import { UserData } from '@/types/types';
+import type { UserData } from '@/types/types';
 import { PenLine } from 'lucide-react';
 import { useState } from 'react';
 import { InputNameEmail } from './input-name-email';
 
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-lg bg-light-bg`,
-  avatar: `size-[3.6em] shrink-0 relative bg-primary-50 rounded-xl border-none`,
+  avatar: `size-[3.6em] shrink-0 relative bg-linear-to-br from-primary-50 to-primary-100 rounded-full`,
   img: 'border-none outline-none',
   wrapperInfo: 'max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2',
   name: `block break-words capitalize leading-none text-theme-700`,
@@ -25,7 +25,7 @@ export const UserCard = ({ userData }: { userData: UserData }) => {
             <Avatar className={`${css.avatar}`}>
               <AvatarImage src="/shop/" className={`${css.img}`} />
               <AvatarFallback>
-                <p className="font-semibold text-muted-foreground">
+                <p className="font-medium text-muted-foreground large-text">
                   {userData.name?.slice(0, 2).toUpperCase()}
                 </p>
               </AvatarFallback>

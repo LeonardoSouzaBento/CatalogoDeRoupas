@@ -2,7 +2,7 @@
 import React from 'react';
 import { QueuerButton } from './_queuer/queuer-button';
 import { QuantitySelector } from './_queuer/quantity-selector';
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MuiIcon } from '@/components/ui';
 

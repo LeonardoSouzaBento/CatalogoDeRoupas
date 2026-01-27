@@ -1,7 +1,8 @@
 'use client';
 import { UserContext } from '@/contexts/userContext_';
-import { BooleanSetter, Genders, StateSetter } from '@/types/types';
+import type { BooleanSetter, Gender, StateSetter } from '@/types/types';
 import { useContext } from 'react';
+import { genders } from '@/types/types';
 
 const mainCss = {
   wrapper: `rounded-none py-6`,
@@ -9,8 +10,6 @@ const mainCss = {
   selected: `border bg-light-bg hover:shadow-sm hover:bg-light-bg `,
   button: `h-10 max-[375px]:min-w-1/2 min-[375px]:min-w-none flex-center bg-gray-50 hover:bg-gray-100 font-normal`,
 };
-
-const genders: Genders[] = ['masculino', 'feminino'];
 
 export const UserGenders = () => {
   const { selectedGender, setSelectedGender, childCatSelected, setChildCatSelected } =
@@ -46,14 +45,14 @@ export const UserGenders = () => {
 
 /* botões masculino e feminino */
 interface ButtonsProps {
-  selectedGender: Genders;
-  setSelectedGender: StateSetter<Genders>;
+  selectedGender: Gender;
+  setSelectedGender: StateSetter<Gender>;
   childCatSelected: boolean;
   setChildCatSelected: BooleanSetter;
 }
 
 interface GenderButtonProps extends ButtonsProps {
-  gender: Genders;
+  gender: Gender;
 }
 
 const GenderButton = ({
@@ -91,7 +90,7 @@ const ChildButtons = ({
   const femaleSelected = selectedGender === 'feminino' && childCatSelected;
   const maleSelected = selectedGender === 'masculino' && childCatSelected;
 
-  function handleSelectGender(gender: Genders) {
+  function handleSelectGender(gender: Gender) {
     if (selectedGender !== gender) {
       setSelectedGender(gender);
     }

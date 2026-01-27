@@ -1,4 +1,4 @@
-import { UserData } from '@/types/types';
+import type { UserData } from '@/types/types';
 import React from 'react';
 
 const FirstTable = ({ userData }: { userData: UserData }) => {

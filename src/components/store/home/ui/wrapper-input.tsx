@@ -1,5 +1,5 @@
 import React from 'react';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { CloseButton } from '@/components/ui';
 
 const css = {

@@ -5,9 +5,9 @@ import React from 'react';
 const MinhaConta = (): React.ReactElement => {
   return (
     <div>
-      <PageHeader>
+      <PageHeader className="px-3 sm:px-4">
         <PageHeaderWrapper className="sm:max-w-2xl md:max-w-3xl lg:max-w-212">
-          <PageTitle className={``}>Minha Conta</PageTitle>
+          <PageTitle>Minha Conta</PageTitle>
         </PageHeaderWrapper>
       </PageHeader>
       <div className={`body-wrapper`}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus } from 'lucide-react';
-import { Photo, StateSetter } from '@/types/types';
+import type { Photo, StateSetter } from '@/types/types';
 import { Button, Icon, Input, InputWrapper } from '@/components/ui';
 
 export const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {

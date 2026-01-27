@@ -5,7 +5,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
 import { patterns } from '@/data/clothings/patterns';
 import { prints } from '@/data/clothings/prints';
-import { BasicClothingInformation, ClothingProperty, Genders } from '@/types/types';
+import type { BasicClothingInformation, ClothingProperty, Gender } from '@/types/types';
 import { AddedProperties } from './base-generator/added-properties';
 import { Properties } from './base-generator/properties_';
 import { PropertyOptions } from './base-generator/property-options';
@@ -36,8 +36,8 @@ const BaseGenerator = () => {
 
     switch (prop) {
       case 'Gênero':
-        if (option !== 'unisex') setSelectedGender(option as Genders);
-        updates.gender = option as Genders;
+        if (option !== 'unisex') setSelectedGender(option as Gender);
+        updates.gender = option as Gender;
         break;
       case 'Categoria':
         updates.cat = option;

@@ -1,11 +1,7 @@
-"use client";
-import { defaultUserData } from "@/data/UserData";
-import type {
-  Genders,
-  StateSetter,
-  UserData
-} from "@/types/types";
-import { createContext } from "react";
+'use client';
+import { defaultUserData } from '@/data/UserData';
+import type { Gender, StateSetter, UserData } from '@/types/types';
+import { createContext } from 'react';
 
 export interface UserContextType {
   userData: UserData;
@@ -16,19 +12,19 @@ export interface UserContextType {
   /* Gêneros do usuário */
   childCatSelected: boolean;
   setChildCatSelected: StateSetter<boolean>;
-  selectedGender: Genders;
-  setSelectedGender: StateSetter<Genders>;
+  selectedGender: Gender;
+  setSelectedGender: StateSetter<Gender>;
 }
 
 export const UserContext = createContext<UserContextType>({
   userData: defaultUserData,
   setUserData: () => {},
   /*  */
-  searchTerm: "",
+  searchTerm: '',
   setSearchTerm: () => {},
   /* Genêros de usuario */
   childCatSelected: false,
   setChildCatSelected: () => {},
-  selectedGender: "masculino",
+  selectedGender: 'masculino',
   setSelectedGender: () => {},
 });

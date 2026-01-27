@@ -1,5 +1,5 @@
 import { Button, Icon } from '@/components/ui';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { Copy, CopyCheck } from 'lucide-react';
 
 interface CopyButtonProps {

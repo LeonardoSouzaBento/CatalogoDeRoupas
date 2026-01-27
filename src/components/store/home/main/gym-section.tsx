@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Base from './clothes-section/base';
-import { HomeClothing } from '@/types/types';
+import type { HomeClothing } from '@/types/types';
 import { gymMensClothingData, gymWomensClothingData } from '@/data/home/homeData';
 
 export const GymSection = ({ resizeCount }: { resizeCount: number }): React.ReactElement => {
@@ -8,7 +8,7 @@ export const GymSection = ({ resizeCount }: { resizeCount: number }): React.Reac
   const [womensClothing, setWomensClothing] = useState<HomeClothing[]>(gymWomensClothingData);
   const [boysClothes, setBoysClothes] = useState<HomeClothing[]>([]);
   const [girlsClothes, setGirlsClothes] = useState<HomeClothing[]>([]);
-  const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
+  const [editMode, setEditMode] = useState<boolean>(false);
 
   return (
     <div>
@@ -23,8 +23,8 @@ export const GymSection = ({ resizeCount }: { resizeCount: number }): React.Reac
         setWomensClothing={setWomensClothing}
         setBoysClothes={setBoysClothes}
         setGirlsClothes={setGirlsClothes}
-        sectionEditMode={sectionEditMode}
-        setSectionEditMode={setSectionEditMode}
+        editMode={editMode}
+        setEditMode={setEditMode}
         resizeCount={resizeCount}
       />
     </div>

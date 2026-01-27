@@ -1,38 +1,33 @@
 import { HomeContext } from '@/contexts/index';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { PenOff } from 'lucide-react';
 import { useContext } from 'react';
-import { ButtonSeeEditMode } from '../ui/button-see-edit-mode';
+import { EditSectionButton } from './edit-section-button';
 import { Button, Icon } from '@/components/ui';
 
 interface HomeTitleSubtitleProps {
   title: string;
   subtitle?: string;
   section?: string;
-  sectionEditMode?: boolean;
-  setSectionEditMode?: BooleanSetter;
+  editMode?: boolean;
+  setEditMode?: BooleanSetter;
 }
 
 export const SectionHeader = ({
   title,
   subtitle,
   section,
-  sectionEditMode,
-  setSectionEditMode = () => {},
+  editMode,
+  setEditMode = () => {},
 }: HomeTitleSubtitleProps) => {
   const { homeEditMode } = useContext(HomeContext);
-  const seeButtonEdit = homeEditMode && !sectionEditMode && section !== 'genders';
-  const seeButtonCloseEdit = sectionEditMode && homeEditMode && section !== 'genders';
   const pb = section === 'clothes' ? 'mb-3' : section === 'about' ? 'mb-2' : 'mb-4';
 
   return (
     <div>
       <div className={`w-full px-3 flex j-center i-center gap-3 ${pb}`}>
         <div className="flex flex-col size-auto">
-          <h3
-            className={`capitalize text-center text-theme-700`}>
-            {title}
-          </h3>
+          <h3 className={`capitalize text-center text-theme-700`}>{title}</h3>
 
           {subtitle && (
             <h6
@@ -43,24 +38,14 @@ export const SectionHeader = ({
           )}
         </div>
       </div>
-      {seeButtonEdit && (
-        <ButtonSeeEditMode
-          setState={setSectionEditMode}
+      {homeEditMode && (
+        <EditSectionButton
+          editMode={editMode}
+          setEditMode={setEditMode}
           className="relative"
           variantion="title"
           section={section}
         />
-      )}
-      {seeButtonCloseEdit && (
-        <Button
-          className={`h-11 min-w-52 m-auto mb-4 
-             ${section === 'clothes' && 'mb-2'}`}
-          onClick={() => {
-            setSectionEditMode(false);
-          }}>
-          Fechar edição
-          <Icon LucideIcon={PenOff} />
-        </Button>
       )}
     </div>
   );

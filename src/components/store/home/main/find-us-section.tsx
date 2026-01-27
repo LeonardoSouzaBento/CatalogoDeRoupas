@@ -1,6 +1,6 @@
 import { InputWrapper } from '@/components/store/home/ui/index';
 import { SectionHeader } from '@/components/store/home/ui/index';
-import { ButtonSeeEditMode } from '@/components/store/home/ui/button-see-edit-mode';
+import { EditSectionButton } from '@/components/store/home/ui/edit-section-button';
 import { PublicDataContext } from '@/contexts/index';
 import type { AddressSchema } from '@/types/types';
 import React, { useContext, useState } from 'react';
@@ -39,15 +39,15 @@ export const FindUsSection = (): React.ReactElement => {
   const [seeMap, setSeeMap] = useState<boolean>(false);
 
   const shopAddressFormatted = formatAddress(shopInfo.address);
-  const [sectionEditMode, setSectionEditMode] = useState<boolean>(false);
+  const [editMode, setEditMode] = useState<boolean>(false);
 
   return (
     <div>
       <SectionHeader
         title="Nos Encontre"
         subtitle="Visite nossa loja ou fale conosco"
-        sectionEditMode={sectionEditMode}
-        setSectionEditMode={setSectionEditMode}
+        editMode={editMode}
+        setEditMode={setEditMode}
       />
 
       <div>
@@ -57,7 +57,7 @@ export const FindUsSection = (): React.ReactElement => {
             {!seePhone ? (
               <>
                 <div className={`${css.infoWrapper}`}>
-                  <MuiIcon icon="call" fill={1} size="h5" />
+                  <MuiIcon icon="call" fill size="h5" />
                   <div className={`${css.textWrapper}`}>
                     <p>Whatsapp:</p>
                     <p>{shopInfo.contact}</p>
@@ -71,7 +71,7 @@ export const FindUsSection = (): React.ReactElement => {
                   secondText="Telefone copiado!"
                   textToCopy={shopInfo.contact}
                 />
-                {sectionEditMode && <ButtonSeeEditMode setState={setSeePhone} />}
+                {editMode && <EditSectionButton editMode={seePhone} setEditMode={setSeePhone} />}
               </>
             ) : (
               <InputWrapper title="Adicione Seu Whatsapp" setState={setSeePhone}>
@@ -84,7 +84,7 @@ export const FindUsSection = (): React.ReactElement => {
             {!seeAddress ? (
               <>
                 <div className={`${css.infoWrapper}`}>
-                  <MuiIcon icon="home_pin" fill={1} size="h4" weight={500} />
+                  <MuiIcon icon="home_pin" fill size="h4" weight={500} />
                   <div className={`${css.textWrapper}`}>
                     <p>Onde estamos:</p>
                     <p>{shopAddressFormatted}</p>
@@ -97,7 +97,9 @@ export const FindUsSection = (): React.ReactElement => {
                   secondText="Link copiado!"
                   textToCopy={shopAddressFormatted}
                 />
-                {sectionEditMode && <ButtonSeeEditMode setState={setSeeAddress} />}
+                {editMode && (
+                  <EditSectionButton editMode={seeAddress} setEditMode={setSeeAddress} />
+                )}
               </>
             ) : (
               <InputWrapper title="Adicione Seu Endereço" setState={setSeeAddress}>
@@ -119,8 +121,12 @@ export const FindUsSection = (): React.ReactElement => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
-                {sectionEditMode && (
-                  <ButtonSeeEditMode setState={setSeeMap} className="absolute top-3 right-0" />
+                {editMode && (
+                  <EditSectionButton
+                    editMode={seeMap}
+                    setEditMode={setSeeMap}
+                    className="absolute top-3 right-0"
+                  />
                 )}
               </>
             ) : (

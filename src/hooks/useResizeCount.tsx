@@ -1,5 +1,5 @@
 'use client';
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 import { useEffect, useRef } from 'react';
 
 export function useResizeCount(setResizingCounter: StateSetter<number>) {

@@ -8,7 +8,7 @@ import {
   Label,
   InputWrapper,
 } from '@/components/ui';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { Eye, EyeClosed, LogIn, X } from 'lucide-react';
 import { useState } from 'react';
 

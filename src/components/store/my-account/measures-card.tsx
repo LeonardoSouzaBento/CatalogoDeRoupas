@@ -20,7 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { UserData } from '@/types/types';
+import type { UserData } from '@/types/types';
 import { CircleQuestionMark, Info, Pen, PenLine } from 'lucide-react';
 import React from 'react';
 
@@ -42,7 +42,7 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="square_foot" size="h3" fill={1} className='mb-0.5 -ml-0.5' />
+          <MuiIcon icon="square_foot" size="h3" fill className="mb-0.5 -ml-0.5" />
           <h3>Minhas medidas</h3>
         </CardTitle>
       </CardHeader>

@@ -36,7 +36,7 @@ const ImageAndName = ({
   return (
     <div className={`${css.wrapper}`}>
       <div className={`${css.wrapperImg} ${menor && 'min-w-16!'}`}>
-        <Image src={url} fill={true} alt="..." className={`${css.img}`} />
+        <Image src={url} fill alt="..." className={`${css.img}`} />
       </div>
 
       <div className={`${css.wrapperNameFile}`}>

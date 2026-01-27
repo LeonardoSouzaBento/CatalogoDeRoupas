@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 import { Minus, Plus, X } from 'lucide-react';
 
 const css = {

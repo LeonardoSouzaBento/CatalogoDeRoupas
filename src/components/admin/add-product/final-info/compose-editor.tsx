@@ -4,7 +4,7 @@ import { CloseButton, Icon, Input, ButtonsWrapper } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { commonFabrics } from '@/data/clothings/commonFabrics';
 import { materials } from '@/data/clothings/materials';
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 import { Eye, Plus, Search } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 

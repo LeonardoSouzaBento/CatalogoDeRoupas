@@ -11,7 +11,7 @@ const MainImage = ({ src = '/home/phone3.png' }: { src: string }) => {
 
   return (
     <div className={`${css.container}`}>
-      <Image src={src || '/home/phone3.png'} alt="" className={`${css.image}`} fill={true} />
+      <Image src={src || '/home/phone3.png'} alt="" className={`${css.image}`} fill />
       <div className="absolute h-max py-6 w-full bottom-0 left-0 flex-center">
         <CTAButton hideInMobile={true} />
         <CTAButton hideInMobile={false} />

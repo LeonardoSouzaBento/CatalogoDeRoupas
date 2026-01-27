@@ -1,6 +1,6 @@
 'use client';
 import { Button, CustomLink, Icon } from '@/components/ui';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { Heart, Menu, Search, User, type LucideIcon } from 'lucide-react';
 import React from 'react';
 
@@ -20,8 +20,7 @@ const buttons: ButtonType[] = [
 
 const css = {
   mainWrapper: 'w-full h-auto sticky top-0 left-0 z-2 bg-light-bg/36 backdrop-blur-xs shadow-sm',
-  wrapper:
-    'px-8 max-w-216 m-auto flex justify-center items-center flex-wrap gap-4 sm:flex-nowrap',
+  wrapper: 'px-8 max-w-216 m-auto flex justify-center items-center flex-wrap gap-4 sm:flex-nowrap',
   nav: `h-18 w-full max-w-212 flex justify-between items-center
   gap-4 flex-auto [&>button]:font-medium [&>button]:bg-light-bg/24`,
   searchButton: `w-1/3 max-w-64 justify-between lg:order-2 

@@ -1,5 +1,5 @@
 import { CardHeader, CardTitle, MuiIcon } from '@/components/ui';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import React from 'react';
 
 const css = {

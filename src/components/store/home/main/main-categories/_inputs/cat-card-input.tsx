@@ -3,6 +3,7 @@ import { Pen } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { CardEditMode } from './card-edit-mode';
+import { Button, Icon, MuiIcon } from '@/components/ui';
 
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] flex flex-col justify-center gap-4 border
@@ -36,20 +37,19 @@ const CatCardInput = ({ category }: CatCardResultProps) => {
               src={category.urlImg}
               alt={category.alt}
               className={`${css.img} ${cardEditMode && css.imghomeEditMode}`}
-              fill={true}
+              fill
             />
           </div>
           <p className={`${css.label}`}>
             Ordem de posição na grade: <u className={`${css.u}`}>{category.order}</u>
           </p>
-          <button
-            className={`${css.button}`}
+          <Button
             onClick={() => {
               setCardEditMode(true);
             }}>
             Editar Categoria
-            <Pen />
-          </button>
+            <Icon LucideIcon={Pen} />
+          </Button>
         </div>
       ) : (
         <CardEditMode category={category} setCardEditMode={setCardEditMode} />

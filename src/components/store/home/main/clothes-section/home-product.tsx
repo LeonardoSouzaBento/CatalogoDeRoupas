@@ -12,16 +12,16 @@ const css = {
 
 const HomeProduct = ({
   item,
-  sectionEditMode,
+  editMode,
 }: {
   item: HomeClothing;
-  sectionEditMode: boolean;
+  editMode: boolean;
 }): React.ReactElement => {
   const images = [item.img1, item.img2];
 
   return (
     <div className={`${css.productWrapper}`}>
-      {!sectionEditMode ? (
+      {!editMode ? (
         <>
           <div className={`${css.imagesWrapper}`} id="wrapperImgs">
             <FavoriteButton />
@@ -30,14 +30,15 @@ const HomeProduct = ({
                 <Image
                   src={image}
                   alt={`Img do produto: ${item.alt}`}
-                  fill={true}
+                  fill
                   className="size-full object-cover"
                 />
               </div>
             ))}
             <div className="absolute inset-0 bg-transparent z-4"></div>
           </div>
-          <div className={`w-full px-5 py-4 bg-light-bg border-t 
+          <div
+            className={`w-full px-5 py-4 bg-light-bg border-t 
             border-border/30 select-none [&_p]:select-none`}>
             <p className="capitalize">{item.name}</p>
             <p className="large-text font-semibold">R${item.price}</p>

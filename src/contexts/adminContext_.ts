@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { StateSetter } from "@/types/types";
+import { createContext } from 'react';
+import type { StateSetter } from '@/types/types';
 
 export interface AdminContextType {
   blobUrls: string[];
@@ -7,6 +7,6 @@ export interface AdminContextType {
 }
 
 export const AdminContext = createContext<AdminContextType>({
-  blobUrls: [""],
+  blobUrls: [''],
   setBlobUrls: () => {},
 });

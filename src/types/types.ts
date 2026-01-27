@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from 'react';
 
 export type BooleanSetter = Dispatch<SetStateAction<boolean>>;
 export type StateSetter<T> = Dispatch<SetStateAction<T>>;
@@ -7,12 +7,13 @@ export interface ProviderType {
   children: React.ReactNode;
 }
 
-export type Genders = "masculino" | "feminino" | "unisex";
+export type Gender = 'masculino' | 'feminino' | 'unisex';
+export const genders: Gender[] = ['masculino', 'feminino'];
 
-export type homeUserGender = "masculino" | "feminino" | "infantil";
+export type HomepageUserGender = 'masculino' | 'feminino' | 'infantil';
 
 export interface UserGenres {
-  name: homeUserGender;
+  name: HomepageUserGender;
   active: boolean;
 }
 
@@ -72,7 +73,7 @@ export interface ClothingItem {
 }
 
 export interface BasicClothingInformation {
-  gender: Genders;
+  gender: Gender;
   cat: string;
   subcat: string;
   pattern: string;
@@ -82,16 +83,14 @@ export interface BasicClothingInformation {
   is_childish: string;
 }
 
-
-
 export const mappingPropToKey: Record<string, keyof BasicClothingInformation> = {
-  Gênero: "gender",
-  Categoria: "cat",
-  Subcategoria: "subcat",
-  Padrão: "pattern",
-  Estampa: "print",
-  Nome: "name",
-  "É Infantil": "is_childish",
+  Gênero: 'gender',
+  Categoria: 'cat',
+  Subcategoria: 'subcat',
+  Padrão: 'pattern',
+  Estampa: 'print',
+  Nome: 'name',
+  'É Infantil': 'is_childish',
 };
 
 export interface Photo {
@@ -101,13 +100,15 @@ export interface Photo {
   order: number;
 }
 
+export type UserSex = 'masculino' | 'feminino';
+
 /* Usuário */
 export interface UserData {
   name: string;
   email: string;
-  sex: string;
+  sex: UserSex;
   position: string;
-  favorites?: [""];
+  favorites?: [''];
   camisa?: string;
   calça?: string | number;
   calçado?: number;
@@ -136,7 +137,7 @@ export interface ShopkeeperField {
 
 export interface AddressSchema {
   rua: string;
-  número: number | "";
+  número: number | '';
   complemento?: string;
   bairro: string;
   cidade: string;

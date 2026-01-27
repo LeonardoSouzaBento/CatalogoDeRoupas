@@ -1,12 +1,26 @@
+import { cn } from '@/lib/utils';
 import { useEffect, useRef } from 'react';
 
 interface ScrollBarProps {
   containerRef: React.RefObject<HTMLElement | null>;
   thumbWidth: number;
+  orientation?: 'horizontal' | 'vertical';
+  cssWrapper?: string;
 }
 
-export function ScrollBar({ containerRef, thumbWidth }: ScrollBarProps) {
+export function ScrollBar({
+  containerRef,
+  thumbWidth,
+  orientation = 'horizontal',
+  cssWrapper,
+}: ScrollBarProps) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const trackClass = orientation === 'horizontal' ? 'w-full h-2' : 'w-2 h-full';
+  const thumbClass = orientation === 'horizontal' ? 'h-full' : 'w-full';
+  const wrapperClass =
+    orientation === 'horizontal'
+      ? 'w-full h-max absolute bottom-0'
+      : 'w-max h-full absolute bottom-0 right-0';
 
   useEffect(() => {
     const container = containerRef.current;
@@ -37,10 +51,16 @@ export function ScrollBar({ containerRef, thumbWidth }: ScrollBarProps) {
   }, []);
 
   return (
-    <div
-      ref={trackRef}
-      className="w-full h-2 bg-primary-50 rounded-full overflow-x-auto scrollbar-hidden">
-      <div className="h-full bg-primary-100 rounded-full" style={{ width: `${thumbWidth}%` }} />
+    <div className={cn(wrapperClass, cssWrapper)}>
+      <div
+        ref={trackRef}
+        data-orientation={orientation}
+        className={`${trackClass} bg-primary-50 overflow-x-auto rounded-full scrollbar-hidden`}>
+        <div
+          className={`${thumbClass} bg-primary-100 rounded-full`}
+          style={{ width: `${thumbWidth}%` }}
+        />
+      </div>
     </div>
   );
 }

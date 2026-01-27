@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { colorFamilies } from '@/data/clothings/colors';
 import { colorsByFamily } from '@/data/clothings/colors';
-import { StateSetter } from '@/types/types';
+import type { StateSetter } from '@/types/types';
 import { ChevronDown, Plus, X } from 'lucide-react';
 import { Input, Label, InputWrapper } from '@/components/ui';
 
@@ -122,7 +122,12 @@ const Color = ({
   return (
     <InputWrapper className={css.wrapper}>
       <Label htmlFor="color-name">Escolha a da cor</Label>
-      <Input id="color-name" type="text" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} />
+      <Input
+        id="color-name"
+        type="text"
+        value={selectedColor}
+        onChange={(e) => setSelectedColor(e.target.value)}
+      />
       <Button onClick={() => {}}>Adicionar</Button>
     </InputWrapper>
   );

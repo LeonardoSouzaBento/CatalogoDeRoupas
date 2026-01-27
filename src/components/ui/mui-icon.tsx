@@ -16,18 +16,19 @@ const iconSizes = {
 interface IconProps {
   icon: string;
   size?: string;
-  fill?: number;
+  fill?: boolean | number;
   weight?: number;
   className?: string;
 }
 
-export const MuiIcon = ({ icon, size, fill = 0, weight = 600, className }: IconProps) => {
+export const MuiIcon = ({ icon, size, fill = false, weight = 600, className }: IconProps) => {
+  const fillValue = fill ? 1 : 0;
   return (
     <div className="h-3 inline-flex items-center justify-center overflow-visible">
       <span
         className={`material-symbols-rounded ${className}`}
         style={{
-          fontVariationSettings: `"FILL" ${fill}, "wght" ${weight}`,
+          fontVariationSettings: `"FILL" ${fillValue}, "wght" ${weight}`,
           fontSize: iconSizes[size as keyof typeof iconSizes] || size || '1em',
         }}>
         {icon}

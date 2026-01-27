@@ -18,7 +18,7 @@ export const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
     <div className={`${css.wrapper}`} onClick={handleOpenChat}>
       <Image
         src={`/icons/zap-fixed-button.png`}
-        fill={true}
+        fill
         alt="imagem do whatssap"
         className="mb-1 ml-px"
       />

@@ -1,9 +1,9 @@
-import { UserData } from "@/types/types";
+import type { UserData } from '@/types/types';
 
 const MeasuresTable = ({ userData }: { userData: UserData }) => {
   const css = {
-    tr: "flex flex-col i-star border-b border",
-    th: "",
+    tr: 'flex flex-col i-star border-b border',
+    th: '',
   };
 
   return (
@@ -28,4 +28,4 @@ const MeasuresTable = ({ userData }: { userData: UserData }) => {
   );
 };
 
-export {MeasuresTable};
+export { MeasuresTable };

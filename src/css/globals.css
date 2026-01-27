@@ -161,7 +161,8 @@
     scrollbar-width: none;
   }
   body {
-    @apply bg-medium-bg text-card-foreground relative w-full max-w-[1400px] mx-auto;
+    @apply min-h-dvh bg-linear-to-br from-light-bg to-dark-bg 
+    text-card-foreground relative w-full max-w-[1400px] mx-auto;
   }
   button {
     user-select: none;

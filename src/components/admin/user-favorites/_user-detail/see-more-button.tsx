@@ -1,4 +1,4 @@
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 
 import { Button } from '@/components/ui';
 import { ChevronDown, ChevronUp } from 'lucide-react';

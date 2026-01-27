@@ -1,6 +1,6 @@
 'use client';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 
 const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,

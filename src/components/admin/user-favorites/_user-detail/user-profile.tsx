@@ -9,7 +9,7 @@ const UserProfile = () => {
   };
   return (
     <div className={`${css.wrapper}`}>
-      <Image src={'/'} fill={true} alt="Imagem do usúario" className={`${css.img}`} />
+      <Image src={'/'} fill alt="Imagem do usúario" className={`${css.img}`} />
     </div>
   );
 };

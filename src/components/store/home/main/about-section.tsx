@@ -20,8 +20,8 @@ export const AboutSection = () => {
         section="about"
         title="Sobre Nós"
         subtitle="Conheça mais a nossa loja"
-        sectionEditMode={seeInput}
-        setSectionEditMode={setSeeInput}
+        editMode={seeInput}
+        setEditMode={setSeeInput}
       />
       <div className={`${css.wrapperAbout} ${seeInput && css.homeEditMode}`}>
         {shopInfo.aboutText.map((paragraph: string, index: number) => (

@@ -1,10 +1,10 @@
-import { UserContext } from '@/contexts/index';
-import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
 import { SectionHeader } from '@/components/store/home/ui/index';
+import { ScrollBar } from '@/components/ui/scroll-bar';
+import { UserContext } from '@/contexts/index';
+import { useMouseScrollX } from '@/hooks';
+import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { HomeProduct } from './home-product';
-import { useMouseScrollX } from '@/hooks';
-import { ScrollBar } from '@/components/ui/scroll-bar';
 
 const css = {
   wrapper: 'crop relative',
@@ -22,8 +22,8 @@ interface ClothesSectionProps {
   setWomensClothing: StateSetter<HomeClothing[]>;
   setBoysClothes?: StateSetter<HomeClothing[]>;
   setGirlsClothes?: StateSetter<HomeClothing[]>;
-  sectionEditMode: boolean;
-  setSectionEditMode: BooleanSetter;
+  editMode: boolean;
+  setEditMode: BooleanSetter;
   resizeCount: number;
 }
 
@@ -38,8 +38,8 @@ const Base = ({
   setWomensClothing,
   setBoysClothes,
   setGirlsClothes,
-  sectionEditMode,
-  setSectionEditMode,
+  editMode,
+  setEditMode,
   resizeCount,
 }: ClothesSectionProps) => {
   const { selectedGender, childCatSelected } = useContext(UserContext);
@@ -101,25 +101,21 @@ const Base = ({
           title={title}
           subtitle={subtitle}
           section="clothes"
-          sectionEditMode={sectionEditMode}
-          setSectionEditMode={setSectionEditMode}
+          editMode={editMode}
+          setEditMode={setEditMode}
         />
         <div className={`${css.wrapper}`} ref={parentRef}>
           <div className={css.scrollableDiv} ref={containerRef}>
             {displayedItems.map((item, index) => (
               <HomeProduct
-                sectionEditMode={sectionEditMode}
+                editMode={editMode}
                 item={item}
                 key={`${index} ${item.id}`}
               />
             ))}
           </div>
-          <div className="w-full pl-4 h-max pb-1.5 absolute-bottom">
-            <ScrollBar
-              containerRef={containerRef}
-              thumbWidth={thumbWidth}
-            />
-          </div>
+
+          <ScrollBar containerRef={containerRef} thumbWidth={thumbWidth} cssWrapper='pl-4 pb-1.5' />
         </div>
       </>
     );

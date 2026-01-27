@@ -1,5 +1,5 @@
 import { Button, CloseButton, Icon, Separator } from '@/components/ui';
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { useContext, useEffect, useState } from 'react';
 import { AdministrationOptions, Links, TitleButtonGroup } from './options-menu/index';
 import { UserContext } from '@/contexts';

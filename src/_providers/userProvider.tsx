@@ -2,7 +2,7 @@
 import { UserContext } from '@/contexts/userContext_';
 import { defaultUserData } from '@/data/UserData';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
-import type { Genders, ProviderType, UserData } from '@/types/types';
+import type { Gender, ProviderType, UserData } from '@/types/types';
 import React, { useState } from 'react';
 
 export const UserProvider: React.FC<ProviderType> = ({ children }) => {
@@ -10,7 +10,7 @@ export const UserProvider: React.FC<ProviderType> = ({ children }) => {
   /* Generos do usuário */
   const [selectedGender, setSelectedGender] = useLocalStorage(
     'selectedGender',
-    'masculino' as Genders,
+    'masculino' as Gender,
   );
   const [childCatSelected, setChildCatSelected] = useLocalStorage('childCatSelected', false);
 

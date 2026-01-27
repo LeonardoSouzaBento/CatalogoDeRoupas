@@ -1,9 +1,8 @@
+import { Input, InputWrapper, Label } from '@/components/ui';
 import { BackButton } from '@/components/ui/back-button';
 import { Button } from '@/components/ui/button';
-import { CircleCheckBig } from 'lucide-react';
-import { Input } from '@/components/ui';
-import { BooleanSetter, MainCategory } from '@/types/types';
-import { Upload } from 'lucide-react';
+import type { BooleanSetter, MainCategory } from '@/types/types';
+import { CircleCheckBig, Upload } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -13,7 +12,6 @@ p-5 rounded-none hover:shadow-lg fast-trans`,
   wrapper: `flex flex-col gap-3 mb-px`,
   wrapperImg: 'rounded-none flex flex-wrap i-center gap-4 relative mb-px',
   imghomeEditMode: 'grayscale opacity-70',
-  label: 'font-medium !text-neutral-800 leading-none mb-0',
   u: 'font-normal',
 };
 
@@ -38,10 +36,8 @@ const CardEditMode = ({
 
   return (
     <div className={`${css.wrapperCardCat}`}>
-      <div className={`${css.wrapper}`}>
-        <label className={`${css.label}`} htmlFor={category.name}>
-          1 - Nome da categoria:
-        </label>
+      <InputWrapper className={`${css.wrapper}`}>
+        <Label htmlFor={category.name}>1 - Nome da categoria:</Label>
         <Input
           type="text"
           id={category.name}
@@ -49,10 +45,10 @@ const CardEditMode = ({
           placeholder="Digite aqui"
           className="mb-1"
         />
-      </div>
+      </InputWrapper>
 
       <div>
-        <label>2 - Imagem</label>
+        <Label>2 - Imagem</Label>
         <div className={`${css.wrapperImg}`}>
           <div>
             <Image
@@ -72,17 +68,15 @@ const CardEditMode = ({
         </div>
       </div>
 
-      <div className={`${css.wrapper} mb-1!`}>
-        <label className={`${css.label}`} htmlFor={`${category.order}`}>
-          3 - Ordem de posição na grade:
-        </label>
+      <InputWrapper>
+        <Label htmlFor={`${category.order}`}>3 - Ordem de posição na grade:</Label>
         <Input
           type="number"
           name={`${category.order}`}
           id={`${category.order}`}
           placeholder="Digite aqui"
         />
-      </div>
+      </InputWrapper>
       <Button onClick={handleSaveCat} className="w-full mb-1">
         salvar alterações
         <CircleCheckBig />

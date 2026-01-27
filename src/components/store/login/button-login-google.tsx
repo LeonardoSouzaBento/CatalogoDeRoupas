@@ -6,7 +6,7 @@ const ButtonLoginGoogle = () => {
   return (
     <Button>
       <div className="size-[18px] flex-center relative">
-        <Image src={`/icons/google.png`} fill={true} alt="" />
+        <Image src={`/icons/google.png`} fill alt="" />
       </div>
       Login Com Google
     </Button>
@@ -14,4 +14,3 @@ const ButtonLoginGoogle = () => {
 };
 
 export { ButtonLoginGoogle };
-

@@ -1,6 +1,6 @@
 'use client';
 
-import { BooleanSetter } from '@/types/types';
+import type { BooleanSetter } from '@/types/types';
 import { CornerUpLeft } from 'lucide-react';
 
 interface Props {
