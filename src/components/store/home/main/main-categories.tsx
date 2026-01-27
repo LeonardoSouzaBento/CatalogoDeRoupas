@@ -30,8 +30,6 @@ export const MainCategories = ({ resizeCount } : { resizeCount: number }) => {
   const { mainCategories } = useContext(HomeContext);
   const { selectedGender, childCatSelected } = useContext(UserContext);
 
-  console.log(resizeCount);
-
   const categories = childCatSelected
     ? []
     : selectedGender === 'masculino'

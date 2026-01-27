@@ -168,3 +168,8 @@
     position: relative;
   }
 }
+
+.is-resizing * {
+  transition: none !important;
+}
+

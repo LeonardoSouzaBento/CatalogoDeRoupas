@@ -4,11 +4,11 @@ import { SectionHeader } from '@/components/store/home/ui/index';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { HomeProduct } from './home-product';
 import { useMouseScrollX } from '@/hooks';
+import { ScrollBar } from '@/components/ui/scroll-bar';
 
 const css = {
   wrapper: 'crop relative',
-  scrollableDiv: `flex gap-4 pt-3 pb-8 px-4 box-border 
-  lg:mr-4 overflow-x-scroll relative scrollbar-hidden`,
+  scrollableDiv: `flex gap-4 pt-3 pb-8 px-4 box-border overflow-x-scroll relative scrollbar-hidden`,
 };
 
 interface ClothesSectionProps {
@@ -52,15 +52,22 @@ const Base = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [parentWidth, setParentWidth] = useState(0);
   const [scrollWidth, setScrollWidth] = useState(0);
+  const [thumbWidth, setThumbWidth] = useState(0);
 
   useMouseScrollX(containerRef, scrollWidth, parentWidth);
 
   function getVariables() {
     if (parentRef.current && containerRef.current) {
-      const parentWidth = parentRef.current.offsetWidth;
-      const scrollWidth = containerRef.current.scrollWidth;
-      setParentWidth(parentWidth);
-      setScrollWidth(scrollWidth);
+      const parent = parentRef.current.offsetWidth;
+      const scroll = containerRef.current.scrollWidth;
+
+      setParentWidth(parent);
+      setScrollWidth(scroll);
+
+      if (scroll > 0) {
+        const percent = (parent / scroll) * 100;
+        setThumbWidth(percent);
+      }
     }
   }
 
@@ -106,6 +113,12 @@ const Base = ({
                 key={`${index} ${item.id}`}
               />
             ))}
+          </div>
+          <div className="w-full pl-4 h-max pb-1.5 absolute-bottom">
+            <ScrollBar
+              containerRef={containerRef}
+              thumbWidth={thumbWidth}
+            />
           </div>
         </div>
       </>

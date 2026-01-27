@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
   const css = {
-    wrapper: `size-12 box-border bg-success-400 flex-center rounded-xl fixed bottom-6 right-6 z-6
+    wrapper: `size-11 box-border bg-success-500 flex-center rounded-xl crop fixed bottom-6 right-6 z-6
     [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] transition-200 shadow-green-soft`,
   };
 
@@ -16,16 +16,12 @@ export const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
 
   return (
     <div className={`${css.wrapper}`} onClick={handleOpenChat}>
-      <div className={`size-max flex-center relative mb-[0.5px] ml-[1.5px]`}>
-        <Image
-          src={`/icons/white-whatsapp.png`}
-          height={32}
-          width={32}
-          alt="imagem do whatssap"
-          className="mb-px"
-        />
-        <div className="absolute size-7.5 bg-success-500/70 rounded-full -z-1"/>
-      </div>
+      <Image
+        src={`/icons/zap-fixed-button.png`}
+        fill={true}
+        alt="imagem do whatssap"
+        className="mb-1 ml-px"
+      />
     </div>
   );
 };
