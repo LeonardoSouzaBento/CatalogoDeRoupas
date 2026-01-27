@@ -1,4 +1,4 @@
 export * from './useMouseScrollX';
 export * from './useLocalStorage';
 export * from './useIsMobile';
-export * from './useResizingCounter';
+export * from './useResizeCount';

@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { HomeContext } from '@/contexts/index';
 import { BookHeart, Eye, Pen, Plus } from 'lucide-react';
 import Link from 'next/link';
-import { useResizingCounter } from '@/hooks';
+import { useResizeCount } from '@/hooks';
 
 const optionButtons = [
   {
@@ -42,7 +42,7 @@ const css = {
 const AdminCore = () => {
   const { setHomeEditMode } = useContext(HomeContext);
   const [resizeCount, setResizeCount] = useState<number>(0);
-  useResizingCounter(setResizeCount);
+  useResizeCount(setResizeCount);
 
   return (
     <div className={`${css.wrapper}`}>

@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui';
 import { setReducedHeight } from '@/functions/setReducedHeight';
-import { useResizingCounter } from '@/hooks/useResizingCounter';
+import { useResizeCount } from '@/hooks/useResizeCount';
 import { BooleanSetter, StateSetter } from '@/types/types';
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
