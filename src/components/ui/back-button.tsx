@@ -1,6 +1,5 @@
-'use client';
-
 import type { BooleanSetter } from '@/types/types';
+import { Button } from '@/components/ui/button';
 import { CornerUpLeft } from 'lucide-react';
 
 interface Props {
@@ -10,14 +9,14 @@ interface Props {
 
 const BackButton = ({ styles, setState = () => {} }: Props) => {
   return (
-    <button
+    <Button
       onClick={() => {
         setState(false);
       }}
-      className={`w-full ${styles}`}>
+      className={styles}>
       voltar
       <CornerUpLeft />
-    </button>
+    </Button>
   );
 };
 

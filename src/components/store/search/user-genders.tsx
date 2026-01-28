@@ -3,6 +3,7 @@ import { UserContext } from '@/contexts/userContext_';
 import type { BooleanSetter, Gender, StateSetter } from '@/types/types';
 import { useContext } from 'react';
 import { genders } from '@/types/types';
+import { Button } from '@/components/ui/button';
 
 const mainCss = {
   wrapper: `rounded-none py-6`,
@@ -65,7 +66,7 @@ const GenderButton = ({
   const selected = selectedGender === gender.toLowerCase() && !childCatSelected;
 
   return (
-    <button
+    <Button
       onClick={() => {
         if (selectedGender !== gender) {
           setSelectedGender(gender);
@@ -74,9 +75,9 @@ const GenderButton = ({
           setChildCatSelected(false);
         }
       }}
-      className={`${mainCss.button} ${selected && mainCss.selected}`}>
-      <p className={`5`}>{gender}</p>
-    </button>
+      variant={selected ? 'default' : 'outline'}>
+      <p>{gender}</p>
+    </Button>
   );
 };
 
@@ -101,20 +102,20 @@ const ChildButtons = ({
 
   return (
     <>
-      <button
-        className={`${mainCss.button} ${maleSelected && mainCss.selected} text-gray-800`}
+      <Button
+        variant={maleSelected ? 'default' : 'outline'}
         onClick={() => {
           handleSelectGender('masculino');
         }}>
         Infantil - masculino
-      </button>
-      <button
-        className={`${mainCss.button} ${femaleSelected && mainCss.selected} text-gray-800`}
+      </Button>
+      <Button
+        variant={femaleSelected ? 'default' : 'outline'}
         onClick={() => {
           handleSelectGender('feminino');
         }}>
         Intantil - feminino
-      </button>
+      </Button>
     </>
   );
 };

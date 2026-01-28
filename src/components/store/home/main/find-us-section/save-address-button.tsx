@@ -1,4 +1,4 @@
-// import { BoolSetter } from "@/types/types";
+import { Button } from '@/components/ui/button';
 import { AddressSchema } from '@/types/types';
 import { Check } from 'lucide-react';
 
@@ -14,9 +14,9 @@ export const SaveAddressButton = ({
     console.log(Value);
   }
   return (
-    <button className="button min-w-max" onClick={handleSave}>
+    <Button className="min-w-max" onClick={handleSave}>
       Salvar Endereço
       <Check />
-    </button>
+    </Button>
   );
 };

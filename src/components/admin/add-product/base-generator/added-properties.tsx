@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { useContext } from 'react';
 import { UserContext } from '@/contexts/index';
 import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
@@ -7,7 +8,6 @@ const css = {
   wrapper: `border p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
   wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
   bg-light-bg rounded-full border`,
-  button: `size-8 flex-center px-0 rounded-full text-red-500 hover:underline `,
   name: `capitalize text-gray-800`,
   strong: `font-medium tracking-wide`,
 };
@@ -56,9 +56,13 @@ const AddedProperties = ({
               <span className={css.name}>
                 {item.label}: <strong className={css.strong}>{item.value}</strong>
               </span>
-              <button className={`${css.button}`} onClick={() => clearValue(item.label)}>
-                <X />
-              </button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="size-8 rounded-full text-red-500 hover:text-red-700"
+                onClick={() => clearValue(item.label)}>
+                <X size={16} />
+              </Button>
             </div>
           ),
       )}

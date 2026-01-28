@@ -1,5 +1,4 @@
-'use client';
-
+import { Button } from '@/components/ui/button';
 import { Minus, Plus } from 'lucide-react';
 import { useState } from 'react';
 
@@ -19,12 +18,14 @@ export const Recommendations = () => {
   return (
     <div className={`${css.wrapper}`}>
       <div className="size-9">
-        <button
+        <Button
           onClick={() => setExpanded(!expanded)}
-          className={css.button}
+          variant="ghost"
+          size="icon"
+          className="rounded-full"
           aria-label="Mostrar mais ou menos">
           {expanded ? <Minus /> : <Plus />}
-        </button>
+        </Button>
       </div>
 
       <div>

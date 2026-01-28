@@ -53,10 +53,10 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
         <div className="size-16 min-w-16 rounded-full bg-gray-100 crop relative">
           <Image src={`/`} fill alt="" />
         </div>
-        <button className="w-full  trans">
+        <Button variant="outline" className="w-full">
           Subir nova imagem
           <Upload />
-        </button>
+        </Button>
       </div>
 
       {/* nome */}

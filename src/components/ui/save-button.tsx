@@ -1,8 +1,4 @@
-// ARQUIVO COMENTADO - Substituído pelo Button do shadcn UI em @/components/ui/button
-// Para usar o novo botão: import { Button } from '@/components/ui/button'
-// Exemplo: <Button onClick={handleSave} className="w-full">Salvar<CircleCheckBig /></Button>
-
-'use client';
+import { Button } from '@/components/ui/button';
 import { CircleCheckBig } from 'lucide-react';
 
 interface Props {
@@ -13,9 +9,9 @@ interface Props {
 
 export const SaveButton = ({ text = 'Salvar', styles, Function }: Props) => {
   return (
-    <button onClick={Function} className={`w-full ${styles}`}>
+    <Button onClick={Function} className={styles}>
       {text}
       <CircleCheckBig />
-    </button>
+    </Button>
   );
 };

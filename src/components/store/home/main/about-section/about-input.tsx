@@ -1,8 +1,9 @@
 import { CloseButton } from '@/components/ui';
+import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
 import { defaultShopInfo } from '@/data/home/publicData';
-import type { ShopInfo } from '@/types/types';
+import type { BooleanSetter, ShopInfo, StateSetter } from '@/types/types';
 import { Check, Trash, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
@@ -19,8 +20,8 @@ const css = {
 
 type AboutProps = {
   shopInfo: ShopInfo;
-  setShopInfo: React.Dispatch<React.SetStateAction<ShopInfo>>;
-  setSeeInput: React.Dispatch<React.SetStateAction<boolean>>;
+  setShopInfo: StateSetter<ShopInfo>;
+  setSeeInput: BooleanSetter;
 };
 
 const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.ReactElement => {
@@ -72,23 +73,26 @@ const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.R
         }}
       />
       <div className={`${css.wrapperButtons}`}>
-        <button
-          className={`${css.buttons} order-2 sm:order-1`}
+        <Button
+          variant="outline"
+          className="w-full sm:w-70 md:w-max order-2 sm:order-1"
           onClick={() => {
             setValue('');
           }}>
-          {' '}
           <Trash size={19} />
           Deletar Todo o Texto
-        </button>
-        <button className={`${css.buttons} order-3 sm:order-3`}>
+        </Button>
+        <Button className="w-full sm:w-70 md:w-max order-3 sm:order-3">
           <Check />
           Salvar
-        </button>
-        <button className={`${css.buttons} order-2 sm:order-2`} onClick={handleDiscardChanges}>
+        </Button>
+        <Button
+          variant="secondary"
+          className="w-full sm:w-70 md:w-max order-2 sm:order-2"
+          onClick={handleDiscardChanges}>
           <X />
           Descartar Alterações
-        </button>
+        </Button>
       </div>
     </div>
   );

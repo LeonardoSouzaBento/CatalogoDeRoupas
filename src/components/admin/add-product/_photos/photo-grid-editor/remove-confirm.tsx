@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import type { BooleanSetter, Photo, StateSetter } from '@/types/types';
 import { Check, X } from 'lucide-react';
 import Image from 'next/image';
@@ -68,8 +69,9 @@ export const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoT
           </div>
 
           <div className={`${css.wrapperButtons}`}>
-            <button
-              className={`${css.button} `}
+            <Button
+              variant="outline"
+              className="w-full"
               onClick={(e) => {
                 e.stopPropagation();
                 setPhotoTaken(null);
@@ -77,16 +79,17 @@ export const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoT
               }}>
               Não
               <X strokeWidth={2} />
-            </button>
-            <button
-              className={`${css.button}  `}
+            </Button>
+            <Button
+              variant="destructive"
+              className="w-full"
               onClick={(e) => {
                 e.stopPropagation();
                 handleRemovePhoto();
               }}>
               Sim, remover
               <Check strokeWidth={2} />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

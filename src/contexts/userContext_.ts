@@ -8,7 +8,7 @@ export interface UserContextType {
   setUserData: StateSetter<UserData>;
   /*  */
   searchTerm: string;
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  setSearchTerm: StateSetter<string>;
   /* Gêneros do usuário */
   childCatSelected: boolean;
   setChildCatSelected: StateSetter<boolean>;

@@ -1,20 +1,17 @@
-import { CloseButton, Input } from '@/components/ui';
+import { Card, Icon, Input, InputWrapper, Label } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { PublicDataContext } from '@/contexts/publicDataContext_';
-import { CircleCheckBig } from 'lucide-react';
+import type { BooleanSetter } from '@/types/types';
+import { ChevronLeft, CircleCheckBig } from 'lucide-react';
 import React, { useContext, useState } from 'react';
 
 const css = {
-  wrapper: 'w-full absolute-top pt-3 pb-3 bg-gray-100 z-1',
-  wrapperForm:
-    'w-[calc(100%-16px)] h-max p-5 m-auto max-w-128 flex flex-col gap-4 bg-light-bg rounded-lg relative shadow-md',
-  label: ` leading-5 font-medium !text-neutral-800 border-b border-neutral-300 pb-[14px]`,
-  wrapperButtons: 'flex items-start gap-3',
-  buttonSend: 'button',
+  container: 'fixed inset-0 bg-black/3 px-4 backdrop-blur-xs pt-3 pb-3 z-8 ',
+  formWrapper: 'h-max m-auto max-w-lg flex flex-col gap-4 relative shadow-xl',
 };
 
 type NameShopProps = {
-  setSeeNameShop: React.Dispatch<React.SetStateAction<boolean>>;
+  setSeeNameShop: BooleanSetter;
 };
 
 const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
@@ -28,26 +25,42 @@ const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
   }
 
   return (
-    <div className={`${css.wrapper}`}>
-      <div className={`${css.wrapperForm}`}>
-        <CloseButton setState={setSeeNameShop} />
-        <label htmlFor="name" className={`${css.label}`}>
-          Digite o nome da sua loja
-        </label>
-        <Input
-          id="name"
-          name="name"
-          className={` mb-0!`}
-          value={Value}
-          placeholder="Digite aqui"
-          onChange={(e) => setValue(e.target.value)}
-        />
+    <div
+      className={`${css.container}`}
+      onClick={() => {
+        setSeeNameShop(false);
+      }}>
+      <Card data-no-header className={`${css.formWrapper}`}>
+        <InputWrapper>
+          <Label htmlFor="name">Digite o nome da sua loja</Label>
+          <Input
+            id="name"
+            name="name"
+            value={Value}
+            placeholder="Digite aqui"
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </InputWrapper>
 
-        <Button onClick={handleEdit} className="w-full">
+        <Button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleEdit();
+          }}
+          className="w-full">
+          <Icon LucideIcon={CircleCheckBig} />
           Salvar
-          <CircleCheckBig />
         </Button>
-      </div>
+        <Button
+          onClick={(e) => {
+            e.stopPropagation();
+            setSeeNameShop(false);
+          }}
+          variant="secondary">
+          <Icon LucideIcon={ChevronLeft} />
+          Voltar
+        </Button>
+      </Card>
     </div>
   );
 };

@@ -66,12 +66,14 @@ const SizeList = ({ dataList }: Props) => {
   return (
     <div className={css.wrapper}>
       {dataList.map((size) => (
-        <button
+        <Button
           key={size}
-          className={`${css.wrapperItem} ${selectedSize === size ? css.selected : css.notSelected}`}
+          variant={selectedSize === size.toString() ? 'default' : 'outline'}
+          size="icon"
+          className="size-10"
           onClick={() => handleSelectSize(size.toString())}>
-          <p className={css.p}>{size.toString()}</p>
-        </button>
+          {size.toString()}
+        </Button>
       ))}
     </div>
   );

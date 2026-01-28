@@ -59,12 +59,10 @@ const CardEditMode = ({
               width={104}
             />
           </div>
-          <button className="mb-1  min-[440px]:mb-0 sm:mb-1 md:mb-0">
-            <div className="h-full min-w-8 flex-center">
-              <Upload />
-            </div>
+          <Button variant="outline" className="mb-px min-[440px]:mb-0 sm:mb-px md:mb-0">
+            <Upload size={18} />
             Nova Imagem
-          </button>
+          </Button>
         </div>
       </div>
 

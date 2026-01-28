@@ -20,7 +20,7 @@ const HomeLogo = () => {
           <EditSectionButton
             editMode={seeNameShop}
             setEditMode={setSeeNameShop}
-            className="absolute top-5 right-4 z-5"
+            className="absolute top-5 right-4 z-6"
           />
         )}
       </div>

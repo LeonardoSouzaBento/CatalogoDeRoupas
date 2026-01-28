@@ -1,5 +1,5 @@
-'use client';
 import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import type { StateSetter } from '@/types/types';
 import { Minus, Plus, X } from 'lucide-react';
 
@@ -45,14 +45,16 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
 
   return (
     <div className={`${css.wrapper}`}>
-      <button
-        className={`${css.cancelButton}`}
+      <Button
+        variant="secondary"
+        size="icon"
+        className="size-8 absolute -top-2 -right-2 rounded-full shadow-sm"
         onClick={() => {
           setNumberOptions([1, 2, 3]);
           setSelectedQuantity(0);
         }}>
-        <X />
-      </button>
+        <X size={16} />
+      </Button>
       <p className={`${numberOptions[0] !== 1 && 'min-[450px]:ml-12'}`}>Tenho</p>
 
       <div className={`${css.wrapperButtons}`}>
@@ -61,32 +63,38 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
           const id = `opt-${item}-${index}`;
 
           return (
-            <button
+            <Button
               key={id}
-              className={`${css.button} ${selected && ''}`}
+              variant={selected ? 'default' : 'outline'}
+              size="icon"
+              className="size-9 rounded-full"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedQuantity(item);
               }}>
               {item}
-            </button>
+            </Button>
           );
         })}
-        <button
-          className={`${css.plusButton}`}
+        <Button
+          variant="outline"
+          size="icon"
+          className="size-9 rounded-full"
           onClick={(e) => {
             incrementAll(e);
           }}>
-          <Plus />
-        </button>
+          <Plus size={18} />
+        </Button>
         {numberOptions[0] !== 1 && (
-          <button
-            className={`${css.plusButton}`}
+          <Button
+            variant="outline"
+            size="icon"
+            className="size-9 rounded-full"
             onClick={(e) => {
               decrementAll(e);
             }}>
-            <Minus />
-          </button>
+            <Minus size={18} />
+          </Button>
         )}
       </div>
       <p>produtos semelhantes a esse.</p>

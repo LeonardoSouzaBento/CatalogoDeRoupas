@@ -8,22 +8,10 @@ export function ButtonWrapper({ className, ...props }: React.ComponentProps<'div
   return <div className={cn('w-full flex justify-center', className)} {...props} />;
 }
 
-export function Button({ className, ...props }: React.ComponentProps<'button'>) {
-  return (
-    <button
-      className={cn(
-        `
-        h-11 flex items-center justify-center gap-2 px-[1.5em]
-        text-center rounded-xl font-semibold cursor-pointer
-        bg-linear-to-r from-yellow-300 to-yellow-400
-        hover:scale-104 transition-all duration-200
-      [&_svg]:text-theme large-button leading-none
-        `,
-        className,
-      )}
-      {...props}
-    />
-  );
+import { Button as ButtonShadcn } from '@/components/ui/button';
+
+export function Button({ className, ...props }: React.ComponentProps<typeof ButtonShadcn>) {
+  return <ButtonShadcn className={className} {...props} />;
 }
 
 interface CTAButtonProps {

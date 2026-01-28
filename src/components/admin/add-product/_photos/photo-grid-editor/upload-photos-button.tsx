@@ -1,7 +1,6 @@
-import React from "react";
-
-const css = { wrapper: ``, p: ``, button: `` };
+import { Button } from '@/components/ui/button';
+import React from 'react';
 
 export const UploadPhotosButton = () => {
-  return <button className={`${css.button}`}>Salvar fotos</button>;
+  return <Button className="w-full">Salvar fotos</Button>;
 };
