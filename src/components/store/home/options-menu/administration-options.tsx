@@ -7,6 +7,7 @@ const optionButtons = [
     name: 'editar esta página',
     icon: 'edit',
     iconStyles: '',
+    setEditMode: true,
   },
   {
     name: 'adicionar produto',
@@ -37,7 +38,7 @@ const AdministrationOptions = () => {
         <Button
           variant="transparent"
           key={item.name}
-          onClick={() => (item.url ? null : setHomeEditMode(true))}>
+          onClick={() => item.setEditMode && setHomeEditMode(true)}>
           <MuiIcon
             icon={item.icon}
             fill

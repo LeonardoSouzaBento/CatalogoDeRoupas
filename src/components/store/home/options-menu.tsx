@@ -10,7 +10,7 @@ const css = {
   container: `fixed top-0 right-0 w-full h-screen bg-black/16 z-6`,
   wrapper: `h-[100dvh] w-8/10 max-w-120 pb-6 min-h-screen z-6 
   bg-light-bg rounded-none shadow-md overflow-y-scroll transition-300 absolute top-0 right-0`,
-  header: `h-12 w-full flex items-center j-start sticky top-0 right-0 z-2 box-border pl-6 rounded-none bg-stone-800 
+  header: `h-12 w-full flex items-center justify-start sticky top-0 right-0 z-2 box-border pl-6 rounded-none bg-stone-800 
   bg-gradient-to-l from-primary-900 to-primary-800`,
   title: `text-white font-semibold mt-[1px]`,
   buttonsWrapper: `flex flex-col items-start gap-2 

@@ -4,7 +4,7 @@ import { MuiIcon } from './mui-icon';
 import { Button } from './button';
 
 const css = {
-  wrapper: `absolute bottom-2 right-2 z-6 py-1 pr-1 flex-center rounded-full`,
+  wrapper: `absolute bottom-2 right-2 z-2 py-1 pr-1 flex-center rounded-full`,
   fastReturn: `pl-5 pr-2 font-medium`,
   wrapperIcon: `h-full min-w-10 w-max flex-center gap-3 fast-trans`,
 };
@@ -30,7 +30,7 @@ const FavoriteButton = () => {
         handleClickFavorite();
       }}>
       {fastReturn && <span className={css.fastReturn}>{isFavorite ? 'Salvo!' : 'Removido!'}</span>}
-      <Button variant="transparent" size="icon-lg" className="rounded-full shadow-sm">
+      <Button variant="transparent" size="icon-lg" className="rounded-full shadow-sm bg-light-bg">
         <MuiIcon
           icon="favorite"
           size="3xl"

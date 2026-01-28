@@ -1,14 +1,14 @@
-import { Buttons } from './buttons_';
+import { Card } from '@/components/ui';
+import { ImageButtons } from './image-buttons';
 import { Images } from './images_';
 import { InfoForm } from './info-form';
 
 const ProductInput = ({ id }: { id: number | string }) => {
   return (
-    <div className="w-full bg-light-bg relative p-6 rounded-lg">
-      <Buttons />
-      <Images />
+    <Card data-no-header className="w-full">
+      <ImageButtons />
       <InfoForm id={id} />
-    </div>
+    </Card>
   );
 };
 

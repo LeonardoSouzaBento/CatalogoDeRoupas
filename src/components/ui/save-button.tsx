@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button, Icon } from '@/components/ui';
 import { CircleCheckBig } from 'lucide-react';
 
 interface Props {
@@ -11,7 +11,7 @@ export const SaveButton = ({ text = 'Salvar', styles, Function }: Props) => {
   return (
     <Button onClick={Function} className={styles}>
       {text}
-      <CircleCheckBig />
+      <Icon LucideIcon={CircleCheckBig} />
     </Button>
   );
 };

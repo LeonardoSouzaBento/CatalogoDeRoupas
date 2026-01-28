@@ -1,38 +1,29 @@
 import { Button } from '@/components/ui/button';
 import { CircleCheckBig } from 'lucide-react';
-import { Input } from '@/components/ui';
+import { Form, Icon, Input, InputWrapper, Label } from '@/components/ui';
 import React from 'react';
 
 const css = {
-  wrapper: `w-full flex flex-col items-start gap-3 mb-5`,
-  wrapperInput: `w-full flex flex-col items-start gap-2`,
-  button: 'button min-w-9 !h-9 !px-0 flex-center mr-0',
-  wrapperButton: 'w-full flex justify-end',
-  saveButton: 'button w-full !justify-center',
-  label: ' font-medium',
+  form: `w-full flex flex-col items-start gap-3 mb-5`,
 };
 
 const InfoForm = ({ id }: { id: number | string }): React.ReactElement => {
   return (
-    <div className="w-full">
-      <form className={`${css.wrapper}`}>
-        <div className={`${css.wrapperInput}`}>
-          <label htmlFor={`nome ${id}`} className={`${css.label}`}>
-            Nome
-          </label>
-          <Input type="text" id={`nome ${id}`} placeholder="Digite o nome" />
-        </div>
-        <div className={`${css.wrapperInput}`}>
-          <label htmlFor={`price ${id}`} className={`${css.label}`}>
-            Preço
-          </label>
-          <Input type="text" id={`price ${id}`} placeholder="Ex.: 80" />
-        </div>
-      </form>
+    <div className="w-full space-y-5">
+      <Form>
+        <InputWrapper>
+          <Label htmlFor={`nome-${id}`}>Nome</Label>
+          <Input type="text" id={`nome-${id}`} placeholder="Digite o nome" />
+        </InputWrapper>
+        <InputWrapper>
+          <Label htmlFor={`price-${id}`}>Preço</Label>
+          <Input type="text" id={`price-${id}`} placeholder="Ex.: 80" />
+        </InputWrapper>
+      </Form>
 
       <Button className="w-full">
+        <Icon LucideIcon={CircleCheckBig} />
         Salvar
-        <CircleCheckBig />
       </Button>
     </div>
   );

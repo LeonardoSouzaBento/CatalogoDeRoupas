@@ -7,7 +7,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { HomeProduct } from './home-product';
 
 const css = {
-  wrapper: 'crop relative',
+  wrapper: '',
   scrollableDiv: `flex gap-4 pt-3 pb-8 px-4 box-border overflow-x-scroll relative scrollbar-hidden`,
 };
 
@@ -83,18 +83,21 @@ const Base = ({
           editMode={editMode}
           setEditMode={setEditMode}
         />
-        <div className={`${css.wrapper}`} ref={parentRef}>
-          <div className={css.scrollableDiv} ref={containerRef}>
+        <div className={`crop relative`} ref={parentRef}>
+          <div
+            className={`flex gap-4 pt-3 pb-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 box-border 
+            overflow-x-scroll relative scrollbar-hidden`}
+            ref={containerRef}>
             {displayedItems.map((item, index) => (
-              <HomeProduct
-                editMode={editMode}
-                item={item}
-                key={`${index} ${item.id}`}
-              />
+              <HomeProduct editMode={editMode} item={item} key={`${index} ${item.id}`} />
             ))}
           </div>
 
-          <ScrollBar containerRef={containerRef} thumbWidth={thumbWidth} cssWrapper='pl-4 pb-1.5' />
+          <ScrollBar
+            containerRef={containerRef}
+            thumbWidth={thumbWidth}
+            cssWrapper="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pb-1.5"
+          />
         </div>
       </>
     );

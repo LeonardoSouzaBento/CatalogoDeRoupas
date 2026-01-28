@@ -1,4 +1,5 @@
-import { Button, Icon, MuiIcon } from '@/components/ui';
+import type { ButtonVariants } from '@/components/ui/button';
+import { Button, Icon } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import type { BooleanSetter } from '@/types/types';
 import { PenLine, PenOff } from 'lucide-react';
@@ -7,32 +8,24 @@ interface Props {
   editMode: boolean | undefined;
   setEditMode: BooleanSetter;
   className?: string;
-  variantion?: string;
-  section?: string;
+  variant?: string;
 }
 
-const EditSectionButton = ({ editMode, setEditMode, className, variantion, section }: Props) => {
-  const isTitle = variantion === 'title';
-  const mb = section === 'clothes' ? 'mb-2' : 'mb-6';
+const EditSectionButton = ({ editMode, setEditMode, className, variant }: Props) => {
   return (
     <div className="w-full h-max flex justify-center">
       <Button
-        size={!isTitle ? 'icon' : 'default'}
-        variant={'secondary'}
-        className={cn(mb, className)}
+        size={'icon'}
+        variant={(variant as ButtonVariants['variant']) || 'default'}
+        className={cn('mb-1.5', className)}
         onClick={() => {
           setEditMode((prev) => !prev);
         }}>
-        {!variantion && <MuiIcon icon="stylus" />}
-        {variantion === 'title' && (
-          <>
-            <Icon LucideIcon={editMode ? PenOff : PenLine} fill="currentColor" size="xs" />
-            {editMode ? 'Fechar edição' : 'Editar seção'}
-          </>
-        )}
+        <Icon LucideIcon={editMode ? PenOff : PenLine} fill="currentColor" size="sm" />
       </Button>
     </div>
   );
 };
 
 export { EditSectionButton };
+

@@ -12,7 +12,7 @@ import type { BooleanSetter } from '@/types/types';
 import { Eye, EyeClosed, LogIn, X } from 'lucide-react';
 import { useState } from 'react';
 
-const css = { button: `h-11 w-full j-center` };
+const css = { button: `h-11 w-full justify-center` };
 
 const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
   const [seePassword, setSeePassword] = useState<boolean>(false);

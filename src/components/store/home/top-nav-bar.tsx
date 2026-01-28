@@ -19,11 +19,11 @@ const buttons: ButtonType[] = [
 ];
 
 const css = {
-  mainWrapper: 'w-full h-auto sticky top-0 left-0 z-2 bg-light-bg/36 backdrop-blur-xs shadow-sm',
-  wrapper: 'px-8 max-w-216 m-auto flex justify-center items-center flex-wrap gap-4 sm:flex-nowrap',
-  nav: `h-18 w-full max-w-212 flex justify-between items-center
-  gap-4 flex-auto [&>button]:font-medium [&>button]:bg-light-bg/24`,
-  searchButton: `w-1/3 max-w-64 justify-between lg:order-2 
+  mainWrapper: 'w-full h-auto sticky top-0 left-0 z-4 bg-light-bg/36 backdrop-blur-xs shadow-sm',
+  wrapper: 'px-4 sm:px-6 max-w-212 mx-auto',
+  nav: `h-18 w-full flex justify-between items-center
+   flex-auto [&>button]:font-medium [&>button]:bg-light-bg/24`,
+  searchButton: `min-w-30 w-1/3 max-w-64 justify-between lg:order-2 
   shadow-md/4 bg-light-bg/24 hover:scale-102 
   transition-all duration-300`,
 };
@@ -52,7 +52,7 @@ const TopNavBar = ({
                     LucideIcon={button.LucideIcon}
                     strokeValue={'medium'}
                     size={'lg'}
-                    fill="var(--color-theme-50)"
+                    fill="var(--color-primary-50)"
                   />
                   <CustomLink link={'/loja/pesquisar'} />
                 </Button>

@@ -9,7 +9,7 @@ const css = {
   button: ``,
 };
 
-export const buttonStyles = 'w-full h-11 j-center  hover:scale-102 trans';
+export const buttonStyles = 'w-full h-11 justify-center  hover:scale-102 trans';
 
 const Login = () => {
   return (

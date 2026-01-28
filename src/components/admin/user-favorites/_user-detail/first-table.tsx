@@ -5,7 +5,7 @@ const FirstTable = ({ userData }: { userData: UserData }) => {
   const css = {
     caption: 'min-h-7 pb-5 flex-center justify-start! box-border  text-left',
     tr: 'h-max flex flex-col sm:flex-row sm:items-start ',
-    thEtd: 'h-10 px-5 flex i-center j-start sm:[j-center]',
+    thEtd: 'h-10 px-5 flex items-center justify-start sm:[justify-center]',
     th: 'bg-neutral-200 font-medium',
     td: 'bg-light-bg',
   };

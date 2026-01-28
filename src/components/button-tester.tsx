@@ -3,7 +3,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
-export type ButtonVariants = VariantProps<typeof buttonVariants>;
+type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 const buttonVariants = cva(
   'w-auto tracking-wide flex items-center justify-center gap-2 rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:shrink-0 relative data-w-full:w-full',

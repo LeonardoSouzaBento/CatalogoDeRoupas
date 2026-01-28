@@ -48,6 +48,11 @@ interface Image {
   alt: string;
 }
 
+export interface ProductMeasure {
+  type: string | undefined;
+  value: string | undefined | number;
+}
+
 /* Roupa */
 export interface Clothing {
   id: number;

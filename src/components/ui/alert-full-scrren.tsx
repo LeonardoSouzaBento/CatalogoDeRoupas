@@ -1,7 +1,7 @@
 import React from 'react';
 import type { StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button, Icon } from '@/components/ui';
 
 interface Props {
   text?: string;
@@ -27,7 +27,7 @@ const AlertFullScrren = ({ text, title, children, setState }: Props) => {
           size="icon"
           className="absolute top-2 right-2"
           onClick={() => setState(false)}>
-          <X />
+          <Icon LucideIcon={X} />
         </Button>
         <header className={`${css.header}`}>
           {children}

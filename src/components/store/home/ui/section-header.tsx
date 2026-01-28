@@ -23,28 +23,28 @@ export const SectionHeader = ({
 
   return (
     <div>
-      <div className={`w-full px-3 flex j-center i-center gap-3 ${pb}`}>
-        <div className="flex flex-col size-auto">
-          <h3 className={`capitalize text-center text-theme-700`}>{title}</h3>
-
-          {subtitle && (
-            <h6
-              className={`w-full font-normal text-center 
-              text-muted-foreground capitalize`}>
-              {subtitle}
-            </h6>
+      <div className={`w-full px-3 flex justify-center items-center gap-3 ${pb}`}>
+        <div className={`${homeEditMode && `grid grid-cols-[1fr_max-content] 
+          gap-4 items-center border p-4 pt-3 rounded-sm`}`}>
+          <div className={`flex flex-col ${homeEditMode ? 'items-start' : 'items-center'}`}>
+            <h3 className={`w-full max-w-max capitalize text-theme-700`}>{title}</h3>
+            {subtitle && (
+              <h6
+                className={`w-full max-w-max font-normal
+                text-muted-foreground capitalize`}>
+                {subtitle}
+              </h6>
+            )}
+          </div>
+          {homeEditMode && (
+            <EditSectionButton
+              editMode={editMode}
+              setEditMode={setEditMode}
+              className="relative"
+            />
           )}
         </div>
       </div>
-      {homeEditMode && (
-        <EditSectionButton
-          editMode={editMode}
-          setEditMode={setEditMode}
-          className="relative"
-          variantion="title"
-          section={section}
-        />
-      )}
     </div>
   );
 };

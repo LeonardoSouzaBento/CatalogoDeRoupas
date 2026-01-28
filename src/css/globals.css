@@ -168,6 +168,14 @@
     user-select: none;
     position: relative;
   }
+  img {
+    background-color: var(--color-light-bg);
+    user-select: none;
+    position: relative;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+  }
 }
 
 .is-resizing * {

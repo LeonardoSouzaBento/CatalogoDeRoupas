@@ -49,7 +49,6 @@ export const UserGenderList = (): React.ReactElement => {
               <Button
                 key={item.name}
                 variant={selected ? 'default' : 'ghost'}
-                size={selected ? 'default' : 'ghost'}
                 data-selected={selected}
                 onClick={() => {
                   handleSelectGender(item.name as HomepageUserGender);

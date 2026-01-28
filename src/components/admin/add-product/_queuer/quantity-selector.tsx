@@ -4,7 +4,7 @@ import type { StateSetter } from '@/types/types';
 import { Minus, Plus, X } from 'lucide-react';
 
 const css = {
-  wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end j-center gap-3.5 
+  wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end justify-center gap-3.5 
   border relative`,
   wrapperButtons: `flex gap-3`,
   p: `5`,

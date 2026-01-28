@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
   Icon,
-  MuiIcon
+  MuiIcon,
 } from '@/components/ui';
 import {
   Table,
@@ -19,7 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import type { UserData } from '@/types/types';
+import type { ProductMeasure, UserData } from '@/types/types';
 import { CircleQuestionMark, Info, PenLine } from 'lucide-react';
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
@@ -30,7 +30,7 @@ const css = {
 };
 
 export const MeasuresCard = ({ userData }: { userData: UserData }) => {
-  const measuresData: Measure[] = [
+  const measuresData: ProductMeasure[] = [
     { type: 'Camisa', value: userData.camisa },
     { type: 'Calça', value: userData.calça },
     { type: 'Calçado', value: userData.calçado },
@@ -77,36 +77,12 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
             <Icon LucideIcon={PenLine} />
             Atualizar Minhas Medidas
           </Button>
-          <Button variant="outline" size="outline">
+          <Button variant="outline">
             <Icon LucideIcon={CircleQuestionMark} size="xl" />
             Ver Guia De Medidas
           </Button>
         </ButtonsWrapper>
       </CardContent>
     </Card>
-  );
-};
-
-/* measure item */
-interface Measure {
-  type: string | undefined;
-  value: string | undefined | number;
-}
-
-const MeasureItem = ({ type, value }: Measure) => {
-  const css = {
-    wrapper: `w-1/3 max-[375px]:w-full flex flex-col min-[375px]:border-r 
-      min-[375px]:border-gray-300 mr-md crop last:border-none`,
-    thEtd: 'h-10 flex j-sart i-center box-border px-4',
-    th: `font-normal text-neutral-900 text-left border-b border 
-    max-[375px]:border-none bg-neutral-100`,
-    td: 'max-[375px]:border-b max-[375px]:border-gray-300',
-  };
-
-  return (
-    <tr className={`${css.wrapper}`}>
-      <th className={`${css.thEtd} ${css.th}`}>{type}</th>
-      <td className={`${css.thEtd} ${css.td}`}>{value}</td>
-    </tr>
   );
 };

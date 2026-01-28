@@ -9,7 +9,7 @@ const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-lg bg-light-bg`,
   avatar: `size-[3.6em] shrink-0 relative bg-linear-to-br from-primary-50 to-primary-100 rounded-full`,
   img: 'border-none outline-none',
-  wrapperInfo: 'max-[430px]:hidden min-h-16 w-full flex flex-col j-center gap-2',
+  wrapperInfo: 'max-[430px]:hidden min-h-16 w-full flex flex-col justify-center gap-2',
   name: `block break-words capitalize leading-none text-theme-700`,
   email: 'block leading-none break-all text-muted-foreground large-text font-medium',
 };

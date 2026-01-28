@@ -25,18 +25,26 @@ const HomeCore = () => {
       {seeOptionsSection && <OptionsMenu setSeeOptionsSection={setSeeOptionsSection} />}
       <Main resizeCount={resizeCount} />
       <Footer />
-      {homeEditMode && (
-        <Button
-          onClick={() => {
-            setHomeEditMode(false);
-          }}>
-          Fechar edição
-          <Icon LucideIcon={PenOff} size="md" />
-        </Button>
-      )}
+      <CloseEditModeButton />
       <ZapFixedButton />
     </HomeDataProvider>
   );
 };
 
 export default HomeCore;
+
+const CloseEditModeButton = () => {
+  const { homeEditMode, setHomeEditMode } = useContext(HomeContext);
+  if (!homeEditMode) return null;
+  return (
+    <Button
+      className="fixed bottom-4 right-4 z-8"
+      onClick={() => {
+        setHomeEditMode(false);
+        console.log('edit mode', homeEditMode);
+      }}>
+      Fechar edição
+      <Icon LucideIcon={PenOff} size="md" />
+    </Button>
+  );
+};

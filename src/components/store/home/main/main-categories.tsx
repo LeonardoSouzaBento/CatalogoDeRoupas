@@ -17,7 +17,7 @@ const css = {
   editMode: 'pb-0 mb-0 m-auto max-w-210',
   wrapperEditMode: 'p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg',
   imageWrapper: `
-    h-[66dvw] max-h-108 flex items-end relative overflow-hidden bg-theme-100 rounded-lg 
+    h-[66dvw] max-h-102 flex items-end relative overflow-hidden bg-theme-100 rounded-lg 
     next-md:w-74 next-md:min-w-74
   `,
   image: 'absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30',
