@@ -4,14 +4,15 @@ import type { UserData } from '@/types/types';
 import { PenLine } from 'lucide-react';
 import { useState } from 'react';
 import { InputNameEmail } from './input-name-email';
+import { getNameInitials } from '@/utils/getNameInitials';
 
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-lg bg-light-bg`,
-  avatar: `size-[3.6em] shrink-0 relative bg-linear-to-br from-primary-50 to-primary-100 rounded-full`,
+  avatar: `size-[3.6em] shrink-0 relative bg-linear-to-br from-theme-50 to-theme-100/75 rounded-full`,
   img: 'border-none outline-none',
   wrapperInfo: 'max-[430px]:hidden min-h-16 w-full flex flex-col justify-center gap-2',
   name: `block break-words capitalize leading-none text-theme-700`,
-  email: 'block leading-none break-all text-muted-foreground large-text font-medium',
+  email: 'block leading-none break-all text-muted-foreground large-text',
 };
 
 export const UserCard = ({ userData }: { userData: UserData }) => {
@@ -25,9 +26,7 @@ export const UserCard = ({ userData }: { userData: UserData }) => {
             <Avatar className={`${css.avatar}`}>
               <AvatarImage src="/shop/" className={`${css.img}`} />
               <AvatarFallback>
-                <p className="font-medium text-muted-foreground large-text">
-                  {userData.name?.slice(0, 2).toUpperCase()}
-                </p>
+                <p className="text-muted-foreground large-text">{getNameInitials(userData.name)}</p>
               </AvatarFallback>
             </Avatar>
             <div className={`${css.wrapperInfo}`}>
@@ -42,11 +41,17 @@ export const UserCard = ({ userData }: { userData: UserData }) => {
           {/* para mobile */}
           <p className={`${css.email} md-sm:hidden`}>Email: {userData.email}</p>
           <Button
+            className="shadow-xs justify-start px-[1.05em]"
             variant={'ghost'}
             onClick={() => {
               setSeeEditMode(true);
             }}>
-            <Icon LucideIcon={PenLine} size="sm" />
+            <Icon
+              LucideIcon={PenLine}
+              size="sm"
+              fill="var(--color-primary-200)"
+              // strokeWidth="thin"
+            />
             Editar meus dados
           </Button>
         </div>

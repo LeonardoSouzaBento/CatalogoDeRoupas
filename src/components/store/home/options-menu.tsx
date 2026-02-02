@@ -51,7 +51,7 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
             variant="default"
             className="absolute top-1.5 right-3 rounded-full bg-primary-50/18 hover:bg-primary-50/24"
             onClick={() => setView(false)}>
-            <Icon LucideIcon={X} size="lg" strokeValue={'medium'} />
+            <Icon LucideIcon={X} size="lg" strokeWidth={'medium'} />
           </Button>
         </div>
 

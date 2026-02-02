@@ -1,12 +1,11 @@
-import React from 'react';
-import {ZapFixedButton} from '@/components/ui/zap-fixed-button';
-import { Header, SearchButton, UserGenders, Suggestions } from './search/index';
+import { ZapFixedButton } from '@/components/ui';
+import { Header, SearchButton, Suggestions, UserGenders } from './search/index';
 
 const SearchCore = () => {
   return (
     <>
       <Header />
-      <div className="px-3 space-y-5">
+      <div className="px-3 sm:px-4 md:px-6 space-y-5">
         <SearchButton />
         <UserGenders />
         <Suggestions />

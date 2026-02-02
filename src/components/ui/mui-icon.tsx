@@ -1,3 +1,4 @@
+type SizeValue = keyof typeof iconSizes;
 const iconSizes = {
   xs: '0.889em',
   sm: '0.943em',
@@ -15,13 +16,19 @@ const iconSizes = {
 
 interface IconProps {
   icon: string;
-  size?: string;
-  fill?: boolean | number;
+  size?: SizeValue | string;
+  fill?: boolean;
   weight?: number;
-  className?: string;
 }
 
-export const MuiIcon = ({ icon, size, fill = false, weight = 600, className }: IconProps) => {
+export const MuiIcon = ({
+  icon,
+  size,
+  fill = false,
+  weight = 600,
+  className,
+  ...props
+}: React.ComponentProps<'span'> & IconProps) => {
   const fillValue = fill ? 1 : 0;
   return (
     <div className="h-3 inline-flex items-center justify-center overflow-visible">
@@ -29,8 +36,9 @@ export const MuiIcon = ({ icon, size, fill = false, weight = 600, className }: I
         className={`material-symbols-rounded ${className}`}
         style={{
           fontVariationSettings: `"FILL" ${fillValue}, "wght" ${weight}`,
-          fontSize: iconSizes[size as keyof typeof iconSizes] || size || '1em',
-        }}>
+          fontSize: iconSizes[size as SizeValue] || size || '1em',
+        }}
+        {...props}>
         {icon}
       </span>
     </div>

@@ -24,11 +24,6 @@ import { CircleQuestionMark, Info, PenLine } from 'lucide-react';
 
 // const shirtSizes = ["PP", "P", "M", "G", "GG", "GGG"];
 
-const css = {
-  wrapper: `w-full sm:w-auto flex flex-wrap max-[375px]:flex-col 
-  border max-[375px]:border-b-transparent! mb-5 rounded-md crop`,
-};
-
 export const MeasuresCard = ({ userData }: { userData: UserData }) => {
   const measuresData: ProductMeasure[] = [
     { type: 'Camisa', value: userData.camisa },
@@ -40,13 +35,13 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="square_foot" size="h3" fill className="mb-0.5 -ml-0.5" />
+          <MuiIcon icon="square_foot" size="h4" fill className="mb-0.5 -ml-0.5" />
           <h3>Minhas medidas</h3>
         </CardTitle>
       </CardHeader>
       <CardContent>
         <Alert>
-          <Icon LucideIcon={Info} strokeValue={'medium'} />
+          <Icon LucideIcon={Info} strokeWidth={'medium'} />
           <AlertTitle>
             <h6 className="font-medium">Recomendação</h6>
           </AlertTitle>

@@ -1,11 +1,12 @@
 'use client';
-import { Button, CustomLink, Icon } from '@/components/ui';
+import Link from 'next/link';
+import { Button, Icon } from '@/components/ui';
 import { X } from 'lucide-react';
 
 const css = {
-  wrapper: `h-14 px-5 box-content flex items-center justify-between rounded-none 
-  bg-gradient-to-r from-stone-800 to-stone-700`,
-  shopName: 'leading-none font-logo text-white text-stone-800 font-normal',
+  wrapper: `h-14 px-3 sm:px-4 md:px-6 box-content flex items-center justify-between rounded-none 
+  bg-gradient-to-r from-primary-900 to-primary-800`,
+  shopName: 'leading-none font-logo text-primary-50 font-normal',
 };
 
 export const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) => {
@@ -16,9 +17,10 @@ export const Header = ({ seeButtonClose = true }: { seeButtonClose?: boolean }) 
       </div>
 
       {seeButtonClose && (
-        <Button variant={'transparent'} size="icon">
-          <Icon LucideIcon={X} />
-          <CustomLink link={'/loja'} />
+        <Button variant={'default'} size="icon" asChild className="rounded-full">
+          <Link href="/loja">
+            <Icon LucideIcon={X} />
+          </Link>
         </Button>
       )}
     </div>

@@ -1,5 +1,6 @@
 'use client';
-import { Button, CustomLink, Icon } from '@/components/ui';
+import Link from 'next/link';
+import { Button, Icon } from '@/components/ui';
 import type { BooleanSetter } from '@/types/types';
 import { Heart, Menu, Search, User, type LucideIcon } from 'lucide-react';
 import React from 'react';
@@ -46,15 +47,35 @@ const TopNavBar = ({
                   key={button.name}
                   size={'sm'}
                   variant="transparent"
-                  className={`${css.searchButton} ${!isMobile ? 'flex-auto' : ''}`}>
-                  Buscar
-                  <Icon
-                    LucideIcon={button.LucideIcon}
-                    strokeValue={'medium'}
-                    size={'lg'}
-                    fill="var(--color-primary-50)"
-                  />
-                  <CustomLink link={'/loja/pesquisar'} />
+                  className={`${css.searchButton} ${!isMobile ? 'flex-auto' : ''}`}
+                  asChild>
+                  <Link href="/loja/pesquisar">
+                    Buscar
+                    <Icon
+                      LucideIcon={button.LucideIcon}
+                      strokeWidth={'medium'}
+                      size={'lg'}
+                      fill="var(--color-primary-50)"
+                    />
+                  </Link>
+                </Button>
+              ) : button.link ? (
+                <Button
+                  key={button.name}
+                  size={isMobile ? 'icon' : 'sm'}
+                  variant="transparent"
+                  className={`hover:shadow-sm`}
+                  asChild>
+                  <Link href={button.link}>
+                    <Icon
+                      LucideIcon={button.LucideIcon}
+                      strokeWidth={'medium'}
+                      size={'lg'}
+                      className="mb-[0.5px]"
+                      fill="var(--color-theme-50)"
+                    />
+                    {isMobile ? null : button.name}
+                  </Link>
                 </Button>
               ) : (
                 <Button
@@ -69,13 +90,12 @@ const TopNavBar = ({
                   }}>
                   <Icon
                     LucideIcon={button.LucideIcon}
-                    strokeValue={'medium'}
+                    strokeWidth={'medium'}
                     size={'lg'}
                     className="mb-[0.5px]"
                     fill="var(--color-theme-50)"
                   />
                   {isMobile ? null : button.name}
-                  {button.link ? <CustomLink link={button.link} /> : null}
                 </Button>
               );
             })}

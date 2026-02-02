@@ -71,11 +71,26 @@
   --color-primary-800: #5c2340;
   --color-primary-900: #420929;
   --color-primary-950: #36001f;
-  --color-primary-1000: #2b0015; 
- 
+  --color-primary-1000: #2b0015;
+
   /* cores de estados */
   --color-yellow: #f5d43b;
   --color-yellow-hover: hsl(49, 90%, 50%);
+  /* selecionado */
+  --color-selected-50: #f1f2ff;
+  --color-selected-100: #e3e6fe;
+  --color-selected-200: #c6cdfd;
+  --color-selected-300: #a5b4fc;
+  --color-selected: #a5b4fc;
+  --color-selected-400: #8a9ae0;
+  --color-selected-500: #6e7fc3;
+  --color-selected-600: #5265a6;
+  --color-selected-700: #354d8b;
+  --color-selected-800: #153570;
+  --color-selected-900: #002056;
+  --color-selected-950: #00164a;
+  --color-selected-1000: #00063e;
+  /* sucesso */
   --color-success-50: #e9f9ea;
   --color-success-100: #d3f3d5;
   --color-success-200: #a6e5ac;
@@ -88,8 +103,10 @@
   --color-success-900: #003300;
   --color-success-950: #002a00;
   --color-success-1000: #002300;
+  /* verde */
   --color-green: #2fbf71;
   --color-green-hover: #20915d;
+  /* vermelho */
   --color-red: #e5464f;
   --color-red-hover: #c23c41;
   /* Breakpoints */
@@ -181,4 +198,3 @@
 .is-resizing * {
   transition: none !important;
 }
-

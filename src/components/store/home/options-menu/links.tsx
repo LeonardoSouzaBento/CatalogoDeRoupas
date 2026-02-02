@@ -1,4 +1,5 @@
-import { Button, CustomLink, MuiIcon } from '@/components/ui';
+import Link from 'next/link';
+import { Button, MuiIcon } from '@/components/ui';
 
 const pageOptions = [
   {
@@ -19,10 +20,11 @@ const Links = () => {
   return (
     <>
       {pageOptions.map((item) => (
-        <Button variant="transparent" key={item.name}>
-          <MuiIcon icon={item.icon} fill className="text-theme" size="xl" />
-          {item.name}
-          <CustomLink link={item.link} />
+        <Button variant="transparent" key={item.name} asChild>
+          <Link href={item.link}>
+            <MuiIcon icon={item.icon} fill className="text-theme" size="xl" />
+            {item.name}
+          </Link>
         </Button>
       ))}
     </>

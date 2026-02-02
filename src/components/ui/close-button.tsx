@@ -9,6 +9,7 @@ interface CloseButtonProps {
   className?: string;
   variant?: 'transparent' | 'secondary';
   size?: 'icon' | 'icon-lg' | 'icon-sm';
+  iconSize?: string;
 }
 
 const CloseButton = ({
@@ -16,14 +17,15 @@ const CloseButton = ({
   className,
   variant = 'secondary',
   size = 'icon',
+  iconSize,
 }: CloseButtonProps) => {
   return (
     <Button
       size={size}
       variant={variant}
-      className={cn('rounded-full', className)}
+      className={cn('rounded-full bg-primary-50 hover:bg-primary-100', className)}
       onClick={() => setState(false)}>
-      <Icon LucideIcon={X} size="lg" />
+      <Icon LucideIcon={X} size={iconSize || 'lg'} />
     </Button>
   );
 };

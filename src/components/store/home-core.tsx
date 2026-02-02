@@ -11,7 +11,6 @@ import { useContext, useState } from 'react';
 
 const HomeCore = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
-  const { homeEditMode, setHomeEditMode } = useContext(HomeContext);
   const [isMobile, setIsMobile] = useState<boolean>(true);
   const [resizeCount, setResizeCount] = useState<number>(0);
 
@@ -44,7 +43,7 @@ const CloseEditModeButton = () => {
         console.log('edit mode', homeEditMode);
       }}>
       Fechar edição
-      <Icon LucideIcon={PenOff} size="md" />
+      <Icon LucideIcon={PenOff} size="md" fill="currentColor" />
     </Button>
   );
 };

@@ -1,13 +1,6 @@
-import { LucideIcon } from 'lucide-react';
+import type { LucideIcon as LucideIconType, LucideProps } from 'lucide-react';
 
-interface IconProps {
-  LucideIcon: LucideIcon;
-  size?: string;
-  className?: string;
-  strokeValue?: string | number;
-  fill?: string;
-}
-
+type SizeValue = keyof typeof iconSizes;
 const iconSizes = {
   xs: '0.889em',
   sm: '0.943em',
@@ -23,6 +16,7 @@ const iconSizes = {
   '4xl': '1.602em',
 };
 
+type StrokeValue = keyof typeof weights;
 const weights = {
   thin: 2.25,
   light: 2.35,
@@ -32,15 +26,23 @@ const weights = {
   bold: 3,
 };
 
-export const Icon = ({ LucideIcon, size, className, strokeValue, fill }: IconProps) => {
+interface IconProps extends Omit<LucideProps, 'size' | 'strokeWidth'> {
+  LucideIcon: LucideIconType;
+  size?: SizeValue | string;
+  strokeWidth?: StrokeValue | string;
+}
+
+export const Icon = ({ LucideIcon, size, className, strokeWidth, fill, ...props }: IconProps) => {
   return (
-    <div className={`h-3 w-max inline-flex items-center justify-center gap-0
+    <div
+      className={`h-3 w-max inline-flex items-center justify-center gap-0
       [&_svg]:shrink-0 [&_svg]:pointer-events-none`}>
       <LucideIcon
-        size={iconSizes[size as keyof typeof iconSizes] || size || '1em'}
-        strokeWidth={weights[strokeValue as keyof typeof weights] || strokeValue || 2.5}
+        size={iconSizes[size as SizeValue] || size || '1em'}
+        strokeWidth={weights[strokeWidth as StrokeValue] || strokeWidth || '2.55'}
         className={className}
         fill={fill || 'none'}
+        {...props}
       />
     </div>
   );

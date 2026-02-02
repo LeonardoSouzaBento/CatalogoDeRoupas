@@ -5,9 +5,7 @@ export * from './back-button';
 export * from './button';
 export * from './buttons-wrapper';
 export * from './card';
-export * from './checkbox';
 export * from './close-button';
-export * from './custom-link';
 export * from './favorite-button';
 export * from './field';
 export * from './form';
@@ -22,4 +20,4 @@ export * from './save-button';
 export * from './separator';
 export * from './side-area';
 export * from './zap-fixed-button';
-
+export * from './table';

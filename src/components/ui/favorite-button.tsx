@@ -36,7 +36,7 @@ const FavoriteButton = () => {
           size="3xl"
           weight={400}
           className={`mt-0.75 ${hearthColor}`}
-          fill={isFavorite ? 1 : 0}
+          fill={isFavorite ? true : false}
         />
       </Button>
     </div>

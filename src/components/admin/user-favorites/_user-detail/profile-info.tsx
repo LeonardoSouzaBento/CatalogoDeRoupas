@@ -1,11 +1,15 @@
 'use client';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from '@/components/ui/index';
 import { UserContext } from '@/contexts/index';
-import { useContext, useState } from 'react';
-import { SeeMoreButton } from './see-more-button';
-import { FirstTable, MeasuresTable } from './index';
+import { useContext } from 'react';
 
 const ProfileInfo = () => {
-  const [seeMoreUserInfo, setSeeMoreUserInfo] = useState<boolean>(false);
   const { userData } = useContext(UserContext);
 
   const css = {
@@ -14,9 +18,30 @@ const ProfileInfo = () => {
 
   return (
     <div className={`${css.wrapper}`}>
-      <FirstTable userData={userData} />
-      {seeMoreUserInfo && <MeasuresTable userData={userData} />}
-      <SeeMoreButton seeMoreUserInfo={seeMoreUserInfo} setSeeMoreUserInfo={setSeeMoreUserInfo} />
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableHead>Nome</TableHead>
+            <TableCell>{userData.name}</TableCell>
+          </TableRow>
+          <TableRow className="*:capitalize">
+            <TableHead>Sexo</TableHead>
+            <TableCell>{userData.sex}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead>Camisa</TableHead>
+            <TableCell>{userData.camisa}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead>Calça</TableHead>
+            <TableCell>{userData.calça}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead>Calçado</TableHead>
+            <TableCell>{userData.calçado}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </div>
   );
 };

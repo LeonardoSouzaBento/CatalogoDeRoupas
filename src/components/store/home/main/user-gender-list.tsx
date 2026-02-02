@@ -1,7 +1,7 @@
 import { Button, ButtonsWrapper, MuiIcon } from '@/components/ui';
 import { UserContext } from '@/contexts/userContext_';
 import type { HomepageUserGender } from '@/types/types';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ChildGenderButtons } from './user-gender-list/child-gender-buttons';
 
 const userGenders = [
@@ -17,7 +17,6 @@ const css = {
 export const UserGenderList = (): React.ReactElement => {
   const { selectedGender, setSelectedGender, childCatSelected, setChildCatSelected } =
     useContext(UserContext);
-  const [fastReturn, setFastReturn] = useState<string | null>('');
 
   function handleSelectGender(gender: HomepageUserGender) {
     if (gender == 'masculino' || gender === 'feminino') {
@@ -27,22 +26,17 @@ export const UserGenderList = (): React.ReactElement => {
     if (gender === 'infantil') {
       setChildCatSelected(true);
     }
-
-    setFastReturn(gender);
-    setTimeout(() => {
-      setFastReturn(null);
-    }, 300);
   }
 
   return (
     <div>
       <p
         className={`max-w-none w-full text-center mb-2 uppercase
-          large-text text-muted-foreground`}>
+          large-text font-semibold text-muted-foreground`}>
         Selecione um gênero
       </p>
       <div className={css.wrapper}>
-        <ButtonsWrapper className={`grid grid-cols-1 sm:grid-cols-3`}>
+        <ButtonsWrapper className={`min-h-36.5 grid grid-cols-1 sm:grid-cols-3 sm:min-h-10.5`}>
           {userGenders.map((item) => {
             const selected = selectedGender === item.name && !childCatSelected;
             return (
@@ -53,7 +47,7 @@ export const UserGenderList = (): React.ReactElement => {
                 onClick={() => {
                   handleSelectGender(item.name as HomepageUserGender);
                 }}
-                className={`${css.button} w-full ${fastReturn === item.name && 'scale-106'}`}>
+                className={`${css.button} w-full`}>
                 <MuiIcon icon={item.icon} size="2xl" />
                 {item.name}
               </Button>
@@ -71,7 +65,7 @@ export const UserGenderList = (): React.ReactElement => {
               onClick={() => {
                 handleSelectGender('infantil');
               }}
-              className={`${css.button} ${fastReturn === 'infantil' && 'scale-106'}`}>
+              className={`${css.button}`}>
               <MuiIcon icon="boy" size="2xl" />
               infantil
             </Button>

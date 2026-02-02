@@ -56,7 +56,7 @@ const TextContent = () => {
             LucideIcon={item.icon}
             className="text-theme mt-1"
             size="xl"
-            strokeValue={'thin'}
+            strokeWidth={'thin'}
             fill="var(--color-primary-50)"
           />
           <div className={`-mt-1.5`}>

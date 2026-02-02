@@ -1,4 +1,5 @@
-import { Button, CustomLink, MuiIcon } from '@/components/ui';
+import Link from 'next/link';
+import { Button, MuiIcon } from '@/components/ui';
 import { HomeContext } from '@/contexts/index';
 import { useContext } from 'react';
 
@@ -34,21 +35,34 @@ const AdministrationOptions = () => {
 
   return (
     <>
-      {optionButtons.map((item) => (
-        <Button
-          variant="transparent"
-          key={item.name}
-          onClick={() => item.setEditMode && setHomeEditMode(true)}>
-          <MuiIcon
-            icon={item.icon}
-            fill
-            className="text-theme"
-            size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
-          />
-          {item.name}
-          {item.url && <CustomLink link={item.url} />}
-        </Button>
-      ))}
+      {optionButtons.map((item) =>
+        item.url ? (
+          <Button variant="transparent" key={item.name} asChild>
+            <Link href={item.url}>
+              <MuiIcon
+                icon={item.icon}
+                fill
+                className="text-theme"
+                size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
+              />
+              {item.name}
+            </Link>
+          </Button>
+        ) : (
+          <Button
+            variant="transparent"
+            key={item.name}
+            onClick={() => item.setEditMode && setHomeEditMode(true)}>
+            <MuiIcon
+              icon={item.icon}
+              fill
+              className="text-theme"
+              size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
+            />
+            {item.name}
+          </Button>
+        ),
+      )}
     </>
   );
 };
