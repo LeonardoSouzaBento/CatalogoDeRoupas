@@ -26,16 +26,16 @@ export const UserCard = ({ userData }: { userData: UserData }) => {
             <Avatar className={`${css.avatar}`}>
               <AvatarImage src="/shop/" className={`${css.img}`} />
               <AvatarFallback>
-                <p className="text-muted-foreground large-text">{getNameInitials(userData.name)}</p>
+                <p className="text-muted-foreground large-text">{getNameInitials(userData.nome)}</p>
               </AvatarFallback>
             </Avatar>
             <div className={`${css.wrapperInfo}`}>
-              <h3 className={`${css.name}`}>{userData.name}</h3>
+              <h3 className={`${css.name}`}>{userData.nome}</h3>
               <p className={`${css.email}`}>Email: {userData.email}</p>
             </div>
             {/* para mobile */}
             <div className={`md-sm:hidden h-16 flex items-center justify-center`}>
-              <h3 className={`${css.name}`}>{userData.name}</h3>
+              <h3 className={`${css.name}`}>{userData.nome}</h3>
             </div>
           </div>
           {/* para mobile */}

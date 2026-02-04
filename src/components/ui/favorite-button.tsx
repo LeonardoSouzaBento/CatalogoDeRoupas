@@ -30,12 +30,12 @@ const FavoriteButton = () => {
         handleClickFavorite();
       }}>
       {fastReturn && <span className={css.fastReturn}>{isFavorite ? 'Salvo!' : 'Removido!'}</span>}
-      <Button variant="transparent" size="icon-lg" className="rounded-full shadow-sm bg-light-bg">
+      <Button variant="transparent" size="icon" className="rounded-full shadow-xs bg-light-bg">
         <MuiIcon
           icon="favorite"
           size="3xl"
           weight={400}
-          className={`mt-0.75 ${hearthColor}`}
+          className={`mt-1.25 scale-96 ${hearthColor}`}
           fill={isFavorite ? true : false}
         />
       </Button>

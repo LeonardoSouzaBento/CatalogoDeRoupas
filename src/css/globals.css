@@ -6,20 +6,28 @@
   /* Fonts */
   --font-default: 'DM Sans', 'sans-serif';
   --font-logo: 'Cookie', 'cursive';
+  /* Breakpoints */
+  --breakpoint-xxs: 320px;
+  --breakpoint-xs: 375px;
+  --breakpoint-md-sm: 430px;
+  --breakpoint-pre-sm: 576px;
+  --breakpoint-pre-md: 704px;
+  --breakpoint-next-md: 840px;
+  --breakpoint-pre-lg: 932px;
   /* Tamanhos de fonte */
   --text-xs: 0.790123em;
-  --text-sm: 0.888889em;
+  --text-sm: 0.8889em;
   --text-base: 1em;
   --text-lg: 1.125em;
   --text-h6: 1.125em;
-  --text-h5: 1.265625em;
-  --text-h4: 1.423828em;
-  --text-h3: 1.601807em;
-  --text-h2: 1.802032em;
-  --text-h1: 2.027287em;
+  --text-h5: 1.2656em;
+  --text-h4: 1.4238em;
+  --text-h3: 1.602em;
+  --text-h2: 1.802em;
+  --text-h1: 2.0273em;
   --text-h1-hero: 2.28em;
   --text-button: 0.943em;
-  --text-sm-button: 0.888em;
+  --text-sm-button: 0.889em;
   --text-lg-button: 1em;
   --spacing-cap-offset: calc(1cap - ((1em - 1cap) / 2));
   --spacing-ex-offset: calc(1ex - ((1em - 1cap) / 2));
@@ -60,6 +68,7 @@
   --color-input-border: hsl(345 9.71% 68.5%);
   --color-input-bg: hsl(345 4.86% 96.5%);
   /* primária */
+  --color-icon-fill: hsla(336, 20%, 90%, 0.3);
   --color-primary-50: #f5f0f2;
   --color-primary-100: #ebe1e5;
   --color-primary-200: #d8c4cc;
@@ -72,24 +81,22 @@
   --color-primary-900: #420929;
   --color-primary-950: #36001f;
   --color-primary-1000: #2b0015;
-
   /* cores de estados */
   --color-yellow: #f5d43b;
   --color-yellow-hover: hsl(49, 90%, 50%);
   /* selecionado */
-  --color-selected-50: #f1f2ff;
-  --color-selected-100: #e3e6fe;
-  --color-selected-200: #c6cdfd;
-  --color-selected-300: #a5b4fc;
-  --color-selected: #a5b4fc;
-  --color-selected-400: #8a9ae0;
-  --color-selected-500: #6e7fc3;
-  --color-selected-600: #5265a6;
-  --color-selected-700: #354d8b;
-  --color-selected-800: #153570;
-  --color-selected-900: #002056;
-  --color-selected-950: #00164a;
-  --color-selected-1000: #00063e;
+  --color-selected: #a3b3ff;
+  --color-selected-50: #eef2ff;
+  --color-selected-100: #e0e7ff;
+  --color-selected-200: #c6d2ff;
+  --color-selected-300: #a3b3ff;
+  --color-selected-400: #7c86ff;
+  --color-selected-500: #615fff;
+  --color-selected-600: #4f39f6;
+  --color-selected-700: #432dd7;
+  --color-selected-800: #372aac;
+  --color-selected-900: #312c85;
+  --color-selected-950: #1e1a4d;
   /* sucesso */
   --color-success-50: #e9f9ea;
   --color-success-100: #d3f3d5;
@@ -103,23 +110,28 @@
   --color-success-900: #003300;
   --color-success-950: #002a00;
   --color-success-1000: #002300;
+  /* destrutivo */
+  --color-destructive: #c10007;
+  --color-destructive-50: #fef2f2;
+  --color-destructive-100: #ffe2e2;
+  --color-destructive-200: #ffc9c9;
+  --color-destructive-300: #ffa2a2;
+  --color-destructive-400: #ff6467;
+  --color-destructive-500: #fb2c36;
+  --color-destructive-600: #e7000b;
+  --color-destructive-700: #c10007;
+  --color-destructive-800: #9f0712;
+  --color-destructive-900: #82181a;
+  --color-destructive-950: #460809;
   /* verde */
   --color-green: #2fbf71;
   --color-green-hover: #20915d;
   /* vermelho */
   --color-red: #e5464f;
   --color-red-hover: #c23c41;
-  /* Breakpoints */
-  --breakpoint-xxs: 320px;
-  --breakpoint-xs: 375px;
-  --breakpoint-md-sm: 430px;
-  --breakpoint-pre-sm: 576px;
-  --breakpoint-pre-md: 704px;
-  --breakpoint-next-md: 840px;
-  --breakpoint-pre-lg: 932px;
 }
 
-.male-palette {
+.male-theme {
   --color-card-foreground: hsl(236 17% 19%);
   --color-muted-foreground: hsl(236 9.71% 41%);
   --color-border: hsl(236 5.86% 86%);
@@ -138,6 +150,18 @@
   --color-primary-900: #2f163f;
   --color-primary-950: #240b34;
   --color-primary-1000: #1b0028;
+  /* cor tema */
+  --color-theme-50: #e6e6ec;
+  --color-theme-100: #cccdd8;
+  --color-theme-200: #b4b4c5;
+  --color-theme-300: #9c9db3;
+  --color-theme-400: #8485a0;
+  --color-theme-500: #6d6f8e;
+  --color-theme-600: #565a7d;
+  --color-theme-700: #3b4168 /*Sua cor*/;
+  --color-theme-800: #20284d;
+  --color-theme-900: #0f1a3c;
+  --color-theme-950: #00082d;
 }
 
 @layer base {
@@ -189,9 +213,10 @@
     background-color: var(--color-light-bg);
     user-select: none;
     position: relative;
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -ms-user-drag: none;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+    -moz-user-drag: none !important;
+    -ms-user-drag: none !important;
   }
 }
 

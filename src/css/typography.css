@@ -1,10 +1,12 @@
 @import 'tailwindcss';
 @import './globals.css';
 
+/*prettier-ignore*/
 @layer components {
-/* 17.5px a  18.5px*/
+/* 17.5px a 18.5px*/
   body {
-  @apply text-[1.09375rem] sm:text-[1.125rem] md:text-[1.13125rem] lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
+  @apply text-[1.09375rem] sm:text-[1.125rem] md:text-[1.13125rem] 
+  lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
   }
   .smaller-text {@apply text-xs;}
 
@@ -48,44 +50,19 @@
     @apply font-normal; /* 400 */
   }
 
-  p,
-  li,
-  input,
-  select,
-  option {
-    @apply font-normal; /* 500 */
-  }
-
-  a,
-  h6,
-  h5,
-  h4 {
-    @apply font-semibold; /* 600 */
-  }
-
-  button,
-  label {
-    @apply font-semibold; /* 600 */
-  }
-
-  h3,
-  h2 {
-    @apply font-bold; /* 700 */
-  }
-
-  h1,
-  strong {
-    @apply font-extrabold; /* 800 */
-  } 
+  p, li, input, select, option { @apply font-normal; }
+  a, h6, h5, h4 { @apply font-semibold; }
+  button, label { @apply font-semibold; }
+  h3, h2 { @apply font-bold; }
+  h1, strong { @apply font-extrabold; }
 
 /* LINE HEIGHTS */ 
-  .h1-hero { @apply leading-[1.1]; } 
-  h1 { @apply leading-[1.22]; } 
-  h2 { @apply leading-[1.24]; } 
-  h3 { @apply leading-[1.28]; } 
-  h4 { @apply leading-[1.32]; } 
-  h5 { @apply leading-[1.38]; } 
-  h6 { @apply leading-[1.44]; } 
+  h1 { @apply leading-[1.20]; }
+  h2 { @apply leading-[1.22]; }
+  h3 { @apply leading-[1.26]; }
+  h4 { @apply leading-[1.30]; }
+  h5 { @apply leading-[1.36]; }
+  h6 { @apply leading-[1.42]; }
 
   p, li, input, select, option { 
     @apply leading-[1.52]; 

@@ -7,7 +7,7 @@ const Result = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="equal" size="h3" className="mr-1" />
+          <MuiIcon icon="equal" size="h4" />
           <h3>Resultado</h3>
         </CardTitle>
         <CardDescription>Resultado</CardDescription>

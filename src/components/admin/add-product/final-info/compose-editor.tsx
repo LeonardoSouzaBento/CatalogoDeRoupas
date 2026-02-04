@@ -86,7 +86,7 @@ const Materials: React.FC<MaterialsProps> = ({
   }, materialsList[0]);
 
   return (
-    <WrapperOptions styles={css.container} title="Selecione o material">
+    <WrapperOptions wrapperCss={css.container} title="Selecione o material">
       <div
         ref={ref}
         className={`${css.ButtonsWrapper} ${seeCommonFabrics && 'ring ring-blue-300 p-0.5 pb-0'}`}>

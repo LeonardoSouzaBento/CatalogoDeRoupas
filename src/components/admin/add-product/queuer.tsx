@@ -16,7 +16,7 @@ const Queuer = ({ selectedQuantity, setSelectedQuantity }: Props) => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="layers" size="h3" className="mr-1" />
+          <MuiIcon icon="layers" size="h4" fill />
           <h3>Enfileirar produtos</h3>
         </CardTitle>
         <CardDescription>Fazer cópias editáveis desse produto</CardDescription>

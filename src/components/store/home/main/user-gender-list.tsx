@@ -23,6 +23,12 @@ export const UserGenderList = (): React.ReactElement => {
       setChildCatSelected(false);
       setSelectedGender(gender);
     }
+    if (gender === 'masculino') {
+      document.body.classList.add('male-theme');
+    }
+    if (gender === 'feminino') {
+      document.body.classList.remove('male-theme');
+    }
     if (gender === 'infantil') {
       setChildCatSelected(true);
     }

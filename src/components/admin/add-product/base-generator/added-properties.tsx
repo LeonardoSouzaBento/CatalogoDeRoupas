@@ -3,11 +3,12 @@ import { useContext } from 'react';
 import { UserContext } from '@/contexts/index';
 import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
 import { X } from 'lucide-react';
+import { Icon } from '@/components/ui';
 
 const css = {
-  wrapper: `border p-5 flex flex-wrap gap-3 rounded-tr-none rounded-tl-none`,
-  wrapperButton: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
-  bg-light-bg rounded-full border`,
+  wrapper: `border p-4 flex flex-wrap gap-3 rounded-b-md`,
+  buttonWrapper: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
+  bg-light-bg rounded-full border text-sm`,
   name: `capitalize text-gray-800`,
   strong: `font-medium tracking-wide`,
 };
@@ -52,16 +53,16 @@ const AddedProperties = ({
       {infoArray.map(
         (item) =>
           item.value && (
-            <div key={item.label} className={`${css.wrapperButton}`}>
+            <div key={item.label} className={`${css.buttonWrapper}`}>
               <span className={css.name}>
                 {item.label}: <strong className={css.strong}>{item.value}</strong>
               </span>
               <Button
-                variant="ghost"
-                size="icon"
-                className="size-8 rounded-full text-red-500 hover:text-red-700"
+                variant="secondary"
+                size="icon-sm"
+                className="rounded-full text-red-500 hover:text-red-700"
                 onClick={() => clearValue(item.label)}>
-                <X size={16} />
+                <Icon LucideIcon={X} />
               </Button>
             </div>
           ),

@@ -4,12 +4,12 @@ import { PageHeader, PageHeaderWrapper, PageTitle } from '@/components/ui';
 const page = () => {
   return (
     <>
-      <PageHeader>
-        <PageHeaderWrapper>
+      <PageHeader className='px-3 sm:px-6'>
+        <PageHeaderWrapper className='max-w-3xl pre-lg:max-w-4xl xl:max-w-5xl'>
           <PageTitle>Favoritos do usuário</PageTitle>
         </PageHeaderWrapper>
       </PageHeader>
-      <div className={`px-3 pb-6`}>
+      <div className={`pt-3 px-3 sm:px-6 pb-6 max-w-max mx-auto`}>
         <UserFavoritesCore />
       </div>
     </>

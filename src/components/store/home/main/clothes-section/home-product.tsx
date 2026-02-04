@@ -4,10 +4,10 @@ import { ProductInput } from './product-input/product-input_';
 import Image from 'next/image';
 
 const css = {
-  productWrapper: `h-max min-w-[80vw] sm:min-w-110 flex flex-col items-end shadow-md select-none
+  productWrapper: `h-max w-[84vw] max-w-104 md:max-w-108 shrink-0 flex flex-col items-end shadow-md select-none
      hover:shadow-lg-hover hover:scale-101 transition-200 rounded-md overflow-hidden`,
-  imagesWrapper: `w-full h-[80vw] max-h-120 select-none relative
-  grid grid-cols-[1fr_1.5fr] relative bg-light-bg rounded-none`,
+  imagesWrapper: `w-full min-h-80 h-[80vw] max-h-120 select-none relative
+  grid grid-cols-[1fr_2fr] xs:grid-cols-[1fr_1.75fr] sm:grid-cols-[1fr_1.6fr] relative bg-light-bg rounded-none`,
 };
 
 const HomeProduct = ({
@@ -31,11 +31,10 @@ const HomeProduct = ({
                   src={image}
                   alt={`Img do produto: ${item.alt}`}
                   fill
-                  className="size-full object-cover"
+                  className={`size-full object-cover ${index === 0 ? 'py-3' : 'px-3'}`}
                 />
               </div>
             ))}
-            <div className="absolute inset-0 bg-transparent z-4"></div>
           </div>
           <div
             className={`w-full px-5 py-4 bg-light-bg border-t 

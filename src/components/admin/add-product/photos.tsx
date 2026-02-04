@@ -10,7 +10,7 @@ const Photos = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="photo_library" size="h3" className="mr-1" />
+          <MuiIcon icon="photo_library" size="h4" fill />
           <h3>Fotos</h3>
         </CardTitle>
       </CardHeader>

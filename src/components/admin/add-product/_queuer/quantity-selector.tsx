@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import type { StateSetter } from '@/types/types';
 import { Minus, Plus, X } from 'lucide-react';
+import { Icon } from '@/components/ui';
 
 const css = {
   wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end justify-center gap-3.5 
@@ -83,7 +84,7 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
           onClick={(e) => {
             incrementAll(e);
           }}>
-          <Plus size={18} />
+          <Icon LucideIcon={Plus} />
         </Button>
         {numberOptions[0] !== 1 && (
           <Button
@@ -93,7 +94,7 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
             onClick={(e) => {
               decrementAll(e);
             }}>
-            <Minus size={18} />
+            <Icon LucideIcon={Minus} />
           </Button>
         )}
       </div>

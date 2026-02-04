@@ -1,19 +1,26 @@
 'use client';
-
-import { Card, CardHeader, CardTitle, MuiIcon } from '@/components/ui';
-import { UserDetail } from './user-favorites/user-detail';
+import { Card } from '../ui';
+import { UserData, UserFavorites, UsersGrid } from './user-favorites/index';
 
 const UserFavoritesCore = () => {
   return (
     <>
-      <UserDetail />
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-theme-700">
-            <MuiIcon icon="bookmark_heart" fill size="h4" />
-            <h4>Favoritos Deste usuário</h4>
-          </CardTitle>
-        </CardHeader>
+      <Card className={`max-w-3xl pre-lg:max-w-4xl xl:max-w-5xl`}>
+        <div
+          className={`flex flex-col gap-4 
+            **:data-[slot='card-header']:text-theme-700 
+          `}>
+          <UsersGrid />
+          <div
+            className={`
+              flex flex-col gap-4
+              **:data-[slot='card-header']:border-b 
+              **:data-[slot='card-header']:pb-2 
+            `}>
+            <UserData />
+            <UserFavorites />
+          </div>
+        </div>
       </Card>
     </>
   );

@@ -2,18 +2,17 @@ import type { LucideIcon as LucideIconType, LucideProps } from 'lucide-react';
 
 type SizeValue = keyof typeof iconSizes;
 const iconSizes = {
-  xs: '0.889em',
-  sm: '0.943em',
+  xs: '0.790123em',
+  sm: '0.888889em',
   md: '1em',
-  lg: '1.061em',
+  lg: '1.125em',
+  xl: '1.2656em',
+  '2xl': '1.4238em',
+  '3xl': '1.6018em',
   h6: '1.125em',
-  h5: '1.266em',
-  h4: '1.424em',
-  h3: '1.602em',
-  xl: '1.125em',
-  '2xl': '1.266em',
-  '3xl': '1.424em',
-  '4xl': '1.602em',
+  h5: '1.2656em',
+  h4: '1.4238em',
+  h3: '1.6018em',
 };
 
 type StrokeValue = keyof typeof weights;

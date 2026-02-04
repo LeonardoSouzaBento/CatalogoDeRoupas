@@ -35,24 +35,13 @@ const AdministrationOptions = () => {
 
   return (
     <>
-      {optionButtons.map((item) =>
-        item.url ? (
-          <Button variant="transparent" key={item.name} asChild>
-            <Link href={item.url}>
-              <MuiIcon
-                icon={item.icon}
-                fill
-                className="text-theme"
-                size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
-              />
-              {item.name}
-            </Link>
-          </Button>
-        ) : (
-          <Button
-            variant="transparent"
-            key={item.name}
-            onClick={() => item.setEditMode && setHomeEditMode(true)}>
+      {optionButtons.map((item) => (
+        <Button
+          variant="transparent"
+          key={item.name}
+          asChild
+          onClick={() => item.setEditMode && setHomeEditMode(true)}>
+          <Link href={item.url || '#'}>
             <MuiIcon
               icon={item.icon}
               fill
@@ -60,9 +49,9 @@ const AdministrationOptions = () => {
               size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
             />
             {item.name}
-          </Button>
-        ),
-      )}
+          </Link>
+        </Button>
+      ))}
     </>
   );
 };

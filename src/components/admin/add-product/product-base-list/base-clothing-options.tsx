@@ -1,3 +1,4 @@
+import { Icon } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { X } from 'lucide-react';
 
@@ -16,21 +17,28 @@ const BaseClothingOptions = ({ clothes, selectedName, setSelectedName }: ButtonP
 
         return (
           <Button
+            data-option
+            selected={selected}
             key={index}
-            variant={selected ? 'default' : 'outline'}
-            className={`rounded-full px-6 transition-all duration-150 relative max-[400px]:w-full sm:min-w-60 ${selected ? 'pr-13' : ''}`}
+            variant="ghost"
+            className={`rounded-full px-6 transition-all duration-150 
+            relative max-[400px]:w-full sm:min-w-60 ${selected && 'pr-13'}`}
             onClick={() => setSelectedName(item)}>
             {shortName}
-
             {selected && (
-              <span
+              <Button
+                asChild
+                size="icon-sm"
+                variant="secondary"
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedName('');
                 }}
-                className="size-8 absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-light-bg/60 hover:shadow-lg transition-all duration-300">
-                <X size={16} strokeWidth={2.3} className="text-foreground" />
-              </span>
+                className="absolute right-1 top-1/2 -translate-y-1/2 rounded-full hover:shadow-lg">
+                <div role="button" aria-roledescription="button" tabIndex={0}>
+                  <Icon LucideIcon={X} className="text-destructive" />
+                </div>
+              </Button>
             )}
           </Button>
         );

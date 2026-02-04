@@ -16,7 +16,7 @@ const GenderButtons = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="wc" />
+          <MuiIcon icon="wc" size="h4" />
           <h3>Gênero</h3>
         </CardTitle>
       </CardHeader>

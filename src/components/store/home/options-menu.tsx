@@ -55,7 +55,7 @@ const OptionsMenu = ({ setSeeOptionsSection }: { setSeeOptionsSection: BooleanSe
           </Button>
         </div>
 
-        <div className="pl-1">
+        <div className="pl-1 **:[button]:w-full **:[button]:justify-start">
           <TitleButtonGroup title="Administrar" />
           <div className={css.buttonsWrapper}>
             <AdministrationOptions />

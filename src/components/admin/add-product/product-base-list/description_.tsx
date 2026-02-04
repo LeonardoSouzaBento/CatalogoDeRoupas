@@ -1,8 +1,6 @@
 'use client';
-
-const css = {
-  wrapperDesc: `border p-5 pt-4 pb-5`,
-};
+import { Alert, AlertDescription, AlertTitle, Icon } from '@/components/ui';
+import { Info } from 'lucide-react';
 
 interface DescriptionProps {
   selectedName: string;
@@ -14,18 +12,21 @@ const Description = ({ selectedName }: DescriptionProps) => {
     : ['', ''];
 
   return (
-    <div className={css.wrapperDesc}>
-      <p className="text-gray-800 font-semibold mb-1 ">Descrição completa: </p>
-      <p className="text-gray-800 ">
-        {selectedName ? (
-          <>
-            {firstPart} - {restPart}
-          </>
-        ) : (
-          <strong className="font-normal">Selecione um item caso queira</strong>
-        )}
-      </p>
-    </div>
+    <Alert>
+      <Icon LucideIcon={Info} />
+      <AlertTitle>Descrição completa</AlertTitle>
+      <AlertDescription>
+        <p>
+          {selectedName ? (
+            <>
+              {firstPart} - {restPart}
+            </>
+          ) : (
+            <span>Selecione um item caso queira</span>
+          )}
+        </p>
+      </AlertDescription>
+    </Alert>
   );
 };
 

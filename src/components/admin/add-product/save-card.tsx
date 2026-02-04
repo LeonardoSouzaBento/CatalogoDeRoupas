@@ -1,21 +1,21 @@
-import { CardHeader, CardTitle, MuiIcon } from '@/components/ui/index';
-import { SaveProductButton } from './result/save-product-button';
-
-const css = { wrapper: `card-styles`, p: ``, button: `` };
+import { Button, Card, CardHeader, CardTitle, Icon, MuiIcon } from '@/components/ui/index';
+import { CircleCheckBig } from 'lucide-react';
 
 const SaveCard = () => {
   return (
-    <div className={css.wrapper}>
+    <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="bucket_check" size="h3" />
+          <MuiIcon icon="bucket_check" size="h4" fill />
           <h3>Salvar produto</h3>
         </CardTitle>
       </CardHeader>
-      <SaveProductButton />
-    </div>
+      <Button className="w-full mt-5">
+        Salvar produto no catálogo
+        <Icon LucideIcon={CircleCheckBig} />
+      </Button>
+    </Card>
   );
 };
 
 export { SaveCard };
-

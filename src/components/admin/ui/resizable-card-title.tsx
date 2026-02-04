@@ -1,55 +1,48 @@
 'use client';
 import { Button } from '@/components/ui';
-import { setReducedHeight } from '@/functions/setReducedHeight';
-import type { BooleanSetter, StateSetter } from '@/types/types';
 import { ChevronDown } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Props {
   children: React.ReactNode;
-  expand: boolean;
-  setExpand: BooleanSetter;
-  setDivHeight: StateSetter<string | null>;
-  valueToFixHeight?: number;
-  buttonStyles?: string;
-  resizeCount?: number;
+  cardRef: React.RefObject<HTMLDivElement | null>;
+  resizeCount: number;
+  pb?: number;
+  cssButton?: string;
 }
 
-export function ResizableCardTitle({
-  children,
-  expand,
-  setExpand,
-  setDivHeight,
-  valueToFixHeight = 10,
-  buttonStyles,
-  resizeCount,
-}: Props) {
+export function ResizableCardTitle({ children, cardRef, cssButton, resizeCount, pb = 0 }: Props) {
+  const [expand, setExpand] = useState(false);
   const wrapperTitleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setReducedHeight(wrapperTitleRef, setDivHeight, valueToFixHeight);
-  }, []);
-
-  useEffect(() => {
-    setReducedHeight(wrapperTitleRef, setDivHeight, valueToFixHeight);
-  }, [resizeCount]);
+    if (cardRef.current && wrapperTitleRef.current) {
+      if (expand) {
+        cardRef.current.style.height = 'auto';
+      } else {
+        const height = wrapperTitleRef.current.offsetHeight;
+        cardRef.current.style.height = (pb + height) / 16 + 'rem';
+      }
+    }
+  }, [expand, resizeCount, cardRef]);
 
   return (
     <div
       ref={wrapperTitleRef}
-      className={`max-h-max flex justify-between gap-4 sm:justify-start`}
+      className={`w-full flex justify-between gap-4 sm:justify-start`}
       onClick={() => {
         setExpand((prev) => !prev);
       }}>
       {children}
 
       <Button
-        size={'icon'}
+        size={'icon-sm'}
+        variant={'secondary'}
         onClick={(e) => {
           e.stopPropagation();
           setExpand((prev) => !prev);
         }}
-        className={`-mr-2 pt-px sm:mt-1 sm:mr-0 ${buttonStyles && buttonStyles} ${
+        className={`rounded-full -mr-2 pt-px sm:mt-1 sm:mr-0 ${cssButton} ${
           expand ? 'rotate-180 pt-1 pl-0 pr-px' : 'rotate-0 pl-px'
         }`}>
         <ChevronDown />

@@ -31,8 +31,8 @@ const FinalInfo = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="edit_note" size="h3" />
-          Demais informações
+          <MuiIcon icon="edit_note" size="h3" fill />
+          <h3>Demais informações</h3>
         </CardTitle>
       </CardHeader>
 

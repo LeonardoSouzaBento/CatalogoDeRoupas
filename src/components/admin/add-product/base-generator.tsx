@@ -85,7 +85,7 @@ const BaseGenerator = () => {
     <Card>
       <CardHeader>
         <CardTitle className="gap-2">
-          <MuiIcon icon="edit_note" size="h3" className="mr-1" weight={500} />
+          <MuiIcon icon="edit_note" size="h3" weight={500} fill />
           <h3>Informações básicas</h3>
         </CardTitle>
         <CardDescription>

@@ -109,11 +109,11 @@ export type UserSex = 'masculino' | 'feminino';
 
 /* Usuário */
 export interface UserData {
-  name: string;
+  nome: string;
   email: string;
-  sex: UserSex;
-  position: string;
-  favorites?: [''];
+  sexo: UserSex;
+  posição: string;
+  favoritos?: [''];
   camisa?: string;
   calça?: string | number;
   calçado?: number;

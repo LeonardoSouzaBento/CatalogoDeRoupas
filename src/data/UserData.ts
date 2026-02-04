@@ -1,14 +1,15 @@
 import type { HomepageUserGender, UserData } from '@/types/types';
 
 export const defaultUserData: UserData = {
-  name: 'Meu Nome Sobrenome',
+  nome: 'Meu Nome Sobrenome',
   email: 'meuemail@email.com',
-  sex: 'masculino',
-  position: 'user',
+  sexo: 'masculino',
+  posição: 'user',
   camisa: 'M',
   calça: 40,
   calçado: 40,
-};
+  favoritos: [''],
+}; 
 
 export const homeUserGenders: HomepageUserGender[] = ['masculino', 'feminino', 'infantil'];
 
