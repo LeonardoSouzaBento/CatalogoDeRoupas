@@ -26,7 +26,7 @@ export const MainCatsInput = (): React.ReactElement => {
           <Button
             key={gender}
             variant="ghost"
-            size={'ghost'}
+            size={'default'}
             onClick={() => {
               if (selectedGender !== gender) {
                 setSelectedGender(gender);
