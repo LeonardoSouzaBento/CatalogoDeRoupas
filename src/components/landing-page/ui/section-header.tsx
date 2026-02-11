@@ -18,7 +18,7 @@ function SectionTitle({ className, ...props }: React.ComponentProps<'h3'>) {
 }
 
 function SectionDescription({ className, ...props }: React.ComponentProps<'h6'>) {
-  return <p className={cn('max-w-max text-gray-500 large-text text-center mb-ex-offset', className)} {...props} />;
+  return <p className={cn('max-w-max text-gray-500 large-text font-[350] text-center mb-1', className)} {...props} />;
 }
 
 export { SectionHeader, SectionTitle, SectionDescription };

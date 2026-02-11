@@ -10,10 +10,10 @@ export interface ProviderType {
 export type Gender = 'masculino' | 'feminino' | 'unisex';
 export const genders: Gender[] = ['masculino', 'feminino'];
 
-export type HomepageUserGender = 'masculino' | 'feminino' | 'infantil';
+export type HomePageUserGender = 'masculino' | 'feminino' | 'infantil';
 
 export interface UserGenres {
-  name: HomepageUserGender;
+  name: HomePageUserGender;
   active: boolean;
 }
 

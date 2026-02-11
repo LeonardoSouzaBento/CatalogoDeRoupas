@@ -1,16 +1,17 @@
 type SizeValue = keyof typeof iconSizes;
 const iconSizes = {
-  xs: '0.790123em',
-  sm: '0.888889em',
-  md: '1em',
+  xs: '0.889em',
+  sm: '0.943em',
+  base: '1em',
+  md: '1.061em',
   lg: '1.125em',
-  xl: '1.2656em',
-  '2xl': '1.4238em',
-  '3xl': '1.6018em',
+  xl: '1.266em',
+  '2xl': '1.424em',
+  '3xl': '1.602em',
   h6: '1.125em',
-  h5: '1.2656em',
-  h4: '1.4238em',
-  h3: '1.6018em',
+  h5: '1.266em',
+  h4: '1.424em',
+  h3: '1.602em',
 };
 
 interface IconProps {
@@ -24,7 +25,7 @@ export const MuiIcon = ({
   icon,
   size,
   fill = false,
-  weight = 600,
+  weight = 500,
   className,
   ...props
 }: React.ComponentProps<'span'> & IconProps) => {

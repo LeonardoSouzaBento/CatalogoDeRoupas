@@ -1,12 +1,12 @@
-import React from 'react'
-import ButtonStyleTester from '@/components/button-tester'
+import React from 'react';
+import { ButtonTester } from '@/components/ui/button-tester';
 
 const Page = () => {
   return (
     <div>
-      <ButtonStyleTester />
+      <ButtonTester />
     </div>
-  )
-}
+  );
+};
 
 export default Page;

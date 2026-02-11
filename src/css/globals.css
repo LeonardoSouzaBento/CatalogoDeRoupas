@@ -66,7 +66,7 @@
   --color-muted-foreground: hsl(345 10.57% 38%);
   --color-border: hsl(345 6.29% 83%);
   --color-input-border: hsl(345 9.71% 68.5%);
-  --color-input-bg: hsl(345 4.86% 96.5%);
+  --color-input: hsl(345 4.86% 96.5%);
   /* primária */
   --color-icon-fill: hsla(336, 20%, 90%, 0.3);
   --color-primary-50: #f5f0f2;
@@ -151,6 +151,7 @@
   --color-primary-950: #240b34;
   --color-primary-1000: #1b0028;
   /* cor tema */
+  --color-theme: #3b4168;
   --color-theme-50: #e6e6ec;
   --color-theme-100: #cccdd8;
   --color-theme-200: #b4b4c5;
@@ -205,10 +206,14 @@
     @apply min-h-dvh bg-linear-to-br from-light-bg to-dark-bg 
     text-card-foreground relative w-full max-w-[1400px] mx-auto;
   }
-  button {
+  a, button {
     user-select: none;
     position: relative;
+    cursor: pointer;
   }
+  /* h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+  } */
   img {
     background-color: var(--color-light-bg);
     user-select: none;

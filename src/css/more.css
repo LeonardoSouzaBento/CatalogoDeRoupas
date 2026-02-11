@@ -1,11 +1,16 @@
-@import 'tailwindcss';
-@import './globals.css';
+@import "tailwindcss";
+@import "./globals.css";
 
 @layer components {
+  .landing-page {
+    @apply text-[1.230468rem] sm:text-[1.125rem] md:text-[1.13125rem] 
+    lg:text-[1.14375rem] xl:text-[1.15625rem] 2xl:text-[1.16875rem];
+  }
+
   .body-wrapper {
     @apply pt-3 sm:pt-4 pb-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 mx-auto;
   }
-  
+
   .absolute-top {
     @apply absolute top-0 left-0;
   }

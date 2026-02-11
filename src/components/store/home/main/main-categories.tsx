@@ -6,7 +6,7 @@ import { MainCategory } from '@/types/types';
 import Image from 'next/image';
 import { useContext, useRef, useState } from 'react';
 import { MainCatsInput } from './main-categories/_inputs/main-cats-input';
-import { useMouseScrollX, useResizeCount, useScrollGetVars } from '@/hooks';
+import { useMouseScrollX, useScrollGetVars } from '@/hooks';
 
 const css = {
   container: `
@@ -17,13 +17,13 @@ const css = {
   editMode: 'pb-0 mb-0 m-auto max-w-210',
   wrapperEditMode: 'p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg',
   imageWrapper: `
-    h-[66dvw] max-h-102 flex items-end relative overflow-hidden bg-theme-100 rounded-lg 
+    h-[66dvw] max-h-102 flex items-end relative overflow-hidden bg-theme-100 rounded-md 
     next-md:w-74 next-md:min-w-74
   `,
   image: 'absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-30',
   nameWrapper: `w-full flex-center relative bg-linear-to-t from-primary-950/80 to-transparent 
     [text-shadow:_0_0_8px_rgb(0,_4px,_8px,_0.8)]`,
-  name: 'w-full py-6 px-8 text-primary-50 sm:text-center leading-none',
+  name: 'w-full p-6 text-primary-50 sm:text-center leading-none',
 };
 
 export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {

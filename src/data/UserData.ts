@@ -1,4 +1,4 @@
-import type { HomepageUserGender, UserData } from '@/types/types';
+import type { HomePageUserGender, UserData } from '@/types/types';
 
 export const defaultUserData: UserData = {
   nome: 'Meu Nome Sobrenome',
@@ -11,7 +11,7 @@ export const defaultUserData: UserData = {
   favoritos: [''],
 }; 
 
-export const homeUserGenders: HomepageUserGender[] = ['masculino', 'feminino', 'infantil'];
+export const homeUserGenders: HomePageUserGender[] = ['masculino', 'feminino', 'infantil'];
 
 export const filterUserGenders = [
   'masculino',

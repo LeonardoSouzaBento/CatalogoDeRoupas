@@ -10,7 +10,7 @@ export const UserGenders = () => {
     useContext(UserContext);
 
   return (
-    <div className={`border rounded-lg p-3 pt-2`}>
+    <div>
       <p className="mb-1 font-semibold tracking-wide">Gênero:</p>
       <ButtonsWrapper>
         {genders.map((gender) => (

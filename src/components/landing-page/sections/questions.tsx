@@ -55,9 +55,10 @@ const TextContent = () => {
           <Icon
             LucideIcon={item.icon}
             className="text-theme mt-1"
-            size="xl"
-            strokeWidth={'thin'}
+            size="lg"
+            strokeWidth={'light'}
             fill="var(--color-primary-50)"
+            style={{ scale: item.id === 3 ? 1.01 : 1 }}
           />
           <div className={`-mt-1.5`}>
             {item.text} <CheckIcon />

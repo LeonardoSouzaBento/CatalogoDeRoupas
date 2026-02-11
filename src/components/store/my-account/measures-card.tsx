@@ -49,7 +49,7 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
             <p>Defina suas medidas para podermos separar as peças mais rapidamente para você.</p>
           </AlertDescription>
         </Alert>
-        <div className="border rounded-lg">
+        <div className="border rounded-md">
           <Table>
             <TableHeader>
               <TableRow>

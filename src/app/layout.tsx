@@ -10,7 +10,6 @@ import '../css/landing-page.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700', '800'],
   variable: '--font-default',
 });
 
@@ -19,6 +18,7 @@ const cookie = Cookie({
   weight: '400',
   variable: '--font-logo',
 });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000'),
@@ -64,7 +64,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`${dmSans.variable} ${cookie.variable}`}>
+    <html
+      lang="pt-br"
+      className={`${dmSans.variable} ${cookie.variable}`}>
       <body>
         <PublicDataProvider>
           <UserProvider>

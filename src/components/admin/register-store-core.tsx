@@ -8,7 +8,7 @@ const RegisterStoreCore = () => {
   return (
     <div>
       <Header seeAddresForm={seeAddresForm} setSeeAddresForm={setSeeAddresForm} />
-      <div className="bg-light-bg p-6 pt-4 shadow-lg hover:shadow-lg-hover rounded-lg">
+      <div className="bg-light-bg p-6 pt-4 shadow-lg hover:shadow-lg-hover rounded-md">
         {!seeAddresForm ? <PersonalForm /> : <AddressForm setSeeAddresForm={setSeeAddresForm} />}
       </div>
     </div>

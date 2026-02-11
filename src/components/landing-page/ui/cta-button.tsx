@@ -28,12 +28,12 @@ export function CTAButton({
       <Link
         href="/loja"
         className={`h-11 flex items-center justify-center gap-2 px-[1.5em]
-        text-center rounded-xl font-semibold cursor-pointer
+        text-center rounded-xl capitalize font-[550] cursor-pointer
         bg-linear-to-r from-yellow-300 to-yellow-400
         hover:scale-104 transition-all duration-200
       [&_svg]:text-theme large-button leading-none ${cssButton}`}>
-        {showIcon && <Icon LucideIcon={ShoppingBag} size="lg" className="mb-0.5" />}
-        Ver Catálogo Completo
+        {showIcon && <Icon LucideIcon={ShoppingBag} className="mb-px" />}
+        <span className='text-center w-fit'>Ver um Catálogo Completo</span>
       </Link>
     </ButtonWrapper>
   );

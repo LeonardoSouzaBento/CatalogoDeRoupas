@@ -43,7 +43,7 @@ const Plans = (): React.ReactElement => {
     <section
       className={`landing-page-section p-6 pt-4 md:max-w-max lg:max-w-5xl 
     xl:max-w-274`}>
-      <SectionHeader className="mb-1">
+      <SectionHeader className="mb-2">
         <SectionTitle>Quanto Custa?</SectionTitle>
         <SectionDescription>Temos preços acessíveis</SectionDescription>
       </SectionHeader>

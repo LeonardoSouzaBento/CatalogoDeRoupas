@@ -8,7 +8,7 @@ import { Check, Trash, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 const css = {
-  wrapper: 'absolute-top z-2 size-full bg-light-bg p-5 rounded-lg',
+  wrapper: 'absolute-top z-2 size-full bg-light-bg p-5 rounded-md',
   header:
     'h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none',
   h3: ' font-medium text-gray-800',

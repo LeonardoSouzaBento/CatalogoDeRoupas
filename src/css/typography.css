@@ -71,7 +71,7 @@
   label { @apply leading-[1.35];} 
 
   button { 
-    @apply leading-[1.15]; 
+    @apply leading-none; 
   } 
 
   .large-text { @apply leading-[1.68]; } 

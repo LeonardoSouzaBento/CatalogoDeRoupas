@@ -12,8 +12,8 @@ export const Suggestions = () => {
   const [selected, setSelected] = useState<string>('');
 
   return (
-    <div className="h-max p-3 pt-2 border shadow-xs rounded-lg">
-      <div className='relative'>
+    <div className="h-max shadow-xs rounded-md">
+      <div className="relative">
         <p className="mb-2 font-semibold tracking-wide">Buscas Frequentes:</p>
       </div>
       <div
@@ -30,7 +30,7 @@ export const Suggestions = () => {
             onClick={() => {
               setSelected(item);
             }}>
-            <Icon LucideIcon={Search} />
+            <Icon LucideIcon={Search} size='lg' className='mb-1' />
             {item}
           </Button>
         ))}

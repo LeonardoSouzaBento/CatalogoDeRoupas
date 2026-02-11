@@ -22,7 +22,7 @@ const Links = () => {
       {pageOptions.map((item) => (
         <Button variant="transparent" key={item.name} asChild>
           <Link href={item.link}>
-            <MuiIcon icon={item.icon} fill className="text-theme" size="xl" />
+            <MuiIcon icon={item.icon} fill className="text-theme" size="lg" />
             {item.name}
           </Link>
         </Button>

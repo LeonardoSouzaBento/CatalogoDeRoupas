@@ -1,5 +1,6 @@
-import { ZapFixedButton } from '@/components/ui/index';
-import { Hero, Logo, Plans, Process, Questions } from './sections';
+"use client";
+import { ZapFixedButton } from "@/components/ui/index";
+import { Hero, Logo, Plans, Process, Questions } from "./sections";
 
 const css = {
   main: `px-4 pt-6 pb-10 sm:px-6 md:px-8 lg:px-12 xl:px-14 
@@ -11,7 +12,7 @@ const css = {
 
 const LandingPageCore = () => {
   return (
-    <>
+    <div className="landing-page">
       <Logo />
       <Hero />
       <main className={css.main}>
@@ -21,8 +22,9 @@ const LandingPageCore = () => {
         </div>
         <Plans />
       </main>
+
       <ZapFixedButton myNumber={true} />
-    </>
+    </div>
   );
 };
 

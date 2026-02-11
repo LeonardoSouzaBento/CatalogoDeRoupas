@@ -1,6 +1,6 @@
 'use client';
 import { HomeContext, UserContext } from '@/contexts/index';
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import {
   AboutSection,
   EverydaySection,
@@ -8,7 +8,7 @@ import {
   GymSection,
   MainCategories,
   SpecialSection,
-  UserGenderList,
+  GenderSelector,
 } from './main/index';
 import { Section } from './ui';
 
@@ -31,7 +31,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
   return (
     <main>
       <Section bgLinear={false} defaultShadow={false} className={`bg-light-bg px-0 pt-4 pb-5`}>
-        <UserGenderList />
+        <GenderSelector />
       </Section>
 
       <Section data-clothes>
@@ -64,7 +64,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
         bgLinear={false}
         defaultShadow={false}
         className={`bg-light-bg [&>div]:max-w-210 [&>div]:h-auto
-        [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-lg [&>div]:mx-auto`}>
+        [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-md [&>div]:mx-auto`}>
         <AboutSection />
       </Section>
     </main>

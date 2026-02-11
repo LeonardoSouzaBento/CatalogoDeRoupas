@@ -91,7 +91,7 @@ const Choices = () => {
     <>
       {currentMostSearched.map((item) => (
         <Button variant="transparent" key={item}>
-          <Icon LucideIcon={Search} fill="var(--color-primary-50)" />
+          <Icon LucideIcon={Search} fill="var(--color-primary-50)" size="lg" />
           {item}
         </Button>
       ))}

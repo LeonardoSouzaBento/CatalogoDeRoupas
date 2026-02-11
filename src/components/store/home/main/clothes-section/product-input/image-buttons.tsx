@@ -20,12 +20,7 @@ const ImageButtons = ({ mainImage = true }: { mainImage?: boolean }) => {
     <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-[1fr_1.45fr] gap-4">
       {imagesData.map((image, index) => (
         <div key={index} className="w-auto h-64 relative">
-          <Image
-            src={image.url}
-            alt={image.alt}
-            fill
-            className="border rounded-md"
-          />
+          <Image src={image.url} alt={image.alt} fill className="border rounded-md" />
           <Button
             size={'icon'}
             variant={'secondary'}

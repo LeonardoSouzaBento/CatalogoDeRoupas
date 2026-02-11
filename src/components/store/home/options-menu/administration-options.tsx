@@ -46,7 +46,7 @@ const AdministrationOptions = () => {
               icon={item.icon}
               fill
               className="text-theme"
-              size={item.name === 'atualizar produtos' ? '3xl' : 'xl'}
+              size={item.name === 'atualizar produtos' ? '2xl' : 'lg'}
             />
             {item.name}
           </Link>

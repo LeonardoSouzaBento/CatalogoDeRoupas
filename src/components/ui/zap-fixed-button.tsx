@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
   const css = {
-    wrapper: `size-11 box-border bg-success-500 flex-center rounded-xl crop fixed bottom-4 right-4 z-5
-    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] transition-200 shadow-green-soft`,
+    wrapper: `size-11 box-border bg-success-500 flex-center rounded-xl crop fixed bottom-16 right-4 z-5
+    [box-shadow:0_0_15px_#00000017,0_4_8px_#0000001a] hover:scale-[108.334%] transition-200 shadow-green-soft bg-[#28A716]`,
   };
 
   function handleOpenChat() {
@@ -20,7 +20,7 @@ export const ZapFixedButton = ({ myNumber }: { myNumber?: boolean }) => {
         src={`/icons/zap-fixed-button.png`}
         fill
         alt="imagem do whatssap"
-        className="mb-1 ml-px"
+        className="pb-px ml-px bg-[#28A716]"
       />
     </div>
   );

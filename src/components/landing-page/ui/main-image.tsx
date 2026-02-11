@@ -1,17 +1,14 @@
-import React from 'react';
-import Image from 'next/image';
-import { CTAButton } from './cta-button';
+import { CTAButton } from "./cta-button";
+import { Iphone15Pro } from "./iphone";
 
-const MainImage = ({ src = '/home/phone3.png' }: { src: string }) => {
-  const css = {
-    container: `w-full h-120 p-6 m-auto flex items-start relative
-      relative rounded-b-2xl bg-primary-50 crop border-dashed border-t border-theme/22`,
-    image: 'size-full w-full object-cover mx-auto bg-light-bg',
-  };
-
+const MainImage = ({ src = "/home/phone3.png" }: { src: string }) => {
   return (
-    <div className={`${css.container}`}>
-      <Image src={src || '/home/phone3.png'} alt="" className={`${css.image}`} fill />
+    <div
+      className="w-full h-146 p-6 flex items-start justify-center gap-4 bg-medium-bg
+      relative rounded-b-2xl crop border border-border/33"
+    >
+      <Iphone15Pro src={src} />
+      <Iphone15Pro src={src} className="hidden pre-sm:block pre-lg:hidden xl:block" />
       <div className="absolute h-max py-6 w-full bottom-0 left-0 flex-center">
         <CTAButton hideInMobile={true} />
         <CTAButton hideInMobile={false} />

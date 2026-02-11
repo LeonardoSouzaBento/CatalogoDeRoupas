@@ -21,28 +21,27 @@ export const SectionHeader = ({
   const { homeEditMode } = useContext(HomeContext);
   const pb = section === 'clothes' ? 'mb-3' : section === 'about' ? 'mb-2' : 'mb-4';
   const textAlign = homeEditMode ? 'text-left' : 'text-center';
-  const alignItems = homeEditMode ? 'items-start' : 'items-center';
+  const alignItems = homeEditMode ? 'items-start' : 'items-start sm:items-center';
 
   return (
     <div>
-      <div className={`w-full px-3 flex justify-center items-center gap-3 ${pb}`}>
+      <div
+        className={`w-full ${section == 'clothes' && 'px-4'} 
+        flex justify-start sm:justify-center items-center gap-3 ${pb}`}>
         <div
           className={`${
             homeEditMode &&
             `grid grid-cols-[1fr_max-content] 
-          gap-4 items-center border p-4 pt-3 rounded-sm`
+          gap-4 items-center border p-4 pt-3 rounded-md`
           }`}>
           <div className={`flex flex-col ${alignItems}`}>
-            <h3
-              className={`w-full max-w-max capitalize text-theme-700 ${textAlign}`}>
-              {title}
-            </h3>
+            <h3 className={`w-full max-w-max capitalize text-theme-700 ${textAlign}`}>{title}</h3>
             {subtitle && (
-              <h6
+              <p
                 className={`w-full max-w-max font-normal
-                text-muted-foreground capitalize ${textAlign}`}>
+                text-muted-foreground ${textAlign}`}>
                 {subtitle}
-              </h6>
+              </p>
             )}
           </div>
           {homeEditMode && (

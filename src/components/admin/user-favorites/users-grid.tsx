@@ -17,7 +17,7 @@ const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 
 const css = {
   container: `flex flex-col relative`,
-  wrapper: `max-h-40 flex flex-wrap gap-4 overflow-y-scroll p-0.5 pb-4 rounded-lg relative`,
+  wrapper: `max-h-40 flex flex-wrap gap-4 overflow-y-scroll p-0.5 pb-4 rounded-md relative`,
   avatar: `size-14 shrink-0 relative bg-primary-50 rounded-full flex-center`,
   img: `object-cover size-full`,
 };

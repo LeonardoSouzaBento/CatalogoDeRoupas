@@ -34,7 +34,7 @@ const FavoriteButton = () => {
         <MuiIcon
           icon="favorite"
           size="3xl"
-          weight={400}
+          weight={350}
           className={`mt-1.25 scale-96 ${hearthColor}`}
           fill={isFavorite ? true : false}
         />

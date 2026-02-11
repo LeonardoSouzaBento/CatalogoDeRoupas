@@ -15,7 +15,7 @@ export function ScrollBar({
   cssWrapper,
 }: ScrollBarProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const trackClass = orientation === 'horizontal' ? 'w-full h-2' : 'w-2 h-full';
+  const trackClass = orientation === 'horizontal' ? 'w-full h-1.25' : 'w-1.25 h-full';
   const thumbClass = orientation === 'horizontal' ? 'h-full' : 'w-full';
   const wrapperClass =
     orientation === 'horizontal'
@@ -55,9 +55,9 @@ export function ScrollBar({
       <div
         ref={trackRef}
         data-orientation={orientation}
-        className={`${trackClass} bg-primary-50 overflow-x-auto rounded-full scrollbar-hidden`}>
+        className={`${trackClass} bg-primary-100 overflow-x-auto rounded-full scrollbar-hidden`}>
         <div
-          className={`${thumbClass} bg-primary-100 rounded-full`}
+          className={`${thumbClass} bg-primary-200 rounded-full`}
           style={{ width: `${thumbWidth}%` }}
         />
       </div>

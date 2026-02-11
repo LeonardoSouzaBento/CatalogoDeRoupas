@@ -30,9 +30,9 @@ export const CopyButton = ({
   }
 
   return (
-    <Button variant="ghost" className={className} onClick={handleClickCopy}>
-      {!state ? firstText : secondText || 'Copiado!'}
+    <Button variant="transparent" className={className} onClick={handleClickCopy}>
       <Icon LucideIcon={state ? CopyCheck : Copy} />
+      {!state ? firstText : secondText || 'Copiado!'}
     </Button>
   );
 };

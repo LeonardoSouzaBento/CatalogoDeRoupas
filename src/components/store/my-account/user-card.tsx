@@ -7,7 +7,7 @@ import { InputNameEmail } from './input-name-email';
 import { getNameInitials } from '@/utils/getNameInitials';
 
 const css = {
-  wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-lg bg-light-bg`,
+  wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-md bg-light-bg`,
   avatar: `size-[3.6em] shrink-0 relative bg-linear-to-br from-theme-50 to-theme-100/75 rounded-full`,
   img: 'border-none outline-none',
   wrapperInfo: 'max-[430px]:hidden min-h-16 w-full flex flex-col justify-center gap-2',

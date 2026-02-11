@@ -17,7 +17,7 @@ const UserData = () => {
 
   return (
     <div className="rounded-md max-w-xl">
-      <CardHeader data-slot="card-header" className='mb-0'>
+      <CardHeader data-slot="card-header" className="mb-0">
         <CardTitle data-card-title>
           <MuiIcon icon="user_attributes" size="h5" fill className="mb-px" />
           <h5>Dados do usuário</h5>

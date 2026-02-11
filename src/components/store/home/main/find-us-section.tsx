@@ -5,19 +5,20 @@ import { PublicDataContext } from '@/contexts/index';
 import type { AddressSchema } from '@/types/types';
 import React, { useContext, useState } from 'react';
 import { CopyButton, InputAddress, InputContact, InputMap } from './find-us-section/index';
-import { MuiIcon } from '@/components/ui';
+import { Button, Icon, MuiIcon } from '@/components/ui';
+import { Eye } from 'lucide-react';
 
 const css = {
-  wrapper: 'w-full m-auto max-w-180 grid grid-cols-1 gap-4',
-  container: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
-  rounded-md bg-light-bg shadow-md hover:shadow-lg transition-200 relative`,
-  containerEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
-  infoWrapper: `w-full flex justify-start items-start flex-auto gap-3 
-  [&>div>span]:text-theme [&>div>span]:mt-[1em]`,
-  mapWrapper: 'w-full h-[108vw] max-h-[480px]',
+  container: 'w-full m-auto max-w-180 grid grid-cols-1 space-y-4',
+  wrapper: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
+  rounded-md bg-light-bg transition-200 relative`,
+  wrapperEditMode: 'sm:!flex-col !items-start pt-3 gap-4 ',
+  infoWrapper: `w-full flex justify-start items-start flex-auto gap-3`,
+  icon: `text-theme bg-theme-50 p-2 rounded-full mt-8`,
+  mapWrapper: 'w-full h-[108vw] max-h-[480px] p-6 pt-0 bg-light-bg',
   mapWrapperEditMode: '!h-auto !min-h-max p-5 pt-4',
-  textWrapper: `relative space-y-0.5 [&>p:first-child]:text-lg [&>p:first-child]:font-semibold
-  [&>p:last-child]:text-muted-foreground`,
+  textWrapper: `relative space-y-0.5 [&>p:first-child]:text-sm [&>p:first-child]:uppercase 
+  [&>p:first-child]:text-muted-foreground [&>p:first-child]:font-bold [&>p:last-child]:text-lg`,
 };
 
 function formatAddress(address: AddressSchema): string {
@@ -51,20 +52,22 @@ export const FindUsSection = (): React.ReactElement => {
       />
 
       <div>
-        <div className={`${css.wrapper}`}>
-          <div className={`${css.container} ${seePhone && css.containerEditMode}`}>
-            {/* Telefone */}
+        <div className={`${css.container}`}>
+          {/* Telefone */}
+          <div
+            className={`${css.wrapper} shadow-md hover:shadow-lg 
+            ${seePhone && css.wrapperEditMode}`}>
             {!seePhone ? (
               <>
                 <div className={`${css.infoWrapper}`}>
-                  <MuiIcon icon="call" fill size="h5" />
+                  <MuiIcon icon="call" fill size="lg" className={css.icon} />
                   <div className={`${css.textWrapper}`}>
                     <p>Whatsapp:</p>
                     <p>{shopInfo.contact}</p>
                   </div>
                 </div>
                 <CopyButton
-                  className="min-w-57"
+                  className="min-w-59.5 border border-border/50 sm:border-0"
                   state={phoneCopied}
                   setState={setPhoneCopied}
                   firstText="Copiar Telefone"
@@ -79,61 +82,70 @@ export const FindUsSection = (): React.ReactElement => {
               </InputWrapper>
             )}
           </div>
-          {/* Endereço */}
-          <div className={`${css.container} ${seeAddress && css.containerEditMode}`}>
-            {!seeAddress ? (
-              <>
-                <div className={`${css.infoWrapper}`}>
-                  <MuiIcon icon="home_pin" fill size="h4" weight={500} />
-                  <div className={`${css.textWrapper}`}>
-                    <p>Onde estamos:</p>
-                    <p>{shopAddressFormatted}</p>
+          <div className="shadow-md hover:shadow-lg">
+            {/* Endereço */}
+            <div
+              className={`${css.wrapper} mb-0 rounded-b-none
+               ${seeAddress && css.wrapperEditMode}`}>
+              {!seeAddress ? (
+                <>
+                  <div className={`${css.infoWrapper}`}>
+                    <MuiIcon
+                      icon="location_home"
+                      fill
+                      size="xl"
+                      weight={500}
+                      className={css.icon}
+                    />
+                    <div className={`${css.textWrapper}`}>
+                      <p>Onde estamos:</p>
+                      <p>{shopAddressFormatted}</p>
+                    </div>
                   </div>
-                </div>
-                <CopyButton
-                  state={addressCopied}
-                  setState={setAddressCopied}
-                  firstText="Copiar Link Do Mapa"
-                  secondText="Link copiado!"
-                  textToCopy={shopAddressFormatted}
-                />
-                {editMode && (
-                  <EditSectionButton editMode={seeAddress} setEditMode={setSeeAddress} />
-                )}
-              </>
-            ) : (
-              <InputWrapper title="Adicione Seu Endereço" setState={setSeeAddress}>
-                <InputAddress />
-              </InputWrapper>
-            )}
-          </div>
-          {/* Mapa */}
-          <div className={`${css.container} ${css.mapWrapper} ${seeMap && css.mapWrapperEditMode}`}>
-            {!seeMap ? (
-              <>
-                <iframe
-                  className="rounded-md"
-                  src={shopInfo.urlMap}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-                {editMode && (
-                  <EditSectionButton
-                    editMode={seeMap}
-                    setEditMode={setSeeMap}
-                    className="absolute top-3 right-0"
+                  <Button
+                    variant="transparent"
+                    className="min-w-59.5 border border-border/50 sm:border-0">
+                    <Icon LucideIcon={Eye} size="lg" />
+                    Ver no google maps
+                  </Button>
+                  {editMode && (
+                    <EditSectionButton editMode={seeAddress} setEditMode={setSeeAddress} />
+                  )}
+                </>
+              ) : (
+                <InputWrapper title="Adicione Seu Endereço" setState={setSeeAddress}>
+                  <InputAddress />
+                </InputWrapper>
+              )}
+            </div>
+            {/* Mapa */}
+            <div className={`${css.mapWrapper} ${seeMap && css.mapWrapperEditMode}`}>
+              {!seeMap ? (
+                <>
+                  <iframe
+                    className="rounded-md"
+                    src={shopInfo.urlMap}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
                   />
-                )}
-              </>
-            ) : (
-              <InputWrapper title="Atualize Seu Mapa" setState={setSeeMap}>
-                <InputMap />
-              </InputWrapper>
-            )}
+                  {editMode && (
+                    <EditSectionButton
+                      editMode={seeMap}
+                      setEditMode={setSeeMap}
+                      className="absolute top-3 right-0"
+                    />
+                  )}
+                </>
+              ) : (
+                <InputWrapper title="Atualize Seu Mapa" setState={setSeeMap}>
+                  <InputMap />
+                </InputWrapper>
+              )}
+            </div>
           </div>
         </div>
       </div>
