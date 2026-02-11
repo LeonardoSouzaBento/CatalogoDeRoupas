@@ -68,7 +68,7 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
           id="name"
           type="text"
           value={name}
-          placeholder={userData.name}
+          placeholder={userData.nome}
           onChange={(e) => {
             setName(e.target.value);
           }}
