@@ -1,71 +1,79 @@
-import React, { useState } from 'react';
-import { MuiIcon, Button } from '@/components/ui';
-import Link from 'next/link';
+"use client";
+import { Button, Icon } from "@/components/ui";
+import { Heart, Home, Search, User, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 
-const pages = [
+interface ButtonType {
+  LucideIcon: LucideIcon;
+  name: string;
+  link?: string;
+  searchButton?: boolean;
+}
+
+const buttons: ButtonType[] = [
+  { LucideIcon: User, name: "Minha Conta", link: "/loja/minha-conta" },
+  { LucideIcon: Home, name: "Início", link: "/loja" },
   {
-    name: 'Início',
-    href: '/',
-    icon: 'Home',
+    LucideIcon: Search,
+    name: "Buscar",
+    searchButton: true,
+    link: "/loja/pesquisar",
   },
-  {
-    name: 'Buscar',
-    href: '/loja/buscar',
-    icon: 'Search',
-  },
-  {
-    name: 'Favoritos',
-    href: '/loja/favoritos',
-    icon: 'Heart',
-  },
-  {
-    name: 'Minha conta',
-    href: '/loja/minha-conta',
-    icon: 'Profile',
-  },
+  { LucideIcon: Heart, name: "Favoritos", link: "/loja/favoritos" },
 ];
 
 const css = {
-  wrapper: `flex h-full w-full items-center justify-around border-t bg-background/80 backdrop-blur-md`,
+  mainWrapper:
+    "w-full h-auto sticky bottom-0 left-0 z-40 bg-light-bg/75 backdrop-blur-xs",
+  wrapper: "px-4 sm:px-6 max-w-212 mx-auto",
+  nav: `h-14 w-full flex justify-between items-center
+   flex-auto [&>button]:bg-light-bg/24`,
+  button: `hover:bg-light-bg cursor-pointer gap-1.75`,
+  searchButton: `min-w-30 w-1/3 max-w-64 justify-between lg:order-2 
+  shadow-md/4 bg-light-bg/24 hover:scale-102 
+  transition-all duration-300`,
 };
 
-export const BottomNavBar = () => {
-  const [selected, setSelected] = useState<string>('Início');
-
+const BottomNavBar = ({
+  isMobile,
+}: {
+  isMobile: boolean;
+}): React.ReactElement => {
   return (
-    <nav className="fixed bottom-0 left-0 h-14 w-full">
-      <div className={`${css.wrapper} md:hidden`}>
-        {pages.map((page) => (
-          <ButtonNavBar key={page.name} page={page} selected={selected} mobile />
-        ))}
+    <>
+      <div className={css.mainWrapper}>
+        <div className={`${css.wrapper}`}>
+          <nav className={`${css.nav}`}>
+            {buttons.map((button) => {
+              const size = isMobile ? "icon" : "sm";
+              return (
+                <Button
+                  key={button.name}
+                  size={size}
+                  variant="transparent"
+                  className={`${css.button}`}
+                  asChild
+                >
+                  <Link href={button.link || ""}>
+                    <Icon
+                      LucideIcon={button.LucideIcon}
+                      strokeWidth={"medium"}
+                      size={"lg"}
+                      className="mb-0.5"
+                      fill="var(--color-icon-fill)"
+                    />
+                    {isMobile ? null : button.name}
+                  </Link>
+                </Button>
+              );
+            })}
+          </nav>
+        </div>
       </div>
-      <div className={`${css.wrapper} hidden md:flex`}>
-        {pages.map((page) => (
-          <ButtonNavBar key={page.name} page={page} selected={selected} />
-        ))}
-      </div>
-      <div id="div-for-space" />
-    </nav>
+    </>
   );
 };
 
-interface ButtonNavBarProps {
-  page: {
-    name: string;
-    href: string;
-    icon: string;
-  };
-  selected: string;
-  mobile?: boolean;
-}
+export { BottomNavBar };
 
-const ButtonNavBar = ({ page, selected, mobile }: ButtonNavBarProps) => {
-  return (
-    <Button variant="transparent" size={mobile ? 'icon' : 'sm'} asChild key={page.name}>
-      <Link href={page.href}>
-        <MuiIcon icon={page.icon} fill={selected === page.name ? true : false} />
-        {mobile ? null : page.name}
-      </Link>
-    </Button>
-  );
-};

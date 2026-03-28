@@ -1,6 +1,6 @@
-'use client';
-import { HomeContext, UserContext } from '@/contexts/index';
-import { useContext, useEffect } from 'react';
+"use client";
+import { HomeContext, UserContext } from "@/contexts/index";
+import { useContext, useEffect } from "react";
 import {
   AboutSection,
   EverydaySection,
@@ -9,12 +9,16 @@ import {
   MainCategories,
   SpecialSection,
   GenderSelector,
-} from './main/index';
-import { Section } from './ui';
+} from "./main/index";
+import { Section } from "./ui";
 
 const Main = ({ resizeCount }: { resizeCount: number }) => {
-  const { hasMainCategories, setHasMainCategories, hasGymClothes, setHasGymClothes } =
-    useContext(HomeContext);
+  const {
+    hasMainCategories,
+    setHasMainCategories,
+    hasGymClothes,
+    setHasGymClothes,
+  } = useContext(HomeContext);
   const { childCatSelected } = useContext(UserContext);
 
   /* verificaçã simples por enquanto */
@@ -30,7 +34,11 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
 
   return (
     <main>
-      <Section bgLinear={false} defaultShadow={false} className={`bg-light-bg px-0 pt-4 pb-5`}>
+      <Section
+        bgLinear={false}
+        defaultShadow={false}
+        className={`bg-light-bg px-0 pt-4 pb-4`}
+      >
         <GenderSelector />
       </Section>
 
@@ -49,14 +57,18 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
       )}
 
       {hasMainCategories && (
-        <Section defaultShadow={false} className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1)]">
+        <Section
+          defaultShadow={false}
+          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1)]"
+        >
           <MainCategories resizeCount={resizeCount} />
         </Section>
       )}
 
       <Section
         defaultShadow={false}
-        className="bg-transparent shadow-[inset_0_6px_12px_hsla(0,0%,0%,0.016)]">
+        className="bg-transparent shadow-[inset_0_6px_12px_hsla(0,0%,0%,0.016)]"
+      >
         <FindUsSection />
       </Section>
 
@@ -64,7 +76,8 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
         bgLinear={false}
         defaultShadow={false}
         className={`bg-light-bg [&>div]:max-w-210 [&>div]:h-auto
-        [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-md [&>div]:mx-auto`}>
+        [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-md [&>div]:mx-auto`}
+      >
         <AboutSection />
       </Section>
     </main>

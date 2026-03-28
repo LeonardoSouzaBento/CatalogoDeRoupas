@@ -34,7 +34,7 @@
 
   .small-button {@apply text-sm-button;}
 
-  .large-button {@apply text-lg-button;}
+  .large-button {@apply text-button-lg;}
 
   /* LARGURA MÁXIMA DO CORPO */ 
   p { 
@@ -78,9 +78,6 @@
   .normal-text { @apply leading-normal; } 
   .small-text { @apply leading-[1.6]; } 
   .smaller-text { @apply leading-normal; } 
-
-  .large-button { @apply leading-[1.20]; } 
-  .small-button { @apply leading-[1.10]; }
 
 /* Letter spacing */
   h1, .h1-hero, h2, h3 { 

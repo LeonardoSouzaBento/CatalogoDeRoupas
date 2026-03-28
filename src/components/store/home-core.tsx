@@ -1,6 +1,6 @@
 "use client";
 import { HomeDataProvider } from "@/_providers/homeProvider";
-import { Footer, Main, OptionsMenu, TopNavBar } from "@/components/store/home/";
+import { Footer, Main, OptionsMenu } from "@/components/store/home/";
 import { Button } from "@/components/ui/button";
 import { ZapFixedButton } from "@/components/ui/index";
 import { Icon } from "@/components/ui/lucide-icon";
@@ -29,7 +29,6 @@ const HomeCore = () => {
       )}
       <Main resizeCount={resizeCount} />
       <Footer />
-      <TopNavBar isMobile={isMobile} />
       <CloseEditModeButton />
       <ZapFixedButton />
     </HomeDataProvider>

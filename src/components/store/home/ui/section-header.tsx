@@ -19,7 +19,7 @@ export const SectionHeader = ({
   setEditMode = () => {},
 }: HomeTitleSubtitleProps) => {
   const { homeEditMode } = useContext(HomeContext);
-  const pb = section === 'clothes' ? 'mb-3' : section === 'about' ? 'mb-2' : 'mb-4';
+  const pb = section === 'clothes' ? 'mb-3' : 'mb-4';
   const textAlign = homeEditMode ? 'text-left' : 'text-center';
   const alignItems = homeEditMode ? 'items-start' : 'items-start sm:items-center';
 

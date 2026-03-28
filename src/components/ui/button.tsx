@@ -4,11 +4,9 @@ import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
 export type ButtonVariants = VariantProps<typeof buttonVariants>;
-export type VariantType = ButtonVariants["variant"];
-export type SizeType = ButtonVariants["size"];
 
 const buttonVariants = cva(
-  `h-fit inline-flex items-center justify-center leading-none box-border gap-2 rounded-[3px] transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer capitalize data-w-full:w-full data-option:rounded-full text-left outline-solid outline-0`,
+  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer capitalize data-w-full:w-full data-option:rounded-full text-left outline-solid outline-0`,
   {
     variants: {
       variant: {
@@ -39,7 +37,7 @@ const buttonVariants = cva(
       size: {
         sm: "min-h-9 small-button",
         default: "min-h-10",
-        lg: "min-h-11 text-lg-button",
+        lg: "min-h-11 text-button-lg",
         icon: "size-8.5",
         "icon-sm": "size-8",
         "icon-md": "size-9",
@@ -84,11 +82,10 @@ const getPaddings = (variant: OmitVariant, size: OmitSize): string => {
     !paddingExptions.sizes.includes(size) &&
     !paddingExptions.variants.includes(variant)
   ) {
-    if (variant === "destructive" || variant === "secondary") {
-      padding = paddings.default[size];
-    } else {
-      padding = paddings[variant][size];
-    }
+    padding =
+      variant === "destructive" || variant === "secondary"
+        ? paddings.default[size]
+        : paddings[variant][size];
   }
   return padding;
 };

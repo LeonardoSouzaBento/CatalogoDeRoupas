@@ -29,24 +29,22 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
 
   return (
     <header
-      className="w-full pt-5 pb-6 px-4 sm:px-6 md:px-8 lg:px-10 bg-linear-to-br 
-    from-primary-800 via-primary-700 to-theme-700 relative h-max z-6 flex-center"
+      className="w-full pt-5 pb-6 px-4 sm:px-6 md:px-8 lg:px-10 relative 
+    h-max z-6 flex-center border-b border-border/50"
     >
       <div
-        className={`w-full max-w-3xl grid grid-cols-1 gap-6 sm:grid-cols-[auto_1fr] justify-start items-center`}
+        className={`w-full max-w-3xl grid grid-cols-1 gap-6 sm:grid-cols-[auto_1fr] sm:gap-8 justify-start items-center`}
       >
         <div className={`flex flex-col items-start rounded-none`}>
-          <h1 className={`leading-none mb-1 font-logo text-white font-light`}>
+          <h1 className={`leading-none mb-1 font-logo font-light`}>
             Roupas Online
           </h1>
-          <p
-            className={`leading-none text-white font-extralight pr-0.5 text-sm`}
-          >
+          <p className={`leading-none font-extralight pr-0.5 text-sm`}>
             Guardamos suas curtidas
           </p>
         </div>
-        <div className={`w-full relative flex-center gap-6`}>
-          <div className="w-full relative shadow-sm rounded-full *:rounded-full crop">
+        <div className={`w-full relative flex-center gap-6 sm:gap-8`}>
+          <div className="w-full relative shadow-xs/30 ring ring-border/36 rounded-md crop">
             <div className="relative">
               <Link
                 href={"/loja/pesquisar"}
@@ -59,9 +57,9 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
               />
             </div>
             <Button
-              size={"icon-md"}
+              size={"icon-lg"}
               variant={"secondary"}
-              className="absolute left-1 top-1 z-2 text-primary-950"
+              className="absolute left-0.5 top-0.5 z-2 text-primary-950"
             >
               <Icon LucideIcon={Search} size="lg" className="mb-0.5" />
             </Button>
@@ -70,17 +68,11 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
             onClick={() => {
               setSeeOptionsSection(true);
             }}
-            size={isMobile ? "icon-lg" : "sm"}
-            className="max-sm:absolute max-sm:-top-16 
-            max-sm:right-0 sm:relative shadow-sm 
-            rounded-full"
+            size={isMobile ? "icon" : "sm"}
+            className="max-sm:absolute max-sm:-top-17 
+            max-sm:right-0 sm:relative shadow-accent"
           >
-            <Icon
-              LucideIcon={Menu}
-              className="mb-px ml-px"
-              size="lg"
-              strokeWidth="light"
-            />
+            <Icon LucideIcon={Menu} className="mb-px ml-px" size="md" />
             {!isMobile && "Mais opções"}
           </Button>
         </div>

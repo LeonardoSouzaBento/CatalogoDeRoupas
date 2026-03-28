@@ -6,7 +6,6 @@ import type { HomePageUserGender } from "@/types/types";
 import React, { useContext, useEffect } from "react";
 
 const css = {
-  wrapper: `w-full max-w-3xl h-max mx-auto px-4 sm:px-6 relative`,
   button: `gap-1 flex-auto transition-200 uppercase tracking-wide`,
 };
 
@@ -35,14 +34,14 @@ export const GenderSelector = (): React.ReactElement => {
     <div>
       <p
         className={`max-w-none w-full text-center mb-2 uppercase
-          large-text text-theme`}
+          large-text text-primary-900 tracking-wide`}
       >
         Selecione um gênero
       </p>
-      <div className={css.wrapper}>
+      <div className="w-full max-w-3xl h-max mx-auto px-4 sm:px-6 relative">
         <ButtonsWrapper
-          className={`min-h-36.5 grid grid-cols-1
-            sm:grid-cols-3 sm:min-h-10.5`}
+          className={`grid grid-cols-1 gap-2
+            sm:grid-cols-3`}
         >
           {homeUserGenders.map((name, index) => {
             const selected =
@@ -51,14 +50,14 @@ export const GenderSelector = (): React.ReactElement => {
               <Button
                 data-option
                 key={name}
-                variant={selected ? "default" : "ghost"}
+                variant={selected ? "default" : "secondary"}
                 size={"sm"}
                 data-selected={selected}
                 onClick={() => {
                   if (index === 2) return setChildCatSelected((prev) => !prev);
                   setSelectedGender(name as Gender);
                 }}
-                className={`${css.button} w-full`}
+                className={`gap-1 flex-auto transition-200 uppercase tracking-wide w-full`}
               >
                 {name}
               </Button>

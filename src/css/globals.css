@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 @import 'material-symbols/rounded.css';
+@custom-variant dark (&:where(.dark, .dark *));
+@layer theme, typography, base, components, utilities;
+
 
 /* sm: 640px; md: 768px; lg: 1024px; xl: 1280px; 2xl: 1536px; */
 @theme {
@@ -28,7 +31,7 @@
   --text-h1-hero: 2.28em;
   --text-button: 0.943em;
   --text-sm-button: 0.889em;
-  --text-lg-button: 1em;
+  --text-button-lg: 1em;
   --spacing-cap-offset: calc(1cap - ((1em - 1cap) / 2));
   --spacing-ex-offset: calc(1ex - ((1em - 1cap) / 2));
   /* Shadows */
@@ -64,7 +67,7 @@
   --color-dark-bg: hsl(357, 20%, 96.68%);
   --color-card-foreground: hsl(345 18% 17.5%);
   --color-muted-foreground: hsl(345 10.57% 38%);
-  --color-border: hsl(345 6.29% 83%);
+  --color-border: hsl(345 6.29% 86%);
   --color-input-border: hsl(345 9.71% 68.5%);
   --color-input: hsl(345 4.86% 96.5%);
   /* primária */
