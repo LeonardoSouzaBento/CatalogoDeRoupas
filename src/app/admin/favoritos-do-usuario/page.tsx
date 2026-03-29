@@ -1,11 +1,11 @@
-import UserFavoritesCore from '@/components/admin/user-favorites-core';
-import { PageHeader, PageHeaderWrapper, PageTitle } from '@/components/ui';
+import UserFavoritesCore from "@/components/admin/user-favorites-core";
+import { PageHeader, PageHeaderWrapper, PageTitle } from "@/components/ui";
 
 const page = () => {
   return (
     <>
-      <PageHeader className='px-3 sm:px-6'>
-        <PageHeaderWrapper className='max-w-3xl pre-lg:max-w-4xl xl:max-w-5xl'>
+      <PageHeader className="px-3 sm:px-6">
+        <PageHeaderWrapper className="max-w-3xl bp-930:max-w-4xl xl:max-w-5xl">
           <PageTitle>Favoritos do usuário</PageTitle>
         </PageHeaderWrapper>
       </PageHeader>

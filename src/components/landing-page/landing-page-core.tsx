@@ -6,7 +6,7 @@ const css = {
   main: `px-4 pt-6 pb-10 sm:px-6 md:px-8 lg:px-12 xl:px-14 
   bg-linear-to-t from-medium-bg via-light-bg to-light-bg z-0 space-y-8
   [&>section]:mx-auto`,
-  firstWrapper: `h-max grid grid-cols-1 pre-lg:grid-cols-2 gap-6 max-w-176 mx-auto pre-lg:max-w-none
+  firstWrapper: `h-max grid grid-cols-1 bp-930:grid-cols-2 gap-6 max-w-176 mx-auto bp-930:max-w-none
   xl:max-w-274`,
 };
 

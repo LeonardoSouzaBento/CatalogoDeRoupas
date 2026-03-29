@@ -36,7 +36,7 @@ const plans = [
 
 const css = {
   card: `w-full xl:h-full m-auto rounded-2xl`,
-  container: "grid grid-cols-1 pre-lg:grid-cols-2 gap-4",
+  container: "grid grid-cols-1 bp-930:grid-cols-2 gap-4",
   wrapper: `w-full max-w-2xl mx-auto bg-light-bg p-6 pt-4 rounded-2xl border border-gray-100 hover:scale-101 transition-all duration-300 ease-in-out
     [&>p]:mb-1 [&>p]:large-text border-dashed border-2 border-theme/22`,
   emphasis:

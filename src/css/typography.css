@@ -52,7 +52,10 @@
 
   p, li, input, select, option { @apply font-normal; }
   a, h6, h5, h4 { @apply font-semibold; }
-  button, label { @apply font-semibold; }
+  button{
+    @apply font-[525];
+  }
+  label { @apply font-semibold; }
   h3, h2 { @apply font-bold; }
   h1, strong { @apply font-extrabold; }
 

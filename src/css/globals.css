@@ -1,22 +1,21 @@
-@import 'tailwindcss';
-@import 'material-symbols/rounded.css';
+@import "tailwindcss";
+@import "material-symbols/rounded.css";
 @custom-variant dark (&:where(.dark, .dark *));
 @layer theme, typography, base, components, utilities;
-
 
 /* sm: 640px; md: 768px; lg: 1024px; xl: 1280px; 2xl: 1536px; */
 @theme {
   /* Fonts */
-  --font-default: 'DM Sans', 'sans-serif';
-  --font-logo: 'Cookie', 'cursive';
+  --font-default: "DM Sans", "sans-serif";
+  --font-logo: "Cookie", "cursive";
   /* Breakpoints */
   --breakpoint-xxs: 320px;
-  --breakpoint-xs: 375px;
-  --breakpoint-md-sm: 430px;
-  --breakpoint-pre-sm: 576px;
-  --breakpoint-pre-md: 704px;
-  --breakpoint-next-md: 840px;
-  --breakpoint-pre-lg: 932px;
+  --breakpoint-bp-375: 375px;
+  --breakpoint-bp-430: 430px;
+  --breakpoint-bp-576: 576px;
+  --breakpoint-bp-704: 704px;
+  --breakpoint-bp-840: 840px;
+  --breakpoint-bp-930: 930px;
   /* Tamanhos de fonte */
   --text-xs: 0.790123em;
   --text-sm: 0.8889em;
@@ -43,7 +42,11 @@
   --shadow-lg-hover: 0 4px 16px -7px hsla(330, 20%, 67%, 0.6);
   --shadow-favorite-button: 0 8px 24px -6px hsla(329, 20%, 30%, 0.094);
   --shadow-home-sections:
-    inset 0 8px 24px -6px hsl(0, 0%, 100%), inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
+    inset 0 8px 24px -6px hsl(0, 0%, 100%),
+    inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
+  --shadow-first-home-section:
+    inset 0 16px 24px -8px hsl(0, 0%, 100%),
+    inset 0 -8px 24px -6px hsla(330, 43%, 11%, 0.02);
   --shadow-accent: 0 4px 14px -5px hsla(200, 70%, 40%, 0.25); /* azul */
   --shadow-green-soft: 0 6px 20px -8px #2d53462e; /* verde-pinho */
   /* cores */
@@ -168,6 +171,100 @@
   --color-theme-950: #00082d;
 }
 
+.dark {
+  /* neutras (invertidas) */
+  --color-light-bg: hsl(345 18% 10%);
+  --color-medium-bg: hsl(345 18% 12%);
+  --color-dark-bg: hsl(345 18% 14%);
+  --color-card-foreground: hsl(0 0% 92%);
+  --color-muted-foreground: hsl(0 0% 65%);
+  --color-border: hsl(0 0% 25%);
+  --color-input-border: hsl(0 0% 35%);
+  --color-input: hsl(345 18% 16%);
+
+  /* primária (ajustada para contraste no escuro) */
+  --color-icon-fill: hsla(0, 0%, 100%, 0.08);
+  --color-primary-50: #2b0015;
+  --color-primary-100: #36001f;
+  --color-primary-200: #420929;
+  --color-primary-300: #5c2340;
+  --color-primary-400: #723754;
+  --color-primary-500: #89566d;
+  --color-primary-600: #9d7084;
+  --color-primary-700: #b08c9b;
+  --color-primary-800: #c4a7b3;
+  --color-primary-900: #d8c4cc;
+  --color-primary-950: #ebe1e5;
+  --color-primary-1000: #f5f0f2;
+
+  /* tema (menos saturado pra dark) */
+  --color-theme: #d95794;
+  --color-theme-50: #4c0013;
+  --color-theme-100: #5b001e;
+  --color-theme-200: #6b002a;
+  --color-theme-300: #8b0042;
+  --color-theme-400: #ac005b;
+  --color-theme-500: #c81e72;
+  --color-theme-600: #d7578b;
+  --color-theme-700: #e27ba1;
+  --color-theme-800: #ec9db7;
+  --color-theme-900: #f4becf;
+  --color-theme-950: #fadee7;
+  --color-theme-1000: #fdeff3;
+
+  /* selecionado (mantém visível no escuro) */
+  --color-selected: #7c86ff;
+  --color-selected-50: #1e1a4d;
+  --color-selected-100: #312c85;
+  --color-selected-200: #372aac;
+  --color-selected-300: #432dd7;
+  --color-selected-400: #4f39f6;
+  --color-selected-500: #615fff;
+  --color-selected-600: #7c86ff;
+  --color-selected-700: #a3b3ff;
+  --color-selected-800: #c6d2ff;
+  --color-selected-900: #e0e7ff;
+  --color-selected-950: #eef2ff;
+
+  /* sucesso (um pouco mais brilhante) */
+  --color-success-50: #002300;
+  --color-success-100: #002a00;
+  --color-success-200: #003300;
+  --color-success-300: #004e00;
+  --color-success-400: #006c00;
+  --color-success-500: #008a1e;
+  --color-success-600: #00aa3c;
+  --color-success-700: #1ec757;
+  --color-success-800: #74d784;
+  --color-success-900: #a6e5ac;
+  --color-success-950: #d3f3d5;
+  --color-success-1000: #e9f9ea;
+
+  /* destrutivo (menos agressivo no dark) */
+  --color-destructive: #ff6467;
+  --color-destructive-50: #460809;
+  --color-destructive-100: #82181a;
+  --color-destructive-200: #9f0712;
+  --color-destructive-300: #c10007;
+  --color-destructive-400: #e7000b;
+  --color-destructive-500: #fb2c36;
+  --color-destructive-600: #ff6467;
+  --color-destructive-700: #ffa2a2;
+  --color-destructive-800: #ffc9c9;
+  --color-destructive-900: #ffe2e2;
+  --color-destructive-950: #fef2f2;
+
+  /* extras */
+  --color-yellow: #f5d43b;
+  --color-yellow-hover: hsl(49, 90%, 60%);
+
+  --color-green: #2fbf71;
+  --color-green-hover: #3fdc8a;
+
+  --color-red: #e5464f;
+  --color-red-hover: #ff5c64;
+}
+
 @layer base {
   * {
     @apply [&>svg]:shrink-0;
@@ -206,10 +303,11 @@
     scrollbar-width: none;
   }
   body {
-    @apply min-h-dvh bg-linear-to-br from-light-bg to-dark-bg 
+    @apply min-h-dvh bg-linear-to-br from-light-bg to-medium-bg 
     text-card-foreground relative w-full max-w-[1400px] mx-auto;
   }
-  a, button {
+  a,
+  button {
     user-select: none;
     position: relative;
     cursor: pointer;
@@ -225,6 +323,12 @@
     -webkit-user-drag: none !important;
     -moz-user-drag: none !important;
     -ms-user-drag: none !important;
+  }
+}
+
+@layer components {
+  .border-shadow {
+    @apply ring ring-border/16;
   }
 }
 

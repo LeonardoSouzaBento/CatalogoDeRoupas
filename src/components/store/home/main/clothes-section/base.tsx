@@ -1,15 +1,10 @@
-import { SectionHeader } from '@/components/store/home/ui/index';
-import { ScrollBar } from '@/components/ui/scroll-bar';
-import { UserContext } from '@/contexts/index';
-import { useMouseScrollX, useScrollGetVars } from '@/hooks';
-import type { BooleanSetter, HomeClothing, StateSetter } from '@/types/types';
-import { useContext, useEffect, useRef, useState } from 'react';
-import { HomeProduct } from './home-product';
-
-const css = {
-  wrapper: '',
-  scrollableDiv: `flex gap-4 pt-3 pb-8 px-4 box-border overflow-x-scroll relative scrollbar-hidden`,
-};
+import { SectionHeader } from "@/components/store/home/ui/index";
+import { ScrollBar } from "@/components/ui/scroll-bar";
+import { UserContext } from "@/contexts/index";
+import { useMouseScrollX, useScrollGetVars } from "@/hooks";
+import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
+import { useContext, useEffect, useRef } from "react";
+import { HomeProduct } from "./home-product";
 
 interface ClothesSectionProps {
   title: string;
@@ -43,10 +38,10 @@ const Base = ({
   resizeCount,
 }: ClothesSectionProps) => {
   const { selectedGender, childCatSelected } = useContext(UserContext);
-  const isGirlsSection = childCatSelected && selectedGender === 'feminino';
-  const isBoysSection = childCatSelected && selectedGender === 'masculino';
-  const isWomanSection = !childCatSelected && selectedGender === 'feminino';
-  const isManSection = !childCatSelected && selectedGender === 'masculino';
+  const isGirlsSection = childCatSelected && selectedGender === "feminino";
+  const isBoysSection = childCatSelected && selectedGender === "masculino";
+  const isWomanSection = !childCatSelected && selectedGender === "feminino";
+  const isManSection = !childCatSelected && selectedGender === "masculino";
   /* variaveis para rolagem */
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -85,18 +80,24 @@ const Base = ({
         />
         <div className={`crop relative`} ref={parentRef}>
           <div
-            className={`flex gap-4 pt-3 pb-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 box-border 
-            overflow-x-scroll relative scrollbar-hidden`}
-            ref={containerRef}>
+            className="flex gap-[clamp(16px,calc(13.416021px+0.689061vw),24px)] 
+              pt-3 pb-6 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 box-border 
+              overflow-x-scroll relative scrollbar-hidden"
+            ref={containerRef}
+          >
             {displayedItems.map((item, index) => (
-              <HomeProduct editMode={editMode} item={item} key={`${index} ${item.id}`} />
+              <HomeProduct
+                editMode={editMode}
+                item={item}
+                key={`${index} ${item.id}`}
+              />
             ))}
           </div>
 
           <ScrollBar
             containerRef={containerRef}
             thumbWidth={thumbWidth}
-            cssWrapper="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pb-1.5"
+            cssWrapper="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10"
           />
         </div>
       </>

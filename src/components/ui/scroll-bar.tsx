@@ -55,9 +55,9 @@ export function ScrollBar({
       <div
         ref={trackRef}
         data-orientation={orientation}
-        className={`${trackClass} bg-primary-100 overflow-x-auto rounded-full scrollbar-hidden`}>
+        className={`${trackClass} bg-border/50 overflow-x-auto rounded-full scrollbar-hidden`}>
         <div
-          className={`${thumbClass} bg-primary-200 rounded-full`}
+          className={`${thumbClass} bg-border/75 rounded-full`}
           style={{ width: `${thumbWidth}%` }}
         />
       </div>

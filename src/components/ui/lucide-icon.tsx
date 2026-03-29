@@ -33,6 +33,7 @@ interface IconProps extends Omit<LucideProps, "size" | "strokeWidth"> {
   size?: SizeValue | string;
   strokeWidth?: StrokeValue | string;
   margin?: string;
+  filledIcon?: boolean;
 }
 
 export const Icon = ({
@@ -42,8 +43,15 @@ export const Icon = ({
   strokeWidth,
   fill,
   margin,
+  filledIcon = false,
   ...props
 }: IconProps) => {
+  const iconFill = !fill
+    ? "transparent"
+    : fill === "true"
+      ? "var(--icon-fill)"
+      : fill;
+
   return (
     <div
       className={
@@ -53,7 +61,14 @@ export const Icon = ({
     >
       <LucideIcon
         size={iconSizes[size as SizeValue] || size || "1em"}
-        strokeWidth={weights[strokeWidth as StrokeValue] || strokeWidth || "2"}
+        {...(!filledIcon && {
+          fill: iconFill,
+        })}
+        strokeWidth={
+          weights[strokeWidth as StrokeValue] ||
+          strokeWidth ||
+          (filledIcon ? 0 : weights.normal)
+        }
         className={className}
         fill={fill || "none"}
         {...props}

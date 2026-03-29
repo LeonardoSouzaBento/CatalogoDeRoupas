@@ -1,12 +1,12 @@
-'use client';
-import { WrapperOptions } from '@/components/admin/ui/wrapper-options';
-import { CloseButton, Icon, Input, ButtonsWrapper } from '@/components/ui';
-import { Button } from '@/components/ui/button';
-import { commonFabrics } from '@/data/clothings/commonFabrics';
-import { materials } from '@/data/clothings/materials';
-import type { StateSetter } from '@/types/types';
-import { Eye, Plus, Search } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+"use client";
+import { WrapperOptions } from "@/components/admin/ui/wrapper-options";
+import { CloseButton, Icon, Input, ButtonsWrapper } from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import { commonFabrics } from "@/data/clothings/commonFabrics";
+import { materials } from "@/data/clothings/materials";
+import type { StateSetter } from "@/types/types";
+import { Eye, Plus, Search } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 
 /* ---------------- de material---------------- */
 interface MaterialProps {
@@ -15,11 +15,15 @@ interface MaterialProps {
   setShow: StateSetter<boolean>;
 }
 
-const Material: React.FC<MaterialProps> = ({ selectedMaterial, setSelectedMaterial, setShow }) => {
+const Material: React.FC<MaterialProps> = ({
+  selectedMaterial,
+  setSelectedMaterial,
+  setShow,
+}) => {
   const css = {
     container: `p-5 pt-0`,
     wrapper: `h-10 bg-gray-50 relative flex justify-between items-center`,
-    addMaterial: 'w-full',
+    addMaterial: "w-full",
   };
 
   return (
@@ -28,7 +32,7 @@ const Material: React.FC<MaterialProps> = ({ selectedMaterial, setSelectedMateri
         <Input
           type="text"
           placeholder="Digite o material"
-          value={selectedMaterial || ''}
+          value={selectedMaterial || ""}
           onChange={(e) => setSelectedMaterial(e.target.value)}
         />
 
@@ -79,23 +83,28 @@ const Materials: React.FC<MaterialsProps> = ({
     bg-linear-to-t from-white to-transparent rounded-none`,
   };
 
-  const materialsList = seeCommonFabrics ? Object.keys(commonFabrics) : materials;
+  const materialsList = seeCommonFabrics
+    ? Object.keys(commonFabrics)
+    : materials;
 
   const bestCorrespondence = materialsList.reduce((best, current) => {
-    return scoreMatch(current, searchValue) > scoreMatch(best, searchValue) ? current : best;
+    return scoreMatch(current, searchValue) > scoreMatch(best, searchValue)
+      ? current
+      : best;
   }, materialsList[0]);
 
   return (
     <WrapperOptions wrapperCss={css.container} title="Selecione o material">
       <div
         ref={ref}
-        className={`${css.ButtonsWrapper} ${seeCommonFabrics && 'ring ring-blue-300 p-0.5 pb-0'}`}>
+        className={`${css.ButtonsWrapper} ${seeCommonFabrics && "ring ring-blue-300 p-0.5 pb-0"}`}
+      >
         {materialsList.map((material) => {
           const isFiltered = filteredMaterials.includes(material);
           const hasCorrespondence =
             bestCorrespondence === material &&
             searchValue.length > 0 &&
-            searchValue !== 'Procurar material';
+            searchValue !== "Procurar material";
           return (
             <Button
               key={material}
@@ -104,9 +113,10 @@ const Materials: React.FC<MaterialsProps> = ({
               data-selected={selectedMaterial === material}
               className={` hover:bg-blue-50
                 hover:bg-blue-100/50
-                hover:text-blue-600 hover:border-blue-400 ${isFiltered && '-order-1'} ${
-                  hasCorrespondence && 'text-blue-600 shadow-sm'
-                }`}>
+                hover:text-blue-600 hover:border-blue-400 ${isFiltered && "-order-1"} ${
+                  hasCorrespondence && "text-blue-600 shadow-sm"
+                }`}
+            >
               {material}
             </Button>
           );
@@ -137,7 +147,9 @@ const SearchMaterial = ({
   const [wasClicked, setWasClicked] = useState<boolean>(false);
 
   function searchMaterial(searchValue: string) {
-    const filtered = materials.filter((material) => material.toLowerCase().includes(searchValue));
+    const filtered = materials.filter((material) =>
+      material.toLowerCase().includes(searchValue),
+    );
     setFilteredMaterials(filtered);
   }
 
@@ -157,7 +169,7 @@ const SearchMaterial = ({
     <div className={css.wrapper}>
       <Input
         type="text"
-        className={`${!wasClicked && 'font-medium text-gray-800'}`}
+        className={`${!wasClicked && "font-medium text-gray-800"}`}
         value={searchValue}
         placeholder="Procurar material"
         onChange={handleSearch}
@@ -166,11 +178,14 @@ const SearchMaterial = ({
           setSearchButtonClicked((prev) => prev + 1);
           if (!wasClicked) {
             setWasClicked(true);
-            setSearchValue('');
+            setSearchValue("");
           }
         }}
       />
-      <Button className="box-content h-full min-w-10 rounded-none" onClick={handleSearchButton}>
+      <Button
+        className="box-content h-full min-w-10 rounded-none"
+        onClick={handleSearchButton}
+      >
         <Icon LucideIcon={Search} />
       </Button>
     </div>
@@ -184,13 +199,13 @@ const CompositionEditor = () => {
   const [selectedMaterial, setSelectedMaterial] = useState<string | null>(null);
   const [filteredMaterials, setFilteredMaterials] = useState<string[]>([]);
   const [searchButtonClicked, setSearchButtonClicked] = useState<number>(0);
-  const [searchValue, setSearchValue] = useState<string>('Procurar material');
+  const [searchValue, setSearchValue] = useState<string>("Procurar material");
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     divRef.current?.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, [searchButtonClicked]);
 
@@ -205,7 +220,9 @@ const CompositionEditor = () => {
         searchValue={searchValue}
       />
 
-      <ButtonsWrapper className={`p-5 grid grid-cols-1 pre-sm:grid-cols-2 gap-4`}>
+      <ButtonsWrapper
+        className={`p-5 grid grid-cols-1 bp-576:grid-cols-2 gap-4`}
+      >
         <SearchMaterial
           setSearchButtonClicked={setSearchButtonClicked}
           searchValue={searchValue}
@@ -215,9 +232,10 @@ const CompositionEditor = () => {
 
         <Button
           onClick={() => {
-            setSelectedMaterial('');
+            setSelectedMaterial("");
             setShow(true);
-          }}>
+          }}
+        >
           <Icon LucideIcon={Plus} />
           Outro material
         </Button>
@@ -229,9 +247,12 @@ const CompositionEditor = () => {
               setSearchButtonClicked((prev) => prev + 1);
             }, 200);
           }}
-          className={seeCommonFabrics ? 'ring ring-blue-300 hover:bg-gray-100' : ''}>
+          className={
+            seeCommonFabrics ? "ring ring-blue-300 hover:bg-gray-100" : ""
+          }
+        >
           <Icon LucideIcon={Eye} />
-          {seeCommonFabrics ? 'Ver todos os materiais' : 'Ver tecidos comuns'}
+          {seeCommonFabrics ? "Ver todos os materiais" : "Ver tecidos comuns"}
         </Button>
       </ButtonsWrapper>
 

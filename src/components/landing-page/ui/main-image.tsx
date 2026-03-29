@@ -8,7 +8,10 @@ const MainImage = ({ src = "/home/phone3.png" }: { src: string }) => {
       relative rounded-b-2xl crop border border-border/33"
     >
       <Iphone15Pro src={src} />
-      <Iphone15Pro src={src} className="hidden pre-sm:block pre-lg:hidden xl:block" />
+      <Iphone15Pro
+        src={src}
+        className="hidden bp-576:block bp-930:hidden xl:block"
+      />
       <div className="absolute h-max py-6 w-full bottom-0 left-0 flex-center">
         <CTAButton hideInMobile={true} />
         <CTAButton hideInMobile={false} />

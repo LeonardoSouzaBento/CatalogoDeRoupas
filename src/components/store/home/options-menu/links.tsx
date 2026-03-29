@@ -1,18 +1,18 @@
-import Link from 'next/link';
-import { Button, MuiIcon } from '@/components/ui';
+import Link from "next/link";
+import { Button, MuiIcon } from "@/components/ui";
 
 const pageOptions = [
   {
-    name: 'Meus favoritos',
-    link: '/loja/favoritos',
-    icon: 'favorite',
-    iconStyles: '',
+    name: "Meus favoritos",
+    link: "/loja/favoritos",
+    icon: "favorite",
+    iconStyles: "",
   },
   {
-    name: 'Minha Conta',
-    link: '/loja/minha-conta',
-    icon: 'account_circle',
-    iconStyles: 'ml-[0px] ',
+    name: "Minha Conta",
+    link: "/loja/minha-conta",
+    icon: "account_circle",
+    iconStyles: "ml-[0px] ",
   },
 ];
 
@@ -20,7 +20,13 @@ const Links = () => {
   return (
     <>
       {pageOptions.map((item) => (
-        <Button variant="transparent" key={item.name} asChild>
+        <Button
+          data-pl-sm
+          className="w-full justify-start"
+          variant="transparent"
+          key={item.name}
+          asChild
+        >
           <Link href={item.link}>
             <MuiIcon icon={item.icon} fill className="text-theme" size="lg" />
             {item.name}

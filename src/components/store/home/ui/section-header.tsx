@@ -19,7 +19,7 @@ export const SectionHeader = ({
   setEditMode = () => {},
 }: HomeTitleSubtitleProps) => {
   const { homeEditMode } = useContext(HomeContext);
-  const pb = section === 'clothes' ? 'mb-3' : 'mb-4';
+  const mb = section === 'clothes' ? 'mb-3' : 'mb-6 mt-1.5';
   const textAlign = homeEditMode ? 'text-left' : 'text-center';
   const alignItems = homeEditMode ? 'items-start' : 'items-start sm:items-center';
 
@@ -27,7 +27,7 @@ export const SectionHeader = ({
     <div>
       <div
         className={`w-full ${section == 'clothes' && 'px-4'} 
-        flex justify-start sm:justify-center items-center gap-3 ${pb}`}>
+        flex justify-start sm:justify-center items-center gap-3 ${mb}`}>
         <div
           className={`${
             homeEditMode &&

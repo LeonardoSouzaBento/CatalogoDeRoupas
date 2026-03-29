@@ -31,7 +31,7 @@ export const CopyButton = ({
 
   return (
     <Button variant="transparent" className={className} onClick={handleClickCopy}>
-      <Icon LucideIcon={state ? CopyCheck : Copy} />
+      <Icon LucideIcon={state ? CopyCheck : Copy} strokeWidth="semibold" />
       {!state ? firstText : secondText || 'Copiado!'}
     </Button>
   );

@@ -37,12 +37,16 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
       <Section
         bgLinear={false}
         defaultShadow={false}
-        className={`bg-light-bg px-0 pt-4 pb-4`}
+        className={`bg-light-bg px-0 pt-5.5 pb-6`}
       >
         <GenderSelector />
       </Section>
 
-      <Section data-clothes>
+      <Section
+        data-clothes
+        defaultShadow={false}
+        className="pt-4! shadow-first-home-section"
+      >
         <SpecialSection resizeCount={resizeCount} />
       </Section>
 
@@ -67,7 +71,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
 
       <Section
         defaultShadow={false}
-        className="bg-transparent shadow-[inset_0_6px_12px_hsla(0,0%,0%,0.016)]"
+        className="bg-transparent shadow-[inset_0_6px_12px_hsla(0,0%,0%,0.016)] pb-10"
       >
         <FindUsSection />
       </Section>
@@ -75,7 +79,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
       <Section
         bgLinear={false}
         defaultShadow={false}
-        className={`bg-light-bg [&>div]:max-w-210 [&>div]:h-auto
+        className={`bg-light-bg pt-7 pb-5.5 [&>div]:max-w-210 [&>div]:h-auto
         [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-md [&>div]:mx-auto`}
       >
         <AboutSection />

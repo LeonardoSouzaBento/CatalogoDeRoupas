@@ -2,7 +2,7 @@
 import { Button, Icon } from "@/components/ui";
 import { Heart, Home, Search, User, type LucideIcon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
 
 interface ButtonType {
   LucideIcon: LucideIcon;
@@ -25,7 +25,7 @@ const buttons: ButtonType[] = [
 
 const css = {
   mainWrapper:
-    "w-full h-auto sticky bottom-0 left-0 z-40 bg-light-bg/75 backdrop-blur-xs",
+    "w-full h-auto sticky bottom-0 left-0 z-4 bg-light-bg/75 backdrop-blur-xs border-t border-border/40",
   wrapper: "px-4 sm:px-6 max-w-212 mx-auto",
   nav: `h-14 w-full flex justify-between items-center
    flex-auto [&>button]:bg-light-bg/24`,
@@ -40,6 +40,10 @@ const BottomNavBar = ({
 }: {
   isMobile: boolean;
 }): React.ReactElement => {
+  const pathname = usePathname();
+  const selectedClass =
+    "bg-selected-200/60 text-selected-900/85 hover:bg-light-bg";
+
   return (
     <>
       <div className={css.mainWrapper}>
@@ -47,25 +51,29 @@ const BottomNavBar = ({
           <nav className={`${css.nav}`}>
             {buttons.map((button) => {
               const size = isMobile ? "icon" : "sm";
+              const selected = pathname === button.link;
+
               return (
-                <Button
-                  key={button.name}
-                  size={size}
-                  variant="transparent"
-                  className={`${css.button}`}
-                  asChild
-                >
-                  <Link href={button.link || ""}>
-                    <Icon
-                      LucideIcon={button.LucideIcon}
-                      strokeWidth={"medium"}
-                      size={"lg"}
-                      className="mb-0.5"
-                      fill="var(--color-icon-fill)"
-                    />
-                    {isMobile ? null : button.name}
-                  </Link>
-                </Button>
+                <div key={button.name} className="flex flex-col gap-1 relative">
+                  <Button
+                    data-option
+                    size={size}
+                    variant={selected ? "secondary" : "transparent"}
+                    className={`${css.button} ${selected ? selectedClass : ""}`}
+                    asChild
+                  >
+                    <Link href={button.link || ""}>
+                      <Icon
+                        LucideIcon={button.LucideIcon}
+                        strokeWidth={"medium"}
+                        size={"lg"}
+                        className="mb-0.5"
+                        fill="var(--color-icon-fill)"
+                      />
+                      {isMobile ? null : button.name}
+                    </Link>
+                  </Button>
+                </div>
               );
             })}
           </nav>
@@ -76,4 +84,3 @@ const BottomNavBar = ({
 };
 
 export { BottomNavBar };
-

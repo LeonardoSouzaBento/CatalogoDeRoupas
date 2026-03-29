@@ -6,7 +6,7 @@ import * as React from "react";
 export type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 const buttonVariants = cva(
-  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer capitalize data-w-full:w-full data-option:rounded-full text-left outline-solid outline-0`,
+  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer capitalize data-w-full:w-full data-option:rounded-full text-left outline-solid outline-0 data-pl-sm:pl-[0.6em] font-[550]`,
   {
     variants: {
       variant: {
