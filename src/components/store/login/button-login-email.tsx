@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Button, Icon } from '@/components/ui';
-import type { BooleanSetter } from '@/types/types';
-import { Mail } from 'lucide-react';
+import { Button, Icon } from "@/components/ui";
+import type { BooleanSetter } from "@/types/types";
+import { Mail } from "lucide-react";
 
 const ButtonLoginEmail = ({
   setSeeEmailForm,
@@ -14,8 +14,9 @@ const ButtonLoginEmail = ({
     <Button
       onClick={() => {
         setSeeEmailForm(true);
-      }}>
-      <Icon LucideIcon={Mail} />
+      }}
+    >
+      <Icon Svg={Mail} />
       Login com email
     </Button>
   );

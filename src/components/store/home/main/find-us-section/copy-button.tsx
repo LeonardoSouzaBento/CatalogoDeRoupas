@@ -1,6 +1,6 @@
-import { Button, Icon } from '@/components/ui';
-import type { BooleanSetter } from '@/types/types';
-import { Copy, CopyCheck } from 'lucide-react';
+import { Button, Icon } from "@/components/ui";
+import type { BooleanSetter } from "@/types/types";
+import { Copy, CopyCheck } from "lucide-react";
 
 interface CopyButtonProps {
   state: boolean;
@@ -30,9 +30,13 @@ export const CopyButton = ({
   }
 
   return (
-    <Button variant="transparent" className={className} onClick={handleClickCopy}>
-      <Icon LucideIcon={state ? CopyCheck : Copy} strokeWidth="semibold" />
-      {!state ? firstText : secondText || 'Copiado!'}
+    <Button
+      variant="transparent"
+      className={className}
+      onClick={handleClickCopy}
+    >
+      <Icon Svg={state ? CopyCheck : Copy} strokeWidth="semibold" />
+      {!state ? firstText : secondText || "Copiado!"}
     </Button>
   );
 };

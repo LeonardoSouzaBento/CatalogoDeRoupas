@@ -38,9 +38,9 @@ export const GenderSelector = (): React.ReactElement => {
       >
         Selecione um gênero
       </p>
-      <div className="w-full max-w-3xl h-max mx-auto px-4 sm:px-6 relative">
+      <div className="w-full max-w-lg h-max mx-auto px-4 sm:px-6 sm:max-w-2xl relative">
         <ButtonsWrapper
-          className={`grid grid-cols-1 gap-2
+          className={`grid grid-cols-1 gap-2 sm:gap-3
             sm:grid-cols-3`}
         >
           {homeUserGenders.map((name, index) => {

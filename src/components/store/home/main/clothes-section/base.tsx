@@ -1,7 +1,7 @@
 import { SectionHeader } from "@/components/store/home/ui/index";
 import { ScrollBar } from "@/components/ui/scroll-bar";
 import { UserContext } from "@/contexts/index";
-import { useMouseScrollX, useScrollGetVars } from "@/hooks";
+import { useMouseScrollX } from "@/hooks";
 import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
 import { useContext, useEffect, useRef } from "react";
 import { HomeProduct } from "./home-product";
@@ -42,16 +42,13 @@ const Base = ({
   const isBoysSection = childCatSelected && selectedGender === "masculino";
   const isWomanSection = !childCatSelected && selectedGender === "feminino";
   const isManSection = !childCatSelected && selectedGender === "masculino";
-  /* variaveis para rolagem */
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { parentWidth, scrollWidth, thumbWidth } = useScrollGetVars({
+  const { thumbWidth } = useMouseScrollX({
     parentRef,
     containerRef,
     resizeCount,
-    calcThumbWidth: true,
   });
-  useMouseScrollX(containerRef, scrollWidth, parentWidth);
 
   const displayedItems = (() => {
     if (isGirlsSection) return girlsClothes ?? [];

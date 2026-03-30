@@ -1,4 +1,4 @@
-import type { LucideIcon as LucideIconType, LucideProps } from "lucide-react";
+import type { LucideIcon, LucideProps } from "lucide-react";
 
 type SizeValue = keyof typeof iconSizes;
 const iconSizes = {
@@ -29,48 +29,42 @@ const weights = {
 };
 
 interface IconProps extends Omit<LucideProps, "size" | "strokeWidth"> {
-  LucideIcon: LucideIconType;
+  Svg: LucideIcon;
   size?: SizeValue | string;
   strokeWidth?: StrokeValue | string;
-  margin?: string;
   filledIcon?: boolean;
 }
 
 export const Icon = ({
-  LucideIcon,
+  Svg,
   size,
-  className,
   strokeWidth,
-  fill,
-  margin,
+  className,
+  fill = "none",
   filledIcon = false,
   ...props
 }: IconProps) => {
-  const iconFill = !fill
-    ? "transparent"
-    : fill === "true"
-      ? "var(--icon-fill)"
-      : fill;
+  const filling =
+    fill === "duo-tone"
+      ? "var(--color-icon-fill)"
+      : filledIcon
+        ? "currentColor"
+        : fill;
 
   return (
     <div
-      className={
-        `h-3 w-max inline-flex items-center justify-center gap-0
-      [&_svg]:shrink-0 [&_svg]:pointer-events-none ` + margin
-      }
+      className={`h-3 w-max inline-flex items-center justify-center gap-0
+      [&_svg]:shrink-0 [&_svg]:pointer-events-none`}
     >
-      <LucideIcon
+      <Svg
+        className={className}
         size={iconSizes[size as SizeValue] || size || "1em"}
-        {...(!filledIcon && {
-          fill: iconFill,
-        })}
         strokeWidth={
           weights[strokeWidth as StrokeValue] ||
           strokeWidth ||
           (filledIcon ? 0 : weights.normal)
         }
-        className={className}
-        fill={fill || "none"}
+        fill={filling}
         {...props}
       />
     </div>

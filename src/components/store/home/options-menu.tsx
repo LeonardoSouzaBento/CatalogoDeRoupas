@@ -65,7 +65,7 @@ const OptionsMenu = ({
             className="absolute top-1.5 right-3 rounded-full bg-primary-50/18 hover:bg-primary-50/24"
             onClick={() => setView(false)}
           >
-            <Icon LucideIcon={X} size="lg" strokeWidth={"medium"} />
+            <Icon Svg={X} size="lg" strokeWidth={"medium"} />
           </Button>
         </div>
 
@@ -104,8 +104,13 @@ const Choices = () => {
   return (
     <>
       {currentMostSearched.map((item) => (
-        <Button data-pl-sm variant="transparent" key={item} className="w-full justify-start">
-          <Icon LucideIcon={Search} fill="var(--color-primary-50)" size="lg" />
+        <Button
+          data-pl-sm
+          variant="transparent"
+          key={item}
+          className="w-full justify-start"
+        >
+          <Icon Svg={Search} fill="var(--color-primary-50)" size="lg" />
           {item}
         </Button>
       ))}

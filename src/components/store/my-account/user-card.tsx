@@ -61,7 +61,7 @@ export const UserCard = ({ userData }: { userData: UserData }) => {
               setSeeEditMode(true);
             }}
           >
-            <Icon LucideIcon={PenLine} size="base" />
+            <Icon Svg={PenLine} size="base" />
             Editar meus dados
           </Button>
         </div>

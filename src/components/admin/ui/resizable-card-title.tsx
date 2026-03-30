@@ -6,12 +6,11 @@ import { useEffect, useRef, useState } from 'react';
 interface Props {
   children: React.ReactNode;
   cardRef: React.RefObject<HTMLDivElement | null>;
-  resizeCount: number;
   pb?: number;
   cssButton?: string;
 }
 
-export function ResizableCardTitle({ children, cardRef, cssButton, resizeCount, pb = 0 }: Props) {
+export function ResizableCardTitle({ children, cardRef, cssButton, pb = 0 }: Props) {
   const [expand, setExpand] = useState(false);
   const wrapperTitleRef = useRef<HTMLDivElement | null>(null);
 
@@ -24,7 +23,7 @@ export function ResizableCardTitle({ children, cardRef, cssButton, resizeCount, 
         cardRef.current.style.height = (pb + height) / 16 + 'rem';
       }
     }
-  }, [expand, resizeCount, cardRef]);
+  }, [expand]);
 
   return (
     <div

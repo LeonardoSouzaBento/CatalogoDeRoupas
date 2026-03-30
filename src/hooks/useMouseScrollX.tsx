@@ -1,13 +1,24 @@
-import { useEffect, useRef, RefObject } from 'react';
+import { useEffect, useRef, RefObject, useState, useCallback } from 'react';
 
 type ScrollStart = 'start' | 'center';
 
-export function useMouseScrollX(
-  containerRef: RefObject<HTMLElement | null>,
-  scrollWidth: number,
-  parentWidth: number,
-  scrollStart: ScrollStart = 'start',
-) {
+interface UseMouseScrollXParams {
+  containerRef: RefObject<HTMLElement | null>;
+  parentRef: RefObject<HTMLElement | null>;
+  resizeCount?: number;
+  scrollStart?: ScrollStart;
+}
+
+export function useMouseScrollX({
+  containerRef,
+  parentRef,
+  resizeCount,
+  scrollStart = 'start',
+}: UseMouseScrollXParams) {
+  const [parentWidth, setParentWidth] = useState(0);
+  const [scrollWidth, setScrollWidth] = useState(0);
+  const [thumbWidth, setThumbWidth] = useState(0);
+
   const isDragging = useRef<boolean>(false);
   const startX = useRef<number>(0);
   const startScrollLeft = useRef<number>(0);
@@ -23,6 +34,25 @@ export function useMouseScrollX(
   const INERTIA_MULTIPLIER = 300;
   const MAX_EXTRA_SCROLL = 500;
 
+  const calculate = useCallback(() => {
+    if (!parentRef.current || !containerRef.current) return;
+
+    const parent = parentRef.current.offsetWidth;
+    const scroll = containerRef.current.scrollWidth;
+
+    setParentWidth(parent);
+    setScrollWidth(scroll);
+
+    if (scroll > 0) {
+      setThumbWidth((parent / scroll) * 100);
+    }
+  }, [parentRef, containerRef]);
+
+  // Handle calculation on mount and when resizeCount changes
+  useEffect(() => {
+    calculate();
+  }, [calculate, resizeCount]);
+
   const stopInertia = () => {
     if (inertiaFrame.current) {
       cancelAnimationFrame(inertiaFrame.current);
@@ -33,7 +63,7 @@ export function useMouseScrollX(
   // 🔹 Define posição inicial
   useEffect(() => {
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || scrollWidth === 0) return;
 
     if (scrollStart === 'center') {
       const centerOffset = Math.max(0, (scrollWidth - parentWidth) / 2);
@@ -45,24 +75,23 @@ export function useMouseScrollX(
 
   useEffect(() => {
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || scrollWidth === 0) return;
 
-    const maxScroll = scrollWidth - parentWidth;
+    const maxScroll = Math.max(0, scrollWidth - parentWidth);
+    if (maxScroll <= 0) return;
 
     const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(v, max));
 
     const onMouseDown = (e: MouseEvent) => {
       stopInertia();
-
       isDragging.current = true;
-
       startX.current = e.pageX;
       startScrollLeft.current = el.scrollLeft;
-
       lastX.current = e.pageX;
       lastTime.current = performance.now();
       velocity.current = 0;
       el.style.userSelect = 'none';
+      el.style.cursor = 'grabbing';
     };
 
     const onMouseMove = (e: MouseEvent) => {
@@ -114,22 +143,29 @@ export function useMouseScrollX(
       if (!isDragging.current) return;
       isDragging.current = false;
       applyInertia();
-      if (el) el.style.userSelect = '';
+      if (el) {
+        el.style.userSelect = '';
+        el.style.cursor = '';
+      }
     };
 
     el.addEventListener('mousedown', onMouseDown);
-    el.addEventListener('mousemove', onMouseMove);
-    el.addEventListener('mouseup', stopDragging);
-    el.addEventListener('mouseleave', stopDragging);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', stopDragging);
 
     return () => {
       el.removeEventListener('mousedown', onMouseDown);
-      el.removeEventListener('mousemove', onMouseMove);
-      el.removeEventListener('mouseup', stopDragging);
-      el.removeEventListener('mouseleave', stopDragging);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', stopDragging);
       stopInertia();
     };
   }, [containerRef, scrollWidth, parentWidth]);
 
-  return { stop: stopInertia };
+  return {
+    parentWidth,
+    scrollWidth,
+    thumbWidth,
+    stop: stopInertia
+  };
 }
+

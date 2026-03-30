@@ -4,7 +4,7 @@ import { ProductInput } from "./product-input/product-input_";
 import Image from "next/image";
 
 const css = {
-  productWrapper: `h-max w-[84vw] max-w-104 md:max-w-108 shrink-0 flex flex-col items-end shadow-sm/19 ring ring-border/16 select-none
+  productWrapper: `h-max w-[84vw] max-w-104 md:max-w-108 shrink-0 flex flex-col items-end shadow-sm/24 border-shadow select-none
      hover:shadow-md/13 hover:scale-101 transition-200 rounded-lg overflow-hidden`,
   imagesWrapper: `w-full min-h-80 h-[80vw] max-h-120 select-none relative
   grid grid-cols-[1fr_2fr] bp-375:grid-cols-[1fr_1.75fr] sm:grid-cols-[1fr_1.6fr] relative bg-light-bg rounded-none`,

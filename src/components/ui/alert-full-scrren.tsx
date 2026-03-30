@@ -1,7 +1,7 @@
-import React from 'react';
-import type { StateSetter } from '@/types/types';
-import { X } from 'lucide-react';
-import { Button, Icon } from '@/components/ui';
+import React from "react";
+import type { StateSetter } from "@/types/types";
+import { X } from "lucide-react";
+import { Button, Icon } from "@/components/ui";
 
 interface Props {
   text?: string;
@@ -15,7 +15,7 @@ const css = {
   container: `w-120 h-auto rounded-md shadow-lg bg-light-bg hover:shadow-lg-hover p-6 relative`,
   header: `min-h-10 w-full flex flex items-center justify-start gap-2 mb-4`,
   title: `font-medium `,
-  text: '',
+  text: "",
 };
 
 const AlertFullScrren = ({ text, title, children, setState }: Props) => {
@@ -26,8 +26,9 @@ const AlertFullScrren = ({ text, title, children, setState }: Props) => {
           variant="ghost"
           size="icon"
           className="absolute top-2 right-2"
-          onClick={() => setState(false)}>
-          <Icon LucideIcon={X} />
+          onClick={() => setState(false)}
+        >
+          <Icon Svg={X} />
         </Button>
         <header className={`${css.header}`}>
           {children}

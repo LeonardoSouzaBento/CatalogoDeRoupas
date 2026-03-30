@@ -1,8 +1,8 @@
-import type { ButtonVariants } from '@/components/ui/button';
-import { Button, Icon } from '@/components/ui';
-import { cn } from '@/lib/utils';
-import type { BooleanSetter } from '@/types/types';
-import { PenLine, PenOff } from 'lucide-react';
+import type { ButtonVariants } from "@/components/ui/button";
+import { Button, Icon } from "@/components/ui";
+import { cn } from "@/lib/utils";
+import type { BooleanSetter } from "@/types/types";
+import { PenLine, PenOff } from "lucide-react";
 
 interface Props {
   editMode: boolean | undefined;
@@ -11,21 +11,26 @@ interface Props {
   variant?: string;
 }
 
-const EditSectionButton = ({ editMode, setEditMode, className, variant }: Props) => {
+const EditSectionButton = ({
+  editMode,
+  setEditMode,
+  className,
+  variant,
+}: Props) => {
   return (
     <div className="w-full h-max flex justify-center">
       <Button
-        size={'icon'}
-        variant={(variant as ButtonVariants['variant']) || 'default'}
-        className={cn('mb-1.5', className)}
+        size={"icon"}
+        variant={(variant as ButtonVariants["variant"]) || "default"}
+        className={cn("mb-1.5", className)}
         onClick={() => {
           setEditMode((prev) => !prev);
-        }}>
-        <Icon LucideIcon={editMode ? PenOff : PenLine} fill="currentColor" size="sm" />
+        }}
+      >
+        <Icon Svg={editMode ? PenOff : PenLine} fill="currentColor" size="sm" />
       </Button>
     </div>
   );
 };
 
 export { EditSectionButton };
-

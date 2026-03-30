@@ -127,7 +127,7 @@ export const FindUsSection = (): React.ReactElement => {
                     variant="transparent"
                     className="min-w-59.5 border border-border/50 sm:border-0"
                   >
-                    <Icon LucideIcon={Eye} size="md" strokeWidth="medium" />
+                    <Icon Svg={Eye} size="md" strokeWidth="medium" />
                     Ver no google maps
                   </Button>
                   {editMode && (

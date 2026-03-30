@@ -1,5 +1,5 @@
-import { Button, Icon } from '@/components/ui';
-import { CircleCheckBig } from 'lucide-react';
+import { Button, Icon } from "@/components/ui";
+import { CircleCheckBig } from "lucide-react";
 
 interface Props {
   text?: string;
@@ -7,11 +7,11 @@ interface Props {
   Function?: () => Promise<void>;
 }
 
-export const SaveButton = ({ text = 'Salvar', styles, Function }: Props) => {
+export const SaveButton = ({ text = "Salvar", styles, Function }: Props) => {
   return (
     <Button onClick={Function} className={styles}>
       {text}
-      <Icon LucideIcon={CircleCheckBig} />
+      <Icon Svg={CircleCheckBig} />
     </Button>
   );
 };

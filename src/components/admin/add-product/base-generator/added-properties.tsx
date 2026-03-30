@@ -1,9 +1,13 @@
-import { Button } from '@/components/ui/button';
-import { useContext } from 'react';
-import { UserContext } from '@/contexts/index';
-import { BasicClothingInformation, mappingPropToKey, StateSetter } from '@/types/types';
-import { X } from 'lucide-react';
-import { Icon } from '@/components/ui';
+import { Button } from "@/components/ui/button";
+import { useContext } from "react";
+import { UserContext } from "@/contexts/index";
+import {
+  BasicClothingInformation,
+  mappingPropToKey,
+  StateSetter,
+} from "@/types/types";
+import { X } from "lucide-react";
+import { Icon } from "@/components/ui";
 
 const css = {
   wrapper: `border p-4 flex flex-wrap gap-3 rounded-b-md`,
@@ -23,13 +27,13 @@ const AddedProperties = ({
   const { selectedGender } = useContext(UserContext);
   // transforma em array de pares rotulo/valor
   const infoArray = [
-    { label: 'Gênero', value: basicInformation.gender },
-    { label: 'Categoria', value: basicInformation.cat },
-    { label: 'Subcategoria', value: basicInformation.subcat },
-    { label: 'Padrão', value: basicInformation.pattern },
-    { label: 'Estampa', value: basicInformation.print },
+    { label: "Gênero", value: basicInformation.gender },
+    { label: "Categoria", value: basicInformation.cat },
+    { label: "Subcategoria", value: basicInformation.subcat },
+    { label: "Padrão", value: basicInformation.pattern },
+    { label: "Estampa", value: basicInformation.print },
     {
-      label: 'É Infantil',
+      label: "É Infantil",
       value: basicInformation.is_childish,
     },
   ];
@@ -40,7 +44,7 @@ const AddedProperties = ({
 
     if (!key) return;
 
-    const valueToSet = key === 'gender' ? selectedGender : '';
+    const valueToSet = key === "gender" ? selectedGender : "";
 
     setBasicInformation((prev) => ({
       ...prev,
@@ -55,14 +59,16 @@ const AddedProperties = ({
           item.value && (
             <div key={item.label} className={`${css.buttonWrapper}`}>
               <span className={css.name}>
-                {item.label}: <strong className={css.strong}>{item.value}</strong>
+                {item.label}:{" "}
+                <strong className={css.strong}>{item.value}</strong>
               </span>
               <Button
                 variant="secondary"
                 size="icon-sm"
                 className="rounded-full text-red-500 hover:text-red-700"
-                onClick={() => clearValue(item.label)}>
-                <Icon LucideIcon={X} />
+                onClick={() => clearValue(item.label)}
+              >
+                <Icon Svg={X} />
               </Button>
             </div>
           ),

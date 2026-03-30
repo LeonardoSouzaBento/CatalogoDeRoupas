@@ -36,7 +36,7 @@ export function CTAButton({
         hover:scale-104 transition-all duration-200
       [&_svg]:text-theme large-button leading-none ${cssButton}`}
       >
-        {showIcon && <Icon LucideIcon={ShoppingBag} className="mb-px" />}
+        {showIcon && <Icon Svg={ShoppingBag} className="mb-px" />}
         <span className="text-center w-fit">Ver um Catálogo Completo</span>
       </Link>
     </ButtonWrapper>

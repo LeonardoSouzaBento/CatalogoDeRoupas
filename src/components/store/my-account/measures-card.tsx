@@ -46,7 +46,7 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
       </CardHeader>
       <CardContent>
         <Alert>
-          <Icon LucideIcon={Info} strokeWidth={"medium"} />
+          <Icon Svg={Info} strokeWidth={"medium"} />
           <AlertTitle>
             <h6 className="font-medium">Recomendação</h6>
           </AlertTitle>
@@ -77,11 +77,11 @@ export const MeasuresCard = ({ userData }: { userData: UserData }) => {
         </div>
         <ButtonsWrapper className="grid grid-cols-1 gap-3 bp-704:grid-cols-2">
           <Button>
-            <Icon LucideIcon={PenLine} size="md" />
+            <Icon Svg={PenLine} size="md" />
             Atualizar Minhas Medidas
           </Button>
           <Button variant="outline">
-            <Icon LucideIcon={CircleQuestionMark} size="lg" strokeWidth="light" />
+            <Icon Svg={CircleQuestionMark} size="lg" strokeWidth="light" />
             Ver Guia De Medidas
           </Button>
         </ButtonsWrapper>

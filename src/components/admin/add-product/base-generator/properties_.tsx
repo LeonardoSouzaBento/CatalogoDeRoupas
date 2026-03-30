@@ -1,9 +1,9 @@
-'use client';
-import { ChevronDown } from 'lucide-react';
+"use client";
+import { ChevronDown } from "lucide-react";
 
-import { ButtonsWrapper, Icon } from '@/components/ui';
-import { Button } from '@/components/ui/button';
-import type { ClothingProperty, StateSetter } from '@/types/types';
+import { ButtonsWrapper, Icon } from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import type { ClothingProperty, StateSetter } from "@/types/types";
 
 interface Props {
   properties: ClothingProperty[];
@@ -18,12 +18,13 @@ const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
         <Button
           key={item.name}
           selected={propSelected === item.name}
-          variant={propSelected === item.name ? 'outline' : 'ghost'}
+          variant={propSelected === item.name ? "outline" : "ghost"}
           onClick={() => {
             setPropSelected(item.name);
-          }}>
+          }}
+        >
           {item.name}
-          <Icon LucideIcon={ChevronDown} size='lg' />
+          <Icon Svg={ChevronDown} size="lg" />
         </Button>
       ))}
     </ButtonsWrapper>
@@ -31,4 +32,3 @@ const Properties = ({ properties, propSelected, setPropSelected }: Props) => {
 };
 
 export { Properties };
-

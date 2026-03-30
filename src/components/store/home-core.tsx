@@ -5,18 +5,14 @@ import { Button } from "@/components/ui/button";
 import { ZapFixedButton } from "@/components/ui/index";
 import { Icon } from "@/components/ui/lucide-icon";
 import { HomeContext } from "@/contexts/index";
-import { useIsMobile, useResizeCount } from "@/hooks";
+import { useResizeCount } from "@/hooks";
 import { PenOff } from "lucide-react";
 import { useContext, useState } from "react";
-import { Header } from "./home/main/header";
+import { Header } from "./home/header/header";
 
 const HomeCore = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState<boolean>(true);
-  const [resizeCount, setResizeCount] = useState<number>(0);
-
-  useResizeCount(setResizeCount);
-  useIsMobile(resizeCount, setIsMobile);
+  const resizeCount = useResizeCount();
 
   return (
     <HomeDataProvider>
@@ -49,7 +45,7 @@ const CloseEditModeButton = () => {
       }}
     >
       Fechar edição
-      <Icon LucideIcon={PenOff} size="md" fill="currentColor" />
+      <Icon Svg={PenOff} size="md" fill="currentColor" />
     </Button>
   );
 };

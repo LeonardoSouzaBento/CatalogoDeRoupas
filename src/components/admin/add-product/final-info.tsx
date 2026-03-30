@@ -1,7 +1,14 @@
-import { Card, CardHeader, CardTitle, Icon, MuiIcon, ButtonsWrapper } from '@/components/ui';
-import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
-import React from 'react';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  Icon,
+  MuiIcon,
+  ButtonsWrapper,
+} from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import React from "react";
 import {
   Brand,
   ColorPicker,
@@ -10,21 +17,22 @@ import {
   Differential,
   Price,
   SizeSelector,
-} from './final-info/index';
+} from "./final-info/index";
 
 //cores, tamanhos, composição, preço, marca, descrição, diferencial,
 
 const FinalInfo = () => {
-  const [selectedPropertie, setSelectedPropertie] = React.useState<string>('Composição');
+  const [selectedPropertie, setSelectedPropertie] =
+    React.useState<string>("Composição");
 
   const properties = [
-    'Composição',
-    'Tamanhos disponiveis',
-    'Descrição',
-    'Preço',
-    'Marca',
-    'Diferencial',
-    'Cores',
+    "Composição",
+    "Tamanhos disponiveis",
+    "Descrição",
+    "Preço",
+    "Marca",
+    "Diferencial",
+    "Cores",
   ];
 
   return (
@@ -44,21 +52,22 @@ const FinalInfo = () => {
             data-selected={selectedPropertie === property}
             onClick={() => {
               setSelectedPropertie(property);
-            }}>
+            }}
+          >
             {property}
-            <Icon LucideIcon={ChevronDown} />
+            <Icon Svg={ChevronDown} />
           </Button>
         ))}
       </ButtonsWrapper>
 
       <div className={`bs`}>
-        {selectedPropertie === 'Composição' && <CompositionEditor />}
-        {selectedPropertie === 'Tamanhos disponiveis' && <SizeSelector />}
-        {selectedPropertie === 'Descrição' && <Description />}
-        {selectedPropertie === 'Preço' && <Price />}
-        {selectedPropertie === 'Marca' && <Brand />}
-        {selectedPropertie === 'Diferencial' && <Differential />}
-        {selectedPropertie === 'Cores' && (
+        {selectedPropertie === "Composição" && <CompositionEditor />}
+        {selectedPropertie === "Tamanhos disponiveis" && <SizeSelector />}
+        {selectedPropertie === "Descrição" && <Description />}
+        {selectedPropertie === "Preço" && <Price />}
+        {selectedPropertie === "Marca" && <Brand />}
+        {selectedPropertie === "Diferencial" && <Differential />}
+        {selectedPropertie === "Cores" && (
           <ColorPicker imageSrc="/shop/photos/female/mainCategories/blusas.png" />
         )}
       </div>
@@ -67,4 +76,3 @@ const FinalInfo = () => {
 };
 
 export { FinalInfo };
-

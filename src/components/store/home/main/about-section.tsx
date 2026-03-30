@@ -1,13 +1,13 @@
-import { SectionHeader } from '@/components/store/home/ui/index';
-import { PublicDataContext } from '@/contexts/publicDataContext_';
-import { useContext, useState } from 'react';
-import { AboutInput } from './about-section/about-input';
+import { SectionHeader } from "@/components/store/home/ui/index";
+import { PublicDataContext } from "@/contexts/publicDataContext_";
+import { useContext, useState } from "react";
+import { AboutInput } from "./about-section/about-input";
 
 const css = {
-  wrapperAbout: 'm-auto relative',
-  homeEditMode: 'shadow-lg/12 py-47 sm:py-40 md:py-34 rounded-md ',
-  wrapperP: 'size-full relative z-0 mb-4 last:mb-0',
-  p: 'pb-3 relative last:pb-0 text-muted-foreground',
+  wrapperAbout: "m-auto relative",
+  homeEditMode: "shadow-lg/12 py-47 sm:py-40 md:py-34 rounded-md ",
+  wrapperP: "size-full relative z-0 mb-4 last:mb-0",
+  p: "pb-3 relative last:pb-0 text-muted-foreground",
 };
 
 export const AboutSection = () => {
@@ -15,7 +15,10 @@ export const AboutSection = () => {
   const { shopInfo, setShopInfo } = useContext(PublicDataContext);
 
   return (
-    <div>
+    <div
+      className="max-w-210 h-auto
+        p-6 pt-0 rounded-md mx-auto"
+    >
       <SectionHeader
         section="about"
         title="Sobre Nós"
@@ -32,7 +35,11 @@ export const AboutSection = () => {
           </div>
         ))}
         {seeInput && (
-          <AboutInput shopInfo={shopInfo} setShopInfo={setShopInfo} setSeeInput={setSeeInput} />
+          <AboutInput
+            shopInfo={shopInfo}
+            setShopInfo={setShopInfo}
+            setSeeInput={setSeeInput}
+          />
         )}
       </div>
     </div>

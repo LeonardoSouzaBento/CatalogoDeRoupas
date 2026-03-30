@@ -1,20 +1,20 @@
-import { Button, Icon } from '@/components/ui';
-import type { MainCategory } from '@/types/types';
-import { Pen } from 'lucide-react';
-import Image from 'next/image';
-import { useState } from 'react';
-import { CardEditMode } from './card-edit-mode';
+import { Button, Icon } from "@/components/ui";
+import type { MainCategory } from "@/types/types";
+import { Pen } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { CardEditMode } from "./card-edit-mode";
 
 const css = {
   wrapperCardCat: `sm:w-[calc(50%-9px)] flex flex-col justify-center gap-4 border
      border-gray-100 p-5 rounded-none hover:shadow-lg fast-trans`,
-  wrapperImg: 'h-36 w-26 rounded-none flex-center relative',
-  wrapperImgNohomeEditMode: 'border-b-2 border-neutral-700',
-  img: 'size-full object-cover',
-  imghomeEditMode: 'grayscale opacity-70',
-  label: 'font-medium !text-neutral-800 leading-none mb-0',
-  u: 'font-normal',
-  button: 'button w-full !justify-center',
+  wrapperImg: "h-36 w-26 rounded-none flex-center relative",
+  wrapperImgNohomeEditMode: "border-b-2 border-neutral-700",
+  img: "size-full object-cover",
+  imghomeEditMode: "grayscale opacity-70",
+  label: "font-medium !text-neutral-800 leading-none mb-0",
+  u: "font-normal",
+  button: "button w-full !justify-center",
 };
 
 interface CatCardResultProps {
@@ -32,7 +32,9 @@ const CatCardInput = ({ category }: CatCardResultProps) => {
             Nome da categoria: <u className={`${css.u}`}>{category.name}</u>
           </p>
           <p className={`${css.label}`}>Imagem de capa:</p>
-          <div className={`${css.wrapperImg} ${!cardEditMode && css.wrapperImgNohomeEditMode}`}>
+          <div
+            className={`${css.wrapperImg} ${!cardEditMode && css.wrapperImgNohomeEditMode}`}
+          >
             <Image
               src={category.urlImg}
               alt={category.alt}
@@ -41,14 +43,16 @@ const CatCardInput = ({ category }: CatCardResultProps) => {
             />
           </div>
           <p className={`${css.label}`}>
-            Ordem de posição na grade: <u className={`${css.u}`}>{category.order}</u>
+            Ordem de posição na grade:{" "}
+            <u className={`${css.u}`}>{category.order}</u>
           </p>
           <Button
             onClick={() => {
               setCardEditMode(true);
-            }}>
+            }}
+          >
             Editar Categoria
-            <Icon LucideIcon={Pen} />
+            <Icon Svg={Pen} />
           </Button>
         </div>
       ) : (
@@ -59,4 +63,3 @@ const CatCardInput = ({ category }: CatCardResultProps) => {
 };
 
 export { CatCardInput };
-

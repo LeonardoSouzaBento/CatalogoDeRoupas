@@ -1,16 +1,22 @@
-import React from 'react';
-import { Plus } from 'lucide-react';
-import type { Photo, StateSetter } from '@/types/types';
-import { Button, Icon, Input, InputWrapper } from '@/components/ui';
+import React from "react";
+import { Plus } from "lucide-react";
+import type { Photo, StateSetter } from "@/types/types";
+import { Button, Icon, Input, InputWrapper } from "@/components/ui";
 
-export const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> }) => {
+export const AddPhotoButton = ({
+  setPhotos,
+}: {
+  setPhotos: StateSetter<Photo[]>;
+}) => {
   function handleAddPhoto(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const allowed = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+    const allowed = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
     if (!allowed.includes(file.type)) {
-      alert('Formato de imagem não permitido. Escolha JPG (ou JPEG), PNG, ou WEBP.');
+      alert(
+        "Formato de imagem não permitido. Escolha JPG (ou JPEG), PNG, ou WEBP.",
+      );
       return;
     }
 
@@ -43,14 +49,14 @@ export const AddPhotoButton = ({ setPhotos }: { setPhotos: StateSetter<Photo[]> 
         },
       ];
     });
-    event.target.value = '';
+    event.target.value = "";
   }
 
   return (
     <InputWrapper>
       <Button>
         Adicionar foto
-        <Icon LucideIcon={Plus} />
+        <Icon Svg={Plus} />
       </Button>
       <Input
         type="file"

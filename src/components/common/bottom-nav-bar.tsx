@@ -29,7 +29,6 @@ const css = {
   wrapper: "px-4 sm:px-6 max-w-212 mx-auto",
   nav: `h-14 w-full flex justify-between items-center
    flex-auto [&>button]:bg-light-bg/24`,
-  button: `hover:bg-light-bg cursor-pointer gap-1.75`,
   searchButton: `min-w-30 w-1/3 max-w-64 justify-between lg:order-2 
   shadow-md/4 bg-light-bg/24 hover:scale-102 
   transition-all duration-300`,
@@ -56,21 +55,22 @@ const BottomNavBar = ({
               return (
                 <div key={button.name} className="flex flex-col gap-1 relative">
                   <Button
+                    asChild
                     data-option
                     size={size}
                     variant={selected ? "secondary" : "transparent"}
-                    className={`${css.button} ${selected ? selectedClass : ""}`}
-                    asChild
+                    className={`hover:bg-light-bg cursor-pointer gap-1.75
+                      ${selected ? selectedClass : ""}`}
                   >
                     <Link href={button.link || ""}>
                       <Icon
-                        LucideIcon={button.LucideIcon}
+                        Svg={button.LucideIcon}
                         strokeWidth={"medium"}
                         size={"lg"}
                         className="mb-0.5"
                         fill="var(--color-icon-fill)"
                       />
-                      {isMobile ? null : button.name}
+                      {!isMobile && button.name}
                     </Link>
                   </Button>
                 </div>

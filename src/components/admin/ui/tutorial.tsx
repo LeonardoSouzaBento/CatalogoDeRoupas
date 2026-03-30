@@ -6,7 +6,6 @@ import { Card, CardHeader, CardTitle, MuiIcon } from '@/components/ui';
 interface Props {
   title: string;
   steps: string[];
-  resizeCount: number;
   cssList?: string;
   itemCss?: string;
   pb?: number;
@@ -16,7 +15,7 @@ const css = {
   itemList: ` w-full min-h-10 hover:bg-blue-50 transition-300 mb-0 cursor-default break-words`,
 };
 
-const Tutorial = ({ title, steps, cssList, itemCss, pb, resizeCount }: Props) => {
+const Tutorial = ({ title, steps, cssList, itemCss, pb }: Props) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   const middle = Math.ceil(steps.length / 2);
@@ -32,7 +31,7 @@ const Tutorial = ({ title, steps, cssList, itemCss, pb, resizeCount }: Props) =>
 
   return (
     <Card ref={cardRef} className="crop relative">
-      <ResizableCardTitle cardRef={cardRef} resizeCount={resizeCount} pb={pb}>
+      <ResizableCardTitle cardRef={cardRef} pb={pb}>
         <CardHeader>
           <CardTitle>
             <MuiIcon icon="info" size="xl" />

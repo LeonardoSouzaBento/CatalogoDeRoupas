@@ -30,7 +30,7 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
   return (
     <header
       className="w-full pt-5 pb-6 px-4 sm:px-6 md:px-8 lg:px-10 relative 
-    h-max z-6 flex-center border-b border-border/50"
+    h-max z-6 flex-center border-b border-border/75"
     >
       <div
         className={`w-full max-w-3xl grid grid-cols-1 gap-6 sm:grid-cols-[auto_1fr] sm:gap-8 justify-start items-center`}
@@ -61,7 +61,7 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
               variant={"secondary"}
               className="absolute left-0.5 top-0.5 z-2 text-primary-950"
             >
-              <Icon LucideIcon={Search} size="lg" className="mb-0.5" />
+              <Icon Svg={Search} size="lg" className="mb-0.5" />
             </Button>
           </div>
           <Button
@@ -72,7 +72,7 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
             className="max-sm:absolute max-sm:-top-17 
             max-sm:right-0 sm:relative shadow-accent"
           >
-            <Icon LucideIcon={Menu} className="mb-px ml-px" size="md" />
+            <Icon Svg={Menu} className="mb-px ml-px" size="md" />
             {!isMobile && "Mais opções"}
           </Button>
         </div>

@@ -186,7 +186,7 @@ const SearchMaterial = ({
         className="box-content h-full min-w-10 rounded-none"
         onClick={handleSearchButton}
       >
-        <Icon LucideIcon={Search} />
+        <Icon Svg={Search} />
       </Button>
     </div>
   );
@@ -236,7 +236,7 @@ const CompositionEditor = () => {
             setShow(true);
           }}
         >
-          <Icon LucideIcon={Plus} />
+          <Icon Svg={Plus} />
           Outro material
         </Button>
 
@@ -251,7 +251,7 @@ const CompositionEditor = () => {
             seeCommonFabrics ? "ring ring-blue-300 hover:bg-gray-100" : ""
           }
         >
-          <Icon LucideIcon={Eye} />
+          <Icon Svg={Eye} />
           {seeCommonFabrics ? "Ver todos os materiais" : "Ver tecidos comuns"}
         </Button>
       </ButtonsWrapper>

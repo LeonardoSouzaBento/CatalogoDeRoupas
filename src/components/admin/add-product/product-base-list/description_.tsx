@@ -1,6 +1,6 @@
-'use client';
-import { Alert, AlertDescription, AlertTitle, Icon } from '@/components/ui';
-import { Info } from 'lucide-react';
+"use client";
+import { Alert, AlertDescription, AlertTitle, Icon } from "@/components/ui";
+import { Info } from "lucide-react";
 
 interface DescriptionProps {
   selectedName: string;
@@ -9,11 +9,11 @@ interface DescriptionProps {
 const Description = ({ selectedName }: DescriptionProps) => {
   const [firstPart, restPart] = selectedName
     ? selectedName.split(/–(.+)/).map((s) => s.trim())
-    : ['', ''];
+    : ["", ""];
 
   return (
     <Alert>
-      <Icon LucideIcon={Info} />
+      <Icon Svg={Info} />
       <AlertTitle>Descrição completa</AlertTitle>
       <AlertDescription>
         <p>

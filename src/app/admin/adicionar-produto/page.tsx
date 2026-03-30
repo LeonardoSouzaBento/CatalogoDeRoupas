@@ -1,5 +1,7 @@
 import AddProductCore from '@/components/admin/add-product-core';
-import { PageHeader, PageHeaderWrapper, PageTitle } from '@/components/ui';
+import { Tutorial } from '@/components/admin/ui';
+import { Alert, AlertDescription, AlertTitle, Icon, PageHeader, PageHeaderWrapper, PageTitle } from '@/components/ui';
+import { AlertCircle } from 'lucide-react';
 
 // const specificProperties = [
 //   { name: "Nome" },
@@ -12,6 +14,15 @@ import { PageHeader, PageHeaderWrapper, PageTitle } from '@/components/ui';
 //   { name: "Descrição" },
 // ];
 
+const tutorialSteps = [
+  "Adicione as fotos.",
+  "Defina o gênero.",
+  "Caso queira, defina uma roupa base, se houver.",
+  "Defina as informações básicas.",
+  "Defina as informações especificas.",
+  "Confira todas as informações e depois clique em 'Salvar' para concluir o cadastro.",
+];
+
 const page = () => {
   return (
     <>
@@ -21,7 +32,25 @@ const page = () => {
         </PageHeaderWrapper>
       </PageHeader>
 
-      <AddProductCore />
+      <AddProductCore>
+        <Alert className="bg-light-bg border">
+          <Icon Svg={AlertCircle} />
+          <AlertTitle>Importante</AlertTitle>
+          <AlertDescription>
+            Registre um tipo de peça de cada vez. Por exemplo: primeiro as
+            camisetas básicas lisas, depois as camisas polos, e assim por diante.
+            Isso facilita o cadastro e evita confusão.
+          </AlertDescription>
+        </Alert>
+
+        <Tutorial
+          title="como cadastrar"
+          steps={tutorialSteps}
+          cssList={`sm:flex-row sm:gap-4`}
+          itemCss="sm:mb-2"
+          pb={24}
+        />
+      </AddProductCore>
     </>
   );
 };

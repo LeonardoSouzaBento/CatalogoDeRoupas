@@ -1,10 +1,15 @@
 'use client';
-import type { StateSetter } from '@/types/types';
-import { useEffect } from 'react';
 
-export function useIsMobile(resizeCount: number, setIsMobile: StateSetter<boolean>) {
+import { useEffect, useState } from 'react';
+import { useResizeCount } from './useResizeCount';
+
+export function useIsMobile() {
+  const resizeCount = useResizeCount();
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    setIsMobile(isMobile);
+    setIsMobile(window.innerWidth <= 768);
   }, [resizeCount]);
+
+  return isMobile;
 }

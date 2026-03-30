@@ -1,33 +1,44 @@
-'use client';
-import { CardHeader, CardTitle, Icon, Input, Label, MuiIcon } from '@/components/ui';
-import { Button } from '@/components/ui/button';
-import { UserContext } from '@/contexts/index';
-import { validateEmail } from '@/functions/validateEmail';
-import { validateName } from '@/functions/validateName';
-import type { BooleanSetter } from '@/types/types';
-import { CircleCheckBig, Upload, X } from 'lucide-react';
-import Image from 'next/image';
-import { useContext, useState } from 'react';
+"use client";
+import {
+  CardHeader,
+  CardTitle,
+  Icon,
+  Input,
+  Label,
+  MuiIcon,
+} from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import { UserContext } from "@/contexts/index";
+import { validateEmail } from "@/functions/validateEmail";
+import { validateName } from "@/functions/validateName";
+import type { BooleanSetter } from "@/types/types";
+import { CircleCheckBig, Upload, X } from "lucide-react";
+import Image from "next/image";
+import { useContext, useState } from "react";
 
 const css = {
   pError: `text-red-600 mb-[14px]`,
 };
 
-export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSetter }) => {
+export const InputNameEmail = ({
+  setSeeEditMode,
+}: {
+  setSeeEditMode: BooleanSetter;
+}) => {
   const { userData } = useContext(UserContext);
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [nameErrors, setNameErrors] = useState<string>('');
-  const [emailErrors, setEmailErrors] = useState<string>('');
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [nameErrors, setNameErrors] = useState<string>("");
+  const [emailErrors, setEmailErrors] = useState<string>("");
 
   async function handleSaveNameEmail() {
     setNameErrors(validateName(name));
     setTimeout(() => {
-      setNameErrors('');
+      setNameErrors("");
     }, 5000);
     setEmailErrors(validateEmail(email));
     setTimeout(() => {
-      setEmailErrors('');
+      setEmailErrors("");
     }, 5000);
   }
 
@@ -45,8 +56,9 @@ export const InputNameEmail = ({ setSeeEditMode }: { setSeeEditMode: BooleanSett
         size="icon"
         onClick={() => {
           setSeeEditMode(false);
-        }}>
-        <Icon LucideIcon={X} />
+        }}
+      >
+        <Icon Svg={X} />
       </Button>
       {/* <p>Foto de perfil</p> */}
       <div className="size-auto flex items-center justify-start max-[430px]:gap-3 gap-5">

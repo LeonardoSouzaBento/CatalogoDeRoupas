@@ -7,10 +7,10 @@ import {
   MuiIcon,
   Label,
   InputWrapper,
-} from '@/components/ui';
-import type { BooleanSetter } from '@/types/types';
-import { Eye, EyeClosed, LogIn, X } from 'lucide-react';
-import { useState } from 'react';
+} from "@/components/ui";
+import type { BooleanSetter } from "@/types/types";
+import { Eye, EyeClosed, LogIn, X } from "lucide-react";
+import { useState } from "react";
 
 const css = { button: `h-11 w-full justify-center` };
 
@@ -25,8 +25,9 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
         size="icon"
         onClick={() => {
           setSeeEmailForm(false);
-        }}>
-        <Icon LucideIcon={X} />
+        }}
+      >
+        <Icon Svg={X} />
       </Button>
       <CardHeader>
         <CardTitle>
@@ -41,7 +42,7 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
       <InputWrapper className="mb-6 relative">
         <Label htmlFor="password">Senha</Label>
         <Input
-          type={seePassword ? 'text' : 'password'}
+          type={seePassword ? "text" : "password"}
           id="password"
           placeholder="Geramos uma, se preferir."
         />
@@ -49,15 +50,18 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           className={`absolute bottom-0 right-1`}
           onClick={() => {
             setSeePassword((prev) => !prev);
-          }}>
-          {seePassword ? <Icon LucideIcon={EyeClosed} /> : <Icon LucideIcon={Eye} />}
+          }}
+        >
+          {seePassword ? <Icon Svg={EyeClosed} /> : <Icon Svg={Eye} />}
         </div>
       </InputWrapper>
       <Button className={`${css.button} mb-5`}>
-        <Icon LucideIcon={LogIn} />
+        <Icon Svg={LogIn} />
         Entrar
       </Button>
-      <Button className={`${css.button} h-10! font-light bg-light-bg  text-neutral-600`}>
+      <Button
+        className={`${css.button} h-10! font-light bg-light-bg  text-neutral-600`}
+      >
         Esqueci minha senha
       </Button>
     </div>

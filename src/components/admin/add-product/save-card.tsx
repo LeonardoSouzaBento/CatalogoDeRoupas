@@ -1,5 +1,12 @@
-import { Button, Card, CardHeader, CardTitle, Icon, MuiIcon } from '@/components/ui/index';
-import { CircleCheckBig } from 'lucide-react';
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  Icon,
+  MuiIcon,
+} from "@/components/ui/index";
+import { CircleCheckBig } from "lucide-react";
 
 const SaveCard = () => {
   return (
@@ -12,7 +19,7 @@ const SaveCard = () => {
       </CardHeader>
       <Button className="w-full mt-5">
         Salvar produto no catálogo
-        <Icon LucideIcon={CircleCheckBig} />
+        <Icon Svg={CircleCheckBig} />
       </Button>
     </Card>
   );

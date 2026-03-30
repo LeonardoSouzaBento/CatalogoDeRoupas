@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import type { StateSetter } from '@/types/types';
-import { Minus, Plus, X } from 'lucide-react';
-import { Icon } from '@/components/ui';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import type { StateSetter } from "@/types/types";
+import { Minus, Plus, X } from "lucide-react";
+import { Icon } from "@/components/ui";
 
 const css = {
   wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end justify-center gap-3.5 
@@ -21,7 +21,10 @@ interface Props {
   setSelectedQuantity: StateSetter<number>;
 }
 
-export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Props) => {
+export const QuantitySelector = ({
+  selectedQuantity,
+  setSelectedQuantity,
+}: Props) => {
   const [numberOptions, setNumberOptions] = useState<number[]>([1, 2, 3]);
 
   function incrementAll(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -53,10 +56,13 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
         onClick={() => {
           setNumberOptions([1, 2, 3]);
           setSelectedQuantity(0);
-        }}>
+        }}
+      >
         <X size={16} />
       </Button>
-      <p className={`${numberOptions[0] !== 1 && 'min-[450px]:ml-12'}`}>Tenho</p>
+      <p className={`${numberOptions[0] !== 1 && "min-[450px]:ml-12"}`}>
+        Tenho
+      </p>
 
       <div className={`${css.wrapperButtons}`}>
         {numberOptions.map((item, index) => {
@@ -66,13 +72,14 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
           return (
             <Button
               key={id}
-              variant={selected ? 'default' : 'outline'}
+              variant={selected ? "default" : "outline"}
               size="icon"
               className="size-9 rounded-full"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedQuantity(item);
-              }}>
+              }}
+            >
               {item}
             </Button>
           );
@@ -83,8 +90,9 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
           className="size-9 rounded-full"
           onClick={(e) => {
             incrementAll(e);
-          }}>
-          <Icon LucideIcon={Plus} />
+          }}
+        >
+          <Icon Svg={Plus} />
         </Button>
         {numberOptions[0] !== 1 && (
           <Button
@@ -93,8 +101,9 @@ export const QuantitySelector = ({ selectedQuantity, setSelectedQuantity }: Prop
             className="size-9 rounded-full"
             onClick={(e) => {
               decrementAll(e);
-            }}>
-            <Icon LucideIcon={Minus} />
+            }}
+          >
+            <Icon Svg={Minus} />
           </Button>
         )}
       </div>

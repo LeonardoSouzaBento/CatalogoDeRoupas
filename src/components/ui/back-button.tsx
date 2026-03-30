@@ -1,6 +1,6 @@
-import type { BooleanSetter } from '@/types/types';
-import { Button, Icon } from '@/components/ui';
-import { CornerUpLeft } from 'lucide-react';
+import type { BooleanSetter } from "@/types/types";
+import { Button, Icon } from "@/components/ui";
+import { CornerUpLeft } from "lucide-react";
 
 interface Props {
   styles?: string;
@@ -13,9 +13,10 @@ const BackButton = ({ styles, setState = () => {} }: Props) => {
       onClick={() => {
         setState(false);
       }}
-      className={styles}>
+      className={styles}
+    >
       voltar
-      <Icon LucideIcon={CornerUpLeft} />
+      <Icon Svg={CornerUpLeft} />
     </Button>
   );
 };

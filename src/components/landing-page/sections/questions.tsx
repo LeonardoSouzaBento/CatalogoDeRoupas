@@ -1,27 +1,33 @@
-import { Icon } from '@/components/ui';
-import { CalendarHeart, Eye, UserCheck } from 'lucide-react';
-import React from 'react';
-import { CheckIcon, MainImage, SectionDescription, SectionHeader, SectionTitle } from '../ui/index';
+import { Icon } from "@/components/ui";
+import { CalendarHeart, Eye, UserCheck } from "lucide-react";
+import React from "react";
+import {
+  CheckIcon,
+  MainImage,
+  SectionDescription,
+  SectionHeader,
+  SectionTitle,
+} from "../ui/index";
 
 const content = [
-  { id: 1, text: 'Um mês grátis para expor suas peças', icon: CalendarHeart },
+  { id: 1, text: "Um mês grátis para expor suas peças", icon: CalendarHeart },
   {
     id: 2,
-    text: 'Veja facilmente as peças que o cliente quer. Seu cliente faz uma lista de favoritos clicando no coração',
+    text: "Veja facilmente as peças que o cliente quer. Seu cliente faz uma lista de favoritos clicando no coração",
     icon: Eye,
   },
   {
     id: 3,
-    text: 'Suporte humano para te ajudar a cadastrar seus produtos de modo fácil e rápido e tirar suas dúvidas',
+    text: "Suporte humano para te ajudar a cadastrar seus produtos de modo fácil e rápido e tirar suas dúvidas",
     icon: UserCheck,
   },
 ];
 
 const css = {
-  container: 'block grid grid-cols-1 gap-2',
+  container: "block grid grid-cols-1 gap-2",
   contentWrapper: `pt-4 border-dashed border-t-2 border-border/50`,
-  infoWrapper: 'w-full',
-  imageWrapper: 'w-full flex flex-col gap-3',
+  infoWrapper: "w-full",
+  imageWrapper: "w-full flex flex-col gap-3",
 };
 
 const Questions = (): React.ReactElement => {
@@ -53,10 +59,10 @@ const TextContent = () => {
       {content.map((item) => (
         <div key={item.id} className={`flex gap-3 items-start mb-4`}>
           <Icon
-            LucideIcon={item.icon}
+            Svg={item.icon}
             className="text-theme mt-1"
             size="lg"
-            strokeWidth={'light'}
+            strokeWidth={"light"}
             fill="var(--color-primary-50)"
             style={{ scale: item.id === 3 ? 1.01 : 1 }}
           />

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Avatar,
   AvatarFallback,
@@ -9,11 +9,13 @@ import {
   Icon,
   Input,
   MuiIcon,
-} from '@/components/ui';
-import { Search } from 'lucide-react';
-import { useState } from 'react';
+} from "@/components/ui";
+import { Search } from "lucide-react";
+import { useState } from "react";
 
-const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+const array = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
 
 const css = {
   container: `flex flex-col relative`,
@@ -27,7 +29,7 @@ const UsersGrid = () => {
   const selectedClasses = (item: number) =>
     selectedUser === item
       ? `outline-solid outline-2 outline-selected-300 bg-selected-300/20 text-selected-800`
-      : '';
+      : "";
 
   return (
     <div className={`${css.container}`}>
@@ -39,16 +41,18 @@ const UsersGrid = () => {
       </CardHeader>
       <Button
         asChild
-        variant={'ghost'}
-        className={`mb-4 rounded-full justify-start pr-0 font-semibold text-selected-950`}>
+        variant={"ghost"}
+        className={`mb-4 rounded-full justify-start pr-0 font-semibold text-selected-950`}
+      >
         <div>
           <Input className="absolute inset-0 z-2 border-none rounded-full" />
           Fulano de tal
           <Button
-            variant={'secondary'}
-            size={'icon'}
-            className="rounded-full absolute bottom-0.75 right-0.75">
-            <Icon LucideIcon={Search} size="lg" />
+            variant={"secondary"}
+            size={"icon"}
+            className="rounded-full absolute bottom-0.75 right-0.75"
+          >
+            <Icon Svg={Search} size="lg" />
           </Button>
         </div>
       </Button>
@@ -57,12 +61,14 @@ const UsersGrid = () => {
           <Avatar
             key={item}
             className={`${css.avatar} ${selectedClasses(item)}`}
-            onClick={() => setSelectedUser(item)}>
+            onClick={() => setSelectedUser(item)}
+          >
             <AvatarImage src="/shop/" className={`${css.img}`} />
             <AvatarFallback className="flex-center">
               <p
                 className={`relative z-2 
-                ${selectedUser === item ? 'text-selected-800' : 'text-muted-foreground'}`}>
+                ${selectedUser === item ? "text-selected-800" : "text-muted-foreground"}`}
+              >
                 MS
               </p>
             </AvatarFallback>

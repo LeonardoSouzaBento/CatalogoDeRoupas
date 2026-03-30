@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { CircleCheckBig } from 'lucide-react';
-import { Form, Icon, Input, InputWrapper, Label } from '@/components/ui';
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import { CircleCheckBig } from "lucide-react";
+import { Form, Icon, Input, InputWrapper, Label } from "@/components/ui";
+import React from "react";
 
 const css = {
   form: `w-full flex flex-col items-start gap-3 mb-5`,
@@ -22,7 +22,7 @@ const InfoForm = ({ id }: { id: number | string }): React.ReactElement => {
       </Form>
 
       <Button className="w-full">
-        <Icon LucideIcon={CircleCheckBig} />
+        <Icon Svg={CircleCheckBig} />
         Salvar
       </Button>
     </div>

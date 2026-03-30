@@ -1,8 +1,7 @@
-'use client';
-import type { StateSetter } from '@/types/types';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export function useResizeCount(setResizingCounter: StateSetter<number>) {
+export function useResizeCount() {
+  const [resizeCount, setResizeCount] = useState(0);
   const lastWidthRef = useRef<number | null>(null);
   const tickingRef = useRef(false);
   const resizeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -33,7 +32,7 @@ export function useResizeCount(setResizingCounter: StateSetter<number>) {
       }
 
       resizeTimeoutRef.current = setTimeout(() => {
-        setResizingCounter((prev) => prev + 1);
+        setResizeCount((prev) => prev + 1);
       }, 200);
     };
 
@@ -46,5 +45,8 @@ export function useResizeCount(setResizingCounter: StateSetter<number>) {
       }
       clearTimeout(timeout);
     };
-  }, [setResizingCounter]);
+  }, []);
+
+  return resizeCount;
 }
+

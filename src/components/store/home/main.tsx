@@ -63,7 +63,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
       {hasMainCategories && (
         <Section
           defaultShadow={false}
-          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1)]"
+          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1.5)] pt-12.75"
         >
           <MainCategories resizeCount={resizeCount} />
         </Section>
@@ -79,8 +79,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
       <Section
         bgLinear={false}
         defaultShadow={false}
-        className={`bg-light-bg pt-7 pb-5.5 [&>div]:max-w-210 [&>div]:h-auto
-        [&>div]:p-6 [&>div]:pt-0 [&>div]:rounded-md [&>div]:mx-auto`}
+        className={`bg-light-bg pt-7 pb-5.5`}
       >
         <AboutSection />
       </Section>
