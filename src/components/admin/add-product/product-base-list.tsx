@@ -17,7 +17,7 @@ const ProductBasesList = ({ resizeCount }: { resizeCount: number }) => {
 
   return (
     <Card ref={cardRef} className="crop">
-      <ResizableCardTitle cardRef={cardRef} cssButton="mt-4" pb={16} resizeCount={resizeCount}>
+      <ResizableCardTitle cardRef={cardRef} cssButton="mt-4" pb={16}>
         <CardHeader>
           <CardTitle>
             <MuiIcon icon="apparel" size="h4" fill />

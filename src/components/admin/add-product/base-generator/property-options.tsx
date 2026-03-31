@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { BasicClothingInformation, mappingPropToKey } from '@/types/types';
 import { WrapperOptions } from '@/components/admin/ui/wrapper-options';
+import { ButtonsWrapper } from '@/components/ui';
 
 interface Property {
   name: string;
@@ -38,8 +39,8 @@ const PropertyOptions = ({
   }, [propSelected]);
 
   return (
-    <WrapperOptions wrapperCss={`p-4 pt-3 border bg-light-bg border-b-transparent rounded-t-md`}>
-      <div className={`flex flex-wrap gap-4`}>
+    <WrapperOptions wrapperCss={`pt-2.5 p-4 bg-light-bg`}>
+      <ButtonsWrapper>
         {options.map((option) => {
           const isSelected =
             key && basicInformation[key]?.toString().toLowerCase() === option.toLowerCase();
@@ -48,7 +49,9 @@ const PropertyOptions = ({
             <Button
               key={option}
               data-option
+              size="sm"
               variant="ghost"
+              data-white
               selected={isSelected}
               onClick={() => propSelected && handleSelectOption(propSelected, option)}>
               {option}
@@ -58,7 +61,7 @@ const PropertyOptions = ({
         {propSelected === 'Subcategoria' && options.length === 0 && (
           <p>Selecione uma categoria primeiro.</p>
         )}
-      </div>
+      </ButtonsWrapper>
     </WrapperOptions>
   );
 };

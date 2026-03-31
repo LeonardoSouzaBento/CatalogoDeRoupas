@@ -17,7 +17,7 @@ const AddProductCore = ({ children }: { children: React.ReactNode }) => {
   const resizeCount = useResizeCount();
 
   return (
-    <div className={`max-w-3xl lg:max-w-4xl mx-auto space-y-6 mt-3`}>
+    <div className={`max-w-3xl lg:max-w-4xl mx-auto space-y-6 mt-3 px-3 sm:px-4`}>
       {children}
       <Queue />
       <ProductBasesList resizeCount={resizeCount} />

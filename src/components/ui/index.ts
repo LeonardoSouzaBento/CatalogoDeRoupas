@@ -21,3 +21,5 @@ export * from './separator';
 export * from './side-area';
 export * from './zap-fixed-button';
 export * from './table';
+export * from './popover';
+

@@ -1,16 +1,14 @@
 'use client';
-import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '@/contexts/index';
+import { MuiIcon } from '@/components/ui';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { UserContext } from '@/contexts/index';
 import { clothingCatsSubcats } from '@/data/clothings/clothingCatsSubcats';
+import { modelings } from '@/data/clothings/modelings';
 import { patterns } from '@/data/clothings/patterns';
 import { prints } from '@/data/clothings/prints';
 import type { BasicClothingInformation, ClothingProperty, Gender } from '@/types/types';
-import { AddedProperties } from './base-generator/added-properties';
-import { Properties } from './base-generator/properties_';
-import { PropertyOptions } from './base-generator/property-options';
-import { modelings } from '@/data/clothings/modelings';
-import { MuiIcon } from '@/components/ui';
+import { useContext, useEffect, useState } from 'react';
+import { BaseGenCore } from './base-generator/base-gen-core';
 
 const BaseGenerator = () => {
   const { selectedGender, setSelectedGender } = useContext(UserContext);
@@ -86,27 +84,18 @@ const BaseGenerator = () => {
       <CardHeader>
         <CardTitle className="gap-2">
           <MuiIcon icon="edit_note" size="h3" weight={500} fill />
-          <h3>Informações básicas</h3>
+          <h4>Informações básicas</h4>
         </CardTitle>
         <CardDescription>
           Selecione as caracteristicas principais (ou escolha uma roupa básica)
         </CardDescription>
       </CardHeader>
-      <Properties
+      <BaseGenCore
         properties={properties}
         propSelected={propSelected}
         setPropSelected={setPropSelected}
-      />
-
-      <PropertyOptions
-        properties={properties}
-        propSelected={propSelected}
         basicInformation={basicInformation}
         handleSelectOption={handleSelectOption}
-      />
-
-      <AddedProperties
-        basicInformation={basicInformation}
         setBasicInformation={setBasicInformation}
       />
     </Card>
@@ -114,3 +103,4 @@ const BaseGenerator = () => {
 };
 
 export { BaseGenerator };
+

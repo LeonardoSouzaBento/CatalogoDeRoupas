@@ -15,12 +15,12 @@ import { Eye } from "lucide-react";
 
 const css = {
   container: "w-full m-auto max-w-180 grid grid-cols-1 space-y-4",
-  wrapper: `w-full p-6 pt-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
+  wrapper: `w-full p-6 py-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
   rounded-md bg-light-bg transition-200 relative`,
   wrapperEditMode: "sm:!flex-col !items-start pt-3 gap-4 ",
   infoWrapper: `w-full flex justify-start items-start flex-auto gap-3`,
-  icon: `text-theme bg-theme-50 p-2 rounded-full mt-8`,
-  mapWrapper: "w-full h-[108vw] max-h-[480px] p-6 pt-0 bg-light-bg",
+  icon: `text-theme bg-theme-50/75 p-1.25 rounded-full mt-7.25 `,
+  mapWrapper: "w-full h-[108vw] max-h-[480px] bg-light-bg rounded-none",
   mapWrapperEditMode: "!h-auto !min-h-max p-5 pt-4",
   textWrapper: `relative space-y-0.5 [&>p:first-child]:text-sm [&>p:first-child]:uppercase 
   [&>p:first-child]:text-muted-foreground [&>p:first-child]:font-bold [&>p:last-child]:text-lg`,
@@ -79,7 +79,7 @@ export const FindUsSection = (): React.ReactElement => {
                   </div>
                 </div>
                 <CopyButton
-                  className="min-w-59.5 border border-border/50 sm:border-0"
+                  className="border border-border/50 sm:border-0"
                   state={phoneCopied}
                   setState={setPhoneCopied}
                   firstText="Copiar Telefone"
@@ -153,7 +153,7 @@ export const FindUsSection = (): React.ReactElement => {
               {!seeMap ? (
                 <>
                   <iframe
-                    className="rounded-md"
+                    className="border border-t-0"
                     src={shopInfo.urlMap}
                     width="100%"
                     height="100%"

@@ -9,7 +9,7 @@ interface Props {
 const WrapperOptions = ({ children, wrapperCss, title = 'Selecione' }: Props) => {
   return (
     <div className={wrapperCss}>
-      <p className=" font-medium mb-2 uppercase text-blue-600 tracking-wide">{title}</p>
+      <p className="font-medium mb-2 pt-1 uppercase text-blue-600 tracking-wide">{title}</p>
       {children}
     </div>
   );

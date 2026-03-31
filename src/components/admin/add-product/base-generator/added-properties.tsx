@@ -10,11 +10,10 @@ import { X } from "lucide-react";
 import { Icon } from "@/components/ui";
 
 const css = {
-  wrapper: `border p-4 flex flex-wrap gap-3 rounded-b-md`,
-  buttonWrapper: `min-h-10 max-w-max pl-4 pr-1 flex justify-between items-center gap-3 
-  bg-light-bg rounded-full border text-sm`,
-  name: `capitalize text-gray-800`,
-  strong: `font-medium tracking-wide`,
+  wrapper: `flex flex-wrap gap-3 pt-1`,
+  buttonWrapper: `max-w-max pl-0.5! flex justify-between`,
+  name: `capitalize font-normal`,
+  strong: `font-bold tracking-wide uppercase`,
 };
 
 const AddedProperties = ({
@@ -57,20 +56,30 @@ const AddedProperties = ({
       {infoArray.map(
         (item) =>
           item.value && (
-            <div key={item.label} className={`${css.buttonWrapper}`}>
+            <Button
+              data-option
+              size={"sm"}
+              key={item.label}
+              variant={"ghost"}
+              className={`${css.buttonWrapper}`}
+            >
+              <Button
+                asChild
+                variant="secondary"
+                data-destructive
+                size="icon-sm"
+                className="rounded-full text-red-700 hover:text-red-700"
+                onClick={() => clearValue(item.label)}
+              >
+                <div>
+                  <Icon Svg={X} size="base" strokeWidth="medium" />
+                </div>
+              </Button>
               <span className={css.name}>
                 {item.label}:{" "}
                 <strong className={css.strong}>{item.value}</strong>
               </span>
-              <Button
-                variant="secondary"
-                size="icon-sm"
-                className="rounded-full text-red-500 hover:text-red-700"
-                onClick={() => clearValue(item.label)}
-              >
-                <Icon Svg={X} />
-              </Button>
-            </div>
+            </Button>
           ),
       )}
     </div>
