@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -6,13 +6,19 @@ interface Props {
   title?: string;
 }
 
-const WrapperOptions = ({ children, wrapperCss, title = 'Selecione' }: Props) => {
+const OptionsWrapper = ({
+  children,
+  wrapperCss,
+  title = "Selecione",
+}: Props) => {
   return (
     <div className={wrapperCss}>
-      <p className="font-medium mb-2 pt-1 uppercase text-blue-600 tracking-wide">{title}</p>
+      <p className="font-[475] mb-2 pt-1 uppercase text-blue-600 tracking-wide">
+        {title}
+      </p>
       {children}
     </div>
   );
 };
 
-export { WrapperOptions };
+export { OptionsWrapper };

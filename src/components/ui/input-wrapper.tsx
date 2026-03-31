@@ -1,14 +1,14 @@
-import React from 'react'
-import { cn } from '@/lib/utils';
+import React from "react";
+import { cn } from "@/utils/utils";
 
-export function InputWrapper({ className, ...props }: React.ComponentProps<'div'>) {
+export function InputWrapper({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="input-wrapper"
-      className={cn(
-        'w-full flex flex-col gap-2',
-        className,
-      )}
+      className={cn("w-full flex flex-col gap-2", className)}
       {...props}
     />
   );

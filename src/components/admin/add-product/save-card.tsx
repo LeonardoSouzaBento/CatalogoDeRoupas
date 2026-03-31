@@ -14,7 +14,7 @@ const SaveCard = () => {
       <CardHeader>
         <CardTitle>
           <MuiIcon icon="bucket_check" size="h4" fill />
-          <h3>Salvar produto</h3>
+          <h4>Salvar produto</h4>
         </CardTitle>
       </CardHeader>
       <Button className="w-full mt-5">

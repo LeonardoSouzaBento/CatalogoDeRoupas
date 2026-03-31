@@ -1,6 +1,6 @@
 import type { ButtonVariants } from "@/components/ui/button";
 import { Button, Icon } from "@/components/ui";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import type { BooleanSetter } from "@/types/types";
 import { PenLine, PenOff } from "lucide-react";
 

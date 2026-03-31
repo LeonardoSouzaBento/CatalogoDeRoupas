@@ -11,7 +11,7 @@ import type { UserData } from "@/types/types";
 import { PenLine } from "lucide-react";
 import { useState } from "react";
 import { InputNameEmail } from "./input-name-email";
-import { getNameInitials } from "@/utils/getNameInitials";
+import { getNameInitials } from "@/utils/utils";
 
 const css = {
   wrapper: `w-full h-16 min-[430px]:h-auto flex gap-4 relative rounded-md bg-light-bg`,

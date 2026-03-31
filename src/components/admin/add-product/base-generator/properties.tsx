@@ -17,6 +17,7 @@ import { PropertyOptions } from "./property-options";
 
 interface Props {
   properties: ClothingProperty[];
+  propSelected: string | null;
   setPropSelected: StateSetter<string | null>;
   basicInformation: BasicClothingInformation;
   handleSelectOption: (prop: string, option: string) => void;
@@ -24,14 +25,21 @@ interface Props {
 
 const Properties = ({
   properties,
+  propSelected,
   setPropSelected,
   basicInformation,
   handleSelectOption,
 }: Props) => {
   return (
-    <ButtonsWrapper className="mb-5 pb-6 border-b">
+    <ButtonsWrapper className="mb-5" >
       {properties.slice(0, -1).map((item) => (
-        <Popover key={item.name}>
+        <Popover
+          key={item.name}
+          open={propSelected === item.name}
+          onOpenChange={(open) => {
+            if (!open) setPropSelected(null);
+          }}
+        >
           <PopoverTrigger asChild>
             <Button
               data-option

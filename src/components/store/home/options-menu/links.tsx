@@ -21,7 +21,7 @@ const Links = () => {
     <>
       {pageOptions.map((item) => (
         <Button
-          data-pl-sm
+          data-less-pl
           className="w-full justify-start"
           variant="transparent"
           key={item.name}

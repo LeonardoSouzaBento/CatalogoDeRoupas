@@ -2,7 +2,6 @@ import type { StateSetter } from "@/types/types";
 import { X } from "lucide-react";
 import { Button } from "./button";
 import { Icon } from "./lucide-icon";
-import { cn } from "@/lib/utils";
 
 interface CloseButtonProps {
   setState: StateSetter<boolean>;
@@ -16,20 +15,18 @@ const CloseButton = ({
   setState,
   className,
   variant = "secondary",
-  size = "icon",
+  size = "icon-sm",
   iconSize,
 }: CloseButtonProps) => {
   return (
     <Button
+      data-round
       size={size}
       variant={variant}
-      className={cn(
-        "rounded-full bg-primary-50 hover:bg-primary-100",
-        className,
-      )}
+      className={className}
       onClick={() => setState(false)}
     >
-      <Icon Svg={X} size={iconSize || "lg"} />
+      <Icon Svg={X} size={iconSize || "md"} className="text-destructive" />
     </Button>
   );
 };

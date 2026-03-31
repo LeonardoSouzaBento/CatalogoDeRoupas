@@ -1,13 +1,10 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
-function ButtonsWrapper({ className, ...props }: React.ComponentProps<'div'>) {
+function ButtonsWrapper({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="buttons-wrapper"
-      className={cn(
-        'w-full flex flex-wrap gap-3',
-        className,
-      )}
+      className={cn("w-full flex flex-wrap gap-3", className)}
       {...props}
     />
   );

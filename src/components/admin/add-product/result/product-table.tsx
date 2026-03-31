@@ -3,16 +3,6 @@
 import React, { useMemo } from 'react';
 import { TablePart } from './table-part';
 
-const css = {
-  grid: `px-5 py-2 grid grid-cols-1 sm:grid-cols-2 crop rounded-md border`,
-  wrapper: `bg-light-bg rounded-none `,
-  row: `h-9.5 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
-  rounded-none`,
-  label: ` font-medium text-gray-800 w-40`,
-  value: `text-gray-700 flex-1 text-right rounded-none`,
-  voidValue: `font-semibold text-gray-400 text-right`,
-};
-
 type Field = {
   key: string;
   label: string;
@@ -64,11 +54,11 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({ i
   const items = useMemo(() => initialItems ?? [buildEmptyItem()], [initialItems]);
 
   return (
-    <div className={css.grid}>
+    <div className="py-2 grid grid-cols-1 sm:grid-cols-2 crop rounded-md">
       <TablePart
         items={items}
         fields={col1}
-        wrapperClass={`border-b border 
+        wrapperClass={`border-b 
             sm:border-b-0 sm:pr-4`}
       />
       <TablePart

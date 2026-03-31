@@ -41,10 +41,10 @@ export const RemoveConfirm = ({ setSeeRemoveConfirm, photo, setPhotos, setPhotoT
         updated.splice(index, 1);
         return updated;
       }
-
       updated[index] = {
         ...updated[index],
         url: '',
+        fileName: undefined,
       };
 
       return updated;

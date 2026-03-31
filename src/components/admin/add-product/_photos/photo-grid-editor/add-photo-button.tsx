@@ -1,13 +1,21 @@
-import React from "react";
-import { Plus } from "lucide-react";
+import { Button, ButtonProps, Input } from "@/components/ui";
 import type { Photo, StateSetter } from "@/types/types";
-import { Button, Icon, Input, InputWrapper } from "@/components/ui";
+import React from "react";
+
+interface AddPhotoButtonProps extends ButtonProps {
+  photos: Photo[];
+  setPhotos: StateSetter<Photo[]>;
+  photoLimit: number;
+  children?: React.ReactNode;
+}
 
 export const AddPhotoButton = ({
+  photos,
   setPhotos,
-}: {
-  setPhotos: StateSetter<Photo[]>;
-}) => {
+  photoLimit,
+  children,
+  ...props
+}: AddPhotoButtonProps) => {
   function handleAddPhoto(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -33,11 +41,18 @@ export const AddPhotoButton = ({
           ...updated[indexWithoutImage],
           url: tempUrl,
           alt: `imagem ${updated[indexWithoutImage].order}`,
+          fileName: file.name,
         };
         return updated;
       }
 
-      // --- CASO 2: todos tem imagem → adiciona novo item
+      // --- CASO 2: todos tem imagem → verifica o limite
+      if (prev.length >= photoLimit) {
+        alert(`Você só pode adicionar até ${photoLimit} fotos.`);
+        return prev;
+      }
+
+      // --- CASO 3: todos tem imagem → adiciona novo item
       const nextOrder = prev.length + 1;
       return [
         ...prev,
@@ -46,6 +61,7 @@ export const AddPhotoButton = ({
           url: tempUrl,
           alt: `imagem ${nextOrder}`,
           order: nextOrder,
+          fileName: file.name,
         },
       ];
     });
@@ -53,18 +69,22 @@ export const AddPhotoButton = ({
   }
 
   return (
-    <InputWrapper>
-      <Button>
-        Adicionar foto
-        <Icon Svg={Plus} />
-      </Button>
+    <Button
+      className="relative"
+      data-round
+      size={"icon-lg"}
+      disabled={photos.length >= photoLimit}
+      {...props}
+    >
+      {children}
       <Input
         type="file"
         accept=".jpg, .jpeg, .png, .webp"
+        className="bg-transparent absolute inset-0 opacity-0 z-10"
         onChange={(event) => {
           handleAddPhoto(event);
         }}
       />
-    </InputWrapper>
+    </Button>
   );
 };

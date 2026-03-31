@@ -105,7 +105,7 @@ const Choices = () => {
     <>
       {currentMostSearched.map((item) => (
         <Button
-          data-pl-sm
+          data-less-pl
           variant="transparent"
           key={item}
           className="w-full justify-start"

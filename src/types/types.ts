@@ -103,6 +103,7 @@ export interface Photo {
   url: string;
   alt: string;
   order: number;
+  fileName?: string;
 }
 
 export type UserSex = 'masculino' | 'feminino';

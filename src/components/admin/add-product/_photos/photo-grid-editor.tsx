@@ -1,32 +1,31 @@
-'use client';
-import type { Photo } from '@/types/types';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+"use client";
+import { Icon } from "@/components/ui";
+import type { Photo } from "@/types/types";
+import { Plus } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   AddPhotoButton,
   RemoveConfirm,
-  RemovePhotoButton,
   ReorderButton,
-} from './photo-grid-editor/index';
-
-const css = {
-  wrapper: `my-5 flex flex-wrap justify-start gap-4 crop relative`,
-  wrapperEditMode: `ring ring-blue-300 p-4`,
-  wrapperImg: `relative h-36.25 w-29  overflow-hidden`,
-  wrapperButtons: `flex flex-col gap-5 mb-5 min-[560px]:grid min-[560px]:grid-cols-2`,
-  reorderAlert: `w-full min-h-10 p-3 px-6 bg-yellow-100/85 text-gray-800 flex items-center justify-start
-  gap-2 `,
-};
+} from "./photo-grid-editor/index";
+import { PhotoComponent } from "./photo-grid-editor/photo";
 
 const initialPhotos = [
-  { id: '1', url: '', alt: 'imagem 1', order: 1 },
-  { id: '2', url: '', alt: 'imagem 2', order: 2 },
-  { id: '3', url: '', alt: 'imagem 3', order: 3 },
+  { id: "1", url: "", alt: "imagem 1", order: 1 },
+  { id: "2", url: "", alt: "imagem 2", order: 2 },
+  { id: "3", url: "", alt: "imagem 3", order: 3 },
 ];
 
 export const PhotoGridEditor = () => {
   const [photos, setPhotos] = useState<Photo[]>(initialPhotos);
   const [reorderMode, setReorderMode] = useState<boolean>(false);
+  const photoLimit = 8;
+  const samePhoto = photos.some((photo, index) => {
+    if (!photo.fileName) return false;
+    return photos.some(
+      (p, i) => p.fileName === photo.fileName && i !== index && p.url,
+    );
+  });
   const [firstSelectedId, setFirstSelectedId] = useState<string | null>(null);
   const [photoTaken, setPhotoTaken] = useState<Photo | null>(null);
   const [seeRemoveConfirm, setSeeRemoveConfirm] = useState<boolean>(false);
@@ -77,53 +76,68 @@ export const PhotoGridEditor = () => {
     <>
       <div>
         <div
-          className={`${css.wrapper} ${reorderMode && css.wrapperEditMode} ${
-            seeRemoveConfirm && 'overflow-visible!'
-          }`}>
+          className={`mb-2 flex flex-wrap justify-start items-end gap-4 crop relative 
+            ${reorderMode && "ring ring-blue-300 p-4"} ${
+              seeRemoveConfirm && "overflow-visible!"
+            }`}
+        >
           {sortedPhotos.map((photo) => (
-            <div
+            <PhotoComponent
               key={photo.id}
-              className={`${css.wrapperImg} ${reorderMode && photo.id === firstSelectedId && ''}`}
-              onClick={() => {
-                handleImageClick(photo.id);
-              }}>
-              {photo.url && (
-                <div
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setPhotoTaken(photo);
-                  }}>
-                  <RemovePhotoButton />
-                </div>
-              )}
-
-              <Image
-                src={photo.url ? photo.url : '/home'}
-                alt={photo.alt}
-                fill
-                className="object-cover"
-              />
-            </div>
+              photo={photo}
+              reorderMode={reorderMode}
+              firstSelectedId={firstSelectedId}
+              handleImageClick={handleImageClick}
+              setPhotoTaken={setPhotoTaken}
+              photos={photos}
+              setPhotos={setPhotos}
+              photoLimit={photoLimit}
+            />
           ))}
           {reorderMode && (
-            <div className={`${css.reorderAlert}`}>
+            <div
+              className="w-full min-h-10 p-3 px-6 bg-yellow-100/85 
+              text-gray-800 flex items-center justify-start gap-2"
+            >
               <span
                 className={`material-symbols-rounded
-                font-semibold !`}>
+                font-semibold !`}
+              >
                 touch_app
               </span>
-              <p className={`font-medium `}>Clique em duas imagens para trocar as posições.</p>
+              <p className={`font-medium `}>
+                Clique em duas imagens para trocar as posições.
+              </p>
             </div>
           )}
-        </div>
-        <div className={`${css.wrapperButtons}`}>
-          <AddPhotoButton setPhotos={setPhotos} />
-          <ReorderButton
+          <AddPhotoButton
             photos={photos}
-            reorderMode={reorderMode}
-            setReorderMode={setReorderMode}
-          />
+            setPhotos={setPhotos}
+            photoLimit={photoLimit}
+          >
+            <Icon Svg={Plus} size={"lg"} />
+          </AddPhotoButton>
         </div>
+
+        <div className="mb-3">
+          <p className="text-xs text-gray-500">
+            Você pode adicionar até {photoLimit} fotos. Formatos aceitos: JPG,
+            JPEG, PNG, WEBP
+          </p>
+          {samePhoto && (
+            <p className="text-xs text-red-500">
+              Você adicinou uma foto duas vezes ou mais. Remova a foto duplicada
+              para continuar.
+            </p>
+          )}
+        </div>
+
+        <ReorderButton
+          photos={photos}
+          reorderMode={reorderMode}
+          setReorderMode={setReorderMode}
+          className="mb-4.25"
+        />
       </div>
       {seeRemoveConfirm && (
         <RemoveConfirm

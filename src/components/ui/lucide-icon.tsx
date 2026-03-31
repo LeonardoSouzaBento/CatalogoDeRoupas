@@ -57,6 +57,7 @@ export const Icon = ({
       [&_svg]:shrink-0 [&_svg]:pointer-events-none`}
     >
       <Svg
+        data-icon
         className={className}
         size={iconSizes[size as SizeValue] || size || "1em"}
         strokeWidth={

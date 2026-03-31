@@ -40,13 +40,15 @@ const FinalInfo = () => {
       <CardHeader>
         <CardTitle>
           <MuiIcon icon="edit_note" size="h3" fill />
-          <h3>Demais informações</h3>
+          <h4>Demais informações</h4>
         </CardTitle>
       </CardHeader>
 
-      <ButtonsWrapper className="border mb-5">
+      <ButtonsWrapper className="mb-5">
         {properties.map((property) => (
           <Button
+            data-option
+            size="sm"
             key={property}
             variant="ghost"
             data-selected={selectedPropertie === property}

@@ -6,8 +6,8 @@ const Queue = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <MuiIcon icon="layers" size="h3" weight={500} fill />
-          <h3>Fila</h3>
+          <MuiIcon icon="layers" size="h4" weight={500} fill className='-mr-0.75' />
+          <h4>Fila</h4>
         </CardTitle>
       </CardHeader>
     </Card>

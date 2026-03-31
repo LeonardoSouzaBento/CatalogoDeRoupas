@@ -1,26 +1,21 @@
 "use client";
-import { useResizeCount } from "@/hooks";
 import { useState } from "react";
 import {
   BaseGenerator,
   FinalInfo,
   Photos,
-  ProductBasesList,
   Queue,
   Queuer,
   Result,
-  SaveCard
+  SaveCard,
 } from "./add-product";
 
-const AddProductCore = ({ children }: { children: React.ReactNode }) => {
+const AddProductCore = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(0);
-  const resizeCount = useResizeCount();
 
   return (
-    <div className={`max-w-3xl lg:max-w-4xl mx-auto space-y-6 mt-3 px-3 sm:px-4`}>
-      {children}
+    <>
       <Queue />
-      <ProductBasesList resizeCount={resizeCount} />
       <Photos />
       <BaseGenerator />
       <FinalInfo />
@@ -30,7 +25,7 @@ const AddProductCore = ({ children }: { children: React.ReactNode }) => {
         setSelectedQuantity={setSelectedQuantity}
       />
       <SaveCard />
-    </div>
+    </>
   );
 };
 

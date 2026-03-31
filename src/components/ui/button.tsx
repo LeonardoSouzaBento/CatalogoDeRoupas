@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
@@ -6,7 +6,7 @@ import * as React from "react";
 export type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 const buttonVariants = cva(
-  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer disabled:cursor-not-allowed! capitalize data-w-full:w-full data-option:rounded-full data-option:px-[0.66em] text-left outline-solid outline-0 data-pl-sm:pl-[0.6em] font-[550]`,
+  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer disabled:cursor-not-allowed! capitalize data-w-full:w-full data-option:rounded-full data-option:px-[0.66em] text-left outline-solid outline-0 data-less-pl:pl-[0.6em] font-[525] data-round:rounded-full`,
   {
     variants: {
       variant: {
@@ -15,7 +15,7 @@ const buttonVariants = cva(
 
         outline: `bg-transparent text-primary-800 border-2 border-primary-700 
         active:bg-primary-100 disabled:bg-neutral-100 disabled:border-neutral-300 
-        disabled:text-neutral-500/75 hover:bg-primary-50`,
+        disabled:text-neutral-500/75 hover:bg-primary-50 font-[550]`,
 
         ghost: `bg-transparent text-primary-700 border border-border/80 
         active:bg-primary-100 disabled:bg-neutral-100 disabled:text-neutral-400 
@@ -91,7 +91,7 @@ const getPaddings = (variant: OmitVariant, size: OmitSize): string => {
   return padding;
 };
 
-interface ButtonProps
+export interface ButtonProps
   extends React.ComponentProps<"button">, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   selected?: boolean;

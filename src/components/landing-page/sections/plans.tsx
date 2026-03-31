@@ -6,7 +6,7 @@ import {
   SectionHeader,
   SectionTitle,
 } from "../ui/index";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 const plans = [
   {

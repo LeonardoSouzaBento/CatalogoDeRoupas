@@ -1,40 +1,45 @@
-'use client';
-import { ResizableCardTitle } from '@/components/admin/ui/resizable-card-title';
-import { Card, CardDescription, CardHeader, CardTitle, MuiIcon } from '@/components/ui';
-import { UserContext } from '@/contexts/userContext_';
-import { basicFemaleClothes } from '@/data/clothings/basicFemaleClothes';
-import { basicMaleClothes } from '@/data/clothings/basicMaleClothes';
-import { useContext, useRef, useState } from 'react';
-import { BaseClothingOptions } from './product-base-list/base-clothing-options';
-import { Description } from './product-base-list/description_';
+"use client";
+import { Button, Card, Icon } from "@/components/ui";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { UserContext } from "@/contexts/userContext_";
+import { basicFemaleClothes } from "@/data/clothings/basicFemaleClothes";
+import { basicMaleClothes } from "@/data/clothings/basicMaleClothes";
+import { ChevronDown } from "lucide-react";
+import { useContext, useState } from "react";
+import { BaseClothingOptions } from "./product-base-list/base-clothing-options";
+import { Description } from "./product-base-list/description";
 
-const ProductBasesList = ({ resizeCount }: { resizeCount: number }) => {
+const ProductBasesList = () => {
   const { selectedGender } = useContext(UserContext);
-  const [selectedName, setSelectedName] = useState<string>('');
-  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [selectedName, setSelectedName] = useState<string>("");
 
-  const clothes = selectedGender === 'masculino' ? basicMaleClothes : basicFemaleClothes;
+  const clothes =
+    selectedGender === "masculino" ? basicMaleClothes : basicFemaleClothes;
 
   return (
-    <Card ref={cardRef} className="crop">
-      <ResizableCardTitle cardRef={cardRef} cssButton="mt-4" pb={16}>
-        <CardHeader>
-          <CardTitle>
-            <MuiIcon icon="apparel" size="h4" fill />
-            <h3>Roupa base</h3>
-          </CardTitle>
-          <CardDescription>Adicione informações mais rapidamente (opcional)</CardDescription>
-        </CardHeader>
-      </ResizableCardTitle>
-
-      <BaseClothingOptions
-        clothes={clothes}
-        selectedName={selectedName}
-        setSelectedName={setSelectedName}
-      />
-
-      <Description selectedName={selectedName} />
-    </Card>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline" data-round className="max-w-max pr-[0.6em]">
+          Ver Modelos Comuns
+          <Icon
+            Svg={ChevronDown}
+            size="lg"
+            strokeWidth="extralight"
+            className="mt-px"
+          />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="w-full max-w-155">
+        <Card className="w-full max-h-120 overflow-y-scroll border-0 shadow-none">
+          <BaseClothingOptions
+            clothes={clothes}
+            selectedName={selectedName}
+            setSelectedName={setSelectedName}
+          />
+          <Description selectedName={selectedName} />
+        </Card>
+      </DialogContent>
+    </Dialog>
   );
 };
 

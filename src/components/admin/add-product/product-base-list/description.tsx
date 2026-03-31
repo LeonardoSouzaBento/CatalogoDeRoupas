@@ -12,9 +12,9 @@ const Description = ({ selectedName }: DescriptionProps) => {
     : ["", ""];
 
   return (
-    <Alert>
-      <Icon Svg={Info} />
-      <AlertTitle>Descrição completa</AlertTitle>
+    <Alert className="sticky bottom-0">
+      <Icon Svg={Info} strokeWidth="bold"/>
+      <AlertTitle><p className="font-medium">Descrição completa</p></AlertTitle>
       <AlertDescription>
         <p>
           {selectedName ? (

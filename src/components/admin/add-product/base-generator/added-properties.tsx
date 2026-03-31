@@ -10,7 +10,7 @@ import { X } from "lucide-react";
 import { Icon } from "@/components/ui";
 
 const css = {
-  wrapper: `flex flex-wrap gap-3 pt-1`,
+  wrapper: `flex flex-wrap gap-3`,
   buttonWrapper: `max-w-max pl-0.5! flex justify-between`,
   name: `capitalize font-normal`,
   strong: `font-bold tracking-wide uppercase`,

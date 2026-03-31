@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import React from 'react';
+import { cn } from "@/utils/utils";
+import Image from "next/image";
+import React from "react";
 
 // Interface for the Iphone15Pro component props
 interface Iphone15ProProps extends React.SVGProps<SVGSVGElement> {
@@ -14,19 +14,20 @@ interface Iphone15ProProps extends React.SVGProps<SVGSVGElement> {
 
 export const Iphone15Pro: React.FC<Iphone15ProProps> = ({
   src,
-  alt = 'iPhone screen content',
+  alt = "iPhone screen content",
   className,
   ...props
 }) => {
   return (
-    <div className={cn('relative h-118', className)}>
+    <div className={cn("relative h-118", className)}>
       <svg
         className="block size-full object-cover"
         viewBox="0 0 433 882"
         preserveAspectRatio="xMidYMid meet"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        {...props}>
+        {...props}
+      >
         {/* Outer frame */}
         <path
           d="M2 73C2 32.6832 34.6832 0 75 0H357C397.317 0 430 32.6832 430 73V809C430 849.317 397.317 882 357 882H75C34.6832 882 2 849.317 2 809V73Z"
@@ -66,19 +67,20 @@ export const Iphone15Pro: React.FC<Iphone15ProProps> = ({
         {/* Screen Content */}
         {src && (
           <div className="relative size-full overflow-hidden rounded-[55.75px] bg-[#111] dark:bg-[#F5F5F5]">
-            <Image
-              src={src}
-              alt={alt}
-              fill
-              className="object-cover"
-              priority
-            />
+            <Image src={src} alt={alt} fill className="object-cover" priority />
           </div>
         )}
 
         <defs>
           <clipPath id="roundedCorners">
-            <rect x="21.25" y="19.25" width="389.5" height="843.5" rx="55.75" ry="55.75" />
+            <rect
+              x="21.25"
+              y="19.25"
+              width="389.5"
+              height="843.5"
+              rx="55.75"
+              ry="55.75"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -97,11 +99,11 @@ interface TriplePhoneHeroProps {
 
 export const TriplePhoneHero: React.FC<TriplePhoneHeroProps> = ({
   imageLeftSrc,
-  imageLeftAlt = 'Left phone screen content',
+  imageLeftAlt = "Left phone screen content",
   imageCenterSrc,
-  imageCenterAlt = 'Center phone screen content',
+  imageCenterAlt = "Center phone screen content",
   imageRightSrc,
-  imageRightAlt = 'Right phone screen content',
+  imageRightAlt = "Right phone screen content",
 }) => {
   return (
     <div className="relative flex min-h-[600px] w-full items-center justify-center">

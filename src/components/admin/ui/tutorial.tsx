@@ -34,8 +34,8 @@ const Tutorial = ({ title, steps, cssList, itemCss, pb }: Props) => {
       <ResizableCardTitle cardRef={cardRef} pb={pb}>
         <CardHeader>
           <CardTitle>
-            <MuiIcon icon="info" size="xl" />
-            <h3>Saiba {title}</h3>
+            <MuiIcon icon="info" size="h6" weight={600} />
+            <h4>Saiba {title}</h4>
           </CardTitle>
         </CardHeader>
       </ResizableCardTitle>

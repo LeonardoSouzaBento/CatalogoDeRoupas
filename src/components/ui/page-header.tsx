@@ -1,22 +1,25 @@
-import { cn } from '@/lib/utils';
-import React from 'react';
+import { cn } from "@/utils/utils";
+import React from "react";
 
-function PageHeader({ className, ...props }: React.ComponentProps<'div'>) {
+function PageHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="page-header"
-      className={cn('bg-primary-700 rounded-none', className)}
+      className={cn("bg-primary-700 rounded-none", className)}
       {...props}
     />
   );
 }
 
-function PageHeaderWrapper({ className, ...props }: React.ComponentProps<'div'>) {
+function PageHeaderWrapper({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="page-header"
       className={cn(
-        'h-14 mx-auto flex items-center justify-center rounded-none',
+        "h-14 mx-auto flex items-center justify-center rounded-none",
         className,
       )}
       {...props}
@@ -24,12 +27,12 @@ function PageHeaderWrapper({ className, ...props }: React.ComponentProps<'div'>)
   );
 }
 
-function PageTitle({ className, ...props }: React.ComponentProps<'h2'>) {
+function PageTitle({ className, ...props }: React.ComponentProps<"h2">) {
   return (
     <h3
       data-slot="page-title"
       className={cn(
-        'w-full text-white font-bold leading-none capitalize mt-px',
+        "w-full text-white font-bold leading-none capitalize mt-px",
         className,
       )}
       {...props}

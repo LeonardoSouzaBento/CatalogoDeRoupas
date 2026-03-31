@@ -1,7 +1,15 @@
-import AddProductCore from '@/components/admin/add-product-core';
-import { Tutorial } from '@/components/admin/ui';
-import { Alert, AlertDescription, AlertTitle, Icon, PageHeader, PageHeaderWrapper, PageTitle } from '@/components/ui';
-import { AlertCircle } from 'lucide-react';
+import AddProductCore from "@/components/admin/add-product-core";
+import { Tutorial } from "@/components/admin/ui";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  Icon,
+  PageHeader,
+  PageHeaderWrapper,
+  PageTitle,
+} from "@/components/ui";
+import { AlertCircle } from "lucide-react";
 
 // const specificProperties = [
 //   { name: "Nome" },
@@ -28,21 +36,14 @@ const page = () => {
     <>
       <PageHeader>
         <PageHeaderWrapper>
-          <PageTitle className="md:px-0 md:max-w-3xl lg:max-w-4xl">Cadastrar Produtos</PageTitle>
+          <PageTitle className="md:px-0 md:max-w-3xl lg:max-w-4xl">
+            Cadastrar Produtos
+          </PageTitle>
         </PageHeaderWrapper>
       </PageHeader>
-
-      <AddProductCore>
-        <Alert className="bg-light-bg border">
-          <Icon Svg={AlertCircle} />
-          <AlertTitle>Importante</AlertTitle>
-          <AlertDescription>
-            Registre um tipo de peça de cada vez. Por exemplo: primeiro as
-            camisetas básicas lisas, depois as camisas polos, e assim por diante.
-            Isso facilita o cadastro e evita confusão.
-          </AlertDescription>
-        </Alert>
-
+      <div
+        className={`max-w-3xl lg:max-w-4xl mx-auto space-y-6 mt-3 px-3 sm:px-4`}
+      >
         <Tutorial
           title="como cadastrar"
           steps={tutorialSteps}
@@ -50,7 +51,17 @@ const page = () => {
           itemCss="sm:mb-2"
           pb={24}
         />
-      </AddProductCore>
+        <Alert className="bg-light-bg border">
+          <Icon Svg={AlertCircle} />
+          <AlertTitle>Importante</AlertTitle>
+          <AlertDescription>
+            Registre um tipo de peça de cada vez. Por exemplo: primeiro as
+            camisetas básicas lisas, depois as camisas polos, e assim por
+            diante. Isso facilita o cadastro e evita confusão.
+          </AlertDescription>
+        </Alert>
+        <AddProductCore />
+      </div>
     </>
   );
 };

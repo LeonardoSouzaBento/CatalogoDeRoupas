@@ -1,6 +1,6 @@
 "use client";
 import { Icon } from "@/components/ui";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import React from "react";

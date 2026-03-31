@@ -1,16 +1,16 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/utils/utils";
 
-function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
+function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input
       type={type}
       data-slot="input"
       className={cn(
-        'h-10 px-[0.75em] w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary-600 selection:text-primary-foreground bg-input border-input-border min-w-0 rounded-md border shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
-        'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring',
-        'aria-invalid:ring-destructive/20 aria-invalid:border-destructive',
+        "h-10 px-[0.75em] w-full file:text-foreground placeholder:text-muted-foreground/60 selection:bg-primary-600 selection:text-primary-foreground bg-input border-input-border min-w-0 rounded-sm border shadow-xs transition-all duration-200 outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
+        "focus-visible:border-primary-600 focus-visible:ring-3 focus-visible:ring-primary-600/10",
+        "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
         className,
       )}
       {...props}
