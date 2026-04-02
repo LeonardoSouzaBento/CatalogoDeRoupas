@@ -12,8 +12,6 @@ import type { BooleanSetter } from "@/types/types";
 import { Eye, EyeClosed, LogIn, X } from "lucide-react";
 import { useState } from "react";
 
-const css = { button: `h-11 w-full justify-center` };
-
 const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
   const [seePassword, setSeePassword] = useState<boolean>(false);
 
@@ -55,13 +53,11 @@ const EmailForm = ({ setSeeEmailForm }: { setSeeEmailForm: BooleanSetter }) => {
           {seePassword ? <Icon Svg={EyeClosed} /> : <Icon Svg={Eye} />}
         </div>
       </InputWrapper>
-      <Button className={`${css.button} mb-5`}>
+      <Button className="h-11 w-full justify-center mb-5">
         <Icon Svg={LogIn} />
         Entrar
       </Button>
-      <Button
-        className={`${css.button} h-10! font-light bg-light-bg  text-neutral-600`}
-      >
+      <Button className="w-full justify-center h-10! font-light bg-light-bg  text-neutral-600">
         Esqueci minha senha
       </Button>
     </div>

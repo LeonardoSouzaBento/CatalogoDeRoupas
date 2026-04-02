@@ -1,25 +1,26 @@
 'use client';
 import React from 'react';
 
-const css = {
-  wrapperLogo: `size-20 mb-8 box-content flex flex-col justify-center items-center gap-6 
-  bg-stone-800 rounded-full shadow-lg-hover`,
-  pLogo: `h-max text-center text-white font-logo  pl-[1px] leading-0`,
-  shopName: `text-center  font-semibold leading-0 mb-4 capitalize`,
-  subtitle: `mb-6 text-gray-500 `,
-};
-
 const StoreLogo = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className={`${css.wrapperLogo} bg-gradient-to-br from-stone-800 to-stone-700`}>
-        <p className={`${css.pLogo} pt-1`}>Roupas</p>
-        <p className={`${css.pLogo}`}>Online</p>
+      <div
+        className="size-16 mb-4 flex-center rounded-2xl bg-neutral-900 shadow-xl shadow-neutral-900/10"
+      >
+        <div className="flex flex-col items-center">
+           <span className="text-[10px] text-neutral-400 font-medium tracking-widest uppercase">The</span>
+           <span className="text-sm text-white font-bold tracking-tighter -mt-1 uppercase">Store</span>
+        </div>
       </div>
-      <p className={`${css.shopName} tracking-tight`}>Nome da sua loja</p>
-      <p className={`${css.subtitle}`}>Facilite sua compra</p>
+      <h1 className="text-2xl font-bold text-neutral-900 tracking-tight mb-1">
+        Bem-vindo de volta
+      </h1>
+      <p className="text-sm text-neutral-500 font-medium">
+        Entre para continuar sua jornada fashion
+      </p>
     </div>
   );
 };
 
 export { StoreLogo };
+

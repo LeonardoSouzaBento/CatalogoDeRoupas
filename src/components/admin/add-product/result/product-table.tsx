@@ -11,26 +11,26 @@ type Field = {
 
 const fields: Field[] = [
   // Coluna 1
-  { key: 'id', label: 'ID', value: '' },
   { key: 'nome', label: 'Nome', value: '' },
-  { key: 'modelagem', label: 'Modelagem', value: '' },
-  { key: 'marca', label: 'Marca', value: '' },
+  { key: 'preco', label: 'Preço', value: '' },
   { key: 'genero', label: 'Gênero', value: '' },
+  { key: 'modelagem', label: 'Modelagem', value: '' },
+  { key: 'tamanhos_disponiveis', label: 'Tamanhos disponíveis', value: '' },
+  { key: 'marca', label: 'Marca', value: '' },
   { key: 'e_infantil', label: 'É infantil', value: '' },
-  { key: 'idade_crianca', label: 'Idade da criança', value: '' },
   { key: 'categoria', label: 'Categoria', value: '' },
   { key: 'subcategoria', label: 'Subcategoria', value: '' },
-
+  
   // Coluna 2
+  { key: 'id', label: 'ID', value: '(criado automaticamente)' },
   { key: 'cor_principal', label: 'Cor principal', value: '' },
-  { key: 'preco', label: 'Preço', value: '' },
   { key: 'composicao', label: 'Composição', value: '' },
   { key: 'padrao_principal', label: 'Padrão principal', value: '' },
   { key: 'padrao_secundario', label: 'Padrão secundário', value: '' },
   { key: 'estampa', label: 'Estampa', value: '' },
+  { key: 'idade_crianca', label: 'Idade da criança', value: '' },
   { key: 'diferencial', label: 'Diferencial', value: '' },
   { key: 'descricao', label: 'Descrição', value: '' },
-  { key: 'tamanhos_disponiveis', label: 'Tamanhos disponíveis', value: '' },
   { key: 'criado_em', label: 'Criado em', value: '' },
   { key: 'atualizado_em', label: 'Atualizado em', value: '' },
 ];
@@ -54,7 +54,7 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({ i
   const items = useMemo(() => initialItems ?? [buildEmptyItem()], [initialItems]);
 
   return (
-    <div className="py-2 grid grid-cols-1 sm:grid-cols-2 crop rounded-md">
+    <div className="grid grid-cols-1 sm:grid-cols-2 crop rounded-md">
       <TablePart
         items={items}
         fields={col1}
@@ -72,3 +72,5 @@ const ProductTable: React.FC<{ initialItems?: Record<string, string>[] }> = ({ i
 };
 
 export { ProductTable, fields };
+
+

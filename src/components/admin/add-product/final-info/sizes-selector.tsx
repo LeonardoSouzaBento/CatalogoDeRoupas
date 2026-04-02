@@ -1,80 +1,107 @@
-'use client';
-import React, { useContext, useState } from 'react';
-import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useContext, useState } from "react";
 
-import { Eye } from 'lucide-react';
-import { UserContext } from '@/contexts/index';
-import { letterSizes } from '@/data/clothings/sizes';
-import { numericalSizes } from '@/data/clothings/sizes';
-import { childNumericalSizes } from '@/data/clothings/sizes';
+import { OptionsWrapper } from "@/components/admin/add-product/common/index";
+import { Button, ButtonsWrapper } from "@/components/ui";
+import { UserContext } from "@/contexts/index";
+import {
+  childNumericalSizes,
+  letterSizes,
+  numericalSizes,
+} from "@/data/clothings/sizes";
+import { StateSetter } from "@/types";
 
 // interface Props {}
 
-const SizeSelector = () => {
+const SizeSelector = ({ trigger }: { trigger: React.ReactNode }) => {
   const { childCatSelected } = useContext(UserContext);
-  const [seeNumericalSizes, setSeeNumericalSizes] = useState<boolean>(false);
+  const [selectedSize, setSelectedSize] = useState<string>("");
 
   return (
-    <div>
-      <h2>Selecione um tamanho</h2>
-      <SizeList dataList={letterSizes} />
-      {seeNumericalSizes && <SizeList dataList={numericalSizes} />}
-      {childCatSelected && <SizeList dataList={childNumericalSizes} />}
-
-      <Button
-        onClick={() => {
-          setSeeNumericalSizes(!seeNumericalSizes);
-        }}>
-        Ver medidas numéricas
-        <Eye />
-      </Button>
-
-      {childCatSelected && (
-        <Button
-          onClick={() => {
-            setSeeNumericalSizes(!seeNumericalSizes);
-          }}>
-          Ver medidas numéricas infantis
-          <Eye />
-        </Button>
-      )}
-    </div>
+    <Dialog>
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
+      <DialogContent className="max-w-xl">
+        <DialogHeader>
+          <DialogTitle>Tamanhos disponíveis</DialogTitle>
+        </DialogHeader>
+        <div className="mt-2">
+          <OptionsWrapper title="Selecione os tamanhos">
+            <div className="mb-4">
+              <SizeList
+                dataList={letterSizes}
+                title="Medidas"
+                selectedSize={selectedSize}
+                setSelectedSize={setSelectedSize}
+              />
+              <SizeList
+                dataList={numericalSizes}
+                className="mt-4"
+                title="Medidas numéricas"
+                selectedSize={selectedSize}
+                setSelectedSize={setSelectedSize}
+              />
+              {childCatSelected && (
+                <SizeList
+                  dataList={childNumericalSizes}
+                  title="Medidas numéricas infantis"
+                  selectedSize={selectedSize}
+                  setSelectedSize={setSelectedSize}
+                />
+              )}
+            </div>
+          </OptionsWrapper>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
 export { SizeSelector };
 
-interface Props {
+interface SizeListProps {
   dataList: string[] | number[];
+  className?: string;
+  title: string;
+  selectedSize: string;
+  setSelectedSize: StateSetter<string>;
 }
 
-const css = {
-  wrapper: `flex flex-wrap`,
-  wrapperItem: `h-10 min-w-10 flex items-center justify-center`,
-  p: ``,
-  notSelected: ` p-0`,
-  selected: ` p-0`,
-};
-
-const SizeList = ({ dataList }: Props) => {
-  const [selectedSize, setSelectedSize] = useState<string>('');
-
+const SizeList = ({
+  dataList,
+  className,
+  title,
+  selectedSize,
+  setSelectedSize,
+}: SizeListProps) => {
   const handleSelectSize = (size: string) => {
     setSelectedSize(size);
   };
 
   return (
-    <div className={css.wrapper}>
-      {dataList.map((size) => (
-        <Button
-          key={size}
-          variant={selectedSize === size.toString() ? 'default' : 'outline'}
-          size="icon"
-          className="size-10"
-          onClick={() => handleSelectSize(size.toString())}>
-          {size.toString()}
-        </Button>
-      ))}
+    <div className={className}>
+      <p className="small-text text-muted-foreground mb-2 tracking-wide">
+        {title}
+      </p>
+      <ButtonsWrapper>
+        {dataList.map((size) => (
+          <Button
+            key={size}
+            data-option
+            selected={selectedSize === size.toString()}
+            variant={"ghost"}
+            size="sm"
+            onClick={() => handleSelectSize(size.toString())}
+          >
+            {size.toString()}
+          </Button>
+        ))}
+      </ButtonsWrapper>
     </div>
   );
 };

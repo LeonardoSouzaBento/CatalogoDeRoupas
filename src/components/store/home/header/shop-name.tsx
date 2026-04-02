@@ -5,11 +5,6 @@ import type { BooleanSetter } from "@/types/types";
 import { ChevronLeft, CircleCheckBig } from "lucide-react";
 import React, { useContext, useState } from "react";
 
-const css = {
-  container: "fixed inset-0 bg-black/3 px-4 backdrop-blur-xs pt-3 pb-3 z-8 ",
-  formWrapper: "h-max m-auto max-w-lg flex flex-col gap-4 relative shadow-xl",
-};
-
 type NameShopProps = {
   setSeeNameShop: BooleanSetter;
 };
@@ -26,12 +21,15 @@ const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
 
   return (
     <div
-      className={`${css.container}`}
+      className="fixed inset-0 bg-black/3 px-4 backdrop-blur-xs pt-3 pb-3 z-8 "
       onClick={() => {
         setSeeNameShop(false);
       }}
     >
-      <Card data-no-header className={`${css.formWrapper}`}>
+      <Card
+        data-no-header
+        className="h-max m-auto max-w-lg flex flex-col gap-4 relative shadow-xl"
+      >
         <InputWrapper>
           <Label htmlFor="name">Digite o nome da sua loja</Label>
           <Input

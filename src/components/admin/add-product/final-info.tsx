@@ -1,14 +1,14 @@
 import {
+  ButtonsWrapper,
   Card,
   CardHeader,
   CardTitle,
   Icon,
   MuiIcon,
-  ButtonsWrapper,
 } from "@/components/ui";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import React from "react";
+import { useState } from "react";
 import {
   Brand,
   ColorPicker,
@@ -21,19 +21,18 @@ import {
 
 //cores, tamanhos, composição, preço, marca, descrição, diferencial,
 
-const FinalInfo = () => {
-  const [selectedPropertie, setSelectedPropertie] =
-    React.useState<string>("Composição");
+const properties = {
+  Composição: CompositionEditor,
+  "Tamanhos disponiveis": SizeSelector,
+  Descrição: Description,
+  Preço: Price,
+  Marca: Brand,
+  Diferencial: Differential,
+  Cores: ColorPicker,
+};
 
-  const properties = [
-    "Composição",
-    "Tamanhos disponiveis",
-    "Descrição",
-    "Preço",
-    "Marca",
-    "Diferencial",
-    "Cores",
-  ];
+const FinalInfo = () => {
+  const [selectedPropertie, setSelectedPropertie] = useState<string>("Composição");
 
   return (
     <Card>
@@ -44,37 +43,43 @@ const FinalInfo = () => {
         </CardTitle>
       </CardHeader>
 
-      <ButtonsWrapper className="mb-5">
-        {properties.map((property) => (
-          <Button
-            data-option
-            size="sm"
-            key={property}
-            variant="ghost"
-            data-selected={selectedPropertie === property}
-            onClick={() => {
-              setSelectedPropertie(property);
-            }}
-          >
-            {property}
-            <Icon Svg={ChevronDown} />
-          </Button>
-        ))}
-      </ButtonsWrapper>
+      <ButtonsWrapper>
+        {Object.entries(properties).map(([name, Component]) => {
+          const trigger = (
+            <Button
+              data-option
+              size="sm"
+              variant="ghost"
+              data-selected={selectedPropertie === name}
+              onClick={() => {
+                setSelectedPropertie(name);
+              }}
+            >
+              {name}
+              <Icon Svg={ChevronDown} />
+            </Button>
+          );
 
-      <div className={`bs`}>
-        {selectedPropertie === "Composição" && <CompositionEditor />}
-        {selectedPropertie === "Tamanhos disponiveis" && <SizeSelector />}
-        {selectedPropertie === "Descrição" && <Description />}
-        {selectedPropertie === "Preço" && <Price />}
-        {selectedPropertie === "Marca" && <Brand />}
-        {selectedPropertie === "Diferencial" && <Differential />}
-        {selectedPropertie === "Cores" && (
-          <ColorPicker imageSrc="/shop/photos/female/mainCategories/blusas.png" />
-        )}
-      </div>
+          if (name === "Cores") {
+            const ColorPickerComponent = Component as typeof ColorPicker;
+            return (
+              <ColorPickerComponent
+                key={name}
+                trigger={trigger}
+                imageSrc="/shop/photos/female/mainCategories/blusas.png"
+              />
+            );
+          }
+
+          const GenericComponent = Component as React.FC<{
+            trigger: React.ReactNode;
+          }>;
+          return <GenericComponent key={name} trigger={trigger} />;
+        })}
+      </ButtonsWrapper>
     </Card>
   );
 };
 
 export { FinalInfo };
+

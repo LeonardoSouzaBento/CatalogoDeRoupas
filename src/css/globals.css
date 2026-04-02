@@ -70,8 +70,8 @@
   --color-dark-bg: hsl(357, 20%, 96.68%);
   --color-card-foreground: hsl(345 18% 17.5%);
   --color-muted-foreground: hsl(345 10.57% 36%);
-  --color-border: hsl(345 6.29% 86%);
-  --color-input-border: hsl(345 9.71% 78%);
+  --color-border: hsl(345 6.29% 78%);
+  --color-input-border: hsl(345 9.71% 68%);
   --color-input: hsl(345 4.86% 96.5%);
   /* primária */
   --color-icon-fill: hsla(336, 20%, 90%, 0.3);

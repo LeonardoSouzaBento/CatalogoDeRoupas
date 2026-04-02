@@ -2,19 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { StateSetter } from "@/types/types";
 import { Minus, Plus, X } from "lucide-react";
-import { Icon } from "@/components/ui";
-
-const css = {
-  wrapper: `w-full h-max p-5 mb-5 flex flex-wrap items-end justify-center gap-3.5 
-  border relative`,
-  wrapperButtons: `flex gap-3`,
-  p: `5`,
-  button: `size-9 p-0 flex-center rounded-full`,
-  selected: ` border shadow-lg hover:shadow-lg-hover`,
-  plusButton: `size-9 flex-center p-0 rounded-full`,
-  cancelButton: `p-0 size-9 bg-gray-100/70 flex-center absolute -top-2 -right-2
-  rounded-full`,
-};
+import { ButtonsWrapper, Icon } from "@/components/ui";
 
 interface Props {
   selectedQuantity: number;
@@ -48,7 +36,10 @@ export const QuantitySelector = ({
   }
 
   return (
-    <div className={`${css.wrapper}`}>
+    <div
+      className="w-full h-max p-5 mb-5 flex flex-wrap items-end justify-center gap-3.5 
+  border relative [&_p]:inline-flex"
+    >
       <Button
         variant="secondary"
         size="icon"
@@ -64,17 +55,17 @@ export const QuantitySelector = ({
         Tenho
       </p>
 
-      <div className={`${css.wrapperButtons}`}>
+      <ButtonsWrapper>
         {numberOptions.map((item, index) => {
-          const selected = selectedQuantity === item;
           const id = `opt-${item}-${index}`;
 
           return (
             <Button
               key={id}
-              variant={selected ? "default" : "outline"}
-              size="icon"
-              className="size-9 rounded-full"
+              data-option
+              variant={"ghost"}
+              selected={selectedQuantity === item}
+              size="icon-sm"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedQuantity(item);
@@ -86,8 +77,8 @@ export const QuantitySelector = ({
         })}
         <Button
           variant="outline"
-          size="icon"
-          className="size-9 rounded-full"
+          data-round
+          size="icon-sm"
           onClick={(e) => {
             incrementAll(e);
           }}
@@ -106,7 +97,7 @@ export const QuantitySelector = ({
             <Icon Svg={Minus} />
           </Button>
         )}
-      </div>
+      </ButtonsWrapper>
       <p>produtos semelhantes a esse.</p>
     </div>
   );

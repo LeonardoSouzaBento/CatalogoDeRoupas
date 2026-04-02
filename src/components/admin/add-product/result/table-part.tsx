@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Field {
   key: string;
@@ -11,24 +11,24 @@ interface Props {
   wrapperClass?: string;
 }
 
-const css = {
-  wrapper: `bg-light-bg rounded-none small-text leading-tight`,
-  row: `h-10 flex flex-row justify-between items-center border-b border-gray-200 last:border-none
-  rounded-none`,
-  label: `5 font-normal text-gray-800 w-40`,
-  value: `text-sm text-gray-700 flex-1 text-right rounded-none`,
-};
-
 function TablePart({ items, fields, wrapperClass }: Props) {
   return (
-    <div className={`${css.wrapper} ${wrapperClass ?? ''}`}>
-      {items.map((item, i) =>
+    <div
+      className={`bg-light-bg rounded-none small-text leading-tight ${wrapperClass ?? ""}`}
+    >
+      {items.map((item, index) =>
         fields.map((f) => (
-          <div key={f.key + i} className={css.row}>
-            <span className={css.label}>{f.label}</span>
+          <div
+            key={f.key + index}
+            className="h-10 flex flex-row justify-between items-center border-b border-border/50 last:border-none
+  rounded-none"
+          >
+            <span className="font-medium w-40 uppercase smaller-text tracking-wider leading-tight">{f.label}</span>
 
-            <span className={`${css.value} ${!item[f.key] && 'font-light text-gray-300!'}`}>
-              {item[f.key] || '——'}
+            <span
+              className={`text-sm flex-1 text-right rounded-none ${!item[f.key] && "font-light text-gray-300!"}`}
+            >
+              {item[f.key] || "——"}
             </span>
           </div>
         )),

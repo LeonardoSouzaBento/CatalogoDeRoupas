@@ -11,16 +11,17 @@ import { useMouseScrollX } from "@/hooks";
 const css = {
   wrapper: `
     relative mx-auto max-w-2xl grid grid-cols-2 gap-[clamp(16px,calc(13.416021px+0.689061vw),24px)]
-    overflow-x-scroll scrollbar-hidden bp-840:flex bp-840:max-w-full`,
+    bp-840:overflow-x-scroll bp-840:flex bp-840:max-w-full scrollbar-hidden`,
   editMode: "pb-0 mb-0 m-auto max-w-210",
   inputwArea: "p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg",
   imageWrapper: `
-    h-[66dvw] max-h-112 min-w-80 flex items-end relative overflow-hidden bg-theme-100 rounded-lg
+    h-[66dvw] max-h-112 flex items-end relative overflow-hidden 
+    bg-theme-100 rounded-lg border bp-840:min-w-80
   `,
   image:
     "absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-10 contrast-96",
   nameWrapper: `w-full flex-center relative bg-linear-to-t from-black/80 to-transparent`,
-  name: "w-full p-6 text-primary-50 sm:text-center leading-none",
+  name: "w-full p-6 text-primary-50 text-center leading-none",
 };
 
 export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {

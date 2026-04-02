@@ -3,12 +3,6 @@ import React, { useState } from "react";
 import { MuiIcon } from "./mui-icon";
 import { Button } from "./button";
 
-const css = {
-  wrapper: `absolute bottom-2 right-2 z-2 py-1 pr-1 flex-center rounded-full`,
-  fastReturn: `pl-5 pr-2 font-medium`,
-  wrapperIcon: `h-full min-w-10 w-max flex-center gap-3 fast-trans`,
-};
-
 const FavoriteButton = () => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const [fastReturn, setFastReturn] = useState<boolean>(false);
@@ -35,7 +29,7 @@ const FavoriteButton = () => {
 
   return (
     <div
-      className={css.wrapper}
+      className="absolute bottom-2 right-2 z-2 py-1 pr-1 flex-center rounded-full"
       style={{
         backgroundColor: fastReturn ? "var(--color-light-bg)" : "transparent",
         boxShadow: fastReturn ? "var(--shadow-sm)" : "none",
@@ -46,7 +40,7 @@ const FavoriteButton = () => {
       }}
     >
       {fastReturn && (
-        <span className={css.fastReturn}>
+        <span className="pl-5 pr-2 font-medium">
           {isFavorite ? "Salvo!" : "Removido!"}
         </span>
       )}

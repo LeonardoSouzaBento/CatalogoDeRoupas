@@ -1,4 +1,4 @@
-import { OptionsWrapper } from "@/components/admin/ui";
+import { OptionsWrapper } from "@/components/admin/add-product/common/index";
 import { Button } from "@/components/ui";
 import { commonFabrics } from "@/data/clothings/commonFabrics";
 import { materials } from "@/data/clothings/materials";
@@ -32,20 +32,7 @@ export const Materials: React.FC<MaterialsProps> = ({
   searchValue,
   ref,
 }) => {
-  const css = {
-    container: `p-5 pb-0 space-y-3`,
-    ButtonsWrapper: `flex flex-wrap gap-4 overflow-y-scroll h-[160px] relative`,
-    selected: `bg-gray-200`,
-    title: ` font-medium mb-3 uppercase text-blue-600 tracking-wide`,
-    notSelected: `bg-gray-100`,
-    addMaterial: `bg-gray-100`,
-    after: `block h-5 w-full z-0 sticky bottom-0 left-0
-    bg-linear-to-t from-white to-transparent rounded-none`,
-  };
-
-  const materialsList = seeCommonFabrics
-    ? Object.keys(commonFabrics)
-    : materials;
+  const materialsList = seeCommonFabrics ? Object.keys(commonFabrics) : materials;
 
   const bestCorrespondence = materialsList.reduce((best, current) => {
     return scoreMatch(current, searchValue) > scoreMatch(best, searchValue)
@@ -54,10 +41,13 @@ export const Materials: React.FC<MaterialsProps> = ({
   }, materialsList[0]);
 
   return (
-    <OptionsWrapper wrapperCss={css.container} title="Selecione o material">
+    <OptionsWrapper
+      wrapperCss="p-5 pb-0 space-y-3"
+      title="Selecione o material"
+    >
       <div
         ref={ref}
-        className={`${css.ButtonsWrapper} ${seeCommonFabrics && "ring ring-blue-300 p-0.5 pb-0"}`}
+        className={`flex flex-wrap gap-4 overflow-y-scroll h-[160px] relative ${seeCommonFabrics && "ring ring-blue-300 p-0.5 pb-0"}`}
       >
         {materialsList.map((material) => {
           const isFiltered = filteredMaterials.includes(material);
@@ -82,8 +72,11 @@ export const Materials: React.FC<MaterialsProps> = ({
             </Button>
           );
         })}
-        <div className={css.after} />
+        <div
+          className="block h-5 w-full z-0 sticky bottom-0 left-0
+    bg-linear-to-t from-white to-transparent rounded-none"
+        />
       </div>
     </OptionsWrapper>
   );
-};
+};

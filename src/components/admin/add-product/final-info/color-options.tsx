@@ -6,17 +6,13 @@ import type { StateSetter } from '@/types/types';
 import { ChevronDown, Plus, X } from 'lucide-react';
 import { Input, Label, InputWrapper } from '@/components/ui';
 
-const css = {
-  wrapper: `flex flex-col gap-2`,
-};
-
 const ColorOptions = () => {
   const [showColor, setShowColor] = React.useState<boolean>(false);
-  const [selectedFamily, setSelectedFamily] = React.useState<string>('');
-  const [selectedColor, setSelectedColor] = React.useState<string>('');
+  const [selectedFamily, setSelectedFamily] = React.useState<string>("");
+  const [selectedColor, setSelectedColor] = React.useState<string>("");
 
   return (
-    <div className={css.wrapper}>
+    <div className="flex flex-col gap-2">
       <h2>Opções de cores</h2>
 
       <ColorFamilySelector selectedFamily={selectedFamily} setSelectedFamily={setSelectedFamily} />
@@ -39,17 +35,16 @@ interface ColorFamilySelectorProps {
   setSelectedFamily: StateSetter<string>;
 }
 
-const ColorFamilySelector = ({ selectedFamily, setSelectedFamily }: ColorFamilySelectorProps) => {
-  const css = {
-    wrapper: `h-[120px] overflow-y-scroll flex flex-wrap gap-3`,
-  };
-
+const ColorFamilySelector = ({
+  selectedFamily,
+  setSelectedFamily,
+}: ColorFamilySelectorProps) => {
   const handleSelectFamily = (family: string) => {
     setSelectedFamily(family);
   };
 
   return (
-    <div className={css.wrapper}>
+    <div className="h-[120px] overflow-y-scroll flex flex-wrap gap-3">
       {colorFamilies.map((family) => (
         <Button
           key={family.id}
@@ -71,38 +66,37 @@ const ColorFamilySelector = ({ selectedFamily, setSelectedFamily }: ColorFamilyS
 /* ---------- ColorList ---------- */
 
 const ColorList = ({ selectedFamily }: { selectedFamily: string }) => {
-  const css = {
-    container: `flex flex-wrap gap-3`,
-    wrapper: `flex items-center gap-2`,
-    colorBox: `flex flex-col items-center gap-1`,
-    color: `w-[20px] h-[20px]`,
-    name: ``,
-    selected: `border border-gray-300`,
-    notSelected: `border border-transparent`,
-  };
-
-  const [selectedColor, setSelectedColor] = React.useState<string>('');
+  const [selectedColor, setSelectedColor] = React.useState<string>("");
 
   return (
-    <div className={css.container}>
-      {colorsByFamily[selectedFamily as keyof typeof colorsByFamily].map((color) => {
-        const isSelected = selectedColor === color.code;
+    <div className="flex flex-wrap gap-3">
+      {colorsByFamily[selectedFamily as keyof typeof colorsByFamily].map(
+        (color) => {
+          const isSelected = selectedColor === color.code;
 
-        return (
-          <div key={color.code} className={css.wrapper}>
-            <div className={css.colorBox}>
-              <div
-                style={{ backgroundColor: color.code }}
-                className={`${isSelected ? css.selected : css.notSelected} ${css.color}`}
-                onClick={() => setSelectedColor(color.code)}></div>
-              <p className={`${css.name} ${isSelected ? 'font-medium' : ''}`}>{color.name}</p>
+          return (
+            <div key={color.code} className="flex items-center gap-2">
+              <div className="flex flex-col items-center gap-1">
+                <div
+                  style={{ backgroundColor: color.code }}
+                  className={`${isSelected ? "border border-gray-300" : "border border-transparent"} w-[20px] h-[20px]`}
+                  onClick={() => setSelectedColor(color.code)}
+                ></div>
+                <p className={`${isSelected ? "font-medium" : ""}`}>
+                  {color.name}
+                </p>
+              </div>
+              <Button
+                onClick={() => setSelectedColor("")}
+                size="icon"
+                variant="ghost"
+              >
+                <X />
+              </Button>
             </div>
-            <Button onClick={() => setSelectedColor('')} size="icon" variant="ghost">
-              <X />
-            </Button>
-          </div>
-        );
-      })}
+          );
+        }
+      )}
     </div>
   );
 };
@@ -115,12 +109,8 @@ const Color = ({
   selectedColor: string;
   setSelectedColor: StateSetter<string>;
 }) => {
-  const css = {
-    wrapper: `flex flex-col gap-2`,
-  };
-
   return (
-    <InputWrapper className={css.wrapper}>
+    <InputWrapper className="flex flex-col gap-2">
       <Label htmlFor="color-name">Escolha a da cor</Label>
       <Input
         id="color-name"

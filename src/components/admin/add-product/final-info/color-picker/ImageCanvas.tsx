@@ -35,10 +35,11 @@ export function ImageCanvas({
 
   return (
     <>
-      <div className="h-[400px] w-[300px] relative overflow-hidden">
+      <div className="h-100 w-75 mx-auto relative overflow-hidden">
         <Image
           ref={imgRef}
           src={imageSrc}
+          fill
           alt="Roupa"
           className="w-full h-full object-cover"
           crossOrigin="anonymous"

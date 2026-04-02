@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { BasicClothingInformation, mappingPropToKey } from "@/types/types";
-import { OptionsWrapper } from "@/components/admin/ui/wrapper-options";
+import { OptionsWrapper } from "@/components/admin/add-product/common/index";
 import { ButtonsWrapper } from "@/components/ui";
 import { sortValues } from "@/utils/utils";
 

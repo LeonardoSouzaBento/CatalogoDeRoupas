@@ -16,10 +16,6 @@ import { CircleCheckBig, Upload, X } from "lucide-react";
 import Image from "next/image";
 import { useContext, useState } from "react";
 
-const css = {
-  pError: `text-red-600 mb-[14px]`,
-};
-
 export const InputNameEmail = ({
   setSeeEditMode,
 }: {
@@ -86,7 +82,7 @@ export const InputNameEmail = ({
           }}
         />
       </div>
-      {nameErrors && <p className={`${css.pError}`}>{nameErrors}</p>}
+      {nameErrors && <p className="text-red-600 mb-[14px]">{nameErrors}</p>}
       {/* email */}
       <div>
         <Label htmlFor="email" className="mb-2">
@@ -102,7 +98,7 @@ export const InputNameEmail = ({
           }}
         />
       </div>
-      {emailErrors && <p className={`${css.pError}`}>{emailErrors}</p>}
+      {emailErrors && <p className="text-red-600 mb-[14px]">{emailErrors}</p>}
       <Button onClick={handleSaveNameEmail} className="w-full mt-1">
         Salvar Alterações
         <CircleCheckBig />

@@ -17,7 +17,7 @@ export interface ImageCanvasProps {
 export interface ColorFunnelProps {
   position: { x: number; y: number };
   color: string;
-  onMouseDown: () => void;
+  onMouseDown: (e: React.MouseEvent) => void;
 }
 
 export interface ColorDisplayProps {

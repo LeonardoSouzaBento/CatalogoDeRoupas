@@ -1,6 +1,6 @@
 "use client";
 
-import { X, XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 import * as React from "react";
 
@@ -160,5 +160,5 @@ export {
   DialogOverlay,
   DialogPortal,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 };
