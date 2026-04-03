@@ -30,7 +30,7 @@ export function CTAButton({
     >
       <Link
         href="/loja"
-        className={`h-11 flex items-center justify-center gap-2 px-[1.5em]
+        className={`h-12 flex items-center justify-center gap-2 px-[1.5em]
         text-center rounded-xl capitalize font-[550] cursor-pointer
         bg-linear-to-r from-yellow-300 to-yellow-400
         hover:scale-104 transition-all duration-200
