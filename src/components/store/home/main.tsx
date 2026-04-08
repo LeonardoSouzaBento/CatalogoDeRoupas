@@ -1,6 +1,6 @@
 "use client";
-import { HomeContext, UserContext } from "@/contexts/index";
-import { useContext, useEffect } from "react";
+import { useHomeContext, useUserContext } from "@/contexts/index";
+import { useEffect } from "react";
 import {
   AboutSection,
   EverydaySection,
@@ -18,8 +18,8 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
     setHasMainCategories,
     hasGymClothes,
     setHasGymClothes,
-  } = useContext(HomeContext);
-  const { childCatSelected } = useContext(UserContext);
+  } = useHomeContext();
+  const { childCatSelected } = useUserContext();
 
   /* verificaçã simples por enquanto */
   useEffect(() => {
@@ -63,7 +63,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
       {hasMainCategories && (
         <Section
           defaultShadow={false}
-          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1.5)] pt-12.75"
+          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1.5)] pt-12.75 pr-0"
         >
           <MainCategories resizeCount={resizeCount} />
         </Section>

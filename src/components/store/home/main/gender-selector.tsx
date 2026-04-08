@@ -1,13 +1,9 @@
 import { Button, ButtonsWrapper } from "@/components/ui";
-import { UserContext } from "@/contexts/userContext_";
+import { useUserContext } from "@/contexts/index";
 import { homeUserGenders } from "@/data/UserData";
 import { Gender } from "@/types";
 import type { HomePageUserGender } from "@/types/types";
-import React, { useContext, useEffect } from "react";
-
-const css = {
-  button: `gap-1 flex-auto transition-200 uppercase tracking-wide`,
-};
+import React, { useEffect } from "react";
 
 function changeThemeClasses(gender: HomePageUserGender) {
   if (gender === "masculino") {
@@ -24,7 +20,7 @@ export const GenderSelector = (): React.ReactElement => {
     setSelectedGender,
     childCatSelected,
     setChildCatSelected,
-  } = useContext(UserContext);
+  } = useUserContext();
 
   useEffect(() => {
     changeThemeClasses(selectedGender as HomePageUserGender);

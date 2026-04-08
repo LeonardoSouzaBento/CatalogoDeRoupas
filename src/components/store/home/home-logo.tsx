@@ -1,12 +1,12 @@
 'use client';
-import React, { useContext, useState } from 'react';
-import { HomeContext } from '@/contexts/index';
+import React, { useState } from 'react';
+import { useHomeContext } from '@/contexts';
 import { ShopName } from './header/shop-name';
 import { EditSectionButton } from './ui';
 
 const HomeLogo = () => {
   const [seeNameShop, setSeeNameShop] = useState<boolean>(false);
-  const { homeEditMode } = useContext(HomeContext);
+  const { homeEditMode } = useHomeContext();
 
   return (
     <>

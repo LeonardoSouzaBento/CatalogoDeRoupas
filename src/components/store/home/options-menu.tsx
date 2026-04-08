@@ -1,9 +1,9 @@
 import { Button, Icon, Separator } from "@/components/ui";
-import { UserContext } from "@/contexts";
+import { useUserContext } from "@/contexts/index";
 import { mostSearched } from "@/data/UserData";
 import type { BooleanSetter } from "@/types/types";
 import { Search, X } from "lucide-react";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AdministrationOptions,
   Links,
@@ -93,7 +93,7 @@ const OptionsMenu = ({
 export { OptionsMenu };
 
 const Choices = () => {
-  const { selectedGender } = useContext(UserContext);
+  const { selectedGender } = useUserContext();
   const currentMostSearched =
     selectedGender === "masculino"
       ? mostSearched.masculino

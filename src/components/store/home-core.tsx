@@ -1,14 +1,14 @@
 "use client";
-import { HomeDataProvider } from "@/_providers/homeProvider";
 import { Footer, Main, OptionsMenu } from "@/components/store/home/";
 import { Button } from "@/components/ui/button";
 import { ZapFixedButton } from "@/components/ui/index";
 import { Icon } from "@/components/ui/lucide-icon";
-import { HomeContext } from "@/contexts/index";
+import { useHomeContext } from "@/contexts";
 import { useResizeCount } from "@/hooks";
 import { PenOff } from "lucide-react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Header } from "./home/header/header";
+import { HomeDataProvider } from "@/contexts/homeContext";
 
 const HomeCore = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
@@ -34,7 +34,7 @@ const HomeCore = () => {
 export default HomeCore;
 
 const CloseEditModeButton = () => {
-  const { homeEditMode, setHomeEditMode } = useContext(HomeContext);
+  const { homeEditMode, setHomeEditMode } = useHomeContext();
   if (!homeEditMode) return null;
   return (
     <Button

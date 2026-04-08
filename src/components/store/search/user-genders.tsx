@@ -1,13 +1,16 @@
-'use client';
-import { ButtonsWrapper, CloseButton, MuiIcon } from '@/components/ui';
-import { Button } from '@/components/ui/button';
-import { UserContext } from '@/contexts/userContext_';
-import { genders } from '@/types/types';
-import { useContext } from 'react';
+"use client";
+import { ButtonsWrapper, CloseButton, MuiIcon } from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import { useUserContext } from "@/contexts/index";
+import { genders } from "@/types/types";
 
 export const UserGenders = () => {
-  const { selectedGender, setSelectedGender, childCatSelected, setChildCatSelected } =
-    useContext(UserContext);
+  const {
+    selectedGender,
+    setSelectedGender,
+    childCatSelected,
+    setChildCatSelected,
+  } = useUserContext();
 
   return (
     <div>
@@ -15,28 +18,30 @@ export const UserGenders = () => {
       <ButtonsWrapper>
         {genders.map((gender) => (
           <Button
-            size={'sm'}
+            size={"sm"}
             key={gender}
             onClick={() => {
               if (selectedGender !== gender) {
                 setSelectedGender(gender);
               }
             }}
-            variant={selectedGender === gender ? 'default' : 'outline'}>
+            variant={selectedGender === gender ? "default" : "outline"}
+          >
             {gender}
           </Button>
         ))}
         <div className="flex-center h-max gap-2">
           <Button
-            size={'sm'}
-            variant={'ghost'}
+            size={"sm"}
+            variant={"ghost"}
             selected={childCatSelected}
             onClick={() => {
               setChildCatSelected(!childCatSelected);
-            }}>
+            }}
+          >
             <MuiIcon
               size="xl"
-              icon={childCatSelected ? 'check_box' : 'check_box_outline_blank'}
+              icon={childCatSelected ? "check_box" : "check_box_outline_blank"}
               fill={childCatSelected ? true : false}
             />
             Infantil

@@ -1,9 +1,9 @@
 import { InputWrapper } from "@/components/store/home/ui/index";
 import { SectionHeader } from "@/components/store/home/ui/index";
 import { EditSectionButton } from "@/components/store/home/ui/edit-section-button";
-import { PublicDataContext } from "@/contexts/index";
+import { usePublicDataContext } from "@/contexts/index";
 import type { AddressSchema } from "@/types/types";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
   CopyButton,
   InputAddress,
@@ -41,7 +41,7 @@ function formatAddress(address: AddressSchema): string {
 }
 
 export const FindUsSection = (): React.ReactElement => {
-  const { shopInfo } = useContext(PublicDataContext);
+  const { shopInfo } = usePublicDataContext();
   //foi copiado
   const [phoneCopied, setPhoneCopied] = useState<boolean>(false);
   const [addressCopied, setAddressCopied] = useState<boolean>(false);

@@ -1,0 +1,32 @@
+CREATE TABLE imagens (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  entidade_tipo VARCHAR(50) NOT NULL,   -- 'produto', 'usuario'
+  entidade_id   UUID NOT NULL,
+  url           TEXT NOT NULL,
+  storage_key   TEXT NOT NULL,
+  formato       VARCHAR(10),
+  tamanho_bytes INT,
+  largura       INT,
+  altura        INT,
+  alt_text      TEXT,
+  is_principal  BOOLEAN DEFAULT FALSE,
+  ordem         INT DEFAULT 0,
+  criado_em     TIMESTAMPTZ DEFAULT NOW(),
+  criado_por    UUID REFERENCES usuarios(id)
+);
+
+-- Índice para buscar imagens de uma entidade rapidamente
+CREATE INDEX idx_imagens_entidade ON imagens(entidade_tipo, entidade_id);
+
+Usando cloudnary
+
+Frontend envia imagem
+       ↓
+Sua API recebe (multer ou similar)
+       ↓
+cloudinary.uploader.upload(...)
+       ↓
+Salva URL + metadados no seu banco (Postgres, MySQL...)
+       ↓
+Retorna a URL para o frontend
+

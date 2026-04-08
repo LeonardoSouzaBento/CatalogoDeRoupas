@@ -1,7 +1,7 @@
 import type { Viewport } from "next";
 import type { Metadata } from "next";
-import { UserProvider } from "@/_providers/userProvider";
-import { PublicDataProvider } from "@/_providers/publicDataProvider";
+import { UserProvider } from "@/contexts/userContext";
+import { PublicDataProvider } from "@/contexts/publicDataContext";
 import { DM_Sans, Cookie } from "next/font/google";
 import "../css/globals.css";
 import "../css/more.css";

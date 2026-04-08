@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/components/store/home/ui/index";
-import { PublicDataContext } from "@/contexts/publicDataContext_";
-import { useContext, useState } from "react";
+import { usePublicDataContext } from "@/contexts/index";
+import { useState } from "react";
 import { AboutInput } from "./about-section/about-input";
 
 const css = {
@@ -12,7 +12,7 @@ const css = {
 
 export const AboutSection = () => {
   const [seeInput, setSeeInput] = useState<boolean>(false);
-  const { shopInfo, setShopInfo } = useContext(PublicDataContext);
+  const { shopInfo, setShopInfo } = usePublicDataContext();
 
   return (
     <div

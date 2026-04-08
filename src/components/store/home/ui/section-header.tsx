@@ -1,6 +1,5 @@
-import { HomeContext } from '@/contexts/index';
+import { useHomeContext } from '@/contexts/index';
 import type { BooleanSetter } from '@/types/types';
-import { useContext } from 'react';
 import { EditSectionButton } from './edit-section-button';
 
 interface HomeTitleSubtitleProps {
@@ -18,7 +17,7 @@ export const SectionHeader = ({
   editMode,
   setEditMode = () => {},
 }: HomeTitleSubtitleProps) => {
-  const { homeEditMode } = useContext(HomeContext);
+  const { homeEditMode } = useHomeContext();
   const mb = section === 'clothes' ? 'mb-3' : 'mb-6 mt-1.5';
   const textAlign = homeEditMode ? 'text-left' : 'text-center';
   const alignItems = homeEditMode ? 'items-start' : 'items-start sm:items-center';

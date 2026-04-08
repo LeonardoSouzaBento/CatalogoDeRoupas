@@ -1,9 +1,9 @@
 import { SectionHeader } from "@/components/store/home/ui/index";
 import { ScrollBar } from "@/components/ui/scroll-bar";
-import { UserContext } from "@/contexts/index";
+import { useUserContext } from "@/contexts/index";
 import { useMouseScrollX } from "@/hooks";
 import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
-import { useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { HomeProduct } from "./home-product";
 
 interface ClothesSectionProps {
@@ -37,7 +37,7 @@ const Base = ({
   setEditMode,
   resizeCount,
 }: ClothesSectionProps) => {
-  const { selectedGender, childCatSelected } = useContext(UserContext);
+  const { selectedGender, childCatSelected } = useUserContext();
   const isGirlsSection = childCatSelected && selectedGender === "feminino";
   const isBoysSection = childCatSelected && selectedGender === "masculino";
   const isWomanSection = !childCatSelected && selectedGender === "feminino";
@@ -94,7 +94,10 @@ const Base = ({
           <ScrollBar
             containerRef={containerRef}
             thumbWidth={thumbWidth}
-            cssWrapper="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10"
+            className="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10"
+            // thumbProps={{
+            //   className: "bg-primary-50",
+            // }}
           />
         </div>
       </>

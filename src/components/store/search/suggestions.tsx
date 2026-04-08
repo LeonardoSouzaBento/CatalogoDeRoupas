@@ -1,12 +1,12 @@
 "use client";
 import { Button, Icon } from "@/components/ui";
-import { UserContext } from "@/contexts";
+import { useUserContext } from "@/contexts/index";
 import { mostSearched } from "@/data/UserData";
 import { Search } from "lucide-react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 export const Suggestions = () => {
-  const { selectedGender } = useContext(UserContext);
+  const { selectedGender } = useUserContext();
   const suggestions =
     selectedGender === "masculino"
       ? mostSearched.masculino

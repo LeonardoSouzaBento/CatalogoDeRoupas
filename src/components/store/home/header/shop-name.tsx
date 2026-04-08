@@ -1,9 +1,9 @@
 import { Card, Icon, Input, InputWrapper, Label } from "@/components/ui";
 import { Button } from "@/components/ui/button";
-import { PublicDataContext } from "@/contexts/publicDataContext_";
+import { usePublicDataContext } from "@/contexts/index";
 import type { BooleanSetter } from "@/types/types";
 import { ChevronLeft, CircleCheckBig } from "lucide-react";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 
 type NameShopProps = {
   setSeeNameShop: BooleanSetter;
@@ -11,7 +11,7 @@ type NameShopProps = {
 
 const ShopName = ({ setSeeNameShop }: NameShopProps): React.ReactElement => {
   const [Value, setValue] = useState<string>("");
-  const { shopInfo, setShopInfo } = useContext(PublicDataContext);
+  const { shopInfo, setShopInfo } = usePublicDataContext();
 
   async function handleEdit() {
     if (Value.length >= 6) {

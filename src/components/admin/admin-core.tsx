@@ -1,8 +1,7 @@
 'use client';
-import { HomeContext } from '@/contexts/index';
+import { useHomeContext } from '@/contexts';
 import { BookHeart, Eye, Pen, Plus } from 'lucide-react';
 import Link from 'next/link';
-import { useContext } from 'react';
 
 const optionButtons = [
   {
@@ -39,7 +38,7 @@ const css = {
 };
 
 const AdminCore = () => {
-  const { setHomeEditMode } = useContext(HomeContext);
+  const { setHomeEditMode } = useHomeContext();
 
   return (
     <div className={`${css.wrapper}`}>

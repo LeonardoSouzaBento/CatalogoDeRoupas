@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button, MuiIcon } from "@/components/ui";
-import { HomeContext } from "@/contexts/index";
-import { useContext } from "react";
+import { useHomeContext } from "@/contexts/index";
 
 const optionButtons = [
   {
@@ -31,7 +30,7 @@ const optionButtons = [
 ];
 
 const AdministrationOptions = () => {
-  const { setHomeEditMode } = useContext(HomeContext);
+  const { setHomeEditMode } = useHomeContext();
 
   return (
     <>

@@ -1,16 +1,16 @@
 "use client";
 import { Button, Card, Icon } from "@/components/ui";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { UserContext } from "@/contexts/userContext_";
+import { useUserContext } from "@/contexts/index";
 import { basicFemaleClothes } from "@/data/clothings/basicFemaleClothes";
 import { basicMaleClothes } from "@/data/clothings/basicMaleClothes";
 import { ChevronDown } from "lucide-react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { BaseClothingOptions } from "./product-base-list/base-clothing-options";
 import { Description } from "./product-base-list/description";
 
 const ProductBasesList = () => {
-  const { selectedGender } = useContext(UserContext);
+  const { selectedGender } = useUserContext();
   const [selectedName, setSelectedName] = useState<string>("");
 
   const clothes =

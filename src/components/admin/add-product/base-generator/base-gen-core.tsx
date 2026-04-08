@@ -1,22 +1,21 @@
 import { Separator } from "@/components/ui";
+import { useUserContext } from "@/contexts/index";
+import { clothingCatsSubcats } from "@/data/clothings/clothingCatsSubcats";
+import { modelings } from "@/data/clothings/modelings";
+import { patterns } from "@/data/clothings/patterns";
+import { prints } from "@/data/clothings/prints";
 import type {
   BasicClothingInformation,
   ClothingProperty,
-  Gender,
-  StateSetter,
+  Gender
 } from "@/types/types";
-import { AddedProperties } from "./added-properties";
+import { useEffect, useState } from "react";
 import { ProductBasesList } from "../product-base-list";
+import { AddedProperties } from "./added-properties";
 import { Properties } from "./properties";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "@/contexts";
-import { clothingCatsSubcats } from "@/data/clothings/clothingCatsSubcats";
-import { patterns } from "@/data/clothings/patterns";
-import { prints } from "@/data/clothings/prints";
-import { modelings } from "@/data/clothings/modelings";
 
 const BaseGenCore = () => {
-  const { selectedGender, setSelectedGender } = useContext(UserContext);
+  const { selectedGender, setSelectedGender } = useUserContext();
   const [propSelected, setPropSelected] = useState<string | null>("Gênero");
   const [currentSubcats, setCurrentSubcats] = useState<string[] | null>([]);
   // const [name, setName] = useState<string>("");

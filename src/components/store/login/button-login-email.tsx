@@ -12,9 +12,8 @@ const ButtonLoginEmail = ({
 }) => {
   return (
     <Button
-      data-round
       variant="ghost"
-      className="w-full h-12 flex items-center justify-center gap-3 bg-white hover:bg-neutral-50 border-neutral-200 text-neutral-600 font-semibold transition-all group"
+      className="w-full transition-all group rounded-lg"
       onClick={() => {
         setSeeEmailForm(true);
       }}

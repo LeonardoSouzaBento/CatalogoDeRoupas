@@ -1,8 +1,8 @@
 'use client';
 import { Button, Card, CardHeader, CardTitle, MuiIcon, ButtonsWrapper } from '@/components/ui';
-import { UserContext } from '@/contexts/index';
+import { useUserContext } from '@/contexts/index';
 import { Gender } from '@/types/types';
-import React, { useContext } from 'react';
+import React from 'react';
 
 const buttons: { label: string; value: Gender; icon?: string }[] = [
   { label: 'Masculino', value: 'masculino', icon: 'male' },
@@ -10,7 +10,7 @@ const buttons: { label: string; value: Gender; icon?: string }[] = [
 ];
 
 const GenderButtons = () => {
-  const { selectedGender, setSelectedGender } = useContext(UserContext);
+  const { selectedGender, setSelectedGender } = useUserContext();
 
   return (
     <Card>

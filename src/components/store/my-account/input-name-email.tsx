@@ -8,20 +8,20 @@ import {
   MuiIcon,
 } from "@/components/ui";
 import { Button } from "@/components/ui/button";
-import { UserContext } from "@/contexts/index";
+import { useUserContext } from "@/contexts/index";
 import { validateEmail } from "@/functions/validateEmail";
 import { validateName } from "@/functions/validateName";
 import type { BooleanSetter } from "@/types/types";
 import { CircleCheckBig, Upload, X } from "lucide-react";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 export const InputNameEmail = ({
   setSeeEditMode,
 }: {
   setSeeEditMode: BooleanSetter;
 }) => {
-  const { userData } = useContext(UserContext);
+  const { userData } = useUserContext();
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [nameErrors, setNameErrors] = useState<string>("");

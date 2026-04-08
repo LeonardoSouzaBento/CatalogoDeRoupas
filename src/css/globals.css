@@ -9,7 +9,7 @@
   --font-default: "DM Sans", "sans-serif";
   --font-logo: "Cookie", "cursive";
   /* Breakpoints */
-  --breakpoint-xxs: 320px;
+  --breakpoint-bp-320: 320px;
   --breakpoint-bp-375: 375px;
   --breakpoint-bp-430: 430px;
   --breakpoint-bp-576: 576px;

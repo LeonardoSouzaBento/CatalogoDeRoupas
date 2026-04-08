@@ -5,20 +5,20 @@ interface ScrollBarProps {
   containerRef: React.RefObject<HTMLElement | null>;
   thumbWidth: number;
   orientation?: "horizontal" | "vertical";
-  cssWrapper?: string;
+  className?: string;
 }
 
 export function ScrollBar({
   containerRef,
   thumbWidth,
   orientation = "horizontal",
-  cssWrapper,
+  className,
 }: ScrollBarProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const trackClass =
     orientation === "horizontal" ? "w-full h-1.25" : "w-1.25 h-full";
   const thumbClass = orientation === "horizontal" ? "h-full" : "w-full";
-  const wrapperClass =
+  const defaultClasses =
     orientation === "horizontal"
       ? "w-full h-max absolute bottom-0"
       : "w-max h-full absolute bottom-0 right-0";
@@ -52,7 +52,7 @@ export function ScrollBar({
   }, []);
 
   return (
-    <div className={cn(wrapperClass, cssWrapper)}>
+    <div className={cn(defaultClasses, className)}>
       <div
         ref={trackRef}
         data-orientation={orientation}

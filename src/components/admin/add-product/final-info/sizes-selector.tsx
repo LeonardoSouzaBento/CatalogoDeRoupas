@@ -5,11 +5,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import { OptionsWrapper } from "@/components/admin/add-product/common/index";
 import { Button, ButtonsWrapper } from "@/components/ui";
-import { UserContext } from "@/contexts/index";
+import { useUserContext } from "@/contexts/index";
 import {
   childNumericalSizes,
   letterSizes,
@@ -20,7 +20,7 @@ import { StateSetter } from "@/types";
 // interface Props {}
 
 const SizeSelector = ({ trigger }: { trigger: React.ReactNode }) => {
-  const { childCatSelected } = useContext(UserContext);
+  const { childCatSelected } = useUserContext();
   const [selectedSize, setSelectedSize] = useState<string>("");
 
   return (

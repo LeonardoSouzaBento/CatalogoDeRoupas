@@ -1,22 +1,21 @@
 "use client";
 import { InputWrapper, SectionHeader } from "@/components/store/home/ui/index";
-import { UserContext } from "@/contexts/index";
-import { HomeContext } from "@/contexts/homeContext_";
+import { useUserContext, useHomeContext } from "@/contexts/index";
 import { MainCategory } from "@/types/types";
 import Image from "next/image";
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { MainCatsInput } from "./main-categories/_inputs/main-cats-input";
 import { useMouseScrollX } from "@/hooks";
 
 const css = {
   wrapper: `
-    relative mx-auto max-w-2xl grid grid-cols-2 gap-[clamp(16px,calc(13.416021px+0.689061vw),24px)]
-    bp-840:overflow-x-scroll bp-840:flex bp-840:max-w-full scrollbar-hidden`,
+    relative max-w-full mx-auto grid overflow-x-scroll grid-cols-[max-content_max-content] gap-[clamp(12px,calc(8.8px+1vw),24px)]
+    bp-840:flex`,
   editMode: "pb-0 mb-0 m-auto max-w-210",
   inputwArea: "p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg",
   imageWrapper: `
-    h-[66dvw] max-h-112 flex items-end relative overflow-hidden 
-    bg-theme-100 rounded-lg border bp-840:min-w-80
+    aspect-3/4 min-w-50 w-50 flex items-end relative overflow-hidden 
+    bg-border/50 rounded-lg border bp-840:min-w-80
   `,
   image:
     "absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-10 contrast-96",
@@ -26,8 +25,8 @@ const css = {
 
 export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
   const [editMode, setEditMode] = useState<boolean>(false);
-  const { mainCategories } = useContext(HomeContext);
-  const { selectedGender, childCatSelected } = useContext(UserContext);
+  const { mainCategories } = useHomeContext();
+  const { selectedGender, childCatSelected } = useUserContext();
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   useMouseScrollX({
@@ -46,7 +45,7 @@ export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
 
   if (categories && categories.length > 0) {
     return (
-      <div ref={parentRef} className={`${editMode && css.editMode}`}>
+      <div ref={parentRef} className={`w-full ${editMode && css.editMode}`}>
         <SectionHeader
           title="Categorias de Destaque"
           subtitle="Os mais procurados"
@@ -56,11 +55,7 @@ export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
         {!editMode ? (
           <div ref={containerRef} className={`${css.wrapper}`}>
             {categories.map((item: MainCategory) => (
-              <div
-                key={item.urlImg}
-                className={`${css.imageWrapper}`}
-                ref={containerRef}
-              >
+              <div key={item.urlImg} className={`${css.imageWrapper}`}>
                 <Image
                   src={item.urlImg}
                   alt={item.alt}

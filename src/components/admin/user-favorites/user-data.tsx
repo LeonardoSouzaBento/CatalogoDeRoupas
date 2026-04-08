@@ -9,11 +9,10 @@ import {
   TableHead,
   TableRow,
 } from '@/components/ui/index';
-import { UserContext } from '@/contexts/index';
-import { useContext } from 'react';
+import { useUserContext } from '@/contexts/index';
 
 const UserData = () => {
-  const { userData } = useContext(UserContext);
+  const { userData } = useUserContext();
 
   return (
     <div className="rounded-md max-w-xl">

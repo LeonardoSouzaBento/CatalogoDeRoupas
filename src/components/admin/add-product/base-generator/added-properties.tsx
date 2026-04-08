@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useContext } from "react";
-import { UserContext } from "@/contexts/index";
+import { useUserContext } from "@/contexts/index";
 import {
   BasicClothingInformation,
   mappingPropToKey,
@@ -23,7 +22,7 @@ const AddedProperties = ({
   basicInformation: BasicClothingInformation;
   setBasicInformation: StateSetter<BasicClothingInformation>;
 }) => {
-  const { selectedGender } = useContext(UserContext);
+  const { selectedGender } = useUserContext();
   // transforma em array de pares rotulo/valor
   const infoArray = [
     { label: "Gênero", value: basicInformation.gender },

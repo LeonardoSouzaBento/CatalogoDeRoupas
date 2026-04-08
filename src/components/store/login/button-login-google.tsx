@@ -1,14 +1,14 @@
-'use client';
-import { Button } from '@/components/ui';
+"use client";
+import { Button } from "@/components/ui";
 
 const ButtonLoginGoogle = () => {
   return (
-    <Button 
-      data-round
-      variant="outline" 
-      className="w-full h-12 flex items-center justify-center gap-3 bg-white hover:bg-neutral-50 border-neutral-200 text-neutral-600 font-semibold transition-all group"
+    <Button
+      variant="outline"
+      size="lg"
+      className="w-full gap-2.5 transition-all group rounded-lg"
     >
-      <div className="size-5 flex shrink-0 relative transition-transform group-hover:scale-110">
+      <div className="size-5.5 flex shrink-0 relative transition-transform group-hover:scale-110">
         <svg viewBox="0 0 24 24" className="size-full">
           <path
             d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -34,4 +34,3 @@ const ButtonLoginGoogle = () => {
 };
 
 export { ButtonLoginGoogle };
-
