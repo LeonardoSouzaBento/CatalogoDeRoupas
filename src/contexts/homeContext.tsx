@@ -22,7 +22,7 @@ export interface HomeContextType {
   setMainCategories: StateSetter<MainCategoriesType>;
 }
 
-export const HomeDataProvider: React.FC<ProviderType> = ({ children }) => {
+export const HomeProvider: React.FC<ProviderType> = ({ children }) => {
   /* Home em modo de edição */
   const [homeEditMode, setHomeEditMode] = useLocalStorage(
     "homeEditMode",

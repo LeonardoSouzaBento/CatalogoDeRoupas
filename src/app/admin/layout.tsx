@@ -1,8 +1,12 @@
+import { AdminProvider } from "@/contexts/adminContext";
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col min-h-screen relative">
-      {children}
-    </div>
+    <AdminProvider>
+      <div className="flex flex-col min-h-screen relative">
+        {children}
+      </div>
+    </AdminProvider>
   );
 };
 

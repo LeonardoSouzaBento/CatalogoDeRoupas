@@ -8,14 +8,13 @@ import { useResizeCount } from "@/hooks";
 import { PenOff } from "lucide-react";
 import { useState } from "react";
 import { Header } from "./home/header/header";
-import { HomeDataProvider } from "@/contexts/homeContext";
 
 const HomeCore = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
   const resizeCount = useResizeCount();
 
   return (
-    <HomeDataProvider>
+    <>
       <Header
         resizeCount={resizeCount}
         setSeeOptionsSection={setSeeOptionsSection}
@@ -27,7 +26,7 @@ const HomeCore = () => {
       <Footer />
       <CloseEditModeButton />
       <ZapFixedButton />
-    </HomeDataProvider>
+    </>
   );
 };
 

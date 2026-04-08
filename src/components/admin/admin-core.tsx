@@ -38,7 +38,7 @@ const css = {
 };
 
 const AdminCore = () => {
-  const { setHomeEditMode } = useHomeContext();
+  const { setHomeEditMode } = useHomeContext()!;
 
   return (
     <div className={`${css.wrapper}`}>

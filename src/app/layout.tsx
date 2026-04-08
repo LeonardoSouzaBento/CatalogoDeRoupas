@@ -2,6 +2,7 @@ import type { Viewport } from "next";
 import type { Metadata } from "next";
 import { UserProvider } from "@/contexts/userContext";
 import { PublicDataProvider } from "@/contexts/publicDataContext";
+import { HomeProvider } from "@/contexts/homeContext";
 import { DM_Sans, Cookie } from "next/font/google";
 import "../css/globals.css";
 import "../css/more.css";
@@ -67,7 +68,9 @@ export default function RootLayout({
       <body>
         <PublicDataProvider>
           <UserProvider>
-            <div>{children}</div>
+            <HomeProvider>
+              <div>{children}</div>
+            </HomeProvider>
           </UserProvider>
         </PublicDataProvider>
       </body>
