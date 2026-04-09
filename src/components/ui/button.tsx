@@ -6,7 +6,7 @@ import * as React from "react";
 export type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 const buttonVariants = cva(
-  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer disabled:cursor-not-allowed! capitalize data-w-full:w-full data-option:rounded-full data-option:px-[0.66em] text-left outline-solid outline-0 data-less-pl:pl-[0.6em] font-[525] data-round:rounded-full`,
+  `h-fit inline-flex items-center justify-center leading-none! box-border gap-2 rounded-sm transition-all duration-200 disabled:pointer-events-none shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive relative box-border tracking-wide cursor-pointer disabled:cursor-not-allowed! capitalize data-w-full:w-full data-option:rounded-full data-option:px-[0.66em] text-left outline-solid outline-0 data-less-pl:pl-[0.6em] font-[500] data-round:rounded-full`,
   {
     variants: {
       variant: {
@@ -15,10 +15,10 @@ const buttonVariants = cva(
 
         outline: `bg-transparent text-primary-800 ring-[1.5px] ring-primary-800 
         active:bg-primary-100 disabled:bg-neutral-100 disabled:ring-neutral-300 
-        disabled:text-neutral-500/75 hover:bg-primary-50 font-[550] rounded-[3.5px]`,
+        disabled:text-neutral-500/75 hover:bg-primary-50 font-[525] rounded-[3.5px]`,
 
-        ghost: `bg-transparent text-primary-700 border border-border 
-        active:bg-primary-100 disabled:bg-neutral-100 disabled:text-neutral-400 
+        ghost: `bg-transparent text-primary-800 border border-border 
+        active:bg-primary-100 active:text-primary-900 disabled:bg-neutral-100 disabled:text-neutral-400 
         disabled:border-none hover:bg-primary-50/75 data-white:bg-light-bg data-white:hover:bg-primary-50`,
 
         secondary: `bg-primary-50 text-primary-700 hover:bg-primary-50/66 

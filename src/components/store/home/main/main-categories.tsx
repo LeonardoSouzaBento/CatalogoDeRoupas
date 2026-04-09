@@ -24,7 +24,7 @@ const css = {
 };
 
 export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
-  const [editMode, setEditMode] = useState<boolean>(false);
+  const [editMode, setEditMode] = useState<boolean>(true);
   const { mainCategories } = useHomeContext();
   const { selectedGender, childCatSelected } = useUserContext();
   const parentRef = useRef<HTMLDivElement>(null);

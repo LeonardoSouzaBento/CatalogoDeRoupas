@@ -1,21 +1,16 @@
-import { CloseButton } from '@/components/ui';
-import { Button } from '@/components/ui/button';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { AlertCircle } from 'lucide-react';
-import { defaultShopInfo } from '@/data/home/publicData';
-import type { BooleanSetter, ShopInfo, StateSetter } from '@/types/types';
-import { Check, Trash, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import { ButtonsWrapper, CloseButton, Icon } from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { defaultShopInfo } from "@/data/home/publicData";
+import type { BooleanSetter, ShopInfo, StateSetter } from "@/types/types";
+import { Check, Trash, X } from "lucide-react";
+import React, { useEffect, useState } from "react";
 
 const css = {
-  wrapper: 'absolute-top z-2 size-full bg-light-bg p-5 rounded-md',
-  header:
-    'h-10 w-full mb-4 flex justify-between items-center border-b border-gray-300 rounded-none',
-  h3: ' font-medium text-gray-800',
-  textarea:
-    'w-full h-[calc(100%-294px)] sm:h-[calc(100%-232px)] md:h-[calc(100%-184px)] px-3 mb-4 resize-none overflow-auto caret-indigo-950 focus:outline-none',
-  wrapperButtons: 'w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2',
-  buttons: 'w-full sm:w-70 md:w-max button !justify-start  xl:',
+  wrapper: "relative bg-light-bg rounded-md -mt-2",
+  wrapperButtons:
+    "w-full h-auto flex flex-col sm:flex-row sm:flex-wrap justify-end gap-2",
+  buttons: "w-full sm:w-70 md:w-max button !justify-start  xl:",
 };
 
 type AboutProps = {
@@ -24,11 +19,15 @@ type AboutProps = {
   setSeeInput: BooleanSetter;
 };
 
-const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.ReactElement => {
-  const [Value, setValue] = useState<string>('');
+const AboutInput = ({
+  shopInfo,
+  setShopInfo,
+  setSeeInput,
+}: AboutProps): React.ReactElement => {
+  const [Value, setValue] = useState<string>("");
 
   useEffect(() => {
-    setValue(shopInfo.aboutText.join('\n\n'));
+    setValue(shopInfo.aboutText.join("\n\n"));
   }, []);
 
   function handleEnterEdit() {
@@ -54,17 +53,14 @@ const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.R
 
   return (
     <div className={`${css.wrapper}`}>
-      <div className={`${css.header}`}>
-        <h3 className={`${css.h3}`}>Edite o Sobre</h3>
-        <CloseButton setState={setSeeInput} className="absolute top-3 right-3" />
-      </div>
-      <Alert variant="destructive">
-        <AlertCircle />
-        <AlertDescription>Quebre de linha para definir novos paragrafos.</AlertDescription>
-      </Alert>
-      <textarea
+      <CloseButton
+        setState={setSeeInput}
+        className="absolute -top-3 -right-3"
+      />
+
+      <Textarea
         value={Value}
-        className={`${css.textarea}`}
+        className="mb-5"
         onChange={(e) => {
           setValue(e.target.value);
         }}
@@ -72,28 +68,37 @@ const AboutInput = ({ shopInfo, setShopInfo, setSeeInput }: AboutProps): React.R
           handleEnterEdit();
         }}
       />
-      <div className={`${css.wrapperButtons}`}>
+      <ButtonsWrapper className="justify-end">
         <Button
-          variant="outline"
+          data-round
+          variant="destructive"
           className="w-full sm:w-70 md:w-max order-2 sm:order-1"
           onClick={() => {
-            setValue('');
-          }}>
-          <Trash size={19} />
+            setValue("");
+          }}
+        >
+          <Icon Svg={Trash} />
           Deletar Todo o Texto
         </Button>
-        <Button className="w-full sm:w-70 md:w-max order-3 sm:order-3">
-          <Check />
+
+        <Button
+          data-round
+          className="w-full sm:w-70 md:w-max order-3 sm:order-3"
+        >
+          <Icon Svg={Check} size="md" />
           Salvar
         </Button>
+
         <Button
-          variant="secondary"
+          data-round
+          variant="ghost"
           className="w-full sm:w-70 md:w-max order-2 sm:order-2"
-          onClick={handleDiscardChanges}>
-          <X />
+          onClick={handleDiscardChanges}
+        >
+          <Icon Svg={X} size="md" />
           Descartar Alterações
         </Button>
-      </div>
+      </ButtonsWrapper>
     </div>
   );
 };

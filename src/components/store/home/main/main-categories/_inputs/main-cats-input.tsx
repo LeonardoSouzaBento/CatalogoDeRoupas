@@ -1,5 +1,5 @@
-import { Button, ButtonsWrapper } from "@/components/ui";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button, ButtonsWrapper, Icon } from "@/components/ui";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useHomeContext } from "@/contexts/index";
 import type { Gender } from "@/types/types";
 import { genders, MainCategory } from "@/types/types";
@@ -23,12 +23,14 @@ export const MainCatsInput = (): React.ReactElement => {
       : mainCategories.feminino;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4.5">
       <ButtonsWrapper>
         {genders.map((gender: Gender) => (
           <Button
             key={gender}
             variant="ghost"
+            data-option
+            selected={selectedGender === gender}
             size={"default"}
             onClick={() => {
               if (selectedGender !== gender) {
@@ -36,8 +38,8 @@ export const MainCatsInput = (): React.ReactElement => {
               }
             }}
           >
-            {selectedGender === gender ? <EyeClosed /> : <Eye />}
-            Ver Categorias {gender}
+            <Icon Svg={selectedGender === gender ? Eye : EyeClosed} />
+            Ver Categorias {gender.replace("o", "as")}
           </Button>
         ))}
       </ButtonsWrapper>
@@ -47,19 +49,20 @@ export const MainCatsInput = (): React.ReactElement => {
         ))}
       </div>
       <Alert variant="destructive">
-        <AlertCircle />
+        <Icon Svg={AlertCircle} />
+        <AlertTitle>Atenção</AlertTitle>
         <AlertDescription>
           <p>
-            Prefira definir um <strong>número par</strong> de categorias para
+            Prefira cadastrar um <strong>número par</strong> de categorias para
             evitar espaços vazios no site que é visto no tablet ou no
             computador, pois nesses dispositivos as categorias ficam dispostas
             numa grade de duas colunas.
           </p>
         </AlertDescription>
       </Alert>
-      <Button className="mb-5">
+      <Button>
+        <Icon Svg={Plus} size="lg" />
         Adicionar Nova Categoria Principal
-        <Plus />
       </Button>
     </div>
   );

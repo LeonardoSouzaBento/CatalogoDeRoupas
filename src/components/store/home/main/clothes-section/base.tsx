@@ -3,7 +3,7 @@ import { ScrollBar } from "@/components/ui/scroll-bar";
 import { useUserContext } from "@/contexts/index";
 import { useMouseScrollX } from "@/hooks";
 import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HomeProduct } from "./home-product";
 
 interface ClothesSectionProps {
@@ -17,8 +17,6 @@ interface ClothesSectionProps {
   setWomensClothing: StateSetter<HomeClothing[]>;
   setBoysClothes?: StateSetter<HomeClothing[]>;
   setGirlsClothes?: StateSetter<HomeClothing[]>;
-  editMode: boolean;
-  setEditMode: BooleanSetter;
   resizeCount: number;
 }
 
@@ -33,10 +31,9 @@ const Base = ({
   setWomensClothing,
   setBoysClothes,
   setGirlsClothes,
-  editMode,
-  setEditMode,
   resizeCount,
 }: ClothesSectionProps) => {
+  const [editMode, setEditMode] = useState<boolean>(true);
   const { selectedGender, childCatSelected } = useUserContext();
   const isGirlsSection = childCatSelected && selectedGender === "feminino";
   const isBoysSection = childCatSelected && selectedGender === "masculino";

@@ -1,6 +1,6 @@
-import { useHomeContext } from '@/contexts/index';
-import type { BooleanSetter } from '@/types/types';
-import { EditSectionButton } from './edit-section-button';
+import { useHomeContext } from "@/contexts/index";
+import type { BooleanSetter } from "@/types/types";
+import { EditSectionButton } from "./edit-section-button";
 
 interface HomeTitleSubtitleProps {
   title: string;
@@ -18,33 +18,45 @@ export const SectionHeader = ({
   setEditMode = () => {},
 }: HomeTitleSubtitleProps) => {
   const { homeEditMode } = useHomeContext();
-  const mb = section === 'clothes' ? 'mb-3' : 'mb-6 mt-1.5';
-  const textAlign = homeEditMode ? 'text-left' : 'text-center';
-  const alignItems = homeEditMode ? 'items-start' : 'items-start sm:items-center';
+  const mb = section === "clothes" ? "mb-3" : "mb-6 mt-1.5";
+  const alignItems = homeEditMode
+    ? "items-center"
+    : "items-start sm:items-center";
+  // const textAlign = homeEditMode ? "text-left sm:text-center" : "text-left sm:text-center";
+  const flexDirection = homeEditMode ? "flex-col" : "flex-row";
+  const editModeWrapper =
+    homeEditMode &&
+    `flex ${flexDirection} 
+  justify-between gap-3 items-center`;
 
   return (
     <div>
       <div
-        className={`w-full ${section == 'clothes' && 'px-4'} 
-        flex justify-start sm:justify-center items-center gap-3 ${mb}`}>
-        <div
-          className={`${
-            homeEditMode &&
-            `grid grid-cols-[1fr_max-content] 
-          gap-4 items-center border p-4 pt-3 rounded-md`
-          }`}>
-          <div className={`flex flex-col ${alignItems}`}>
-            <h3 className={`w-full max-w-max capitalize text-theme-700 ${textAlign}`}>{title}</h3>
+        className={`w-full ${section == "clothes" && "px-4"} 
+        flex justify-start sm:justify-center items-center gap-3 ${mb}`}
+      >
+        <div className={`${homeEditMode && editModeWrapper}`}>
+          <div className={`flex flex-col ${alignItems} text-left sm:text-center`}>
+            <h3
+              className={`w-full capitalize text-theme-700`}
+            >
+              {title}
+            </h3>
             {subtitle && (
               <p
-                className={`w-full max-w-max font-normal
-                text-muted-foreground ${textAlign}`}>
+                className={`w-full font-normal
+                text-muted-foreground`}
+              >
                 {subtitle}
               </p>
             )}
           </div>
           {homeEditMode && (
-            <EditSectionButton editMode={editMode} setEditMode={setEditMode} className="relative" />
+            <EditSectionButton
+              editMode={editMode}
+              setEditMode={setEditMode}
+              className="relative"
+            />
           )}
         </div>
       </div>

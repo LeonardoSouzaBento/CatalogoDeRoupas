@@ -6,7 +6,7 @@ const Login = () => {
     <div className="min-h-screen w-full flex-center">
       <DecorativeCircle />
 
-      <div className="relative w-full max-w-sm mx-4 bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-lg">
+      <div className="relative w-full max-w-sm mx-4 bg-light-bg/80 backdrop-blur-xl rounded-2xl shadow-md crop">
         <Greeting />
         <LoginCore />
       </div>

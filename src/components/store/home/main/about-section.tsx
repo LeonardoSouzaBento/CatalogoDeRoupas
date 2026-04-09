@@ -5,13 +5,12 @@ import { AboutInput } from "./about-section/about-input";
 
 const css = {
   wrapperAbout: "m-auto relative",
-  homeEditMode: "shadow-lg/12 py-47 sm:py-40 md:py-34 rounded-md ",
   wrapperP: "size-full relative z-0 mb-4 last:mb-0",
   p: "pb-3 relative last:pb-0 text-muted-foreground",
 };
 
 export const AboutSection = () => {
-  const [seeInput, setSeeInput] = useState<boolean>(false);
+  const [editMode, setEditMode] = useState<boolean>(true);
   const { shopInfo, setShopInfo } = usePublicDataContext();
 
   return (
@@ -23,25 +22,26 @@ export const AboutSection = () => {
         section="about"
         title="Sobre Nós"
         subtitle="Conheça mais a nossa loja"
-        editMode={seeInput}
-        setEditMode={setSeeInput}
+        editMode={editMode}
+        setEditMode={setEditMode}
       />
-      <div className={`${css.wrapperAbout} ${seeInput && css.homeEditMode}`}>
-        {shopInfo.aboutText.map((paragraph: string, index: number) => (
-          <div className={`${css.wrapperP}`} key={index}>
-            <p key={index} className={`${css.p}`}>
-              {paragraph}
-            </p>
-          </div>
-        ))}
-        {seeInput && (
-          <AboutInput
-            shopInfo={shopInfo}
-            setShopInfo={setShopInfo}
-            setSeeInput={setSeeInput}
-          />
-        )}
-      </div>
+      {!editMode ? (
+        <div className={`${css.wrapperAbout}`}>
+          {shopInfo.aboutText.map((paragraph: string, index: number) => (
+            <div className={`${css.wrapperP}`} key={index}>
+              <p key={index} className={`${css.p}`}>
+                {paragraph}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <AboutInput
+          shopInfo={shopInfo}
+          setShopInfo={setShopInfo}
+          setSeeInput={setEditMode}
+        />
+      )}
     </div>
   );
 };

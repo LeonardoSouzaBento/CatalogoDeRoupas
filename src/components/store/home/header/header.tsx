@@ -30,7 +30,7 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
   return (
     <header
       className="w-full pt-5 pb-6 px-4 sm:px-6 md:px-8 lg:px-10 relative 
-    h-max z-6 flex-center border-b border-border/75"
+    h-max z-6 flex-center border-b border-border/70"
     >
       <div
         className={`w-full max-w-3xl grid grid-cols-1 gap-6 sm:grid-cols-[auto_1fr] sm:gap-8 justify-start items-center`}

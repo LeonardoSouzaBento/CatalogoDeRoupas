@@ -5,7 +5,7 @@ import { InfoForm } from './info-form';
 
 const ProductInput = ({ id }: { id: number | string }) => {
   return (
-    <Card data-no-header className="w-full">
+    <Card data-no-header className="w-full p-5">
       <ImageButtons />
       <InfoForm id={id} />
     </Card>

@@ -1,7 +1,7 @@
 import { InputWrapper } from "@/components/store/home/ui/index";
 import { SectionHeader } from "@/components/store/home/ui/index";
 import { EditSectionButton } from "@/components/store/home/ui/edit-section-button";
-import { usePublicDataContext } from "@/contexts/index";
+import { useHomeContext, usePublicDataContext } from "@/contexts/index";
 import type { AddressSchema } from "@/types/types";
 import React, { useState } from "react";
 import {
@@ -15,12 +15,13 @@ import { Eye } from "lucide-react";
 
 const css = {
   container: "w-full m-auto max-w-180 grid grid-cols-1 space-y-4",
-  wrapper: `w-full p-6 py-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 
+  wrapper: `w-full p-6 py-5 flex flex-col gap-4 
   rounded-md bg-light-bg transition-200 relative`,
   wrapperEditMode: "sm:!flex-col !items-start pt-3 gap-4 ",
   infoWrapper: `w-full flex justify-start items-start flex-auto gap-3`,
   icon: `text-theme bg-theme-50/75 p-1.25 rounded-full mt-7.25 `,
-  mapWrapper: "w-full h-[108vw] max-h-[480px] bg-light-bg rounded-none",
+  mapWrapper:
+    "w-full h-[108vw] max-h-[480px] bg-light-bg rounded-none relative",
   mapWrapperEditMode: "!h-auto !min-h-max p-5 pt-4",
   textWrapper: `relative space-y-0.5 [&>p:first-child]:text-sm [&>p:first-child]:uppercase 
   [&>p:first-child]:text-muted-foreground [&>p:first-child]:font-bold [&>p:last-child]:text-lg`,
@@ -49,9 +50,9 @@ export const FindUsSection = (): React.ReactElement => {
   const [seePhone, setSeePhone] = useState<boolean>(false);
   const [seeAddress, setSeeAddress] = useState<boolean>(false);
   const [seeMap, setSeeMap] = useState<boolean>(false);
-
+  const { homeEditMode } = useHomeContext();
   const shopAddressFormatted = formatAddress(shopInfo.address);
-  const [editMode, setEditMode] = useState<boolean>(false);
+  const [editMode, setEditMode] = useState<boolean>(true);
 
   return (
     <div>
@@ -71,21 +72,23 @@ export const FindUsSection = (): React.ReactElement => {
           >
             {!seePhone ? (
               <>
-                <div className={`${css.infoWrapper}`}>
-                  <MuiIcon icon="call" fill size="lg" className={css.icon} />
-                  <div className={`${css.textWrapper}`}>
-                    <p>Whatsapp:</p>
-                    <p>{shopInfo.contact}</p>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                  <div className={`${css.infoWrapper}`}>
+                    <MuiIcon icon="call" fill size="lg" className={css.icon} />
+                    <div className={`${css.textWrapper}`}>
+                      <p>Whatsapp:</p>
+                      <p>{shopInfo.contact}</p>
+                    </div>
                   </div>
+                  <CopyButton
+                    className="border border-border/50 sm:border-0"
+                    state={phoneCopied}
+                    setState={setPhoneCopied}
+                    firstText="Copiar Telefone"
+                    secondText="Telefone copiado!"
+                    textToCopy={shopInfo.contact}
+                  />
                 </div>
-                <CopyButton
-                  className="border border-border/50 sm:border-0"
-                  state={phoneCopied}
-                  setState={setPhoneCopied}
-                  firstText="Copiar Telefone"
-                  secondText="Telefone copiado!"
-                  textToCopy={shopInfo.contact}
-                />
                 {editMode && (
                   <EditSectionButton
                     editMode={seePhone}
@@ -110,26 +113,28 @@ export const FindUsSection = (): React.ReactElement => {
             >
               {!seeAddress ? (
                 <>
-                  <div className={`${css.infoWrapper}`}>
-                    <MuiIcon
-                      icon="location_home"
-                      fill
-                      size="xl"
-                      weight={500}
-                      className={css.icon}
-                    />
-                    <div className={`${css.textWrapper}`}>
-                      <p>Onde estamos:</p>
-                      <p>{shopAddressFormatted}</p>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                    <div className={`${css.infoWrapper}`}>
+                      <MuiIcon
+                        icon="location_home"
+                        fill
+                        size="xl"
+                        weight={500}
+                        className={css.icon}
+                      />
+                      <div className={`${css.textWrapper}`}>
+                        <p>Onde estamos:</p>
+                        <p>{shopAddressFormatted}</p>
+                      </div>
                     </div>
+                    <Button
+                      variant="transparent"
+                      className="min-w-59.5 border border-border/50 sm:border-0"
+                    >
+                      <Icon Svg={Eye} size="md" strokeWidth="medium" />
+                      Ver no google maps
+                    </Button>
                   </div>
-                  <Button
-                    variant="transparent"
-                    className="min-w-59.5 border border-border/50 sm:border-0"
-                  >
-                    <Icon Svg={Eye} size="md" strokeWidth="medium" />
-                    Ver no google maps
-                  </Button>
                   {editMode && (
                     <EditSectionButton
                       editMode={seeAddress}
@@ -150,7 +155,7 @@ export const FindUsSection = (): React.ReactElement => {
             <div
               className={`${css.mapWrapper} ${seeMap && css.mapWrapperEditMode}`}
             >
-              {!seeMap ? (
+              {!homeEditMode ? (
                 <>
                   <iframe
                     className="border border-t-0"
@@ -162,13 +167,6 @@ export const FindUsSection = (): React.ReactElement => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-                  {editMode && (
-                    <EditSectionButton
-                      editMode={seeMap}
-                      setEditMode={setSeeMap}
-                      className="absolute top-3 right-0"
-                    />
-                  )}
                 </>
               ) : (
                 <InputWrapper title="Atualize Seu Mapa" setState={setSeeMap}>

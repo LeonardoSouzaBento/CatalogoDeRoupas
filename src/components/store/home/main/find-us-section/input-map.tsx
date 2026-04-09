@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { SaveMapButton } from './save-map-button';
+import { Textarea } from '@/components/ui/textarea';
 
 const css = {
   wrapper: 'min-h-full',
   wrapperInfo: 'mb-3 pt-[19] p-5 ',
-  h4: 'mb-3 text-neutral-800 font-medium ',
-  ul: 'list-decimal pl-4 space-y-2 flex flex-col gap-[10]',
+  h4: 'mb-3 text-neutral-800 font-medium',
+  ul: 'list-decimal pl-4 space-y-2 flex flex-col gap-[10px] text-sm',
   li: '5 text-neutral-800 mb-0',
-  textarea: 'w-full min-h-[86px] flex-center p-4 mb-3 rounded-md box-border',
+  textarea: 'w-full min-h-16 mb-3',
   button: '',
 };
 
@@ -23,7 +24,7 @@ export const InputMap = (): React.ReactElement => {
   return (
     <>
       <div className={`${css.wrapper}`}>
-        <textarea
+        <Textarea
           value={Value}
           onClick={(e) => {
             const ta = e.currentTarget as HTMLTextAreaElement;
@@ -39,7 +40,7 @@ export const InputMap = (): React.ReactElement => {
           placeholder="Cole aqui o novo link copiado do Google Maps"
         />
         <div className={`${css.wrapperInfo}`}>
-          <h4 className={`${css.h4}`}>Veja como pegar o link do mapa</h4>
+          <p className={`${css.h4}`}>Veja como pegar o link do mapa</p>
           <ul className={`${css.ul}`}>
             <li className={`${css.li}`}>
               Pesquise no Google Maps pela sua loja ou pelo endereço dela. Clique no endereço.

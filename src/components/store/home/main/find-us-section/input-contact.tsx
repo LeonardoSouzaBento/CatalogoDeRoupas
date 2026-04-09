@@ -1,14 +1,14 @@
-import { Input } from '@/components/ui/index';
-import React, { useEffect, useState } from 'react';
-import { SaveZapButton } from './save-zap-button';
+import { Input } from "@/components/ui/index";
+import React, { useEffect, useState } from "react";
+import { SaveZapButton } from "./save-zap-button";
 
 export const InputContact = (): React.ReactElement => {
-  const [Value, setValue] = useState<string>('');
-  const [zapErrors, setZapErrors] = useState<string[]>(['']); //length, without9, ddd
+  const [Value, setValue] = useState<string>("");
+  const [zapErrors, setZapErrors] = useState<string[]>([""]); //length, without9, ddd
   // const [canSave, setCanSave] = useState<boolean>(false);
 
   useEffect(() => {
-    const digits = Value.replace(/\D/g, '');
+    const digits = Value.replace(/\D/g, "");
     if (digits.length >= 10) {
       let formatted = digits;
 
@@ -23,8 +23,8 @@ export const InputContact = (): React.ReactElement => {
   }, [Value]);
 
   return (
-    <>
-      <div className={`mb-5`}>
+    <div className="pb-1 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4">
+      <div>
         <Input
           type="text"
           aria-label="Número do WhatsApp"
@@ -43,6 +43,6 @@ export const InputContact = (): React.ReactElement => {
         )}
       </div>
       <SaveZapButton setZapErrors={setZapErrors} Value={Value} />
-    </>
+    </div>
   );
 };

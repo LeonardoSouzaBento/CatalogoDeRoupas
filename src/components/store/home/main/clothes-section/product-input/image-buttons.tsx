@@ -1,5 +1,5 @@
 import { Button, Icon } from "@/components/ui";
-import { PenLine } from "lucide-react";
+import { Plus } from "lucide-react";
 import Image from "next/image";
 
 const imagesData = [
@@ -17,22 +17,22 @@ const ImageButtons = ({ mainImage = true }: { mainImage?: boolean }) => {
   }
 
   return (
-    <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-[1fr_1.45fr] gap-4">
+    <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-[1fr_1.45fr] gap-3.25">
       {imagesData.map((image, index) => (
-        <div key={index} className="w-auto h-64 relative">
+        <div key={index} className="w-auto h-60 relative">
           <Image
             src={image.url}
             alt={image.alt}
             fill
-            className="border rounded-md"
+            className="border border-input-border/75 rounded-md bg-input/50"
           />
           <Button
             size={"icon"}
             variant={"secondary"}
-            className="absolute bottom-2 right-2 shadow-xs"
+            className="absolute bottom-2 right-2 border-shadow shadow-xs/32 rounded-full"
             onClick={uploadImage}
           >
-            <Icon Svg={PenLine} fill="currentColor" />
+            <Icon Svg={Plus} fill="currentColor" size="lg" strokeWidth="thin" />
           </Button>
         </div>
       ))}

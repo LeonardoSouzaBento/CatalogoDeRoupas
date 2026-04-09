@@ -3,26 +3,31 @@
 import { Button, Icon } from "@/components/ui";
 import type { BooleanSetter } from "@/types/types";
 import { Mail } from "lucide-react";
+import { ButtonProps } from "@/components/ui";
+import { cn } from "@/utils/utils";
+
+interface ButtonLoginEmailProps extends ButtonProps {
+  setSeeEmailForm: BooleanSetter;
+}
 
 const ButtonLoginEmail = ({
   setSeeEmailForm,
-}: {
-  seeEmailForm: boolean;
-  setSeeEmailForm: BooleanSetter;
-}) => {
+  className,
+  ...props
+}: ButtonLoginEmailProps) => {
   return (
     <Button
       variant="ghost"
-      className="w-full transition-all group rounded-lg"
+      className={cn(className)}
       onClick={() => {
         setSeeEmailForm(true);
       }}
+      {...props}
     >
-      <Icon Svg={Mail} size="md" className="text-neutral-400 group-hover:text-neutral-600 transition-colors shadow-xs" />
+      <Icon Svg={Mail} strokeWidth="medium" className="opacity-90" />
       Login com email
     </Button>
   );
 };
 
 export { ButtonLoginEmail };
-

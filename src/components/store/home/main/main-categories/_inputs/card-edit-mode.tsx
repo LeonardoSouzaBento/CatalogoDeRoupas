@@ -1,18 +1,17 @@
-import { Input, InputWrapper, Label } from '@/components/ui';
-import { BackButton } from '@/components/ui/back-button';
-import { Button } from '@/components/ui/button';
-import type { BooleanSetter, MainCategory } from '@/types/types';
-import { CircleCheckBig, Upload } from 'lucide-react';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { Icon, Input, InputWrapper, Label } from "@/components/ui";
+import { BackButton } from "@/components/ui/back-button";
+import { Button } from "@/components/ui/button";
+import type { BooleanSetter, MainCategory } from "@/types/types";
+import { Check, Upload } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const css = {
-  wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 border
-p-5 rounded-none hover:shadow-lg fast-trans`,
-  wrapper: `flex flex-col gap-3 mb-px`,
-  wrapperImg: 'rounded-none flex flex-wrap items-center gap-4 relative mb-px',
-  imghomeEditMode: 'grayscale opacity-70',
-  u: 'font-normal',
+  wrapperCardCat: `sm:w-[calc(50%-9px)] sm:min-h-100 flex flex-col justify-center gap-4 border border-border/75
+p-5 hover:shadow-lg fast-trans rounded-md`,
+  wrapperImg: "rounded-none flex flex-wrap items-center gap-4 relative mb-px",
+  imghomeEditMode: "grayscale opacity-70 aspect-3/4",
+  u: "font-normal",
 };
 
 const CardEditMode = ({
@@ -30,13 +29,13 @@ const CardEditMode = ({
 
   useEffect(() => {
     if (catUpdated) {
-      console.log('Sim');
+      console.log("Sim");
     }
   }, [catUpdated]);
 
   return (
     <div className={`${css.wrapperCardCat}`}>
-      <InputWrapper className={`${css.wrapper}`}>
+      <InputWrapper>
         <Label htmlFor={category.name}>1 - Nome da categoria:</Label>
         <Input
           type="text"
@@ -47,27 +46,31 @@ const CardEditMode = ({
         />
       </InputWrapper>
 
-      <div>
+      <div className="space-y-2">
         <Label>2 - Imagem</Label>
         <div className={`${css.wrapperImg}`}>
-          <div>
+          <div className="relative w-36 aspect-3/4 rounded-sm crop">
             <Image
               src={category.urlImg}
               alt={category.alt}
+              fill
               className={`${css.imghomeEditMode}`}
-              height={144}
-              width={104}
             />
           </div>
-          <Button variant="outline" className="mb-px min-[440px]:mb-0 sm:mb-px md:mb-0">
+          <Button
+            variant="outline"
+            className="mb-px min-[440px]:mb-0 sm:mb-px md:mb-0"
+          >
             <Upload size={18} />
             Nova Imagem
           </Button>
         </div>
       </div>
 
-      <InputWrapper>
-        <Label htmlFor={`${category.order}`}>3 - Ordem de posição na grade:</Label>
+      <InputWrapper className="pt-1">
+        <Label htmlFor={`${category.order}`}>
+          3 - Ordem de posição na grade:
+        </Label>
         <Input
           type="number"
           name={`${category.order}`}
@@ -75,11 +78,14 @@ const CardEditMode = ({
           placeholder="Digite aqui"
         />
       </InputWrapper>
-      <Button onClick={handleSaveCat} className="w-full mb-1">
-        salvar alterações
-        <CircleCheckBig />
-      </Button>
-      <BackButton setState={setCardEditMode} />
+
+      <div className="flex flex-col gap-3 mt-1.5">
+        <Button onClick={handleSaveCat} className="w-full">
+          <Icon Svg={Check} size="md" />
+          salvar alterações
+        </Button>
+        <BackButton setState={setCardEditMode} />
+      </div>
     </div>
   );
 };

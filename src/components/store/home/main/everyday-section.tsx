@@ -13,8 +13,6 @@ export const EverydaySection = ({ resizeCount }: { resizeCount: number }): React
   const [womensClothing, setWomensClothing] = useState<HomeClothing[]>(everydayWomensClothingData);
   const [boysClothes, setBoysClothes] = useState<HomeClothing[]>(everydayBoysClothingData);
   const [girlsClothes, setGirlsClothes] = useState<HomeClothing[]>(everydayGirlsClothingData);
-  const [editMode, setEditMode] = useState<boolean>(false);
-
   return (
     <div>
       <Base
@@ -28,8 +26,6 @@ export const EverydaySection = ({ resizeCount }: { resizeCount: number }): React
         setWomensClothing={setWomensClothing}
         setBoysClothes={setBoysClothes}
         setGirlsClothes={setGirlsClothes}
-        editMode={editMode}
-        setEditMode={setEditMode}
         resizeCount={resizeCount}
       />
     </div>

@@ -26,7 +26,7 @@ const CloseButton = ({
       className={className}
       onClick={() => setState(false)}
     >
-      <Icon Svg={X} size={iconSize || "md"} className="text-destructive" />
+      <Icon Svg={X} size={iconSize || "md"} strokeWidth="light" className="text-destructive" />
     </Button>
   );
 };

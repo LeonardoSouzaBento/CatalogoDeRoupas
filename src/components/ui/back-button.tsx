@@ -10,13 +10,14 @@ interface Props {
 const BackButton = ({ styles, setState = () => {} }: Props) => {
   return (
     <Button
+      variant={"ghost"}
       onClick={() => {
         setState(false);
       }}
       className={styles}
     >
+      <Icon Svg={CornerUpLeft} size="sm" strokeWidth="medium"/>
       voltar
-      <Icon Svg={CornerUpLeft} />
     </Button>
   );
 };

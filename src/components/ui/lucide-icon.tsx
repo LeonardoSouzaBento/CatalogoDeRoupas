@@ -18,14 +18,14 @@ const iconSizes = {
 
 type StrokeValue = keyof typeof weights;
 const weights = {
-  thin: 1.55,
-  extralight: 1.7,
-  light: 1.85,
-  normal: 2,
-  medium: 2.15,
+  thin: 1.8,
+  extralight: 1.9,
+  light: 2,
+  normal: 2.1,
+  medium: 2.2,
   semibold: 2.3,
-  bold: 2.45,
-  extrabold: 2.6,
+  bold: 2.4,
+  extrabold: 2.5,
 };
 
 interface IconProps extends Omit<LucideProps, "size" | "strokeWidth"> {
@@ -59,7 +59,7 @@ export const Icon = ({
       <Svg
         data-icon
         className={className}
-        size={iconSizes[size as SizeValue] || size || "1em"}
+        size={iconSizes[size as SizeValue] || size || iconSizes.base}
         strokeWidth={
           weights[strokeWidth as StrokeValue] ||
           strokeWidth ||
