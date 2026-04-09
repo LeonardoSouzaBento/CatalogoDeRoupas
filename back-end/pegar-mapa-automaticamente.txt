@@ -1,0 +1,64 @@
+Forma 1
+✅ Forma simples (sem API, só com string)
+
+Você pode gerar o link direto assim:
+
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps?q=ENDERECO_AQUI&output=embed">
+</iframe>
+💡 Automatizando com JavaScript
+
+Suponha que você tenha um input:
+
+<input type="text" id="address" placeholder="Digite o endereço">
+<button onclick="gerarMapa()">Gerar</button>
+
+<div id="resultado"></div>
+
+Agora o JS:
+
+function gerarMapa() {
+  const endereco = document.getElementById("address").value;
+
+  const enderecoFormatado = encodeURIComponent(endereco);
+
+  const iframe = `<iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    src="https://www.google.com/maps?q=${enderecoFormatado}&output=embed">
+  </iframe>`;
+
+  document.getElementById("resultado").innerHTML = iframe;
+}
+🔥 O que está acontecendo
+encodeURIComponent() transforma o endereço em URL válida
+👉 "Rua A, 123" → "Rua%20A%2C%20123"
+
+Você monta a URL:
+
+https://www.google.com/maps?q=ENDERECO&output=embed
+Isso substitui totalmente o botão "Incorporar mapa"
+
+Forma 2
+Se quiser controle total (zoom, marcador exato, estilo), aí usa a:
+
+Google Maps Embed API
+
+Exemplo com API key:
+
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?key=SUA_API_KEY&q=ENDERECO">
+</iframe>

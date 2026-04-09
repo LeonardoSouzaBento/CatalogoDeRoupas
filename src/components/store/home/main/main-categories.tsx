@@ -1,11 +1,11 @@
 "use client";
 import { InputWrapper, SectionHeader } from "@/components/store/home/ui/index";
-import { useUserContext, useHomeContext } from "@/contexts/index";
+import { useHomeContext, useUserContext } from "@/contexts/index";
+import { useLocalEditMode, useMatchMedia, useMouseScrollX } from "@/hooks";
 import { MainCategory } from "@/types/types";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { MainCatsInput } from "./main-categories/_inputs/main-cats-input";
-import { useMouseScrollX } from "@/hooks";
 
 const css = {
   wrapper: `
@@ -23,17 +23,19 @@ const css = {
   name: "w-full p-6 text-primary-50 text-center leading-none",
 };
 
-export const MainCategories = ({ resizeCount }: { resizeCount: number }) => {
-  const [editMode, setEditMode] = useState<boolean>(true);
+export const MainCategories = () => {
   const { mainCategories } = useHomeContext();
   const { selectedGender, childCatSelected } = useUserContext();
+  const [editMode, setEditMode] = useLocalEditMode();
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  useMouseScrollX({
+  const resizeCount = useMatchMedia();
+  const { thumbWidth } = useMouseScrollX({
     parentRef,
     containerRef,
     resizeCount,
   });
+
 
   const categories = childCatSelected
     ? []

@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/components/store/home/ui/index";
 import { usePublicDataContext } from "@/contexts/index";
-import { useState } from "react";
+import { useLocalEditMode } from "@/hooks";
 import { AboutInput } from "./about-section/about-input";
 
 const css = {
@@ -10,7 +10,7 @@ const css = {
 };
 
 export const AboutSection = () => {
-  const [editMode, setEditMode] = useState<boolean>(true);
+  const [editMode, setEditMode] = useLocalEditMode();
   const { shopInfo, setShopInfo } = usePublicDataContext();
 
   return (

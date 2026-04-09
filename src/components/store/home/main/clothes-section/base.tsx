@@ -1,9 +1,9 @@
 import { SectionHeader } from "@/components/store/home/ui/index";
 import { ScrollBar } from "@/components/ui/scroll-bar";
 import { useUserContext } from "@/contexts/index";
-import { useMouseScrollX } from "@/hooks";
-import type { BooleanSetter, HomeClothing, StateSetter } from "@/types/types";
-import { useEffect, useRef, useState } from "react";
+import { useLocalEditMode, useMatchMedia, useMouseScrollX } from "@/hooks";
+import type { HomeClothing, StateSetter } from "@/types/types";
+import { useEffect, useRef } from "react";
 import { HomeProduct } from "./home-product";
 
 interface ClothesSectionProps {
@@ -17,7 +17,6 @@ interface ClothesSectionProps {
   setWomensClothing: StateSetter<HomeClothing[]>;
   setBoysClothes?: StateSetter<HomeClothing[]>;
   setGirlsClothes?: StateSetter<HomeClothing[]>;
-  resizeCount: number;
 }
 
 const Base = ({
@@ -31,16 +30,16 @@ const Base = ({
   setWomensClothing,
   setBoysClothes,
   setGirlsClothes,
-  resizeCount,
 }: ClothesSectionProps) => {
-  const [editMode, setEditMode] = useState<boolean>(true);
   const { selectedGender, childCatSelected } = useUserContext();
+  const [editMode, setEditMode] = useLocalEditMode();
   const isGirlsSection = childCatSelected && selectedGender === "feminino";
   const isBoysSection = childCatSelected && selectedGender === "masculino";
   const isWomanSection = !childCatSelected && selectedGender === "feminino";
   const isManSection = !childCatSelected && selectedGender === "masculino";
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const resizeCount = useMatchMedia();
   const { thumbWidth } = useMouseScrollX({
     parentRef,
     containerRef,
@@ -74,7 +73,7 @@ const Base = ({
         />
         <div className={`crop relative`} ref={parentRef}>
           <div
-            className="flex gap-[clamp(16px,calc(13.416021px+0.689061vw),24px)] 
+            className="flex gap-[clamp(12px,calc(8.394366px+1.126761vw),24px)] 
               pt-3 pb-6 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 box-border 
               overflow-x-scroll relative scrollbar-hidden"
             ref={containerRef}

@@ -8,7 +8,7 @@ import {
   everydayGirlsClothingData,
 } from '@/data/home/homeData';
 
-export const EverydaySection = ({ resizeCount }: { resizeCount: number }): React.ReactElement => {
+export const EverydaySection = (): React.ReactElement => {
   const [mensClothing, setMensClothing] = useState<HomeClothing[]>(everydayMensClothingData);
   const [womensClothing, setWomensClothing] = useState<HomeClothing[]>(everydayWomensClothingData);
   const [boysClothes, setBoysClothes] = useState<HomeClothing[]>(everydayBoysClothingData);
@@ -26,7 +26,6 @@ export const EverydaySection = ({ resizeCount }: { resizeCount: number }): React
         setWomensClothing={setWomensClothing}
         setBoysClothes={setBoysClothes}
         setGirlsClothes={setGirlsClothes}
-        resizeCount={resizeCount}
       />
     </div>
   );

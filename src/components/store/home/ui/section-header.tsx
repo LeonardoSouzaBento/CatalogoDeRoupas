@@ -20,28 +20,24 @@ export const SectionHeader = ({
   const { homeEditMode } = useHomeContext();
   const mb = section === "clothes" ? "mb-3" : "mb-6 mt-1.5";
   const alignItems = homeEditMode
-    ? "items-center"
+    ? "items-start sm:items-center"
     : "items-start sm:items-center";
-  // const textAlign = homeEditMode ? "text-left sm:text-center" : "text-left sm:text-center";
-  const flexDirection = homeEditMode ? "flex-col" : "flex-row";
   const editModeWrapper =
     homeEditMode &&
-    `flex ${flexDirection} 
-  justify-between gap-3 items-center`;
+    `mx-auto flex flex-row gap-4 flex-wrap justify-between items-center 
+    sm:flex-col sm:items-center`;
 
   return (
     <div>
       <div
         className={`w-full ${section == "clothes" && "px-4"} 
-        flex justify-start sm:justify-center items-center gap-3 ${mb}`}
+        flex items-center gap-3 ${mb}`}
       >
-        <div className={`${homeEditMode && editModeWrapper}`}>
-          <div className={`flex flex-col ${alignItems} text-left sm:text-center`}>
-            <h3
-              className={`w-full capitalize text-theme-700`}
-            >
-              {title}
-            </h3>
+        <div className={`sm:mx-auto ${homeEditMode && editModeWrapper}`}>
+          <div
+            className={`flex flex-col ${alignItems} text-left sm:text-center`}
+          >
+            <h3 className={`w-full capitalize text-theme-700`}>{title}</h3>
             {subtitle && (
               <p
                 className={`w-full font-normal

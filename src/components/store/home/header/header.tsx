@@ -19,6 +19,7 @@ export const Header = ({ resizeCount, setSeeOptionsSection }: Props) => {
         (window.innerWidth > 640 && window.innerWidth < 768),
     );
   }
+  
   useEffect(() => {
     getIsMobile();
   }, []);

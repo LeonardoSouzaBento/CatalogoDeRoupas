@@ -1,8 +1,10 @@
-import { InputWrapper } from "@/components/store/home/ui/index";
-import { SectionHeader } from "@/components/store/home/ui/index";
 import { EditSectionButton } from "@/components/store/home/ui/edit-section-button";
-import { useHomeContext, usePublicDataContext } from "@/contexts/index";
+import { InputWrapper, SectionHeader } from "@/components/store/home/ui/index";
+import { Button, Icon, MuiIcon } from "@/components/ui";
+import { usePublicDataContext } from "@/contexts/index";
+import { useLocalEditMode } from "@/hooks";
 import type { AddressSchema } from "@/types/types";
+import { Eye } from "lucide-react";
 import React, { useState } from "react";
 import {
   CopyButton,
@@ -10,8 +12,6 @@ import {
   InputContact,
   InputMap,
 } from "./find-us-section/index";
-import { Button, Icon, MuiIcon } from "@/components/ui";
-import { Eye } from "lucide-react";
 
 const css = {
   container: "w-full m-auto max-w-180 grid grid-cols-1 space-y-4",
@@ -50,9 +50,8 @@ export const FindUsSection = (): React.ReactElement => {
   const [seePhone, setSeePhone] = useState<boolean>(false);
   const [seeAddress, setSeeAddress] = useState<boolean>(false);
   const [seeMap, setSeeMap] = useState<boolean>(false);
-  const { homeEditMode } = useHomeContext();
   const shopAddressFormatted = formatAddress(shopInfo.address);
-  const [editMode, setEditMode] = useState<boolean>(true);
+  const [editMode, setEditMode] = useLocalEditMode();
 
   return (
     <div>
@@ -90,10 +89,13 @@ export const FindUsSection = (): React.ReactElement => {
                   />
                 </div>
                 {editMode && (
-                  <EditSectionButton
-                    editMode={seePhone}
-                    setEditMode={setSeePhone}
-                  />
+                  <div className="flex justify-end">
+                    <EditSectionButton
+                      editMode={seePhone}
+                      setEditMode={setSeePhone}
+                      className="max-w-max"
+                    />
+                  </div>
                 )}
               </>
             ) : (
@@ -136,10 +138,13 @@ export const FindUsSection = (): React.ReactElement => {
                     </Button>
                   </div>
                   {editMode && (
-                    <EditSectionButton
-                      editMode={seeAddress}
-                      setEditMode={setSeeAddress}
-                    />
+                    <div className="flex justify-end">
+                      <EditSectionButton
+                        editMode={seeAddress}
+                        setEditMode={setSeeAddress}
+                        className="max-w-max"
+                      />
+                    </div>
                   )}
                 </>
               ) : (
@@ -155,24 +160,16 @@ export const FindUsSection = (): React.ReactElement => {
             <div
               className={`${css.mapWrapper} ${seeMap && css.mapWrapperEditMode}`}
             >
-              {!homeEditMode ? (
-                <>
-                  <iframe
-                    className="border border-t-0"
-                    src={shopInfo.urlMap}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </>
-              ) : (
-                <InputWrapper title="Atualize Seu Mapa" setState={setSeeMap}>
-                  <InputMap />
-                </InputWrapper>
-              )}
+              <iframe
+                className="border border-t-0"
+                src={shopInfo.urlMap}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>

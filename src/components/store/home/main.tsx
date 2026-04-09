@@ -12,7 +12,7 @@ import {
 } from "./main/index";
 import { Section } from "./ui";
 
-const Main = ({ resizeCount }: { resizeCount: number }) => {
+const Main = () => {
   const {
     hasMainCategories,
     setHasMainCategories,
@@ -47,16 +47,16 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
         defaultShadow={false}
         className="pt-4! shadow-first-home-section"
       >
-        <SpecialSection resizeCount={resizeCount} />
+        <SpecialSection />
       </Section>
 
       <Section data-clothes>
-        <EverydaySection resizeCount={resizeCount} />
+        <EverydaySection />
       </Section>
 
       {hasGymClothes && (
         <Section data-clothes>
-          <GymSection resizeCount={resizeCount} />
+          <GymSection />
         </Section>
       )}
 
@@ -65,7 +65,7 @@ const Main = ({ resizeCount }: { resizeCount: number }) => {
           defaultShadow={false}
           className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1.5)] pt-12.75 pr-0"
         >
-          <MainCategories resizeCount={resizeCount} />
+          <MainCategories />
         </Section>
       )}
 

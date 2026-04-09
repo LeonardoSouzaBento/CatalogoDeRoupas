@@ -17,7 +17,7 @@ const ImageButtons = ({ mainImage = true }: { mainImage?: boolean }) => {
   }
 
   return (
-    <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-[1fr_1.45fr] gap-3.25">
+    <div className="w-full h-auto grid grid-cols-[1fr_1.5fr] gap-[clamp(10px,calc(9.2px+0.25vw),13px)]">
       {imagesData.map((image, index) => (
         <div key={index} className="w-auto h-60 relative">
           <Image

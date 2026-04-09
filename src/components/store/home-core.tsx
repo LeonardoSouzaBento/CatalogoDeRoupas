@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 import { ZapFixedButton } from "@/components/ui/index";
 import { Icon } from "@/components/ui/lucide-icon";
 import { useHomeContext } from "@/contexts";
-import { useResizeCount } from "@/hooks";
+import { useMatchMedia } from "@/hooks";
 import { PenOff } from "lucide-react";
 import { useState } from "react";
 import { Header } from "./home/header/header";
 
 const HomeCore = () => {
   const [seeOptionsSection, setSeeOptionsSection] = useState<boolean>(false);
-  const resizeCount = useResizeCount();
+  const resizeCount = useMatchMedia();
 
   return (
     <>
@@ -22,7 +22,7 @@ const HomeCore = () => {
       {seeOptionsSection && (
         <OptionsMenu setSeeOptionsSection={setSeeOptionsSection} />
       )}
-      <Main resizeCount={resizeCount} />
+      <Main />
       <Footer />
       <CloseEditModeButton />
       <ZapFixedButton />
