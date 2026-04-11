@@ -1,22 +1,24 @@
-'use client';
-import { useRef } from 'react';
-import { ResizableCardTitle } from './resizable-card-title';
-import { Card, CardHeader, CardTitle, MuiIcon } from '@/components/ui';
+"use client";
+import { Button, Card, CardHeader, CardTitle, Icon } from "@/components/ui";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 interface Props {
   title: string;
   steps: string[];
-  cssList?: string;
-  itemCss?: string;
-  pb?: number;
 }
 
 const css = {
-  itemList: ` w-full min-h-10 hover:bg-blue-50 transition-300 mb-0 cursor-default break-words`,
+  itemList: ` w-full hover:bg-blue-50 transition-300 mb-0 cursor-default break-words`,
 };
 
-const Tutorial = ({ title, steps, cssList, itemCss, pb }: Props) => {
-  const cardRef = useRef<HTMLDivElement | null>(null);
+const Tutorial = ({ title, steps }: Props) => {
+  const [expand, setExpand] = useState(false);
 
   const middle = Math.ceil(steps.length / 2);
   const firstHalf = steps.slice(0, middle);
@@ -24,27 +26,46 @@ const Tutorial = ({ title, steps, cssList, itemCss, pb }: Props) => {
 
   const renderItems = (items: string[], startIndex: number) =>
     items.map((item, index) => (
-      <li key={index} className={`${css.itemList} ${itemCss}`}>
+      <li key={index} className={`${css.itemList}`}>
         <strong>{startIndex + index + 1}</strong> - {item}
       </li>
     ));
 
   return (
-    <Card ref={cardRef} className="crop relative">
-      <ResizableCardTitle cardRef={cardRef} pb={pb}>
-        <CardHeader>
-          <CardTitle>
-            <MuiIcon icon="info" size="h6" weight={600} />
-            <h4>Saiba {title}</h4>
-          </CardTitle>
-        </CardHeader>
-      </ResizableCardTitle>
+    <Collapsible open={expand} onOpenChange={setExpand}>
+      <Card className="crop relative pb-0 pt-3.5">
+        <div className="w-full flex justify-between gap-2.5 sm:justify-start">
+          <CollapsibleTrigger asChild>
+            <Button
+              size={"icon-sm"}
+              variant={"secondary"}
+              className={`rounded-full -ml-1 pt-px ${
+                expand ? "rotate-180" : "rotate-0 pl-px"
+              }`}
+            >
+              <Icon Svg={ChevronDown} strokeWidth="thin" size="lg" />
+            </Button>
+          </CollapsibleTrigger>
 
-      <ol className={`flex flex-col justify-start [&>div]:w-full text-muted-foreground ${cssList}`}>
-        <div>{renderItems(firstHalf, 0)}</div>
-        <div>{renderItems(secondHalf, firstHalf.length)}</div>
-      </ol>
-    </Card>
+          <CollapsibleTrigger asChild>
+            <CardHeader className="h-full cursor-pointer [*]:[cursor-pointer] select-none">
+              <CardTitle>
+                <h5>Saiba {title}</h5>
+              </CardTitle>
+            </CardHeader>
+          </CollapsibleTrigger>
+        </div>
+
+        <CollapsibleContent>
+          <ol
+            className={`flex flex-col justify-start [&>div]:w-full text-muted-foreground pb-4 text-sm`}
+          >
+            <div>{renderItems(firstHalf, 0)}</div>
+            <div>{renderItems(secondHalf, firstHalf.length)}</div>
+          </ol>
+        </CollapsibleContent>
+      </Card>
+    </Collapsible>
   );
 };
 

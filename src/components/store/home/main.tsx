@@ -63,7 +63,7 @@ const Main = () => {
       {hasMainCategories && (
         <Section
           defaultShadow={false}
-          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1.5)] pt-12.75 pr-0"
+          className="shadow-[inset_0_8px_16px_hsla(0,0%,100%,1.5)] pr-0 bp-430:pr-4 bp-840:pr-0! xl:pr-6!"
         >
           <MainCategories />
         </Section>
@@ -79,7 +79,7 @@ const Main = () => {
       <Section
         bgLinear={false}
         defaultShadow={false}
-        className={`bg-light-bg pt-7 pb-5.5`}
+        className={`bg-light-bg pb-5.5`}
       >
         <AboutSection />
       </Section>

@@ -1,5 +1,5 @@
 "use client";
-import { Icon } from "@/components/ui";
+import { Icon, MuiIcon } from "@/components/ui";
 import type { Photo } from "@/types/types";
 import { Plus } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -74,12 +74,12 @@ export const PhotoGridEditor = () => {
 
   return (
     <>
-      <div>
+      <div
+        className={`${reorderMode && "ring ring-blue-300 p-1 pb-1.25 rounded-md gap-2 mb-5"}`}
+      >
         <div
-          className={`mb-2 flex flex-wrap justify-start items-end gap-4 crop relative 
-            ${reorderMode && "ring ring-blue-300 p-4"} ${
-              seeRemoveConfirm && "overflow-visible!"
-            }`}
+          className={`mb-2 flex flex-wrap justify-start items-end crop relative 
+             ${seeRemoveConfirm && "overflow-visible!"} ${!reorderMode ? "gap-4" : "gap-3"}`}
         >
           {sortedPhotos.map((photo) => (
             <PhotoComponent
@@ -94,49 +94,53 @@ export const PhotoGridEditor = () => {
               photoLimit={photoLimit}
             />
           ))}
-          {reorderMode && (
-            <div
-              className="w-full min-h-10 p-3 px-6 bg-yellow-100/85 
-              text-gray-800 flex items-center justify-start gap-2"
+          {!reorderMode && (
+            <AddPhotoButton
+              photos={photos}
+              setPhotos={setPhotos}
+              photoLimit={photoLimit}
             >
-              <span
-                className={`material-symbols-rounded
-                font-semibold !`}
-              >
-                touch_app
-              </span>
-              <p className={`font-medium `}>
-                Clique em duas imagens para trocar as posições.
-              </p>
-            </div>
+              <Icon Svg={Plus} size={"lg"} />
+            </AddPhotoButton>
           )}
-          <AddPhotoButton
-            photos={photos}
-            setPhotos={setPhotos}
-            photoLimit={photoLimit}
-          >
-            <Icon Svg={Plus} size={"lg"} />
-          </AddPhotoButton>
         </div>
 
-        <div className="mb-3">
-          <p className="text-xs text-gray-500">
-            Você pode adicionar até {photoLimit} fotos. Formatos aceitos: JPG,
-            JPEG, PNG, WEBP
-          </p>
-          {samePhoto && (
-            <p className="text-xs text-red-500">
-              Você adicinou uma foto duas vezes ou mais. Remova a foto duplicada
-              para continuar.
+        {!reorderMode && (
+          <div className="mb-3">
+            <p className="text-xs text-gray-500">
+              Você pode adicionar até {photoLimit} fotos. Formatos aceitos: JPG,
+              JPEG, PNG, WEBP
             </p>
-          )}
-        </div>
+            {samePhoto && (
+              <p className="text-xs text-red-500">
+                Você adicinou uma foto duas vezes ou mais. Remova a foto
+                duplicada para continuar.
+              </p>
+            )}
+          </div>
+        )}
+
+        {reorderMode && (
+          <div
+            className="w-full min-h-10 p-3 px-6 bg-yellow-100/85 crop
+              text-gray-800 flex items-center justify-start gap-1 small-text rounded-sm"
+          >
+            <MuiIcon
+              icon="touch_app"
+              size="h4"
+              weight={400}
+              fill
+              className="-mr-0.75 text-yellow-600"
+            />
+            <p>Clique em duas imagens para trocar as posições.</p>
+          </div>
+        )}
 
         <ReorderButton
           photos={photos}
           reorderMode={reorderMode}
           setReorderMode={setReorderMode}
-          className="mb-4.25"
+          className={!reorderMode ? "mb-4.25" : "mt-2"}
         />
       </div>
       {seeRemoveConfirm && (

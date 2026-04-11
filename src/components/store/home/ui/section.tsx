@@ -2,13 +2,6 @@ import { ComponentProps } from "react";
 
 import { cn } from "@/utils/utils";
 
-/* 
-interface SectionProps extends ComponentProps<'section'> {
-  bgLinear?: boolean;
-  defaultShadow?: boolean;
-}
-*/
-
 function Section({
   className,
   bgLinear = true,

@@ -5,7 +5,7 @@ type ScrollStart = 'start' | 'center';
 interface UseMouseScrollXParams {
   containerRef: RefObject<HTMLElement | null>;
   parentRef: RefObject<HTMLElement | null>;
-  resizeCount?: number;
+  resizeCount?: number | string;
   scrollStart?: ScrollStart;
 }
 

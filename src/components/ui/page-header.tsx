@@ -5,7 +5,7 @@ function PageHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="page-header"
-      className={cn("bg-primary-700 rounded-none", className)}
+      className={cn("bg-primary-800 rounded-none", className)}
       {...props}
     />
   );

@@ -27,7 +27,7 @@ export const GenderSelector = (): React.ReactElement => {
   }, [selectedGender]);
 
   return (
-    <div>
+    <div id="home-gender-selector">
       <p
         className={`max-w-none w-full text-center mb-2 uppercase
           large-text text-primary-900 tracking-wide`}

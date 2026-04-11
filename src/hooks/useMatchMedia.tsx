@@ -1,56 +1,65 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useState } from "react";
 
-/**
- * Hook que retorna a largura da janela toda vez que ela atravessa breakpoints específicos.
- * Por padrão, utiliza os breakpoints do Tailwind CSS (640, 768, 1024, 1280, 1536).
- * 
- * @param customBreakpoints - Array de números com breakpoints adicionais.
- * @returns A largura atual da janela (window.innerWidth).
- */
-export const useMatchMedia = (customBreakpoints: number[] = []) => {
-  const tailwindBreakpoints = [640, 768, 1024, 1280, 1536];
+type Breakpoint = {
+  name: string;
+  width: number;
+  query: string;
+};
 
-  const breakpoints = useMemo(() => {
-    return Array.from(new Set([...tailwindBreakpoints, ...customBreakpoints])).sort((a, b) => a - b);
-  }, [customBreakpoints]);
+const defaultBreakpoints: Breakpoint[] = [
+  { name: "sm", width: 640, query: "(min-width: 640px)" },
+  { name: "md", width: 768, query: "(min-width: 768px)" },
+  { name: "lg", width: 1024, query: "(min-width: 1024px)" },
+  { name: "xl", width: 1280, query: "(min-width: 1280px)" },
+  { name: "2xl", width: 1536, query: "(min-width: 1536px)" },
+];
 
-  const [windowWidth, setWindowWidth] = useState<number>(() => 
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+export function useMatchMedia(customBreakpoints: number[] = []) {
+  const [current, setCurrent] = useState<number>(0);
 
-  const addListener = (mql: MediaQueryList, handler: (e: MediaQueryListEvent | MediaQueryList) => void) => {
-    if (mql.addEventListener) {
-      mql.addEventListener('change', handler as EventListener);
-    } else {
-      mql.addListener(handler as (e: MediaQueryListEvent) => void);
-    }
-  };
-
-  const removeListener = (mql: MediaQueryList, handler: (e: MediaQueryListEvent | MediaQueryList) => void) => {
-    if (mql.removeEventListener) {
-      mql.removeEventListener('change', handler as EventListener);
-    } else {
-      mql.removeListener(handler as (e: MediaQueryListEvent) => void);
-    }
-  };
+  const bpKeys = customBreakpoints.join(",");
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
-    const handleMatch = () => {
-      setWindowWidth(window.innerWidth);
+    const customBps = customBreakpoints.map((bp, index) => ({
+      name: `bp${index + 1}`,
+      width: bp,
+      query: `(min-width: ${bp}px)`,
+    }));
+
+    const allBreakpoints = [...defaultBreakpoints, ...customBps].sort((a, b) => a.width - b.width);
+
+    const mqls = allBreakpoints.map(bp => ({
+      name: bp.name,
+      width: bp.width,
+      mql: window.matchMedia(bp.query),
+    }));
+
+    const getActive = () => {
+      // pega o maior breakpoint ativo
+      const active = mqls
+        .filter(bp => bp.mql.matches)
+        .map(bp => bp.width);
+
+      return active[active.length - 1] || 0;
     };
 
-    const mediaQueryLists = breakpoints.map(bp => window.matchMedia(`(min-width: ${bp}px)`));
+    const handler = () => {
+      setCurrent(prev => {
+        const next = getActive();
+        return prev !== next ? next : prev; // evita re-render inútil
+      });
+    };
 
-    mediaQueryLists.forEach(mql => addListener(mql, handleMatch));
+    mqls.forEach(({ mql }) => mql.addEventListener("change", handler));
 
-    handleMatch();
+    handler();
 
     return () => {
-      mediaQueryLists.forEach(mql => removeListener(mql, handleMatch));
+      mqls.forEach(({ mql }) => mql.removeEventListener("change", handler));
     };
-  }, [breakpoints]);
+  }, [bpKeys]); // usa join dos valores para evitar loop de dependência com array
 
-  return windowWidth;
-};
+  return current;
+}

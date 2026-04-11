@@ -30,12 +30,12 @@ export const PhotoComponent = ({
     <div>
       <div
         className={`relative w-36 aspect-3/4 overflow-hidden bg-medium-bg 
-          ${reorderMode && photo.id === firstSelectedId && ""}`}
+          ${reorderMode && photo.id === firstSelectedId && "ring-[1.5px] ring-selected-400 rounded-md"}`}
         onClick={() => {
           handleImageClick(photo.id);
         }}
       >
-        {photo.url && (
+        {photo.url && !reorderMode && (
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -45,7 +45,7 @@ export const PhotoComponent = ({
             <RemovePhotoButton />
           </div>
         )}
-        {!photo.url && (
+        {!photo.url && !reorderMode && (
           <AddPhotoButton
             photos={photos}
             setPhotos={setPhotos}

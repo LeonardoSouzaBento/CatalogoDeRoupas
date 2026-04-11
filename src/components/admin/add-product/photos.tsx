@@ -16,7 +16,7 @@ const Photos = () => {
       <PhotoGridEditor />
       <Alert variant="destructive" className="mb-0">
         <Icon Svg={Info} size='h6' strokeWidth="medium" />
-        <AlertTitle><h5>Dica de Ouro</h5></AlertTitle>
+        <AlertTitle><h6>Dica de Ouro</h6></AlertTitle>
         <AlertDescription>
           Adicione pelo menos três fotos para cada roupa (frente, costas e o tecido visto de perto).
           O mais recomendado é adicionar 5 fotos , mostrando também a lateral da peça e a peça sendo

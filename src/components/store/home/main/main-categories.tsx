@@ -1,7 +1,7 @@
 "use client";
 import { InputWrapper, SectionHeader } from "@/components/store/home/ui/index";
 import { useHomeContext, useUserContext } from "@/contexts/index";
-import { useLocalEditMode, useMatchMedia, useMouseScrollX } from "@/hooks";
+import { useLocalEditMode, useMouseScrollX, useResizeCount } from "@/hooks";
 import { MainCategory } from "@/types/types";
 import Image from "next/image";
 import { useRef } from "react";
@@ -9,13 +9,13 @@ import { MainCatsInput } from "./main-categories/_inputs/main-cats-input";
 
 const css = {
   wrapper: `
-    relative max-w-full mx-auto grid overflow-x-scroll grid-cols-[max-content_max-content] gap-[clamp(12px,calc(8.8px+1vw),24px)]
-    bp-840:flex`,
+    pr-4 bp-430:pr-0 bp-840:pr-4 xl:pr-0 relative w-full mx-auto overflow-x-scroll scrollbar-hidden grid grid-cols-[max-content_max-content] 
+    justify-center bp-430:grid-cols-2 gap-[clamp(12px,calc(8.8px+1vw),24px)] sm:max-w-160 bp-840:flex bp-840:min-w-full`,
   editMode: "pb-0 mb-0 m-auto max-w-210",
-  inputwArea: "p-6 pt-3 bg-light-bg rounded-md mb-10 shadow-lg",
+  inputwArea: "p-6 pt-3 bg-light-bg rounded-md shadow-lg",
   imageWrapper: `
-    aspect-3/4 min-w-50 w-50 flex items-end relative overflow-hidden 
-    bg-border/50 rounded-lg border bp-840:min-w-80
+    aspect-3/4 min-w-50 w-full flex items-end relative overflow-hidden 
+    bg-border/50 rounded-lg border bp-840:min-w-72 bp-840:max-w-72
   `,
   image:
     "absolute inset-0 w-full h-full object-cover object-top scale-106 sepia-10 contrast-96",
@@ -29,13 +29,12 @@ export const MainCategories = () => {
   const [editMode, setEditMode] = useLocalEditMode();
   const parentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const resizeCount = useMatchMedia();
+  const resizeCount = useResizeCount();
   const { thumbWidth } = useMouseScrollX({
     parentRef,
     containerRef,
     resizeCount,
   });
-
 
   const categories = childCatSelected
     ? []

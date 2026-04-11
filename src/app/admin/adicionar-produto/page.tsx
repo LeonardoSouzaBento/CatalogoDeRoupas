@@ -11,24 +11,13 @@ import {
 } from "@/components/ui";
 import { AlertCircle } from "lucide-react";
 
-// const specificProperties = [
-//   { name: "Nome" },
-//   { name: "Marca", options: "" },
-//   { name: "Cor principal", options: "" },
-//   { name: "Diferencial", options: "" },
-//   { name: "Idade da criança", options: "", type: "number" },
-//   { name: "Padrão de aparência secundário", options: "" },
-//   { name: "Preço", type: "number" },
-//   { name: "Descrição" },
-// ];
-
 const tutorialSteps = [
   "Adicione as fotos.",
-  "Defina o gênero.",
-  "Caso queira, defina uma roupa base, se houver.",
-  "Defina as informações básicas.",
+  'Defina as informações básicas (veja as "roupas comuns" para mais informações)',
   "Defina as informações especificas.",
   "Confira todas as informações e depois clique em 'Salvar' para concluir o cadastro.",
+  "Se houverem roupas parecidas, adicione a quantidade e clique em enfileirar produtos",
+  "Clique em salvar para concluir o cadastro do produto",
 ];
 
 const page = () => {
@@ -44,22 +33,18 @@ const page = () => {
       <div
         className={`max-w-3xl lg:max-w-4xl mx-auto space-y-6 mt-3 px-3 sm:px-4`}
       >
-        <Tutorial
-          title="como cadastrar"
-          steps={tutorialSteps}
-          cssList={`sm:flex-row sm:gap-4`}
-          itemCss="sm:mb-2"
-          pb={24}
-        />
-        <Alert className="bg-light-bg border">
-          <Icon Svg={AlertCircle} />
-          <AlertTitle>Importante</AlertTitle>
+        <Alert className="bg-light-bg border mb-4" variant={"destructive"}>
+          <Icon Svg={AlertCircle} size="h6" strokeWidth="medium" />
+          <AlertTitle>
+            <h6>Importante</h6>
+          </AlertTitle>
           <AlertDescription>
             Registre um tipo de peça de cada vez. Por exemplo: primeiro as
             camisetas básicas lisas, depois as camisas polos, e assim por
             diante. Isso facilita o cadastro e evita confusão.
           </AlertDescription>
         </Alert>
+        <Tutorial title="como cadastrar" steps={tutorialSteps} />
         <AddProductCore />
       </div>
     </>

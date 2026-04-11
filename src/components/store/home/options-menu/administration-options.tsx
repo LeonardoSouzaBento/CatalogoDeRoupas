@@ -30,7 +30,7 @@ const optionButtons = [
 ];
 
 const AdministrationOptions = () => {
-  const { setHomeEditMode } = useHomeContext();
+  const { setHomeEditMode, homeEditMode } = useHomeContext();
 
   return (
     <>
@@ -41,7 +41,26 @@ const AdministrationOptions = () => {
           variant="transparent"
           key={item.name}
           asChild
-          onClick={() => item.setEditMode && setHomeEditMode(true)}
+          onClick={(e) => {
+            if (item.setEditMode) {
+              e.preventDefault();
+              setHomeEditMode(true);
+
+              setTimeout(() => {
+                const element = document.getElementById("home-gender-selector");
+                if (element) {
+                  const rect = element.getBoundingClientRect();
+                  const scrollTop = window.scrollY || window.pageYOffset;
+                  const elementBottom = rect.bottom + scrollTop;
+
+                  window.scrollTo({
+                    top: elementBottom,
+                    behavior: "smooth",
+                  });
+                }
+              }, 300);
+            }
+          }}
         >
           <Link href={item.url || "#"}>
             <MuiIcon

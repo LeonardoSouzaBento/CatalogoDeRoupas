@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface Props {
-  resizeCount: number;
+  resizeCount: number | string;
   setSeeOptionsSection: StateSetter<boolean>;
 }
 

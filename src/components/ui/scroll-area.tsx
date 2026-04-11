@@ -1,7 +1,8 @@
+"use client";
 import { useMouseScrollX } from "@/hooks";
 import { cn } from "@/utils/utils";
 import React, { useRef } from "react";
-import { ScrollBar as ScrollBarComponent } from "./scroll-bar-copy";
+import { ScrollBar as ScrollBarComponent, ScrollBarType } from "./scroll-bar";
 
 const ScrollAreaContext = React.createContext<{
   parentRef: React.RefObject<HTMLDivElement | null>;
@@ -11,7 +12,7 @@ const ScrollAreaContext = React.createContext<{
 interface ScrollContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   resizeCount?: number;
-  ScrollBar?: React.ElementType;
+  ScrollBar?: React.ReactElement<ScrollBarType>;
 }
 
 export const ScrollContainer = React.forwardRef<
@@ -41,15 +42,25 @@ export const ScrollContainer = React.forwardRef<
 
     return (
       <ScrollAreaContext.Provider value={{ parentRef, containerRef }}>
-        <div ref={parentRef} className={cn("crop relative", className)}>
+        <div
+          ref={parentRef}
+          className={cn("crop relative", className)}
+          {...props}
+        >
           {children}
-          {ScrollBar && (
-            <ScrollBar
-              containerRef={containerRef}
-              thumbWidth={thumbWidth}
-              {...props}
-            />
-          )}
+          {ScrollBar &&
+            (React.isValidElement(ScrollBar)
+              ? React.cloneElement(
+                  ScrollBar as React.ReactElement<ScrollBarType>,
+                  {
+                    containerRef,
+                    thumbWidth,
+                  },
+                )
+              : React.createElement(ScrollBar as React.ElementType, {
+                  containerRef,
+                  thumbWidth,
+                }))}
         </div>
       </ScrollAreaContext.Provider>
     );

@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui";
 import { Button, ButtonProps } from "@/components/ui/button";
 import type { BooleanSetter, Photo } from "@/types/types";
 import { Layers2, X } from "lucide-react";
@@ -27,11 +28,11 @@ export const ReorderButton = ({
     <Button
       disabled={isDisabled}
       onClick={handleActiveReorderMode}
-      variant={reorderMode ? "default" : "outline"}
+      variant={reorderMode ? "destructive" : "outline"}
       {...props}
     >
       {reorderMode ? "Sair de reordenar" : "Reordenar imagens"}
-      {reorderMode ? <X /> : <Layers2 size={18} />}
+      <Icon Svg={reorderMode ? X : Layers2} size={"md"} strokeWidth="extralight" />
     </Button>
   );
 };
