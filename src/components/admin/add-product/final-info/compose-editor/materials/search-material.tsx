@@ -1,20 +1,23 @@
-import { Button, Icon, Input } from "@/components/ui";
+import { Button, ButtonProps, Icon, Input } from "@/components/ui";
 import { materials } from "@/data/clothings/materials";
 import { StateSetter } from "@/types";
 import { Search } from "lucide-react";
 import { useState } from "react";
+
+interface SearchMaterialProps extends ButtonProps {
+  searchValue: string;
+  setSearchValue: StateSetter<string>;
+  setFilteredMaterials: StateSetter<string[]>;
+  setSearchButtonClicked: StateSetter<number>;
+}
 
 export const SearchMaterial = ({
   searchValue,
   setSearchValue,
   setFilteredMaterials,
   setSearchButtonClicked,
-}: {
-  searchValue: string;
-  setSearchValue: StateSetter<string>;
-  setFilteredMaterials: StateSetter<string[]>;
-  setSearchButtonClicked: StateSetter<number>;
-}) => {
+  ...props
+}: SearchMaterialProps) => {
   const [wasClicked, setWasClicked] = useState<boolean>(false);
 
   function searchMaterial(searchValue: string) {
@@ -37,10 +40,10 @@ export const SearchMaterial = ({
   };
 
   return (
-    <Button variant={"secondary"} className="justify-end p-0">
+    <Button variant={"secondary"} className="justify-end p-0" {...props}>
       <Input
         type="text"
-        className={`absolute inset-0 ${!wasClicked && "font-medium text-gray-800"}`}
+        className={`h-9 absolute inset-0 rounded-full ${!wasClicked && "font-medium text-gray-800"}`}
         value={searchValue}
         placeholder="Procurar material"
         onChange={handleSearch}
@@ -58,7 +61,7 @@ export const SearchMaterial = ({
         variant={"transparent"}
         size={"icon"}
         onClick={handleSearchButton}
-        className="mr-0.5"
+        className="mr-1 mb-px rounded-full"
       >
         <div>
           <Icon Svg={Search} size="lg" className="mb-px mr-px" />

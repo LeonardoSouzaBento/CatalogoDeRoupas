@@ -1,3 +1,3 @@
-export * from "./materials";
-export * from "./search-material";
-export * from "./add-material";
+export * from "./materials/material-list";
+export * from "./materials/search-material";
+export * from "./materials/add-material";

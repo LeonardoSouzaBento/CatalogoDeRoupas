@@ -20,19 +20,17 @@ export const AddMaterial: React.FC<AddMaterialProps> = ({
   }, []);
 
   return (
-    <div>
-      <div className="h-10 bg-gray-50 relative flex justify-end items-center">
-        <Input
-          ref={inputRef}
-          className="absolute inset-0"
-          type="text"
-          placeholder="Digite o material"
-          value={selectedMaterial || ""}
-          onChange={(e) => setSelectedMaterial(e.target.value)}
-        />
+    <div className="h-9 bg-gray-50 relative flex justify-end items-center">
+      <Input
+        ref={inputRef}
+        className="absolute inset-0"
+        type="text"
+        placeholder="Digite o material"
+        value={selectedMaterial || ""}
+        onChange={(e) => setSelectedMaterial(e.target.value)}
+      />
 
-        <CloseButton setState={setShow} className="relative mr-1" />
-      </div>
+      <CloseButton setState={setShow} className="relative mr-1" />
     </div>
   );
 };

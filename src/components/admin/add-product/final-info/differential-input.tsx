@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -6,19 +6,25 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Button, Icon, Input, InputWrapper, Label } from "@/components/ui";
+import { Plus } from "lucide-react";
 
 const Differential = ({ trigger }: { trigger: React.ReactNode }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="max-w-lg">
         <DialogHeader>
           <DialogTitle>Diferencial</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col gap-2">
-           <label className="text-sm font-medium">Informe o diferencial</label>
-           <input type="text" className="p-2 border rounded-md" placeholder="Ex: Tecido respirável" />
-        </div>
+        <InputWrapper className="flex flex-col gap-2">
+          <Label className="text-sm font-medium">Informe o diferencial</Label>
+          <Input type="text" placeholder="Ex: Tecido respirável" />
+        </InputWrapper>
+        <Button>
+          <Icon Svg={Plus} size="lg" />
+          Adicionar diferencial
+        </Button>
       </DialogContent>
     </Dialog>
   );

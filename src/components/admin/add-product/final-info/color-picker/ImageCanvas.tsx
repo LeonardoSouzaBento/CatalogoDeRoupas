@@ -35,7 +35,7 @@ export function ImageCanvas({
 
   return (
     <>
-      <div className="h-100 w-75 mx-auto relative overflow-hidden">
+      <div className="h-100 w-75 relative overflow-hidden rounded-md">
         <Image
           ref={imgRef}
           src={imageSrc}

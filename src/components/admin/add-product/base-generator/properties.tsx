@@ -14,6 +14,7 @@ import type {
   StateSetter,
 } from "@/types/types";
 import { PropertyOptions } from "./property-options";
+import { OptionsWrapper } from "../common";
 
 interface Props {
   properties: ClothingProperty[];
@@ -31,49 +32,50 @@ const Properties = ({
   handleSelectOption,
 }: Props) => {
   return (
-    <ButtonsWrapper className="mb-5" >
-      {properties.slice(0, -1).map((item) => (
-        <Popover
-          key={item.name}
-          open={propSelected === item.name}
-          onOpenChange={(open) => {
-            if (!open) setPropSelected(null);
-          }}
-        >
-          <PopoverTrigger asChild>
-            <Button
-              data-option
-              size="sm"
-              variant={"ghost"}
-              onClick={() => {
-                setPropSelected(item.name);
-              }}
-            >
-              {item.name}
-              <Icon
-                Svg={ChevronDown}
-                size="lg"
-                strokeWidth="extralight"
-                className="mt-px"
-              />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent
-            className="w-80 h-auto max-h-100 overflow-y-scroll p-0 rounded-lg"
-            align="start"
+    <OptionsWrapper title="Seleção manual">
+      <ButtonsWrapper>
+        {properties.slice(0, -1).map((item) => (
+          <Popover
+            key={item.name}
+            open={propSelected === item.name}
+            onOpenChange={(open) => {
+              if (!open) setPropSelected(null);
+            }}
           >
-            <PropertyOptions
-              properties={properties}
-              propSelected={item.name}
-              basicInformation={basicInformation}
-              handleSelectOption={handleSelectOption}
-            />
-          </PopoverContent>
-        </Popover>
-      ))}
-    </ButtonsWrapper>
+            <PopoverTrigger asChild>
+              <Button
+                data-option
+                size="sm"
+                variant={"ghost"}
+                onClick={() => {
+                  setPropSelected(item.name);
+                }}
+              >
+                {item.name}
+                <Icon
+                  Svg={ChevronDown}
+                  size="lg"
+                  strokeWidth="extralight"
+                  className="mt-px"
+                />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent
+              className="w-80 h-auto max-h-100 overflow-y-scroll p-0 rounded-lg"
+              align="start"
+            >
+              <PropertyOptions
+                properties={properties}
+                propSelected={item.name}
+                basicInformation={basicInformation}
+                handleSelectOption={handleSelectOption}
+              />
+            </PopoverContent>
+          </Popover>
+        ))}
+      </ButtonsWrapper>
+    </OptionsWrapper>
   );
 };
 
 export { Properties };
-

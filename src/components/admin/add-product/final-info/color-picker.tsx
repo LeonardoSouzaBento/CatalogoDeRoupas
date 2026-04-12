@@ -1,6 +1,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -104,8 +105,11 @@ export function ColorPicker({
       <DialogContent className="max-w-fit">
         <DialogHeader>
           <DialogTitle>Seletor de Cores</DialogTitle>
+          <DialogDescription>
+            Mova o círculo com a seta para selecionar a cor
+          </DialogDescription>
         </DialogHeader>
-        <div className="w-full max-w-max flex flex-col p-4 rounded-md select-none border">
+        <div className="w-full max-w-max flex flex-col rounded-md select-none">
           <div
             ref={containerRef}
             className="relative inline-block"

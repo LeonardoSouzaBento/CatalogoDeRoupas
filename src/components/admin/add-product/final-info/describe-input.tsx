@@ -6,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Label, Textarea } from '@/components/ui';
 
 const css = {
   wrapper: `flex flex-col`,
@@ -15,15 +16,15 @@ const Description = ({ trigger }: { trigger: React.ReactNode }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="max-w-xl">
         <DialogHeader>
           <DialogTitle>Descrição</DialogTitle>
         </DialogHeader>
         <div className={css.wrapper}>
-          <label htmlFor="description" className="mb-2 text-sm font-medium">
+          <Label htmlFor="description" className="mb-2 text-sm font-medium">
             Descrição do produto
-          </label>
-          <textarea
+          </Label>
+          <Textarea
             name="description"
             id="description"
             rows={4}

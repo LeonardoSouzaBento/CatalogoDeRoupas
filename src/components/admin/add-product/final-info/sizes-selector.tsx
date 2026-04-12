@@ -28,7 +28,7 @@ const SizeSelector = ({ trigger }: { trigger: React.ReactNode }) => {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="max-w-xl">
         <DialogHeader>
-          <DialogTitle>Tamanhos disponíveis</DialogTitle>
+          <DialogTitle><h6>Tamanhos disponíveis</h6></DialogTitle>
         </DialogHeader>
         <div className="mt-2">
           <OptionsWrapper title="Selecione os tamanhos">
@@ -94,7 +94,7 @@ const SizeList = ({
             key={size}
             data-option
             selected={selectedSize === size.toString()}
-            variant={"ghost"}
+            variant={"transparent"}
             size="sm"
             onClick={() => handleSelectSize(size.toString())}
           >

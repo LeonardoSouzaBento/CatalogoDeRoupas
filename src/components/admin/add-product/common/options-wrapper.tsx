@@ -13,7 +13,7 @@ const OptionsWrapper = ({
 }: Props) => {
   return (
     <div className={wrapperCss}>
-      <p className="font-[475] mb-2 pt-1 uppercase text-blue-600 tracking-wide">
+      <p className="font-[475] mb-2 uppercase text-blue-600 tracking-wide small-text">
         {title}
       </p>
       {children}

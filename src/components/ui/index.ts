@@ -25,4 +25,5 @@ export * from "./side-area";
 export * from "./table";
 export * from "./textarea";
 export * from "./zap-fixed-button";
+export * from "./collapsible";
 

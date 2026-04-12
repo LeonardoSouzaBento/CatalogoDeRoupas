@@ -10,7 +10,6 @@ import {
   CopyButton,
   InputAddress,
   InputContact,
-  InputMap,
 } from "./find-us-section/index";
 
 const css = {

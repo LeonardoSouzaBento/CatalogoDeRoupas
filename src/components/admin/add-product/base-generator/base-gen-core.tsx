@@ -1,3 +1,4 @@
+"use client";
 import { Separator } from "@/components/ui";
 import { useUserContext } from "@/contexts/index";
 import { clothingCatsSubcats } from "@/data/clothings/clothingCatsSubcats";
@@ -7,7 +8,7 @@ import { prints } from "@/data/clothings/prints";
 import type {
   BasicClothingInformation,
   ClothingProperty,
-  Gender
+  Gender,
 } from "@/types/types";
 import { useEffect, useState } from "react";
 import { ProductBasesList } from "../product-base-list";
@@ -87,25 +88,26 @@ const BaseGenCore = () => {
       );
     }
   }, [basicInformation.cat, currentGender]);
-  
+
   return (
     <>
-      <Properties
-        properties={properties}
-        propSelected={propSelected}
-        setPropSelected={setPropSelected}
-        basicInformation={basicInformation}
-        handleSelectOption={handleSelectOption}
-      />
+      <div className="space-y-4">
+        <ProductBasesList />
+        <Properties
+          properties={properties}
+          propSelected={propSelected}
+          setPropSelected={setPropSelected}
+          basicInformation={basicInformation}
+          handleSelectOption={handleSelectOption}
+        />
+      </div>
+
+      <Separator className="my-4" />
 
       <AddedProperties
         basicInformation={basicInformation}
         setBasicInformation={setBasicInformation}
       />
-
-      <Separator className="my-5" />
-
-      <ProductBasesList />
     </>
   );
 };

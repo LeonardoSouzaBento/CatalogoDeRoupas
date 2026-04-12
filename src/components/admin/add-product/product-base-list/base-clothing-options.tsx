@@ -2,6 +2,7 @@ import { ButtonsWrapper, Icon } from "@/components/ui";
 import { Button } from "@/components/ui/button";
 import { sortValues } from "@/utils/utils";
 import { X } from "lucide-react";
+import { OptionsWrapper } from "@/components/admin/add-product/common";
 
 interface ButtonProps {
   clothes: string[];
@@ -16,7 +17,7 @@ const BaseClothingOptions = ({
 }: ButtonProps) => {
   const sortedClothes = sortValues(clothes);
   return (
-    <div>
+    <OptionsWrapper title="Selecione um modelo">
       <ButtonsWrapper className="mb-5">
         {sortedClothes.map((item, index) => {
           const shortName = item.split("–")[0].trim();
@@ -53,7 +54,7 @@ const BaseClothingOptions = ({
           );
         })}
       </ButtonsWrapper>
-    </div>
+    </OptionsWrapper>
   );
 };
 
