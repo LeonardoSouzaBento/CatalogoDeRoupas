@@ -14,9 +14,11 @@ export const Suggestions = () => {
   const [selected, setSelected] = useState<string>("");
 
   return (
-    <div className="h-max shadow-xs rounded-md">
+    <div className="pt-2 h-max shadow-xs rounded-md">
       <div className="relative">
-        <p className="mb-2 font-semibold tracking-wide">Buscas Frequentes:</p>
+        <p className="mb-3 text-muted-foreground uppercase tracking-wider text-sm">
+          Buscas Frequentes:
+        </p>
       </div>
       <div
         className={`max-w-max grid grid-cols-2 grid-rows-4 
@@ -25,16 +27,20 @@ export const Suggestions = () => {
         {suggestions.map((item: string) => (
           <Button
             selected={selected === item}
-            variant={"ghost"}
+            variant={"transparent"}
             size={"sm"}
             data-option
             key={item}
-            className="justify-start"
+            className="justify-start shadow-xs/32"
             onClick={() => {
               setSelected(item);
             }}
           >
-            <Icon Svg={Search} size="lg" className="mb-1" />
+            <Icon
+              Svg={Search}
+              size="lg"
+              className="mb-1 text-input-border"
+            />
             {item}
           </Button>
         ))}

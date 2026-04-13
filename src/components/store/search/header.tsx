@@ -11,7 +11,7 @@ export const Header = ({
   return (
     <div
       className="h-14 px-3 sm:px-4 md:px-6 box-content flex items-center justify-between rounded-none 
-  bg-linear-to-r from-primary-900 to-primary-800"
+  bg-linear-to-r from-primary-800 to-primary-700"
     >
       <div className="h-12 w-max flex-center">
         <h2 className="leading-none font-logo text-primary-50 font-normal">

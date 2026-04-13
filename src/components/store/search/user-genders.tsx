@@ -14,11 +14,14 @@ export const UserGenders = () => {
 
   return (
     <div>
-      <p className="mb-1 font-semibold tracking-wide">Gênero:</p>
+      <p className="mb-3 text-muted-foreground uppercase tracking-wider text-sm">
+        Gênero:
+      </p>
       <ButtonsWrapper>
         {genders.map((gender) => (
           <Button
             size={"sm"}
+            data-option
             key={gender}
             onClick={() => {
               if (selectedGender !== gender) {
@@ -33,6 +36,7 @@ export const UserGenders = () => {
         <div className="flex-center h-max gap-2">
           <Button
             size={"sm"}
+            data-option
             variant={"ghost"}
             selected={childCatSelected}
             onClick={() => {

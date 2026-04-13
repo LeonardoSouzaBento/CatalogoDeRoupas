@@ -8,7 +8,7 @@ export const SearchButton = () => {
       asChild
       variant={"secondary"}
       size="lg"
-      className="w-full mt-3 gap-3 justify-center p-0 pl-[0.9em]"
+      className="w-full max-w-xl mt-3 gap-3 justify-center p-0 pl-[0.9em] rounded-full shadow-xs/32 border-shadow"
     >
       <Link href={"/loja/produto/"}>
         <Icon Svg={Search} size="lg" className="text-muted-foreground" />

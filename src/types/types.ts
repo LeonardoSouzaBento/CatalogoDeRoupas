@@ -94,8 +94,9 @@ export const mappingPropToKey: Record<string, keyof BasicClothingInformation> = 
   Subcategoria: 'subcat',
   Padrão: 'pattern',
   Estampa: 'print',
-  Nome: 'name',
-  'É Infantil': 'is_childish',
+  Nome: "name",
+  "É Infantil": "is_childish",
+  Modelagem: "modeling",
 };
 
 export interface Photo {

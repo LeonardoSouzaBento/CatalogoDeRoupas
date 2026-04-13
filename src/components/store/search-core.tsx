@@ -5,7 +5,7 @@ const SearchCore = () => {
   return (
     <>
       <Header />
-      <div className="px-3 sm:px-4 md:px-6 space-y-5">
+      <div className="px-3 sm:px-4 md:px-6 space-y-6">
         <SearchButton />
         <UserGenders />
         <Suggestions />

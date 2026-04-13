@@ -60,6 +60,12 @@ const BaseGenCore = () => {
       case "É Infantil":
         updates.is_childish = option;
         break;
+      case "Modelagem":
+        updates.modeling = option;
+        break;
+      case "Nome":
+        updates.name = option;
+        break;
     }
 
     if (Object.keys(updates).length > 0) {
